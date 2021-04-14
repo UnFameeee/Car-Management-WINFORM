@@ -1,0 +1,10 @@
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\bin\Debug\Care_Management_and_Private_Parking.exe.config
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\bin\Debug\Care_Management_and_Private_Parking.exe
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\bin\Debug\Care_Management_and_Private_Parking.pdb
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.csprojAssemblyReference.cache
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.LoginForm.resources
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.Properties.Resources.resources
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.csproj.GenerateResource.cache
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.csproj.CoreCompileInputs.cache
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.exe
+D:\OneDrive\Tệp đính kèm\Lập trình Window\Project\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.pdb
