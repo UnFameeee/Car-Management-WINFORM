@@ -22,14 +22,15 @@ namespace Care_Management_and_Private_Parking
             ForgotPasswordForm frm = new ForgotPasswordForm();
             frm.Show();
         }
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            RegisterForm frm = new RegisterForm();
-            frm.Show();
-        }
         private void btnlogin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm frm = new RegisterForm();
+            frm.Show();
         }
     }
 }
