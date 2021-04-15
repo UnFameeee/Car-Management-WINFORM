@@ -16,11 +16,14 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
-
+        
         private void lbForgotPassword_Click(object sender, EventArgs e)
         {
+                                                                    //tương tự giải thích bên dưới
+            this.Hide();
             ForgotPasswordForm frm = new ForgotPasswordForm();
-            frm.Show();
+            frm.ShowDialog();
+            this.Show();
         }
         private void btnlogin_Click(object sender, EventArgs e)
         {
@@ -28,9 +31,19 @@ namespace Care_Management_and_Private_Parking
         }
 
         private void lbRegister_Click(object sender, EventArgs e)
-        {
+        {                                                           //cái này từ stackoverflow
+            this.Hide();                                            //Tạm ẩn đi form login (chứ không tắt hẳn nó)
             RegisterForm frm = new RegisterForm();
-            frm.Show();
+            frm.ShowDialog();                                       //Vào form register
+            this.Show();                                            //Hiện lại form login sau khi đã nhận phản hồi từ showdialog của register
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+                                                                    //Dùng để confirm là người sử dụng có muốn thoát ra hay không
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit?", "Quit", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+                Close();
         }
     }
 }
