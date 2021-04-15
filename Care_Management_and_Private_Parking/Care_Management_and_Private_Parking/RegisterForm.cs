@@ -16,5 +16,17 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        private void lbCancel_Click(object sender, EventArgs e)
+        {
+            //Dùng để quay lại form cũ (form login)
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnRegistation_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }
