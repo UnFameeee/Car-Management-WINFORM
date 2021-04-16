@@ -42,6 +42,7 @@ namespace Care_Management_and_Private_Parking
             this.label4 = new System.Windows.Forms.Label();
             this.lbCancel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbShow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +149,6 @@ namespace Care_Management_and_Private_Parking
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(278, 27);
             this.tbEmail.TabIndex = 32;
-            this.tbEmail.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -169,7 +169,7 @@ namespace Care_Management_and_Private_Parking
             this.lbCancel.BackColor = System.Drawing.Color.Transparent;
             this.lbCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCancel.ForeColor = System.Drawing.Color.DimGray;
-            this.lbCancel.Location = new System.Drawing.Point(145, 434);
+            this.lbCancel.Location = new System.Drawing.Point(149, 434);
             this.lbCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCancel.Name = "lbCancel";
             this.lbCancel.Size = new System.Drawing.Size(56, 21);
@@ -189,6 +189,20 @@ namespace Care_Management_and_Private_Parking
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // lbShow
+            // 
+            this.lbShow.AutoSize = true;
+            this.lbShow.BackColor = System.Drawing.Color.Transparent;
+            this.lbShow.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShow.ForeColor = System.Drawing.Color.DimGray;
+            this.lbShow.Location = new System.Drawing.Point(271, 217);
+            this.lbShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbShow.Name = "lbShow";
+            this.lbShow.Size = new System.Drawing.Size(45, 20);
+            this.lbShow.TabIndex = 33;
+            this.lbShow.Text = "Show";
+            this.lbShow.Click += new System.EventHandler(this.lbShow_Click);
+            // 
             // RegisterForm
             // 
             this.AcceptButton = this.btnRegistation;
@@ -196,6 +210,7 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(356, 463);
+            this.Controls.Add(this.lbShow);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbCancel);
             this.Controls.Add(this.tbEmail);
@@ -233,5 +248,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbCancel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbShow;
     }
 }

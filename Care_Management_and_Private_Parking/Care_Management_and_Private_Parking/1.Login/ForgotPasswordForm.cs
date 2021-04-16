@@ -16,39 +16,44 @@ namespace Care_Management_and_Private_Parking
     public partial class ForgotPasswordForm : Form
     {
         public string randomCode;
-        public static string to;
+        Account acc = new Account();
         public ForgotPasswordForm()
         {
             InitializeComponent();
         }
-
         private void btnSendCode_Click(object sender, EventArgs e)
         {
-            string from, pass, messageBody;
-            Random rand = new Random();
-            randomCode = (rand.Next(999999)).ToString();
-            MailMessage message = new MailMessage();
-            to = (tbGmail.Text).ToString();
-            from = "ProjectCarManager@gmail.com";
-            pass = "admin";
-            messageBody = "Your reset code is " + randomCode;
-            message.To.Add(to);
-            message.From = new MailAddress(from);
-            message.Body = messageBody;
-            message.Subject = "Password reseting code";
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.EnableSsl = true;
-            smtp.Port = 587;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.Credentials = new NetworkCredential(from, pass);
-            try
+            if(acc.checkAccount(tbUsername.Text.ToString(), tbGmail.Text.ToString()))
             {
-                smtp.Send(message);
-                MessageBox.Show("Code send successfully");
+                Random rand = new Random();                                 //Tạo 1 số random gồm 6 số (như các
+                randomCode = (rand.Next(999999)).ToString();
+
+                MailMessage message = new MailMessage();                    //Cấu hình mail
+                message.To.Add(tbGmail.Text);                               //lấy gmail từ cái tbGmail
+                message.From = new MailAddress("ProjectWF@gmail.com");
+                message.Subject = "Password reseting code";                 //Tựa đề
+                message.Body = "Your reset code is " + randomCode;
+
+                SmtpClient smtp = new SmtpClient();         //cấu hình gmail cho smtp
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(tbGmail.Text, "password");
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                try
+                {
+                    smtp.Send(message);
+                    MessageBox.Show("Code send successfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Username or Gmail doesn't exist!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -56,7 +61,9 @@ namespace Care_Management_and_Private_Parking
         {
             if(randomCode == (tbVerifyCode.Text).ToString())
             {
-                to = tbGmail.Text;
+                ResetPassword frm = new ResetPassword();
+                frm.Show();
+                this.Close();
             }
         }
 
