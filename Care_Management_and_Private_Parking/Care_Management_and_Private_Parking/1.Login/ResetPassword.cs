@@ -15,7 +15,6 @@ namespace Care_Management_and_Private_Parking
 {
     public partial class ResetPassword : Form
     {
-        string username = sendCode.to;
         public ResetPassword()
         {
             InitializeComponent();

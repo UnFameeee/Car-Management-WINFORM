@@ -17,7 +17,8 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
-        
+        MY_DB db = new MY_DB();
+
         private void lbForgotPassword_Click(object sender, EventArgs e)
         {
                                                                     //tương tự giải thích bên dưới
@@ -28,7 +29,22 @@ namespace Care_Management_and_Private_Parking
         }
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass", db.getConnection);
+            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = tbUser.Text;
+            cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = tbPwd.Text;
+            adapter.SelectCommand = cmd;
+            adapter.Fill(table);
+            if((table.Rows.Count > 0))
+            {
+                MessageBox.Show("Login successfully");
 
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lbRegister_Click(object sender, EventArgs e)
@@ -45,6 +61,20 @@ namespace Care_Management_and_Private_Parking
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit?", "Quit", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
                 Close();
+        }
+
+        int click = 1;
+        private void lbShow_Click(object sender, EventArgs e)
+        {
+            click++;
+            if (click % 2 == 0)
+            {
+                tbPwd.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tbPwd.UseSystemPasswordChar = false;
+            }
         }
     }
 }
