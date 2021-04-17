@@ -40,6 +40,7 @@ namespace Care_Management_and_Private_Parking
             this.lbRegister = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.lbShow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,6 +170,20 @@ namespace Care_Management_and_Private_Parking
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lbShow
+            // 
+            this.lbShow.AutoSize = true;
+            this.lbShow.BackColor = System.Drawing.Color.Transparent;
+            this.lbShow.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShow.ForeColor = System.Drawing.Color.DimGray;
+            this.lbShow.Location = new System.Drawing.Point(263, 238);
+            this.lbShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbShow.Name = "lbShow";
+            this.lbShow.Size = new System.Drawing.Size(45, 20);
+            this.lbShow.TabIndex = 34;
+            this.lbShow.Text = "Show";
+            this.lbShow.Click += new System.EventHandler(this.lbShow_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +191,7 @@ namespace Care_Management_and_Private_Parking
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(340, 403);
+            this.Controls.Add(this.lbShow);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbRegister);
@@ -208,6 +224,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbRegister;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lbShow;
     }
 }
 
