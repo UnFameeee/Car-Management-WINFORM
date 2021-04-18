@@ -38,7 +38,7 @@ namespace Care_Management_and_Private_Parking
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbIdentityNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lbCancel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -141,14 +141,14 @@ namespace Care_Management_and_Private_Parking
             this.tbConfirmPassword.TabIndex = 30;
             this.tbConfirmPassword.UseSystemPasswordChar = true;
             // 
-            // tbEmail
+            // tbIdentityNumber
             // 
-            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(38, 360);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(278, 27);
-            this.tbEmail.TabIndex = 32;
+            this.tbIdentityNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIdentityNumber.Location = new System.Drawing.Point(38, 360);
+            this.tbIdentityNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.tbIdentityNumber.Name = "tbIdentityNumber";
+            this.tbIdentityNumber.Size = new System.Drawing.Size(278, 27);
+            this.tbIdentityNumber.TabIndex = 32;
             // 
             // label4
             // 
@@ -159,9 +159,9 @@ namespace Care_Management_and_Private_Parking
             this.label4.Location = new System.Drawing.Point(34, 338);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.Size = new System.Drawing.Size(120, 20);
             this.label4.TabIndex = 31;
-            this.label4.Text = "Email:";
+            this.label4.Text = "Identity Number:";
             // 
             // lbCancel
             // 
@@ -213,7 +213,7 @@ namespace Care_Management_and_Private_Parking
             this.Controls.Add(this.lbShow);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbCancel);
-            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.tbIdentityNumber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbConfirmPassword);
             this.Controls.Add(this.label1);
@@ -244,7 +244,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbConfirmPassword;
-        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbIdentityNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbCancel;
         private System.Windows.Forms.PictureBox pictureBox1;
