@@ -1,18 +1,21 @@
 ﻿create database WINFORM
 use WINFORM
 
+
+create table POSITION(
+	PositionID int primary key,		-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
+	Description text
+)
+
 -- Tài khoản, mật khẩu người dùng
 create table ACCOUNT(
-	Username varchar(100), --Khoá chính
+	Username varchar(100),		--Khoá chính
 	Password varchar(100),
-	IdentityNumber varchar(100)
+	PositionID int references POSITION(PositionID)					
 )
-SELECT *
-FROM ACCOUNT
-WHERE Username = 'admin' and Password = 'admin1'
 
 -- Tài khoản admin
-insert into ACCOUNT values ('admin', 'admin', '079201006666')
+insert into ACCOUNT values ('admin', 'admin')
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 -- Công Việc
@@ -31,7 +34,7 @@ create table WORKSHIFT(
 
 -- Nhân viên
 create table EMPLOYEE(
-	EmpID varchar(100) primary key,		-- mã nhân viên
+	EmpID varchar(100) primary key,					-- mã nhân viên
 	FullName varchar(100),
 	PhoneNubmer varchar(100),
 	IdentityCardNumber varchar(100),
@@ -42,7 +45,7 @@ create table EMPLOYEE(
 -- Quản lý
 create table MANAGER(
 	ManagerID varchar(100) primary key,
-	ShiftID int references WORKSHIFT(ShiftID)	--quản lý ca nào, có bao nhiêu nhân viên trong ca đấy bị này quản lý
+	ShiftID int references WORKSHIFT(ShiftID)		--quản lý ca nào, có bao nhiêu nhân viên trong ca đấy bị này quản lý
 )
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -52,6 +55,7 @@ create table CUSTOMER(
 	FullName varchar(100),
 	PhoneNumber varchar(100),
 	IdentityCardNumber varchar(100)
+
 )
 
 
@@ -62,6 +66,6 @@ create table CONTRACT(
 	CusID varchar(100) references CUSTOMER(CusID),
 	ManagerID varchar(100) references MANAGER(ManagerID),
 	EmpID varchar(100) references EMPLOYEE(EmpID),
-	Purpose varchar(100),			--Mục đích (thuê, ....)
+	Purpose varchar(100),										--Mục đích (thuê, ....)
 	Description text
 )
