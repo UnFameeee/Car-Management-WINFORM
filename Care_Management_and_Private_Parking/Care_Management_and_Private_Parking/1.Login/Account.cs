@@ -11,12 +11,15 @@ namespace Care_Management_and_Private_Parking
     class Account
     {
         MY_DB db = new MY_DB();
-        public bool insertAccount(string username, string password, string IDnum)
+
+        //Thêm tài khoản
+        public bool insertAccount(string username, string password, string IDnum, string position)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, IdentityNumber) VALUES (@User, @Pass, @IDnum)", db.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, IdentityNumber, PositionID) VALUES (@User, @Pass, @IDnum, @PId)", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
             cmd.Parameters.Add("@IDnum", SqlDbType.VarChar).Value = IDnum;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             db.openConnection();
             if(cmd.ExecuteNonQuery() == 1)
             {
@@ -29,6 +32,8 @@ namespace Care_Management_and_Private_Parking
                 return false;
             }
         }
+
+        //Thay đổi password
         public int replacePassword(string username, string password)
         {
             SqlCommand cmd1 = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass", db.getConnection);
@@ -57,11 +62,14 @@ namespace Care_Management_and_Private_Parking
                 return 3;                       //Thành công
             }
         }
-        public bool checkAccount(string username, string IDnum)
+
+        //Ktra tài khoản đó xem có tồn tại hay là không
+        public bool checkAccount(string username, string IDnum, string position)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND IdentityNumber = @IDnum", db.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND IdentityNumber = @IDnum AND PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@IDnum", SqlDbType.VarChar).Value = IDnum;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
             adapter.SelectCommand = cmd;
@@ -74,6 +82,17 @@ namespace Care_Management_and_Private_Parking
             {
                 return false;
             }
+        }
+
+        //Lấy role từ bảng position
+        public DataTable takeRole()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM POSITION", db.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(table);
+            return table;
         }
     }
 }

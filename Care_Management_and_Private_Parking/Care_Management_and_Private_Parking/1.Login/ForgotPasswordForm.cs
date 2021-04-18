@@ -20,49 +20,24 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
         Account acc = new Account();
+        private void ForgotPasswordForm_Load(object sender, EventArgs e)
+        {
+            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DisplayMember = "Description";
+            cbPosition.ValueMember = "PositionID";
+        }
+
         private void btnVerify_Click(object sender, EventArgs e)
         {
-            //if(acc.checkAccount(tbUsername.Text.ToString(), tbIdentityNumber.Text.ToString()))
-            //{
-            //    Random rand = new Random();                                 //Tạo 1 số random gồm 6 số (như các
-            //    randomCode = (rand.Next(999999)).ToString();
-
-            //    MailMessage message = new MailMessage();                    //Cấu hình mail
-            //    message.To.Add(tbIdentityNumber.Text);                               //lấy gmail từ cái tbGmail
-            //    message.From = new MailAddress("ProjectWF@gmail.com");
-            //    message.Subject = "Password reseting code";                 //Tựa đề
-            //    message.Body = "Your reset code is " + randomCode;
-
-            //    SmtpClient smtp = new SmtpClient();         //cấu hình gmail cho smtp
-            //    smtp.EnableSsl = true;
-            //    smtp.UseDefaultCredentials = false;
-            //    smtp.Credentials = new NetworkCredential(tbIdentityNumber.Text, "password");
-            //    smtp.Host = "smtp.gmail.com";
-            //    smtp.Port = 587;
-            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //    try
-            //    {
-            //        smtp.Send(message);
-            //        MessageBox.Show("Code send successfully");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Username or Gmail doesn't exist!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text))
+            if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
             {
-                this.Size = new Size(336, 527);
-                lbCancel.Location = new Point(139, 496);
+                this.Size = new Size(336, 577);
+                lbCancel.Location = new Point(143, 550);
                 this.StartPosition = FormStartPosition.CenterScreen;
             }
             else
             {
-                MessageBox.Show("Username or IdentityNumber doesn't exist!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong Username or IdentityNumber or Position!!!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void lbCancel_Click(object sender, EventArgs e)
@@ -104,5 +79,7 @@ namespace Care_Management_and_Private_Parking
                 tbIdentityNumber.UseSystemPasswordChar = true;
             }
         }
+
+        
     }
 }
