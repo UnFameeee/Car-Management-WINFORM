@@ -43,6 +43,8 @@ namespace Care_Management_and_Private_Parking
             this.lbCancel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbShow = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@ namespace Care_Management_and_Private_Parking
             this.btnRegistation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegistation.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistation.ForeColor = System.Drawing.Color.White;
-            this.btnRegistation.Location = new System.Drawing.Point(95, 395);
+            this.btnRegistation.Location = new System.Drawing.Point(95, 468);
             this.btnRegistation.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistation.Name = "btnRegistation";
             this.btnRegistation.Size = new System.Drawing.Size(163, 37);
@@ -169,7 +171,7 @@ namespace Care_Management_and_Private_Parking
             this.lbCancel.BackColor = System.Drawing.Color.Transparent;
             this.lbCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCancel.ForeColor = System.Drawing.Color.DimGray;
-            this.lbCancel.Location = new System.Drawing.Point(149, 434);
+            this.lbCancel.Location = new System.Drawing.Point(147, 507);
             this.lbCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCancel.Name = "lbCancel";
             this.lbCancel.Size = new System.Drawing.Size(56, 21);
@@ -203,13 +205,37 @@ namespace Care_Management_and_Private_Parking
             this.lbShow.Text = "Show";
             this.lbShow.Click += new System.EventHandler(this.lbShow_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(34, 399);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 20);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Position:";
+            // 
+            // cbPosition
+            // 
+            this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Location = new System.Drawing.Point(38, 422);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(278, 29);
+            this.cbPosition.TabIndex = 37;
+            // 
             // RegisterForm
             // 
             this.AcceptButton = this.btnRegistation;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(356, 463);
+            this.ClientSize = new System.Drawing.Size(356, 537);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.lbShow);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbCancel);
@@ -228,6 +254,7 @@ namespace Care_Management_and_Private_Parking
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,5 +276,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbCancel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbShow;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbPosition;
     }
 }

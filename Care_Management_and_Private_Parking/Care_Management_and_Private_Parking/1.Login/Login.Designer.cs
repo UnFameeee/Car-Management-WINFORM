@@ -41,6 +41,8 @@ namespace Care_Management_and_Private_Parking
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbShow = new System.Windows.Forms.Label();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@ namespace Care_Management_and_Private_Parking
             this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnlogin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Location = new System.Drawing.Point(185, 335);
+            this.btnlogin.Location = new System.Drawing.Point(185, 402);
             this.btnlogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(123, 41);
@@ -122,7 +124,7 @@ namespace Care_Management_and_Private_Parking
             this.lbForgotPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbForgotPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbForgotPassword.Location = new System.Drawing.Point(189, 299);
+            this.lbForgotPassword.Location = new System.Drawing.Point(189, 366);
             this.lbForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbForgotPassword.Name = "lbForgotPassword";
             this.lbForgotPassword.Size = new System.Drawing.Size(126, 21);
@@ -136,7 +138,7 @@ namespace Care_Management_and_Private_Parking
             this.lbRegister.BackColor = System.Drawing.Color.Transparent;
             this.lbRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegister.ForeColor = System.Drawing.Color.DimGray;
-            this.lbRegister.Location = new System.Drawing.Point(26, 299);
+            this.lbRegister.Location = new System.Drawing.Point(26, 366);
             this.lbRegister.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRegister.Name = "lbRegister";
             this.lbRegister.Size = new System.Drawing.Size(67, 21);
@@ -161,7 +163,7 @@ namespace Care_Management_and_Private_Parking
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(30, 335);
+            this.btnExit.Location = new System.Drawing.Point(30, 402);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(123, 41);
@@ -184,6 +186,28 @@ namespace Care_Management_and_Private_Parking
             this.lbShow.Text = "Show";
             this.lbShow.Click += new System.EventHandler(this.lbShow_Click);
             // 
+            // cbPosition
+            // 
+            this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Location = new System.Drawing.Point(30, 319);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(278, 29);
+            this.cbPosition.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(26, 296);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Position:";
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.btnlogin;
@@ -191,7 +215,9 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(340, 403);
+            this.ClientSize = new System.Drawing.Size(340, 464);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.lbShow);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
@@ -208,6 +234,7 @@ namespace Care_Management_and_Private_Parking
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,6 +253,8 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lbShow;
+        private System.Windows.Forms.ComboBox cbPosition;
+        private System.Windows.Forms.Label label1;
     }
 }
 

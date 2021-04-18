@@ -17,6 +17,15 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+        //MY_DB db = new MY_DB();
+        Account acc = new Account();
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DisplayMember = "Description";
+            cbPosition.ValueMember = "PositionID";
+        }
 
         private void lbCancel_Click(object sender, EventArgs e)
         {
@@ -40,10 +49,10 @@ namespace Care_Management_and_Private_Parking
 
         private void btnRegistation_Click(object sender, EventArgs e)
         {
-            Account acc = new Account();
             string username = tbUsername.Text;
             string password = tbPassword.Text;
             string identitynumber = tbIdentityNumber.Text;
+            string position = cbPosition.SelectedValue.ToString();
             try
             {
                 if(verif())
@@ -52,7 +61,7 @@ namespace Care_Management_and_Private_Parking
                     {
                         MessageBox.Show("Confirm Password must be familiar with Password!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if(acc.insertAccount(username,password, identitynumber))
+                    else if(acc.insertAccount(username,password,identitynumber, position))
                     {
                         DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;

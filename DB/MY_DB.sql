@@ -3,15 +3,20 @@ use WINFORM
 
 
 create table POSITION(
-	PositionID int primary key,		-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
+	PositionID varchar(100) primary key,							-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
 	Description text
 )
 
+INSERT INTO POSITION VALUES ('1', 'QuanLy') 
+INSERT INTO POSITION VALUES ('2', 'NhanVien') 
+INSERT INTO POSITION VALUES ('3', 'KhachHang') 
+
 -- Tài khoản, mật khẩu người dùng
 create table ACCOUNT(
-	Username varchar(100),		--Khoá chính
+	Username varchar(100),								--Khoá chính
 	Password varchar(100),
-	PositionID int references POSITION(PositionID)					
+	IdentityNumber varchar(100),
+	PositionID varchar(100) references POSITION(PositionID)					
 )
 
 -- Tài khoản admin

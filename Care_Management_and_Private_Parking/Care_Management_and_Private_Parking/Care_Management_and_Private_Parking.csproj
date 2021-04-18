@@ -73,12 +73,6 @@
     <Compile Include="1.Login\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="1.Login\ResetPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="1.Login\ResetPassword.Designer.cs">
-      <DependentUpon>ResetPassword.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="1.Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,9 +86,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1.Login\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="1.Login\ResetPassword.resx">
-      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -44,6 +44,8 @@ namespace Care_Management_and_Private_Parking
             this.btnConfirm = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbShow = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@ namespace Care_Management_and_Private_Parking
             this.btnVerify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnVerify.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerify.ForeColor = System.Drawing.Color.White;
-            this.btnVerify.Location = new System.Drawing.Point(35, 282);
+            this.btnVerify.Location = new System.Drawing.Point(35, 343);
             this.btnVerify.Name = "btnVerify";
             this.btnVerify.Size = new System.Drawing.Size(269, 35);
             this.btnVerify.TabIndex = 1;
@@ -112,7 +114,7 @@ namespace Care_Management_and_Private_Parking
             this.lbCancel.BackColor = System.Drawing.Color.Transparent;
             this.lbCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCancel.ForeColor = System.Drawing.Color.DimGray;
-            this.lbCancel.Location = new System.Drawing.Point(134, 320);
+            this.lbCancel.Location = new System.Drawing.Point(143, 384);
             this.lbCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCancel.Name = "lbCancel";
             this.lbCancel.Size = new System.Drawing.Size(56, 21);
@@ -123,7 +125,7 @@ namespace Care_Management_and_Private_Parking
             // tbNewpass
             // 
             this.tbNewpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNewpass.Location = new System.Drawing.Point(64, 365);
+            this.tbNewpass.Location = new System.Drawing.Point(64, 427);
             this.tbNewpass.Margin = new System.Windows.Forms.Padding(2);
             this.tbNewpass.Name = "tbNewpass";
             this.tbNewpass.Size = new System.Drawing.Size(207, 27);
@@ -136,7 +138,7 @@ namespace Care_Management_and_Private_Parking
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(60, 343);
+            this.label4.Location = new System.Drawing.Point(60, 405);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 20);
@@ -146,7 +148,7 @@ namespace Care_Management_and_Private_Parking
             // tbConfirmPass
             // 
             this.tbConfirmPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbConfirmPass.Location = new System.Drawing.Point(64, 424);
+            this.tbConfirmPass.Location = new System.Drawing.Point(64, 486);
             this.tbConfirmPass.Margin = new System.Windows.Forms.Padding(2);
             this.tbConfirmPass.Name = "tbConfirmPass";
             this.tbConfirmPass.Size = new System.Drawing.Size(207, 27);
@@ -159,7 +161,7 @@ namespace Care_Management_and_Private_Parking
             this.pwdLabel.BackColor = System.Drawing.Color.Transparent;
             this.pwdLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pwdLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.pwdLabel.Location = new System.Drawing.Point(60, 402);
+            this.pwdLabel.Location = new System.Drawing.Point(60, 464);
             this.pwdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pwdLabel.Name = "pwdLabel";
             this.pwdLabel.Size = new System.Drawing.Size(130, 20);
@@ -171,7 +173,7 @@ namespace Care_Management_and_Private_Parking
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(35, 455);
+            this.btnConfirm.Location = new System.Drawing.Point(35, 517);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(269, 34);
@@ -206,12 +208,36 @@ namespace Care_Management_and_Private_Parking
             this.lbShow.Text = "Show";
             this.lbShow.Click += new System.EventHandler(this.lbShow_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(60, 284);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 20);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Position:";
+            // 
+            // cbPosition
+            // 
+            this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Location = new System.Drawing.Point(64, 307);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(207, 29);
+            this.cbPosition.TabIndex = 47;
+            // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(338, 346);
+            this.ClientSize = new System.Drawing.Size(338, 410);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.lbShow);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tbNewpass);
@@ -231,6 +257,7 @@ namespace Care_Management_and_Private_Parking
             this.Name = "ForgotPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ForgotPasswordForm";
+            this.Load += new System.EventHandler(this.ForgotPasswordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,5 +280,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbShow;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbPosition;
     }
 }
