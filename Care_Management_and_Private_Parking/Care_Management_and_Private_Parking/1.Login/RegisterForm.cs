@@ -29,7 +29,7 @@ namespace Care_Management_and_Private_Parking
         {
             if ((tbUsername.Text.Trim() == "") ||
                 (tbPassword.Text.Trim() == "") ||
-                (tbEmail.Text.Trim() == "") ||
+                (tbIdentityNumber.Text.Trim() == "") ||
                 (tbConfirmPassword.Text.Trim() == ""))
             {
                 return false;
@@ -43,7 +43,7 @@ namespace Care_Management_and_Private_Parking
             Account acc = new Account();
             string username = tbUsername.Text;
             string password = tbPassword.Text;
-            string email = tbEmail.Text;
+            string identitynumber = tbIdentityNumber.Text;
             try
             {
                 if(verif())
@@ -52,7 +52,7 @@ namespace Care_Management_and_Private_Parking
                     {
                         MessageBox.Show("Confirm Password must be familiar with Password!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if(acc.insertAccount(username,password, email))
+                    else if(acc.insertAccount(username,password, identitynumber))
                     {
                         DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;

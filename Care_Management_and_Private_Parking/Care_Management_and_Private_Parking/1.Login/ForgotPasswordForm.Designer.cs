@@ -31,17 +31,20 @@ namespace Care_Management_and_Private_Parking
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPasswordForm));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSendCode = new System.Windows.Forms.Button();
+            this.btnVerify = new System.Windows.Forms.Button();
             this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbGmail = new System.Windows.Forms.TextBox();
+            this.tbIdentityNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnConfirmCode = new System.Windows.Forms.Button();
-            this.tbVerifyCode = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbCancel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tbNewpass = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbConfirmPass = new System.Windows.Forms.TextBox();
+            this.pwdLabel = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbShow = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,18 +57,18 @@ namespace Care_Management_and_Private_Parking
             this.label1.TabIndex = 0;
             this.label1.Text = "Username:";
             // 
-            // btnSendCode
+            // btnVerify
             // 
-            this.btnSendCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSendCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendCode.ForeColor = System.Drawing.Color.White;
-            this.btnSendCode.Location = new System.Drawing.Point(35, 282);
-            this.btnSendCode.Name = "btnSendCode";
-            this.btnSendCode.Size = new System.Drawing.Size(269, 35);
-            this.btnSendCode.TabIndex = 1;
-            this.btnSendCode.Text = "Send Verify Code To Gmail";
-            this.btnSendCode.UseVisualStyleBackColor = false;
-            this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
+            this.btnVerify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVerify.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerify.ForeColor = System.Drawing.Color.White;
+            this.btnVerify.Location = new System.Drawing.Point(35, 282);
+            this.btnVerify.Name = "btnVerify";
+            this.btnVerify.Size = new System.Drawing.Size(269, 35);
+            this.btnVerify.TabIndex = 1;
+            this.btnVerify.Text = "Verify Account";
+            this.btnVerify.UseVisualStyleBackColor = false;
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
             // tbUsername
             // 
@@ -74,12 +77,13 @@ namespace Care_Management_and_Private_Parking
             this.tbUsername.Size = new System.Drawing.Size(207, 29);
             this.tbUsername.TabIndex = 2;
             // 
-            // tbGmail
+            // tbIdentityNumber
             // 
-            this.tbGmail.Location = new System.Drawing.Point(64, 247);
-            this.tbGmail.Name = "tbGmail";
-            this.tbGmail.Size = new System.Drawing.Size(207, 29);
-            this.tbGmail.TabIndex = 28;
+            this.tbIdentityNumber.Location = new System.Drawing.Point(64, 247);
+            this.tbIdentityNumber.Name = "tbIdentityNumber";
+            this.tbIdentityNumber.Size = new System.Drawing.Size(207, 29);
+            this.tbIdentityNumber.TabIndex = 28;
+            this.tbIdentityNumber.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -87,9 +91,9 @@ namespace Care_Management_and_Private_Parking
             this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(60, 223);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.Size = new System.Drawing.Size(124, 21);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Gmail";
+            this.label2.Text = "Identity Number";
             // 
             // label3
             // 
@@ -102,57 +106,13 @@ namespace Care_Management_and_Private_Parking
             this.label3.TabIndex = 29;
             this.label3.Text = "Get Back Your Account";
             // 
-            // btnConfirmCode
-            // 
-            this.btnConfirmCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnConfirmCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmCode.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmCode.Location = new System.Drawing.Point(35, 383);
-            this.btnConfirmCode.Name = "btnConfirmCode";
-            this.btnConfirmCode.Size = new System.Drawing.Size(269, 35);
-            this.btnConfirmCode.TabIndex = 38;
-            this.btnConfirmCode.Text = "Confirm Code";
-            this.btnConfirmCode.UseVisualStyleBackColor = false;
-            this.btnConfirmCode.Click += new System.EventHandler(this.btnConfirmCode_Click);
-            // 
-            // tbVerifyCode
-            // 
-            this.tbVerifyCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVerifyCode.Location = new System.Drawing.Point(64, 348);
-            this.tbVerifyCode.Name = "tbVerifyCode";
-            this.tbVerifyCode.Size = new System.Drawing.Size(207, 26);
-            this.tbVerifyCode.TabIndex = 37;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(60, 324);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 21);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Verify Code:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(125, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // lbCancel
             // 
             this.lbCancel.AutoSize = true;
             this.lbCancel.BackColor = System.Drawing.Color.Transparent;
             this.lbCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCancel.ForeColor = System.Drawing.Color.DimGray;
-            this.lbCancel.Location = new System.Drawing.Point(137, 421);
+            this.lbCancel.Location = new System.Drawing.Point(134, 320);
             this.lbCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCancel.Name = "lbCancel";
             this.lbCancel.Size = new System.Drawing.Size(56, 21);
@@ -160,29 +120,118 @@ namespace Care_Management_and_Private_Parking
             this.lbCancel.Text = "Cancel";
             this.lbCancel.Click += new System.EventHandler(this.lbCancel_Click);
             // 
+            // tbNewpass
+            // 
+            this.tbNewpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNewpass.Location = new System.Drawing.Point(64, 365);
+            this.tbNewpass.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNewpass.Name = "tbNewpass";
+            this.tbNewpass.Size = new System.Drawing.Size(207, 27);
+            this.tbNewpass.TabIndex = 44;
+            this.tbNewpass.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(60, 343);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 20);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "New Password:";
+            // 
+            // tbConfirmPass
+            // 
+            this.tbConfirmPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConfirmPass.Location = new System.Drawing.Point(64, 424);
+            this.tbConfirmPass.Margin = new System.Windows.Forms.Padding(2);
+            this.tbConfirmPass.Name = "tbConfirmPass";
+            this.tbConfirmPass.Size = new System.Drawing.Size(207, 27);
+            this.tbConfirmPass.TabIndex = 41;
+            this.tbConfirmPass.UseSystemPasswordChar = true;
+            // 
+            // pwdLabel
+            // 
+            this.pwdLabel.AutoSize = true;
+            this.pwdLabel.BackColor = System.Drawing.Color.Transparent;
+            this.pwdLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwdLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.pwdLabel.Location = new System.Drawing.Point(60, 402);
+            this.pwdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pwdLabel.Name = "pwdLabel";
+            this.pwdLabel.Size = new System.Drawing.Size(130, 20);
+            this.pwdLabel.TabIndex = 40;
+            this.pwdLabel.Text = "Confirm Password:";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Location = new System.Drawing.Point(35, 455);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(269, 34);
+            this.btnConfirm.TabIndex = 42;
+            this.btnConfirm.Text = "CONFIRM";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(122, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(94, 91);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 45;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lbShow
+            // 
+            this.lbShow.AutoSize = true;
+            this.lbShow.BackColor = System.Drawing.Color.Transparent;
+            this.lbShow.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShow.ForeColor = System.Drawing.Color.DimGray;
+            this.lbShow.Location = new System.Drawing.Point(226, 224);
+            this.lbShow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbShow.Name = "lbShow";
+            this.lbShow.Size = new System.Drawing.Size(45, 20);
+            this.lbShow.TabIndex = 46;
+            this.lbShow.Text = "Show";
+            this.lbShow.Click += new System.EventHandler(this.lbShow_Click);
+            // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(338, 451);
-            this.Controls.Add(this.lbCancel);
-            this.Controls.Add(this.btnConfirmCode);
-            this.Controls.Add(this.tbVerifyCode);
+            this.ClientSize = new System.Drawing.Size(338, 346);
+            this.Controls.Add(this.lbShow);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.tbNewpass);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbConfirmPass);
+            this.Controls.Add(this.pwdLabel);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.lbCancel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbGmail);
+            this.Controls.Add(this.tbIdentityNumber);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbUsername);
-            this.Controls.Add(this.btnSendCode);
+            this.Controls.Add(this.btnVerify);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ForgotPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ForgotPasswordForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,15 +240,18 @@ namespace Care_Management_and_Private_Parking
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSendCode;
+        private System.Windows.Forms.Button btnVerify;
         private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox tbGmail;
+        private System.Windows.Forms.TextBox tbIdentityNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnConfirmCode;
-        private System.Windows.Forms.TextBox tbVerifyCode;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbCancel;
+        private System.Windows.Forms.TextBox tbNewpass;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbConfirmPass;
+        private System.Windows.Forms.Label pwdLabel;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbShow;
     }
 }

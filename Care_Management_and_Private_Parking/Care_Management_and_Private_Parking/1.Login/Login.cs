@@ -73,7 +73,7 @@ namespace Care_Management_and_Private_Parking
             }
             else
             {
-                tbPwd.UseSystemPasswordChar = false;
+                tbPwd.UseSystemPasswordChar = true;
             }
         }
     }
