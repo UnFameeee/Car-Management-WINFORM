@@ -32,4 +32,3 @@ C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_
 C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.csproj.CoreCompileInputs.cache
 C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.exe
 C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.pdb
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.ResetPassword.resources

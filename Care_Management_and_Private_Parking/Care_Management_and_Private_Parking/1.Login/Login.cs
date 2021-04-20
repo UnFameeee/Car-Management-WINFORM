@@ -18,28 +18,29 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
         MY_DB db = new MY_DB();
-
-        private void lbForgotPassword_Click(object sender, EventArgs e)
+        Account acc = new Account();
+        //Load form
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-                                                                    //tương tự giải thích bên dưới
-            this.Hide();
-            ForgotPasswordForm frm = new ForgotPasswordForm();
-            frm.ShowDialog();
-            this.Show();
+            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DisplayMember = "Description";
+            cbPosition.ValueMember = "PositionID";
         }
+
+        //Đăng nhập vào form chính
         private void btnlogin_Click(object sender, EventArgs e)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass", db.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass AND PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = tbUser.Text;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = tbPwd.Text;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = cbPosition.SelectedValue.ToString();
             adapter.SelectCommand = cmd;
             adapter.Fill(table);
             if((table.Rows.Count > 0))
             {
                 MessageBox.Show("Login successfully");
-
             }
             else
             {
@@ -47,6 +48,7 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
+        //Mở form đăng kí tài khoản
         private void lbRegister_Click(object sender, EventArgs e)
         {                                                           //cái này từ stackoverflow
             this.Hide();                                            //Tạm ẩn đi form login (chứ không tắt hẳn nó)
@@ -55,6 +57,17 @@ namespace Care_Management_and_Private_Parking
             this.Show();                                            //Hiện lại form login sau khi đã nhận phản hồi từ showdialog của register
         }
 
+        //Mở form khôi phục tài khoản
+        private void lbForgotPassword_Click(object sender, EventArgs e)
+        {
+            //tương tự giải thích bên dưới
+            this.Hide();
+            ForgotPasswordForm frm = new ForgotPasswordForm();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        //Thoát
         private void btnExit_Click(object sender, EventArgs e)
         {
                                                                     //Dùng để confirm là người sử dụng có muốn thoát ra hay không
@@ -63,6 +76,7 @@ namespace Care_Management_and_Private_Parking
                 Close();
         }
 
+        //Nút show mật khẩu
         int click = 1;
         private void lbShow_Click(object sender, EventArgs e)
         {
@@ -73,7 +87,7 @@ namespace Care_Management_and_Private_Parking
             }
             else
             {
-                tbPwd.UseSystemPasswordChar = false;
+                tbPwd.UseSystemPasswordChar = true;
             }
         }
     }

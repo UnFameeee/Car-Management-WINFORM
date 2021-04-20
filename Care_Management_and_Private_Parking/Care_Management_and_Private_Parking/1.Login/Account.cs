@@ -11,12 +11,15 @@ namespace Care_Management_and_Private_Parking
     class Account
     {
         MY_DB db = new MY_DB();
-        public bool insertAccount(string username, string password, string email)
+
+        //Thêm tài khoản
+        public bool insertAccount(string username, string password, string IDnum, string position)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, Gmail) VALUES (@User, @Pass, @Gmail)", db.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, IdentityNumber, PositionID) VALUES (@User, @Pass, @IDnum, @PId)", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
-            cmd.Parameters.Add("@Gmail", SqlDbType.VarChar).Value = email;
+            cmd.Parameters.Add("@IDnum", SqlDbType.VarChar).Value = IDnum;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             db.openConnection();
             if(cmd.ExecuteNonQuery() == 1)
             {
@@ -29,11 +32,44 @@ namespace Care_Management_and_Private_Parking
                 return false;
             }
         }
-        public bool checkAccount(string username, string email)
+
+        //Thay đổi password
+        public int replacePassword(string username, string password)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Gmail = @Gmail", db.getConnection);
+            SqlCommand cmd1 = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass", db.getConnection);
+            cmd1.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+            cmd1.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            adapter.SelectCommand = cmd1;
+            adapter.Fill(table);
+            if (table.Rows.Count == 1)
+            {
+                return 1;                       //MK này là MK cũ, vui lòng nhập MK mới khác MK cũ
+            }
+            SqlCommand cmd2 = new SqlCommand("UPDATE ACCOUNT SET Password = @Pass WHERE Username = @User", db.getConnection);
+            cmd2.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+            cmd2.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            db.openConnection();
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                db.closeConnection();
+                return 2;                       //Không Thành công
+            }
+            else
+            {
+                db.closeConnection();
+                return 3;                       //Thành công
+            }
+        }
+
+        //Ktra tài khoản đó xem có tồn tại hay là không
+        public bool checkAccount(string username, string IDnum, string position)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND IdentityNumber = @IDnum AND PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
-            cmd.Parameters.Add("@Gmail", SqlDbType.VarChar).Value = email;
+            cmd.Parameters.Add("@IDnum", SqlDbType.VarChar).Value = IDnum;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
             adapter.SelectCommand = cmd;
@@ -46,6 +82,17 @@ namespace Care_Management_and_Private_Parking
             {
                 return false;
             }
+        }
+
+        //Lấy role từ bảng position
+        public DataTable takeRole()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM POSITION", db.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(table);
+            return table;
         }
     }
 }

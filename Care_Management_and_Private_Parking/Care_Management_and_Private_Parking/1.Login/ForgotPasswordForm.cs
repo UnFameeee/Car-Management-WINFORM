@@ -15,61 +15,71 @@ namespace Care_Management_and_Private_Parking
 {
     public partial class ForgotPasswordForm : Form
     {
-        public string randomCode;
-        Account acc = new Account();
         public ForgotPasswordForm()
         {
             InitializeComponent();
         }
-        private void btnSendCode_Click(object sender, EventArgs e)
+        Account acc = new Account();
+        private void ForgotPasswordForm_Load(object sender, EventArgs e)
         {
-            if(acc.checkAccount(tbUsername.Text.ToString(), tbGmail.Text.ToString()))
+            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DisplayMember = "Description";
+            cbPosition.ValueMember = "PositionID";
+        }
+
+        private void btnVerify_Click(object sender, EventArgs e)
+        {
+            if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
             {
-                Random rand = new Random();                                 //Tạo 1 số random gồm 6 số (như các
-                randomCode = (rand.Next(999999)).ToString();
-
-                MailMessage message = new MailMessage();                    //Cấu hình mail
-                message.To.Add(tbGmail.Text);                               //lấy gmail từ cái tbGmail
-                message.From = new MailAddress("ProjectWF@gmail.com");
-                message.Subject = "Password reseting code";                 //Tựa đề
-                message.Body = "Your reset code is " + randomCode;
-
-                SmtpClient smtp = new SmtpClient();         //cấu hình gmail cho smtp
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential(tbGmail.Text, "password");
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                try
-                {
-                    smtp.Send(message);
-                    MessageBox.Show("Code send successfully");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                this.Size = new Size(336, 577);
+                lbCancel.Location = new Point(143, 550);
+                this.StartPosition = FormStartPosition.CenterScreen;
             }
             else
             {
-                MessageBox.Show("Username or Gmail doesn't exist!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong Username or IdentityNumber or Position!!!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnConfirmCode_Click(object sender, EventArgs e)
-        {
-            if(randomCode == (tbVerifyCode.Text).ToString())
-            {
-                ResetPassword frm = new ResetPassword();
-                frm.Show();
-                this.Close();
-            }
-        }
-
         private void lbCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if(tbNewpass.Text != tbConfirmPass.Text)
+            {
+                MessageBox.Show("Confirm Password must be familiar with Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 1)
+            {
+                MessageBox.Show("New Password must be different from Old Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 2)
+            {
+                MessageBox.Show("Reset Password Not Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Reset Password Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+        }
+
+        int click = 1;
+        private void lbShow_Click(object sender, EventArgs e)
+        {
+            click++;
+            if (click % 2 == 0)
+            {
+                tbIdentityNumber.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tbIdentityNumber.UseSystemPasswordChar = true;
+            }
+        }
+
+        
     }
 }
