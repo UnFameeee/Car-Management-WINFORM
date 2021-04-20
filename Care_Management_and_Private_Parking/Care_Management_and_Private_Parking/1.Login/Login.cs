@@ -41,6 +41,9 @@ namespace Care_Management_and_Private_Parking
             if((table.Rows.Count > 0))
             {
                 MessageBox.Show("Login successfully");
+                MainForm frm = new MainForm();
+                frm.Show();
+                this.Close();
             }
             else
             {

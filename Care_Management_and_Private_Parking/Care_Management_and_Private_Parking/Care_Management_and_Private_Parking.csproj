@@ -60,10 +60,10 @@
     </Compile>
     <Compile Include="1.Login\Account.cs" />
     <Compile Include="DB\MY_DB.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="2.Mainform\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="2.Mainform\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -85,7 +85,7 @@
     <EmbeddedResource Include="1.Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="2.Mainform\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,8 +115,6 @@
   <ItemGroup>
     <None Include="Resources\4.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="2.Mainform\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
