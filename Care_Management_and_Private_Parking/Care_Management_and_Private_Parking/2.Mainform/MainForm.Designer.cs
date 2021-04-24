@@ -75,7 +75,7 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnMain
             // 
-            this.btnMain.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnMain.BackColor = System.Drawing.Color.Gray;
             this.btnMain.FlatAppearance.BorderSize = 0;
             this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,6 +180,7 @@ namespace Care_Management_and_Private_Parking
             this.btn_.Size = new System.Drawing.Size(40, 43);
             this.btn_.TabIndex = 1;
             this.btn_.Text = "_";
+            this.btn_.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_.UseVisualStyleBackColor = false;
             this.btn_.Click += new System.EventHandler(this.btn__Click);
             // 
