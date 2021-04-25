@@ -59,6 +59,12 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="1.Login\Account.cs" />
+    <Compile Include="4.Calendar DOW\CalendarDOWForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4.Calendar DOW\CalendarDOWForm.Designer.cs">
+      <DependentUpon>CalendarDOWForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\MY_DB.cs" />
     <Compile Include="2.Mainform\MainForm.cs">
       <SubType>Form</SubType>
@@ -66,11 +72,11 @@
     <Compile Include="2.Mainform\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs" />
-    <Compile Include="ManangeForm.cs">
+    <Compile Include="3.Employee\Employee.cs" />
+    <Compile Include="3.Employee\ManangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManangeForm.Designer.cs">
+    <Compile Include="3.Employee\ManangeForm.Designer.cs">
       <DependentUpon>ManangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -86,6 +92,7 @@
     <Compile Include="1.Login\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Variable.cs" />
     <EmbeddedResource Include="1.Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,8 +102,11 @@
     <EmbeddedResource Include="2.Mainform\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManangeForm.resx">
+    <EmbeddedResource Include="3.Employee\ManangeForm.resx">
       <DependentUpon>ManangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4.Calendar DOW\CalendarDOWForm.resx">
+      <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
