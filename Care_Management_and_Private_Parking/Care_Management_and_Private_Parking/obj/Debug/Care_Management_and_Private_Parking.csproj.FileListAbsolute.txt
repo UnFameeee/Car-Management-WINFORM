@@ -60,3 +60,7 @@ C:\Users\LENOVO\Desktop\Project-Final-Winform\Care_Management_and_Private_Parkin
 C:\Users\LENOVO\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.exe
 C:\Users\LENOVO\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.pdb
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.MainForm.resources
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.ManangeForm.resources
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.CalendarDOWForm.resources
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Care_Management_and_Private_Parking\obj\Debug\Care_Management_and_Private_Parking.UserControl1.resources

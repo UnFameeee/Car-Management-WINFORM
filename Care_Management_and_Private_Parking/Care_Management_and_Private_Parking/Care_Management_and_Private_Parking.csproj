@@ -92,7 +92,13 @@
     <Compile Include="1.Login\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Variable.cs" />
+    <Compile Include="4.Calendar DOW\Variable.cs" />
+    <Compile Include="AJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AJob.Designer.cs">
+      <DependentUpon>AJob.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="1.Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1.Login\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AJob.resx">
+      <DependentUpon>AJob.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
