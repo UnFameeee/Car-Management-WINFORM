@@ -66,6 +66,7 @@
     <Compile Include="2.Mainform\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="ManangeForm.cs">
       <SubType>Form</SubType>
     </Compile>

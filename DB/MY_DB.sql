@@ -41,6 +41,7 @@ create table WORKSHIFT(
 create table EMPLOYEE(
 	EmpID varchar(100) primary key,					-- mã nhân viên
 	FullName varchar(100),
+	Gender varchar(100),
 	PhoneNubmer varchar(100),
 	IdentityCardNumber varchar(100),
 	JobID int references JOB(JobID),
