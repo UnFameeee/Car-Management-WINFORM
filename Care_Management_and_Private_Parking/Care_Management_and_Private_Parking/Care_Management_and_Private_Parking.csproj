@@ -65,6 +65,13 @@
     <Compile Include="4.Calendar DOW\CalendarDOWForm.Designer.cs">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="4.Calendar DOW\Variable.cs" />
+    <Compile Include="4.Calendar DOW\AJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="4.Calendar DOW\AJob.Designer.cs">
+      <DependentUpon>AJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\MY_DB.cs" />
     <Compile Include="2.Mainform\MainForm.cs">
       <SubType>Form</SubType>
@@ -92,7 +99,6 @@
     <Compile Include="1.Login\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Variable.cs" />
     <EmbeddedResource Include="1.Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="4.Calendar DOW\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4.Calendar DOW\AJob.resx">
+      <DependentUpon>AJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
