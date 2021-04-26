@@ -31,6 +31,8 @@ namespace Care_Management_and_Private_Parking
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpEmployees = new System.Windows.Forms.TabPage();
+            this.tbJobID = new System.Windows.Forms.TextBox();
+            this.tbShiftID = new System.Windows.Forms.TextBox();
             this.rdbtnFemale = new System.Windows.Forms.RadioButton();
             this.rdbtnMale = new System.Windows.Forms.RadioButton();
             this.lbGender = new System.Windows.Forms.Label();
@@ -48,13 +50,11 @@ namespace Care_Management_and_Private_Parking
             this.lbPhone = new System.Windows.Forms.Label();
             this.lbFullName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.tpVehicles = new System.Windows.Forms.TabPage();
-            this.tbShiftID = new System.Windows.Forms.TextBox();
-            this.tbJobID = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tpEmployees.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -91,7 +91,7 @@ namespace Care_Management_and_Private_Parking
             this.tpEmployees.Controls.Add(this.lbPhone);
             this.tpEmployees.Controls.Add(this.lbFullName);
             this.tpEmployees.Controls.Add(this.lbID);
-            this.tpEmployees.Controls.Add(this.dataGridView1);
+            this.tpEmployees.Controls.Add(this.dgvEmp);
             this.tpEmployees.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpEmployees.Location = new System.Drawing.Point(4, 27);
             this.tpEmployees.Name = "tpEmployees";
@@ -100,7 +100,20 @@ namespace Care_Management_and_Private_Parking
             this.tpEmployees.TabIndex = 0;
             this.tpEmployees.Text = "Employees";
             this.tpEmployees.UseVisualStyleBackColor = true;
-            this.tpEmployees.Enter += new System.EventHandler(this.tpEmployees_Enter);
+            // 
+            // tbJobID
+            // 
+            this.tbJobID.Location = new System.Drawing.Point(582, 76);
+            this.tbJobID.Name = "tbJobID";
+            this.tbJobID.Size = new System.Drawing.Size(168, 26);
+            this.tbJobID.TabIndex = 21;
+            // 
+            // tbShiftID
+            // 
+            this.tbShiftID.Location = new System.Drawing.Point(582, 122);
+            this.tbShiftID.Name = "tbShiftID";
+            this.tbShiftID.Size = new System.Drawing.Size(168, 26);
+            this.tbShiftID.TabIndex = 20;
             // 
             // rdbtnFemale
             // 
@@ -141,6 +154,7 @@ namespace Care_Management_and_Private_Parking
             this.btnRefresh.TabIndex = 16;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnRemove
             // 
@@ -186,7 +200,7 @@ namespace Care_Management_and_Private_Parking
             // 
             // tbFullName
             // 
-            this.tbFullName.Location = new System.Drawing.Point(152, 56);
+            this.tbFullName.Location = new System.Drawing.Point(152, 59);
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(162, 26);
             this.tbFullName.TabIndex = 8;
@@ -237,7 +251,7 @@ namespace Care_Management_and_Private_Parking
             // lbFullName
             // 
             this.lbFullName.AutoSize = true;
-            this.lbFullName.Location = new System.Drawing.Point(33, 59);
+            this.lbFullName.Location = new System.Drawing.Point(33, 62);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(86, 18);
             this.lbFullName.TabIndex = 2;
@@ -252,13 +266,13 @@ namespace Care_Management_and_Private_Parking
             this.lbID.TabIndex = 1;
             this.lbID.Text = "EmployeeID:";
             // 
-            // dataGridView1
+            // dgvEmp
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(52, 192);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(685, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmp.Location = new System.Drawing.Point(52, 192);
+            this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.Size = new System.Drawing.Size(685, 150);
+            this.dgvEmp.TabIndex = 0;
             // 
             // tpVehicles
             // 
@@ -269,20 +283,6 @@ namespace Care_Management_and_Private_Parking
             this.tpVehicles.TabIndex = 1;
             this.tpVehicles.Text = "Vehicles";
             this.tpVehicles.UseVisualStyleBackColor = true;
-            // 
-            // tbShiftID
-            // 
-            this.tbShiftID.Location = new System.Drawing.Point(582, 122);
-            this.tbShiftID.Name = "tbShiftID";
-            this.tbShiftID.Size = new System.Drawing.Size(168, 26);
-            this.tbShiftID.TabIndex = 20;
-            // 
-            // tbJobID
-            // 
-            this.tbJobID.Location = new System.Drawing.Point(582, 76);
-            this.tbJobID.Name = "tbJobID";
-            this.tbJobID.Size = new System.Drawing.Size(168, 26);
-            this.tbJobID.TabIndex = 21;
             // 
             // ManangeForm
             // 
@@ -295,7 +295,7 @@ namespace Care_Management_and_Private_Parking
             this.tabControl1.ResumeLayout(false);
             this.tpEmployees.ResumeLayout(false);
             this.tpEmployees.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,7 +307,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.TabPage tpVehicles;
         private System.Windows.Forms.Label lbFullName;
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmp;
         private System.Windows.Forms.Label lbShiftID;
         private System.Windows.Forms.Label lbJobID;
         private System.Windows.Forms.Label lbIdentityCardNumber;
