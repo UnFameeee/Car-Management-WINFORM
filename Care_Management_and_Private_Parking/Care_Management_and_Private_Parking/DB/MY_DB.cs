@@ -36,6 +36,5 @@ namespace Care_Management_and_Private_Parking
                 con.Close();
             }
         }
-        //test
     }
 }
