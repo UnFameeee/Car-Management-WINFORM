@@ -147,5 +147,9 @@ namespace Care_Management_and_Private_Parking
         {
             dateTime.Value = dateTime.Value.AddMonths(1);
         }
+        //---------------------------------------------------------------------------------//
+        //Chia ca làm việc cho nhân viên
+        //Trước hết cần phải lấy mã của nhân viên đó
+
     }
 }

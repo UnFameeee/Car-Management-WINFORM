@@ -37,7 +37,7 @@ namespace Care_Management_and_Private_Parking
             }
             else
             {
-                MessageBox.Show("Wrong Username or IdentityNumber or Position!!!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong Username or EmployeeID or Position!!!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void lbCancel_Click(object sender, EventArgs e)

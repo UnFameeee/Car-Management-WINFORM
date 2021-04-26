@@ -13,12 +13,12 @@ namespace Care_Management_and_Private_Parking
         MY_DB db = new MY_DB();
 
         //Thêm tài khoản
-        public bool insertAccount(string username, string password, string IDnum, string position)
+        public bool insertAccount(string username, string password, string EmpID, string position)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, IdentityNumber, PositionID) VALUES (@User, @Pass, @IDnum, @PId)", db.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, EmpID, PositionID) VALUES (@User, @Pass, @EmpID, @PId)", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
-            cmd.Parameters.Add("@IDnum", SqlDbType.VarChar).Value = IDnum;
+            cmd.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             db.openConnection();
             if(cmd.ExecuteNonQuery() == 1)
@@ -64,11 +64,11 @@ namespace Care_Management_and_Private_Parking
         }
 
         //Ktra tài khoản đó xem có tồn tại hay là không
-        public bool checkAccount(string username, string IDnum, string position)
+        public bool checkAccount(string username, string EmpID, string position)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND IdentityNumber = @IDnum AND PositionID = @PId", db.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND EmpID = @EmpID AND PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
-            cmd.Parameters.Add("@IDnum", SqlDbType.VarChar).Value = IDnum;
+            cmd.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
