@@ -17,13 +17,13 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        void Swap(ref int a, ref int b)
+        void Swap(int a, int b)
         {
             int r = a;
             a = b;
             b = r;
         }
-        public List<List<int>> SetTheBaseDOW(ref int C, ref int R)
+        public List<List<int>> SetTheBaseDOW(ref int C, ref int R, ref int DayOfRotation)
         {
             Array.Add(new List<int>());
             //Khởi tạo mảng 0
@@ -48,11 +48,25 @@ namespace Care_Management_and_Private_Parking
                 count++;
             }
             
-            for(int RT = 1; RT < )
-
-
+            for(int RT = 1; RT <= DayOfRotation; ++RT)
+            {
+                for(int i = 0; i < R; ++i)
+                {
+                    for(int j = 0; j < C; ++j)
+                    {
+                        if (Arr[i][j] == 1 && j < C - 1)                        //Nếu tại ô đó = 1
+                        {
+                            Swap(Arr[i][j], Arr[i][j + 1]);
+                            j++;
+                        }
+                        else if (Arr[i][j] == 1 && j == C - 1)
+                        {
+                            Swap(Arr[i][j], Arr[i][0]);
+                        }
+                    }
+                }
+            }
             return Array;
         }
-
     }
 }

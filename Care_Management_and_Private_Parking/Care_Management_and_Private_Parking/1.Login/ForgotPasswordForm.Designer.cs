@@ -93,9 +93,9 @@ namespace Care_Management_and_Private_Parking
             this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(60, 223);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 21);
+            this.label2.Size = new System.Drawing.Size(97, 21);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Identity Number";
+            this.label2.Text = "Employee ID";
             // 
             // label3
             // 
