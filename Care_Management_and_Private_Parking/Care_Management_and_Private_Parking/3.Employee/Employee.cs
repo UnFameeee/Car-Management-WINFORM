@@ -77,7 +77,7 @@ namespace Care_Management_and_Private_Parking
 
         public bool checkEmp(string EmpID)
         {
-            SqlCommand com = new SqlCommand("select * from EMPLOYEE where EmpID = @EmpID", db.getConnection);
+            SqlCommand com = new SqlCommand("Select * from EMPLOYEE where EmpID = @EmpID", db.getConnection);
             com.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
 
             SqlDataAdapter adapter = new SqlDataAdapter(com);
