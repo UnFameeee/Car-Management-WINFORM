@@ -80,11 +80,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="3.Employee\Employee.cs" />
-    <Compile Include="3.Employee\ManangeForm.cs">
+    <Compile Include="3.Employee\ManangeEmpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3.Employee\ManangeForm.Designer.cs">
-      <DependentUpon>ManangeForm.cs</DependentUpon>
+    <Compile Include="3.Employee\ManangeEmpForm.Designer.cs">
+      <DependentUpon>ManangeEmpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="4.Calendar DOW\DivideShift.cs" />
     <Compile Include="Program.cs" />
@@ -109,8 +109,8 @@
     <EmbeddedResource Include="2.Mainform\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3.Employee\ManangeForm.resx">
-      <DependentUpon>ManangeForm.cs</DependentUpon>
+    <EmbeddedResource Include="3.Employee\ManangeEmpForm.resx">
+      <DependentUpon>ManangeEmpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="4.Calendar DOW\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
