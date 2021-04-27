@@ -50,6 +50,7 @@ namespace Care_Management_and_Private_Parking
             this.lbID = new System.Windows.Forms.Label();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.tpWorkSchedule = new System.Windows.Forms.TabPage();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
@@ -70,6 +71,7 @@ namespace Care_Management_and_Private_Parking
             // 
             // tpEmployees
             // 
+            this.tpEmployees.Controls.Add(this.btnSearch);
             this.tpEmployees.Controls.Add(this.tbJobID);
             this.tpEmployees.Controls.Add(this.rdbtnFemale);
             this.tpEmployees.Controls.Add(this.rdbtnMale);
@@ -278,6 +280,18 @@ namespace Care_Management_and_Private_Parking
             this.tpWorkSchedule.Text = "Work Schedule";
             this.tpWorkSchedule.UseVisualStyleBackColor = true;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::Care_Management_and_Private_Parking.Properties.Resources._101247231_257637822112281_4673169067975114752_n;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(320, 24);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(32, 32);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // ManangeEmpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +331,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.RadioButton rdbtnMale;
         private System.Windows.Forms.Label lbGender;
         private System.Windows.Forms.TextBox tbJobID;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

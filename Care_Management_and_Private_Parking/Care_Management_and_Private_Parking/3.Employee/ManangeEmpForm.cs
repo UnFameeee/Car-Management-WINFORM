@@ -62,7 +62,7 @@ namespace Care_Management_and_Private_Parking
                     if (emp.insertEmployee(EmpID, FName, Gender, Phone, Identity, JobID))
                     {
                         MessageBox.Show("New Employee Inserted", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        reloadDatagridview();
+                        btnClear.PerformClick(); 
                     }
                     else
                     {
@@ -98,7 +98,7 @@ namespace Care_Management_and_Private_Parking
                 if(emp.updateEmployee(EmpID, FName, Gender, Phone, Identity, JobID))
                 {
                     MessageBox.Show(EmpID + " Has Been Updated", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reloadDatagridview();
+                    btnClear.PerformClick();
                 }
                 else
                 {
@@ -162,7 +162,39 @@ namespace Care_Management_and_Private_Parking
             tbPhone.Text = dgvEmp.CurrentRow.Cells[3].Value.ToString();
             tbIdentity.Text = dgvEmp.CurrentRow.Cells[4].Value.ToString();
             tbJobID.Text = dgvEmp.CurrentRow.Cells[5].Value.ToString();
+
+            if (dgvEmp.CurrentRow.Cells[2].Value.ToString() == "Female")
+                rdbtnFemale.Checked = true;
+            else rdbtnMale.Checked = true;
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string EmpID = tbEmpID.Text;
+
+            if (EmpID == "")
+                MessageBox.Show("Please Add EmployeeID", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+            {
+                SqlCommand com = new SqlCommand("Select * from EMPLOYEE where convert(varbinary,EmpID) = " + "convert(varbinary,'" + EmpID + "')");
+                DataTable tab = emp.getEmployee(com);
+
+                if (tab.Rows.Count > 0)
+                {
+                    tbFullName.Text = tab.Rows[0]["FullName"].ToString();
+                    tbPhone.Text = tab.Rows[0]["PhoneNumber"].ToString();
+                    tbIdentity.Text = tab.Rows[0]["IdentityCardNumber"].ToString();
+                    tbJobID.Text = tab.Rows[0]["JobID"].ToString();
+
+                    if (tab.Rows[0]["Gender"].ToString() == "Female")
+                        rdbtnFemale.Checked = true;
+                    else rdbtnMale.Checked = true;
+                }
+                else
+                {
+                    MessageBox.Show("Can't Find EmpID: " + EmpID, "Find Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
     }
 }
