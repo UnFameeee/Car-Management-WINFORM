@@ -1,6 +1,31 @@
 ﻿create database WINFORM
 use WINFORM
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+create table POSITION(
+	PositionID varchar(100) primary key,							-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
+	Description text
+)
+
+INSERT INTO POSITION VALUES ('1', 'QuanLy') 
+INSERT INTO POSITION VALUES ('2', 'NhanVien') 
+INSERT INTO POSITION VALUES ('3', 'KhachHang') 
+
+-- Tài khoản, mật khẩu người dùng || Quy định mỗi nhân viên chỉ được có 1 tài khoản
+create table ACCOUNT(
+	AccountID int Primary key,										--Khoá chính
+	Username varchar(100),											 
+	Password varchar(100),
+	PositionID varchar(100) references POSITION(PositionID)					
+)
+----thêm khoá ngoại
+--Alter Table EMPLOYEE add constraint accIDwithEM FOREIGN KEY (AccountID) references ACCOUNT(AccountID)
+
+-- Tài khoản admin
+insert into ACCOUNT values (1, 'admin', 'admin', '1')	--TK quản lý
+
+---------------------------------------------------------------------------------------------------------------------------------------------
 -- Công Việc
 create table JOB(
 	JobID varchar(100) primary key,											-- 1 = sửa, 2 = rửa, 3 = trông coi xe
@@ -28,39 +53,16 @@ create table EMPLOYEE(
 	PhoneNumber varchar(100),
 	IdentityCardNumber varchar(100),
 	JobID varchar(100) references JOB(JobID),
-	--ShiftID int references WORKSHIFT(ShiftID)						--Cái này tao nghĩ không cần
+	AccountID int references ACCOUNT(AccountID)		
 )
-INSERT INTO EMPLOYEE VALUES('QL01', 'Nguyễn Văn A', 'Nam', '123456789', '079201006666', 'QL') 
+INSERT INTO EMPLOYEE VALUES('NV01', N'Nguyễn Văn A', 'Nam', '123456789', '079201006666', 'QL', 1) 
 
 -- Quản lý
 create table MANAGER(
 	ManagerID varchar(100) primary key,
 	ShiftID int references WORKSHIFT(ShiftID)						--quản lý ca nào, có bao nhiêu nhân viên trong ca đấy bị này quản lý
 )
----------------------------------------------------------------------------------------------------------------------------------------------
-
-create table POSITION(
-	PositionID varchar(100) primary key,							-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
-	Description text
-)
-
-INSERT INTO POSITION VALUES ('1', 'QuanLy') 
-INSERT INTO POSITION VALUES ('2', 'NhanVien') 
-INSERT INTO POSITION VALUES ('3', 'KhachHang') 
-
--- Tài khoản, mật khẩu người dùng || Quy định mỗi nhân viên chỉ được có 1 tài khoản
-create table ACCOUNT(
-	Username varchar(100),											--Khoá chính 
-	Password varchar(100),
-	EmpID varchar(100) references EMPLOYEE(EmpID),
-	PositionID varchar(100) references POSITION(PositionID)					
-)
-
--- Tài khoản admin
-insert into ACCOUNT values ('admin', 'admin', 'QL01', '1')	--TK quản lý
-
----------------------------------------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Khách Hàng
 create table CUSTOMER(
 	CusID varchar(100) primary key,
