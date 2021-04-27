@@ -25,7 +25,7 @@ create table EMPLOYEE(
 	EmpID varchar(100) primary key,									-- mã nhân viên
 	FullName varchar(100),
 	Gender varchar(100),
-	PhoneNubmer varchar(100),
+	PhoneNumber varchar(100),
 	IdentityCardNumber varchar(100),
 	JobID varchar(100) references JOB(JobID),
 	--ShiftID int references WORKSHIFT(ShiftID)						--Cái này tao nghĩ không cần
