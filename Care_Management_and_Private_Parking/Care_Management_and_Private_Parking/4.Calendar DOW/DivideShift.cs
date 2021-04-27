@@ -17,16 +17,15 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        
+        public static void Swap(ref List<List<int>> Array, int oi, int oj, int ni, int nj)
+        {
+            int r = Array[oi][oj];
+            Array[oi][oj] = Array[ni][nj];
+            Array[ni][nj] = r;
+        }
+
         public List<List<int>> SetTheBaseDOW(int C, int R, int DayOfRotation)
         {
-            void Swap(int a, int b)
-            {
-                int r = a;
-                a = b;
-                b = r;
-            }
-
             Array = new List<List<int>>();
             //Khởi tạo mảng 0
             for(int i = 0; i < R; ++i)
@@ -40,7 +39,8 @@ namespace Care_Management_and_Private_Parking
             }
             //Thêm ca làm cố định
             int count = 0, k = 0;
-            for(int i = 0; i <= R; ++i)
+            /*
+            for (int i = 0; i <= R; ++i)
             {
                 if (count < C && i >= R)
                     i = 0;
@@ -50,8 +50,19 @@ namespace Care_Management_and_Private_Parking
                 k++;
                 count++;
             }
-            
-            for(int RT = 1; RT <= DayOfRotation; ++RT)
+            */
+            for (int i = 0; i <= R; ++i)
+            {
+                if (count < C && i > R)
+                    i = 0;
+                else if (count >= C || k >= C)
+                    break;
+                Array[i][k] = 1;
+                k += 2;
+                count++;
+            }
+            //Xoay ca
+            for (int RT = 1; RT <= DayOfRotation; ++RT)
             {
                 for(int i = 0; i < R; ++i)
                 {
@@ -59,24 +70,17 @@ namespace Care_Management_and_Private_Parking
                     {
                         if (Arr[i][j] == 1 && j < C - 1)                        //Nếu tại ô đó = 1
                         {
-                            Swap(Arr[i][j], Arr[i][j + 1]);
+                            Swap(ref Arr, i, j, i, j+1);
                             j++;
                         }
                         else if (Arr[i][j] == 1 && j == C - 1)
                         {
-                            Swap(Arr[i][j], Arr[i][0]);
+                            Swap(ref Arr, i, j, i, 0);
                         }
                     }
                 }
             }
             return Array;
         }
-        //Hàm tách EmpID thành Số thứ tự từ Account
-        Account acc = new Account();
-        void getEmpID ()
-        {
-
-        }
-
     }
 }
