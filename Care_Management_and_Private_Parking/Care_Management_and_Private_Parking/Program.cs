@@ -16,9 +16,9 @@ namespace Care_Management_and_Private_Parking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
+            Application.Run(new LoginForm());
             //Application.Run(new MainForm());
-            Application.Run(new CalendarDOWForm());
+            //Application.Run(new CalendarDOWForm());
             //Application.Run(new ManangeForm());
         }
     }

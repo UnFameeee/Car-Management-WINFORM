@@ -8,7 +8,7 @@ namespace Care_Management_and_Private_Parking
 {
     class DivideShift
     {
-        #region
+        #region Properties
         private List<List<int>> Arr;
         public List<List<int>> Array
         {
@@ -17,21 +17,24 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        void Swap(int a, int b)
+        
+        public List<List<int>> SetTheBaseDOW(int C, int R, int DayOfRotation)
         {
-            int r = a;
-            a = b;
-            b = r;
-        }
-        public List<List<int>> SetTheBaseDOW(ref int C, ref int R, ref int DayOfRotation)
-        {
-            Array.Add(new List<int>());
+            void Swap(int a, int b)
+            {
+                int r = a;
+                a = b;
+                b = r;
+            }
+
+            Array = new List<List<int>>();
             //Khởi tạo mảng 0
             for(int i = 0; i < R; ++i)
             {
-                Array[i].Add(C);
+                Array.Add(new List<int>());
                 for(int j = 0; j < C; ++j)
                 {
+                    Array[i].Add(C);
                     Array[i][j] = 0;
                 }
             }
@@ -68,5 +71,12 @@ namespace Care_Management_and_Private_Parking
             }
             return Array;
         }
+        //Hàm tách EmpID thành Số thứ tự từ Account
+        Account acc = new Account();
+        void getEmpID ()
+        {
+
+        }
+
     }
 }

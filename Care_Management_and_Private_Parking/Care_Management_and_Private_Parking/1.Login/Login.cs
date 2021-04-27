@@ -17,6 +17,15 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        #region PropertiesWithEmp
+        private static string empid;
+        public static string EmpID
+        {
+            get { return empid; }
+        }
+        #endregion
+
         MY_DB db = new MY_DB();
         Account acc = new Account();
         //Load form
@@ -26,28 +35,38 @@ namespace Care_Management_and_Private_Parking
             cbPosition.DisplayMember = "Description";
             cbPosition.ValueMember = "PositionID";
         }
+        //Hàm để lấy EmpID
 
         //Đăng nhập vào form chính
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass AND PositionID = @PId", db.getConnection);
-            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = tbUser.Text;
-            cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = tbPwd.Text;
-            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = cbPosition.SelectedValue.ToString();
-            adapter.SelectCommand = cmd;
-            adapter.Fill(table);
-            if((table.Rows.Count > 0))
+            try
             {
-                MessageBox.Show("Login successfully");
-                MainForm frm = new MainForm();
-                frm.Show();
-                this.Close();
+                if (acc.checkLogin(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("Login successfully");
+                    //Lấy EmpID từ chỗ này
+                    try
+                    {
+                        empid = acc.takeEmpID(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString());
+                        //textBox1.DataBindings.Add(empid);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    //MainForm frm = new MainForm();
+                    //frm.Show();
+                    //this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString());
             }
         }
 

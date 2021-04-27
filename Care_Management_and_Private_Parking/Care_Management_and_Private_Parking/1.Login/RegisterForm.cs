@@ -38,7 +38,7 @@ namespace Care_Management_and_Private_Parking
         {
             if ((tbUsername.Text.Trim() == "") ||
                 (tbPassword.Text.Trim() == "") ||
-                (tbIdentityNumber.Text.Trim() == "") ||
+                (tbEmployeeID.Text.Trim() == "") ||
                 (tbConfirmPassword.Text.Trim() == ""))
             {
                 return false;
@@ -51,7 +51,7 @@ namespace Care_Management_and_Private_Parking
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
-            string identitynumber = tbIdentityNumber.Text;
+            string employeeID = tbEmployeeID.Text;
             string position = cbPosition.SelectedValue.ToString();
             try
             {
@@ -61,7 +61,7 @@ namespace Care_Management_and_Private_Parking
                     {
                         MessageBox.Show("Confirm Password must be familiar with Password!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if(acc.insertAccount(username,password,identitynumber, position))
+                    else if(acc.insertAccount(username,password, employeeID, position))
                     {
                         DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;

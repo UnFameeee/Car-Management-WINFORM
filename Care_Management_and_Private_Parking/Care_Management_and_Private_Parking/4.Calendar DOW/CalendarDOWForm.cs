@@ -22,11 +22,19 @@ namespace Care_Management_and_Private_Parking
         }
 
         private List<string> dayOfWeek = new List<string>{ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+
+        public List<List<int>> dow;
+        public List<List<int>> DOW
+        {
+            get { return dow; }
+            set { dow = value; }
+        }
         #endregion
 
         public CalendarDOWForm()
         {
             InitializeComponent();
+            fillDay();
             LoadMatrixDay();
         }
         void SetDefaultDay()
@@ -109,7 +117,7 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        void ClearMatrix()                                                           //Hàm xóa đi các giá trị trong mảng nút
+        void ClearMatrix()                                                          //Hàm xóa đi các giá trị trong mảng nút
         {
             for(int i = 0; i < Matrix.Count; ++i)
             {
@@ -126,7 +134,7 @@ namespace Care_Management_and_Private_Parking
         {
             AddNumberIntoMatrixDay((sender as DateTimePicker).Value);
         }
-        //------------------------------------------------------------------------------------------------------------//
+        //--------------------------------------------------------------------------------------------------------------------------------//
         //Các nút khác
         private void btnToday_Click(object sender, EventArgs e)
         {
@@ -147,9 +155,23 @@ namespace Care_Management_and_Private_Parking
         {
             dateTime.Value = dateTime.Value.AddMonths(1);
         }
-        //---------------------------------------------------------------------------------//
+        //---------------------------------------------------------------------------------------------------------------------------------//
         //Chia ca làm việc cho nhân viên
         //Trước hết cần phải lấy mã của nhân viên đó
 
+        DivideShift dv = new DivideShift();
+        string takeNumberID(string EmpID)                                             //EmpID được quy định là 2 chữ cái đầu + mã số NV ở sau
+        {
+            string res = EmpID.Remove(0, 2);
+            return res;
+        }
+        void fillDay()
+        {
+            DOW = new List<List<int>>();
+            DOW = dv.SetTheBaseDOW(Variable.NV, Variable.CL, 1);
+            //nv01
+            string EmpID = LoginForm.EmpID;
+
+        }
     }
 }

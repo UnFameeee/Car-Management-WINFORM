@@ -15,10 +15,9 @@ namespace Care_Management_and_Private_Parking
         //Thêm tài khoản
         public bool insertAccount(string username, string password, string EmpID, string position)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, EmpID, PositionID) VALUES (@User, @Pass, @EmpID, @PId)", db.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, PositionID) VALUES (@User, @Pass, @PId)", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
-            cmd.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             db.openConnection();
             if(cmd.ExecuteNonQuery() == 1)
@@ -66,7 +65,8 @@ namespace Care_Management_and_Private_Parking
         //Ktra tài khoản đó xem có tồn tại hay là không
         public bool checkAccount(string username, string EmpID, string position)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND EmpID = @EmpID AND PositionID = @PId", db.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.AccountID = EMPLOYEE.AccountID and" +
+                " Username = @User AND EmpID = @EmpID AND PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
@@ -93,6 +93,42 @@ namespace Care_Management_and_Private_Parking
             adapter.SelectCommand = cmd;
             adapter.Fill(table);
             return table;
+        }
+
+        //Check login
+        public bool checkLogin(string username, string password, string position)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE Username = @User AND Password = @Pass AND PositionID = @PId", db.getConnection);
+            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(table);
+            if ((table.Rows.Count > 0))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Lấy EmpID
+        public string takeEmpID(string username, string password, string position)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT EmpID FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.AccountID = EMPLOYEE.AccountID and" +
+                " Username = @User and Password = @Pass and PositionID = @PId", db.getConnection);
+            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset);
+            //return dataset["EmpID"].ToString();
+            return dataset.Tables[0].ToString();
         }
     }
 }
