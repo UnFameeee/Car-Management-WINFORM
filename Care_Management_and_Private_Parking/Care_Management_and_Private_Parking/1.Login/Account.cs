@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
+using System.Windows.Forms;
+using System.IO;
 using System.Data.SqlClient;
 
 namespace Care_Management_and_Private_Parking
@@ -118,17 +122,24 @@ namespace Care_Management_and_Private_Parking
         //Lấy EmpID
         public string takeEmpID(string username, string password, string position)
         {
-            SqlCommand cmd = new SqlCommand("SELECT EmpID FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.AccountID = EMPLOYEE.AccountID and" +
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.AccountID = EMPLOYEE.AccountID and" +
                 " Username = @User and Password = @Pass and PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataSet dataset = new DataSet();
-            adapter.SelectCommand = cmd;
-            adapter.Fill(dataset);
-            //return dataset["EmpID"].ToString();
-            return dataset.Tables[0].ToString();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            DataTable table = new DataTable();
+            adapter.Fill(ds, "EmpID");
+            table = ds.Tables["EmpID"];
+            string res = table.Rows[0]["EmpID"].ToString();
+            return res;
+
+            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
+            //string res = table.Rows[0][4].ToString();
+            //return res;
         }
     }
 }

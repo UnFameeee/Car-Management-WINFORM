@@ -49,15 +49,12 @@ namespace Care_Management_and_Private_Parking
                     try
                     {
                         empid = acc.takeEmpID(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString());
-                        //textBox1.DataBindings.Add(empid);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
                     }
-                    //MainForm frm = new MainForm();
-                    //frm.Show();
-                    //this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {

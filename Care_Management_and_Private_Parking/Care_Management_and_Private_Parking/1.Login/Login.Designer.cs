@@ -43,7 +43,6 @@ namespace Care_Management_and_Private_Parking
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbSignIn = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,13 +202,6 @@ namespace Care_Management_and_Private_Parking
             this.lbSignIn.TabIndex = 21;
             this.lbSignIn.Text = "Login to Your Account";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(64, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 22);
-            this.textBox1.TabIndex = 37;
-            // 
             // LoginForm
             // 
             this.AcceptButton = this.btnlogin;
@@ -218,7 +210,6 @@ namespace Care_Management_and_Private_Parking
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(453, 571);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.lbShow);
@@ -258,7 +249,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbSignIn;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
