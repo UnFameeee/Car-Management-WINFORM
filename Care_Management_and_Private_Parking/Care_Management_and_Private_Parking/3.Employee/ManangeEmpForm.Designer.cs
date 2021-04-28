@@ -31,6 +31,7 @@ namespace Care_Management_and_Private_Parking
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpEmployees = new System.Windows.Forms.TabPage();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tbJobID = new System.Windows.Forms.TextBox();
             this.rdbtnFemale = new System.Windows.Forms.RadioButton();
             this.rdbtnMale = new System.Windows.Forms.RadioButton();
@@ -50,7 +51,6 @@ namespace Care_Management_and_Private_Parking
             this.lbID = new System.Windows.Forms.Label();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.tpWorkSchedule = new System.Windows.Forms.TabPage();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
@@ -99,6 +99,18 @@ namespace Care_Management_and_Private_Parking
             this.tpEmployees.Text = "Employees";
             this.tpEmployees.UseVisualStyleBackColor = true;
             this.tpEmployees.Enter += new System.EventHandler(this.tpEmployees_Enter);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::Care_Management_and_Private_Parking.Properties.Resources._101247231_257637822112281_4673169067975114752_n;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(320, 24);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(32, 32);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tbJobID
             // 
@@ -215,7 +227,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.lbJobID.AutoSize = true;
             this.lbJobID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbJobID.Location = new System.Drawing.Point(387, 128);
+            this.lbJobID.Location = new System.Drawing.Point(440, 128);
             this.lbJobID.Name = "lbJobID";
             this.lbJobID.Size = new System.Drawing.Size(50, 20);
             this.lbJobID.TabIndex = 5;
@@ -225,17 +237,17 @@ namespace Care_Management_and_Private_Parking
             // 
             this.lbIdentityCardNumber.AutoSize = true;
             this.lbIdentityCardNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdentityCardNumber.Location = new System.Drawing.Point(387, 81);
+            this.lbIdentityCardNumber.Location = new System.Drawing.Point(440, 81);
             this.lbIdentityCardNumber.Name = "lbIdentityCardNumber";
-            this.lbIdentityCardNumber.Size = new System.Drawing.Size(155, 20);
+            this.lbIdentityCardNumber.Size = new System.Drawing.Size(62, 20);
             this.lbIdentityCardNumber.TabIndex = 4;
-            this.lbIdentityCardNumber.Text = "Identity Card Number:";
+            this.lbIdentityCardNumber.Text = "Identity:";
             // 
             // lbPhone
             // 
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.Location = new System.Drawing.Point(387, 33);
+            this.lbPhone.Location = new System.Drawing.Point(440, 33);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(53, 20);
             this.lbPhone.TabIndex = 3;
@@ -279,18 +291,6 @@ namespace Care_Management_and_Private_Parking
             this.tpWorkSchedule.TabIndex = 1;
             this.tpWorkSchedule.Text = "Work Schedule";
             this.tpWorkSchedule.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::Care_Management_and_Private_Parking.Properties.Resources._101247231_257637822112281_4673169067975114752_n;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(320, 24);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(32, 32);
-            this.btnSearch.TabIndex = 23;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // ManangeEmpForm
             // 
