@@ -30,10 +30,6 @@ namespace Care_Management_and_Private_Parking
             btnCalendar.Checked = false;
             this.MainPanel.Controls.Clear();
         }
-        private void checkClose()
-        {
-
-        }
         private void btnHome_Click(object sender, EventArgs e)
         {
             tick();
