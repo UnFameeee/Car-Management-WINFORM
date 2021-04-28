@@ -43,12 +43,12 @@ namespace Care_Management_and_Private_Parking
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnlMatrixDay = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbMonthYear = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbStatistic = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lbMonthYear = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,10 +60,9 @@ namespace Care_Management_and_Private_Parking
             // 
             this.btnPreviousMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnPreviousMonth.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousMonth.Location = new System.Drawing.Point(4, 6);
-            this.btnPreviousMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPreviousMonth.Location = new System.Drawing.Point(3, 5);
             this.btnPreviousMonth.Name = "btnPreviousMonth";
-            this.btnPreviousMonth.Size = new System.Drawing.Size(80, 53);
+            this.btnPreviousMonth.Size = new System.Drawing.Size(60, 43);
             this.btnPreviousMonth.TabIndex = 10;
             this.btnPreviousMonth.Text = "<";
             this.btnPreviousMonth.UseVisualStyleBackColor = false;
@@ -73,10 +72,9 @@ namespace Care_Management_and_Private_Parking
             // 
             this.btnNextMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnNextMonth.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextMonth.Location = new System.Drawing.Point(669, 6);
-            this.btnNextMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNextMonth.Location = new System.Drawing.Point(502, 5);
             this.btnNextMonth.Name = "btnNextMonth";
-            this.btnNextMonth.Size = new System.Drawing.Size(80, 53);
+            this.btnNextMonth.Size = new System.Drawing.Size(60, 43);
             this.btnNextMonth.TabIndex = 9;
             this.btnNextMonth.Text = ">";
             this.btnNextMonth.UseVisualStyleBackColor = false;
@@ -88,10 +86,9 @@ namespace Care_Management_and_Private_Parking
             this.btnThur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThur.ForeColor = System.Drawing.Color.Blue;
-            this.btnThur.Location = new System.Drawing.Point(328, 77);
-            this.btnThur.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThur.Location = new System.Drawing.Point(246, 63);
             this.btnThur.Name = "btnThur";
-            this.btnThur.Size = new System.Drawing.Size(100, 37);
+            this.btnThur.Size = new System.Drawing.Size(75, 30);
             this.btnThur.TabIndex = 3;
             this.btnThur.TabStop = false;
             this.btnThur.Text = "Thursday";
@@ -103,10 +100,9 @@ namespace Care_Management_and_Private_Parking
             this.btnSun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSun.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSun.ForeColor = System.Drawing.Color.Blue;
-            this.btnSun.Location = new System.Drawing.Point(652, 77);
-            this.btnSun.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSun.Location = new System.Drawing.Point(489, 63);
             this.btnSun.Name = "btnSun";
-            this.btnSun.Size = new System.Drawing.Size(100, 37);
+            this.btnSun.Size = new System.Drawing.Size(75, 30);
             this.btnSun.TabIndex = 6;
             this.btnSun.TabStop = false;
             this.btnSun.Text = "Sunday";
@@ -118,10 +114,9 @@ namespace Care_Management_and_Private_Parking
             this.btnSat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSat.ForeColor = System.Drawing.Color.Blue;
-            this.btnSat.Location = new System.Drawing.Point(544, 77);
-            this.btnSat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSat.Location = new System.Drawing.Point(408, 63);
             this.btnSat.Name = "btnSat";
-            this.btnSat.Size = new System.Drawing.Size(100, 37);
+            this.btnSat.Size = new System.Drawing.Size(75, 30);
             this.btnSat.TabIndex = 5;
             this.btnSat.TabStop = false;
             this.btnSat.Text = "Saturday";
@@ -133,10 +128,9 @@ namespace Care_Management_and_Private_Parking
             this.btnFri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFri.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFri.ForeColor = System.Drawing.Color.Blue;
-            this.btnFri.Location = new System.Drawing.Point(436, 77);
-            this.btnFri.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFri.Location = new System.Drawing.Point(327, 63);
             this.btnFri.Name = "btnFri";
-            this.btnFri.Size = new System.Drawing.Size(100, 37);
+            this.btnFri.Size = new System.Drawing.Size(75, 30);
             this.btnFri.TabIndex = 4;
             this.btnFri.TabStop = false;
             this.btnFri.Text = "Friday";
@@ -148,10 +142,9 @@ namespace Care_Management_and_Private_Parking
             this.btnWed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWed.ForeColor = System.Drawing.Color.Blue;
-            this.btnWed.Location = new System.Drawing.Point(220, 77);
-            this.btnWed.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWed.Location = new System.Drawing.Point(165, 63);
             this.btnWed.Name = "btnWed";
-            this.btnWed.Size = new System.Drawing.Size(100, 37);
+            this.btnWed.Size = new System.Drawing.Size(75, 30);
             this.btnWed.TabIndex = 2;
             this.btnWed.TabStop = false;
             this.btnWed.Text = "Wednesday";
@@ -163,10 +156,9 @@ namespace Care_Management_and_Private_Parking
             this.btnTue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTue.ForeColor = System.Drawing.Color.Blue;
-            this.btnTue.Location = new System.Drawing.Point(112, 77);
-            this.btnTue.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTue.Location = new System.Drawing.Point(84, 63);
             this.btnTue.Name = "btnTue";
-            this.btnTue.Size = new System.Drawing.Size(100, 37);
+            this.btnTue.Size = new System.Drawing.Size(75, 30);
             this.btnTue.TabIndex = 1;
             this.btnTue.TabStop = false;
             this.btnTue.Text = "Tuesday";
@@ -175,10 +167,9 @@ namespace Care_Management_and_Private_Parking
             // btnToday
             // 
             this.btnToday.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToday.Location = new System.Drawing.Point(4, 7);
-            this.btnToday.Margin = new System.Windows.Forms.Padding(4);
+            this.btnToday.Location = new System.Drawing.Point(3, 6);
             this.btnToday.Name = "btnToday";
-            this.btnToday.Size = new System.Drawing.Size(100, 32);
+            this.btnToday.Size = new System.Drawing.Size(75, 26);
             this.btnToday.TabIndex = 1;
             this.btnToday.Text = "Today";
             this.btnToday.UseVisualStyleBackColor = true;
@@ -186,10 +177,9 @@ namespace Care_Management_and_Private_Parking
             // 
             // dateTime
             // 
-            this.dateTime.Location = new System.Drawing.Point(112, 12);
-            this.dateTime.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTime.Location = new System.Drawing.Point(84, 10);
             this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(268, 22);
+            this.dateTime.Size = new System.Drawing.Size(202, 20);
             this.dateTime.TabIndex = 0;
             this.dateTime.ValueChanged += new System.EventHandler(this.dateTime_ValueChanged);
             // 
@@ -199,10 +189,9 @@ namespace Care_Management_and_Private_Parking
             this.btnMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMon.ForeColor = System.Drawing.Color.Blue;
-            this.btnMon.Location = new System.Drawing.Point(4, 77);
-            this.btnMon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMon.Location = new System.Drawing.Point(3, 63);
             this.btnMon.Name = "btnMon";
-            this.btnMon.Size = new System.Drawing.Size(100, 37);
+            this.btnMon.Size = new System.Drawing.Size(75, 30);
             this.btnMon.TabIndex = 0;
             this.btnMon.TabStop = false;
             this.btnMon.Text = "Monday";
@@ -212,18 +201,16 @@ namespace Care_Management_and_Private_Parking
             // 
             this.panel5.Controls.Add(this.dateTime);
             this.panel5.Controls.Add(this.btnToday);
-            this.panel5.Location = new System.Drawing.Point(4, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(3, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(391, 46);
+            this.panel5.Size = new System.Drawing.Size(293, 37);
             this.panel5.TabIndex = 2;
             // 
             // pnlMatrixDay
             // 
-            this.pnlMatrixDay.Location = new System.Drawing.Point(4, 122);
-            this.pnlMatrixDay.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMatrixDay.Location = new System.Drawing.Point(3, 99);
             this.pnlMatrixDay.Name = "pnlMatrixDay";
-            this.pnlMatrixDay.Size = new System.Drawing.Size(748, 230);
+            this.pnlMatrixDay.Size = new System.Drawing.Size(561, 187);
             this.pnlMatrixDay.TabIndex = 0;
             // 
             // panel4
@@ -231,11 +218,21 @@ namespace Care_Management_and_Private_Parking
             this.panel4.Controls.Add(this.lbMonthYear);
             this.panel4.Controls.Add(this.btnPreviousMonth);
             this.panel4.Controls.Add(this.btnNextMonth);
-            this.panel4.Location = new System.Drawing.Point(4, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(750, 65);
+            this.panel4.Size = new System.Drawing.Size(562, 53);
             this.panel4.TabIndex = 2;
+            // 
+            // lbMonthYear
+            // 
+            this.lbMonthYear.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMonthYear.Location = new System.Drawing.Point(67, 6);
+            this.lbMonthYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMonthYear.Name = "lbMonthYear";
+            this.lbMonthYear.Size = new System.Drawing.Size(428, 40);
+            this.lbMonthYear.TabIndex = 11;
+            this.lbMonthYear.Text = "March, 2020";
+            this.lbMonthYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -248,10 +245,9 @@ namespace Care_Management_and_Private_Parking
             this.panel2.Controls.Add(this.btnSat);
             this.panel2.Controls.Add(this.btnWed);
             this.panel2.Controls.Add(this.btnFri);
-            this.panel2.Location = new System.Drawing.Point(0, 57);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 369);
+            this.panel2.Size = new System.Drawing.Size(570, 300);
             this.panel2.TabIndex = 3;
             // 
             // panel1
@@ -259,9 +255,8 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 446);
+            this.panel1.Size = new System.Drawing.Size(570, 362);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -269,19 +264,19 @@ namespace Care_Management_and_Private_Parking
             this.panel3.Controls.Add(this.lbStatistic);
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(4, 7);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(3, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(750, 46);
+            this.panel3.Size = new System.Drawing.Size(562, 37);
             this.panel3.TabIndex = 1;
             // 
             // lbStatistic
             // 
             this.lbStatistic.AutoSize = true;
             this.lbStatistic.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatistic.Location = new System.Drawing.Point(402, 13);
+            this.lbStatistic.Location = new System.Drawing.Point(302, 11);
+            this.lbStatistic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStatistic.Name = "lbStatistic";
-            this.lbStatistic.Size = new System.Drawing.Size(77, 23);
+            this.lbStatistic.Size = new System.Drawing.Size(63, 19);
             this.lbStatistic.TabIndex = 4;
             this.lbStatistic.Text = "Statistic: ";
             // 
@@ -290,34 +285,23 @@ namespace Care_Management_and_Private_Parking
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(657, 4);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(493, 3);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(89, 38);
+            this.btnExit.Size = new System.Drawing.Size(67, 31);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lbMonthYear
-            // 
-            this.lbMonthYear.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMonthYear.Location = new System.Drawing.Point(89, 8);
-            this.lbMonthYear.Name = "lbMonthYear";
-            this.lbMonthYear.Size = new System.Drawing.Size(571, 49);
-            this.lbMonthYear.TabIndex = 11;
-            this.lbMonthYear.Text = "March, 2020";
-            this.lbMonthYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CalendarDOWForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(768, 421);
+            this.ClientSize = new System.Drawing.Size(576, 342);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CalendarDOWForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel5.ResumeLayout(false);
