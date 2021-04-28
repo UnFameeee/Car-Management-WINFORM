@@ -114,6 +114,11 @@
     <Compile Include="2.Mainform\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="WINFORMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WINFORMDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="1.Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +157,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WINFORMDataSet.xsc">
+      <DependentUpon>WINFORMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WINFORMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WINFORMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WINFORMDataSet.xss">
+      <DependentUpon>WINFORMDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

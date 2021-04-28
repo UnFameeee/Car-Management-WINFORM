@@ -20,6 +20,8 @@ namespace Care_Management_and_Private_Parking
 
         Employee emp = new Employee();
         MY_DB db = new MY_DB();
+        int pos;
+
         void reloadDatagridview()
         {
             SqlCommand command = new SqlCommand("Select * from EMPLOYEE", db.getConnection);
@@ -196,5 +198,28 @@ namespace Care_Management_and_Private_Parking
                 }
             }
         }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
     }
 }
