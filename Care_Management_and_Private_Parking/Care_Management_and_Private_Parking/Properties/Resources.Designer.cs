@@ -69,55 +69,5 @@ namespace Care_Management_and_Private_Parking.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _176922289_492721158534162_5017129398326990835_n {
-            get {
-                object obj = ResourceManager.GetObject("176922289_492721158534162_5017129398326990835_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _177326463_209958160621042_5080347452465638830_n {
-            get {
-                object obj = ResourceManager.GetObject("177326463_209958160621042_5080347452465638830_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _177581256_285984622990953_8272620810742891420_n {
-            get {
-                object obj = ResourceManager.GetObject("177581256_285984622990953_8272620810742891420_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _178441731_2884890375060742_9148663210855244201_n {
-            get {
-                object obj = ResourceManager.GetObject("178441731_2884890375060742_9148663210855244201_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _4 {
-            get {
-                object obj = ResourceManager.GetObject("4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

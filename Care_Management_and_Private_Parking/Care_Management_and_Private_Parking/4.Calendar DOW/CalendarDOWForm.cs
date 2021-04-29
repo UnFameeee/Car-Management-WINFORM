@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace Care_Management_and_Private_Parking
 {
     public partial class CalendarDOWForm : Form
     {
         #region Properties
-        private List<List<Button>> matrix;                                          //Khởi tạo mảng 2 chiều mang giá trị là các nút
+        private List<List<Guna2Button>> matrix;                                          //Khởi tạo mảng 2 chiều mang giá trị là các nút
 
-        public List<List<Button>> Matrix
+        public List<List<Guna2Button>> Matrix
         {
             get { return matrix; }
             set { matrix = value; }
@@ -25,11 +26,13 @@ namespace Care_Management_and_Private_Parking
         private List<string> Month = new List<string> { "January", "February", "March", "April", "May", "June", "July", "August", "September", 
             "October", "November", "December" };
         public List<List<int>> dow;
-        public List<List<int>> DOW
+        public List<List<int>> DOW                                                       //Day of Work -> mảng 2 chiều để lưu dữ liệu chia ca từ DivideShift
         {
             get { return dow; }
             set { dow = value; }
         }
+
+        public List<int> ShiftInMonth = new List<int> {0,0,0};
         #endregion
 
         public CalendarDOWForm()
@@ -44,20 +47,21 @@ namespace Care_Management_and_Private_Parking
         //Tạo ra ma trận nút 7x6 (chưa hiển thị ngày)
         void LoadMatrixDay()
         {
-            Matrix = new List<List<Button>>();
-            Button oldbtn = new Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, 0) };
+            
+            Matrix = new List<List<Guna2Button>>();
+            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, 0), FillColor = Color.White};
             for(int i = 0; i < Variable.DayOfColumn; ++i)
             {
-                Matrix.Add(new List<Button>());
+                Matrix.Add(new List<Guna2Button>());
                 for(int j = 0; j < Variable.DayOfWeeks; ++j)
                 {
-                    Button btn = new Button() {Width = Variable.btnWidth, Height = Variable.btnHeight};
+                    Guna2Button btn = new Guna2Button() {Width = Variable.btnWidth, Height = Variable.btnHeight, FillColor = Color.White };
                     btn.Location = new Point(oldbtn.Location.X + oldbtn.Width + Variable.margin, oldbtn.Location.Y);
                     pnlMatrixDay.Controls.Add(btn);
                     Matrix[i].Add(btn);
                     oldbtn = btn;
                 }
-                oldbtn = new Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, oldbtn.Location.Y + Variable.btnHeight) };
+                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, oldbtn.Location.Y + Variable.btnHeight), FillColor = Color.White };
             }
             SetDefaultDay();
         }
@@ -97,17 +101,19 @@ namespace Care_Management_and_Private_Parking
             for(int i = 1; i <= DayOfMonth(date); ++i)
             {
                 int column = dayOfWeek.IndexOf(useDate.DayOfWeek.ToString());        //ví dụ: trả về Thursday -> index = 4
-                Button btn = Matrix[line][column];
+                Guna2Button btn = Matrix[line][column];
                 btn.Text = i.ToString();
+                btn.ForeColor = Color.Black;
                 fillDay(ref btn, i, date.Month);
+                fillStatistic();
                 if(IsEqualDay(useDate, DateTime.Now))                                //Ngày hôm nay sẽ được bôi vàng
                 {
-                    btn.BackColor = Color.Yellow;
+                    btn.FillColor = Color.Yellow;
                 }
 
                 if (IsEqualDay(useDate, date))                                       //Ngày được chọn trên datetimepicker sẽ được bôi màu
                 {
-                    btn.BackColor = Color.LightGreen;
+                    btn.FillColor = Color.LightGreen;
                 }
 
                 if (column >= 6)                                                     //Cuối tuần ( 0 1 2 3 4 5 6 )
@@ -123,12 +129,15 @@ namespace Care_Management_and_Private_Parking
             {
                 for(int j = 0; j < Matrix[i].Count; ++j)
                 {
-                    Button btn = Matrix[i][j];
+                    Guna2Button btn = Matrix[i][j];
                     btn.Text = "";
                     btn.BackColor = DefaultBackColor;
                     btn.ForeColor = Color.Black;
                 }
             }
+            ShiftInMonth[0] = 0;
+            ShiftInMonth[1] = 0;
+            ShiftInMonth[2] = 0;
         }
         
         private void dateTime_ValueChanged(object sender, EventArgs e)
@@ -166,7 +175,7 @@ namespace Care_Management_and_Private_Parking
             string res = EmpID.Remove(0, 2);
             return res;
         }
-        void fillDay(ref Button btn, int rotateDay, int month)
+        void fillDay(ref Guna2Button btn, int rotateDay, int month)
         {
             DOW = new List<List<int>>();                                                    //Mảng 2 chiều chia ca ( day of work )
             int EmpID = Convert.ToInt32(takeNumberID(LoginForm.EmpID)) - 1;                 //Mã số nhân viên tương đương với (Index of Columns - 1)
@@ -176,9 +185,19 @@ namespace Care_Management_and_Private_Parking
                 if(DOW[j][EmpID] == 1)                                                      //Nếu thoả if => ngày đó đi làm
                 {
                     btn.ForeColor = Color.Red;
+                    //Note lại ca làm vào List ShiftInMonth
+                    ShiftInMonth[j] += 1;
                     //Bonus: tạo thêm 1 bảng khi bấm vào sẽ hiện ra ca làm việc của ngày đó
                 }
             }
+        }
+
+        //Phần thống kê số ca làm trong tháng của nhân viên
+        void fillStatistic()
+        {
+            lbStatistic.Text = "Morning: " + ShiftInMonth[0].ToString() + " Noon: " + ShiftInMonth[1].ToString() + " Evening: " + ShiftInMonth[2].ToString()
+                + "             " + "Total: " + (ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2]).ToString();
+
         }
     }
 }
