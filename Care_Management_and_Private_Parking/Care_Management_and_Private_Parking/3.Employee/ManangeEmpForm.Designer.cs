@@ -65,15 +65,12 @@ namespace Care_Management_and_Private_Parking
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.wINFORMDataSet = new Care_Management_and_Private_Parking.WINFORMDataSet();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMPLOYEETableAdapter = new Care_Management_and_Private_Parking.WINFORMDataSetTableAdapters.EMPLOYEETableAdapter();
             this.tabControl1.SuspendLayout();
             this.tpEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wINFORMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +121,6 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnSearch
             // 
-            this.btnSearch.BackgroundImage = global::Care_Management_and_Private_Parking.Properties.Resources._101247231_257637822112281_4673169067975114752_n;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(1129, 58);
@@ -428,20 +424,7 @@ namespace Care_Management_and_Private_Parking
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // wINFORMDataSet
-            // 
-            this.wINFORMDataSet.DataSetName = "WINFORMDataSet";
-            this.wINFORMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eMPLOYEEBindingSource
-            // 
-            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            this.eMPLOYEEBindingSource.DataSource = this.wINFORMDataSet;
-            // 
-            // eMPLOYEETableAdapter
-            // 
-            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
+            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE"; 
             // 
             // ManangeEmpForm
             // 
@@ -458,7 +441,6 @@ namespace Care_Management_and_Private_Parking
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wINFORMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -500,8 +482,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private WINFORMDataSet wINFORMDataSet;
         private System.Windows.Forms.BindingSource eMPLOYEEBindingSource;
-        private WINFORMDataSetTableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;
     }
 }
