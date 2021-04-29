@@ -7,55 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace Care_Management_and_Private_Parking
 {
-    public partial class MainForm : Form
+    public partial class Test : Form
     {
-        public MainForm()
+        public Test()
         {
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            foreach (Control item in flpMenuButton.Controls)
-                item.Width = flpMenuButton.Width;
-            btnMain.PerformClick();
-        }
-
-        private void btnX_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnwide_Click(object sender, EventArgs e)
+        private void tick()
         {
-            this.WindowState = (this.WindowState == FormWindowState.Normal) ? FormWindowState.Maximized : FormWindowState.Normal;
+            btnHome.Checked = false;
+            btnUser.Checked = false;
+            btnCalendar.Checked = false;
+            this.MainPanel.Controls.Clear();
+        }
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnHome.Checked = true;
         }
 
-        private void btn__Click(object sender, EventArgs e)
+        private void btnUser_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            tick();
+            btnUser.Checked = true;
         }
 
-        private void btnMin_Click(object sender, EventArgs e)
+        private void btnCalendar_Click(object sender, EventArgs e)
         {
-            pnMenuLeft.Width = (pnMenuLeft.Width == 265) ? 40 : 265;
-        }
-
-        private void Menu_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            lbTieuDe.Text = btn.Tag.ToString();
-
-            foreach (Control item in flpMenuButton.Controls)
-                item.BackColor = flpMenuButton.BackColor;
-
-            if (btn.Name != btnHelp.Name)
-                btnHelp.BackColor = flpMenuButton.BackColor;
-
-            btn.BackColor = Color.CadetBlue;
+            tick();
+            btnCalendar.Checked = true;
+            //Mở CalendarForm
+            //CalendarDOWForm frm = new CalendarDOWForm() { /*Dock = DockStyle.Fill, */ TopLevel = false, TopMost = true, Location = new Point(423, 0)};
+            //this.MainPanel.Controls.Add(frm);
+            //frm.Show();
+            CalendarForm frm = new CalendarForm() { TopLevel = false, TopMost = false };
+            this.MainPanel.Controls.Add(frm);
+            frm.Show();
         }
     }
 }
