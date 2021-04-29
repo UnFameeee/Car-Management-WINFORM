@@ -59,15 +59,5 @@ namespace Care_Management_and_Private_Parking.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _101247231_257637822112281_4673169067975114752_n {
-            get {
-                object obj = ResourceManager.GetObject("101247231_257637822112281_4673169067975114752_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
