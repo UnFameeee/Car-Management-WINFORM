@@ -16,5 +16,15 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        private void cbTick_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

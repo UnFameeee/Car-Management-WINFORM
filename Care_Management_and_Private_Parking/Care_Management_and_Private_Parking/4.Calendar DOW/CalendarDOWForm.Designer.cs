@@ -29,8 +29,6 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPreviousMonth = new System.Windows.Forms.Button();
-            this.btnNextMonth = new System.Windows.Forms.Button();
             this.btnThur = new System.Windows.Forms.Button();
             this.btnSun = new System.Windows.Forms.Button();
             this.btnSat = new System.Windows.Forms.Button();
@@ -38,57 +36,28 @@ namespace Care_Management_and_Private_Parking
             this.btnWed = new System.Windows.Forms.Button();
             this.btnTue = new System.Windows.Forms.Button();
             this.btnToday = new System.Windows.Forms.Button();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.btnMon = new System.Windows.Forms.Button();
             this.pnlMatrixDay = new System.Windows.Forms.Panel();
             this.lbMonthYear = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbStatistic = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.lbEvening = new System.Windows.Forms.Label();
+            this.lbNoon = new System.Windows.Forms.Label();
+            this.btnPreviousMonth = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNextMonth = new Guna.UI2.WinForms.Guna2Button();
+            this.dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.lbMorning = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnPreviousMonth
-            // 
-            this.btnPreviousMonth.BackColor = System.Drawing.Color.Transparent;
-            this.btnPreviousMonth.FlatAppearance.BorderSize = 0;
-            this.btnPreviousMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousMonth.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousMonth.ForeColor = System.Drawing.Color.Black;
-            this.btnPreviousMonth.Location = new System.Drawing.Point(4, 40);
-            this.btnPreviousMonth.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPreviousMonth.Name = "btnPreviousMonth";
-            this.btnPreviousMonth.Size = new System.Drawing.Size(36, 24);
-            this.btnPreviousMonth.TabIndex = 10;
-            this.btnPreviousMonth.Text = "<";
-            this.btnPreviousMonth.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPreviousMonth.UseVisualStyleBackColor = false;
-            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
-            // 
-            // btnNextMonth
-            // 
-            this.btnNextMonth.BackColor = System.Drawing.Color.Transparent;
-            this.btnNextMonth.FlatAppearance.BorderSize = 0;
-            this.btnNextMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextMonth.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextMonth.ForeColor = System.Drawing.Color.Black;
-            this.btnNextMonth.Location = new System.Drawing.Point(295, 40);
-            this.btnNextMonth.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNextMonth.Name = "btnNextMonth";
-            this.btnNextMonth.Size = new System.Drawing.Size(32, 24);
-            this.btnNextMonth.TabIndex = 9;
-            this.btnNextMonth.Text = ">";
-            this.btnNextMonth.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNextMonth.UseVisualStyleBackColor = false;
-            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
-            // 
             // btnThur
             // 
-            this.btnThur.BackColor = System.Drawing.Color.White;
+            this.btnThur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnThur.FlatAppearance.BorderSize = 0;
             this.btnThur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnThur.Location = new System.Drawing.Point(140, 62);
+            this.btnThur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnThur.Location = new System.Drawing.Point(150, 65);
             this.btnThur.Margin = new System.Windows.Forms.Padding(4);
             this.btnThur.Name = "btnThur";
             this.btnThur.Size = new System.Drawing.Size(40, 30);
@@ -99,12 +68,12 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnSun
             // 
-            this.btnSun.BackColor = System.Drawing.Color.White;
+            this.btnSun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnSun.FlatAppearance.BorderSize = 0;
             this.btnSun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSun.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnSun.Location = new System.Drawing.Point(288, 62);
+            this.btnSun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSun.Location = new System.Drawing.Point(294, 65);
             this.btnSun.Margin = new System.Windows.Forms.Padding(4);
             this.btnSun.Name = "btnSun";
             this.btnSun.Size = new System.Drawing.Size(41, 30);
@@ -115,12 +84,12 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnSat
             // 
-            this.btnSat.BackColor = System.Drawing.Color.White;
+            this.btnSat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnSat.FlatAppearance.BorderSize = 0;
             this.btnSat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnSat.Location = new System.Drawing.Point(236, 62);
+            this.btnSat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSat.Location = new System.Drawing.Point(246, 65);
             this.btnSat.Margin = new System.Windows.Forms.Padding(4);
             this.btnSat.Name = "btnSat";
             this.btnSat.Size = new System.Drawing.Size(40, 30);
@@ -131,12 +100,12 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnFri
             // 
-            this.btnFri.BackColor = System.Drawing.Color.White;
+            this.btnFri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnFri.FlatAppearance.BorderSize = 0;
             this.btnFri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFri.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnFri.Location = new System.Drawing.Point(188, 62);
+            this.btnFri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnFri.Location = new System.Drawing.Point(198, 65);
             this.btnFri.Margin = new System.Windows.Forms.Padding(4);
             this.btnFri.Name = "btnFri";
             this.btnFri.Size = new System.Drawing.Size(40, 30);
@@ -147,12 +116,12 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnWed
             // 
-            this.btnWed.BackColor = System.Drawing.Color.White;
+            this.btnWed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnWed.FlatAppearance.BorderSize = 0;
             this.btnWed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnWed.Location = new System.Drawing.Point(92, 62);
+            this.btnWed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnWed.Location = new System.Drawing.Point(99, 65);
             this.btnWed.Margin = new System.Windows.Forms.Padding(4);
             this.btnWed.Name = "btnWed";
             this.btnWed.Size = new System.Drawing.Size(40, 30);
@@ -163,12 +132,12 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnTue
             // 
-            this.btnTue.BackColor = System.Drawing.Color.White;
+            this.btnTue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnTue.FlatAppearance.BorderSize = 0;
             this.btnTue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnTue.Location = new System.Drawing.Point(44, 62);
+            this.btnTue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnTue.Location = new System.Drawing.Point(51, 65);
             this.btnTue.Margin = new System.Windows.Forms.Padding(4);
             this.btnTue.Name = "btnTue";
             this.btnTue.Size = new System.Drawing.Size(40, 30);
@@ -182,33 +151,24 @@ namespace Care_Management_and_Private_Parking
             this.btnToday.FlatAppearance.BorderSize = 0;
             this.btnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToday.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToday.ForeColor = System.Drawing.Color.Black;
+            this.btnToday.ForeColor = System.Drawing.Color.White;
             this.btnToday.Location = new System.Drawing.Point(7, 1);
             this.btnToday.Margin = new System.Windows.Forms.Padding(4);
             this.btnToday.Name = "btnToday";
-            this.btnToday.Size = new System.Drawing.Size(77, 31);
+            this.btnToday.Size = new System.Drawing.Size(77, 27);
             this.btnToday.TabIndex = 1;
             this.btnToday.Text = "Today";
             this.btnToday.UseVisualStyleBackColor = true;
             this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
             // 
-            // dateTime
-            // 
-            this.dateTime.Location = new System.Drawing.Point(92, 4);
-            this.dateTime.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(235, 22);
-            this.dateTime.TabIndex = 0;
-            this.dateTime.ValueChanged += new System.EventHandler(this.dateTime_ValueChanged);
-            // 
             // btnMon
             // 
-            this.btnMon.BackColor = System.Drawing.Color.White;
+            this.btnMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnMon.FlatAppearance.BorderSize = 0;
             this.btnMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(209)))), ((int)(((byte)(208)))));
-            this.btnMon.Location = new System.Drawing.Point(4, 62);
+            this.btnMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnMon.Location = new System.Drawing.Point(7, 65);
             this.btnMon.Margin = new System.Windows.Forms.Padding(4);
             this.btnMon.Name = "btnMon";
             this.btnMon.Size = new System.Drawing.Size(36, 30);
@@ -219,63 +179,151 @@ namespace Care_Management_and_Private_Parking
             // 
             // pnlMatrixDay
             // 
-            this.pnlMatrixDay.Location = new System.Drawing.Point(0, 98);
+            this.pnlMatrixDay.ForeColor = System.Drawing.Color.White;
+            this.pnlMatrixDay.Location = new System.Drawing.Point(4, 98);
             this.pnlMatrixDay.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMatrixDay.Name = "pnlMatrixDay";
-            this.pnlMatrixDay.Size = new System.Drawing.Size(329, 149);
+            this.pnlMatrixDay.Size = new System.Drawing.Size(331, 191);
             this.pnlMatrixDay.TabIndex = 0;
             // 
             // lbMonthYear
             // 
             this.lbMonthYear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMonthYear.ForeColor = System.Drawing.Color.Black;
-            this.lbMonthYear.Location = new System.Drawing.Point(67, 41);
+            this.lbMonthYear.ForeColor = System.Drawing.Color.White;
+            this.lbMonthYear.Location = new System.Drawing.Point(76, 38);
             this.lbMonthYear.Name = "lbMonthYear";
-            this.lbMonthYear.Size = new System.Drawing.Size(209, 23);
+            this.lbMonthYear.Size = new System.Drawing.Size(184, 23);
             this.lbMonthYear.TabIndex = 11;
             this.lbMonthYear.Text = "March, 2020";
             this.lbMonthYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbStatistic);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.lbTotal);
+            this.panel1.Controls.Add(this.lbEvening);
+            this.panel1.Controls.Add(this.lbNoon);
+            this.panel1.Controls.Add(this.btnPreviousMonth);
+            this.panel1.Controls.Add(this.lbMonthYear);
             this.panel1.Controls.Add(this.btnNextMonth);
+            this.panel1.Controls.Add(this.dateTime);
+            this.panel1.Controls.Add(this.lbMorning);
             this.panel1.Controls.Add(this.btnThur);
             this.panel1.Controls.Add(this.pnlMatrixDay);
-            this.panel1.Controls.Add(this.lbMonthYear);
             this.panel1.Controls.Add(this.btnMon);
             this.panel1.Controls.Add(this.btnSun);
             this.panel1.Controls.Add(this.btnToday);
             this.panel1.Controls.Add(this.btnTue);
-            this.panel1.Controls.Add(this.btnPreviousMonth);
             this.panel1.Controls.Add(this.btnSat);
-            this.panel1.Controls.Add(this.dateTime);
             this.panel1.Controls.Add(this.btnWed);
             this.panel1.Controls.Add(this.btnFri);
             this.panel1.Location = new System.Drawing.Point(-3, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 274);
+            this.panel1.Size = new System.Drawing.Size(339, 321);
             this.panel1.TabIndex = 1;
             // 
-            // lbStatistic
+            // lbTotal
             // 
-            this.lbStatistic.AutoSize = true;
-            this.lbStatistic.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatistic.ForeColor = System.Drawing.Color.Black;
-            this.lbStatistic.Location = new System.Drawing.Point(3, 251);
-            this.lbStatistic.Name = "lbStatistic";
-            this.lbStatistic.Size = new System.Drawing.Size(63, 19);
-            this.lbStatistic.TabIndex = 12;
-            this.lbStatistic.Text = "Statistic: ";
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.ForeColor = System.Drawing.Color.White;
+            this.lbTotal.Location = new System.Drawing.Point(275, 294);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(41, 19);
+            this.lbTotal.TabIndex = 13;
+            this.lbTotal.Text = "Total:";
+            // 
+            // lbEvening
+            // 
+            this.lbEvening.AutoSize = true;
+            this.lbEvening.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEvening.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lbEvening.Location = new System.Drawing.Point(155, 294);
+            this.lbEvening.Name = "lbEvening";
+            this.lbEvening.Size = new System.Drawing.Size(60, 19);
+            this.lbEvening.TabIndex = 15;
+            this.lbEvening.Text = "Evening:";
+            // 
+            // lbNoon
+            // 
+            this.lbNoon.AutoSize = true;
+            this.lbNoon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNoon.ForeColor = System.Drawing.Color.Yellow;
+            this.lbNoon.Location = new System.Drawing.Point(87, 294);
+            this.lbNoon.Name = "lbNoon";
+            this.lbNoon.Size = new System.Drawing.Size(46, 19);
+            this.lbNoon.TabIndex = 14;
+            this.lbNoon.Text = "Noon:";
+            // 
+            // btnPreviousMonth
+            // 
+            this.btnPreviousMonth.BorderRadius = 10;
+            this.btnPreviousMonth.CheckedState.Parent = this.btnPreviousMonth;
+            this.btnPreviousMonth.CustomImages.Parent = this.btnPreviousMonth;
+            this.btnPreviousMonth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnPreviousMonth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPreviousMonth.ForeColor = System.Drawing.Color.White;
+            this.btnPreviousMonth.HoverState.Parent = this.btnPreviousMonth;
+            this.btnPreviousMonth.Location = new System.Drawing.Point(40, 31);
+            this.btnPreviousMonth.Name = "btnPreviousMonth";
+            this.btnPreviousMonth.ShadowDecoration.Parent = this.btnPreviousMonth;
+            this.btnPreviousMonth.Size = new System.Drawing.Size(30, 30);
+            this.btnPreviousMonth.TabIndex = 0;
+            this.btnPreviousMonth.Text = "<";
+            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
+            // 
+            // btnNextMonth
+            // 
+            this.btnNextMonth.BorderRadius = 10;
+            this.btnNextMonth.CheckedState.Parent = this.btnNextMonth;
+            this.btnNextMonth.CustomImages.Parent = this.btnNextMonth;
+            this.btnNextMonth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnNextMonth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNextMonth.ForeColor = System.Drawing.Color.White;
+            this.btnNextMonth.HoverState.Parent = this.btnNextMonth;
+            this.btnNextMonth.Location = new System.Drawing.Point(266, 30);
+            this.btnNextMonth.Name = "btnNextMonth";
+            this.btnNextMonth.ShadowDecoration.Parent = this.btnNextMonth;
+            this.btnNextMonth.Size = new System.Drawing.Size(30, 30);
+            this.btnNextMonth.TabIndex = 0;
+            this.btnNextMonth.Text = ">";
+            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
+            // 
+            // dateTime
+            // 
+            this.dateTime.CheckedState.Parent = this.dateTime;
+            this.dateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.dateTime.ForeColor = System.Drawing.Color.White;
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTime.HoverState.Parent = this.dateTime;
+            this.dateTime.Location = new System.Drawing.Point(91, 3);
+            this.dateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.ShadowDecoration.Parent = this.dateTime;
+            this.dateTime.Size = new System.Drawing.Size(237, 25);
+            this.dateTime.TabIndex = 0;
+            this.dateTime.Value = new System.DateTime(2021, 4, 30, 11, 28, 43, 523);
+            this.dateTime.ValueChanged += new System.EventHandler(this.dateTime_ValueChanged);
+            // 
+            // lbMorning
+            // 
+            this.lbMorning.AutoSize = true;
+            this.lbMorning.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMorning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lbMorning.Location = new System.Drawing.Point(3, 294);
+            this.lbMorning.Name = "lbMorning";
+            this.lbMorning.Size = new System.Drawing.Size(69, 19);
+            this.lbMorning.TabIndex = 12;
+            this.lbMorning.Text = "Morning: ";
             // 
             // CalendarDOWForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(328, 273);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(338, 322);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -288,8 +336,6 @@ namespace Care_Management_and_Private_Parking
         }
 
         #endregion
-        private System.Windows.Forms.Button btnPreviousMonth;
-        private System.Windows.Forms.Button btnNextMonth;
         private System.Windows.Forms.Button btnThur;
         private System.Windows.Forms.Button btnSun;
         private System.Windows.Forms.Button btnSat;
@@ -297,11 +343,16 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Button btnWed;
         private System.Windows.Forms.Button btnTue;
         private System.Windows.Forms.Button btnToday;
-        private System.Windows.Forms.DateTimePicker dateTime;
         private System.Windows.Forms.Button btnMon;
         private System.Windows.Forms.Panel pnlMatrixDay;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbMonthYear;
-        private System.Windows.Forms.Label lbStatistic;
+        private System.Windows.Forms.Label lbMorning;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTime;
+        private Guna.UI2.WinForms.Guna2Button btnPreviousMonth;
+        private Guna.UI2.WinForms.Guna2Button btnNextMonth;
+        private System.Windows.Forms.Label lbEvening;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label lbNoon;
     }
 }
