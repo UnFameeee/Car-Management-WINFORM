@@ -32,7 +32,7 @@ namespace Care_Management_and_Private_Parking
             set { dow = value; }
         }
 
-        public List<int> ShiftInMonth = new List<int> {0,0,0};
+        public static List<int> ShiftInMonth = new List<int> {0,0,0};
         #endregion
 
         public CalendarDOWForm()
@@ -42,26 +42,27 @@ namespace Care_Management_and_Private_Parking
         }
         void SetDefaultDay()
         {
-            dateTime.Value = DateTime.Now;                                           //Set giá trị ngày tháng của datetimepicker thành ngày hôm nay
+            //dateTime.Value = DateTime.Now;                                           //Set giá trị ngày tháng của datetimepicker thành ngày hôm nay
+            dateTime.Value = DateTime.Now;
         }
         //Tạo ra ma trận nút 7x6 (chưa hiển thị ngày)
         void LoadMatrixDay()
         {
             
             Matrix = new List<List<Guna2Button>>();
-            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, 0), FillColor = Color.White};
+            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, 0), FillColor = Color.FromArgb(43, 47, 51), BorderRadius = Variable.borderRadius };
             for(int i = 0; i < Variable.DayOfColumn; ++i)
             {
                 Matrix.Add(new List<Guna2Button>());
                 for(int j = 0; j < Variable.DayOfWeeks; ++j)
                 {
-                    Guna2Button btn = new Guna2Button() {Width = Variable.btnWidth, Height = Variable.btnHeight, FillColor = Color.White };
+                    Guna2Button btn = new Guna2Button() {Width = Variable.btnWidth, Height = Variable.btnHeight, FillColor = Color.FromArgb(43, 47, 51), BorderRadius = Variable.borderRadius };
                     btn.Location = new Point(oldbtn.Location.X + oldbtn.Width + Variable.margin, oldbtn.Location.Y);
                     pnlMatrixDay.Controls.Add(btn);
                     Matrix[i].Add(btn);
                     oldbtn = btn;
                 }
-                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, oldbtn.Location.Y + Variable.btnHeight), FillColor = Color.White };
+                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, oldbtn.Location.Y + Variable.btnHeight), FillColor = Color.FromArgb(43, 47, 51), BorderRadius = Variable.borderRadius };
             }
             SetDefaultDay();
         }
@@ -103,17 +104,17 @@ namespace Care_Management_and_Private_Parking
                 int column = dayOfWeek.IndexOf(useDate.DayOfWeek.ToString());        //ví dụ: trả về Thursday -> index = 4
                 Guna2Button btn = Matrix[line][column];
                 btn.Text = i.ToString();
-                btn.ForeColor = Color.Black;
+                btn.ForeColor = Color.White;
                 fillDay(ref btn, i, date.Month);
                 fillStatistic();
                 if(IsEqualDay(useDate, DateTime.Now))                                //Ngày hôm nay sẽ được bôi vàng
                 {
-                    btn.FillColor = Color.Yellow;
+                    btn.FillColor = Color.FromArgb(253, 65, 60);
                 }
 
                 if (IsEqualDay(useDate, date))                                       //Ngày được chọn trên datetimepicker sẽ được bôi màu
                 {
-                    btn.FillColor = Color.LightGreen;
+                    btn.FillColor = Color.FromArgb(80, 84, 87);
                 }
 
                 if (column >= 6)                                                     //Cuối tuần ( 0 1 2 3 4 5 6 )
@@ -131,18 +132,21 @@ namespace Care_Management_and_Private_Parking
                 {
                     Guna2Button btn = Matrix[i][j];
                     btn.Text = "";
-                    btn.BackColor = DefaultBackColor;
-                    btn.ForeColor = Color.Black;
+                    btn.FillColor = Color.FromArgb(43, 47, 51);
+                    btn.ForeColor = Color.White;
                 }
             }
             ShiftInMonth[0] = 0;
             ShiftInMonth[1] = 0;
             ShiftInMonth[2] = 0;
         }
-        
+        //private void dateTime_ValueChanged(object sender, EventArgs e)
+        //{
+        //    //AddNumberIntoMatrixDay((sender as DateTimePicker).Value);
+        //}
         private void dateTime_ValueChanged(object sender, EventArgs e)
         {
-            AddNumberIntoMatrixDay((sender as DateTimePicker).Value);
+            AddNumberIntoMatrixDay((sender as Guna2DateTimePicker).Value);
         }
         //--------------------------------------------------------------------------------------------------------------------------------//
         //Các nút khác
@@ -160,7 +164,6 @@ namespace Care_Management_and_Private_Parking
         {
             dateTime.Value = dateTime.Value.AddMonths(-1);
         }
-
         private void btnNextMonth_Click(object sender, EventArgs e)
         {
             dateTime.Value = dateTime.Value.AddMonths(1);
@@ -184,7 +187,12 @@ namespace Care_Management_and_Private_Parking
             {
                 if(DOW[j][EmpID] == 1)                                                      //Nếu thoả if => ngày đó đi làm
                 {
-                    btn.ForeColor = Color.Red;
+                    if (j == 0)
+                        btn.ForeColor = Color.FromArgb(255, 128, 0);
+                    else if(j == 1)
+                        btn.ForeColor = Color.Yellow;
+                    else
+                        btn.ForeColor = Color.FromArgb(128, 128, 255);
                     //Note lại ca làm vào List ShiftInMonth
                     ShiftInMonth[j] += 1;
                     //Bonus: tạo thêm 1 bảng khi bấm vào sẽ hiện ra ca làm việc của ngày đó
@@ -195,9 +203,10 @@ namespace Care_Management_and_Private_Parking
         //Phần thống kê số ca làm trong tháng của nhân viên
         void fillStatistic()
         {
-            lbStatistic.Text = "Morning: " + ShiftInMonth[0].ToString() + " Noon: " + ShiftInMonth[1].ToString() + " Evening: " + ShiftInMonth[2].ToString()
-                + "             " + "Total: " + (ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2]).ToString();
-
+            lbMorning.Text = "Morning:" + ShiftInMonth[0].ToString();
+            lbNoon.Text = "Noon:" + ShiftInMonth[1].ToString();
+            lbEvening.Text = "Evening:" + ShiftInMonth[2].ToString();
+            lbTotal.Text = "Total:" + (ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2]).ToString();
         }
     }
 }
