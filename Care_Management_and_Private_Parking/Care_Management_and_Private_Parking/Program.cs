@@ -16,16 +16,16 @@ namespace Care_Management_and_Private_Parking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            LoginForm frm = new LoginForm();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new Test());
-            }
+
+            //LoginForm frm = new LoginForm();
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new Test());
+            //}
             //Application.Run(new LoginForm());
             //Application.Run(new MainForm());
             //Application.Run(new CalendarDOWForm());
-            //Application.Run(new ManangeEmpForm());
+            //Application.Run(new EmployeeListForm());
             //Application.Run(new Test());
         }
     }
