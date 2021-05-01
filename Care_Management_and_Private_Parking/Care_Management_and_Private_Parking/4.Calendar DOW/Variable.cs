@@ -15,7 +15,7 @@ namespace Care_Management_and_Private_Parking
         public static int margin = 5;                   //Khoảng cách giãn cách giữa các nút ngày
         public static int NV = 6;                       //6 nhân viên
         public static int CL = 3;                       //3 ca làm
-        public static int borderRadius = 15;
+        public static int borderRadius = 14;
         //public static int Mor = 0, Noon = 0, Eve = 0;   //Sáng - Trưa - Chiều
     }
 }

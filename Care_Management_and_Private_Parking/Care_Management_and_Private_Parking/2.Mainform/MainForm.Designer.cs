@@ -227,7 +227,7 @@ namespace Care_Management_and_Private_Parking
             this.lbUser.ForeColor = System.Drawing.Color.White;
             this.lbUser.Location = new System.Drawing.Point(25, 29);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(133, 28);
+            this.lbUser.Size = new System.Drawing.Size(106, 23);
             this.lbUser.TabIndex = 1;
             this.lbUser.Text = "Hello User!";
             // 
@@ -243,7 +243,6 @@ namespace Care_Management_and_Private_Parking
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.LightGray;
             this.MainPanel.Location = new System.Drawing.Point(175, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(901, 608);

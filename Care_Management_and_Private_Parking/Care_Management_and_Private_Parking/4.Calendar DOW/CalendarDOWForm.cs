@@ -22,7 +22,7 @@ namespace Care_Management_and_Private_Parking
             set { matrix = value; }
         }
 
-        private List<string> dayOfWeek = new List<string>{ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+        public List<string> dayOfWeek = new List<string>{ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
         private List<string> Month = new List<string> { "January", "February", "March", "April", "May", "June", "July", "August", "September", 
             "October", "November", "December" };
         public List<List<int>> dow;
@@ -32,18 +32,22 @@ namespace Care_Management_and_Private_Parking
             set { dow = value; }
         }
 
-        public static List<int> ShiftInMonth = new List<int> {0,0,0};
-        #endregion
+        public List<int> ShiftInMonth = new List<int> {0,0,0};
 
+        //Biến dùng để cho hàm CalendarForm sử dụng
+        public float totalDayOfWork = 0;
+
+        #endregion
         public CalendarDOWForm()
         {
             InitializeComponent();
             LoadMatrixDay();
+            //Gắn giá trị cho biến cho form khác sử dụng
+            totalDayOfWork = ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2];
         }
         void SetDefaultDay()
-        {
-            //dateTime.Value = DateTime.Now;                                           //Set giá trị ngày tháng của datetimepicker thành ngày hôm nay
-            dateTime.Value = DateTime.Now;
+        {                                       
+            dateTime.Value = DateTime.Now;              //Set giá trị ngày tháng của datetimepicker thành ngày hôm nay
         }
         //Tạo ra ma trận nút 7x6 (chưa hiển thị ngày)
         void LoadMatrixDay()
@@ -87,7 +91,7 @@ namespace Care_Management_and_Private_Parking
                 default:
                     return 30;
             }
-        }                                             //Trả về số ngày tương ứng với tháng
+        }                                                                           //Trả về số ngày tương ứng với tháng
         bool IsEqualDay(DateTime dateA, DateTime dateB)
         {
             return dateA.Day == dateB.Day && dateA.Month == dateB.Month && dateA.Year == dateB.Year;
@@ -109,7 +113,8 @@ namespace Care_Management_and_Private_Parking
                 fillStatistic();
                 if(IsEqualDay(useDate, DateTime.Now))                                //Ngày hôm nay sẽ được bôi vàng
                 {
-                    btn.FillColor = Color.FromArgb(253, 65, 60);
+                    btn.BorderThickness = 1;
+                    btn.BorderColor = Color.Green;
                 }
 
                 if (IsEqualDay(useDate, date))                                       //Ngày được chọn trên datetimepicker sẽ được bôi màu
@@ -134,6 +139,7 @@ namespace Care_Management_and_Private_Parking
                     btn.Text = "";
                     btn.FillColor = Color.FromArgb(43, 47, 51);
                     btn.ForeColor = Color.White;
+                    btn.BorderThickness = 0;
                 }
             }
             ShiftInMonth[0] = 0;
@@ -208,5 +214,6 @@ namespace Care_Management_and_Private_Parking
             lbEvening.Text = "Evening:" + ShiftInMonth[2].ToString();
             lbTotal.Text = "Total:" + (ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2]).ToString();
         }
+
     }
 }

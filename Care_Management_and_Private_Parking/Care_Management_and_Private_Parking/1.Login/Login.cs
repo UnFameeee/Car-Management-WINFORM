@@ -38,7 +38,7 @@ namespace Care_Management_and_Private_Parking
         //Hàm để lấy EmpID
 
         //Đăng nhập vào form chính
-        private void btnlogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -89,9 +89,8 @@ namespace Care_Management_and_Private_Parking
         //Thoát
         private void btnExit_Click(object sender, EventArgs e)
         {
-                                                                    //Dùng để confirm là người sử dụng có muốn thoát ra hay không
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit?", "Quit", MessageBoxButtons.YesNo);
-            if(dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)                   //Dùng để confirm là người sử dụng có muốn thoát ra hay không
                 Close();
         }
 
