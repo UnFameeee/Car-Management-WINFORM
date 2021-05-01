@@ -31,8 +31,8 @@ namespace Care_Management_and_Private_Parking
         {
             if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
             {
-                this.Size = new Size(336, 577);
-                lbCancel.Location = new Point(143, 550);
+                this.Size = new Size(354, 598);
+                lbCancel.Location = new Point(149, 569);
                 this.StartPosition = FormStartPosition.CenterScreen;
             }
             else
@@ -80,6 +80,14 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        
+        private void btnVerify_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

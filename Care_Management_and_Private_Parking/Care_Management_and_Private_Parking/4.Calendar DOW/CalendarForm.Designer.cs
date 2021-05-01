@@ -29,22 +29,23 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
             this.pnStatistic = new Guna.UI2.WinForms.Guna2Panel();
             this.chartWork = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnTask = new Guna.UI2.WinForms.Guna2Panel();
+            this.fpn = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAddTask = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.progressBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.pnGoWorkDay = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb = new System.Windows.Forms.Label();
+            this.lbProgressBar = new System.Windows.Forms.Label();
             this.pnNote = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbNote = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddTask = new Guna.UI2.WinForms.Guna2Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.fpn = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbNote = new System.Windows.Forms.Label();
             this.pnStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWork)).BeginInit();
             this.pnTask.SuspendLayout();
@@ -80,19 +81,63 @@ namespace Care_Management_and_Private_Parking
             // chartWork
             // 
             this.chartWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartWork.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartWork.Legends.Add(legend3);
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.Title = "Shift";
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisX2.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.InterlacedColor = System.Drawing.Color.White;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            chartArea1.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.Title = "This Month\'s Shift";
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY2.LineColor = System.Drawing.Color.White;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            chartArea1.BackImageTransparentColor = System.Drawing.Color.White;
+            chartArea1.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.White;
+            this.chartWork.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            legend1.Name = "Legend1";
+            this.chartWork.Legends.Add(legend1);
             this.chartWork.Location = new System.Drawing.Point(18, 19);
             this.chartWork.Name = "chartWork";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartWork.Series.Add(series3);
+            this.chartWork.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartWork.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))))};
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            series1.EmptyPointStyle.LabelForeColor = System.Drawing.Color.Empty;
+            series1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.LabelBackColor = System.Drawing.Color.White;
+            series1.LabelBorderWidth = 0;
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.White;
+            series1.Name = "Days";
+            series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent;
+            this.chartWork.Series.Add(series1);
             this.chartWork.Size = new System.Drawing.Size(259, 209);
             this.chartWork.TabIndex = 0;
-            this.chartWork.Text = "chart1";
+            this.chartWork.Text = "Day Worked in This Month";
+            title1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            title1.Name = "Title1";
+            title1.Text = "Day Worked In This Month";
+            this.chartWork.Titles.Add(title1);
             // 
             // pnTask
             // 
@@ -109,81 +154,13 @@ namespace Care_Management_and_Private_Parking
             this.pnTask.Size = new System.Drawing.Size(570, 397);
             this.pnTask.TabIndex = 6;
             // 
-            // progressBar
+            // fpn
             // 
-            this.progressBar.FillColor = System.Drawing.Color.White;
-            this.progressBar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.progressBar.Location = new System.Drawing.Point(18, 12);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
-            this.progressBar.ProgressColor = System.Drawing.Color.Empty;
-            this.progressBar.ShadowDecoration.Parent = this.progressBar;
-            this.progressBar.Size = new System.Drawing.Size(259, 15);
-            this.progressBar.TabIndex = 0;
-            this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // pnGoWorkDay
-            // 
-            this.pnGoWorkDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.pnGoWorkDay.BorderRadius = 22;
-            this.pnGoWorkDay.BorderThickness = 1;
-            this.pnGoWorkDay.Controls.Add(this.lb);
-            this.pnGoWorkDay.Controls.Add(this.progressBar);
-            this.pnGoWorkDay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnGoWorkDay.Location = new System.Drawing.Point(588, 284);
-            this.pnGoWorkDay.Name = "pnGoWorkDay";
-            this.pnGoWorkDay.ShadowDecoration.Parent = this.pnGoWorkDay;
-            this.pnGoWorkDay.Size = new System.Drawing.Size(296, 60);
-            this.pnGoWorkDay.TabIndex = 6;
-            // 
-            // lb
-            // 
-            this.lb.AutoSize = true;
-            this.lb.BackColor = System.Drawing.Color.Transparent;
-            this.lb.ForeColor = System.Drawing.Color.White;
-            this.lb.Location = new System.Drawing.Point(14, 30);
-            this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(45, 19);
-            this.lb.TabIndex = 0;
-            this.lb.Text = "label1";
-            // 
-            // pnNote
-            // 
-            this.pnNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.pnNote.BorderRadius = 22;
-            this.pnNote.BorderThickness = 1;
-            this.pnNote.Controls.Add(this.richTextBox1);
-            this.pnNote.Controls.Add(this.lbNote);
-            this.pnNote.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnNote.Location = new System.Drawing.Point(12, 415);
-            this.pnNote.Name = "pnNote";
-            this.pnNote.ShadowDecoration.Parent = this.pnNote;
-            this.pnNote.Size = new System.Drawing.Size(570, 181);
-            this.pnNote.TabIndex = 7;
-            // 
-            // lbNote
-            // 
-            this.lbNote.AutoSize = true;
-            this.lbNote.BackColor = System.Drawing.Color.Transparent;
-            this.lbNote.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNote.ForeColor = System.Drawing.Color.White;
-            this.lbNote.Location = new System.Drawing.Point(15, 9);
-            this.lbNote.Name = "lbNote";
-            this.lbNote.Size = new System.Drawing.Size(84, 23);
-            this.lbNote.TabIndex = 1;
-            this.lbNote.Text = "My notes:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tasks:";
+            this.fpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.fpn.Location = new System.Drawing.Point(19, 51);
+            this.fpn.Name = "fpn";
+            this.fpn.Size = new System.Drawing.Size(532, 320);
+            this.fpn.TabIndex = 0;
             // 
             // btnAddTask
             // 
@@ -201,6 +178,73 @@ namespace Care_Management_and_Private_Parking
             this.btnAddTask.Text = "Add Task";
             this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tasks:";
+            // 
+            // progressBar
+            // 
+            this.progressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.progressBar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.progressBar.Location = new System.Drawing.Point(18, 12);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.progressBar.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.progressBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.progressBar.ShadowDecoration.Parent = this.progressBar;
+            this.progressBar.Size = new System.Drawing.Size(259, 10);
+            this.progressBar.TabIndex = 0;
+            this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.progressBar.Value = 80;
+            // 
+            // pnGoWorkDay
+            // 
+            this.pnGoWorkDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.pnGoWorkDay.BorderRadius = 22;
+            this.pnGoWorkDay.BorderThickness = 1;
+            this.pnGoWorkDay.Controls.Add(this.lbProgressBar);
+            this.pnGoWorkDay.Controls.Add(this.progressBar);
+            this.pnGoWorkDay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnGoWorkDay.Location = new System.Drawing.Point(588, 284);
+            this.pnGoWorkDay.Name = "pnGoWorkDay";
+            this.pnGoWorkDay.ShadowDecoration.Parent = this.pnGoWorkDay;
+            this.pnGoWorkDay.Size = new System.Drawing.Size(296, 60);
+            this.pnGoWorkDay.TabIndex = 6;
+            // 
+            // lbProgressBar
+            // 
+            this.lbProgressBar.AutoSize = true;
+            this.lbProgressBar.BackColor = System.Drawing.Color.Transparent;
+            this.lbProgressBar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProgressBar.ForeColor = System.Drawing.Color.White;
+            this.lbProgressBar.Location = new System.Drawing.Point(17, 28);
+            this.lbProgressBar.Name = "lbProgressBar";
+            this.lbProgressBar.Size = new System.Drawing.Size(210, 15);
+            this.lbProgressBar.TabIndex = 0;
+            this.lbProgressBar.Text = "You have worked very hard this month";
+            // 
+            // pnNote
+            // 
+            this.pnNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.pnNote.BorderRadius = 22;
+            this.pnNote.BorderThickness = 1;
+            this.pnNote.Controls.Add(this.richTextBox1);
+            this.pnNote.Controls.Add(this.lbNote);
+            this.pnNote.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnNote.Location = new System.Drawing.Point(12, 415);
+            this.pnNote.Name = "pnNote";
+            this.pnNote.ShadowDecoration.Parent = this.pnNote;
+            this.pnNote.Size = new System.Drawing.Size(570, 181);
+            this.pnNote.TabIndex = 7;
+            // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
@@ -213,17 +257,21 @@ namespace Care_Management_and_Private_Parking
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // fpn
+            // lbNote
             // 
-            this.fpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.fpn.Location = new System.Drawing.Point(19, 51);
-            this.fpn.Name = "fpn";
-            this.fpn.Size = new System.Drawing.Size(532, 320);
-            this.fpn.TabIndex = 0;
+            this.lbNote.AutoSize = true;
+            this.lbNote.BackColor = System.Drawing.Color.Transparent;
+            this.lbNote.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNote.ForeColor = System.Drawing.Color.White;
+            this.lbNote.Location = new System.Drawing.Point(15, 9);
+            this.lbNote.Name = "lbNote";
+            this.lbNote.Size = new System.Drawing.Size(70, 19);
+            this.lbNote.TabIndex = 1;
+            this.lbNote.Text = "My notes:";
             // 
             // CalendarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(896, 608);
@@ -257,7 +305,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWork;
         private Guna.UI2.WinForms.Guna2ProgressBar progressBar;
         private Guna.UI2.WinForms.Guna2Panel pnGoWorkDay;
-        private System.Windows.Forms.Label lb;
+        private System.Windows.Forms.Label lbProgressBar;
         private Guna.UI2.WinForms.Guna2Panel pnNote;
         private System.Windows.Forms.Label lbNote;
         private System.Windows.Forms.Label label1;
