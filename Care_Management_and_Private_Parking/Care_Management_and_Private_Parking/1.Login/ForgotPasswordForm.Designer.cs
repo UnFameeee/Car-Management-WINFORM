@@ -44,7 +44,7 @@ namespace Care_Management_and_Private_Parking
             this.lbShow = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbPosition = new System.Windows.Forms.ComboBox();
-            this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -202,22 +202,22 @@ namespace Care_Management_and_Private_Parking
             this.cbPosition.Size = new System.Drawing.Size(270, 29);
             this.cbPosition.TabIndex = 47;
             // 
-            // btnLogin
+            // btnConfirm
             // 
-            this.btnLogin.CheckedState.Parent = this.btnLogin;
-            this.btnLogin.CustomImages.Parent = this.btnLogin;
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(45, 538);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
-            this.btnLogin.Size = new System.Drawing.Size(266, 28);
-            this.btnLogin.TabIndex = 49;
-            this.btnLogin.Text = "CONFIRM";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnConfirm.CheckedState.Parent = this.btnConfirm;
+            this.btnConfirm.CustomImages.Parent = this.btnConfirm;
+            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.btnConfirm.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.HoverState.Parent = this.btnConfirm;
+            this.btnConfirm.Location = new System.Drawing.Point(45, 538);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
+            this.btnConfirm.Size = new System.Drawing.Size(266, 28);
+            this.btnConfirm.TabIndex = 49;
+            this.btnConfirm.Text = "CONFIRM";
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnVerify
             // 
@@ -234,16 +234,16 @@ namespace Care_Management_and_Private_Parking
             this.btnVerify.Size = new System.Drawing.Size(271, 28);
             this.btnVerify.TabIndex = 50;
             this.btnVerify.Text = "VERIFY ACCOUNT";
-            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click_1);
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(354, 410);
+            this.ClientSize = new System.Drawing.Size(354, 411);
             this.Controls.Add(this.btnVerify);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.lbShow);
@@ -286,7 +286,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbShow;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbPosition;
-        private Guna.UI2.WinForms.Guna2GradientButton btnLogin;
+        private Guna.UI2.WinForms.Guna2GradientButton btnConfirm;
         private Guna.UI2.WinForms.Guna2GradientButton btnVerify;
     }
 }

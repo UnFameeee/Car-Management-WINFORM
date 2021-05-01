@@ -130,7 +130,7 @@ namespace Care_Management_and_Private_Parking
             this.pictureBox1.Location = new System.Drawing.Point(124, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;

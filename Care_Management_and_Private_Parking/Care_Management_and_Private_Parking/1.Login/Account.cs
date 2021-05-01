@@ -17,7 +17,7 @@ namespace Care_Management_and_Private_Parking
         MY_DB db = new MY_DB();
 
         //Thêm tài khoản
-        public bool insertAccount(string username, string password, string EmpID, string position)
+        public bool insertAccount(string username, string password, string position)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO ACCOUNT (Username, Password, PositionID) VALUES (@User, @Pass, @PId)", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;

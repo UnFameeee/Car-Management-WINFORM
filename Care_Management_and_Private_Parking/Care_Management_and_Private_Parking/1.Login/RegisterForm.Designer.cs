@@ -37,8 +37,6 @@ namespace Care_Management_and_Private_Parking
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
-            this.tbEmployeeID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.lbCancel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbShow = new System.Windows.Forms.Label();
@@ -126,33 +124,12 @@ namespace Care_Management_and_Private_Parking
             this.tbConfirmPassword.TabIndex = 30;
             this.tbConfirmPassword.UseSystemPasswordChar = true;
             // 
-            // tbEmployeeID
-            // 
-            this.tbEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmployeeID.Location = new System.Drawing.Point(38, 353);
-            this.tbEmployeeID.Margin = new System.Windows.Forms.Padding(2);
-            this.tbEmployeeID.Name = "tbEmployeeID";
-            this.tbEmployeeID.Size = new System.Drawing.Size(278, 27);
-            this.tbEmployeeID.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(34, 331);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Employee ID:";
-            // 
             // lbCancel
             // 
             this.lbCancel.AutoSize = true;
             this.lbCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCancel.ForeColor = System.Drawing.Color.DimGray;
-            this.lbCancel.Location = new System.Drawing.Point(149, 491);
+            this.lbCancel.Location = new System.Drawing.Point(145, 434);
             this.lbCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCancel.Name = "lbCancel";
             this.lbCancel.Size = new System.Drawing.Size(56, 21);
@@ -190,7 +167,7 @@ namespace Care_Management_and_Private_Parking
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(34, 392);
+            this.label5.Location = new System.Drawing.Point(34, 329);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
@@ -201,7 +178,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Location = new System.Drawing.Point(38, 415);
+            this.cbPosition.Location = new System.Drawing.Point(38, 352);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(278, 29);
             this.cbPosition.TabIndex = 37;
@@ -215,7 +192,7 @@ namespace Care_Management_and_Private_Parking
             this.btnRegistation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRegistation.ForeColor = System.Drawing.Color.White;
             this.btnRegistation.HoverState.Parent = this.btnRegistation;
-            this.btnRegistation.Location = new System.Drawing.Point(38, 460);
+            this.btnRegistation.Location = new System.Drawing.Point(38, 399);
             this.btnRegistation.Name = "btnRegistation";
             this.btnRegistation.ShadowDecoration.Parent = this.btnRegistation;
             this.btnRegistation.Size = new System.Drawing.Size(278, 28);
@@ -228,15 +205,13 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(356, 520);
+            this.ClientSize = new System.Drawing.Size(356, 461);
             this.Controls.Add(this.btnRegistation);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.lbShow);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbCancel);
-            this.Controls.Add(this.tbEmployeeID);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbConfirmPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPassword);
@@ -266,8 +241,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbConfirmPassword;
-        private System.Windows.Forms.TextBox tbEmployeeID;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbCancel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbShow;
