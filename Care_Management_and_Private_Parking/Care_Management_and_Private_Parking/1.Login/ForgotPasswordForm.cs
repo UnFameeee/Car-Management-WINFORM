@@ -27,43 +27,9 @@ namespace Care_Management_and_Private_Parking
             cbPosition.ValueMember = "PositionID";
         }
 
-        private void btnVerify_Click(object sender, EventArgs e)
-        {
-            if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
-            {
-                this.Size = new Size(354, 598);
-                lbCancel.Location = new Point(149, 569);
-                this.StartPosition = FormStartPosition.CenterScreen;
-            }
-            else
-            {
-                MessageBox.Show("Wrong Username or EmployeeID or Position!!!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void lbCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            if(tbNewpass.Text != tbConfirmPass.Text)
-            {
-                MessageBox.Show("Confirm Password must be familiar with Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 1)
-            {
-                MessageBox.Show("New Password must be different from Old Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 2)
-            {
-                MessageBox.Show("Reset Password Not Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                MessageBox.Show("Reset Password Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
         }
 
         int click = 1;
@@ -80,14 +46,38 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        private void btnVerify_Click_1(object sender, EventArgs e)
+        private void btnVerify_Click(object sender, EventArgs e)
         {
-
+            if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
+            {
+                this.Size = new Size(354, 598);
+                lbCancel.Location = new Point(149, 569);
+                this.StartPosition = FormStartPosition.CenterScreen;
+            }
+            else
+            {
+                MessageBox.Show("Wrong Username or EmployeeID or Position!!!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            if (tbNewpass.Text != tbConfirmPass.Text)
+            {
+                MessageBox.Show("Confirm Password must be familiar with Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 1)
+            {
+                MessageBox.Show("New Password must be different from Old Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 2)
+            {
+                MessageBox.Show("Reset Password Not Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Reset Password Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }
