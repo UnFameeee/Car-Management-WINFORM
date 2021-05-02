@@ -20,7 +20,7 @@ namespace Care_Management_and_Private_Parking
             LoginForm frm = new LoginForm();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Test());
+                Application.Run(new Mainform());
             }
             //Application.Run(new LoginForm());
             //Application.Run(new MainForm());

@@ -75,17 +75,17 @@
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </Compile>
     <Compile Include="4.Calendar DOW\Variable.cs" />
-    <Compile Include="4.Calendar DOW\ATask.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="4.Calendar DOW\ATask.Designer.cs">
-      <DependentUpon>ATask.cs</DependentUpon>
-    </Compile>
     <Compile Include="4.Calendar DOW\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="4.Calendar DOW\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarParkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarParkForm.Designer.cs">
+      <DependentUpon>CarParkForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\MY_DB.cs" />
     <Compile Include="2.Mainform\Tests.cs">
@@ -133,10 +133,10 @@
     <Compile Include="2.Mainform\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Task.cs">
+    <Compile Include="4.Calendar DOW\Task.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Task.Designer.cs">
+    <Compile Include="4.Calendar DOW\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="1.Login\ForgotPasswordForm.resx">
@@ -154,14 +154,14 @@
     <EmbeddedResource Include="4.Calendar DOW\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="4.Calendar DOW\ATask.resx">
-      <DependentUpon>ATask.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="4.Calendar DOW\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3.Employee\EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarParkForm.resx">
+      <DependentUpon>CarParkForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,7 +174,7 @@
     <EmbeddedResource Include="2.Mainform\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Task.resx">
+    <EmbeddedResource Include="4.Calendar DOW\Task.resx">
       <DependentUpon>Task.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -191,6 +191,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="5.CarPark %28Home btn%29\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
