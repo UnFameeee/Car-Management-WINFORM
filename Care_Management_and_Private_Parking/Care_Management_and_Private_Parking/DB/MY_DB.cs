@@ -10,8 +10,8 @@ namespace Care_Management_and_Private_Parking
 {
     class MY_DB
     {
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3E7V855;Initial Catalog=WINFORM;Integrated Security=True"); //QT-laptop
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OQLFA92;Initial Catalog=WINFORM;Integrated Security=True"); //QT-PC
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3E7V855;Initial Catalog=WINFORM;Integrated Security=True"); //QT-laptop
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OQLFA92;Initial Catalog=WINFORM;Integrated Security=True"); //QT-PC
         //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-26GDDIM\SQLEXPRESS;Initial Catalog=WINFORM;Integrated Security=True"); //2 dụ
         public SqlConnection getConnection
         {

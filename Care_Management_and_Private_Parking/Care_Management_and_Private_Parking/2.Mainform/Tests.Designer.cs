@@ -1,7 +1,7 @@
 ﻿
 namespace Care_Management_and_Private_Parking
 {
-    partial class MainForm
+    partial class Mainformmm
     {
         /// <summary>
         /// Required designer variable.
@@ -271,7 +271,7 @@ namespace Care_Management_and_Private_Parking
             this.label2.Size = new System.Drawing.Size(2, 519);
             this.label2.TabIndex = 3;
             // 
-            // MainForm
+            // Mainformmm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,7 +279,7 @@ namespace Care_Management_and_Private_Parking
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.pnMenuLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MainForm";
+            this.Name = "Mainformmm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.flpMenuButton.ResumeLayout(false);

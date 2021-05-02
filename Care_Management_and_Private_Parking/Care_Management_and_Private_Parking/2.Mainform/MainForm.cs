@@ -11,10 +11,11 @@ using Guna.UI2.WinForms;
 
 namespace Care_Management_and_Private_Parking
 {
-    public partial class Test : Form
+    public partial class Mainform : Form
     {
         CalendarForm frmCalendar = new CalendarForm() { TopLevel = false, TopMost = false };
-        public Test()
+        CarParkForm frmCarpark = new CarParkForm() { TopLevel = false, TopMost = false };
+        public Mainform()
         {
             InitializeComponent();
             loadForm();
@@ -27,6 +28,8 @@ namespace Care_Management_and_Private_Parking
         void loadForm()
         {
             this.MainPanel.Controls.Add(frmCalendar);
+            this.MainPanel.Controls.Add(frmCarpark);
+            frmCarpark.Show();
         }
         private void tick()
         {
@@ -34,11 +37,13 @@ namespace Care_Management_and_Private_Parking
             btnUser.Checked = false;
             btnCalendar.Checked = false;
             frmCalendar.Hide();
+            frmCarpark.Hide();
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
             tick();
             btnHome.Checked = true;
+            frmCarpark.Show();
         }
 
         private void btnUser_Click(object sender, EventArgs e)

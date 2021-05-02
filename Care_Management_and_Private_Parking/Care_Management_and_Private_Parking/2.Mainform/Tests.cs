@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Care_Management_and_Private_Parking
 {
-    public partial class MainForm : Form
+    public partial class Mainformmm : Form
     {
-        public MainForm()
+        public Mainformmm()
         {
             InitializeComponent();
         }

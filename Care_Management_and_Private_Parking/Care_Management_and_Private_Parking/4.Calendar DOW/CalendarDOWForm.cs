@@ -52,7 +52,6 @@ namespace Care_Management_and_Private_Parking
         //Tạo ra ma trận nút 7x6 (chưa hiển thị ngày)
         void LoadMatrixDay()
         {
-            
             Matrix = new List<List<Guna2Button>>();
             Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(-Variable.margin, 0), FillColor = Color.FromArgb(43, 47, 51), BorderRadius = Variable.borderRadius };
             for(int i = 0; i < Variable.DayOfColumn; ++i)
