@@ -122,6 +122,7 @@ namespace Care_Management_and_Private_Parking
             this.btnManageJob.Text = "ManageJob";
             this.btnManageJob.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageJob.UseTransparentBackground = true;
+            this.btnManageJob.Click += new System.EventHandler(this.btnManageJob_Click);
             // 
             // panel4
             // 

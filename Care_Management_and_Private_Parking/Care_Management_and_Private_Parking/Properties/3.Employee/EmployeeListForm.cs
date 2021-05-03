@@ -22,20 +22,21 @@ namespace Care_Management_and_Private_Parking
 
         private void EmployeeListForm_Load(object sender, EventArgs e)
         {
-            DataTable tab = emp.getAllEmp();            
+            DataTable dt = emp.getAllEmp();
 
-            for (int i = 0; i < tab.Rows.Count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++) 
             {
                 AnEmployee tmp = new AnEmployee();
                 tmp.Dock = DockStyle.Top;
 
-                tmp.lbEmpID.Text = tab.Rows[i][0].ToString();
-                tmp.lbFullName.Text = tab.Rows[i][1].ToString();
-                tmp.lbGender.Text = tab.Rows[i][2].ToString();
-                tmp.lbPhone.Text = tab.Rows[i][3].ToString();
-                tmp.lbIdentity.Text = tab.Rows[i][4].ToString();
-                tmp.lbJobID.Text = tab.Rows[i][5].ToString();
-                fpnEmpList.Controls.Add(tmp);
+                tmp.lbEmpID.Text = dt.Rows[i][0].ToString();
+                tmp.lbFullName.Text = dt.Rows[i][1].ToString();
+                tmp.lbGender.Text = dt.Rows[i][2].ToString();
+                tmp.lbPhone.Text = dt.Rows[i][3].ToString();
+                tmp.lbIdentity.Text = dt.Rows[i][4].ToString();
+                tmp.lbJobID.Text = dt.Rows[i][5].ToString();
+
+                fpEmpList.Controls.Add(tmp);
             }
         }
     }
