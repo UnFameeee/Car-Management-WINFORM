@@ -32,7 +32,7 @@ namespace Care_Management_and_Private_Parking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
             this.pnSearch = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
-            this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.pnEmp = new Guna.UI.WinForms.GunaShadowPanel();
             this.fpnEmpList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnHeader = new Guna.UI.WinForms.GunaLinePanel();
             this.lbJobID = new Guna.UI.WinForms.GunaLabel();
@@ -42,7 +42,7 @@ namespace Care_Management_and_Private_Parking
             this.lbFullName = new Guna.UI.WinForms.GunaLabel();
             this.lbEmpID = new Guna.UI.WinForms.GunaLabel();
             this.pnSearch.SuspendLayout();
-            this.gunaShadowPanel2.SuspendLayout();
+            this.pnEmp.SuspendLayout();
             this.fpnEmpList.SuspendLayout();
             this.pnHeader.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@ namespace Care_Management_and_Private_Parking
             this.pnSearch.ShadowColor = System.Drawing.Color.Black;
             this.pnSearch.ShadowDepth = 40;
             this.pnSearch.ShadowShift = 3;
-            this.pnSearch.Size = new System.Drawing.Size(614, 39);
+            this.pnSearch.Size = new System.Drawing.Size(625, 39);
             this.pnSearch.TabIndex = 0;
             // 
             // gunaCircleButton1
@@ -86,20 +86,20 @@ namespace Care_Management_and_Private_Parking
             this.gunaCircleButton1.Size = new System.Drawing.Size(37, 36);
             this.gunaCircleButton1.TabIndex = 1;
             // 
-            // gunaShadowPanel2
+            // pnEmp
             // 
-            this.gunaShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel2.Controls.Add(this.fpnEmpList);
-            this.gunaShadowPanel2.Location = new System.Drawing.Point(12, 72);
-            this.gunaShadowPanel2.Name = "gunaShadowPanel2";
-            this.gunaShadowPanel2.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
-            this.gunaShadowPanel2.Radius = 16;
-            this.gunaShadowPanel2.ShadowColor = System.Drawing.Color.Black;
-            this.gunaShadowPanel2.ShadowDepth = 40;
-            this.gunaShadowPanel2.ShadowShift = 3;
-            this.gunaShadowPanel2.Size = new System.Drawing.Size(614, 444);
-            this.gunaShadowPanel2.TabIndex = 1;
+            this.pnEmp.BackColor = System.Drawing.Color.Transparent;
+            this.pnEmp.BaseColor = System.Drawing.Color.Transparent;
+            this.pnEmp.Controls.Add(this.fpnEmpList);
+            this.pnEmp.Location = new System.Drawing.Point(12, 119);
+            this.pnEmp.Name = "pnEmp";
+            this.pnEmp.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
+            this.pnEmp.Radius = 16;
+            this.pnEmp.ShadowColor = System.Drawing.Color.Black;
+            this.pnEmp.ShadowDepth = 40;
+            this.pnEmp.ShadowShift = 3;
+            this.pnEmp.Size = new System.Drawing.Size(625, 397);
+            this.pnEmp.TabIndex = 1;
             // 
             // fpnEmpList
             // 
@@ -107,7 +107,7 @@ namespace Care_Management_and_Private_Parking
             this.fpnEmpList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fpnEmpList.Location = new System.Drawing.Point(3, 1);
             this.fpnEmpList.Name = "fpnEmpList";
-            this.fpnEmpList.Size = new System.Drawing.Size(608, 441);
+            this.fpnEmpList.Size = new System.Drawing.Size(619, 394);
             this.fpnEmpList.TabIndex = 0;
             // 
             // pnHeader
@@ -119,13 +119,12 @@ namespace Care_Management_and_Private_Parking
             this.pnHeader.Controls.Add(this.lbGender);
             this.pnHeader.Controls.Add(this.lbFullName);
             this.pnHeader.Controls.Add(this.lbEmpID);
-            this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHeader.ForeColor = System.Drawing.Color.Black;
             this.pnHeader.LineColor = System.Drawing.Color.Black;
             this.pnHeader.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.pnHeader.Location = new System.Drawing.Point(3, 3);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(690, 41);
+            this.pnHeader.Size = new System.Drawing.Size(616, 44);
             this.pnHeader.TabIndex = 0;
             // 
             // lbJobID
@@ -133,7 +132,7 @@ namespace Care_Management_and_Private_Parking
             this.lbJobID.AutoSize = true;
             this.lbJobID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbJobID.ForeColor = System.Drawing.Color.Black;
-            this.lbJobID.Location = new System.Drawing.Point(555, 12);
+            this.lbJobID.Location = new System.Drawing.Point(553, 12);
             this.lbJobID.Name = "lbJobID";
             this.lbJobID.Size = new System.Drawing.Size(45, 19);
             this.lbJobID.TabIndex = 17;
@@ -144,7 +143,7 @@ namespace Care_Management_and_Private_Parking
             this.lbIdentity.AutoSize = true;
             this.lbIdentity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbIdentity.ForeColor = System.Drawing.Color.Black;
-            this.lbIdentity.Location = new System.Drawing.Point(446, 12);
+            this.lbIdentity.Location = new System.Drawing.Point(442, 12);
             this.lbIdentity.Name = "lbIdentity";
             this.lbIdentity.Size = new System.Drawing.Size(57, 19);
             this.lbIdentity.TabIndex = 16;
@@ -155,7 +154,7 @@ namespace Care_Management_and_Private_Parking
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbPhone.ForeColor = System.Drawing.Color.Black;
-            this.lbPhone.Location = new System.Drawing.Point(336, 12);
+            this.lbPhone.Location = new System.Drawing.Point(328, 12);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(48, 19);
             this.lbPhone.TabIndex = 15;
@@ -166,7 +165,7 @@ namespace Care_Management_and_Private_Parking
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbGender.ForeColor = System.Drawing.Color.Black;
-            this.lbGender.Location = new System.Drawing.Point(228, 12);
+            this.lbGender.Location = new System.Drawing.Point(222, 12);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(54, 19);
             this.lbGender.TabIndex = 14;
@@ -177,7 +176,7 @@ namespace Care_Management_and_Private_Parking
             this.lbFullName.AutoSize = true;
             this.lbFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbFullName.ForeColor = System.Drawing.Color.Black;
-            this.lbFullName.Location = new System.Drawing.Point(118, 12);
+            this.lbFullName.Location = new System.Drawing.Point(103, 12);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(69, 19);
             this.lbFullName.TabIndex = 13;
@@ -188,7 +187,7 @@ namespace Care_Management_and_Private_Parking
             this.lbEmpID.AutoSize = true;
             this.lbEmpID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbEmpID.ForeColor = System.Drawing.Color.Black;
-            this.lbEmpID.Location = new System.Drawing.Point(20, 12);
+            this.lbEmpID.Location = new System.Drawing.Point(13, 12);
             this.lbEmpID.Name = "lbEmpID";
             this.lbEmpID.Size = new System.Drawing.Size(50, 19);
             this.lbEmpID.TabIndex = 12;
@@ -200,7 +199,7 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(649, 535);
-            this.Controls.Add(this.gunaShadowPanel2);
+            this.Controls.Add(this.pnEmp);
             this.Controls.Add(this.pnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeListForm";
@@ -208,7 +207,7 @@ namespace Care_Management_and_Private_Parking
             this.Text = "EmployeeListForm";
             this.Load += new System.EventHandler(this.EmployeeListForm_Load);
             this.pnSearch.ResumeLayout(false);
-            this.gunaShadowPanel2.ResumeLayout(false);
+            this.pnEmp.ResumeLayout(false);
             this.fpnEmpList.ResumeLayout(false);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
@@ -220,7 +219,7 @@ namespace Care_Management_and_Private_Parking
 
         private Guna.UI.WinForms.GunaShadowPanel pnSearch;
         private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
-        private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel2;
+        private Guna.UI.WinForms.GunaShadowPanel pnEmp;
         public Guna.UI.WinForms.GunaLabel lbJobID;
         public Guna.UI.WinForms.GunaLabel lbIdentity;
         public Guna.UI.WinForms.GunaLabel lbPhone;

@@ -29,9 +29,7 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnEmployee));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.lbJobID = new Guna.UI.WinForms.GunaLabel();
             this.lbIdentity = new Guna.UI.WinForms.GunaLabel();
             this.lbPhone = new Guna.UI.WinForms.GunaLabel();
@@ -43,7 +41,6 @@ namespace Care_Management_and_Private_Parking
             // 
             // gunaLinePanel1
             // 
-            this.gunaLinePanel1.Controls.Add(this.gunaCircleButton1);
             this.gunaLinePanel1.Controls.Add(this.lbJobID);
             this.gunaLinePanel1.Controls.Add(this.lbIdentity);
             this.gunaLinePanel1.Controls.Add(this.lbPhone);
@@ -55,38 +52,15 @@ namespace Care_Management_and_Private_Parking
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(690, 44);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(616, 44);
             this.gunaLinePanel1.TabIndex = 1;
-            // 
-            // gunaCircleButton1
-            // 
-            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton1.AnimationSpeed = 0.03F;
-            this.gunaCircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaCircleButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCircleButton1.Image")));
-            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(16, 16);
-            this.gunaCircleButton1.Location = new System.Drawing.Point(632, 6);
-            this.gunaCircleButton1.Name = "gunaCircleButton1";
-            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.OnHoverImage = null;
-            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.Size = new System.Drawing.Size(32, 32);
-            this.gunaCircleButton1.TabIndex = 12;
             // 
             // lbJobID
             // 
             this.lbJobID.AutoSize = true;
             this.lbJobID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbJobID.ForeColor = System.Drawing.Color.Gray;
-            this.lbJobID.Location = new System.Drawing.Point(561, 13);
+            this.lbJobID.Location = new System.Drawing.Point(562, 13);
             this.lbJobID.Name = "lbJobID";
             this.lbJobID.Size = new System.Drawing.Size(45, 19);
             this.lbJobID.TabIndex = 11;
@@ -97,7 +71,7 @@ namespace Care_Management_and_Private_Parking
             this.lbIdentity.AutoSize = true;
             this.lbIdentity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbIdentity.ForeColor = System.Drawing.Color.Gray;
-            this.lbIdentity.Location = new System.Drawing.Point(427, 13);
+            this.lbIdentity.Location = new System.Drawing.Point(419, 13);
             this.lbIdentity.Name = "lbIdentity";
             this.lbIdentity.Size = new System.Drawing.Size(57, 19);
             this.lbIdentity.TabIndex = 10;
@@ -108,7 +82,7 @@ namespace Care_Management_and_Private_Parking
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbPhone.ForeColor = System.Drawing.Color.Gray;
-            this.lbPhone.Location = new System.Drawing.Point(324, 13);
+            this.lbPhone.Location = new System.Drawing.Point(314, 13);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(48, 19);
             this.lbPhone.TabIndex = 9;
@@ -119,7 +93,7 @@ namespace Care_Management_and_Private_Parking
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbGender.ForeColor = System.Drawing.Color.Gray;
-            this.lbGender.Location = new System.Drawing.Point(229, 13);
+            this.lbGender.Location = new System.Drawing.Point(227, 13);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(54, 19);
             this.lbGender.TabIndex = 8;
@@ -131,7 +105,7 @@ namespace Care_Management_and_Private_Parking
             this.lbFullName.BackColor = System.Drawing.Color.Transparent;
             this.lbFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbFullName.ForeColor = System.Drawing.Color.Gray;
-            this.lbFullName.Location = new System.Drawing.Point(100, 13);
+            this.lbFullName.Location = new System.Drawing.Point(90, 13);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(69, 19);
             this.lbFullName.TabIndex = 7;
@@ -142,7 +116,7 @@ namespace Care_Management_and_Private_Parking
             this.lbEmpID.AutoSize = true;
             this.lbEmpID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbEmpID.ForeColor = System.Drawing.Color.Gray;
-            this.lbEmpID.Location = new System.Drawing.Point(23, 13);
+            this.lbEmpID.Location = new System.Drawing.Point(15, 13);
             this.lbEmpID.Name = "lbEmpID";
             this.lbEmpID.Size = new System.Drawing.Size(50, 19);
             this.lbEmpID.TabIndex = 6;
@@ -155,7 +129,7 @@ namespace Care_Management_and_Private_Parking
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.gunaLinePanel1);
             this.Name = "AnEmployee";
-            this.Size = new System.Drawing.Size(690, 44);
+            this.Size = new System.Drawing.Size(616, 44);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -170,6 +144,5 @@ namespace Care_Management_and_Private_Parking
         public Guna.UI.WinForms.GunaLabel lbGender;
         public Guna.UI.WinForms.GunaLabel lbFullName;
         public Guna.UI.WinForms.GunaLabel lbEmpID;
-        private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
     }
 }
