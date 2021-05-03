@@ -15,6 +15,8 @@ namespace Care_Management_and_Private_Parking
     {
         CalendarForm frmCalendar = new CalendarForm() { TopLevel = false, TopMost = false };
         CarParkForm frmCarpark = new CarParkForm() { TopLevel = false, TopMost = false };
+        ManageForm frmManage = new ManageForm() { TopLevel = false, TopMost = false };
+
         public Mainform()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace Care_Management_and_Private_Parking
         {
             this.MainPanel.Controls.Add(frmCalendar);
             this.MainPanel.Controls.Add(frmCarpark);
+            this.MainPanel.Controls.Add(frmManage);
             frmCarpark.Show();
         }
         private void tick()
@@ -36,8 +39,10 @@ namespace Care_Management_and_Private_Parking
             btnHome.Checked = false;
             btnUser.Checked = false;
             btnCalendar.Checked = false;
+            btnManageJob.Checked = false;
             frmCalendar.Hide();
             frmCarpark.Hide();
+            frmManage.Hide();
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -63,6 +68,13 @@ namespace Care_Management_and_Private_Parking
             //CalendarForm frm = new CalendarForm() { TopLevel = false, TopMost = false };
             //this.MainPanel.Controls.Add(frm);
             frmCalendar.Show();
+        }
+
+        private void btnManageJob_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnManageJob.Checked = true;
+            frmManage.Show();
         }
     }
 }

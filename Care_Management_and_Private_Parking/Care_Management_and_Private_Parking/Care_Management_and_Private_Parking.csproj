@@ -68,6 +68,31 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="1.Login\Account.cs" />
+    <Compile Include="3.Employee\AnEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="3.Employee\AnEmployee.Designer.cs">
+      <DependentUpon>AnEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3.Employee\Employee.cs" />
+    <Compile Include="3.Employee\EmployeeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3.Employee\EmployeeListForm.Designer.cs">
+      <DependentUpon>EmployeeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3.Employee\ManageEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3.Employee\ManageEmployeeForm.Designer.cs">
+      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3.Employee\ManangeEmpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3.Employee\ManangeEmpForm.Designer.cs">
+      <DependentUpon>ManangeEmpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="4.Calendar DOW\CalendarDOWForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,25 +119,12 @@
     <Compile Include="2.Mainform\Tests.Designer.cs">
       <DependentUpon>Tests.cs</DependentUpon>
     </Compile>
-    <Compile Include="3.Employee\Employee.cs" />
-    <Compile Include="3.Employee\ManangeEmpForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="3.Employee\ManangeEmpForm.Designer.cs">
-      <DependentUpon>ManangeEmpForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="4.Calendar DOW\DivideShift.cs" />
-    <Compile Include="3.Employee\EmployeeListForm.cs">
+    <Compile Include="ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3.Employee\EmployeeListForm.Designer.cs">
-      <DependentUpon>EmployeeListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="3.Employee\ManageEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="3.Employee\ManageEmployeeForm.Designer.cs">
-      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
+    <Compile Include="ManageForm.Designer.cs">
+      <DependentUpon>ManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,6 +160,12 @@
     <EmbeddedResource Include="2.Mainform\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3.Employee\AnEmployee.resx">
+      <DependentUpon>AnEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3.Employee\EmployeeListForm.resx">
+      <DependentUpon>EmployeeListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="3.Employee\ManangeEmpForm.resx">
       <DependentUpon>ManangeEmpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,11 +175,11 @@
     <EmbeddedResource Include="4.Calendar DOW\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3.Employee\EmployeeListForm.resx">
-      <DependentUpon>EmployeeListForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CarParkForm.resx">
       <DependentUpon>CarParkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageForm.resx">
+      <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
