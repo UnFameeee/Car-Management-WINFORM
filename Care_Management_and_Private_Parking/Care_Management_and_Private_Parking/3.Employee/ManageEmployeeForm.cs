@@ -16,5 +16,20 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvEmp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
