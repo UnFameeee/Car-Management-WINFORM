@@ -15,7 +15,7 @@ namespace Care_Management_and_Private_Parking
     {
         CalendarForm frmCalendar = new CalendarForm() { TopLevel = false, TopMost = false };
         CarParkForm frmCarpark = new CarParkForm() { TopLevel = false, TopMost = false };
-        ManageForm frmManage = new ManageForm() { TopLevel = false, TopMost = false };
+        ManageForm frmManage = new ManageForm() { Dock = DockStyle.Fill,  TopLevel = false, TopMost = false };
 
         public Mainform()
         {

@@ -33,6 +33,7 @@ namespace Care_Management_and_Private_Parking
             this.pnSearch = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.fpnEmpList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnHeader = new Guna.UI.WinForms.GunaLinePanel();
             this.lbJobID = new Guna.UI.WinForms.GunaLabel();
             this.lbIdentity = new Guna.UI.WinForms.GunaLabel();
@@ -40,11 +41,10 @@ namespace Care_Management_and_Private_Parking
             this.lbGender = new Guna.UI.WinForms.GunaLabel();
             this.lbFullName = new Guna.UI.WinForms.GunaLabel();
             this.lbEmpID = new Guna.UI.WinForms.GunaLabel();
-            this.fpnEmpList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnSearch.SuspendLayout();
             this.gunaShadowPanel2.SuspendLayout();
-            this.pnHeader.SuspendLayout();
             this.fpnEmpList.SuspendLayout();
+            this.pnHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnSearch
@@ -52,14 +52,14 @@ namespace Care_Management_and_Private_Parking
             this.pnSearch.BackColor = System.Drawing.Color.Transparent;
             this.pnSearch.BaseColor = System.Drawing.Color.Transparent;
             this.pnSearch.Controls.Add(this.gunaCircleButton1);
-            this.pnSearch.Location = new System.Drawing.Point(58, 59);
+            this.pnSearch.Location = new System.Drawing.Point(12, 27);
             this.pnSearch.Name = "pnSearch";
             this.pnSearch.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
             this.pnSearch.Radius = 16;
             this.pnSearch.ShadowColor = System.Drawing.Color.Black;
             this.pnSearch.ShadowDepth = 40;
             this.pnSearch.ShadowShift = 3;
-            this.pnSearch.Size = new System.Drawing.Size(696, 54);
+            this.pnSearch.Size = new System.Drawing.Size(614, 39);
             this.pnSearch.TabIndex = 0;
             // 
             // gunaCircleButton1
@@ -83,7 +83,7 @@ namespace Care_Management_and_Private_Parking
             this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaCircleButton1.OnHoverImage = null;
             this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.Size = new System.Drawing.Size(51, 51);
+            this.gunaCircleButton1.Size = new System.Drawing.Size(37, 36);
             this.gunaCircleButton1.TabIndex = 1;
             // 
             // gunaShadowPanel2
@@ -91,15 +91,24 @@ namespace Care_Management_and_Private_Parking
             this.gunaShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel2.BaseColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel2.Controls.Add(this.fpnEmpList);
-            this.gunaShadowPanel2.Location = new System.Drawing.Point(58, 179);
+            this.gunaShadowPanel2.Location = new System.Drawing.Point(12, 72);
             this.gunaShadowPanel2.Name = "gunaShadowPanel2";
             this.gunaShadowPanel2.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
             this.gunaShadowPanel2.Radius = 16;
             this.gunaShadowPanel2.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel2.ShadowDepth = 40;
             this.gunaShadowPanel2.ShadowShift = 3;
-            this.gunaShadowPanel2.Size = new System.Drawing.Size(696, 444);
+            this.gunaShadowPanel2.Size = new System.Drawing.Size(614, 444);
             this.gunaShadowPanel2.TabIndex = 1;
+            // 
+            // fpnEmpList
+            // 
+            this.fpnEmpList.Controls.Add(this.pnHeader);
+            this.fpnEmpList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpnEmpList.Location = new System.Drawing.Point(3, 1);
+            this.fpnEmpList.Name = "fpnEmpList";
+            this.fpnEmpList.Size = new System.Drawing.Size(608, 441);
+            this.fpnEmpList.TabIndex = 0;
             // 
             // pnHeader
             // 
@@ -116,7 +125,7 @@ namespace Care_Management_and_Private_Parking
             this.pnHeader.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.pnHeader.Location = new System.Drawing.Point(3, 3);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(690, 44);
+            this.pnHeader.Size = new System.Drawing.Size(690, 41);
             this.pnHeader.TabIndex = 0;
             // 
             // lbJobID
@@ -185,32 +194,24 @@ namespace Care_Management_and_Private_Parking
             this.lbEmpID.TabIndex = 12;
             this.lbEmpID.Text = "EmpID";
             // 
-            // fpnEmpList
-            // 
-            this.fpnEmpList.Controls.Add(this.pnHeader);
-            this.fpnEmpList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnEmpList.Location = new System.Drawing.Point(3, 1);
-            this.fpnEmpList.Name = "fpnEmpList";
-            this.fpnEmpList.Size = new System.Drawing.Size(690, 441);
-            this.fpnEmpList.TabIndex = 0;
-            // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(845, 712);
+            this.ClientSize = new System.Drawing.Size(649, 535);
             this.Controls.Add(this.gunaShadowPanel2);
             this.Controls.Add(this.pnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EmployeeListForm";
             this.Load += new System.EventHandler(this.EmployeeListForm_Load);
             this.pnSearch.ResumeLayout(false);
             this.gunaShadowPanel2.ResumeLayout(false);
+            this.fpnEmpList.ResumeLayout(false);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
-            this.fpnEmpList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

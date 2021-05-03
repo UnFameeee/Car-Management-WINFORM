@@ -122,7 +122,7 @@ namespace Care_Management_and_Private_Parking
         //Lấy EmpID
         public string takeEmpID(string username, string password, string position)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.AccountID = EMPLOYEE.AccountID and" +
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.Username = EMPLOYEE.AccUsername and" +
                 " Username = @User and Password = @Pass and PositionID = @PId", db.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;

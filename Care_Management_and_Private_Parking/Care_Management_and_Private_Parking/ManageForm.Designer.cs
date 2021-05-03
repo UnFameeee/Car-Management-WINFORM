@@ -33,7 +33,6 @@ namespace Care_Management_and_Private_Parking
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEmp = new Guna.UI2.WinForms.Guna2Button();
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,20 +40,19 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnMenu.BorderRadius = 22;
             this.pnMenu.BorderThickness = 1;
-            this.pnMenu.Controls.Add(this.panel1);
             this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnMenu.Location = new System.Drawing.Point(12, 12);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.ShadowDecoration.Parent = this.pnMenu;
-            this.pnMenu.Size = new System.Drawing.Size(198, 712);
+            this.pnMenu.Size = new System.Drawing.Size(131, 535);
             this.pnMenu.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnEmp);
-            this.panel1.Location = new System.Drawing.Point(19, 173);
+            this.panel1.Location = new System.Drawing.Point(17, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(157, 60);
+            this.panel1.Size = new System.Drawing.Size(123, 70);
             this.panel1.TabIndex = 4;
             // 
             // btnEmp
@@ -71,10 +69,10 @@ namespace Care_Management_and_Private_Parking
             this.btnEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnEmp.HoverState.Parent = this.btnEmp;
             this.btnEmp.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEmp.Location = new System.Drawing.Point(9, 9);
+            this.btnEmp.Location = new System.Drawing.Point(5, 18);
             this.btnEmp.Name = "btnEmp";
             this.btnEmp.ShadowDecoration.Parent = this.btnEmp;
-            this.btnEmp.Size = new System.Drawing.Size(137, 43);
+            this.btnEmp.Size = new System.Drawing.Size(111, 35);
             this.btnEmp.TabIndex = 1;
             this.btnEmp.Text = "Employees";
             this.btnEmp.UseTransparentBackground = true;
@@ -85,10 +83,10 @@ namespace Care_Management_and_Private_Parking
             this.pnData.BorderRadius = 22;
             this.pnData.BorderThickness = 1;
             this.pnData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnData.Location = new System.Drawing.Point(225, 12);
+            this.pnData.Location = new System.Drawing.Point(149, 12);
             this.pnData.Name = "pnData";
             this.pnData.ShadowDecoration.Parent = this.pnData;
-            this.pnData.Size = new System.Drawing.Size(845, 712);
+            this.pnData.Size = new System.Drawing.Size(649, 535);
             this.pnData.TabIndex = 1;
             // 
             // ManageForm
@@ -96,13 +94,15 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(1082, 736);
+            this.ClientSize = new System.Drawing.Size(810, 554);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnData);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageForm";
-            this.pnMenu.ResumeLayout(false);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

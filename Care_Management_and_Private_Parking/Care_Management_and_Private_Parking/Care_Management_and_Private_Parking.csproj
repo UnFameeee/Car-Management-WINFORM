@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI">
-      <HintPath>D:\OneDrive\Files\GunaUI\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>E:\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\..\OneDrive\Files\GunaUI\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
@@ -106,10 +106,10 @@
     <Compile Include="4.Calendar DOW\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarParkForm.cs">
+    <Compile Include="5.CarPark %28Home btn%29\CarParkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarParkForm.Designer.cs">
+    <Compile Include="5.CarPark %28Home btn%29\CarParkForm.Designer.cs">
       <DependentUpon>CarParkForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\MY_DB.cs" />
@@ -175,7 +175,7 @@
     <EmbeddedResource Include="4.Calendar DOW\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CarParkForm.resx">
+    <EmbeddedResource Include="5.CarPark %28Home btn%29\CarParkForm.resx">
       <DependentUpon>CarParkForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageForm.resx">
@@ -209,7 +209,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="5.CarPark %28Home btn%29\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

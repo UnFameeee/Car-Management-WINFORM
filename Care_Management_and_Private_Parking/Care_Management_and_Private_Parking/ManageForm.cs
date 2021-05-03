@@ -17,7 +17,7 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        EmployeeListForm frmEmpList = new EmployeeListForm() { TopLevel = false, TopMost = true };
+        EmployeeListForm frmEmpList = new EmployeeListForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
         private void btnEmp_Click(object sender, EventArgs e)
         {
             this.pnData.Controls.Add(frmEmpList);
