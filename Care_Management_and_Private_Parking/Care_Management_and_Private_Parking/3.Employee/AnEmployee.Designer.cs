@@ -29,7 +29,9 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnEmployee));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.lbJobID = new Guna.UI.WinForms.GunaLabel();
             this.lbIdentity = new Guna.UI.WinForms.GunaLabel();
             this.lbPhone = new Guna.UI.WinForms.GunaLabel();
@@ -41,6 +43,7 @@ namespace Care_Management_and_Private_Parking
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.gunaCircleButton1);
             this.gunaLinePanel1.Controls.Add(this.lbJobID);
             this.gunaLinePanel1.Controls.Add(this.lbIdentity);
             this.gunaLinePanel1.Controls.Add(this.lbPhone);
@@ -52,8 +55,31 @@ namespace Care_Management_and_Private_Parking
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(616, 44);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(697, 44);
             this.gunaLinePanel1.TabIndex = 1;
+            // 
+            // gunaCircleButton1
+            // 
+            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaCircleButton1.AnimationSpeed = 0.03F;
+            this.gunaCircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaCircleButton1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCircleButton1.Image")));
+            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaCircleButton1.Location = new System.Drawing.Point(603, 1);
+            this.gunaCircleButton1.Name = "gunaCircleButton1";
+            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton1.OnHoverImage = null;
+            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.Size = new System.Drawing.Size(27, 41);
+            this.gunaCircleButton1.TabIndex = 12;
             // 
             // lbJobID
             // 
@@ -129,7 +155,7 @@ namespace Care_Management_and_Private_Parking
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.gunaLinePanel1);
             this.Name = "AnEmployee";
-            this.Size = new System.Drawing.Size(616, 44);
+            this.Size = new System.Drawing.Size(697, 44);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -144,5 +170,6 @@ namespace Care_Management_and_Private_Parking
         public Guna.UI.WinForms.GunaLabel lbGender;
         public Guna.UI.WinForms.GunaLabel lbFullName;
         public Guna.UI.WinForms.GunaLabel lbEmpID;
+        private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
     }
 }
