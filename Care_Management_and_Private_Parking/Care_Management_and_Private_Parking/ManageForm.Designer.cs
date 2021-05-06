@@ -30,16 +30,16 @@ namespace Care_Management_and_Private_Parking
         private void InitializeComponent()
         {
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnEmp = new Guna.UI2.WinForms.Guna2Button();
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel1.SuspendLayout();
+            this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMenu
             // 
             this.pnMenu.BorderRadius = 22;
             this.pnMenu.BorderThickness = 1;
+            this.pnMenu.Controls.Add(this.btnEmp);
             this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnMenu.Location = new System.Drawing.Point(12, 12);
             this.pnMenu.Name = "pnMenu";
@@ -47,19 +47,10 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu.Size = new System.Drawing.Size(131, 535);
             this.pnMenu.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnEmp);
-            this.panel1.Location = new System.Drawing.Point(17, 53);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(123, 70);
-            this.panel1.TabIndex = 4;
-            // 
             // btnEmp
             // 
             this.btnEmp.BackColor = System.Drawing.Color.Transparent;
             this.btnEmp.BorderRadius = 22;
-            this.btnEmp.Checked = true;
             this.btnEmp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEmp.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnEmp.CheckedState.Parent = this.btnEmp;
@@ -69,7 +60,7 @@ namespace Care_Management_and_Private_Parking
             this.btnEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnEmp.HoverState.Parent = this.btnEmp;
             this.btnEmp.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEmp.Location = new System.Drawing.Point(5, 18);
+            this.btnEmp.Location = new System.Drawing.Point(10, 34);
             this.btnEmp.Name = "btnEmp";
             this.btnEmp.ShadowDecoration.Parent = this.btnEmp;
             this.btnEmp.Size = new System.Drawing.Size(111, 35);
@@ -95,7 +86,6 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(810, 554);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnData);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -103,7 +93,7 @@ namespace Care_Management_and_Private_Parking
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
+            this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -112,7 +102,6 @@ namespace Care_Management_and_Private_Parking
 
         private Guna.UI2.WinForms.Guna2Panel pnMenu;
         private Guna.UI2.WinForms.Guna2Panel pnData;
-        private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnEmp;
     }
 }
