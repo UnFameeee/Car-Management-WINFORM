@@ -12,6 +12,8 @@ namespace Care_Management_and_Private_Parking
 {
     public partial class AnEmployee : UserControl
     {
+
+        private bool isCollapsed;
         public AnEmployee()
         {
             InitializeComponent();

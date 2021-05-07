@@ -17,11 +17,26 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        EmployeeListForm frmEmpList = new EmployeeListForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-        private void btnEmp_Click(object sender, EventArgs e)
+        void solve()
+        {
+            frmEmpList.Hide();
+            frmManageEmp.Hide();
+        }
+
+        EmployeeListForm frmEmpList = new EmployeeListForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };          
+        private void btnEmpList_Click(object sender, EventArgs e)
         {
             this.pnData.Controls.Add(frmEmpList);
+            solve();
             frmEmpList.Show();
+        }
+
+        ManageEmployeeForm frmManageEmp = new ManageEmployeeForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+        private void btnManageEmp_Click(object sender, EventArgs e)
+        {
+            this.pnData.Controls.Add(frmManageEmp);
+            solve();
+            frmManageEmp.Show();
         }
     }
 }

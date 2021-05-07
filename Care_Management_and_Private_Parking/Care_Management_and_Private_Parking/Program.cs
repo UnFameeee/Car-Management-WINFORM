@@ -26,7 +26,7 @@ namespace Care_Management_and_Private_Parking
             //Application.Run(new MainForm());
             //Application.Run(new CalendarDOWForm());
             //Application.Run(new EmployeeListForm());
-            //Application.Run(new ManageForm());
+            //Application.Run(new ManageEmployeeForm());
         }
     }
 }
