@@ -29,9 +29,7 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
-            this.pnSearch = new Guna.UI.WinForms.GunaShadowPanel();
-            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
+            Guna.UI2.WinForms.Guna2Button guna2Button1;
             this.pnEmp = new Guna.UI.WinForms.GunaShadowPanel();
             this.fpnEmpList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnHeader = new Guna.UI.WinForms.GunaLinePanel();
@@ -41,64 +39,25 @@ namespace Care_Management_and_Private_Parking
             this.lbGender = new Guna.UI.WinForms.GunaLabel();
             this.lbFullName = new Guna.UI.WinForms.GunaLabel();
             this.lbEmpID = new Guna.UI.WinForms.GunaLabel();
-            this.pnSearch.SuspendLayout();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pnEmp.SuspendLayout();
             this.fpnEmpList.SuspendLayout();
             this.pnHeader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnSearch
-            // 
-            this.pnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pnSearch.BaseColor = System.Drawing.Color.Transparent;
-            this.pnSearch.Controls.Add(this.gunaCircleButton1);
-            this.pnSearch.Location = new System.Drawing.Point(12, 27);
-            this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
-            this.pnSearch.Radius = 16;
-            this.pnSearch.ShadowColor = System.Drawing.Color.Black;
-            this.pnSearch.ShadowDepth = 40;
-            this.pnSearch.ShadowShift = 3;
-            this.pnSearch.Size = new System.Drawing.Size(625, 39);
-            this.pnSearch.TabIndex = 0;
-            // 
-            // gunaCircleButton1
-            // 
-            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton1.AnimationSpeed = 0.03F;
-            this.gunaCircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaCircleButton1.BaseColor = System.Drawing.Color.Silver;
-            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCircleButton1.Image")));
-            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaCircleButton1.Location = new System.Drawing.Point(3, 1);
-            this.gunaCircleButton1.Name = "gunaCircleButton1";
-            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.Gray;
-            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.OnHoverImage = null;
-            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.Size = new System.Drawing.Size(37, 36);
-            this.gunaCircleButton1.TabIndex = 1;
             // 
             // pnEmp
             // 
             this.pnEmp.BackColor = System.Drawing.Color.Transparent;
             this.pnEmp.BaseColor = System.Drawing.Color.Transparent;
             this.pnEmp.Controls.Add(this.fpnEmpList);
-            this.pnEmp.Location = new System.Drawing.Point(12, 119);
+            this.pnEmp.Location = new System.Drawing.Point(12, 86);
             this.pnEmp.Name = "pnEmp";
             this.pnEmp.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
             this.pnEmp.Radius = 16;
             this.pnEmp.ShadowColor = System.Drawing.Color.Black;
             this.pnEmp.ShadowDepth = 40;
             this.pnEmp.ShadowShift = 3;
-            this.pnEmp.Size = new System.Drawing.Size(625, 397);
+            this.pnEmp.Size = new System.Drawing.Size(622, 397);
             this.pnEmp.TabIndex = 1;
             // 
             // fpnEmpList
@@ -107,7 +66,7 @@ namespace Care_Management_and_Private_Parking
             this.fpnEmpList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fpnEmpList.Location = new System.Drawing.Point(3, 1);
             this.fpnEmpList.Name = "fpnEmpList";
-            this.fpnEmpList.Size = new System.Drawing.Size(619, 394);
+            this.fpnEmpList.Size = new System.Drawing.Size(616, 394);
             this.fpnEmpList.TabIndex = 0;
             // 
             // pnHeader
@@ -124,7 +83,7 @@ namespace Care_Management_and_Private_Parking
             this.pnHeader.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.pnHeader.Location = new System.Drawing.Point(3, 3);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(616, 44);
+            this.pnHeader.Size = new System.Drawing.Size(610, 44);
             this.pnHeader.TabIndex = 0;
             // 
             // lbJobID
@@ -132,7 +91,7 @@ namespace Care_Management_and_Private_Parking
             this.lbJobID.AutoSize = true;
             this.lbJobID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbJobID.ForeColor = System.Drawing.Color.Black;
-            this.lbJobID.Location = new System.Drawing.Point(553, 12);
+            this.lbJobID.Location = new System.Drawing.Point(551, 12);
             this.lbJobID.Name = "lbJobID";
             this.lbJobID.Size = new System.Drawing.Size(45, 19);
             this.lbJobID.TabIndex = 17;
@@ -143,7 +102,7 @@ namespace Care_Management_and_Private_Parking
             this.lbIdentity.AutoSize = true;
             this.lbIdentity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbIdentity.ForeColor = System.Drawing.Color.Black;
-            this.lbIdentity.Location = new System.Drawing.Point(442, 12);
+            this.lbIdentity.Location = new System.Drawing.Point(437, 12);
             this.lbIdentity.Name = "lbIdentity";
             this.lbIdentity.Size = new System.Drawing.Size(57, 19);
             this.lbIdentity.TabIndex = 16;
@@ -154,7 +113,7 @@ namespace Care_Management_and_Private_Parking
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbPhone.ForeColor = System.Drawing.Color.Black;
-            this.lbPhone.Location = new System.Drawing.Point(328, 12);
+            this.lbPhone.Location = new System.Drawing.Point(323, 12);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(48, 19);
             this.lbPhone.TabIndex = 15;
@@ -165,7 +124,7 @@ namespace Care_Management_and_Private_Parking
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbGender.ForeColor = System.Drawing.Color.Black;
-            this.lbGender.Location = new System.Drawing.Point(222, 12);
+            this.lbGender.Location = new System.Drawing.Point(218, 12);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(54, 19);
             this.lbGender.TabIndex = 14;
@@ -193,6 +152,23 @@ namespace Care_Management_and_Private_Parking
             this.lbEmpID.TabIndex = 12;
             this.lbEmpID.Text = "EmpID";
             // 
+            // guna2Button1
+            // 
+            guna2Button1.CheckedState.Parent = guna2Button1;
+            guna2Button1.CustomImages.Parent = guna2Button1;
+            guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            guna2Button1.ForeColor = System.Drawing.Color.White;
+            guna2Button1.HoverState.BorderColor = System.Drawing.Color.Gray;
+            guna2Button1.HoverState.FillColor = System.Drawing.Color.Gray;
+            guna2Button1.HoverState.Parent = guna2Button1;
+            guna2Button1.Location = new System.Drawing.Point(524, 489);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.Parent = guna2Button1;
+            guna2Button1.Size = new System.Drawing.Size(90, 34);
+            guna2Button1.TabIndex = 2;
+            guna2Button1.Text = "PRINT";
+            // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,13 +176,12 @@ namespace Care_Management_and_Private_Parking
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(649, 535);
             this.Controls.Add(this.pnEmp);
-            this.Controls.Add(this.pnSearch);
+            this.Controls.Add(guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EmployeeListForm";
             this.Load += new System.EventHandler(this.EmployeeListForm_Load);
-            this.pnSearch.ResumeLayout(false);
             this.pnEmp.ResumeLayout(false);
             this.fpnEmpList.ResumeLayout(false);
             this.pnHeader.ResumeLayout(false);
@@ -216,9 +191,6 @@ namespace Care_Management_and_Private_Parking
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaShadowPanel pnSearch;
-        private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
         private Guna.UI.WinForms.GunaShadowPanel pnEmp;
         public Guna.UI.WinForms.GunaLabel lbJobID;
         public Guna.UI.WinForms.GunaLabel lbIdentity;

@@ -87,12 +87,6 @@
     <Compile Include="3.Employee\ManageEmployeeForm.Designer.cs">
       <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="3.Employee\ManangeEmpForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="3.Employee\ManangeEmpForm.Designer.cs">
-      <DependentUpon>ManangeEmpForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="4.Calendar DOW\CalendarDOWForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="3.Employee\ManageEmployeeForm.resx">
       <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="3.Employee\ManangeEmpForm.resx">
-      <DependentUpon>ManangeEmpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="4.Calendar DOW\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
