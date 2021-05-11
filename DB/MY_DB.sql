@@ -27,7 +27,7 @@ insert into ACCOUNT values ('admin', 'admin', '1')	--TK quản lý
 ---------------------------------------------------------------------------------------------------------------------------------------------
 -- Công Việc
 create table JOB(
-	JobID varchar(100) primary key,											-- 1 = sửa, 2 = rửa, 3 = trông coi xe
+	JobID varchar(100) primary key,									-- 1 = sửa, 2 = rửa, 3 = trông coi xe
 	Description varchar(1000)
 )
 INSERT INTO JOB VALUES('QL', 'Quản Lý')

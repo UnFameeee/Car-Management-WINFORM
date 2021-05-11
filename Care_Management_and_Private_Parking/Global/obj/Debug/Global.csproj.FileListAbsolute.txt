@@ -1,0 +1,7 @@
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\bin\Debug\Global.exe.config
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\bin\Debug\Global.exe
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\bin\Debug\Global.pdb
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\obj\Debug\Global.csprojAssemblyReference.cache
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\obj\Debug\Global.csproj.CoreCompileInputs.cache
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\obj\Debug\Global.exe
+C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\Global\obj\Debug\Global.pdb
