@@ -25,7 +25,8 @@ namespace Care_Management_and_Private_Parking
         {
             SqlCommand com = new SqlCommand("Select EmpID, FullName from EMPLOYEE");
             dgvData.DataSource = emp.getEmployee(com);
-            
+            resizeDGV();
+
             //dgvData.AutoResizeRows(DataGridViewAutoSizeRowsMode.DisplayedCells);
             //dgvData.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
         }       
@@ -154,6 +155,7 @@ namespace Care_Management_and_Private_Parking
         {
             SqlCommand com = new SqlCommand("Select EmpID, FullName from EMPLOYEE");
             dgvData.DataSource = emp.getEmployee(com);
+            resizeDGV();
         }
 
         bool verif()
@@ -166,6 +168,11 @@ namespace Care_Management_and_Private_Parking
                 return false;
 
             else return true;
+        }
+        void resizeDGV()
+        {
+            dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvData.Dock = DockStyle.Fill;
         }
     }
 }

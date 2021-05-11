@@ -15,11 +15,11 @@ namespace Care_Management_and_Private_Parking
     {
         #region Properties
 
-        private List<List<Guna2Button>> matrixBycycle;
-        public List<List<Guna2Button>> MatrixBycycle
+        private List<List<Guna2Button>> matrixBicycle;
+        public List<List<Guna2Button>> MatrixBicycle
         {
-            get { return matrixBycycle; }
-            set { matrixBycycle = value; }
+            get { return matrixBicycle; }
+            set { matrixBicycle = value; }
         }
 
         private List<List<Guna2Button>> matrixBike;
@@ -47,11 +47,11 @@ namespace Care_Management_and_Private_Parking
         public void loadMatrixBicycle()
         {
             int slot = 1;
-            MatrixBycycle = new List<List<Guna2Button>>();
+            MatrixBicycle = new List<List<Guna2Button>>();
             Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
             for (int i = 0; i < Variable.CarRows; ++i)
             {
-                MatrixBycycle.Add(new List<Guna2Button>());
+                MatrixBicycle.Add(new List<Guna2Button>());
                 for (int j = 0; j < Variable.CarColumns; ++j)
                 {
                     Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(253, 65, 60)};
@@ -61,7 +61,7 @@ namespace Care_Management_and_Private_Parking
                     slot++;
 
                     pnBicycle.Controls.Add(btn);
-                    MatrixBycycle[i].Add(btn);
+                    MatrixBicycle[i].Add(btn);
                     oldbtn = btn;
                 }
                 oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
