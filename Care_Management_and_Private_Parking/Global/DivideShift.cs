@@ -38,28 +38,23 @@ namespace Global
                 }
             }
             //Thêm ca làm cố định
-            int count = 0, k = 0;
-            /*
-            for (int i = 0; i <= R; ++i)
+            int NV = 0, CL = 0;
+            bool stopNV = false, stopCL = false;
+            while (stopNV == false || stopCL == false)                    //Tại lần dừng đầu tiên của cả 2 cột NV và CL => đã chia ca xong
             {
-                if (count < C && i >= R)
-                    i = 0;
-                else if (count >= C)
-                    break;
-                Array[i][k] = 1;
-                k++;
-                count++;
-            }
-            */
-            for (int i = 0; i <= R; ++i)
-            {
-                if (count < C && i > R)
-                    i = 0;
-                else if (count >= C || k >= C)
-                    break;
-                Array[i][k] = 1;
-                k += 2;
-                count++;
+                if (CL >= R)
+                {
+                    stopCL = true;
+                    CL = 0;
+                }
+                if (NV >= C)
+                {
+                    stopNV = true;
+                    NV = 0;
+                }
+                Arr[CL][NV] = 1;
+                CL += 1;
+                NV += 2;
             }
             //Xoay ca
             for (int RT = 1; RT <= DayOfRotation; ++RT)

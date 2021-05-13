@@ -21,10 +21,10 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
-        Account acc = new Account();
+        //AccountDAL acc = new AccountDAL();
         private void ForgotPasswordForm_Load(object sender, EventArgs e)
         {
-            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DataSource = AccountDAL.Instance.takeRole();               //Lấy thông tin của role
             cbPosition.DisplayMember = "Description";
             cbPosition.ValueMember = "PositionID";
         }
@@ -50,7 +50,7 @@ namespace Care_Management_and_Private_Parking
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
-            if (acc.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
+            if (AccountDAL.Instance.checkAccount(tbUsername.Text, tbIdentityNumber.Text, cbPosition.SelectedValue.ToString()))
             {
                 this.Size = new Size(354, 598);
                 lbCancel.Location = new Point(149, 569);
@@ -67,11 +67,11 @@ namespace Care_Management_and_Private_Parking
             {
                 MessageBox.Show("Confirm Password must be familiar with Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 1)
+            else if (AccountDAL.Instance.replacePassword(tbUsername.Text, tbNewpass.Text) == 1)
             {
                 MessageBox.Show("New Password must be different from Old Password!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (acc.replacePassword(tbUsername.Text, tbNewpass.Text) == 2)
+            else if (AccountDAL.Instance.replacePassword(tbUsername.Text, tbNewpass.Text) == 2)
             {
                 MessageBox.Show("Reset Password Not Successfully!", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -21,11 +21,11 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        Account acc = new Account();
-        //Load form
+        //AccountDAL acc = new AccountDAL();
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DataSource = AccountDAL.Instance.takeRole();               //Lấy thông tin của role
             cbPosition.DisplayMember = "Description";
             cbPosition.ValueMember = "PositionID";
         }
@@ -34,13 +34,13 @@ namespace Care_Management_and_Private_Parking
         {
             try
             {
-                if (acc.checkLogin(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString()))
+                if (AccountDAL.Instance.checkLogin(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString()))
                 {
                     MessageBox.Show("Login successfully");
                     //Lấy EmpID từ chỗ này
                     try
                     {
-                        UserID.SetGlobalUserID(acc.takeEmpID(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString()));
+                        UserID.SetGlobalUserID(AccountDAL.Instance.takeEmpID(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString()));
                     }
                     catch (Exception ex)
                     {

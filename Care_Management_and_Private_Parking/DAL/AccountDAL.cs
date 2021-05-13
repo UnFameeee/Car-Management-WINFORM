@@ -12,8 +12,23 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class Account
+    public class AccountDAL
     {
+        //Cấu trúc singleton
+        private static AccountDAL instance;
+        public static AccountDAL Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new AccountDAL();
+                }
+                return AccountDAL.instance;
+            }
+            private set { AccountDAL.instance = value; }
+        }
+
         //Thêm tài khoản
         public bool insertAccount(string username, string password, string position)
         {

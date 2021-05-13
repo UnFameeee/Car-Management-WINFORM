@@ -19,12 +19,11 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
-        //MY_DB db = new MY_DB();
-        Account acc = new Account();
+        //AccountDAL acc = new AccountDAL();
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-            cbPosition.DataSource = acc.takeRole();               //Lấy thông tin của role
+            cbPosition.DataSource = AccountDAL.Instance.takeRole();               //Lấy thông tin của role
             cbPosition.DisplayMember = "Description";
             cbPosition.ValueMember = "PositionID";
         }
@@ -60,7 +59,7 @@ namespace Care_Management_and_Private_Parking
                     {
                         MessageBox.Show("Confirm Password must be familiar with Password!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (acc.insertAccount(username, password, position))
+                    else if (AccountDAL.Instance.insertAccount(username, password, position))
                     {
                         DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;

@@ -46,41 +46,55 @@ namespace Care_Management_and_Private_Parking
             loadMatrixCar();
         }
 
+        //Tải ma trận cho 3 hàng xe
         public void loadMatrixBicycle()
         {
             int slot = 1;
             MatrixBicycle = new List<List<Guna2Button>>();
-            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
+            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             for (int i = 0; i < Variable.CarRows; ++i)
             {
                 MatrixBicycle.Add(new List<Guna2Button>());
                 for (int j = 0; j < Variable.CarColumns; ++j)
                 {
-                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(253, 65, 60)};
+                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(43, 47, 51) };
                     btn.Location = new Point(oldbtn.Location.X + oldbtn.Width + Variable.CarMargin, oldbtn.Location.Y);
 
                     btn.Text = slot.ToString();                                                 //Thêm số vào cho nút
                     slot++;
 
+                    //Thêm event
+                    btn.Click += BTNbicycle_EnabledChanged;
+                    //
+
                     pnBicycle.Controls.Add(btn);
                     MatrixBicycle[i].Add(btn);
                     oldbtn = btn;
                 }
-                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
+                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
+
+                
             }
+        }
+
+        //Event handler (to cast multi event -> single event)
+        private void BTNbicycle_EnabledChanged(object sender, EventArgs e)
+        {
+            //string value = ((Guna2Button)sender).Text; //test
+            fillStatuspnl(((Guna2Button)sender).Text, "bicycle");
         }
 
         public void loadMatrixBike()
         {
             int slot = 1;
             MatrixBike = new List<List<Guna2Button>>();
-            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
+            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             for (int i = 0; i < Variable.CarRows; ++i)
             {
                 MatrixBike.Add(new List<Guna2Button>());
                 for (int j = 0; j < Variable.CarColumns; ++j)
                 {
-                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(253, 65, 60) };
+                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(43, 47, 51) };
                     btn.Location = new Point(oldbtn.Location.X + oldbtn.Width + Variable.CarMargin, oldbtn.Location.Y);
 
                     btn.Text = slot.ToString();                                                 //Thêm số vào cho nút
@@ -90,7 +104,7 @@ namespace Care_Management_and_Private_Parking
                     MatrixBike[i].Add(btn);
                     oldbtn = btn;
                 }
-                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
+                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             }
         }
 
@@ -98,13 +112,13 @@ namespace Care_Management_and_Private_Parking
         {
             int slot = 1;
             MatrixCar = new List<List<Guna2Button>>();
-            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
+            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             for (int i = 0; i < Variable.CarRows; ++i)
             {
                 MatrixCar.Add(new List<Guna2Button>());
                 for (int j = 0; j < Variable.CarColumns; ++j)
                 {
-                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(253, 65, 60) };
+                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(43, 47, 51) };
                     btn.Location = new Point(oldbtn.Location.X + oldbtn.Width + Variable.CarMargin, oldbtn.Location.Y);
 
                     btn.Text = slot.ToString();                                                 //Thêm số vào cho nút
@@ -114,8 +128,33 @@ namespace Care_Management_and_Private_Parking
                     MatrixCar[i].Add(btn);
                     oldbtn = btn;
                 }
-                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(253, 65, 60) };
+                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             }
+        }
+
+
+        //Phần thông tin xe sẽ hiện ở dưới
+        void fillStatuspnl(string text, string type)
+        {
+            if(type == "bicycle")
+            {
+
+            }
+            else if(type == "bike")
+            {
+
+            }
+            else if(type == "car")
+            {
+
+            }
+        }
+
+
+        //Phần các nút bấm
+        private void btnOnDemandPark_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

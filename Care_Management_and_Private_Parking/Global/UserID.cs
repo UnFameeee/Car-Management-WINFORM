@@ -8,6 +8,8 @@ namespace Global
 {
     public class UserID
     {
+        static void Main(string[] args) { }
+
         public static string GlobalUserID { get; private set; }
         public static void SetGlobalUserID(string userID)
         {
