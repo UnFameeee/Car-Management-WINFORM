@@ -13,6 +13,7 @@ namespace Care_Management_and_Private_Parking
 {
     public partial class CalendarForm : Form
     {
+        //Load form
         public CalendarForm()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Care_Management_and_Private_Parking
         //Load chart
         void fillTaskFlowPanel()                                                        //Cấu hình cho flow panel  
         {
-            //fpn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;             //Viền
+            //fpn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;           //Viền
             fpn.TabIndex = 4;                                                           
             fpn.AutoScroll = true;                                                      
             fpn.VerticalScroll.Visible = true;                                          //Hiện thanh cuộn dọc

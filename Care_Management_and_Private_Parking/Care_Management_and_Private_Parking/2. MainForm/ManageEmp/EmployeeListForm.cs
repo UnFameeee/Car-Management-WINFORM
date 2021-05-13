@@ -19,11 +19,9 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        Employee emp = new Employee();
-
         private void EmployeeListForm_Load(object sender, EventArgs e)
         {
-            DataTable tab = emp.getAllEmp();            
+            DataTable tab = EmployeeDAL.Instance.getAllEmp();            
 
             for (int i = 0; i < tab.Rows.Count; i++)
             {

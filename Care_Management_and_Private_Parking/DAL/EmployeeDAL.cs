@@ -9,9 +9,22 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Employee
+    public class EmployeeDAL
     {
-        //DataProvider db = new DataProvider();
+        private static EmployeeDAL instance;
+        public static EmployeeDAL Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new EmployeeDAL();
+                }
+                return EmployeeDAL.instance;
+            }
+            private set { EmployeeDAL.instance = value; }
+        }
+
         public bool insertEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID)
         {
             SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, JobID)" +

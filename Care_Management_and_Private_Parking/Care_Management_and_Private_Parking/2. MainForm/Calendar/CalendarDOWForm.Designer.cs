@@ -174,7 +174,7 @@ namespace Care_Management_and_Private_Parking
             this.pnlMatrixDay.ForeColor = System.Drawing.Color.White;
             this.pnlMatrixDay.Location = new System.Drawing.Point(3, 80);
             this.pnlMatrixDay.Name = "pnlMatrixDay";
-            this.pnlMatrixDay.Size = new System.Drawing.Size(248, 186);
+            this.pnlMatrixDay.Size = new System.Drawing.Size(248, 228);
             this.pnlMatrixDay.TabIndex = 0;
             // 
             // lbMonthYear
@@ -211,7 +211,7 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Controls.Add(this.btnFri);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 292);
+            this.panel1.Size = new System.Drawing.Size(254, 330);
             this.panel1.TabIndex = 1;
             // 
             // lbTotal
@@ -219,7 +219,7 @@ namespace Care_Management_and_Private_Parking
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.White;
-            this.lbTotal.Location = new System.Drawing.Point(210, 269);
+            this.lbTotal.Location = new System.Drawing.Point(210, 311);
             this.lbTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(35, 13);
@@ -231,7 +231,7 @@ namespace Care_Management_and_Private_Parking
             this.lbEvening.AutoSize = true;
             this.lbEvening.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEvening.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lbEvening.Location = new System.Drawing.Point(127, 269);
+            this.lbEvening.Location = new System.Drawing.Point(127, 311);
             this.lbEvening.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEvening.Name = "lbEvening";
             this.lbEvening.Size = new System.Drawing.Size(51, 13);
@@ -243,7 +243,7 @@ namespace Care_Management_and_Private_Parking
             this.lbNoon.AutoSize = true;
             this.lbNoon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNoon.ForeColor = System.Drawing.Color.Yellow;
-            this.lbNoon.Location = new System.Drawing.Point(76, 269);
+            this.lbNoon.Location = new System.Drawing.Point(76, 311);
             this.lbNoon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNoon.Name = "lbNoon";
             this.lbNoon.Size = new System.Drawing.Size(39, 13);
@@ -309,7 +309,7 @@ namespace Care_Management_and_Private_Parking
             this.lbMorning.AutoSize = true;
             this.lbMorning.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMorning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lbMorning.Location = new System.Drawing.Point(8, 269);
+            this.lbMorning.Location = new System.Drawing.Point(8, 311);
             this.lbMorning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMorning.Name = "lbMorning";
             this.lbMorning.Size = new System.Drawing.Size(58, 13);
@@ -321,7 +321,7 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(254, 289);
+            this.ClientSize = new System.Drawing.Size(254, 336);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);

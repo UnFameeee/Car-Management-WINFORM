@@ -21,12 +21,10 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        Employee emp = new Employee();
-
         private void ManageEmployeeForm_Load(object sender, EventArgs e)
         {
             SqlCommand com = new SqlCommand("Select EmpID, FullName from EMPLOYEE");
-            dgvData.DataSource = emp.getEmployee(com);
+            dgvData.DataSource = EmployeeDAL.Instance.getEmployee(com);
             resizeDGV();
         }       
 
@@ -35,7 +33,7 @@ namespace Care_Management_and_Private_Parking
             string id = tbEmpID.Text = dgvData.CurrentRow.Cells[0].Value.ToString();
 
             SqlCommand com = new SqlCommand("Select * from EMPLOYEE where EmpID = " + "'" + id + "'");
-            DataTable tab = emp.getEmployee(com);
+            DataTable tab = EmployeeDAL.Instance.getEmployee(com);
 
             tbEmpID.Text = tab.Rows[0][0].ToString();
             tbFullName.Text = tab.Rows[0][1].ToString();
@@ -62,9 +60,9 @@ namespace Care_Management_and_Private_Parking
 
             if (verif())
             {
-                if (emp.checkEmp(EmpID))
+                if (EmployeeDAL.Instance.checkEmp(EmpID))
                 {
-                    if (emp.insertEmployee(EmpID, FName, Gender, Phone, Identity, JobID))
+                    if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Phone, Identity, JobID))
                     {
                         MessageBox.Show("New Employee Inserted", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnClear.PerformClick();
@@ -99,7 +97,7 @@ namespace Care_Management_and_Private_Parking
 
             if (verif())
             {
-                if (emp.updateEmployee(EmpID, FName, Gender, Phone, Identity, JobID))
+                if (EmployeeDAL.Instance.updateEmployee(EmpID, FName, Gender, Phone, Identity, JobID))
                 {
                     MessageBox.Show(EmpID + " Has Been Updated", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnClear.PerformClick();
@@ -123,7 +121,7 @@ namespace Care_Management_and_Private_Parking
             {
                 if (MessageBox.Show("Are You Sure You Want To Remove " + EmpID, "Remove Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (emp.removeEmployee(EmpID))
+                    if (EmployeeDAL.Instance.removeEmployee(EmpID))
                     {
                         MessageBox.Show(EmpID + " Has Been Removed", "Remove Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnClear.PerformClick();
@@ -153,7 +151,7 @@ namespace Care_Management_and_Private_Parking
         void reloadDatagridview()
         {
             SqlCommand com = new SqlCommand("Select EmpID, FullName from EMPLOYEE");
-            dgvData.DataSource = emp.getEmployee(com);
+            dgvData.DataSource = EmployeeDAL.Instance.getEmployee(com);
             resizeDGV();
         }
 
