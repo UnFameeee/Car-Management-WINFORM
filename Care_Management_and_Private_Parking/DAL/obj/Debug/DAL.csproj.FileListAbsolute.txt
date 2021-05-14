@@ -1,7 +1,0 @@
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\bin\Debug\DAL.exe.config
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\bin\Debug\DAL.exe
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\bin\Debug\DAL.pdb
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\obj\Debug\DAL.exe
-C:\Users\Admin-s\Desktop\Clone Project WF\Project-Final-Winform\Care_Management_and_Private_Parking\DAL\obj\Debug\DAL.pdb

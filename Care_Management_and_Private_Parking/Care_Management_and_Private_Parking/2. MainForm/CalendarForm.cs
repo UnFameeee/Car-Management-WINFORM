@@ -21,7 +21,9 @@ namespace Care_Management_and_Private_Parking
             fillProgressBar();                                                          //Cấu hình cho thanh ProgressBar
             fillChart();                                                                //Cấu hình cho chart
         }
+
         CalendarDOWForm frm = new CalendarDOWForm() { TopLevel = false, TopMost = true };
+
         private void CalendarForm_Load(object sender, EventArgs e)
         {
             //Set vị trí cho cái lịch ở giữa
