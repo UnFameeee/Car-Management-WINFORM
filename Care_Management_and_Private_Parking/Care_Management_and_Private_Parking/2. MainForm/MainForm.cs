@@ -32,14 +32,23 @@ namespace Care_Management_and_Private_Parking
             this.MainPanel.Controls.Add(frmCalendar);
             this.MainPanel.Controls.Add(frmCarpark);
             this.MainPanel.Controls.Add(frmManage);
-            frmCarpark.Show();
+            tick();
         }
+        Cursor cur1 = Cursors.Hand;
+        Cursor cur2 = Cursors.Default;
         private void tick()
-        {
+        {        
+            //Chỉnh Checked
             btnHome.Checked = false;
             btnUser.Checked = false;
             btnCalendar.Checked = false;
             btnManageJob.Checked = false;
+            //Chỉnh Cursor
+            btnHome.Cursor = cur1;
+            btnUser.Cursor = cur1;
+            btnCalendar.Cursor = cur1;
+            btnManageJob.Cursor = cur1;
+            //Tắt tất cả các form
             frmCalendar.Hide();
             frmCarpark.Hide();
             frmManage.Hide();
@@ -48,6 +57,7 @@ namespace Care_Management_and_Private_Parking
         {
             tick();
             btnHome.Checked = true;
+            btnHome.Cursor = cur2;
             frmCarpark.Show();
         }
 
@@ -55,13 +65,14 @@ namespace Care_Management_and_Private_Parking
         {
             tick();
             btnUser.Checked = true;
-
+            btnUser.Cursor = cur2;
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
             tick();
             btnCalendar.Checked = true;
+            btnCalendar.Cursor = cur2;
             frmCalendar.Show();
         }
 
@@ -69,6 +80,7 @@ namespace Care_Management_and_Private_Parking
         {
             tick();
             btnManageJob.Checked = true;
+            btnManageJob.Cursor = cur2;
             frmManage.Show();
         }
     }

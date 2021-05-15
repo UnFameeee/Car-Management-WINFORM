@@ -15,18 +15,54 @@ namespace Care_Management_and_Private_Parking
 {
     public partial class CarParkForm : Form
     {
+        ParkingLot frmParkingLot = new ParkingLot() { TopLevel = false, TopMost = false };
+        Cursor cur1 = Cursors.Hand;
+        Cursor cur2 = Cursors.Default;
         public CarParkForm()
         {
             InitializeComponent();
             loadForm();
         }
-        
-        ParkingLot frmCalendar = new ParkingLot() { TopLevel = false, TopMost = false };
 
         void loadForm()
         {
-            this.pnlMain.Controls.Add(frmCalendar);
-            frmCalendar.Show();
+            this.pnlMain.Controls.Add(frmParkingLot);
+            tick();
+        }
+        private void tick()
+        {
+            //Chỉnh Checked
+            btnParkingLot.Checked = false;
+            btnServiceLot.Checked = false;
+            btnRentalLot.Checked = false;
+            //Chỉnh Cursor
+            btnParkingLot.Cursor = cur1;
+            btnServiceLot.Cursor = cur1;
+            btnRentalLot.Cursor = cur1;
+            //Tắt tất cả các form
+            frmParkingLot.Hide();
+        }
+
+        private void btnParkingLot_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnParkingLot.Checked = true;
+            btnParkingLot.Cursor = cur2;
+            frmParkingLot.Show();
+        }
+
+        private void btnServiceLot_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnServiceLot.Checked = true;
+            btnServiceLot.Cursor = cur2;
+        }
+
+        private void btnRentalLot_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnRentalLot.Checked = true;
+            btnRentalLot.Cursor = cur2;
         }
     }
 }

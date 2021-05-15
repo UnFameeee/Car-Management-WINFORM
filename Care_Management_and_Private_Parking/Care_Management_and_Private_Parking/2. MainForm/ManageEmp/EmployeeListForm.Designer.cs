@@ -29,19 +29,18 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
             this.btnHeader = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
             this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDetail = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.btnSearchByID = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchByName = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReload = new Guna.UI.WinForms.GunaGradientButton();
             this.pnData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +54,7 @@ namespace Care_Management_and_Private_Parking
             this.btnHeader.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeader.ForeColor = System.Drawing.Color.White;
             this.btnHeader.HoverState.Parent = this.btnHeader;
-            this.btnHeader.Location = new System.Drawing.Point(346, 12);
+            this.btnHeader.Location = new System.Drawing.Point(324, 10);
             this.btnHeader.Name = "btnHeader";
             this.btnHeader.ShadowDecoration.Parent = this.btnHeader;
             this.btnHeader.Size = new System.Drawing.Size(231, 38);
@@ -66,9 +65,8 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnData.BorderRadius = 22;
             this.pnData.BorderThickness = 1;
-            this.pnData.Controls.Add(this.btnReload);
             this.pnData.Controls.Add(this.tbSearch);
-            this.pnData.Controls.Add(this.guna2GradientButton1);
+            this.pnData.Controls.Add(this.btnPrint);
             this.pnData.Controls.Add(this.btnAdd);
             this.pnData.Controls.Add(this.btnDetail);
             this.pnData.Controls.Add(this.dgvEmp);
@@ -80,7 +78,7 @@ namespace Care_Management_and_Private_Parking
             this.pnData.Location = new System.Drawing.Point(0, 0);
             this.pnData.Name = "pnData";
             this.pnData.ShadowDecoration.Parent = this.pnData;
-            this.pnData.Size = new System.Drawing.Size(933, 712);
+            this.pnData.Size = new System.Drawing.Size(913, 712);
             this.pnData.TabIndex = 40;
             // 
             // tbSearch
@@ -103,41 +101,41 @@ namespace Care_Management_and_Private_Parking
             this.tbSearch.HoverState.Parent = this.tbSearch;
             this.tbSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearch.IconLeft")));
             this.tbSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.tbSearch.Location = new System.Drawing.Point(109, 71);
+            this.tbSearch.Location = new System.Drawing.Point(137, 55);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
             this.tbSearch.PlaceholderText = "Type to search Name or ID";
             this.tbSearch.SelectedText = "";
             this.tbSearch.ShadowDecoration.Parent = this.tbSearch;
-            this.tbSearch.Size = new System.Drawing.Size(596, 39);
+            this.tbSearch.Size = new System.Drawing.Size(611, 39);
             this.tbSearch.TabIndex = 51;
             // 
-            // guna2GradientButton1
+            // btnPrint
             // 
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(817, 676);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(89, 24);
-            this.guna2GradientButton1.TabIndex = 50;
-            this.guna2GradientButton1.Text = "PRINT";
+            this.btnPrint.CheckedState.Parent = this.btnPrint;
+            this.btnPrint.CustomImages.Parent = this.btnPrint;
+            this.btnPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.btnPrint.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.HoverState.Parent = this.btnPrint;
+            this.btnPrint.Location = new System.Drawing.Point(804, 674);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.ShadowDecoration.Parent = this.btnPrint;
+            this.btnPrint.Size = new System.Drawing.Size(89, 24);
+            this.btnPrint.TabIndex = 50;
+            this.btnPrint.Text = "PRINT";
             // 
             // btnAdd
             // 
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.btnAdd.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.btnAdd.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(146, 676);
+            this.btnAdd.Location = new System.Drawing.Point(133, 674);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(89, 24);
@@ -149,12 +147,12 @@ namespace Care_Management_and_Private_Parking
             // 
             this.btnDetail.CheckedState.Parent = this.btnDetail;
             this.btnDetail.CustomImages.Parent = this.btnDetail;
-            this.btnDetail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.btnDetail.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnDetail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.btnDetail.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.Color.White;
             this.btnDetail.HoverState.Parent = this.btnDetail;
-            this.btnDetail.Location = new System.Drawing.Point(25, 676);
+            this.btnDetail.Location = new System.Drawing.Point(12, 674);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.ShadowDecoration.Parent = this.btnDetail;
             this.btnDetail.Size = new System.Drawing.Size(89, 24);
@@ -180,7 +178,7 @@ namespace Care_Management_and_Private_Parking
             this.dgvEmp.ColumnHeadersHeight = 40;
             this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEmp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.dgvEmp.Location = new System.Drawing.Point(25, 155);
+            this.dgvEmp.Location = new System.Drawing.Point(12, 153);
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.ReadOnly = true;
             this.dgvEmp.RowHeadersWidth = 25;
@@ -192,13 +190,15 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnSearchByID
             // 
+            this.btnSearchByID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSearchByID.BorderThickness = 1;
             this.btnSearchByID.CheckedState.Parent = this.btnSearchByID;
             this.btnSearchByID.CustomImages.Parent = this.btnSearchByID;
-            this.btnSearchByID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSearchByID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnSearchByID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSearchByID.ForeColor = System.Drawing.Color.White;
             this.btnSearchByID.HoverState.Parent = this.btnSearchByID;
-            this.btnSearchByID.Location = new System.Drawing.Point(829, 83);
+            this.btnSearchByID.Location = new System.Drawing.Point(816, 124);
             this.btnSearchByID.Name = "btnSearchByID";
             this.btnSearchByID.ShadowDecoration.Parent = this.btnSearchByID;
             this.btnSearchByID.Size = new System.Drawing.Size(77, 23);
@@ -208,13 +208,15 @@ namespace Care_Management_and_Private_Parking
             // 
             // btnSearchByName
             // 
+            this.btnSearchByName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSearchByName.BorderThickness = 1;
             this.btnSearchByName.CheckedState.Parent = this.btnSearchByName;
             this.btnSearchByName.CustomImages.Parent = this.btnSearchByName;
-            this.btnSearchByName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSearchByName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnSearchByName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSearchByName.ForeColor = System.Drawing.Color.White;
             this.btnSearchByName.HoverState.Parent = this.btnSearchByName;
-            this.btnSearchByName.Location = new System.Drawing.Point(724, 83);
+            this.btnSearchByName.Location = new System.Drawing.Point(736, 124);
             this.btnSearchByName.Name = "btnSearchByName";
             this.btnSearchByName.ShadowDecoration.Parent = this.btnSearchByName;
             this.btnSearchByName.Size = new System.Drawing.Size(77, 23);
@@ -222,38 +224,12 @@ namespace Care_Management_and_Private_Parking
             this.btnSearchByName.Text = "By Name";
             this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
             // 
-            // btnReload
-            // 
-            this.btnReload.AnimationHoverSpeed = 0.07F;
-            this.btnReload.AnimationSpeed = 0.03F;
-            this.btnReload.BaseColor1 = System.Drawing.Color.Magenta;
-            this.btnReload.BaseColor2 = System.Drawing.Color.Aqua;
-            this.btnReload.BorderColor = System.Drawing.Color.Black;
-            this.btnReload.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReload.FocusedColor = System.Drawing.Color.Empty;
-            this.btnReload.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
-            this.btnReload.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnReload.Location = new System.Drawing.Point(25, 116);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.OnHoverBaseColor1 = System.Drawing.Color.Transparent;
-            this.btnReload.OnHoverBaseColor2 = System.Drawing.Color.Transparent;
-            this.btnReload.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnReload.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnReload.OnHoverImage = null;
-            this.btnReload.OnPressedColor = System.Drawing.Color.Black;
-            this.btnReload.Size = new System.Drawing.Size(118, 33);
-            this.btnReload.TabIndex = 52;
-            this.btnReload.Text = "Reload";
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(933, 712);
+            this.ClientSize = new System.Drawing.Size(913, 712);
             this.Controls.Add(this.pnData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeListForm";
@@ -275,8 +251,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.DataGridView dgvEmp;
         private Guna.UI2.WinForms.Guna2GradientButton btnDetail;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnPrint;
         private Guna.UI2.WinForms.Guna2TextBox tbSearch;
-        private Guna.UI.WinForms.GunaGradientButton btnReload;
     }
 }

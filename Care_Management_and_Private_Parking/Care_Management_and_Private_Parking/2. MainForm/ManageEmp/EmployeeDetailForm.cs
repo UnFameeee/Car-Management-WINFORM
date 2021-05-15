@@ -77,6 +77,7 @@ namespace Care_Management_and_Private_Parking
                 {
                     MessageBox.Show(EmpID + " Has Been Updated", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reload();
+                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
@@ -143,6 +144,11 @@ namespace Care_Management_and_Private_Parking
             {
                 ptbEmp.Image = Image.FromFile(opf.FileName);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

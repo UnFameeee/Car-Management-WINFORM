@@ -25,6 +25,5 @@ namespace Global
         public static int CarColumns = 14;              //Cột xe
         public static int CarMargin = 10;
 
-        //
     }
 }
