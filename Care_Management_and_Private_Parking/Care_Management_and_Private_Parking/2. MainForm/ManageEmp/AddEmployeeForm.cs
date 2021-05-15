@@ -22,10 +22,10 @@ namespace Care_Management_and_Private_Parking
  
         private void AddEmployeeForm_Load(object sender, EventArgs e)
         {
-            SqlCommand com = new SqlCommand("Select * from POSITION");
+            SqlCommand com = new SqlCommand("Select * from JOB");
             cbbxJobID.DataSource = EmployeeDAL.Instance.getEmployee(com);
             cbbxJobID.DisplayMember = "Description";
-            cbbxJobID.ValueMember = "PositionID";
+            cbbxJobID.ValueMember = "JobID";
             cbbxJobID.SelectedItem = null;
         }
 
@@ -35,14 +35,15 @@ namespace Care_Management_and_Private_Parking
             string FName = tbFullName.Text;
             string Phone = tbPhone.Text;
             string Identity = tbIdentity.Text;
-            string JobID = cbbxJobID.SelectedValue.ToString();
-            string Gender = "Male";
 
+            string Gender = "Male";
             if (rdbtnFemale.Checked)
                 Gender = "Female";
 
             if (verif())
             {
+                string JobID = cbbxJobID.SelectedValue.ToString();
+
                 MemoryStream pic = new MemoryStream();
                 ptbEmp.Image.Save(pic, ptbEmp.Image.RawFormat);
 
@@ -93,7 +94,7 @@ namespace Care_Management_and_Private_Parking
             ptbEmp.Image = null;
         }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void ptbEmp_DoubleClick(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
             opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";

@@ -29,6 +29,7 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rdbtnFemale = new System.Windows.Forms.RadioButton();
             this.rdbtnMale = new System.Windows.Forms.RadioButton();
             this.lbGender = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@ namespace Care_Management_and_Private_Parking
             this.btnHeader = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ptbEmp = new System.Windows.Forms.PictureBox();
             this.cbbxJobID = new System.Windows.Forms.ComboBox();
-            this.btnUpload = new Guna.UI.WinForms.GunaButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,46 +253,25 @@ namespace Care_Management_and_Private_Parking
             // ptbEmp
             // 
             this.ptbEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.ptbEmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptbEmp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbEmp.Location = new System.Drawing.Point(23, 106);
             this.ptbEmp.Name = "ptbEmp";
             this.ptbEmp.Size = new System.Drawing.Size(283, 281);
+            this.ptbEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbEmp.TabIndex = 44;
             this.ptbEmp.TabStop = false;
+            this.toolTip1.SetToolTip(this.ptbEmp, "Double Click To Upload Image");
+            this.ptbEmp.DoubleClick += new System.EventHandler(this.ptbEmp_DoubleClick);
             // 
             // cbbxJobID
             // 
+            this.cbbxJobID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbxJobID.FormattingEnabled = true;
-            this.cbbxJobID.Location = new System.Drawing.Point(459, 367);
+            this.cbbxJobID.Location = new System.Drawing.Point(458, 363);
             this.cbbxJobID.Name = "cbbxJobID";
-            this.cbbxJobID.Size = new System.Drawing.Size(161, 21);
+            this.cbbxJobID.Size = new System.Drawing.Size(161, 24);
             this.cbbxJobID.TabIndex = 45;
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.AnimationHoverSpeed = 0.07F;
-            this.btnUpload.AnimationSpeed = 0.03F;
-            this.btnUpload.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpload.BaseColor = System.Drawing.Color.Transparent;
-            this.btnUpload.BorderColor = System.Drawing.Color.Gray;
-            this.btnUpload.BorderSize = 1;
-            this.btnUpload.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUpload.FocusedColor = System.Drawing.Color.Empty;
-            this.btnUpload.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
-            this.btnUpload.ForeColor = System.Drawing.Color.Red;
-            this.btnUpload.Image = null;
-            this.btnUpload.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpload.Location = new System.Drawing.Point(111, 393);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.OnHoverBaseColor = System.Drawing.Color.Gray;
-            this.btnUpload.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnUpload.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnUpload.OnHoverImage = null;
-            this.btnUpload.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUpload.Size = new System.Drawing.Size(95, 36);
-            this.btnUpload.TabIndex = 46;
-            this.btnUpload.Text = "UPLOAD";
-            this.btnUpload.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // EmployeeDetailForm
             // 
@@ -299,7 +279,6 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(649, 523);
-            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.cbbxJobID);
             this.Controls.Add(this.ptbEmp);
             this.Controls.Add(this.btnHeader);
@@ -346,6 +325,6 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2GradientButton btnHeader;
         private System.Windows.Forms.PictureBox ptbEmp;
         private System.Windows.Forms.ComboBox cbbxJobID;
-        private Guna.UI.WinForms.GunaButton btnUpload;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
