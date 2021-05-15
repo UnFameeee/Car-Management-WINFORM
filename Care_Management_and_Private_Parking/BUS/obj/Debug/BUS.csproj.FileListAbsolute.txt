@@ -1,7 +1,0 @@
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\bin\Debug\BUS.exe.config
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\bin\Debug\BUS.exe
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\bin\Debug\BUS.pdb
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\obj\Debug\BUS.exe
-C:\Users\HAI DU\Desktop\Project-Final-Winform\Care_Management_and_Private_Parking\BUS\obj\Debug\BUS.pdb

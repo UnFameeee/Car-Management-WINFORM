@@ -89,16 +89,16 @@ namespace Care_Management_and_Private_Parking
         {
             string id = dgvEmp.CurrentRow.Cells[0].Value.ToString();
             EmployeeDetailForm frm = new EmployeeDetailForm(id);
-            frm.Show();
+            frm.ShowDialog();
+            reload();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddEmployeeForm frm = new AddEmployeeForm();
-            frm.Show();
+            frm.ShowDialog();
+            reload();
         }
-
-        private void btnReload_Click(object sender, EventArgs e)
+        void reload()
         {
             dgvEmp.DataSource = EmployeeDAL.Instance.getAllEmp();
             tbSearch.Text = null;
