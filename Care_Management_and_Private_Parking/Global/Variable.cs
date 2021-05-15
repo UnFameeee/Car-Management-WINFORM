@@ -22,7 +22,7 @@ namespace Global
         public static int btnCarWidth = 40;             //Độ rộng của nút ngày
         public static int btnCarHeight = 40;            //Độ dài của nút ngày  //20
         public static int CarRows = 2;                  //Hàng xe
-        public static int CarColumns = 13;              //Cột xe
+        public static int CarColumns = 14;              //Cột xe
         public static int CarMargin = 10;
 
         //

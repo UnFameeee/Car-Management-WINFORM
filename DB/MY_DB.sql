@@ -1,6 +1,7 @@
 ﻿create database WINFORM
+GO
 use WINFORM
-
+go
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 create table POSITION(
@@ -72,6 +73,15 @@ create table CUSTOMER(
 	Address varchar(100),
 	IdentityNumber varchar(100),
 	Appearance image
+)
+
+--Xe
+create table TRANSPORT(
+	TransID varchar(100) primary key,
+	Type varchar(100),												-- loại xe
+	LicensePlate varchar(100),										-- biển số xe
+	Picture image,
+	CusID varchar(100) references CUSTOMER(CusID)
 )
 
 --Xe

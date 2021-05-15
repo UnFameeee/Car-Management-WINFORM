@@ -42,28 +42,28 @@ namespace Care_Management_and_Private_Parking
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.lbUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnInterface.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnInterface
             // 
             this.pnInterface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnInterface.Controls.Add(this.guna2CirclePictureBox1);
             this.pnInterface.Controls.Add(this.btnExit);
             this.pnInterface.Controls.Add(this.panel5);
             this.pnInterface.Controls.Add(this.panel4);
             this.pnInterface.Controls.Add(this.panel3);
             this.pnInterface.Controls.Add(this.panel2);
             this.pnInterface.Controls.Add(this.lbUser);
-            this.pnInterface.Controls.Add(this.pictureBox1);
             this.pnInterface.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnInterface.Location = new System.Drawing.Point(0, 0);
             this.pnInterface.Name = "pnInterface";
@@ -96,7 +96,7 @@ namespace Care_Management_and_Private_Parking
             // panel5
             // 
             this.panel5.Controls.Add(this.btnManageJob);
-            this.panel5.Location = new System.Drawing.Point(12, 386);
+            this.panel5.Location = new System.Drawing.Point(12, 476);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(157, 60);
             this.panel5.TabIndex = 3;
@@ -127,7 +127,7 @@ namespace Care_Management_and_Private_Parking
             // panel4
             // 
             this.panel4.Controls.Add(this.btnCalendar);
-            this.panel4.Location = new System.Drawing.Point(12, 311);
+            this.panel4.Location = new System.Drawing.Point(12, 401);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(157, 60);
             this.panel4.TabIndex = 4;
@@ -160,7 +160,7 @@ namespace Care_Management_and_Private_Parking
             // panel3
             // 
             this.panel3.Controls.Add(this.btnUser);
-            this.panel3.Location = new System.Drawing.Point(12, 235);
+            this.panel3.Location = new System.Drawing.Point(12, 325);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(157, 60);
             this.panel3.TabIndex = 3;
@@ -193,7 +193,7 @@ namespace Care_Management_and_Private_Parking
             // panel2
             // 
             this.panel2.Controls.Add(this.btnHome);
-            this.panel2.Location = new System.Drawing.Point(12, 160);
+            this.panel2.Location = new System.Drawing.Point(12, 250);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(157, 60);
             this.panel2.TabIndex = 2;
@@ -228,29 +228,19 @@ namespace Care_Management_and_Private_Parking
             // 
             this.lbUser.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.White;
-            this.lbUser.Location = new System.Drawing.Point(25, 20);
+            this.lbUser.Location = new System.Drawing.Point(3, 140);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(133, 28);
+            this.lbUser.Size = new System.Drawing.Size(172, 60);
             this.lbUser.TabIndex = 1;
             this.lbUser.Text = "Hello User!";
             this.lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(68, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // MainPanel
             // 
             this.MainPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainPanel.Location = new System.Drawing.Point(175, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1094, 736);
+            this.MainPanel.Size = new System.Drawing.Size(1082, 736);
             this.MainPanel.TabIndex = 1;
             // 
             // guna2DragControl1
@@ -261,11 +251,24 @@ namespace Care_Management_and_Private_Parking
             // 
             this.guna2DragControl2.TargetControl = this.pnInterface;
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(29, 17);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // Mainform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(1281, 736);
+            this.ClientSize = new System.Drawing.Size(1260, 736);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.pnInterface);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,7 +281,7 @@ namespace Care_Management_and_Private_Parking
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,7 +292,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private System.Windows.Forms.Label lbUser;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnManageJob;
         private System.Windows.Forms.Panel panel4;
@@ -300,5 +302,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Panel MainPanel;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
