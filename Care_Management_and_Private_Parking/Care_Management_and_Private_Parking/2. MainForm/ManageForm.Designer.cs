@@ -32,7 +32,6 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnEmpList = new Guna.UI2.WinForms.Guna2Button();
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnManageEmp = new Guna.UI2.WinForms.Guna2Button();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,13 +39,12 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnMenu.BorderRadius = 22;
             this.pnMenu.BorderThickness = 1;
-            this.pnMenu.Controls.Add(this.btnManageEmp);
             this.pnMenu.Controls.Add(this.btnEmpList);
             this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnMenu.Location = new System.Drawing.Point(12, 12);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.ShadowDecoration.Parent = this.pnMenu;
-            this.pnMenu.Size = new System.Drawing.Size(131, 535);
+            this.pnMenu.Size = new System.Drawing.Size(131, 712);
             this.pnMenu.TabIndex = 0;
             // 
             // btnEmpList
@@ -79,37 +77,15 @@ namespace Care_Management_and_Private_Parking
             this.pnData.Location = new System.Drawing.Point(149, 12);
             this.pnData.Name = "pnData";
             this.pnData.ShadowDecoration.Parent = this.pnData;
-            this.pnData.Size = new System.Drawing.Size(649, 535);
+            this.pnData.Size = new System.Drawing.Size(933, 712);
             this.pnData.TabIndex = 1;
-            // 
-            // btnManageEmp
-            // 
-            this.btnManageEmp.BackColor = System.Drawing.Color.Transparent;
-            this.btnManageEmp.BorderRadius = 22;
-            this.btnManageEmp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnManageEmp.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnManageEmp.CheckedState.Parent = this.btnManageEmp;
-            this.btnManageEmp.CustomImages.Parent = this.btnManageEmp;
-            this.btnManageEmp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnManageEmp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnManageEmp.HoverState.Parent = this.btnManageEmp;
-            this.btnManageEmp.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageEmp.Location = new System.Drawing.Point(10, 123);
-            this.btnManageEmp.Name = "btnManageEmp";
-            this.btnManageEmp.ShadowDecoration.Parent = this.btnManageEmp;
-            this.btnManageEmp.Size = new System.Drawing.Size(111, 35);
-            this.btnManageEmp.TabIndex = 2;
-            this.btnManageEmp.Text = "ManageEmp";
-            this.btnManageEmp.UseTransparentBackground = true;
-            this.btnManageEmp.Click += new System.EventHandler(this.btnManageEmp_Click);
             // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(810, 554);
+            this.ClientSize = new System.Drawing.Size(1094, 736);
             this.Controls.Add(this.pnData);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -127,6 +103,5 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2Panel pnMenu;
         private Guna.UI2.WinForms.Guna2Panel pnData;
         private Guna.UI2.WinForms.Guna2Button btnEmpList;
-        private Guna.UI2.WinForms.Guna2Button btnManageEmp;
     }
 }

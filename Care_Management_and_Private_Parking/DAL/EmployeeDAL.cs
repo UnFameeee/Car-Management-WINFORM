@@ -25,16 +25,18 @@ namespace DAL
             private set { EmployeeDAL.instance = value; }
         }
 
-        public bool insertEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID)
+        public bool insertEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID, MemoryStream pic)
         {
-            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, JobID)" +
-                "values (@EmpID, @FullName, @Gender, @Phone, @Identity, @JobID)", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, JobID, Appearance)" +
+                "values (@EmpID, @FullName, @Gender, @Phone, @Identity, @JobID, @Appear)", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             command.Parameters.Add("@FullName", SqlDbType.VarChar).Value = FullName;
             command.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
             command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = PhoneNumber;
             command.Parameters.Add("@Identity", SqlDbType.VarChar).Value = IdentityCardNumber;
             command.Parameters.Add("@JobID", SqlDbType.VarChar).Value = JobID;
+            command.Parameters.Add("@Appear", SqlDbType.Image).Value = pic.ToArray();
+
 
             DataProvider.Instance.openConnection();
             if (command.ExecuteNonQuery() == 1)
@@ -65,15 +67,17 @@ namespace DAL
             }
         }
 
-        public bool updateEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID)
+        public bool updateEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID, MemoryStream pic)
         {
-            SqlCommand command = new SqlCommand("Update EMPLOYEE set FullName = @FullName, Gender = @Gender, PhoneNumber = @Phone, IdentityCardNumber = @Identity, JobID = @JobID where EmpID = @EmpID", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Update EMPLOYEE set FullName = @FullName, Gender = @Gender, PhoneNumber = @Phone, IdentityCardNumber = @Identity, " +
+                "JobID = @JobID, Appearance = @Appear where EmpID = @EmpID", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             command.Parameters.Add("@FullName", SqlDbType.VarChar).Value = FullName;
             command.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
             command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = PhoneNumber;
             command.Parameters.Add("@Identity", SqlDbType.VarChar).Value = IdentityCardNumber;
             command.Parameters.Add("@JobID", SqlDbType.VarChar).Value = JobID;
+            command.Parameters.Add("@Appear", SqlDbType.Image).Value = pic.ToArray();
 
             DataProvider.Instance.openConnection();
             if (command.ExecuteNonQuery() == 1)
@@ -113,8 +117,39 @@ namespace DAL
 
         public DataTable getAllEmp()
         {
-            SqlCommand command = new SqlCommand("Select * from EMPLOYEE", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, " +
+                "JobID, Appearance from EMPLOYEE", DataProvider.Instance.getConnection);
             return getEmployee(command);
+        }
+
+        public DataTable searchByName(string name)
+        {
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, " +
+                "JobID, Appearance from EMPLOYEE where FullName Like '%" + name + "%'", DataProvider.Instance.getConnection);
+            return getEmployee(command);
+        }
+
+        public DataTable searchByID(string id)
+        {
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, " +
+                "JobID, Appearance from EMPLOYEE  where EmpID = '" + id + "'", DataProvider.Instance.getConnection);
+            return getEmployee(command);
+        }
+
+        int totalEmp()
+        {
+            return getAllEmp().Rows.Count;
+        }
+
+        int maleEmp()
+        {
+            SqlCommand command = new SqlCommand("Select * from EMPLOYEE where Gender = 'Male'", DataProvider.Instance.getConnection);
+            return getEmployee(command).Rows.Count;
+        }
+
+        int femaleEmp()
+        {
+            return totalEmp() - maleEmp();
         }
     }
 }
