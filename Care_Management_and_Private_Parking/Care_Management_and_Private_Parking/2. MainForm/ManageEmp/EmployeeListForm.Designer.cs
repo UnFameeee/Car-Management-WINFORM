@@ -29,177 +29,237 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Guna2Button guna2Button1;
-            this.pnEmp = new Guna.UI.WinForms.GunaShadowPanel();
-            this.fpnEmpList = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnHeader = new Guna.UI.WinForms.GunaLinePanel();
-            this.lbJobID = new Guna.UI.WinForms.GunaLabel();
-            this.lbIdentity = new Guna.UI.WinForms.GunaLabel();
-            this.lbPhone = new Guna.UI.WinForms.GunaLabel();
-            this.lbGender = new Guna.UI.WinForms.GunaLabel();
-            this.lbFullName = new Guna.UI.WinForms.GunaLabel();
-            this.lbEmpID = new Guna.UI.WinForms.GunaLabel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.pnEmp.SuspendLayout();
-            this.fpnEmpList.SuspendLayout();
-            this.pnHeader.SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnHeader = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.pnData = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDetail = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.dgvEmp = new System.Windows.Forms.DataGridView();
+            this.btnSearchByID = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearchByName = new Guna.UI2.WinForms.Guna2Button();
+            this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.pnData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnEmp
+            // btnHeader
             // 
-            this.pnEmp.BackColor = System.Drawing.Color.Transparent;
-            this.pnEmp.BaseColor = System.Drawing.Color.Transparent;
-            this.pnEmp.Controls.Add(this.fpnEmpList);
-            this.pnEmp.Location = new System.Drawing.Point(12, 86);
-            this.pnEmp.Name = "pnEmp";
-            this.pnEmp.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
-            this.pnEmp.Radius = 16;
-            this.pnEmp.ShadowColor = System.Drawing.Color.Black;
-            this.pnEmp.ShadowDepth = 40;
-            this.pnEmp.ShadowShift = 3;
-            this.pnEmp.Size = new System.Drawing.Size(622, 397);
-            this.pnEmp.TabIndex = 1;
+            this.btnHeader.CheckedState.Parent = this.btnHeader;
+            this.btnHeader.CustomImages.Parent = this.btnHeader;
+            this.btnHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.btnHeader.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnHeader.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeader.ForeColor = System.Drawing.Color.White;
+            this.btnHeader.HoverState.Parent = this.btnHeader;
+            this.btnHeader.Location = new System.Drawing.Point(346, 12);
+            this.btnHeader.Name = "btnHeader";
+            this.btnHeader.ShadowDecoration.Parent = this.btnHeader;
+            this.btnHeader.Size = new System.Drawing.Size(231, 38);
+            this.btnHeader.TabIndex = 39;
+            this.btnHeader.Text = "EMPLOYEE LIST";
             // 
-            // fpnEmpList
+            // pnData
             // 
-            this.fpnEmpList.Controls.Add(this.pnHeader);
-            this.fpnEmpList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnEmpList.Location = new System.Drawing.Point(3, 1);
-            this.fpnEmpList.Name = "fpnEmpList";
-            this.fpnEmpList.Size = new System.Drawing.Size(616, 394);
-            this.fpnEmpList.TabIndex = 0;
+            this.pnData.BorderRadius = 22;
+            this.pnData.BorderThickness = 1;
+            this.pnData.Controls.Add(this.guna2GradientButton1);
+            this.pnData.Controls.Add(this.btnAdd);
+            this.pnData.Controls.Add(this.btnDetail);
+            this.pnData.Controls.Add(this.dgvEmp);
+            this.pnData.Controls.Add(this.btnSearchByID);
+            this.pnData.Controls.Add(this.btnSearchByName);
+            this.pnData.Controls.Add(this.tbSearch);
+            this.pnData.Controls.Add(this.label1);
+            this.pnData.Controls.Add(this.btnHeader);
+            this.pnData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnData.Location = new System.Drawing.Point(0, 0);
+            this.pnData.Name = "pnData";
+            this.pnData.ShadowDecoration.Parent = this.pnData;
+            this.pnData.Size = new System.Drawing.Size(933, 712);
+            this.pnData.TabIndex = 40;
             // 
-            // pnHeader
+            // btnDetail
             // 
-            this.pnHeader.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnHeader.Controls.Add(this.lbJobID);
-            this.pnHeader.Controls.Add(this.lbIdentity);
-            this.pnHeader.Controls.Add(this.lbPhone);
-            this.pnHeader.Controls.Add(this.lbGender);
-            this.pnHeader.Controls.Add(this.lbFullName);
-            this.pnHeader.Controls.Add(this.lbEmpID);
-            this.pnHeader.ForeColor = System.Drawing.Color.Black;
-            this.pnHeader.LineColor = System.Drawing.Color.Black;
-            this.pnHeader.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.pnHeader.Location = new System.Drawing.Point(3, 3);
-            this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(610, 44);
-            this.pnHeader.TabIndex = 0;
+            this.btnDetail.CheckedState.Parent = this.btnDetail;
+            this.btnDetail.CustomImages.Parent = this.btnDetail;
+            this.btnDetail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.btnDetail.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetail.ForeColor = System.Drawing.Color.White;
+            this.btnDetail.HoverState.Parent = this.btnDetail;
+            this.btnDetail.Location = new System.Drawing.Point(25, 676);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.ShadowDecoration.Parent = this.btnDetail;
+            this.btnDetail.Size = new System.Drawing.Size(89, 24);
+            this.btnDetail.TabIndex = 48;
+            this.btnDetail.Text = "DETAIL";
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
-            // lbJobID
+            // dgvEmp
             // 
-            this.lbJobID.AutoSize = true;
-            this.lbJobID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbJobID.ForeColor = System.Drawing.Color.Black;
-            this.lbJobID.Location = new System.Drawing.Point(551, 12);
-            this.lbJobID.Name = "lbJobID";
-            this.lbJobID.Size = new System.Drawing.Size(45, 19);
-            this.lbJobID.TabIndex = 17;
-            this.lbJobID.Text = "JobID";
+            this.dgvEmp.AllowUserToAddRows = false;
+            this.dgvEmp.AllowUserToDeleteRows = false;
+            this.dgvEmp.AllowUserToResizeColumns = false;
+            this.dgvEmp.AllowUserToResizeRows = false;
+            this.dgvEmp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEmp.ColumnHeadersHeight = 40;
+            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEmp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.dgvEmp.Location = new System.Drawing.Point(25, 178);
+            this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.ReadOnly = true;
+            this.dgvEmp.RowHeadersWidth = 39;
+            this.dgvEmp.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEmp.Size = new System.Drawing.Size(881, 483);
+            this.dgvEmp.TabIndex = 46;
             // 
-            // lbIdentity
+            // btnSearchByID
             // 
-            this.lbIdentity.AutoSize = true;
-            this.lbIdentity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.lbIdentity.ForeColor = System.Drawing.Color.Black;
-            this.lbIdentity.Location = new System.Drawing.Point(437, 12);
-            this.lbIdentity.Name = "lbIdentity";
-            this.lbIdentity.Size = new System.Drawing.Size(57, 19);
-            this.lbIdentity.TabIndex = 16;
-            this.lbIdentity.Text = "Identity";
+            this.btnSearchByID.CheckedState.Parent = this.btnSearchByID;
+            this.btnSearchByID.CustomImages.Parent = this.btnSearchByID;
+            this.btnSearchByID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSearchByID.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSearchByID.ForeColor = System.Drawing.Color.White;
+            this.btnSearchByID.HoverState.Parent = this.btnSearchByID;
+            this.btnSearchByID.Location = new System.Drawing.Point(829, 83);
+            this.btnSearchByID.Name = "btnSearchByID";
+            this.btnSearchByID.ShadowDecoration.Parent = this.btnSearchByID;
+            this.btnSearchByID.Size = new System.Drawing.Size(77, 23);
+            this.btnSearchByID.TabIndex = 45;
+            this.btnSearchByID.Text = "By ID";
+            this.btnSearchByID.Click += new System.EventHandler(this.btnSearchByID_Click);
             // 
-            // lbPhone
+            // btnSearchByName
             // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbPhone.ForeColor = System.Drawing.Color.Black;
-            this.lbPhone.Location = new System.Drawing.Point(323, 12);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(48, 19);
-            this.lbPhone.TabIndex = 15;
-            this.lbPhone.Text = "Phone";
+            this.btnSearchByName.CheckedState.Parent = this.btnSearchByName;
+            this.btnSearchByName.CustomImages.Parent = this.btnSearchByName;
+            this.btnSearchByName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSearchByName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSearchByName.ForeColor = System.Drawing.Color.White;
+            this.btnSearchByName.HoverState.Parent = this.btnSearchByName;
+            this.btnSearchByName.Location = new System.Drawing.Point(724, 83);
+            this.btnSearchByName.Name = "btnSearchByName";
+            this.btnSearchByName.ShadowDecoration.Parent = this.btnSearchByName;
+            this.btnSearchByName.Size = new System.Drawing.Size(77, 23);
+            this.btnSearchByName.TabIndex = 44;
+            this.btnSearchByName.Text = "By Name";
+            this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
             // 
-            // lbGender
+            // tbSearch
             // 
-            this.lbGender.AutoSize = true;
-            this.lbGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbGender.ForeColor = System.Drawing.Color.Black;
-            this.lbGender.Location = new System.Drawing.Point(218, 12);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(54, 19);
-            this.lbGender.TabIndex = 14;
-            this.lbGender.Text = "Gender";
+            this.tbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.tbSearch.BorderRadius = 22;
+            this.tbSearch.BorderThickness = 0;
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.DefaultText = "";
+            this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearch.DisabledState.Parent = this.tbSearch;
+            this.tbSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearch.FocusedState.Parent = this.tbSearch;
+            this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearch.HoverState.Parent = this.tbSearch;
+            this.tbSearch.Location = new System.Drawing.Point(119, 74);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.PasswordChar = '\0';
+            this.tbSearch.PlaceholderText = "";
+            this.tbSearch.SelectedText = "";
+            this.tbSearch.ShadowDecoration.Parent = this.tbSearch;
+            this.tbSearch.Size = new System.Drawing.Size(584, 36);
+            this.tbSearch.TabIndex = 43;
             // 
-            // lbFullName
+            // label1
             // 
-            this.lbFullName.AutoSize = true;
-            this.lbFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbFullName.ForeColor = System.Drawing.Color.Black;
-            this.lbFullName.Location = new System.Drawing.Point(103, 12);
-            this.lbFullName.Name = "lbFullName";
-            this.lbFullName.Size = new System.Drawing.Size(69, 19);
-            this.lbFullName.TabIndex = 13;
-            this.lbFullName.Text = "FullName";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(20, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 30);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Search:";
             // 
-            // lbEmpID
+            // btnAdd
             // 
-            this.lbEmpID.AutoSize = true;
-            this.lbEmpID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbEmpID.ForeColor = System.Drawing.Color.Black;
-            this.lbEmpID.Location = new System.Drawing.Point(13, 12);
-            this.lbEmpID.Name = "lbEmpID";
-            this.lbEmpID.Size = new System.Drawing.Size(50, 19);
-            this.lbEmpID.TabIndex = 12;
-            this.lbEmpID.Text = "EmpID";
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.btnAdd.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(146, 676);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(89, 24);
+            this.btnAdd.TabIndex = 49;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // guna2Button1
+            // guna2GradientButton1
             // 
-            guna2Button1.CheckedState.Parent = guna2Button1;
-            guna2Button1.CustomImages.Parent = guna2Button1;
-            guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            guna2Button1.ForeColor = System.Drawing.Color.White;
-            guna2Button1.HoverState.BorderColor = System.Drawing.Color.Gray;
-            guna2Button1.HoverState.FillColor = System.Drawing.Color.Gray;
-            guna2Button1.HoverState.Parent = guna2Button1;
-            guna2Button1.Location = new System.Drawing.Point(524, 489);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.Parent = guna2Button1;
-            guna2Button1.Size = new System.Drawing.Size(90, 34);
-            guna2Button1.TabIndex = 2;
-            guna2Button1.Text = "PRINT";
+            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(817, 676);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(89, 24);
+            this.guna2GradientButton1.TabIndex = 50;
+            this.guna2GradientButton1.Text = "PRINT";
             // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(649, 535);
-            this.Controls.Add(this.pnEmp);
-            this.Controls.Add(guna2Button1);
+            this.ClientSize = new System.Drawing.Size(933, 712);
+            this.Controls.Add(this.pnData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EmployeeListForm";
             this.Load += new System.EventHandler(this.EmployeeListForm_Load);
-            this.pnEmp.ResumeLayout(false);
-            this.fpnEmpList.ResumeLayout(false);
-            this.pnHeader.ResumeLayout(false);
-            this.pnHeader.PerformLayout();
+            this.pnData.ResumeLayout(false);
+            this.pnData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaShadowPanel pnEmp;
-        public Guna.UI.WinForms.GunaLabel lbJobID;
-        public Guna.UI.WinForms.GunaLabel lbIdentity;
-        public Guna.UI.WinForms.GunaLabel lbPhone;
-        public Guna.UI.WinForms.GunaLabel lbGender;
-        public Guna.UI.WinForms.GunaLabel lbFullName;
-        public Guna.UI.WinForms.GunaLabel lbEmpID;
         private System.Windows.Forms.FlowLayoutPanel flpEmpList;
-        private Guna.UI.WinForms.GunaLinePanel pnHeader;
-        private System.Windows.Forms.FlowLayoutPanel fpnEmpList;
+        private Guna.UI2.WinForms.Guna2GradientButton btnHeader;
+        private Guna.UI2.WinForms.Guna2Panel pnData;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox tbSearch;
+        private Guna.UI2.WinForms.Guna2Button btnSearchByName;
+        private Guna.UI2.WinForms.Guna2Button btnSearchByID;
+        private System.Windows.Forms.DataGridView dgvEmp;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDetail;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }
