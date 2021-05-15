@@ -91,10 +91,10 @@
     <Compile Include="2. MainForm\Calendar\CalendarDOWForm.Designer.cs">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\CalendarForm.cs">
+    <Compile Include="2. MainForm\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\CalendarForm.Designer.cs">
+    <Compile Include="2. MainForm\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\CarParkForm.cs">
@@ -108,6 +108,12 @@
     </Compile>
     <Compile Include="2. MainForm\ManageEmp\AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\ParkingLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\ParkingLot.Designer.cs">
+      <DependentUpon>ParkingLot.cs</DependentUpon>
     </Compile>
     <Compile Include="Test_Trash\Tests.cs">
       <SubType>Form</SubType>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="2. MainForm\ManageEmp\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Parking\ParkingLot.resx">
+      <DependentUpon>ParkingLot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,7 +179,7 @@
     <EmbeddedResource Include="2. MainForm\Calendar\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Calendar\CalendarForm.resx">
+    <EmbeddedResource Include="2. MainForm\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\CarParkForm.resx">
@@ -220,8 +229,6 @@
       <Name>Global</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="2. MainForm\Home\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

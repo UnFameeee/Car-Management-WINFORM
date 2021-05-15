@@ -1,16 +1,16 @@
 ﻿create database WINFORM
+GO
 use WINFORM
-
+go
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 create table POSITION(
 	PositionID varchar(100) primary key,									-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
 	Description text
 )
-
-INSERT INTO POSITION VALUES ('1', 'QuanLy') 
-INSERT INTO POSITION VALUES ('2', 'NhanVien') 
-INSERT INTO POSITION VALUES ('3', 'KhachHang') 
+INSERT INTO POSITION VALUES ('1', 'Manager') 
+INSERT INTO POSITION VALUES ('2', 'Staff') 
+INSERT INTO POSITION VALUES ('3', 'Customer') 
 
 -- Tài khoản, mật khẩu người dùng || Quy định mỗi nhân viên chỉ được có 1 tài khoản
 create table ACCOUNT(									
@@ -30,9 +30,9 @@ create table JOB(
 	JobID varchar(100) primary key,									-- 1 = sửa, 2 = rửa, 3 = trông coi xe
 	Description varchar(1000)
 )
-INSERT INTO JOB VALUES('QL', 'Quản Lý')
-INSERT INTO JOB VALUES('NV', 'Nhân Viên')
-INSERT INTO JOB VALUES('KH', 'Khách Hàng')
+INSERT INTO JOB VALUES('QL', 'Manager')
+INSERT INTO JOB VALUES('NV', 'Staff')
+INSERT INTO JOB VALUES('KH', 'Customer')
 
 -- Ca Làm
 create table WORKSHIFT(
@@ -50,11 +50,12 @@ create table EMPLOYEE(
 	FullName varchar(100),
 	Gender varchar(100),
 	PhoneNumber varchar(100),
-	IdentityCardNumber varchar(100),
+	IdentityNumber varchar(100),
 	JobID varchar(100) references JOB(JobID),
+	Appearance image,
 	AccUsername varchar(100) references ACCOUNT(Username)		
 )
-INSERT INTO EMPLOYEE VALUES('NV01', N'Nguyễn Văn A', 'Nam', '123456789', '079201006666', 'QL', 'admin') 
+INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '0123456789', '079201006666', 'QL', null, 'admin') 
 
 -- Quản lý
 create table MANAGER(
@@ -69,6 +70,15 @@ create table CUSTOMER(
 	PhoneNumber varchar(100),
 	IdentityCardNumber varchar(100)
 
+)
+
+--Xe
+create table TRANSPORT(
+	TransID varchar(100) primary key,
+	Type varchar(100),												-- loại xe
+	LicensePlate varchar(100),										-- biển số xe
+	Picture image,
+	CusID varchar(100) references CUSTOMER(CusID)
 )
 
 -- Hợp Đồng

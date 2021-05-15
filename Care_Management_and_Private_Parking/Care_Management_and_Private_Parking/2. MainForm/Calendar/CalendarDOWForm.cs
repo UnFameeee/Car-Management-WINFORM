@@ -41,6 +41,7 @@ namespace Care_Management_and_Private_Parking
         public float totalDayOfWork = 0;
 
         #endregion
+
         public CalendarDOWForm()
         {
             InitializeComponent();
@@ -48,6 +49,8 @@ namespace Care_Management_and_Private_Parking
             //Gắn giá trị cho biến cho form khác sử dụng
             totalDayOfWork = ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2];
         }
+
+        #region Tạo ma trận => hoàn thành lịch
         void SetDefaultDay()
         {                                       
             dateTime.Value = DateTime.Now;              //Set giá trị ngày tháng của datetimepicker thành ngày hôm nay
@@ -152,8 +155,9 @@ namespace Care_Management_and_Private_Parking
         {
             AddNumberIntoMatrixDay((sender as Guna2DateTimePicker).Value);
         }
-        //--------------------------------------------------------------------------------------------------------------------------------//
-        //Các nút khác
+        #endregion
+
+        #region Các nút khác
         private void btnToday_Click(object sender, EventArgs e)
         {
             SetDefaultDay();
@@ -172,10 +176,10 @@ namespace Care_Management_and_Private_Parking
         {
             dateTime.Value = dateTime.Value.AddMonths(1);
         }
-        //---------------------------------------------------------------------------------------------------------------------------------//
-        //Chia ca làm việc cho nhân viên
-        //Trước hết cần phải lấy mã của nhân viên đó
+        #endregion
 
+        #region Chia ca làm việc cho nhân viên
+        //Trước hết cần phải lấy mã của nhân viên đó
         DivideShift dv = new DivideShift();
         string takeNumberID(string EmpID)                                                   //EmpID được quy định là 2 chữ cái đầu + mã số NV ở sau
         {
@@ -212,5 +216,6 @@ namespace Care_Management_and_Private_Parking
             lbEvening.Text = "Evening:" + ShiftInMonth[2].ToString();
             lbTotal.Text = "Total:" + (ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2]).ToString();
         }
+        #endregion
     }
 }
