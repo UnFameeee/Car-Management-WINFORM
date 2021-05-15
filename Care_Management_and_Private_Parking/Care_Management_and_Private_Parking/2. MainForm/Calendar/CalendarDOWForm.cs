@@ -186,6 +186,7 @@ namespace Care_Management_and_Private_Parking
             string res = EmpID.Remove(0, 2);
             return res;
         }
+
         void fillDay(ref Guna2Button btn, int rotateDay, int month)
         {
             DOW = new List<List<int>>();                                                    //Mảng 2 chiều chia ca ( day of work )

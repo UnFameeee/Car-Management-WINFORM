@@ -67,12 +67,6 @@
     <Compile Include="1. Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\ManageEmp\AnEmployee.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="2. MainForm\ManageEmp\AnEmployee.Designer.cs">
-      <DependentUpon>AnEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="2. MainForm\ManageEmp\EmployeeListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\ManageEmp\AnEmployee.resx">
-      <DependentUpon>AnEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\ManageEmp\EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>

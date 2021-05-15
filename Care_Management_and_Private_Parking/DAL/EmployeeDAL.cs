@@ -27,7 +27,7 @@ namespace DAL
 
         public bool insertEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID, MemoryStream pic)
         {
-            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, JobID, Appearance)" +
+            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, PhoneNumber, IdentityNumber, JobID, Appearance)" +
                 "values (@EmpID, @FullName, @Gender, @Phone, @Identity, @JobID, @Appear)", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             command.Parameters.Add("@FullName", SqlDbType.VarChar).Value = FullName;
@@ -69,7 +69,7 @@ namespace DAL
 
         public bool updateEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string JobID, MemoryStream pic)
         {
-            SqlCommand command = new SqlCommand("Update EMPLOYEE set FullName = @FullName, Gender = @Gender, PhoneNumber = @Phone, IdentityCardNumber = @Identity, " +
+            SqlCommand command = new SqlCommand("Update EMPLOYEE set FullName = @FullName, Gender = @Gender, PhoneNumber = @Phone, IdentityNumber = @Identity, " +
                 "JobID = @JobID, Appearance = @Appear where EmpID = @EmpID", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;
             command.Parameters.Add("@FullName", SqlDbType.VarChar).Value = FullName;
@@ -117,22 +117,30 @@ namespace DAL
 
         public DataTable getAllEmp()
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, " +
-                "JobID, Appearance from EMPLOYEE", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+                "JobID, Appearance from EMPLOYEE");
+            return getEmployee(command);
+        }
+
+        public DataTable getEmpByID(string id)
+        {
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+               "JobID, Appearance from EMPLOYEE where convert(varbinary, EmpID) = convert(varbinary, @EmpID)");
+            command.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = id;
             return getEmployee(command);
         }
 
         public DataTable searchByName(string name)
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, " +
-                "JobID, Appearance from EMPLOYEE where FullName Like '%" + name + "%'", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+                "JobID, Appearance from EMPLOYEE where FullName Like '%" + name + "%'");
             return getEmployee(command);
         }
 
         public DataTable searchByID(string id)
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityCardNumber, " +
-                "JobID, Appearance from EMPLOYEE  where EmpID = '" + id + "'", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+                "JobID, Appearance from EMPLOYEE  where EmpID = '" + id + "'");
             return getEmployee(command);
         }
 
@@ -143,7 +151,7 @@ namespace DAL
 
         int maleEmp()
         {
-            SqlCommand command = new SqlCommand("Select * from EMPLOYEE where Gender = 'Male'", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Select * from EMPLOYEE where Gender = 'Male'");
             return getEmployee(command).Rows.Count;
         }
 

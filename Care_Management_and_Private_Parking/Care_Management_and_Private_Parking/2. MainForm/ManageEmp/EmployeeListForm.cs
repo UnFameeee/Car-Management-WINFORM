@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,12 +31,12 @@ namespace Care_Management_and_Private_Parking
 
             //Custom cái độ rộng của các cột của datagridview
             dgvEmp.Columns[0].Width = 80;
-            dgvEmp.Columns[1].Width = 150;
+            dgvEmp.Columns[1].Width = 200;
             dgvEmp.Columns[2].Width = 100;
-            dgvEmp.Columns[3].Width = 150;
+            dgvEmp.Columns[3].Width = 120;
             dgvEmp.Columns[4].Width = 150;
-            dgvEmp.Columns[5].Width = 80;
-            dgvEmp.Columns[6].Width = 130;
+            dgvEmp.Columns[5].Width = 100;
+            dgvEmp.Columns[6].Width = 104;
 
             //DataTable tab = EmployeeDAL.Instance.getAllEmp();            
 
@@ -56,12 +57,32 @@ namespace Care_Management_and_Private_Parking
 
         private void btnSearchByName_Click(object sender, EventArgs e)
         {
-            dgvEmp.DataSource = EmployeeDAL.Instance.searchByName(tbSearch.Text);
+            if (tbSearch.Text == "")
+                MessageBox.Show("Please Insert Name");
+            else
+            {
+                DataTable tab = EmployeeDAL.Instance.searchByName(tbSearch.Text);
+
+                if (tab.Rows.Count == 0)
+                    MessageBox.Show("Can't Find Name Like: " + tbSearch.Text);
+
+                dgvEmp.DataSource = tab;
+            }            
         }
 
         private void btnSearchByID_Click(object sender, EventArgs e)
         {
-            dgvEmp.DataSource = EmployeeDAL.Instance.searchByID(tbSearch.Text);
+            if (tbSearch.Text == "")
+                MessageBox.Show("Please Insert ID");
+            else
+            {
+                DataTable tab = EmployeeDAL.Instance.getEmpByID(tbSearch.Text);
+
+                if (tab.Rows.Count == 0)
+                   MessageBox.Show("Can't Find ID: " + tbSearch.Text);
+
+                dgvEmp.DataSource = tab;              
+            }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -75,6 +96,12 @@ namespace Care_Management_and_Private_Parking
         {
             AddEmployeeForm frm = new AddEmployeeForm();
             frm.Show();
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            dgvEmp.DataSource = EmployeeDAL.Instance.getAllEmp();
+            tbSearch.Text = null;
         }
     }
 }

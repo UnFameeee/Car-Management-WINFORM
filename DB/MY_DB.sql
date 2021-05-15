@@ -8,6 +8,7 @@ create table POSITION(
 	PositionID varchar(100) primary key,									-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
 	Description text
 )
+
 INSERT INTO POSITION VALUES ('1', 'Manager') 
 INSERT INTO POSITION VALUES ('2', 'Staff') 
 INSERT INTO POSITION VALUES ('3', 'Customer') 
@@ -67,9 +68,20 @@ create table MANAGER(
 create table CUSTOMER(
 	CusID varchar(100) primary key,
 	FullName varchar(100),
+	Bdate date,
 	PhoneNumber varchar(100),
-	IdentityCardNumber varchar(100)
+	Address varchar(100),
+	IdentityNumber varchar(100),
+	Appearance image
+)
 
+--Xe
+create table TRANSPORT(
+	TransID varchar(100) primary key,
+	Type varchar(100),												-- loại xe
+	LicensePlate varchar(100),										-- biển số xe
+	Picture image,
+	CusID varchar(100) references CUSTOMER(CusID)
 )
 
 --Xe

@@ -31,11 +31,29 @@ namespace Care_Management_and_Private_Parking
 
         private void ManageEmployeeForm_Load(object sender, EventArgs e)
         {
-            SqlCommand com = new SqlCommand("Select * from POSITION");
+            SqlCommand com = new SqlCommand("Select * from JOB");
             cbbxJobID.DataSource = EmployeeDAL.Instance.getEmployee(com);
             cbbxJobID.DisplayMember = "Description";
-            cbbxJobID.ValueMember = "PositionID";
+            cbbxJobID.ValueMember = "JobID";
             cbbxJobID.SelectedItem = null;
+
+            DataTable tab = EmployeeDAL.Instance.getEmpByID(EmpID);
+
+            tbEmpID.Text = tab.Rows[0][0].ToString();
+            tbFullName.Text = tab.Rows[0][1].ToString();
+
+            if (tab.Rows[0][2].ToString() == "Female")
+                rdbtnFemale.Checked = true;
+            else rdbtnMale.Checked = true;
+
+            tbPhone.Text= tab.Rows[0][3].ToString();
+            tbIdentity.Text = tab.Rows[0][4].ToString();
+            cbbxJobID.SelectedValue = tab.Rows[0][5].ToString();
+
+            byte[] pic;
+            pic = (byte[])tab.Rows[0][6];
+            MemoryStream picture = new MemoryStream(pic);
+            ptbEmp.Image = Image.FromStream(picture);
         }    
                 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -117,7 +135,7 @@ namespace Care_Management_and_Private_Parking
             else return true;
         }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void ptbEmp_DoubleClick(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
             opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";

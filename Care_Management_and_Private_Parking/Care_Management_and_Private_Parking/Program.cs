@@ -22,7 +22,6 @@ namespace Care_Management_and_Private_Parking
             {
                 Application.Run(new Mainform());
             }
-
             //Application.Run(new EmployeeListForm());
         }
     }
