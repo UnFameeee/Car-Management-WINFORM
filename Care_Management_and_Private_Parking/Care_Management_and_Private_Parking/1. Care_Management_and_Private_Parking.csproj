@@ -67,16 +67,16 @@
     <Compile Include="1. Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\ManageEmp\EmployeeListForm.cs">
+    <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\ManageEmp\EmployeeListForm.Designer.cs">
+    <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeListForm.Designer.cs">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\ManageEmp\EmployeeDetailForm.cs">
+    <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\ManageEmp\EmployeeDetailForm.Designer.cs">
+    <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeDetailForm.Designer.cs">
       <DependentUpon>EmployeeDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\Calendar\CalendarDOWForm.cs">
@@ -85,23 +85,17 @@
     <Compile Include="2. MainForm\Calendar\CalendarDOWForm.Designer.cs">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\CalendarForm.cs">
+    <Compile Include="2. MainForm\Calendar\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\CalendarForm.Designer.cs">
+    <Compile Include="2. MainForm\Calendar\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\CarParkForm.cs">
+    <Compile Include="2. MainForm\Parking\CarParkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\CarParkForm.Designer.cs">
+    <Compile Include="2. MainForm\Parking\CarParkForm.Designer.cs">
       <DependentUpon>CarParkForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="2. MainForm\ManageEmp\AddEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="2. MainForm\ManageEmp\AddEmployeeForm.Designer.cs">
-      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\Parking\ParkingLot.cs">
       <SubType>Form</SubType>
@@ -115,10 +109,10 @@
     <Compile Include="Test_Trash\Tests.Designer.cs">
       <DependentUpon>Tests.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\ManageForm.cs">
+    <Compile Include="2. MainForm\Manage\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\ManageForm.Designer.cs">
+    <Compile Include="2. MainForm\Manage\ManageForm.Designer.cs">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -152,31 +146,28 @@
     <EmbeddedResource Include="1. Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\ManageEmp\AddEmployeeForm.resx">
-      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Parking\ParkingLot.resx">
       <DependentUpon>ParkingLot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\ManageEmp\EmployeeListForm.resx">
+    <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\ManageEmp\EmployeeDetailForm.resx">
+    <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\EmployeeDetailForm.resx">
       <DependentUpon>EmployeeDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Calendar\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\CalendarForm.resx">
+    <EmbeddedResource Include="2. MainForm\Calendar\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\CarParkForm.resx">
+    <EmbeddedResource Include="2. MainForm\Parking\CarParkForm.resx">
       <DependentUpon>CarParkForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\ManageForm.resx">
+    <EmbeddedResource Include="2. MainForm\Manage\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
