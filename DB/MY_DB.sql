@@ -96,6 +96,16 @@ create table VEHICLE(
 )
 
 
+--Thông tin của chỗ đỗ xe
+create table PARKING(
+	CusID nvarchar(100) references CUSTOMER(CusID),
+	VehID nvarchar(100) references VEHICLE(VehID),
+	DateRegister datetime,
+	DateLeave datetime,
+	InvoiceID nvarchar(100) references INVOICE(InvoiceID),
+	PRIMARY KEY(CusID, VehID)
+)
+
 -- Hợp Đồng
 create table CONTRACT(
 	ContID nvarchar(100) primary key,
