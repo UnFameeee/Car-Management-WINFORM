@@ -22,7 +22,7 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        string EmpID;
+        string EmpID = "";
 
         public EmployeeDetailForm(string id) : this()
         {
@@ -37,23 +37,34 @@ namespace Care_Management_and_Private_Parking
             cbbxJobID.ValueMember = "JobID";
             cbbxJobID.SelectedItem = null;
 
-            DataTable tab = EmployeeDAL.Instance.getEmpByID(EmpID);
 
-            tbEmpID.Text = tab.Rows[0][0].ToString();
-            tbFullName.Text = tab.Rows[0][1].ToString();
+            if (EmpID != "")
+            {
+                DataTable tab = EmployeeDAL.Instance.getEmpByID(EmpID);
 
-            if (tab.Rows[0][2].ToString() == "Female")
-                rdbtnFemale.Checked = true;
-            else rdbtnMale.Checked = true;
+                tbEmpID.Text = tab.Rows[0][0].ToString();
+                tbFullName.Text = tab.Rows[0][1].ToString();
 
-            tbPhone.Text= tab.Rows[0][3].ToString();
-            tbIdentity.Text = tab.Rows[0][4].ToString();
-            cbbxJobID.SelectedValue = tab.Rows[0][5].ToString();
+                if (tab.Rows[0][2].ToString() == "Female")
+                    rdbtnFemale.Checked = true;
+                else rdbtnMale.Checked = true;
 
-            byte[] pic;
-            pic = (byte[])tab.Rows[0][6];
-            MemoryStream picture = new MemoryStream(pic);
-            ptbEmp.Image = Image.FromStream(picture);
+                tbPhone.Text = tab.Rows[0][3].ToString();
+                tbIdentity.Text = tab.Rows[0][4].ToString();
+                cbbxJobID.SelectedValue = tab.Rows[0][5].ToString();
+
+                byte[] pic;
+                pic = (byte[])tab.Rows[0][6];
+                MemoryStream picture = new MemoryStream(pic);
+                ptbEmp.Image = Image.FromStream(picture);
+
+                btnAdd.Visible = false;
+            }
+            else
+            {
+                btnUpdate.Visible = false;
+                btnRemove.Visible = false;
+            }
         }    
                 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -99,6 +110,8 @@ namespace Care_Management_and_Private_Parking
                     if (EmployeeDAL.Instance.removeEmployee(EmpID))
                     {
                         MessageBox.Show(tbFullName.Text + " Has Been Removed", "Remove Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        reload();
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
@@ -149,6 +162,48 @@ namespace Care_Management_and_Private_Parking
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string EmpID = tbEmpID.Text;
+            string FName = tbFullName.Text;
+            string Phone = tbPhone.Text;
+            string Identity = tbIdentity.Text;
+
+            string Gender = "Male";
+            if (rdbtnFemale.Checked)
+                Gender = "Female";
+
+            if (verif())
+            {
+                string JobID = cbbxJobID.SelectedValue.ToString();
+
+                MemoryStream pic = new MemoryStream();
+                ptbEmp.Image.Save(pic, ptbEmp.Image.RawFormat);
+
+                if (EmployeeDAL.Instance.checkEmp(EmpID))
+                {
+                    if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Phone, Identity, JobID, pic))
+                    {
+                        MessageBox.Show("New Employee Inserted", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        reload();
+                        //this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Can't Insert This Employee", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("This " + EmpID + " Already Exists", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Add Enough Employee's Information", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -94,7 +94,7 @@ namespace Care_Management_and_Private_Parking
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddEmployeeForm frm = new AddEmployeeForm();
+            EmployeeDetailForm frm = new EmployeeDetailForm();
             frm.ShowDialog();
             reload();
         }

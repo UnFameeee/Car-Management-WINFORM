@@ -51,6 +51,7 @@ namespace Care_Management_and_Private_Parking
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnAdd = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmp)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -202,7 +203,7 @@ namespace Care_Management_and_Private_Parking
             this.btnRemove.ForeColor = System.Drawing.Color.Red;
             this.btnRemove.Image = null;
             this.btnRemove.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRemove.Location = new System.Drawing.Point(270, 311);
+            this.btnRemove.Location = new System.Drawing.Point(315, 311);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.OnHoverBaseColor = System.Drawing.Color.Gray;
             this.btnRemove.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -229,7 +230,7 @@ namespace Care_Management_and_Private_Parking
             this.btnUpdate.ForeColor = System.Drawing.Color.Red;
             this.btnUpdate.Image = null;
             this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdate.Location = new System.Drawing.Point(157, 311);
+            this.btnUpdate.Location = new System.Drawing.Point(89, 311);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.Gray;
             this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -256,7 +257,7 @@ namespace Care_Management_and_Private_Parking
             this.btnHeader.ShadowDecoration.Parent = this.btnHeader;
             this.btnHeader.Size = new System.Drawing.Size(231, 38);
             this.btnHeader.TabIndex = 43;
-            this.btnHeader.Text = "EMPLOYEE DETAIL";
+            this.btnHeader.Text = "MANAGE EMPLOYEE";
             // 
             // ptbEmp
             // 
@@ -332,7 +333,34 @@ namespace Care_Management_and_Private_Parking
             // 
             // guna2DragControl1
             // 
-            this.guna2DragControl1.TargetControl = null;
+            this.guna2DragControl1.TargetControl = this;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AnimationHoverSpeed = 0.07F;
+            this.btnAdd.AnimationSpeed = 0.03F;
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.Gray;
+            this.btnAdd.BorderSize = 3;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+            this.btnAdd.ForeColor = System.Drawing.Color.Red;
+            this.btnAdd.Image = null;
+            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAdd.Location = new System.Drawing.Point(203, 311);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.Gray;
+            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.OnHoverImage = null;
+            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAdd.Size = new System.Drawing.Size(103, 38);
+            this.btnAdd.TabIndex = 60;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // EmployeeDetailForm
             // 
@@ -340,6 +368,7 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(539, 359);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptbEmp);
@@ -380,5 +409,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaButton btnExit;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI.WinForms.GunaButton btnAdd;
     }
 }
