@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 //3 layers
+using DAL;
 using Global;
 
 namespace Care_Management_and_Private_Parking
@@ -36,6 +37,9 @@ namespace Care_Management_and_Private_Parking
             get { return matrixCar; }
             set { matrixCar = value; }
         }
+
+        private string id;
+        private string type;
         #endregion
 
         public ParkingLot()
@@ -90,6 +94,10 @@ namespace Care_Management_and_Private_Parking
                     btn.Text = slot.ToString();                                                 //Thêm số vào cho nút
                     slot++;
 
+                    //Thêm event
+                    btn.Click += BTNbike_EnabledChanged;
+                    //
+
                     pnBike.Controls.Add(btn);
                     MatrixBike[i].Add(btn);
                     oldbtn = btn;
@@ -97,7 +105,6 @@ namespace Care_Management_and_Private_Parking
                 oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             }
         }
-
         public void loadMatrixCar()
         {
             int slot = 1;
@@ -114,6 +121,10 @@ namespace Care_Management_and_Private_Parking
                     btn.Text = slot.ToString();                                                 //Thêm số vào cho nút
                     slot++;
 
+                    //Thêm event
+                    btn.Click += BTNcar_EnabledChanged;
+                    //
+
                     pnCar.Controls.Add(btn);
                     MatrixCar[i].Add(btn);
                     oldbtn = btn;
@@ -123,28 +134,163 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
+        #region Tải màu cho các ô có giá trị
+
+        #endregion
+
         #region Event handler (to cast multi event -> single event)
         private void BTNbicycle_EnabledChanged(object sender, EventArgs e)
         {
-            //string value = ((Guna2Button)sender).Text; //test
-            fillStatuspnl(((Guna2Button)sender).Text, "bicycle");
+            id = ((Guna2Button)sender).Text;
+            type = "bicycle";
+            fillStatuspnl();
         }
 
-        //Phần thông tin xe sẽ hiện ở dưới
-        void fillStatuspnl(string text, string type)
+        private void BTNbike_EnabledChanged(object sender, EventArgs e)
+        {
+            id = ((Guna2Button)sender).Text;
+            type = "bike";
+            fillStatuspnl();
+        }
+
+        private void BTNcar_EnabledChanged(object sender, EventArgs e)
+        {
+            id = ((Guna2Button)sender).Text;
+            type = "car";
+            fillStatuspnl();
+        }
+        #endregion
+
+        #region Phần thông tin xe sẽ hiện ở dưới
+        void fillStatuspnl()
         {
             if (type == "bicycle")
             {
+                if(ParkingLotDAL.Instance.checkSlot(id, type) == true)
+                {
 
+                }
+                else
+                {
+                    fillEmpty();
+                }
             }
             else if (type == "bike")
             {
+                if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
+                {
 
+                }
+                else
+                {
+                    fillEmpty();
+                }
             }
             else if (type == "car")
             {
+                if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
+                {
 
+                }
+                else
+                {
+                    fillEmpty();
+                }
             }
+        }
+        void fillEmpty()
+        {
+            //Set lại phần Vehicle
+            lbVehicleID.Text =  "VehicleID: " + id;
+            lbVehicleType.Text = "Vehicle Type: " + type;
+            lbLicensePlate.Text = "License Plate: " + "null";
+            VehiclePic = null;
+            //Set lại phần Customer
+            lbCusID.Text = "CustomerID: " +"null";
+            lbName.Text = "Name: " + "null";
+            lbBirthday.Text = "Birthday: " + "null";
+            lbPhone.Text = "Phone: " + "null";
+            lbAddress.Text = "Address: " + "null";
+            lbIdentityNumber.Text = "Identity Number: " + "null";
+            CustomerPic = null;
+        }
+        #endregion
+
+        #region Thay đổi màu của ô xe có xe và không có xe
+        void changAddColor(string operation)
+        {
+            int ID = Convert.ToInt32(id) - 1;
+            int column;
+
+            //chia cột
+            if (ID > 14)
+                ID = (ID % 14);
+            //chia hàng
+            if ((float.Parse(id) / 14f) <= 1)
+                column = 0;
+            else
+                column = 1;
+            if(operation == "add")
+            {
+                if (type == "bicycle")
+                {
+                    MatrixBicycle[column][ID].FillColor = Color.FromArgb(253, 65, 60);
+                }
+                else if (type == "bike")
+                {
+                    MatrixBike[column][ID].FillColor = Color.FromArgb(253, 65, 60);
+                }
+                else if (type == "car")
+                {
+                    MatrixCar[column][ID].FillColor = Color.FromArgb(253, 65, 60);
+                }
+            }
+            else if (operation == "delete")
+            {
+                if (type == "bicycle")
+                {
+                    MatrixBicycle[column][ID].FillColor = Color.FromArgb(43, 47, 51);
+                }
+                else if (type == "bike")
+                {
+                    MatrixBike[column][ID].FillColor = Color.FromArgb(43, 47, 51);
+                }
+                else if (type == "car")
+                {
+                    MatrixCar[column][ID].FillColor = Color.FromArgb(43, 47, 51);
+                }
+            }
+        }
+        #endregion
+
+        #region Thêm xóa sửa
+        private void btnAddVehicle_Click(object sender, EventArgs e)
+        {
+            if(ParkingLotDAL.Instance.checkSlot(id, type) == false)
+            {
+                AddVehicle frm = new AddVehicle();
+                frm.id = id;
+                frm.type = type;
+                frm.ShowDialog();
+                if(frm.DialogResult == DialogResult.OK)
+                {
+                    changAddColor("add");
+                }                    
+            }
+            else
+            {
+                MessageBox.Show("Please choose an empty slot!!!", "Add Vehicle");
+            }
+        }
+
+        private void btnEditVehicle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteVehicle_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
     }

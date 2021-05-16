@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
-    <Compile Include="CarParkDAL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="EmployeeDAL.cs" />
+    <Compile Include="ParkingLotDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
