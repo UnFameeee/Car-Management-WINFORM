@@ -95,6 +95,7 @@ create table VEHICLE(
 	CusID nvarchar(100) references CUSTOMER(CusID)
 )
 
+
 --Thông tin của chỗ đỗ xe
 create table PARKING(
 	CusID nvarchar(100) references CUSTOMER(CusID),
@@ -104,7 +105,6 @@ create table PARKING(
 	InvoiceID nvarchar(100) references INVOICE(InvoiceID),
 	PRIMARY KEY(CusID, VehID)
 )
-
 
 -- Hợp Đồng
 create table CONTRACT(
