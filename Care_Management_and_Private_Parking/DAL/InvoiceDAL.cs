@@ -26,16 +26,18 @@ namespace DAL
         {
             int total = 0;                                          //tổng tiền
             TimeSpan datediff = date2.Subtract(date1);              //phép trừ 2 ngày 
-            double hour = datediff.TotalHours;                      //đổi thành giờ (số giờ đã gửi)
+            double ddhour = datediff.TotalHours;                    //đổi thành giờ (số giờ đã gửi)              
 
-            double late = hour - (int)hour;
+            double late = ddhour - (int)ddhour;                     //số dư của giờ  
+
+            int hour;                                               //giờ
 
             if (late > 0.25)                                        //trễ quá 15p thì tăng thêm 1h
-                hour = (int)hour + 1;
+                hour = (int)ddhour + 1;
             else                                                    //dưới 15p thì làm tròn xuống
-                hour = (int)hour;
+                hour = (int)ddhour;
 
-            int day = (int)hour / 24;                               //đổi giờ thành ngày
+            int day = hour / 24;                                    //đổi giờ thành ngày
             int week = day / 7;                                     //đổi ngày thành tuần
             int month = day / 30;                                   //đổi tuần thánh tháng
 
@@ -47,9 +49,9 @@ namespace DAL
                 else if (hour > index)                              //giờ gửi lố với giờ đã đặt
                 {
                     if (hour > 24)                                  //giờ gửi lố 24h (1ngày)                    
-                        total = x * (12 + (int)hour);
-                    else
-                        total = x * (int)hour;
+                        total = x * (hour / 3 + hour);
+                    else                                            //VD: đặt 3h nhưng lại trễ 2h (5h mới lấy)
+                        total = x * (1 + hour);
                 }
 
                 else                                                //giờ gửi sớm hơn giờ đã đặt
@@ -64,16 +66,16 @@ namespace DAL
                 else if (day > index)
                 {
                     if (day > 7)
-                        total = 2 * x * 8 * (7 + day);
+                        total = x * 8 * (day / 2 + day);
                     else
-                        total = x * 8 * (3 + day);
+                        total = x * 8 * (1 + day);
                 }
 
                 else
                     total = x * 8 * day;
             }
 
-            else if (id == "W")
+            else if (id == "W")                                     //theo tuần
             {
                 if (week == index)
                     total = x * 24 * index;
@@ -81,9 +83,9 @@ namespace DAL
                 else if (week > index)
                 {
                     if (week > 4)
-                        total = x * 24 * (4 * week + index);
+                        total = x * 24 * (week / 2 * week);
                     else
-                        total = x * 24 * week * 2;
+                        total = x * 24 * (1 + week);
                 }
 
                 else
@@ -98,14 +100,15 @@ namespace DAL
                 else if (month > index)
                 {
                     if (month > 12)
-                        total = x * 48 * (month + 4 + index);
+                        total = x * 48 * (month / 6 + month);
                     else
-                        total = x * 48 * (month + index);
+                        total = x * 48 * (1 + month);
                 }
 
                 else
                     total = x * 48 * month;
             }
+
             return total;
         }
     }
