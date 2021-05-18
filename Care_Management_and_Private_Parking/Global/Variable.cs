@@ -25,5 +25,16 @@ namespace Global
         public static int CarColumns = 14;              //Cột xe
         public static int CarMargin = 10;
 
+        //ID các loại xe
+        public static int BicycleLength = 7;               
+        public static int BikeLength = 4;              
+        public static int CarLength = 3;
+        public static string Bicycle = "bicycle";
+        public static string Bike = "bike";
+        public static string Car = "car";
+
+        //ID khách
+        public static int CusLength = 3;
+        public static string Cus = "cus";
     }
 }
