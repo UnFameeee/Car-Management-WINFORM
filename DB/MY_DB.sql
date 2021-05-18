@@ -89,7 +89,7 @@ create table CUSTOMER(
 --Xe
 create table VEHICLE(
 	VehID nvarchar(100) primary key,
-	VehType nvarchar(100),												-- loại xe
+	VehType nvarchar(100),											-- loại xe
 	LicensePlate nvarchar(100),										-- biển số xe
 	Picture image,
 	CusID nvarchar(100) references CUSTOMER(CusID)

@@ -31,9 +31,12 @@ namespace Care_Management_and_Private_Parking
         {
             this.components = new System.ComponentModel.Container();
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.CustomerPic = new System.Windows.Forms.PictureBox();
+            this.btnAddCus = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlVeh = new System.Windows.Forms.Panel();
+            this.pnlCus = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.datetime = new System.Windows.Forms.DateTimePicker();
             this.tbIdentity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tbAddress = new System.Windows.Forms.TextBox();
@@ -45,7 +48,18 @@ namespace Care_Management_and_Private_Parking
             this.tbName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
-            this.VehiclePic = new System.Windows.Forms.PictureBox();
+            this.CustomerPic = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.guna2CustomRadioButton3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.guna2CustomRadioButton2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,15 +67,20 @@ namespace Care_Management_and_Private_Parking
             this.tbVehicleID = new System.Windows.Forms.TextBox();
             this.tbType = new System.Windows.Forms.TextBox();
             this.tbLicense = new System.Windows.Forms.TextBox();
+            this.VehiclePic = new System.Windows.Forms.PictureBox();
+            this.btnAddVeh = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.datetime = new System.Windows.Forms.DateTimePicker();
             this.pnCalendar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
+            this.pnlVeh.SuspendLayout();
+            this.pnlCus.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
             this.SuspendLayout();
             // 
             // pnCalendar
@@ -69,56 +88,76 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnCalendar.BorderRadius = 22;
             this.pnCalendar.BorderThickness = 1;
-            this.pnCalendar.Controls.Add(this.btnAdd);
-            this.pnCalendar.Controls.Add(this.CustomerPic);
-            this.pnCalendar.Controls.Add(this.panel2);
-            this.pnCalendar.Controls.Add(this.VehiclePic);
-            this.pnCalendar.Controls.Add(this.panel1);
+            this.pnCalendar.Controls.Add(this.btnAddCus);
+            this.pnCalendar.Controls.Add(this.pnlVeh);
+            this.pnCalendar.Controls.Add(this.btnAddVeh);
             this.pnCalendar.Controls.Add(this.btnExit);
             this.pnCalendar.Controls.Add(this.guna2GradientButton2);
             this.pnCalendar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnCalendar.Location = new System.Drawing.Point(12, 12);
             this.pnCalendar.Name = "pnCalendar";
             this.pnCalendar.ShadowDecoration.Parent = this.pnCalendar;
-            this.pnCalendar.Size = new System.Drawing.Size(501, 631);
+            this.pnCalendar.Size = new System.Drawing.Size(501, 427);
             this.pnCalendar.TabIndex = 5;
             // 
-            // btnAdd
+            // btnAddCus
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.BorderRadius = 17;
-            this.btnAdd.BorderThickness = 1;
-            this.btnAdd.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAdd.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdd.Location = new System.Drawing.Point(203, 585);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 71;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseTransparentBackground = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAddCus.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAddCus.BorderRadius = 17;
+            this.btnAddCus.BorderThickness = 1;
+            this.btnAddCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnAddCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnAddCus.CheckedState.Parent = this.btnAddCus;
+            this.btnAddCus.CustomImages.Parent = this.btnAddCus;
+            this.btnAddCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnAddCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAddCus.HoverState.Parent = this.btnAddCus;
+            this.btnAddCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddCus.Location = new System.Drawing.Point(191, 380);
+            this.btnAddCus.Name = "btnAddCus";
+            this.btnAddCus.ShadowDecoration.Parent = this.btnAddCus;
+            this.btnAddCus.Size = new System.Drawing.Size(106, 33);
+            this.btnAddCus.TabIndex = 72;
+            this.btnAddCus.Text = "Add";
+            this.btnAddCus.UseTransparentBackground = true;
+            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
-            // CustomerPic
+            // pnlVeh
             // 
-            this.CustomerPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.CustomerPic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CustomerPic.Location = new System.Drawing.Point(328, 242);
-            this.CustomerPic.Name = "CustomerPic";
-            this.CustomerPic.Size = new System.Drawing.Size(150, 150);
-            this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CustomerPic.TabIndex = 70;
-            this.CustomerPic.TabStop = false;
-            this.toolTip1.SetToolTip(this.CustomerPic, "Doubleclick to upload Customer Picture");
-            this.CustomerPic.DoubleClick += new System.EventHandler(this.CustomerPic_DoubleClick);
+            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnlVeh.Controls.Add(this.pnlCus);
+            this.pnlVeh.Controls.Add(this.label16);
+            this.pnlVeh.Controls.Add(this.panel3);
+            this.pnlVeh.Controls.Add(this.panel1);
+            this.pnlVeh.Controls.Add(this.VehiclePic);
+            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
+            this.pnlVeh.Name = "pnlVeh";
+            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
+            this.pnlVeh.TabIndex = 71;
+            // 
+            // pnlCus
+            // 
+            this.pnlCus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnlCus.Controls.Add(this.label15);
+            this.pnlCus.Controls.Add(this.panel2);
+            this.pnlCus.Controls.Add(this.CustomerPic);
+            this.pnlCus.Location = new System.Drawing.Point(0, 0);
+            this.pnlCus.Name = "pnlCus";
+            this.pnlCus.Size = new System.Drawing.Size(463, 326);
+            this.pnlCus.TabIndex = 72;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.label15.Location = new System.Drawing.Point(187, 6);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 28);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "Customer";
             // 
             // panel2
             // 
@@ -135,10 +174,20 @@ namespace Care_Management_and_Private_Parking
             this.panel2.Controls.Add(this.tbName);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.tbPhone);
-            this.panel2.Location = new System.Drawing.Point(21, 208);
+            this.panel2.Location = new System.Drawing.Point(10, 58);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 202);
             this.panel2.TabIndex = 69;
+            // 
+            // datetime
+            // 
+            this.datetime.CustomFormat = "dd/mm/yyyy";
+            this.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datetime.Location = new System.Drawing.Point(112, 73);
+            this.datetime.Name = "datetime";
+            this.datetime.Size = new System.Drawing.Size(162, 20);
+            this.datetime.TabIndex = 34;
+            this.datetime.Value = new System.DateTime(2021, 5, 16, 0, 0, 0, 0);
             // 
             // tbIdentity
             // 
@@ -218,6 +267,7 @@ namespace Care_Management_and_Private_Parking
             // tbCustomerID
             // 
             this.tbCustomerID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.tbCustomerID.Enabled = false;
             this.tbCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustomerID.ForeColor = System.Drawing.Color.White;
             this.tbCustomerID.Location = new System.Drawing.Point(112, 12);
@@ -257,18 +307,175 @@ namespace Care_Management_and_Private_Parking
             this.tbPhone.Size = new System.Drawing.Size(162, 23);
             this.tbPhone.TabIndex = 30;
             // 
-            // VehiclePic
+            // CustomerPic
             // 
-            this.VehiclePic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.VehiclePic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.VehiclePic.Location = new System.Drawing.Point(328, 49);
-            this.VehiclePic.Name = "VehiclePic";
-            this.VehiclePic.Size = new System.Drawing.Size(150, 150);
-            this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.VehiclePic.TabIndex = 68;
-            this.VehiclePic.TabStop = false;
-            this.toolTip1.SetToolTip(this.VehiclePic, "Doubleclick to upload Vehicle Picture");
-            this.VehiclePic.DoubleClick += new System.EventHandler(this.VehiclePic_DoubleClick);
+            this.CustomerPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.CustomerPic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CustomerPic.Location = new System.Drawing.Point(304, 84);
+            this.CustomerPic.Name = "CustomerPic";
+            this.CustomerPic.Size = new System.Drawing.Size(150, 150);
+            this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CustomerPic.TabIndex = 70;
+            this.CustomerPic.TabStop = false;
+            this.toolTip1.SetToolTip(this.CustomerPic, "Doubleclick to upload Customer Picture");
+            this.CustomerPic.DoubleClick += new System.EventHandler(this.CustomerPic_DoubleClick);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.label16.Location = new System.Drawing.Point(200, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 28);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Vehicle";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.guna2NumericUpDown1);
+            this.panel3.Controls.Add(this.gunaComboBox1);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.guna2CustomRadioButton3);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.guna2CustomRadioButton2);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(3, 162);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(454, 161);
+            this.panel3.TabIndex = 69;
+            // 
+            // guna2NumericUpDown1
+            // 
+            this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2NumericUpDown1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2NumericUpDown1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2NumericUpDown1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2NumericUpDown1.DisabledState.Parent = this.guna2NumericUpDown1;
+            this.guna2NumericUpDown1.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.guna2NumericUpDown1.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.guna2NumericUpDown1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2NumericUpDown1.FocusedState.Parent = this.guna2NumericUpDown1;
+            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2NumericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2NumericUpDown1.Location = new System.Drawing.Point(24, 124);
+            this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
+            this.guna2NumericUpDown1.ShadowDecoration.Parent = this.guna2NumericUpDown1;
+            this.guna2NumericUpDown1.Size = new System.Drawing.Size(106, 26);
+            this.guna2NumericUpDown1.TabIndex = 73;
+            this.guna2NumericUpDown1.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            // 
+            // gunaComboBox1
+            // 
+            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
+            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
+            this.gunaComboBox1.FormattingEnabled = true;
+            this.gunaComboBox1.Location = new System.Drawing.Point(24, 72);
+            this.gunaComboBox1.Name = "gunaComboBox1";
+            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.gunaComboBox1.Size = new System.Drawing.Size(190, 26);
+            this.gunaComboBox1.TabIndex = 73;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(322, 101);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 20);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "Washing";
+            // 
+            // guna2CustomRadioButton3
+            // 
+            this.guna2CustomRadioButton3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton3.CheckedState.BorderThickness = 0;
+            this.guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2CustomRadioButton3.CheckedState.Parent = this.guna2CustomRadioButton3;
+            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(296, 101);
+            this.guna2CustomRadioButton3.Name = "guna2CustomRadioButton3";
+            this.guna2CustomRadioButton3.ShadowDecoration.Parent = this.guna2CustomRadioButton3;
+            this.guna2CustomRadioButton3.Size = new System.Drawing.Size(20, 20);
+            this.guna2CustomRadioButton3.TabIndex = 30;
+            this.guna2CustomRadioButton3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomRadioButton3.UncheckedState.BorderThickness = 2;
+            this.guna2CustomRadioButton3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton3.UncheckedState.Parent = this.guna2CustomRadioButton3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(20, 101);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(48, 20);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Value:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(322, 45);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 20);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Repairing";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(20, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 20);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Time Format";
+            // 
+            // guna2CustomRadioButton2
+            // 
+            this.guna2CustomRadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton2.CheckedState.BorderThickness = 0;
+            this.guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2CustomRadioButton2.CheckedState.Parent = this.guna2CustomRadioButton2;
+            this.guna2CustomRadioButton2.Location = new System.Drawing.Point(296, 45);
+            this.guna2CustomRadioButton2.Name = "guna2CustomRadioButton2";
+            this.guna2CustomRadioButton2.ShadowDecoration.Parent = this.guna2CustomRadioButton2;
+            this.guna2CustomRadioButton2.Size = new System.Drawing.Size(20, 20);
+            this.guna2CustomRadioButton2.TabIndex = 25;
+            this.guna2CustomRadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomRadioButton2.UncheckedState.BorderThickness = 2;
+            this.guna2CustomRadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2CustomRadioButton2.UncheckedState.Parent = this.guna2CustomRadioButton2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(185, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 20);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Service Pack:";
             // 
             // panel1
             // 
@@ -279,7 +486,7 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Controls.Add(this.tbVehicleID);
             this.panel1.Controls.Add(this.tbType);
             this.panel1.Controls.Add(this.tbLicense);
-            this.panel1.Location = new System.Drawing.Point(21, 70);
+            this.panel1.Location = new System.Drawing.Point(10, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(288, 110);
             this.panel1.TabIndex = 67;
@@ -320,6 +527,7 @@ namespace Care_Management_and_Private_Parking
             // tbVehicleID
             // 
             this.tbVehicleID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.tbVehicleID.Enabled = false;
             this.tbVehicleID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehicleID.ForeColor = System.Drawing.Color.White;
             this.tbVehicleID.Location = new System.Drawing.Point(112, 12);
@@ -331,6 +539,7 @@ namespace Care_Management_and_Private_Parking
             // tbType
             // 
             this.tbType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.tbType.Enabled = false;
             this.tbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbType.ForeColor = System.Drawing.Color.White;
             this.tbType.Location = new System.Drawing.Point(112, 43);
@@ -347,6 +556,43 @@ namespace Care_Management_and_Private_Parking
             this.tbLicense.Name = "tbLicense";
             this.tbLicense.Size = new System.Drawing.Size(162, 23);
             this.tbLicense.TabIndex = 29;
+            // 
+            // VehiclePic
+            // 
+            this.VehiclePic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.VehiclePic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VehiclePic.Location = new System.Drawing.Point(307, 6);
+            this.VehiclePic.Name = "VehiclePic";
+            this.VehiclePic.Size = new System.Drawing.Size(150, 150);
+            this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.VehiclePic.TabIndex = 68;
+            this.VehiclePic.TabStop = false;
+            this.toolTip1.SetToolTip(this.VehiclePic, "Doubleclick to upload Vehicle Picture");
+            this.VehiclePic.DoubleClick += new System.EventHandler(this.VehiclePic_DoubleClick);
+            // 
+            // btnAddVeh
+            // 
+            this.btnAddVeh.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddVeh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAddVeh.BorderRadius = 17;
+            this.btnAddVeh.BorderThickness = 1;
+            this.btnAddVeh.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnAddVeh.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnAddVeh.CheckedState.Parent = this.btnAddVeh;
+            this.btnAddVeh.CustomImages.Parent = this.btnAddVeh;
+            this.btnAddVeh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnAddVeh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddVeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAddVeh.HoverState.Parent = this.btnAddVeh;
+            this.btnAddVeh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddVeh.Location = new System.Drawing.Point(191, 380);
+            this.btnAddVeh.Name = "btnAddVeh";
+            this.btnAddVeh.ShadowDecoration.Parent = this.btnAddVeh;
+            this.btnAddVeh.Size = new System.Drawing.Size(106, 33);
+            this.btnAddVeh.TabIndex = 71;
+            this.btnAddVeh.Text = "Add";
+            this.btnAddVeh.UseTransparentBackground = true;
+            this.btnAddVeh.Click += new System.EventHandler(this.btnAddVeh_Click);
             // 
             // btnExit
             // 
@@ -384,29 +630,19 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(174, 3);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(175, 3);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
             this.guna2GradientButton2.Size = new System.Drawing.Size(152, 27);
             this.guna2GradientButton2.TabIndex = 41;
             this.guna2GradientButton2.Text = "ADD VEHICLE";
             // 
-            // datetime
-            // 
-            this.datetime.CustomFormat = "dd/mm/yyyy";
-            this.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datetime.Location = new System.Drawing.Point(112, 73);
-            this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(162, 20);
-            this.datetime.TabIndex = 34;
-            this.datetime.Value = new System.DateTime(2021, 5, 16, 0, 0, 0, 0);
-            // 
             // AddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(525, 655);
+            this.ClientSize = new System.Drawing.Size(525, 453);
             this.Controls.Add(this.pnCalendar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddVehicle";
@@ -414,12 +650,19 @@ namespace Care_Management_and_Private_Parking
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AddVehicle_Load);
             this.pnCalendar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
+            this.pnlVeh.ResumeLayout(false);
+            this.pnlVeh.PerformLayout();
+            this.pnlCus.ResumeLayout(false);
+            this.pnlCus.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -451,7 +694,22 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.TextBox tbIdentity;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnAddVeh;
         private System.Windows.Forms.DateTimePicker datetime;
+        private System.Windows.Forms.Panel pnlCus;
+        private System.Windows.Forms.Panel pnlVeh;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2Button btnAddCus;
+        private System.Windows.Forms.Label label17;
+        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
     }
 }

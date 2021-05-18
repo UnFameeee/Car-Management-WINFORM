@@ -48,6 +48,7 @@ namespace Care_Management_and_Private_Parking
             loadMatrixBicycle();
             loadMatrixBike();
             loadMatrixCar();
+            changeColorLoad();
         }
 
         #region Tải ma trận cho 3 hàng xe
@@ -232,32 +233,57 @@ namespace Care_Management_and_Private_Parking
                 column = 1;
             if(operation == "add")
             {
-                if (type == "bicycle")
+                if (type == Variable.Bicycle)
                 {
                     MatrixBicycle[column][ID].FillColor = Color.FromArgb(253, 65, 60);
                 }
-                else if (type == "bike")
+                else if (type == Variable.Bike)
                 {
                     MatrixBike[column][ID].FillColor = Color.FromArgb(253, 65, 60);
                 }
-                else if (type == "car")
+                else if (type == Variable.Car)
                 {
                     MatrixCar[column][ID].FillColor = Color.FromArgb(253, 65, 60);
                 }
             }
             else if (operation == "delete")
             {
-                if (type == "bicycle")
+                if (type == Variable.Bicycle)
                 {
                     MatrixBicycle[column][ID].FillColor = Color.FromArgb(43, 47, 51);
                 }
-                else if (type == "bike")
+                else if (type == Variable.Bike)
                 {
                     MatrixBike[column][ID].FillColor = Color.FromArgb(43, 47, 51);
                 }
-                else if (type == "car")
+                else if (type == Variable.Car)
                 {
                     MatrixCar[column][ID].FillColor = Color.FromArgb(43, 47, 51);
+                }
+            }
+        }
+
+        //Mỗi lần mở ctrình lại thì check xem ô nào có xe để bôi đỏ
+        void changeColorLoad()
+        {
+            for(int i = 0; i < Variable.CarRows; ++i)
+            {
+                for(int j = 0; j < Variable.CarColumns; ++j)
+                {
+                    if(ParkingLotDAL.Instance.checkSlot((Variable.Bicycle + MatrixBicycle[i][j].Text.ToString()), Variable.Bicycle))
+                    {
+                        MatrixBicycle[i][j].FillColor = Color.FromArgb(253, 65, 60);
+                    }
+
+                    if(ParkingLotDAL.Instance.checkSlot((Variable.Bike + MatrixBicycle[i][j].Text.ToString()), Variable.Bike))
+                    {
+                        MatrixBike[i][j].FillColor = Color.FromArgb(253, 65, 60);
+                    }
+
+                    if(ParkingLotDAL.Instance.checkSlot((Variable.Car + MatrixBicycle[i][j].Text.ToString()), Variable.Car))
+                    {
+                        MatrixCar[i][j].FillColor = Color.FromArgb(253, 65, 60);
+                    }
                 }
             }
         }
