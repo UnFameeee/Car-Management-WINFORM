@@ -22,8 +22,35 @@ namespace DAL
             private set { InvoiceDAL.instance = value; }
         }
 
-        public int MoneyHaveToPay(DateTime date1, DateTime date2, string id, int index, int x) //date2 bắt buộc phải là ngày sau date1
+        public int MoneyHaveToPay(DateTime date1, DateTime date2, int index, string timeformat, string type, string service) //date2 bắt buộc phải là ngày sau date1
         {
+            int x;                                                  //tiền gửi của mỗi loại xe (đơn vị là VNĐ)
+            if (type == "Bicycle")
+                x = 2;
+            else if (type == "Bike")
+                x = 5;
+            else x = 20;
+
+
+            int sv = 0;                                             //tiền rửa hoặc sửa (nếu có)
+            if (service == "Washing")
+            {
+                if (type == "Bicycle")
+                    sv = 20;
+                else if (type == "Bike")
+                    sv = 50;
+                else sv = 200;
+            }
+
+            if (service == "Repairing")
+            {
+                if (type == "Bicycle")
+                    sv = 50;
+                else if (type == "Bike")
+                    sv = 200;
+                else sv = 800;
+            }
+
             int total = 0;                                          //tổng tiền
             TimeSpan datediff = date2.Subtract(date1);              //phép trừ 2 ngày 
             double ddhour = datediff.TotalHours;                    //đổi thành giờ (số giờ đã gửi)              
@@ -41,7 +68,7 @@ namespace DAL
             int week = day / 7;                                     //đổi ngày thành tuần
             int month = day / 30;                                   //đổi tuần thánh tháng
 
-            if (id == "H")                                          //theo  giờ
+            if (timeformat == "H")                                  //theo  giờ
             {
                 if (hour == index)                                  //giờ gửi bằng với giờ đã đặt
                     total = x * index;
@@ -58,7 +85,7 @@ namespace DAL
                     total = x * (int)hour;
             }
 
-            else if (id == "D")                                     //theo ngày
+            else if (timeformat == "D")                             //theo ngày
             {
                 if (day == index)
                     total = x * 8 * index;
@@ -75,7 +102,7 @@ namespace DAL
                     total = x * 8 * day;
             }
 
-            else if (id == "W")                                     //theo tuần
+            else if (timeformat == "W")                             //theo tuần
             {
                 if (week == index)
                     total = x * 24 * index;
@@ -92,7 +119,7 @@ namespace DAL
                     total = x * 24 * week;
             }
 
-            else
+            else                                                    //theo tháng
             {
                 if (month == index)
                     total = x * 48 * index;
@@ -109,7 +136,7 @@ namespace DAL
                     total = x * 48 * month;
             }
 
-            return total;
+            return (total + sv) * 1000;                             //để ra tiền VNĐ
         }
     }
 }
