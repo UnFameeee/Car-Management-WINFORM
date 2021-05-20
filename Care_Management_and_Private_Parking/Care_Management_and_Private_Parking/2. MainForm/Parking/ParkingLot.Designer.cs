@@ -36,6 +36,19 @@ namespace Care_Management_and_Private_Parking
             this.btnAddVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.CustomerPic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lbIdentityNumber = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
+            this.lbPhone = new System.Windows.Forms.Label();
+            this.lbBirthday = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbCusID = new System.Windows.Forms.Label();
+            this.lbLicensePlate = new System.Windows.Forms.Label();
+            this.lbVehicleType = new System.Windows.Forms.Label();
+            this.lbVehicleID = new System.Windows.Forms.Label();
+            this.VehiclePic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -53,28 +66,16 @@ namespace Care_Management_and_Private_Parking
             this.pnCar = new Guna.UI2.WinForms.Guna2Panel();
             this.pnBike = new Guna.UI2.WinForms.Guna2Panel();
             this.pnBicycle = new Guna.UI2.WinForms.Guna2Panel();
-            this.VehiclePic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbVehicleID = new System.Windows.Forms.Label();
-            this.lbVehicleType = new System.Windows.Forms.Label();
-            this.lbLicensePlate = new System.Windows.Forms.Label();
-            this.lbCusID = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbBirthday = new System.Windows.Forms.Label();
-            this.lbPhone = new System.Windows.Forms.Label();
-            this.lbAddress = new System.Windows.Forms.Label();
-            this.lbIdentityNumber = new System.Windows.Forms.Label();
-            this.CustomerPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
             this.pnCalendar.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -82,6 +83,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.guna2Panel3.BorderRadius = 22;
             this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Controls.Add(this.guna2Button1);
             this.guna2Panel3.Controls.Add(this.guna2Button3);
             this.guna2Panel3.Controls.Add(this.btnDeleteVehicle);
             this.guna2Panel3.Controls.Add(this.btnEditVehicle);
@@ -108,12 +110,12 @@ namespace Care_Management_and_Private_Parking
             this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(6, 182);
+            this.guna2Button3.Location = new System.Drawing.Point(7, 158);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(137, 43);
             this.guna2Button3.TabIndex = 5;
-            this.guna2Button3.Text = "IDK";
+            this.guna2Button3.Text = "Service";
             this.guna2Button3.UseTransparentBackground = true;
             // 
             // btnDeleteVehicle
@@ -131,7 +133,7 @@ namespace Care_Management_and_Private_Parking
             this.btnDeleteVehicle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
             this.btnDeleteVehicle.HoverState.Parent = this.btnDeleteVehicle;
             this.btnDeleteVehicle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDeleteVehicle.Location = new System.Drawing.Point(6, 133);
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(7, 109);
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.ShadowDecoration.Parent = this.btnDeleteVehicle;
             this.btnDeleteVehicle.Size = new System.Drawing.Size(137, 43);
@@ -155,7 +157,7 @@ namespace Care_Management_and_Private_Parking
             this.btnEditVehicle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
             this.btnEditVehicle.HoverState.Parent = this.btnEditVehicle;
             this.btnEditVehicle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEditVehicle.Location = new System.Drawing.Point(6, 84);
+            this.btnEditVehicle.Location = new System.Drawing.Point(7, 60);
             this.btnEditVehicle.Name = "btnEditVehicle";
             this.btnEditVehicle.ShadowDecoration.Parent = this.btnEditVehicle;
             this.btnEditVehicle.Size = new System.Drawing.Size(137, 43);
@@ -179,7 +181,7 @@ namespace Care_Management_and_Private_Parking
             this.btnAddVehicle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
             this.btnAddVehicle.HoverState.Parent = this.btnAddVehicle;
             this.btnAddVehicle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddVehicle.Location = new System.Drawing.Point(6, 35);
+            this.btnAddVehicle.Location = new System.Drawing.Point(7, 11);
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.ShadowDecoration.Parent = this.btnAddVehicle;
             this.btnAddVehicle.Size = new System.Drawing.Size(137, 43);
@@ -225,6 +227,157 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
             this.guna2Panel6.Size = new System.Drawing.Size(729, 236);
             this.guna2Panel6.TabIndex = 39;
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(451, 12);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Size = new System.Drawing.Size(152, 27);
+            this.guna2GradientButton2.TabIndex = 40;
+            this.guna2GradientButton2.Text = "CUSTOMER";
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(76, 12);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(152, 27);
+            this.guna2GradientButton1.TabIndex = 39;
+            this.guna2GradientButton1.Text = "VEHICLE";
+            // 
+            // CustomerPic
+            // 
+            this.CustomerPic.Location = new System.Drawing.Point(566, 45);
+            this.CustomerPic.Name = "CustomerPic";
+            this.CustomerPic.ShadowDecoration.Parent = this.CustomerPic;
+            this.CustomerPic.Size = new System.Drawing.Size(150, 150);
+            this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CustomerPic.TabIndex = 12;
+            this.CustomerPic.TabStop = false;
+            // 
+            // lbIdentityNumber
+            // 
+            this.lbIdentityNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbIdentityNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdentityNumber.ForeColor = System.Drawing.Color.White;
+            this.lbIdentityNumber.Location = new System.Drawing.Point(333, 198);
+            this.lbIdentityNumber.Name = "lbIdentityNumber";
+            this.lbIdentityNumber.Size = new System.Drawing.Size(360, 23);
+            this.lbIdentityNumber.TabIndex = 11;
+            this.lbIdentityNumber.Text = "Identity Number:";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAddress.ForeColor = System.Drawing.Color.White;
+            this.lbAddress.Location = new System.Drawing.Point(333, 169);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(204, 23);
+            this.lbAddress.TabIndex = 10;
+            this.lbAddress.Text = "Address:";
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhone.ForeColor = System.Drawing.Color.White;
+            this.lbPhone.Location = new System.Drawing.Point(333, 140);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(204, 23);
+            this.lbPhone.TabIndex = 9;
+            this.lbPhone.Text = "Phone:";
+            // 
+            // lbBirthday
+            // 
+            this.lbBirthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbBirthday.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirthday.ForeColor = System.Drawing.Color.White;
+            this.lbBirthday.Location = new System.Drawing.Point(333, 111);
+            this.lbBirthday.Name = "lbBirthday";
+            this.lbBirthday.Size = new System.Drawing.Size(204, 23);
+            this.lbBirthday.TabIndex = 8;
+            this.lbBirthday.Text = "Birthday:";
+            // 
+            // lbName
+            // 
+            this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.White;
+            this.lbName.Location = new System.Drawing.Point(333, 82);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(204, 23);
+            this.lbName.TabIndex = 7;
+            this.lbName.Text = "Name:";
+            // 
+            // lbCusID
+            // 
+            this.lbCusID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbCusID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCusID.ForeColor = System.Drawing.Color.White;
+            this.lbCusID.Location = new System.Drawing.Point(333, 53);
+            this.lbCusID.Name = "lbCusID";
+            this.lbCusID.Size = new System.Drawing.Size(204, 23);
+            this.lbCusID.TabIndex = 6;
+            this.lbCusID.Text = "CustomerID: ";
+            // 
+            // lbLicensePlate
+            // 
+            this.lbLicensePlate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbLicensePlate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLicensePlate.ForeColor = System.Drawing.Color.White;
+            this.lbLicensePlate.Location = new System.Drawing.Point(12, 111);
+            this.lbLicensePlate.Name = "lbLicensePlate";
+            this.lbLicensePlate.Size = new System.Drawing.Size(147, 110);
+            this.lbLicensePlate.TabIndex = 3;
+            this.lbLicensePlate.Text = "License Plate:";
+            // 
+            // lbVehicleType
+            // 
+            this.lbVehicleType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbVehicleType.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicleType.ForeColor = System.Drawing.Color.White;
+            this.lbVehicleType.Location = new System.Drawing.Point(12, 82);
+            this.lbVehicleType.Name = "lbVehicleType";
+            this.lbVehicleType.Size = new System.Drawing.Size(147, 23);
+            this.lbVehicleType.TabIndex = 2;
+            this.lbVehicleType.Text = "Vehicle Type:";
+            // 
+            // lbVehicleID
+            // 
+            this.lbVehicleID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.lbVehicleID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicleID.ForeColor = System.Drawing.Color.White;
+            this.lbVehicleID.Location = new System.Drawing.Point(12, 53);
+            this.lbVehicleID.Name = "lbVehicleID";
+            this.lbVehicleID.Size = new System.Drawing.Size(147, 23);
+            this.lbVehicleID.TabIndex = 1;
+            this.lbVehicleID.Text = "VehicleID:";
+            // 
+            // VehiclePic
+            // 
+            this.VehiclePic.Location = new System.Drawing.Point(165, 45);
+            this.VehiclePic.Name = "VehiclePic";
+            this.VehiclePic.ShadowDecoration.Parent = this.VehiclePic;
+            this.VehiclePic.Size = new System.Drawing.Size(150, 150);
+            this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.VehiclePic.TabIndex = 0;
+            this.VehiclePic.TabStop = false;
             // 
             // pnCalendar
             // 
@@ -444,154 +597,28 @@ namespace Care_Management_and_Private_Parking
             this.pnBicycle.Size = new System.Drawing.Size(729, 113);
             this.pnBicycle.TabIndex = 6;
             // 
-            // VehiclePic
+            // guna2Button1
             // 
-            this.VehiclePic.Location = new System.Drawing.Point(165, 45);
-            this.VehiclePic.Name = "VehiclePic";
-            this.VehiclePic.ShadowDecoration.Parent = this.VehiclePic;
-            this.VehiclePic.Size = new System.Drawing.Size(150, 150);
-            this.VehiclePic.TabIndex = 0;
-            this.VehiclePic.TabStop = false;
-            // 
-            // lbVehicleID
-            // 
-            this.lbVehicleID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbVehicleID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVehicleID.ForeColor = System.Drawing.Color.White;
-            this.lbVehicleID.Location = new System.Drawing.Point(12, 53);
-            this.lbVehicleID.Name = "lbVehicleID";
-            this.lbVehicleID.Size = new System.Drawing.Size(147, 23);
-            this.lbVehicleID.TabIndex = 1;
-            this.lbVehicleID.Text = "VehicleID:";
-            // 
-            // lbVehicleType
-            // 
-            this.lbVehicleType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbVehicleType.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVehicleType.ForeColor = System.Drawing.Color.White;
-            this.lbVehicleType.Location = new System.Drawing.Point(12, 82);
-            this.lbVehicleType.Name = "lbVehicleType";
-            this.lbVehicleType.Size = new System.Drawing.Size(147, 23);
-            this.lbVehicleType.TabIndex = 2;
-            this.lbVehicleType.Text = "Vehicle Type:";
-            // 
-            // lbLicensePlate
-            // 
-            this.lbLicensePlate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbLicensePlate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLicensePlate.ForeColor = System.Drawing.Color.White;
-            this.lbLicensePlate.Location = new System.Drawing.Point(12, 111);
-            this.lbLicensePlate.Name = "lbLicensePlate";
-            this.lbLicensePlate.Size = new System.Drawing.Size(147, 23);
-            this.lbLicensePlate.TabIndex = 3;
-            this.lbLicensePlate.Text = "License Plate:";
-            // 
-            // lbCusID
-            // 
-            this.lbCusID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbCusID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCusID.ForeColor = System.Drawing.Color.White;
-            this.lbCusID.Location = new System.Drawing.Point(333, 53);
-            this.lbCusID.Name = "lbCusID";
-            this.lbCusID.Size = new System.Drawing.Size(204, 23);
-            this.lbCusID.TabIndex = 6;
-            this.lbCusID.Text = "CustomerID: ";
-            // 
-            // lbName
-            // 
-            this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(333, 82);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(204, 23);
-            this.lbName.TabIndex = 7;
-            this.lbName.Text = "Name:";
-            // 
-            // lbBirthday
-            // 
-            this.lbBirthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbBirthday.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirthday.ForeColor = System.Drawing.Color.White;
-            this.lbBirthday.Location = new System.Drawing.Point(333, 111);
-            this.lbBirthday.Name = "lbBirthday";
-            this.lbBirthday.Size = new System.Drawing.Size(204, 23);
-            this.lbBirthday.TabIndex = 8;
-            this.lbBirthday.Text = "Birthday:";
-            // 
-            // lbPhone
-            // 
-            this.lbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.ForeColor = System.Drawing.Color.White;
-            this.lbPhone.Location = new System.Drawing.Point(333, 140);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(204, 23);
-            this.lbPhone.TabIndex = 9;
-            this.lbPhone.Text = "Phone:";
-            // 
-            // lbAddress
-            // 
-            this.lbAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddress.ForeColor = System.Drawing.Color.White;
-            this.lbAddress.Location = new System.Drawing.Point(333, 169);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(204, 23);
-            this.lbAddress.TabIndex = 10;
-            this.lbAddress.Text = "Address:";
-            // 
-            // lbIdentityNumber
-            // 
-            this.lbIdentityNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lbIdentityNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdentityNumber.ForeColor = System.Drawing.Color.White;
-            this.lbIdentityNumber.Location = new System.Drawing.Point(333, 198);
-            this.lbIdentityNumber.Name = "lbIdentityNumber";
-            this.lbIdentityNumber.Size = new System.Drawing.Size(360, 23);
-            this.lbIdentityNumber.TabIndex = 11;
-            this.lbIdentityNumber.Text = "Identity Number:";
-            // 
-            // CustomerPic
-            // 
-            this.CustomerPic.Location = new System.Drawing.Point(566, 45);
-            this.CustomerPic.Name = "CustomerPic";
-            this.CustomerPic.ShadowDecoration.Parent = this.CustomerPic;
-            this.CustomerPic.Size = new System.Drawing.Size(150, 150);
-            this.CustomerPic.TabIndex = 12;
-            this.CustomerPic.TabStop = false;
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(76, 12);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(152, 27);
-            this.guna2GradientButton1.TabIndex = 39;
-            this.guna2GradientButton1.Text = "VEHICLE";
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(451, 12);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(152, 27);
-            this.guna2GradientButton2.TabIndex = 40;
-            this.guna2GradientButton2.Text = "CUSTOMER";
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.guna2Button1.BorderRadius = 22;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(7, 207);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(137, 43);
+            this.guna2Button1.TabIndex = 6;
+            this.guna2Button1.Text = "Invoice";
+            this.guna2Button1.UseTransparentBackground = true;
             // 
             // ParkingLot
             // 
@@ -608,6 +635,8 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
             this.pnCalendar.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
@@ -615,8 +644,6 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel4.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -660,5 +687,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbVehicleID;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

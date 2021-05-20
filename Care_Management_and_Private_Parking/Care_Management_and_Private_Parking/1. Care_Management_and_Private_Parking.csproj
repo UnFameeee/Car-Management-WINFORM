@@ -103,10 +103,10 @@
     <Compile Include="2. MainForm\Parking\ParkingLot.Designer.cs">
       <DependentUpon>ParkingLot.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddVehicle.cs">
+    <Compile Include="2. MainForm\Parking\AddVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddVehicle.Designer.cs">
+    <Compile Include="2. MainForm\Parking\AddVehicle.Designer.cs">
       <DependentUpon>AddVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Test_Trash\Tests.cs">
@@ -155,7 +155,7 @@
     <EmbeddedResource Include="2. MainForm\Parking\ParkingLot.resx">
       <DependentUpon>ParkingLot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddVehicle.resx">
+    <EmbeddedResource Include="2. MainForm\Parking\AddVehicle.resx">
       <DependentUpon>AddVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
@@ -207,10 +207,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{296911db-7503-403d-9287-0fcdd5ae6957}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{fef838e8-04f1-4792-9acc-646346ec214a}</Project>
       <Name>DAL</Name>

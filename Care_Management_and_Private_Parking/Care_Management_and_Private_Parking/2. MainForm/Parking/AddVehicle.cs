@@ -39,6 +39,7 @@ namespace Care_Management_and_Private_Parking
             tbCustomerID.Text = Variable.Cus + ParkingLotDAL.Instance.takeID(Variable.Cus);
         }
 
+        #region thêm khách
         bool verifCus()
         {
             if (tbName.Text.Trim() == "" || tbPhone.Text.Trim() == "" 
@@ -50,7 +51,6 @@ namespace Care_Management_and_Private_Parking
 
         private void btnAddCus_Click(object sender, EventArgs e)
         {
-            //Cus = tbCustomerID.Text;
             //Khách
             string CusID = Variable.Cus + ParkingLotDAL.Instance.takeID(Variable.Cus);
             string FullName = tbName.Text;
@@ -95,7 +95,9 @@ namespace Care_Management_and_Private_Parking
                 }
             }
         }
+        #endregion
 
+        #region thêm xe
         public void showUpForm()
         {
             pnlCus.Enabled = false;
@@ -146,13 +148,13 @@ namespace Care_Management_and_Private_Parking
                 MessageBox.Show(ex.Message);
             }
         }
-
+        #endregion
 
         private void btnExit_Click(object sender, EventArgs e)
         { 
             if(Execute == 1)
             {
-                ParkingLotDAL.Instance.deleteCustomer(Variable.Cus + ParkingLotDAL.Instance.takeID(Variable.Cus));
+                ParkingLotDAL.Instance.deleteCustomer(Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString());
             }
             this.DialogResult = DialogResult.Cancel;
         }
