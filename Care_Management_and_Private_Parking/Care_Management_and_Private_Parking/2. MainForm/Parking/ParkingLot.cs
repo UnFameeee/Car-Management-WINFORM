@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using System.Data.SqlClient;
+using System.IO;
+
 //3 layers
 using DAL;
 using Global;
@@ -165,47 +168,82 @@ namespace Care_Management_and_Private_Parking
         #region Phần thông tin xe sẽ hiện ở dưới
         void fillStatuspnl()
         {
-            if (type == "bicycle")
+            if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
             {
-                if(ParkingLotDAL.Instance.checkSlot(id, type) == true)
-                {
-
-                }
-                else
-                {
-                    fillEmpty();
-                }
+                SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
+            "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
+                DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
+                fillInfo(table);
             }
-            else if (type == "bike")
+            else
             {
-                if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
-                {
-
-                }
-                else
-                {
-                    fillEmpty();
-                }
+                fillEmpty();
             }
-            else if (type == "car")
-            {
-                if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
-                {
 
-                }
-                else
-                {
-                    fillEmpty();
-                }
-            }
+            //if (type == "bicycle")
+            //{
+                
+            //}
+            //else if (type == "bike")
+            //{
+            //    if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
+            //    {
+            //        SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
+            //    "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
+            //        DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
+            //        fillInfo(table);
+            //    }
+            //    else
+            //    {
+            //        fillEmpty();
+            //    }
+            //}
+            //else if (type == "car")
+            //{
+            //    if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
+            //    {
+            //        SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
+            //    "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
+            //        DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
+            //        fillInfo(table);
+            //    }
+            //    else
+            //    {
+            //        fillEmpty();
+            //    }
+            //}
         }
+
+        void fillInfo(DataTable table)
+        {
+            //Set lại phần Vehicle
+            lbVehicleID.Text = "VehicleID: " + table.Rows[0]["VehID"].ToString();
+            lbVehicleType.Text = "Vehicle Type: " + table.Rows[0]["VehType"].ToString();
+            lbLicensePlate.Text = "License Plate: \r\n" + table.Rows[0]["LicensePlate"].ToString();
+            byte[] picture = (byte[])table.Rows[0]["Picture"];
+            MemoryStream Picture = new MemoryStream(picture);
+            VehiclePic.Image = Image.FromStream(Picture);
+
+            //Set lại phần Customer
+            lbCusID.Text = "CustomerID: " + table.Rows[0]["CusID"].ToString();
+            lbName.Text = "Name: " + table.Rows[0]["FullName"].ToString();
+            lbBirthday.Text = "Birthday: " + table.Rows[0]["Bdate"].ToString();
+            lbPhone.Text = "Phone: " + table.Rows[0]["PhoneNumber"].ToString();
+            lbAddress.Text = "Address: " + table.Rows[0]["Address"].ToString();
+            lbIdentityNumber.Text = "Identity Number: " + table.Rows[0]["IdentityNumber"].ToString();
+            byte[] pic2 = (byte[])table.Rows[0]["Appearance"];
+            MemoryStream Picture2 = new MemoryStream(pic2);
+            CustomerPic.Image = Image.FromStream(Picture2);
+        }
+
+
         void fillEmpty()
         {
             //Set lại phần Vehicle
-            lbVehicleID.Text =  "VehicleID: " + id;
+            lbVehicleID.Text =  "VehicleID: " + type + id;
             lbVehicleType.Text = "Vehicle Type: " + type;
             lbLicensePlate.Text = "License Plate: " + "null";
-            VehiclePic = null;
+            VehiclePic.Image = null;
             //Set lại phần Customer
             lbCusID.Text = "CustomerID: " +"null";
             lbName.Text = "Name: " + "null";
@@ -213,7 +251,7 @@ namespace Care_Management_and_Private_Parking
             lbPhone.Text = "Phone: " + "null";
             lbAddress.Text = "Address: " + "null";
             lbIdentityNumber.Text = "Identity Number: " + "null";
-            CustomerPic = null;
+            CustomerPic.Image = null;
         }
         #endregion
 

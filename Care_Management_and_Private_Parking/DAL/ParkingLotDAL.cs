@@ -80,7 +80,7 @@ namespace DAL
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
             cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
             cmd.Parameters.Add("@License", SqlDbType.NVarChar).Value = LicensePlate;
-            cmd.Parameters.Add("@Pic", SqlDbType.Image).Value = VehPic;
+            cmd.Parameters.Add("@Pic", SqlDbType.Image).Value = VehPic.ToArray();
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -102,7 +102,7 @@ namespace DAL
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
             cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
             cmd.Parameters.Add("@License", SqlDbType.Date).Value = LicensePlate;
-            cmd.Parameters.Add("@Pic", SqlDbType.NVarChar).Value = VehPic;
+            cmd.Parameters.Add("@Pic", SqlDbType.Image).Value = VehPic.ToArray();
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -148,7 +148,7 @@ namespace DAL
             cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
             cmd.Parameters.Add("@Addr", SqlDbType.NVarChar).Value = Address;
             cmd.Parameters.Add("@Identity", SqlDbType.NVarChar).Value = IdentityCardNumber;
-            cmd.Parameters.Add("@Appear", SqlDbType.Image).Value = CusPic;
+            cmd.Parameters.Add("@Appear", SqlDbType.Image).Value = CusPic.ToArray();
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -172,7 +172,7 @@ namespace DAL
             cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
             cmd.Parameters.Add("@Addr", SqlDbType.NVarChar).Value = Address;
             cmd.Parameters.Add("@Identity", SqlDbType.NVarChar).Value = IdentityCardNumber;
-            cmd.Parameters.Add("@Appear", SqlDbType.Image).Value = CusPic;
+            cmd.Parameters.Add("@Appear", SqlDbType.Image).Value = CusPic.ToArray();
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {

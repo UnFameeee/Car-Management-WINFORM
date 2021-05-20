@@ -33,11 +33,11 @@ namespace Care_Management_and_Private_Parking
         {
             //Chỉnh Checked
             btnParkingLot.Checked = false;
-            btnServiceLot.Checked = false;
+            btnStatistic.Checked = false;
             btnRentalLot.Checked = false;
             //Chỉnh Cursor
             btnParkingLot.Cursor = cur1;
-            btnServiceLot.Cursor = cur1;
+            btnStatistic.Cursor = cur1;
             btnRentalLot.Cursor = cur1;
             //Tắt tất cả các form
             frmParkingLot.Hide();
@@ -51,11 +51,11 @@ namespace Care_Management_and_Private_Parking
             frmParkingLot.Show();
         }
 
-        private void btnServiceLot_Click(object sender, EventArgs e)
+        private void btnStatistic_Click(object sender, EventArgs e)
         {
             tick();
-            btnServiceLot.Checked = true;
-            btnServiceLot.Cursor = cur2;
+            btnStatistic.Checked = true;
+            btnStatistic.Cursor = cur2;
         }
 
         private void btnRentalLot_Click(object sender, EventArgs e)
