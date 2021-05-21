@@ -51,13 +51,15 @@ create table EMPLOYEE(
 	EmpID nvarchar(100) primary key,									-- mã nhân viên
 	FullName nvarchar(100),
 	Gender nvarchar(100),
+	Birthday Date,
 	PhoneNumber nvarchar(100),
 	IdentityNumber nvarchar(100),
+	Email nvarchar(100),
 	JobID nvarchar(100) references JOB(JobID),
 	Appearance image,
 	AccUsername nvarchar(100) references ACCOUNT(Username)		
 )
-INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '0123456789', '079201006666', 'QL', null, 'admin') 
+INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', 'QL', null, 'admin') 
 GO
 
 
@@ -113,7 +115,6 @@ create table PARKING(
 )
 GO
 
-ALTER TABLE 
 
 -- Hợp Đồng
 create table CONTRACT(

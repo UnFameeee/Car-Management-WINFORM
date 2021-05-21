@@ -14,17 +14,17 @@ using DAL;
 
 namespace Care_Management_and_Private_Parking
 {
-    public partial class EmployeeDetailForm : Form
+    public partial class ManageEmployeeForm : Form
     {
 
-        public EmployeeDetailForm()
+        public ManageEmployeeForm()
         {
             InitializeComponent();
         }
 
         string EmpID = "";
 
-        public EmployeeDetailForm(string id) : this()
+        public ManageEmployeeForm(string id) : this()
         {
             EmpID = id;
         }
@@ -51,10 +51,11 @@ namespace Care_Management_and_Private_Parking
 
                 tbPhone.Text = tab.Rows[0][3].ToString();
                 tbIdentity.Text = tab.Rows[0][4].ToString();
-                cbbxJobID.SelectedValue = tab.Rows[0][5].ToString();
+                tbMail.Text = tab.Rows[0][5].ToString();
+                cbbxJobID.SelectedValue = tab.Rows[0][6].ToString();                
 
                 byte[] pic;
-                pic = (byte[])tab.Rows[0][6];
+                pic = (byte[])tab.Rows[0][7];
                 MemoryStream picture = new MemoryStream(pic);
                 ptbEmp.Image = Image.FromStream(picture);
 
@@ -73,6 +74,8 @@ namespace Care_Management_and_Private_Parking
             string FName = tbFullName.Text;
             string Phone = tbPhone.Text;
             string Identity = tbIdentity.Text;
+            string Email = tbMail.Text;
+
             string JobID = cbbxJobID.SelectedValue.ToString();
             string Gender = "Male";
 
@@ -84,7 +87,7 @@ namespace Care_Management_and_Private_Parking
                 MemoryStream pic = new MemoryStream();
                 ptbEmp.Image.Save(pic, ptbEmp.Image.RawFormat);
 
-                if (EmployeeDAL.Instance.updateEmployee(EmpID, FName, Gender, Phone, Identity, JobID, pic))
+                if (EmployeeDAL.Instance.updateEmployee(EmpID, FName, Gender, Phone, Identity, Email, JobID, pic))
                 {
                     MessageBox.Show(EmpID + " Has Been Updated", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reload();
@@ -142,6 +145,7 @@ namespace Care_Management_and_Private_Parking
                 || tbFullName.Text.Trim() == ""
                 || tbPhone.Text.Trim() == ""
                 || tbIdentity.Text.Trim() == ""
+                || tbMail.Text.Trim() == ""
                 || cbbxJobID.SelectedItem == null
                 || ptbEmp.Image == null)
                 return false;
@@ -170,6 +174,7 @@ namespace Care_Management_and_Private_Parking
             string FName = tbFullName.Text;
             string Phone = tbPhone.Text;
             string Identity = tbIdentity.Text;
+            string Email = tbMail.Text;
 
             string Gender = "Male";
             if (rdbtnFemale.Checked)
@@ -184,7 +189,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (EmployeeDAL.Instance.checkEmp(EmpID))
                 {
-                    if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Phone, Identity, JobID, pic))
+                    if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Phone, Identity, Email, JobID, pic)) 
                     {
                         MessageBox.Show("New Employee Inserted", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reload();
