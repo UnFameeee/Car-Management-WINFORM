@@ -16,6 +16,7 @@ namespace Care_Management_and_Private_Parking
     public partial class CarParkForm : Form
     {
         ParkingLot frmParkingLot = new ParkingLot() { TopLevel = false, TopMost = false };
+        RentalLot frmRentalLot = new RentalLot() { TopLevel = false, TopMost = false };
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
         public CarParkForm()
@@ -27,6 +28,7 @@ namespace Care_Management_and_Private_Parking
         void loadForm()
         {
             this.pnlMain.Controls.Add(frmParkingLot);
+            this.pnlMain.Controls.Add(frmRentalLot);
             tick();
         }
         private void tick()
@@ -41,6 +43,7 @@ namespace Care_Management_and_Private_Parking
             btnRentalLot.Cursor = cur1;
             //Tắt tất cả các form
             frmParkingLot.Hide();
+            frmRentalLot.Hide();
         }
 
         private void btnParkingLot_Click(object sender, EventArgs e)
@@ -50,6 +53,13 @@ namespace Care_Management_and_Private_Parking
             btnParkingLot.Cursor = cur2;
             frmParkingLot.Show();
         }
+        private void btnRentalLot_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnRentalLot.Checked = true;
+            btnRentalLot.Cursor = cur2;
+            frmRentalLot.Show();
+        }
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
@@ -58,11 +68,6 @@ namespace Care_Management_and_Private_Parking
             btnStatistic.Cursor = cur2;
         }
 
-        private void btnRentalLot_Click(object sender, EventArgs e)
-        {
-            tick();
-            btnRentalLot.Checked = true;
-            btnRentalLot.Cursor = cur2;
-        }
+        
     }
 }

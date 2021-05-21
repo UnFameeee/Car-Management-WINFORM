@@ -48,6 +48,7 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="EmployeeDAL.cs" />
     <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="MyInfoDAL.cs" />
     <Compile Include="ParkingLotDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

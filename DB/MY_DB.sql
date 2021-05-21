@@ -32,7 +32,8 @@ create table JOB(
 )
 INSERT INTO JOB VALUES('QL', 'Manager')
 INSERT INTO JOB VALUES('NV', 'Staff')
-INSERT INTO JOB VALUES('KH', 'Customer')
+INSERT INTO JOB VALUES('NVVP', 'Staff')
+
 GO
 
 -- Ca Làm
@@ -114,7 +115,6 @@ create table PARKING(
 	--PRIMARY KEY(CusID, VehID)
 )
 GO
-
 
 -- Hợp Đồng
 create table CONTRACT(

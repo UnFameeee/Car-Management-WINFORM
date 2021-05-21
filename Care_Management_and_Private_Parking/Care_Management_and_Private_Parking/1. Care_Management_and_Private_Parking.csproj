@@ -79,16 +79,16 @@
     <Compile Include="2. MainForm\Manage\ManageEmp\ManageEmployeeForm.Designer.cs">
       <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\CalendarDOWForm.cs">
+    <Compile Include="2. MainForm\MyInfomation\CalendarDOWForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\CalendarDOWForm.Designer.cs">
+    <Compile Include="2. MainForm\MyInfomation\CalendarDOWForm.Designer.cs">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\CalendarForm.cs">
+    <Compile Include="2. MainForm\MyInfomation\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\CalendarForm.Designer.cs">
+    <Compile Include="2. MainForm\MyInfomation\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\Parking\CarParkForm.cs">
@@ -108,6 +108,12 @@
     </Compile>
     <Compile Include="2. MainForm\Parking\AddVehicle.Designer.cs">
       <DependentUpon>AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\RentalLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\RentalLot.Designer.cs">
+      <DependentUpon>RentalLot.cs</DependentUpon>
     </Compile>
     <Compile Include="Test_Trash\Tests.cs">
       <SubType>Form</SubType>
@@ -140,10 +146,10 @@
     <Compile Include="2. MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\Task.cs">
+    <Compile Include="2. MainForm\MyInfomation\Task.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Calendar\Task.Designer.cs">
+    <Compile Include="2. MainForm\MyInfomation\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="1. Login\ForgotPasswordForm.resx">
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="2. MainForm\Parking\AddVehicle.resx">
       <DependentUpon>AddVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Parking\RentalLot.resx">
+      <DependentUpon>RentalLot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,10 +176,10 @@
     <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\ManageEmployeeForm.resx">
       <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Calendar\CalendarDOWForm.resx">
+    <EmbeddedResource Include="2. MainForm\MyInfomation\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Calendar\CalendarForm.resx">
+    <EmbeddedResource Include="2. MainForm\MyInfomation\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Parking\CarParkForm.resx">
@@ -190,7 +199,7 @@
     <EmbeddedResource Include="2. MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Calendar\Task.resx">
+    <EmbeddedResource Include="2. MainForm\MyInfomation\Task.resx">
       <DependentUpon>Task.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
