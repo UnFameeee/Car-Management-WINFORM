@@ -73,11 +73,11 @@
     <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeListForm.Designer.cs">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeDetailForm.cs">
+    <Compile Include="2. MainForm\Manage\ManageEmp\ManageEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Manage\ManageEmp\EmployeeDetailForm.Designer.cs">
-      <DependentUpon>EmployeeDetailForm.cs</DependentUpon>
+    <Compile Include="2. MainForm\Manage\ManageEmp\ManageEmployeeForm.Designer.cs">
+      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\MyInfomation\CalendarDOWForm.cs">
       <SubType>Form</SubType>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\EmployeeDetailForm.resx">
-      <DependentUpon>EmployeeDetailForm.cs</DependentUpon>
+    <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\ManageEmployeeForm.resx">
+      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\MyInfomation\CalendarDOWForm.resx">
       <DependentUpon>CalendarDOWForm.cs</DependentUpon>

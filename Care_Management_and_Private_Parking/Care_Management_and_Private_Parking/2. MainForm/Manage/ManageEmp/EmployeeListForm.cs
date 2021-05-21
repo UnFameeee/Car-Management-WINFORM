@@ -26,17 +26,18 @@ namespace Care_Management_and_Private_Parking
             dgvEmp.RowTemplate.Height = 80;
 
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            picCol = (DataGridViewImageColumn)dgvEmp.Columns[6];
+            picCol = (DataGridViewImageColumn)dgvEmp.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
             //Custom cái độ rộng của các cột của datagridview
-            dgvEmp.Columns[0].Width = 80;
-            dgvEmp.Columns[1].Width = 200;
-            dgvEmp.Columns[2].Width = 100;
+            dgvEmp.Columns[0].Width = 50;
+            dgvEmp.Columns[1].Width = 150;
+            dgvEmp.Columns[2].Width = 64;
             dgvEmp.Columns[3].Width = 120;
             dgvEmp.Columns[4].Width = 150;
-            dgvEmp.Columns[5].Width = 100;
-            dgvEmp.Columns[6].Width = 104;
+            dgvEmp.Columns[5].Width = 140;
+            dgvEmp.Columns[6].Width = 80;
+            dgvEmp.Columns[7].Width = 100;
 
             //DataTable tab = EmployeeDAL.Instance.getAllEmp();            
 
@@ -65,8 +66,8 @@ namespace Care_Management_and_Private_Parking
 
                 if (tab.Rows.Count == 0)
                     MessageBox.Show("Can't Find Name Like: " + tbSearch.Text);
-
-                dgvEmp.DataSource = tab;
+                else
+                    dgvEmp.DataSource = tab;
             }            
         }
 
@@ -80,21 +81,21 @@ namespace Care_Management_and_Private_Parking
 
                 if (tab.Rows.Count == 0)
                    MessageBox.Show("Can't Find ID: " + tbSearch.Text);
-
-                dgvEmp.DataSource = tab;              
+                else
+                    dgvEmp.DataSource = tab;              
             }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
             string id = dgvEmp.CurrentRow.Cells[0].Value.ToString();
-            EmployeeDetailForm frm = new EmployeeDetailForm(id);
+            ManageEmployeeForm frm = new ManageEmployeeForm(id);
             frm.ShowDialog();
             reload();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            EmployeeDetailForm frm = new EmployeeDetailForm();
+            ManageEmployeeForm frm = new ManageEmployeeForm();
             frm.ShowDialog();
             reload();
         }

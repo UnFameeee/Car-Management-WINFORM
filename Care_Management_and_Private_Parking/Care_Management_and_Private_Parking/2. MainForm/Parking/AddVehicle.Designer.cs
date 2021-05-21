@@ -52,7 +52,7 @@ namespace Care_Management_and_Private_Parking
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
+            this.cbboxTimeFormat = new Guna.UI.WinForms.GunaComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.guna2CustomRadioButton3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -88,6 +88,7 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnCalendar.BorderRadius = 22;
             this.pnCalendar.BorderThickness = 1;
+            this.pnCalendar.Controls.Add(this.pnlCus);
             this.pnCalendar.Controls.Add(this.btnAddCus);
             this.pnCalendar.Controls.Add(this.pnlVeh);
             this.pnCalendar.Controls.Add(this.btnAddVeh);
@@ -127,7 +128,6 @@ namespace Care_Management_and_Private_Parking
             // pnlVeh
             // 
             this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnlVeh.Controls.Add(this.pnlCus);
             this.pnlVeh.Controls.Add(this.label16);
             this.pnlVeh.Controls.Add(this.panel3);
             this.pnlVeh.Controls.Add(this.panel1);
@@ -143,7 +143,7 @@ namespace Care_Management_and_Private_Parking
             this.pnlCus.Controls.Add(this.label15);
             this.pnlCus.Controls.Add(this.panel2);
             this.pnlCus.Controls.Add(this.CustomerPic);
-            this.pnlCus.Location = new System.Drawing.Point(0, 0);
+            this.pnlCus.Location = new System.Drawing.Point(489, 50);
             this.pnlCus.Name = "pnlCus";
             this.pnlCus.Size = new System.Drawing.Size(463, 326);
             this.pnlCus.TabIndex = 72;
@@ -334,7 +334,7 @@ namespace Care_Management_and_Private_Parking
             // panel3
             // 
             this.panel3.Controls.Add(this.guna2NumericUpDown1);
-            this.panel3.Controls.Add(this.gunaComboBox1);
+            this.panel3.Controls.Add(this.cbboxTimeFormat);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.guna2CustomRadioButton3);
             this.panel3.Controls.Add(this.label13);
@@ -368,23 +368,23 @@ namespace Care_Management_and_Private_Parking
             this.guna2NumericUpDown1.TabIndex = 73;
             this.guna2NumericUpDown1.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             // 
-            // gunaComboBox1
+            // cbboxTimeFormat
             // 
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Location = new System.Drawing.Point(24, 72);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox1.Size = new System.Drawing.Size(190, 26);
-            this.gunaComboBox1.TabIndex = 73;
+            this.cbboxTimeFormat.BackColor = System.Drawing.Color.Transparent;
+            this.cbboxTimeFormat.BaseColor = System.Drawing.Color.White;
+            this.cbboxTimeFormat.BorderColor = System.Drawing.Color.Silver;
+            this.cbboxTimeFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbboxTimeFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbboxTimeFormat.FocusedColor = System.Drawing.Color.Empty;
+            this.cbboxTimeFormat.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbboxTimeFormat.ForeColor = System.Drawing.Color.Black;
+            this.cbboxTimeFormat.FormattingEnabled = true;
+            this.cbboxTimeFormat.Location = new System.Drawing.Point(24, 72);
+            this.cbboxTimeFormat.Name = "cbboxTimeFormat";
+            this.cbboxTimeFormat.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbboxTimeFormat.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbboxTimeFormat.Size = new System.Drawing.Size(190, 26);
+            this.cbboxTimeFormat.TabIndex = 73;
             // 
             // label17
             // 
@@ -709,7 +709,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2Button btnAddCus;
         private System.Windows.Forms.Label label17;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
+        private Guna.UI.WinForms.GunaComboBox cbboxTimeFormat;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
     }
 }
