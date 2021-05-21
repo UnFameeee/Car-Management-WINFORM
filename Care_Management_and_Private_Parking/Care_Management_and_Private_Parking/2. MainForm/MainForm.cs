@@ -66,6 +66,7 @@ namespace Care_Management_and_Private_Parking
             tick();
             btnUser.Checked = true;
             btnUser.Cursor = cur2;
+            frmCalendar.Show();
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
@@ -73,7 +74,6 @@ namespace Care_Management_and_Private_Parking
             tick();
             btnCalendar.Checked = true;
             btnCalendar.Cursor = cur2;
-            frmCalendar.Show();
         }
 
         private void btnManageJob_Click(object sender, EventArgs e)

@@ -160,12 +160,12 @@ namespace Care_Management_and_Private_Parking
             this.btnCalendar.HoverState.Parent = this.btnCalendar;
             this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
             this.btnCalendar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCalendar.Location = new System.Drawing.Point(9, 9);
+            this.btnCalendar.Location = new System.Drawing.Point(4, 10);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.ShadowDecoration.Parent = this.btnCalendar;
-            this.btnCalendar.Size = new System.Drawing.Size(137, 43);
+            this.btnCalendar.Size = new System.Drawing.Size(148, 43);
             this.btnCalendar.TabIndex = 1;
-            this.btnCalendar.Text = "Calendar";
+            this.btnCalendar.Text = "Time Keeping";
             this.btnCalendar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCalendar.UseTransparentBackground = true;
             this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);

@@ -135,7 +135,6 @@ namespace DAL
         }
         #endregion
 
-
         #region Khách
         public bool addCustomer(string CusID, string Name, DateTime Bdate, string Phone, string Address, string IdentityCardNumber, MemoryStream CusPic)
         {
@@ -255,7 +254,6 @@ namespace DAL
             return n;
         }
         #endregion
-
 
         #region Hàm lấy ID của cái cũ sau đó + thêm 1 vào ( ví dụ User1 là ID cuối cùng của bảng => trả về "2")
         public string takeID(string operation)
