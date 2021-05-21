@@ -30,12 +30,13 @@ namespace Care_Management_and_Private_Parking
         private void AddVehicle_Load(object sender, EventArgs e)
         {
             fillTB();
+            ParkingLotDAL.Instance.loadListIDCard();    //Load thẻ xe
         }
 
         void fillTB()
         {
             tbType.Text = type;
-            tbVehicleID.Text = tbType.Text.ToString() + ParkingLotDAL.Instance.takeID(tbType.Text.ToString());
+            tbVehicleID.Text = tbType.Text.ToString() + id;
             tbCustomerID.Text = Variable.Cus + ParkingLotDAL.Instance.takeID(Variable.Cus);
         }
 
@@ -116,7 +117,7 @@ namespace Care_Management_and_Private_Parking
         private void btnAddVeh_Click(object sender, EventArgs e)
         {
             //Xe
-            string VehID = tbType.Text.ToString() + ParkingLotDAL.Instance.takeID(tbType.Text.ToString());
+            string VehID = tbType.Text.ToString() + id;
             string Type = tbType.Text;
             string License = tbLicense.Text;
             MemoryStream VehPic = new MemoryStream();
@@ -130,7 +131,9 @@ namespace Care_Management_and_Private_Parking
                 {
                     if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
                     {
-                        MessageBox.Show("Add new vehicle successfully!", "Add Vehicle");
+                        int idcard = ParkingLotDAL.Instance.createIDParkCard();
+                        ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, DateTime.Now, "D");
+                        MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle");
                         this.DialogResult = DialogResult.OK;
                     }
                     else

@@ -30,6 +30,7 @@ namespace Care_Management_and_Private_Parking
         private void InitializeComponent()
         {
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditVehicle = new Guna.UI2.WinForms.Guna2Button();
@@ -66,7 +67,6 @@ namespace Care_Management_and_Private_Parking
             this.pnCar = new Guna.UI2.WinForms.Guna2Panel();
             this.pnBike = new Guna.UI2.WinForms.Guna2Panel();
             this.pnBicycle = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -83,10 +83,10 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.guna2Panel3.BorderRadius = 22;
             this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Controls.Add(this.btnEditVehicle);
             this.guna2Panel3.Controls.Add(this.guna2Button1);
             this.guna2Panel3.Controls.Add(this.guna2Button3);
             this.guna2Panel3.Controls.Add(this.btnDeleteVehicle);
-            this.guna2Panel3.Controls.Add(this.btnEditVehicle);
             this.guna2Panel3.Controls.Add(this.btnAddVehicle);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.guna2Panel3.Location = new System.Drawing.Point(761, 454);
@@ -94,6 +94,29 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.Size = new System.Drawing.Size(151, 260);
             this.guna2Panel3.TabIndex = 11;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.guna2Button1.BorderRadius = 22;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(7, 207);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(137, 43);
+            this.guna2Button1.TabIndex = 6;
+            this.guna2Button1.Text = "Invoice";
+            this.guna2Button1.UseTransparentBackground = true;
             // 
             // guna2Button3
             // 
@@ -133,12 +156,12 @@ namespace Care_Management_and_Private_Parking
             this.btnDeleteVehicle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
             this.btnDeleteVehicle.HoverState.Parent = this.btnDeleteVehicle;
             this.btnDeleteVehicle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDeleteVehicle.Location = new System.Drawing.Point(7, 109);
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(7, 60);
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.ShadowDecoration.Parent = this.btnDeleteVehicle;
             this.btnDeleteVehicle.Size = new System.Drawing.Size(137, 43);
             this.btnDeleteVehicle.TabIndex = 4;
-            this.btnDeleteVehicle.Text = "Delete Vehicle";
+            this.btnDeleteVehicle.Text = "Get Vehicle";
             this.btnDeleteVehicle.UseTransparentBackground = true;
             this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click);
             // 
@@ -157,7 +180,7 @@ namespace Care_Management_and_Private_Parking
             this.btnEditVehicle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
             this.btnEditVehicle.HoverState.Parent = this.btnEditVehicle;
             this.btnEditVehicle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEditVehicle.Location = new System.Drawing.Point(7, 60);
+            this.btnEditVehicle.Location = new System.Drawing.Point(7, 109);
             this.btnEditVehicle.Name = "btnEditVehicle";
             this.btnEditVehicle.ShadowDecoration.Parent = this.btnEditVehicle;
             this.btnEditVehicle.Size = new System.Drawing.Size(137, 43);
@@ -186,7 +209,7 @@ namespace Care_Management_and_Private_Parking
             this.btnAddVehicle.ShadowDecoration.Parent = this.btnAddVehicle;
             this.btnAddVehicle.Size = new System.Drawing.Size(137, 43);
             this.btnAddVehicle.TabIndex = 2;
-            this.btnAddVehicle.Text = "Add Vehicle";
+            this.btnAddVehicle.Text = "Park Vehicle";
             this.btnAddVehicle.UseTransparentBackground = true;
             this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
             // 
@@ -596,29 +619,6 @@ namespace Care_Management_and_Private_Parking
             this.pnBicycle.ShadowDecoration.Parent = this.pnBicycle;
             this.pnBicycle.Size = new System.Drawing.Size(729, 113);
             this.pnBicycle.TabIndex = 6;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
-            this.guna2Button1.BorderRadius = 22;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(7, 207);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(137, 43);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "Invoice";
-            this.guna2Button1.UseTransparentBackground = true;
             // 
             // ParkingLot
             // 

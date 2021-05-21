@@ -12,6 +12,8 @@ create table POSITION(
 INSERT INTO POSITION VALUES ('1', 'Manager') 
 INSERT INTO POSITION VALUES ('2', 'Staff') 
 INSERT INTO POSITION VALUES ('3', 'Customer') 
+GO
+
 
 -- Tài khoản, mật khẩu người dùng || Quy định mỗi nhân viên chỉ được có 1 tài khoản
 create table ACCOUNT(									
@@ -19,12 +21,9 @@ create table ACCOUNT(
 	Password nvarchar(100),
 	PositionID nvarchar(100) references POSITION(PositionID)					
 )
-----thêm khoá ngoại
---Alter Table EMPLOYEE add constraint accIDwithEM FOREIGN KEY (AccountID) references ACCOUNT(AccountID)
-
 -- Tài khoản admin
 insert into ACCOUNT values ('admin', 'admin', '1')	--TK quản lý
-
+GO
 ---------------------------------------------------------------------------------------------------------------------------------------------
 -- Công Việc
 create table JOB(
@@ -34,6 +33,7 @@ create table JOB(
 INSERT INTO JOB VALUES('QL', 'Manager')
 INSERT INTO JOB VALUES('NV', 'Staff')
 INSERT INTO JOB VALUES('KH', 'Customer')
+GO
 
 -- Ca Làm
 create table WORKSHIFT(
@@ -44,6 +44,7 @@ create table WORKSHIFT(
 INSERT INTO WORKSHIFT VALUES(1, '00:00:00', '08:00:00')
 INSERT INTO WORKSHIFT VALUES(2, '08:00:00', '16:00:00')
 INSERT INTO WORKSHIFT VALUES(3, '16:00:00', '00:00:00')
+GO
 
 -- Nhân viên
 create table EMPLOYEE(
@@ -57,12 +58,15 @@ create table EMPLOYEE(
 	AccUsername nvarchar(100) references ACCOUNT(Username)		
 )
 INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '0123456789', '079201006666', 'QL', null, 'admin') 
+GO
+
 
 -- Quản lý
 create table MANAGER(
 	ManagerID nvarchar(100) primary key,
 	ShiftID int references WORKSHIFT(ShiftID)						--quản lý ca nào, có bao nhiêu nhân viên trong ca đấy bị này quản lý
 )
+GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Thành Tiền
 create table INVOICE(
@@ -74,6 +78,7 @@ INSERT INTO INVOICE VALUES('H', 'Hour')								-- theo giờ
 INSERT INTO INVOICE VALUES('D', 'Day')								-- theo ngày
 INSERT INTO INVOICE VALUES('W', 'Week')								-- theo tuần
 INSERT INTO INVOICE VALUES('M', 'Month')							-- theo tháng
+GO
 
 -- Khách Hàng
 create table CUSTOMER(
@@ -94,17 +99,21 @@ create table VEHICLE(
 	Picture image,
 	CusID nvarchar(100) references CUSTOMER(CusID)
 )
-
+GO
 
 --Thông tin của chỗ đỗ xe
 create table PARKING(
+	IDParkcard int PRIMARY KEY,
 	CusID nvarchar(100) references CUSTOMER(CusID),
 	VehID nvarchar(100) references VEHICLE(VehID),
 	DateRegister datetime,
 	DateLeave datetime,
 	InvoiceID nvarchar(100) references INVOICE(InvoiceID),
-	PRIMARY KEY(CusID, VehID)
+	--PRIMARY KEY(CusID, VehID)
 )
+GO
+
+ALTER TABLE 
 
 -- Hợp Đồng
 create table CONTRACT(
@@ -115,3 +124,4 @@ create table CONTRACT(
 	Purpose nvarchar(100),											--Mục đích (thuê, ....)
 	Description text
 )
+GO
