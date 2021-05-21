@@ -106,6 +106,7 @@ namespace Care_Management_and_Private_Parking
         {
             id = ((Guna2Button)sender).Text;
             type = "rent";
+            lbCus.Text = "CUSTOMER FOR RENT";
             fillStatuspnl();
         }
 
@@ -113,6 +114,7 @@ namespace Care_Management_and_Private_Parking
         {
             id = ((Guna2Button)sender).Text;
             type = "forrent";
+            lbCus.Text = "CUSTOMER RENT";
             fillStatuspnl();
         }
         #endregion
@@ -155,7 +157,7 @@ namespace Care_Management_and_Private_Parking
         {
             //Set lại phần Vehicle
             lbVehicleID.Text = "VehicleID: " + type + id;
-            lbVehicleType.Text = "Vehicle Type: " + type;
+            lbVehicleType.Text = "Vehicle Type: " + "null";
             lbLicensePlate.Text = "License Plate: " + "null";
             VehiclePic.Image = null;
             //Set lại phần Customer
@@ -174,5 +176,28 @@ namespace Care_Management_and_Private_Parking
             loadMatrixRent();
             loadMatrixForRent();
         }
+
+
+        #region Nút nhấn theo chức năng
+        private void btnAddRentVeh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetailRentVeh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddVehForRent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetailVehForRent_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
