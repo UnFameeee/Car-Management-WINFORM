@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using System.IO;
+//3 layers
+using Global;
+using DAL;
+
 
 namespace Care_Management_and_Private_Parking
 {
@@ -20,6 +25,7 @@ namespace Care_Management_and_Private_Parking
             fillTaskFlowPanel();                                                        //Cấu hình cho Task
             fillProgressBar();                                                          //Cấu hình cho thanh ProgressBar
             fillChart();                                                                //Cấu hình cho chart
+            loadInfo();
         }
 
         CalendarDOWForm frm = new CalendarDOWForm() { TopLevel = false, TopMost = false };
@@ -32,6 +38,103 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.Controls.Add(frm);
             frm.Show();
         }
+        #endregion
+
+        bool verif()
+        {
+            if (tbName.Text.Trim() == ""
+                || tbPhone.Text.Trim() == ""
+                || tbIdentity.Text.Trim() == "")
+                return false;
+            else return true;
+        }
+
+        #region Thông tin cá nhân
+
+        void loadInfo()
+        {
+            DataTable table = MyInfoDAL.Instance.takeInfo(UserID.GlobalUserID);
+            tbName.Text = table.Rows[0]["Fullname"].ToString();
+            rbMale.Checked = true;
+            if (table.Rows[0]["Gender"].ToString() == "Female")
+            {
+                rbFemale.Checked = true;
+            }
+            dateTime.Text = table.Rows[0]["Birthday"].ToString();
+            tbPhone.Text = table.Rows[0]["PhoneNumber"].ToString();
+            tbIdentity.Text = table.Rows[0]["IdentityNumber"].ToString();
+            tbEmail.Text = table.Rows[0]["Email"].ToString();
+
+            lbName.Text = table.Rows[0]["Fullname"].ToString();
+            if (table.Rows[0]["JobID"].ToString() == "QL")
+            {
+                lbPosition.Text = "Position: Manager";
+            }
+            else if (table.Rows[0]["JobID"].ToString() == "NV")
+            {
+                lbPosition.Text = "Position: Employee";
+            }
+            else if (table.Rows[0]["JobID"].ToString() == "LC")
+            {
+                lbPosition.Text = "Position: Officer";
+            }
+            if (table.Rows[0]["Appearance"] != DBNull.Value)
+            {
+                byte[] picture = (byte[])table.Rows[0]["Appearance"];
+                MemoryStream Picture = new MemoryStream(picture);
+                pic.Image = Image.FromStream(Picture);
+            }
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string gender = "Male";
+            if (rbFemale.Checked == true)
+            {
+                gender = "Female";
+            }
+            try
+            {
+                if (verif())
+                {
+                    if (MyInfoDAL.Instance.editMyInfo(UserID.GlobalUserID, tbName.Text, gender, dateTime.Value, tbPhone.Text, tbIdentity.Text, tbEmail.Text))
+                    {
+                        MessageBox.Show("Edit Information Successfully!!", "Edit Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Edit Information Unsuccessfully!!", "Edit Infomation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill all the information!!!", "Edit Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadInfo();
+        }
+        private void rbMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbMale.Checked == false)
+            {
+                rbFemale.Checked = true;
+            }
+            else
+            {
+                rbFemale.Checked = false;
+            }
+        }
+        #endregion
+
+        #region Lương
+
         #endregion
 
         #region Load chart - Task
@@ -94,6 +197,9 @@ namespace Care_Management_and_Private_Parking
             else
                 lbProgressBar.Text = "You have worked very hard this month, congrats!!!";
         }
+
         #endregion
+
+        
     }
 }
