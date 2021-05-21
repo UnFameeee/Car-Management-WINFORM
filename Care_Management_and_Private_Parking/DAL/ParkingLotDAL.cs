@@ -51,11 +51,10 @@ namespace DAL
         }
 
         //lấy thông tin xe
-        public DataTable getVehicleInfo(string ID, string Type)
+        public DataTable getVehicleInfo(string id, string type)
         {
-            SqlCommand cmd = new SqlCommand("", DataProvider.Instance.getConnection);
-            cmd.Parameters.Add("@Id", SqlDbType.NVarChar).Value = ID;
-            cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
+            SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
+            "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -204,7 +203,61 @@ namespace DAL
         }
         #endregion
 
-        //Hàm lấy ID của cái cũ sau đó + thêm 1 vào ( ví dụ User1 là ID cuối cùng của bảng => trả về "2")
+        #region Thêm xe và khách đã nhập thành công vào bãi gửi xe
+        public void addCarAndCusToParklot(int IDParkCard, string CusID, string VehID, DateTime dayin, DateTime dayout, string invoice)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO PARKING (IDParkcard, CusID, VehID, DateRegister, DateLeave, InvoiceID) VALUES " +
+                "(@IDParkcard, @CusID, @VehID, @Dayin, @Dayout, @Invoice)", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@IDParkcard", SqlDbType.Int).Value = IDParkCard;
+            cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
+            cmd.Parameters.Add("@Dayout", SqlDbType.DateTime).Value = dayout;
+            cmd.Parameters.Add("@Invoice", SqlDbType.NVarChar).Value = invoice;
+            DataProvider.Instance.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return;
+            }
+        }
+        #endregion
+
+        #region Phát thẻ xe
+        List<int> listIDCardPark = new List<int>(1000000) { 0 };
+        public void loadListIDCard()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM PARKING", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            for(int i = 0, length = table.Rows.Count; i < length; ++i)
+            {
+                listIDCardPark.Add(Convert.ToInt32(table.Rows[i]["IDParkcard"]));
+            }
+        }
+        public int createIDParkCard()
+        {
+            int n = 0;
+            bool isExists = true;
+            Random _r = new Random();
+            while (isExists == true)
+            {
+                n = _r.Next() % 1000000;
+                isExists = listIDCardPark.Contains(n);
+            }
+            listIDCardPark.Add(n);
+            return n;
+        }
+        #endregion
+
+
+        #region Hàm lấy ID của cái cũ sau đó + thêm 1 vào ( ví dụ User1 là ID cuối cùng của bảng => trả về "2")
         public string takeID(string operation)
         {
             SqlCommand cmd = new SqlCommand();
@@ -267,5 +320,6 @@ namespace DAL
             }
             return (Convert.ToInt32(table.Rows[row - 1][0].ToString().Remove(0, stringID)) + 1).ToString();
         }
+        #endregion
     }
 }

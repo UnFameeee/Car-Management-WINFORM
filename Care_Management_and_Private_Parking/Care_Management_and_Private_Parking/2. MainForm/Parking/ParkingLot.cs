@@ -169,49 +169,14 @@ namespace Care_Management_and_Private_Parking
         void fillStatuspnl()
         {
             if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
-            {
-                SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
-            "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
-                DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
+            {  
+                DataTable table = ParkingLotDAL.Instance.getVehicleInfo(id, type);
                 fillInfo(table);
             }
             else
             {
                 fillEmpty();
             }
-
-            //if (type == "bicycle")
-            //{
-                
-            //}
-            //else if (type == "bike")
-            //{
-            //    if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
-            //    {
-            //        SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
-            //    "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
-            //        DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
-            //        fillInfo(table);
-            //    }
-            //    else
-            //    {
-            //        fillEmpty();
-            //    }
-            //}
-            //else if (type == "car")
-            //{
-            //    if (ParkingLotDAL.Instance.checkSlot(id, type) == true)
-            //    {
-            //        SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
-            //    "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + type + id + "'", DataProvider.Instance.getConnection);
-            //        DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
-            //        fillInfo(table);
-            //    }
-            //    else
-            //    {
-            //        fillEmpty();
-            //    }
-            //}
         }
 
         void fillInfo(DataTable table)
