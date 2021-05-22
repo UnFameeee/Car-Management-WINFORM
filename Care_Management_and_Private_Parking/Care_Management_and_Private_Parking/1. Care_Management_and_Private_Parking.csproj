@@ -115,11 +115,18 @@
     <Compile Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.Designer.cs">
       <DependentUpon>ManageAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Contract.cs">
+    <Compile Include="2. MainForm\Rental\RentalLot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contract.Designer.cs">
+    <Compile Include="2. MainForm\Rental\RentalLot.Designer.cs">
+      <DependentUpon>RentalLot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Contract\Contract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Contract\Contract.Designer.cs">
       <DependentUpon>Contract.cs</DependentUpon>
+    </Compile>
     <Compile Include="2. MainForm\Rental\InfoContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,14 +197,12 @@
     <EmbeddedResource Include="2. MainForm\Rental\Rent.resx">
       <DependentUpon>Rent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Rental\RentalLot.resx">
-      <DependentUpon>RentalLot.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.resx">
       <DependentUpon>ManageAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contract.resx">
+    <EmbeddedResource Include="2. MainForm\Contract\Contract.resx">
       <DependentUpon>Contract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Rental\InfoContact.resx">
       <DependentUpon>InfoContact.cs</DependentUpon>
     </EmbeddedResource>
