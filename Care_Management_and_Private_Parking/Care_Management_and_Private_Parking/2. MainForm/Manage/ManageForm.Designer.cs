@@ -32,7 +32,7 @@ namespace Care_Management_and_Private_Parking
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCustomerList = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAccountList = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaffList = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@ namespace Care_Management_and_Private_Parking
             this.pnData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnData.BorderRadius = 22;
             this.pnData.BorderThickness = 1;
-            this.pnData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.pnData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnData.Location = new System.Drawing.Point(157, 12);
             this.pnData.Name = "pnData";
             this.pnData.ShadowDecoration.Parent = this.pnData;
@@ -54,7 +54,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel1.BorderRadius = 22;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.btn);
-            this.guna2Panel1.Controls.Add(this.btnCustomerList);
+            this.guna2Panel1.Controls.Add(this.btnAccountList);
             this.guna2Panel1.Controls.Add(this.btnStaffList);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.guna2Panel1.Location = new System.Drawing.Point(13, 116);
@@ -84,27 +84,27 @@ namespace Care_Management_and_Private_Parking
             this.btn.Text = "...";
             this.btn.UseTransparentBackground = true;
             // 
-            // btnCustomerList
+            // btnAccountList
             // 
-            this.btnCustomerList.BackColor = System.Drawing.Color.Transparent;
-            this.btnCustomerList.BorderRadius = 22;
-            this.btnCustomerList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnCustomerList.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnCustomerList.CheckedState.Parent = this.btnCustomerList;
-            this.btnCustomerList.CustomImages.Parent = this.btnCustomerList;
-            this.btnCustomerList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnCustomerList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnCustomerList.HoverState.Parent = this.btnCustomerList;
-            this.btnCustomerList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomerList.Location = new System.Drawing.Point(9, 232);
-            this.btnCustomerList.Name = "btnCustomerList";
-            this.btnCustomerList.ShadowDecoration.Parent = this.btnCustomerList;
-            this.btnCustomerList.Size = new System.Drawing.Size(113, 43);
-            this.btnCustomerList.TabIndex = 6;
-            this.btnCustomerList.Text = "Customer List";
-            this.btnCustomerList.UseTransparentBackground = true;
-            this.btnCustomerList.Click += new System.EventHandler(this.btnCustomerList_Click);
+            this.btnAccountList.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccountList.BorderRadius = 22;
+            this.btnAccountList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnAccountList.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnAccountList.CheckedState.Parent = this.btnAccountList;
+            this.btnAccountList.CustomImages.Parent = this.btnAccountList;
+            this.btnAccountList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnAccountList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccountList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnAccountList.HoverState.Parent = this.btnAccountList;
+            this.btnAccountList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAccountList.Location = new System.Drawing.Point(9, 232);
+            this.btnAccountList.Name = "btnAccountList";
+            this.btnAccountList.ShadowDecoration.Parent = this.btnAccountList;
+            this.btnAccountList.Size = new System.Drawing.Size(113, 43);
+            this.btnAccountList.TabIndex = 6;
+            this.btnAccountList.Text = "Account List";
+            this.btnAccountList.UseTransparentBackground = true;
+            this.btnAccountList.Click += new System.EventHandler(this.btnCustomerList_Click);
             // 
             // btnStaffList
             // 
@@ -150,7 +150,7 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2Panel pnData;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btn;
-        private Guna.UI2.WinForms.Guna2Button btnCustomerList;
+        private Guna.UI2.WinForms.Guna2Button btnAccountList;
         private Guna.UI2.WinForms.Guna2Button btnStaffList;
     }
 }

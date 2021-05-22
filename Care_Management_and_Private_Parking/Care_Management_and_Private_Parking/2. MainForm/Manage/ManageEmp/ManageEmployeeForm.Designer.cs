@@ -49,11 +49,13 @@ namespace Care_Management_and_Private_Parking
             this.cbbxJobID = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbMail = new System.Windows.Forms.TextBox();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbMail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmp)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace Care_Management_and_Private_Parking
             this.rdbtnFemale.AutoSize = true;
             this.rdbtnFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtnFemale.ForeColor = System.Drawing.Color.White;
-            this.rdbtnFemale.Location = new System.Drawing.Point(225, 82);
+            this.rdbtnFemale.Location = new System.Drawing.Point(222, 99);
             this.rdbtnFemale.Name = "rdbtnFemale";
             this.rdbtnFemale.Size = new System.Drawing.Size(75, 22);
             this.rdbtnFemale.TabIndex = 37;
@@ -76,7 +78,7 @@ namespace Care_Management_and_Private_Parking
             this.rdbtnMale.Checked = true;
             this.rdbtnMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtnMale.ForeColor = System.Drawing.Color.White;
-            this.rdbtnMale.Location = new System.Drawing.Point(132, 82);
+            this.rdbtnMale.Location = new System.Drawing.Point(135, 99);
             this.rdbtnMale.Name = "rdbtnMale";
             this.rdbtnMale.Size = new System.Drawing.Size(58, 22);
             this.rdbtnMale.TabIndex = 36;
@@ -89,7 +91,7 @@ namespace Care_Management_and_Private_Parking
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGender.ForeColor = System.Drawing.Color.White;
-            this.lbGender.Location = new System.Drawing.Point(13, 82);
+            this.lbGender.Location = new System.Drawing.Point(16, 101);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(60, 20);
             this.lbGender.TabIndex = 35;
@@ -100,7 +102,7 @@ namespace Care_Management_and_Private_Parking
             this.tbIdentity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.tbIdentity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIdentity.ForeColor = System.Drawing.Color.White;
-            this.tbIdentity.Location = new System.Drawing.Point(132, 139);
+            this.tbIdentity.Location = new System.Drawing.Point(135, 158);
             this.tbIdentity.Name = "tbIdentity";
             this.tbIdentity.Size = new System.Drawing.Size(162, 23);
             this.tbIdentity.TabIndex = 30;
@@ -110,7 +112,7 @@ namespace Care_Management_and_Private_Parking
             this.tbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPhone.ForeColor = System.Drawing.Color.White;
-            this.tbPhone.Location = new System.Drawing.Point(132, 110);
+            this.tbPhone.Location = new System.Drawing.Point(135, 129);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(162, 23);
             this.tbPhone.TabIndex = 29;
@@ -120,7 +122,7 @@ namespace Care_Management_and_Private_Parking
             this.tbFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.tbFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFullName.ForeColor = System.Drawing.Color.White;
-            this.tbFullName.Location = new System.Drawing.Point(132, 49);
+            this.tbFullName.Location = new System.Drawing.Point(135, 36);
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(162, 23);
             this.tbFullName.TabIndex = 28;
@@ -130,7 +132,7 @@ namespace Care_Management_and_Private_Parking
             this.tbEmpID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.tbEmpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmpID.ForeColor = System.Drawing.Color.White;
-            this.tbEmpID.Location = new System.Drawing.Point(132, 20);
+            this.tbEmpID.Location = new System.Drawing.Point(135, 7);
             this.tbEmpID.Name = "tbEmpID";
             this.tbEmpID.Size = new System.Drawing.Size(162, 23);
             this.tbEmpID.TabIndex = 27;
@@ -141,7 +143,7 @@ namespace Care_Management_and_Private_Parking
             this.lbJobID.AutoSize = true;
             this.lbJobID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbJobID.ForeColor = System.Drawing.Color.White;
-            this.lbJobID.Location = new System.Drawing.Point(13, 203);
+            this.lbJobID.Location = new System.Drawing.Point(16, 222);
             this.lbJobID.Name = "lbJobID";
             this.lbJobID.Size = new System.Drawing.Size(50, 20);
             this.lbJobID.TabIndex = 26;
@@ -152,7 +154,7 @@ namespace Care_Management_and_Private_Parking
             this.lbIdentityCardNumber.AutoSize = true;
             this.lbIdentityCardNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdentityCardNumber.ForeColor = System.Drawing.Color.White;
-            this.lbIdentityCardNumber.Location = new System.Drawing.Point(13, 146);
+            this.lbIdentityCardNumber.Location = new System.Drawing.Point(16, 161);
             this.lbIdentityCardNumber.Name = "lbIdentityCardNumber";
             this.lbIdentityCardNumber.Size = new System.Drawing.Size(62, 20);
             this.lbIdentityCardNumber.TabIndex = 25;
@@ -163,7 +165,7 @@ namespace Care_Management_and_Private_Parking
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.ForeColor = System.Drawing.Color.White;
-            this.lbPhone.Location = new System.Drawing.Point(13, 117);
+            this.lbPhone.Location = new System.Drawing.Point(16, 132);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(53, 20);
             this.lbPhone.TabIndex = 24;
@@ -174,7 +176,7 @@ namespace Care_Management_and_Private_Parking
             this.lbFullName.AutoSize = true;
             this.lbFullName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFullName.ForeColor = System.Drawing.Color.White;
-            this.lbFullName.Location = new System.Drawing.Point(13, 52);
+            this.lbFullName.Location = new System.Drawing.Point(16, 39);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(79, 20);
             this.lbFullName.TabIndex = 23;
@@ -185,7 +187,7 @@ namespace Care_Management_and_Private_Parking
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.ForeColor = System.Drawing.Color.White;
-            this.lbID.Location = new System.Drawing.Point(13, 23);
+            this.lbID.Location = new System.Drawing.Point(16, 10);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(93, 20);
             this.lbID.TabIndex = 22;
@@ -281,13 +283,15 @@ namespace Care_Management_and_Private_Parking
             this.cbbxJobID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbxJobID.ForeColor = System.Drawing.Color.White;
             this.cbbxJobID.FormattingEnabled = true;
-            this.cbbxJobID.Location = new System.Drawing.Point(132, 199);
+            this.cbbxJobID.Location = new System.Drawing.Point(135, 218);
             this.cbbxJobID.Name = "cbbxJobID";
             this.cbbxJobID.Size = new System.Drawing.Size(162, 24);
             this.cbbxJobID.TabIndex = 45;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dateTime);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tbMail);
             this.panel1.Controls.Add(this.lbIdentityCardNumber);
@@ -307,6 +311,27 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 249);
             this.panel1.TabIndex = 46;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Email:";
+            // 
+            // tbMail
+            // 
+            this.tbMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.tbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMail.ForeColor = System.Drawing.Color.White;
+            this.tbMail.Location = new System.Drawing.Point(135, 189);
+            this.tbMail.Name = "tbMail";
+            this.tbMail.Size = new System.Drawing.Size(162, 23);
+            this.tbMail.TabIndex = 47;
             // 
             // btnExit
             // 
@@ -366,26 +391,34 @@ namespace Care_Management_and_Private_Parking
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Email:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Brithday:";
             // 
-            // tbMail
+            // dateTime
             // 
-            this.tbMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.tbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMail.ForeColor = System.Drawing.Color.White;
-            this.tbMail.Location = new System.Drawing.Point(132, 170);
-            this.tbMail.Name = "tbMail";
-            this.tbMail.Size = new System.Drawing.Size(162, 23);
-            this.tbMail.TabIndex = 47;
+            this.dateTime.CheckedState.Parent = this.dateTime;
+            this.dateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.ForeColor = System.Drawing.Color.White;
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTime.HoverState.Parent = this.dateTime;
+            this.dateTime.Location = new System.Drawing.Point(135, 73);
+            this.dateTime.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.ShadowDecoration.Parent = this.dateTime;
+            this.dateTime.Size = new System.Drawing.Size(162, 20);
+            this.dateTime.TabIndex = 182;
+            this.dateTime.Value = new System.DateTime(2021, 4, 30, 11, 28, 43, 523);
             // 
             // ManageEmployeeForm
             // 
@@ -437,5 +470,7 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI.WinForms.GunaButton btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbMail;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTime;
     }
 }

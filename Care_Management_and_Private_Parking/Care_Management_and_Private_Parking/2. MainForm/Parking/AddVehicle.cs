@@ -122,8 +122,20 @@ namespace Care_Management_and_Private_Parking
             string License = tbLicense.Text;
             MemoryStream VehPic = new MemoryStream();
             VehiclePic.Image.Save(VehPic, VehiclePic.Image.RawFormat);
-
+         
             string CusID = tbCustomerID.Text;
+
+            string Invoice = cbboxTimeFormat.SelectedValue.ToString();
+            DateTime leave;                                                                 //thời gian tối đa trong bãi giữ xe(do khách chọn)
+
+            if (Invoice == "H")
+                leave = DateTime.Now.AddHours(Convert.ToDouble(numerudValue.Value));
+            else if (Invoice == "D")
+                leave = DateTime.Now.AddDays(Convert.ToDouble(numerudValue.Value));
+            else if (Invoice == "W")
+                leave = DateTime.Now.AddDays(Convert.ToDouble(numerudValue.Value) * 7);
+            else
+                leave = DateTime.Now.AddMonths(Convert.ToInt32(numerudValue.Value));
 
             try
             {
@@ -132,7 +144,7 @@ namespace Care_Management_and_Private_Parking
                     if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
                     {
                         int idcard = ParkingLotDAL.Instance.createIDParkCard();
-                        ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, DateTime.Now, "D");
+                        ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, leave, Invoice);
                         MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle");
                         this.DialogResult = DialogResult.OK;
                     }
