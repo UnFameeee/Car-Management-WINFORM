@@ -145,6 +145,12 @@
     <Compile Include="2. MainForm\Rental\ForRent.Designer.cs">
       <DependentUpon>ForRent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageContractForm.Designer.cs">
+      <DependentUpon>ManageContractForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test_Trash\Tests.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Rental\ForRent.resx">
       <DependentUpon>ForRent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageContractForm.resx">
+      <DependentUpon>ManageContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>

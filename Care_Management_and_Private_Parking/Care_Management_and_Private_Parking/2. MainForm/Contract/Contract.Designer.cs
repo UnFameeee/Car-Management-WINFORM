@@ -75,6 +75,8 @@ namespace Care_Management_and_Private_Parking
             this.labelDate2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.panelTop.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +110,7 @@ namespace Care_Management_and_Private_Parking
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "THUÊ",
@@ -176,6 +178,8 @@ namespace Care_Management_and_Private_Parking
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.White;
+            this.panelInfo.Controls.Add(this.textBox15);
+            this.panelInfo.Controls.Add(this.label26);
             this.panelInfo.Controls.Add(this.label25);
             this.panelInfo.Controls.Add(this.label24);
             this.panelInfo.Controls.Add(this.textBox13);
@@ -217,7 +221,7 @@ namespace Care_Management_and_Private_Parking
             this.panelInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelInfo.Location = new System.Drawing.Point(0, 215);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(786, 560);
+            this.panelInfo.Size = new System.Drawing.Size(786, 573);
             this.panelInfo.TabIndex = 3;
             // 
             // label25
@@ -225,7 +229,7 @@ namespace Care_Management_and_Private_Parking
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(493, 297);
+            this.label25.Location = new System.Drawing.Point(493, 326);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(50, 19);
             this.label25.TabIndex = 57;
@@ -246,7 +250,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(541, 270);
+            this.textBox13.Location = new System.Drawing.Point(541, 299);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(205, 18);
             this.textBox13.TabIndex = 55;
@@ -257,7 +261,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(558, 241);
+            this.textBox14.Location = new System.Drawing.Point(558, 270);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(188, 18);
             this.textBox14.TabIndex = 54;
@@ -268,7 +272,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(87, 328);
+            this.textBox2.Location = new System.Drawing.Point(87, 357);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(378, 18);
             this.textBox2.TabIndex = 53;
@@ -280,7 +284,7 @@ namespace Care_Management_and_Private_Parking
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(30, 328);
+            this.label16.Location = new System.Drawing.Point(30, 357);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 19);
             this.label16.TabIndex = 52;
@@ -290,7 +294,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(87, 297);
+            this.textBox10.Location = new System.Drawing.Point(87, 326);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(378, 18);
             this.textBox10.TabIndex = 51;
@@ -302,7 +306,7 @@ namespace Care_Management_and_Private_Parking
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(30, 296);
+            this.label17.Location = new System.Drawing.Point(30, 325);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 19);
             this.label17.TabIndex = 50;
@@ -313,7 +317,7 @@ namespace Care_Management_and_Private_Parking
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(493, 269);
+            this.label18.Location = new System.Drawing.Point(493, 298);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(48, 19);
             this.label18.TabIndex = 49;
@@ -324,7 +328,7 @@ namespace Care_Management_and_Private_Parking
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(493, 240);
+            this.label19.Location = new System.Drawing.Point(493, 269);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 19);
             this.label19.TabIndex = 48;
@@ -334,7 +338,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(108, 268);
+            this.textBox11.Location = new System.Drawing.Point(108, 297);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(357, 18);
             this.textBox11.TabIndex = 47;
@@ -346,7 +350,7 @@ namespace Care_Management_and_Private_Parking
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(30, 269);
+            this.label20.Location = new System.Drawing.Point(30, 298);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(79, 19);
             this.label20.TabIndex = 46;
@@ -356,7 +360,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(129, 241);
+            this.textBox12.Location = new System.Drawing.Point(129, 270);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(336, 18);
             this.textBox12.TabIndex = 45;
@@ -368,7 +372,7 @@ namespace Care_Management_and_Private_Parking
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(30, 239);
+            this.label21.Location = new System.Drawing.Point(30, 268);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(105, 19);
             this.label21.TabIndex = 44;
@@ -379,7 +383,7 @@ namespace Care_Management_and_Private_Parking
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(30, 212);
+            this.label22.Location = new System.Drawing.Point(30, 241);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(103, 21);
             this.label22.TabIndex = 43;
@@ -388,7 +392,7 @@ namespace Care_Management_and_Private_Parking
             // richTextBox1
             // 
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(35, 390);
+            this.richTextBox1.Location = new System.Drawing.Point(35, 409);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(711, 151);
             this.richTextBox1.TabIndex = 42;
@@ -399,7 +403,7 @@ namespace Care_Management_and_Private_Parking
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(30, 361);
+            this.label23.Location = new System.Drawing.Point(30, 385);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(168, 21);
             this.label23.TabIndex = 41;
@@ -613,11 +617,33 @@ namespace Care_Management_and_Private_Parking
             this.textBox1.Text = "................................................................................." +
     "...........................";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(30, 212);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(77, 19);
+            this.label26.TabIndex = 58;
+            this.label26.Text = "Biển số xe: ";
+            // 
+            // textBox15
+            // 
+            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.Location = new System.Drawing.Point(108, 212);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(357, 18);
+            this.textBox15.TabIndex = 59;
+            this.textBox15.Text = "................................................................................." +
+    "..............................................................";
+            // 
             // Contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 775);
+            this.ClientSize = new System.Drawing.Size(786, 788);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -678,5 +704,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label26;
     }
 }
