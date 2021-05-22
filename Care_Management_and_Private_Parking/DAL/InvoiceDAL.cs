@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,21 @@ namespace DAL
                 return InvoiceDAL.instance;
             }
             private set { InvoiceDAL.instance = value; }
+        }
+
+        public DataTable getInvoice(SqlCommand command)
+        {
+            command.Connection = DataProvider.Instance.getConnection;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        public DataTable getAllInvoice()
+        {
+            SqlCommand com = new SqlCommand("select * from INVOICE");
+            return getInvoice(com);
         }
 
         public int MoneyHaveToPay(DateTime date1, DateTime date2, int index, string timeformat, string type, string service) //date2 bắt buộc phải là ngày sau date1
