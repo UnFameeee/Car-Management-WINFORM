@@ -10,8 +10,8 @@ create table POSITION(
 )
 
 INSERT INTO POSITION VALUES ('1', 'Manager') 
-INSERT INTO POSITION VALUES ('2', 'Staff') 
-INSERT INTO POSITION VALUES ('3', 'Customer') 
+INSERT INTO POSITION VALUES ('2', 'Employee') 
+INSERT INTO POSITION VALUES ('3', 'Officer') 
 GO
 
 
@@ -26,17 +26,6 @@ insert into ACCOUNT values ('admin', 'admin', '1')	--TK quản lý
 insert into ACCOUNT values ('emp', 'emp', '2')	--TK nhân viên
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------
--- Công Việc
-create table JOB(
-	JobID nvarchar(100) primary key,									-- 1 = sửa, 2 = rửa, 3 = trông coi xe
-	Description varchar(1000)
-)
-INSERT INTO JOB VALUES('QL', 'Manager')
-INSERT INTO JOB VALUES('NV', 'Staff')
-INSERT INTO JOB VALUES('NVVP', 'Staff')
-
-GO
-
 -- Ca Làm
 create table WORKSHIFT(
 	ShiftID int primary key,										-- suy nghĩ chia ca
@@ -57,12 +46,12 @@ create table EMPLOYEE(
 	PhoneNumber nvarchar(100),
 	IdentityNumber nvarchar(100),
 	Email nvarchar(100),
-	JobID nvarchar(100) references JOB(JobID),
+	JobID nvarchar(100) references POSITION(PositionID),
 	Appearance image,
 	AccUsername nvarchar(100) references ACCOUNT(Username)		
 )
-INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', 'QL', null, 'admin') 
-INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', 'NV', null, 'emp') 
+INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', '1', null, 'admin') 
+INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', '3', null, 'emp') 
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Thành Tiền
@@ -116,8 +105,6 @@ create table CONTRACT(
 	Purpose nvarchar(100),											--Mục đích (thuê, ....)
 	Description text
 )
-GO
-
 GO
 
 -- Thuê, Cho thuê 
