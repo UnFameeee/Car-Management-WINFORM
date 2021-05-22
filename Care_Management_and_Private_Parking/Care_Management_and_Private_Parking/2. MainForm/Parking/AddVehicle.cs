@@ -31,6 +31,15 @@ namespace Care_Management_and_Private_Parking
         {
             fillTB();
             ParkingLotDAL.Instance.loadListIDCard();    //Load thẻ xe
+            formatTime();
+        }
+
+        void formatTime()
+        {
+            cbboxTimeFormat.DataSource = InvoiceDAL.Instance.getAllInvoice();
+            cbboxTimeFormat.DisplayMember = "Description";
+            cbboxTimeFormat.ValueMember = "InvoiceID";
+            cbboxTimeFormat.SelectedItem = null;
         }
 
         void fillTB()
