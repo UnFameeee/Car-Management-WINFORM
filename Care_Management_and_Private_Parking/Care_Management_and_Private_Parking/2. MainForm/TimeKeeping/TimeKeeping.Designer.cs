@@ -136,6 +136,7 @@ namespace Care_Management_and_Private_Parking
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimeKeeping";
             this.Text = "TimeKeeping";
+            this.Load += new System.EventHandler(this.TimeKeeping_Load);
             this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -43,6 +43,7 @@ namespace Care_Management_and_Private_Parking
 
         private string id;
         private string type;
+        private string customer;
         #endregion
 
         public ParkingLot()
@@ -199,6 +200,8 @@ namespace Care_Management_and_Private_Parking
             byte[] pic2 = (byte[])table.Rows[0]["Appearance"];
             MemoryStream Picture2 = new MemoryStream(pic2);
             CustomerPic.Image = Image.FromStream(Picture2);
+
+            customer = table.Rows[0]["CusID"].ToString();
         }
 
 
@@ -292,10 +295,10 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        #region Thêm xóa sửa
+        #region Thêm, xóa, sửa, Hóa đơn
         private void btnAddVehicle_Click(object sender, EventArgs e)
         {
-            if(ParkingLotDAL.Instance.checkSlot(id, type) == false)
+            if(ParkingLotDAL.Instance.checkSlot((type +id), type) == false)
             {
                 AddVehicle frm = new AddVehicle();
                 frm.id = id;
@@ -314,13 +317,30 @@ namespace Care_Management_and_Private_Parking
 
         private void btnEditVehicle_Click(object sender, EventArgs e)
         {
-
+            if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
+            {
+                EditVehicle frm = new EditVehicle();
+                frm.VehID = (type + id);
+                frm.CusID = customer;
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+            }
         }
 
         private void btnDeleteVehicle_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
+
+
     }
 }

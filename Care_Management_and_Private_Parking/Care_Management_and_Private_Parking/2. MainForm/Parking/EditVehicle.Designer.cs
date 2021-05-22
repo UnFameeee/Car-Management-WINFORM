@@ -1,7 +1,7 @@
 ﻿
 namespace Care_Management_and_Private_Parking
 {
-    partial class AddVehicle
+    partial class EditVehicle
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnAddCus = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditCus = new Guna.UI2.WinForms.Guna2Button();
             this.pnlVeh = new System.Windows.Forms.Panel();
             this.pnlCus = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -68,10 +67,9 @@ namespace Care_Management_and_Private_Parking
             this.tbType = new System.Windows.Forms.TextBox();
             this.tbLicense = new System.Windows.Forms.TextBox();
             this.VehiclePic = new System.Windows.Forms.PictureBox();
-            this.btnAddVeh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditVeh = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnCalendar.SuspendLayout();
             this.pnlVeh.SuspendLayout();
             this.pnlCus.SuspendLayout();
@@ -88,41 +86,41 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnCalendar.BorderRadius = 22;
             this.pnCalendar.BorderThickness = 1;
-            this.pnCalendar.Controls.Add(this.btnAddCus);
+            this.pnCalendar.Controls.Add(this.btnEditCus);
             this.pnCalendar.Controls.Add(this.pnlVeh);
-            this.pnCalendar.Controls.Add(this.btnAddVeh);
+            this.pnCalendar.Controls.Add(this.btnEditVeh);
             this.pnCalendar.Controls.Add(this.btnExit);
             this.pnCalendar.Controls.Add(this.guna2GradientButton2);
             this.pnCalendar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnCalendar.Location = new System.Drawing.Point(12, 12);
+            this.pnCalendar.Location = new System.Drawing.Point(12, 13);
             this.pnCalendar.Name = "pnCalendar";
             this.pnCalendar.ShadowDecoration.Parent = this.pnCalendar;
             this.pnCalendar.Size = new System.Drawing.Size(501, 427);
-            this.pnCalendar.TabIndex = 5;
+            this.pnCalendar.TabIndex = 6;
             // 
-            // btnAddCus
+            // btnEditCus
             // 
-            this.btnAddCus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAddCus.BorderRadius = 17;
-            this.btnAddCus.BorderThickness = 1;
-            this.btnAddCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAddCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddCus.CheckedState.Parent = this.btnAddCus;
-            this.btnAddCus.CustomImages.Parent = this.btnAddCus;
-            this.btnAddCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAddCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAddCus.HoverState.Parent = this.btnAddCus;
-            this.btnAddCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddCus.Location = new System.Drawing.Point(191, 380);
-            this.btnAddCus.Name = "btnAddCus";
-            this.btnAddCus.ShadowDecoration.Parent = this.btnAddCus;
-            this.btnAddCus.Size = new System.Drawing.Size(106, 33);
-            this.btnAddCus.TabIndex = 72;
-            this.btnAddCus.Text = "Add";
-            this.btnAddCus.UseTransparentBackground = true;
-            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
+            this.btnEditCus.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditCus.BorderRadius = 17;
+            this.btnEditCus.BorderThickness = 1;
+            this.btnEditCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnEditCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnEditCus.CheckedState.Parent = this.btnEditCus;
+            this.btnEditCus.CustomImages.Parent = this.btnEditCus;
+            this.btnEditCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnEditCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditCus.HoverState.Parent = this.btnEditCus;
+            this.btnEditCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnEditCus.Location = new System.Drawing.Point(191, 380);
+            this.btnEditCus.Name = "btnEditCus";
+            this.btnEditCus.ShadowDecoration.Parent = this.btnEditCus;
+            this.btnEditCus.Size = new System.Drawing.Size(106, 33);
+            this.btnEditCus.TabIndex = 72;
+            this.btnEditCus.Text = "Edit";
+            this.btnEditCus.UseTransparentBackground = true;
+            this.btnEditCus.Click += new System.EventHandler(this.btnEditCus_Click);
             // 
             // pnlVeh
             // 
@@ -317,8 +315,6 @@ namespace Care_Management_and_Private_Parking
             this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CustomerPic.TabIndex = 70;
             this.CustomerPic.TabStop = false;
-            this.toolTip1.SetToolTip(this.CustomerPic, "Doubleclick to upload Customer Picture");
-            this.CustomerPic.DoubleClick += new System.EventHandler(this.CustomerPic_DoubleClick);
             // 
             // label16
             // 
@@ -361,7 +357,7 @@ namespace Care_Management_and_Private_Parking
             this.numerudValue.FocusedState.Parent = this.numerudValue;
             this.numerudValue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numerudValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numerudValue.Location = new System.Drawing.Point(24, 115);
+            this.numerudValue.Location = new System.Drawing.Point(24, 110);
             this.numerudValue.Name = "numerudValue";
             this.numerudValue.ShadowDecoration.Parent = this.numerudValue;
             this.numerudValue.Size = new System.Drawing.Size(106, 26);
@@ -379,7 +375,7 @@ namespace Care_Management_and_Private_Parking
             this.cbboxTimeFormat.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbboxTimeFormat.ForeColor = System.Drawing.Color.Black;
             this.cbboxTimeFormat.FormattingEnabled = true;
-            this.cbboxTimeFormat.Location = new System.Drawing.Point(24, 63);
+            this.cbboxTimeFormat.Location = new System.Drawing.Point(24, 58);
             this.cbboxTimeFormat.Name = "cbboxTimeFormat";
             this.cbboxTimeFormat.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbboxTimeFormat.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -391,7 +387,7 @@ namespace Care_Management_and_Private_Parking
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(321, 115);
+            this.label17.Location = new System.Drawing.Point(320, 110);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 20);
             this.label17.TabIndex = 31;
@@ -404,7 +400,7 @@ namespace Care_Management_and_Private_Parking
             this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
-            this.radiobtnWash.Location = new System.Drawing.Point(295, 115);
+            this.radiobtnWash.Location = new System.Drawing.Point(294, 110);
             this.radiobtnWash.Name = "radiobtnWash";
             this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
             this.radiobtnWash.Size = new System.Drawing.Size(20, 20);
@@ -420,7 +416,7 @@ namespace Care_Management_and_Private_Parking
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(20, 92);
+            this.label13.Location = new System.Drawing.Point(20, 87);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 20);
             this.label13.TabIndex = 28;
@@ -431,7 +427,7 @@ namespace Care_Management_and_Private_Parking
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(321, 59);
+            this.label12.Location = new System.Drawing.Point(320, 54);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 20);
             this.label12.TabIndex = 27;
@@ -442,7 +438,7 @@ namespace Care_Management_and_Private_Parking
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(20, 36);
+            this.label11.Location = new System.Drawing.Point(20, 31);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 20);
             this.label11.TabIndex = 26;
@@ -455,7 +451,7 @@ namespace Care_Management_and_Private_Parking
             this.radiobtnRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radiobtnRepair.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radiobtnRepair.CheckedState.Parent = this.radiobtnRepair;
-            this.radiobtnRepair.Location = new System.Drawing.Point(295, 59);
+            this.radiobtnRepair.Location = new System.Drawing.Point(294, 54);
             this.radiobtnRepair.Name = "radiobtnRepair";
             this.radiobtnRepair.ShadowDecoration.Parent = this.radiobtnRepair;
             this.radiobtnRepair.Size = new System.Drawing.Size(20, 20);
@@ -567,32 +563,30 @@ namespace Care_Management_and_Private_Parking
             this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.VehiclePic.TabIndex = 68;
             this.VehiclePic.TabStop = false;
-            this.toolTip1.SetToolTip(this.VehiclePic, "Doubleclick to upload Vehicle Picture");
-            this.VehiclePic.DoubleClick += new System.EventHandler(this.VehiclePic_DoubleClick);
             // 
-            // btnAddVeh
+            // btnEditVeh
             // 
-            this.btnAddVeh.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddVeh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAddVeh.BorderRadius = 17;
-            this.btnAddVeh.BorderThickness = 1;
-            this.btnAddVeh.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAddVeh.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddVeh.CheckedState.Parent = this.btnAddVeh;
-            this.btnAddVeh.CustomImages.Parent = this.btnAddVeh;
-            this.btnAddVeh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAddVeh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddVeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAddVeh.HoverState.Parent = this.btnAddVeh;
-            this.btnAddVeh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddVeh.Location = new System.Drawing.Point(191, 380);
-            this.btnAddVeh.Name = "btnAddVeh";
-            this.btnAddVeh.ShadowDecoration.Parent = this.btnAddVeh;
-            this.btnAddVeh.Size = new System.Drawing.Size(106, 33);
-            this.btnAddVeh.TabIndex = 71;
-            this.btnAddVeh.Text = "Add";
-            this.btnAddVeh.UseTransparentBackground = true;
-            this.btnAddVeh.Click += new System.EventHandler(this.btnAddVeh_Click);
+            this.btnEditVeh.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditVeh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditVeh.BorderRadius = 17;
+            this.btnEditVeh.BorderThickness = 1;
+            this.btnEditVeh.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnEditVeh.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnEditVeh.CheckedState.Parent = this.btnEditVeh;
+            this.btnEditVeh.CustomImages.Parent = this.btnEditVeh;
+            this.btnEditVeh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnEditVeh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditVeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditVeh.HoverState.Parent = this.btnEditVeh;
+            this.btnEditVeh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnEditVeh.Location = new System.Drawing.Point(191, 380);
+            this.btnEditVeh.Name = "btnEditVeh";
+            this.btnEditVeh.ShadowDecoration.Parent = this.btnEditVeh;
+            this.btnEditVeh.Size = new System.Drawing.Size(106, 33);
+            this.btnEditVeh.TabIndex = 71;
+            this.btnEditVeh.Text = "Edit";
+            this.btnEditVeh.UseTransparentBackground = true;
+            this.btnEditVeh.Click += new System.EventHandler(this.btnEditVeh_Click);
             // 
             // btnExit
             // 
@@ -635,9 +629,9 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
             this.guna2GradientButton2.Size = new System.Drawing.Size(152, 27);
             this.guna2GradientButton2.TabIndex = 41;
-            this.guna2GradientButton2.Text = "ADD VEHICLE";
+            this.guna2GradientButton2.Text = "EDIT VEHICLE";
             // 
-            // AddVehicle
+            // EditVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -645,10 +639,10 @@ namespace Care_Management_and_Private_Parking
             this.ClientSize = new System.Drawing.Size(525, 453);
             this.Controls.Add(this.pnCalendar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddVehicle";
+            this.Name = "EditVehicle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.AddVehicle_Load);
+            this.Text = "EditVehicle";
+            this.Load += new System.EventHandler(this.EditVehicle_Load);
             this.pnCalendar.ResumeLayout(false);
             this.pnlVeh.ResumeLayout(false);
             this.pnlVeh.PerformLayout();
@@ -670,46 +664,45 @@ namespace Care_Management_and_Private_Parking
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel pnCalendar;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI.WinForms.GunaButton btnExit;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbVehicleID;
-        private System.Windows.Forms.TextBox tbType;
-        private System.Windows.Forms.TextBox tbLicense;
-        private System.Windows.Forms.TextBox tbPhone;
-        private System.Windows.Forms.PictureBox VehiclePic;
+        private Guna.UI2.WinForms.Guna2Button btnEditCus;
+        private System.Windows.Forms.Panel pnlVeh;
+        private System.Windows.Forms.Panel pnlCus;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DateTimePicker datetime;
+        private System.Windows.Forms.TextBox tbIdentity;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbCustomerID;
         private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.PictureBox CustomerPic;
-        private System.Windows.Forms.TextBox tbAddress;
-        private System.Windows.Forms.TextBox tbIdentity;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private Guna.UI2.WinForms.Guna2Button btnAddVeh;
-        private System.Windows.Forms.DateTimePicker datetime;
-        private System.Windows.Forms.Panel pnlCus;
-        private System.Windows.Forms.Panel pnlVeh;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton radiobtnRepair;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2NumericUpDown numerudValue;
+        private Guna.UI.WinForms.GunaComboBox cbboxTimeFormat;
+        private System.Windows.Forms.Label label17;
         private Guna.UI2.WinForms.Guna2CustomRadioButton radiobtnWash;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private Guna.UI2.WinForms.Guna2Button btnAddCus;
-        private System.Windows.Forms.Label label17;
-        private Guna.UI.WinForms.GunaComboBox cbboxTimeFormat;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numerudValue;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton radiobtnRepair;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbVehicleID;
+        private System.Windows.Forms.TextBox tbType;
+        private System.Windows.Forms.TextBox tbLicense;
+        private System.Windows.Forms.PictureBox VehiclePic;
+        private Guna.UI2.WinForms.Guna2Button btnEditVeh;
+        private Guna.UI.WinForms.GunaButton btnExit;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
     }
 }

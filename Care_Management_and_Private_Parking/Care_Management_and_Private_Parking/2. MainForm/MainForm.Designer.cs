@@ -151,7 +151,7 @@ namespace Care_Management_and_Private_Parking
             this.btnTimeKeeping.BorderRadius = 22;
             this.btnTimeKeeping.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnTimeKeeping.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnTimeKeeping.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.CheckedState.Image")));
+            this.btnTimeKeeping.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnTimeKeeping.CheckedState.Image")));
             this.btnTimeKeeping.CheckedState.Parent = this.btnTimeKeeping;
             this.btnTimeKeeping.CustomImages.Parent = this.btnTimeKeeping;
             this.btnTimeKeeping.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -168,6 +168,7 @@ namespace Care_Management_and_Private_Parking
             this.btnTimeKeeping.Text = "Time Keeping";
             this.btnTimeKeeping.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTimeKeeping.UseTransparentBackground = true;
+            this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
             // 
             // panel3
             // 

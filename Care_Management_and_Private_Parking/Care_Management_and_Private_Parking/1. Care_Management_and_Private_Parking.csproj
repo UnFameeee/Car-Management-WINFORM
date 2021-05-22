@@ -157,6 +157,12 @@
     <Compile Include="2. MainForm\TimeKeeping\ManageShiftForm.Designer.cs">
       <DependentUpon>ManageShiftForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. MainForm\Parking\EditVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\EditVehicle.Designer.cs">
+      <DependentUpon>EditVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\TimeKeeping\ManageShiftForm.resx">
       <DependentUpon>ManageShiftForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Parking\EditVehicle.resx">
+      <DependentUpon>EditVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageContractForm.resx">
       <DependentUpon>ManageContractForm.cs</DependentUpon>
