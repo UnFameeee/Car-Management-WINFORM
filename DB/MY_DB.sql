@@ -113,13 +113,11 @@ GO
 -- Hợp Đồng
 create table CONTRACT(
 	ContID nvarchar(100) primary key,
-	CusID nvarchar(100) references CUSTOMER(CusID),
-	EmpID nvarchar(100) references EMPLOYEE(EmpID),
 	Purpose nvarchar(100),											--Mục đích (thuê, ....)
 	Description text
 )
 GO
-INSERT INTO CONTRACT VALUES ()
+
 GO
 
 -- Thuê, Cho thuê 
