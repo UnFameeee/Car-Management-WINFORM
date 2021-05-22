@@ -59,13 +59,13 @@ namespace Care_Management_and_Private_Parking
             cbbxPositionID.SelectedValue = dgvAccount.CurrentRow.Cells[2].Value.ToString();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             string username = tbUsername.Text;
             string pass = tbPassword.Text;
             string position = cbbxPositionID.SelectedValue.ToString();
 
-            if(verif())
+            if (verif())
             {
                 if (AccountDAL.Instance.updateAccount(username, pass, position))
                 {
@@ -83,9 +83,8 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void btnRemove_Click_1(object sender, EventArgs e)
         {
-
             string username = tbUsername.Text;
             if (verif())
             {

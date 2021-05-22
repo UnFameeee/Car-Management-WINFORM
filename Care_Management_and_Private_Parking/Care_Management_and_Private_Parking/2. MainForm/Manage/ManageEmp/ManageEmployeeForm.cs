@@ -53,12 +53,15 @@ namespace Care_Management_and_Private_Parking
                 tbPhone.Text = tab.Rows[0][4].ToString();
                 tbIdentity.Text = tab.Rows[0][5].ToString();
                 tbMail.Text = tab.Rows[0][6].ToString();
-                cbbxJobID.SelectedValue = tab.Rows[0][7].ToString();                
+                cbbxJobID.SelectedValue = tab.Rows[0][7].ToString();
 
-                byte[] pic;
-                pic = (byte[])tab.Rows[0][8];
-                MemoryStream picture = new MemoryStream(pic);
-                ptbEmp.Image = Image.FromStream(picture);
+                if (tab.Rows[0][8] != DBNull.Value)
+                {
+                    byte[] pic;
+                    pic = (byte[])tab.Rows[0][8];
+                    MemoryStream picture = new MemoryStream(pic);
+                    ptbEmp.Image = Image.FromStream(picture);
+                }
 
                 btnAdd.Visible = false;
             }
