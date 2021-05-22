@@ -31,8 +31,6 @@ namespace Care_Management_and_Private_Parking
         {
             this.components = new System.ComponentModel.Container();
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnAddCus = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlVeh = new System.Windows.Forms.Panel();
             this.pnlCus = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,16 +47,18 @@ namespace Care_Management_and_Private_Parking
             this.label5 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.CustomerPic = new System.Windows.Forms.PictureBox();
+            this.btnAddCus = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlVeh = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.numerudValue = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.cbboxTimeFormat = new Guna.UI.WinForms.GunaComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.radiobtnWash = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.radiobtnRepair = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,12 +73,12 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnCalendar.SuspendLayout();
-            this.pnlVeh.SuspendLayout();
             this.pnlCus.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
+            this.pnlVeh.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +88,6 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnCalendar.BorderRadius = 22;
             this.pnCalendar.BorderThickness = 1;
-            this.pnCalendar.Controls.Add(this.pnlCus);
             this.pnCalendar.Controls.Add(this.btnAddCus);
             this.pnCalendar.Controls.Add(this.pnlVeh);
             this.pnCalendar.Controls.Add(this.btnAddVeh);
@@ -101,49 +100,13 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.Size = new System.Drawing.Size(501, 427);
             this.pnCalendar.TabIndex = 5;
             // 
-            // btnAddCus
-            // 
-            this.btnAddCus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAddCus.BorderRadius = 17;
-            this.btnAddCus.BorderThickness = 1;
-            this.btnAddCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAddCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddCus.CheckedState.Parent = this.btnAddCus;
-            this.btnAddCus.CustomImages.Parent = this.btnAddCus;
-            this.btnAddCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAddCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAddCus.HoverState.Parent = this.btnAddCus;
-            this.btnAddCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddCus.Location = new System.Drawing.Point(191, 380);
-            this.btnAddCus.Name = "btnAddCus";
-            this.btnAddCus.ShadowDecoration.Parent = this.btnAddCus;
-            this.btnAddCus.Size = new System.Drawing.Size(106, 33);
-            this.btnAddCus.TabIndex = 72;
-            this.btnAddCus.Text = "Add";
-            this.btnAddCus.UseTransparentBackground = true;
-            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
-            // 
-            // pnlVeh
-            // 
-            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnlVeh.Controls.Add(this.label16);
-            this.pnlVeh.Controls.Add(this.panel3);
-            this.pnlVeh.Controls.Add(this.panel1);
-            this.pnlVeh.Controls.Add(this.VehiclePic);
-            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
-            this.pnlVeh.Name = "pnlVeh";
-            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
-            this.pnlVeh.TabIndex = 71;
-            // 
             // pnlCus
             // 
             this.pnlCus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnlCus.Controls.Add(this.label15);
             this.pnlCus.Controls.Add(this.panel2);
             this.pnlCus.Controls.Add(this.CustomerPic);
-            this.pnlCus.Location = new System.Drawing.Point(489, 50);
+            this.pnlCus.Location = new System.Drawing.Point(0, 0);
             this.pnlCus.Name = "pnlCus";
             this.pnlCus.Size = new System.Drawing.Size(463, 326);
             this.pnlCus.TabIndex = 72;
@@ -320,6 +283,43 @@ namespace Care_Management_and_Private_Parking
             this.toolTip1.SetToolTip(this.CustomerPic, "Doubleclick to upload Customer Picture");
             this.CustomerPic.DoubleClick += new System.EventHandler(this.CustomerPic_DoubleClick);
             // 
+            // btnAddCus
+            // 
+            this.btnAddCus.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAddCus.BorderRadius = 17;
+            this.btnAddCus.BorderThickness = 1;
+            this.btnAddCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnAddCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnAddCus.CheckedState.Parent = this.btnAddCus;
+            this.btnAddCus.CustomImages.Parent = this.btnAddCus;
+            this.btnAddCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnAddCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAddCus.HoverState.Parent = this.btnAddCus;
+            this.btnAddCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddCus.Location = new System.Drawing.Point(191, 380);
+            this.btnAddCus.Name = "btnAddCus";
+            this.btnAddCus.ShadowDecoration.Parent = this.btnAddCus;
+            this.btnAddCus.Size = new System.Drawing.Size(106, 33);
+            this.btnAddCus.TabIndex = 72;
+            this.btnAddCus.Text = "Add";
+            this.btnAddCus.UseTransparentBackground = true;
+            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
+            // 
+            // pnlVeh
+            // 
+            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnlVeh.Controls.Add(this.pnlCus);
+            this.pnlVeh.Controls.Add(this.label16);
+            this.pnlVeh.Controls.Add(this.panel3);
+            this.pnlVeh.Controls.Add(this.panel1);
+            this.pnlVeh.Controls.Add(this.VehiclePic);
+            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
+            this.pnlVeh.Name = "pnlVeh";
+            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
+            this.pnlVeh.TabIndex = 71;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -333,40 +333,40 @@ namespace Care_Management_and_Private_Parking
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.guna2NumericUpDown1);
+            this.panel3.Controls.Add(this.numerudValue);
             this.panel3.Controls.Add(this.cbboxTimeFormat);
             this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.guna2CustomRadioButton3);
+            this.panel3.Controls.Add(this.radiobtnWash);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.guna2CustomRadioButton2);
+            this.panel3.Controls.Add(this.radiobtnRepair);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Location = new System.Drawing.Point(3, 162);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 161);
             this.panel3.TabIndex = 69;
             // 
-            // guna2NumericUpDown1
+            // numerudValue
             // 
-            this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2NumericUpDown1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2NumericUpDown1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2NumericUpDown1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2NumericUpDown1.DisabledState.Parent = this.guna2NumericUpDown1;
-            this.guna2NumericUpDown1.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.guna2NumericUpDown1.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.guna2NumericUpDown1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2NumericUpDown1.FocusedState.Parent = this.guna2NumericUpDown1;
-            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2NumericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(24, 124);
-            this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.ShadowDecoration.Parent = this.guna2NumericUpDown1;
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(106, 26);
-            this.guna2NumericUpDown1.TabIndex = 73;
-            this.guna2NumericUpDown1.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.numerudValue.BackColor = System.Drawing.Color.Transparent;
+            this.numerudValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numerudValue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.numerudValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.numerudValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.numerudValue.DisabledState.Parent = this.numerudValue;
+            this.numerudValue.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.numerudValue.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.numerudValue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.numerudValue.FocusedState.Parent = this.numerudValue;
+            this.numerudValue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numerudValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.numerudValue.Location = new System.Drawing.Point(24, 124);
+            this.numerudValue.Name = "numerudValue";
+            this.numerudValue.ShadowDecoration.Parent = this.numerudValue;
+            this.numerudValue.Size = new System.Drawing.Size(106, 26);
+            this.numerudValue.TabIndex = 73;
+            this.numerudValue.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             // 
             // cbboxTimeFormat
             // 
@@ -397,23 +397,23 @@ namespace Care_Management_and_Private_Parking
             this.label17.TabIndex = 31;
             this.label17.Text = "Washing";
             // 
-            // guna2CustomRadioButton3
+            // radiobtnWash
             // 
-            this.guna2CustomRadioButton3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton3.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton3.CheckedState.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(296, 101);
-            this.guna2CustomRadioButton3.Name = "guna2CustomRadioButton3";
-            this.guna2CustomRadioButton3.ShadowDecoration.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton3.TabIndex = 30;
-            this.guna2CustomRadioButton3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton3.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.UncheckedState.Parent = this.guna2CustomRadioButton3;
+            this.radiobtnWash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnWash.CheckedState.BorderThickness = 0;
+            this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
+            this.radiobtnWash.Location = new System.Drawing.Point(296, 101);
+            this.radiobtnWash.Name = "radiobtnWash";
+            this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
+            this.radiobtnWash.Size = new System.Drawing.Size(20, 20);
+            this.radiobtnWash.TabIndex = 30;
+            this.radiobtnWash.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radiobtnWash.UncheckedState.BorderThickness = 2;
+            this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
             // 
             // label13
             // 
@@ -448,23 +448,23 @@ namespace Care_Management_and_Private_Parking
             this.label11.TabIndex = 26;
             this.label11.Text = "Time Format";
             // 
-            // guna2CustomRadioButton2
+            // radiobtnRepair
             // 
-            this.guna2CustomRadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton2.CheckedState.Parent = this.guna2CustomRadioButton2;
-            this.guna2CustomRadioButton2.Location = new System.Drawing.Point(296, 45);
-            this.guna2CustomRadioButton2.Name = "guna2CustomRadioButton2";
-            this.guna2CustomRadioButton2.ShadowDecoration.Parent = this.guna2CustomRadioButton2;
-            this.guna2CustomRadioButton2.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton2.TabIndex = 25;
-            this.guna2CustomRadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton2.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.Parent = this.guna2CustomRadioButton2;
+            this.radiobtnRepair.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnRepair.CheckedState.BorderThickness = 0;
+            this.radiobtnRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnRepair.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radiobtnRepair.CheckedState.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Location = new System.Drawing.Point(296, 45);
+            this.radiobtnRepair.Name = "radiobtnRepair";
+            this.radiobtnRepair.ShadowDecoration.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Size = new System.Drawing.Size(20, 20);
+            this.radiobtnRepair.TabIndex = 25;
+            this.radiobtnRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radiobtnRepair.UncheckedState.BorderThickness = 2;
+            this.radiobtnRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radiobtnRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnRepair.UncheckedState.Parent = this.radiobtnRepair;
             // 
             // label10
             // 
@@ -650,16 +650,16 @@ namespace Care_Management_and_Private_Parking
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AddVehicle_Load);
             this.pnCalendar.ResumeLayout(false);
-            this.pnlVeh.ResumeLayout(false);
-            this.pnlVeh.PerformLayout();
             this.pnlCus.ResumeLayout(false);
             this.pnlCus.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
+            this.pnlVeh.ResumeLayout(false);
+            this.pnlVeh.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
@@ -700,16 +700,16 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Panel pnlVeh;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton radiobtnRepair;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton3;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton radiobtnWash;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2Button btnAddCus;
         private System.Windows.Forms.Label label17;
         private Guna.UI.WinForms.GunaComboBox cbboxTimeFormat;
-        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown numerudValue;
     }
 }

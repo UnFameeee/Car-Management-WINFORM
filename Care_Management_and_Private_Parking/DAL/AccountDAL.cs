@@ -154,5 +154,59 @@ namespace DAL
             //string res = table.Rows[0][4].ToString();
             //return res;
         }
+
+        public bool updateAccount(string username, string password, string position)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE ACCOUNT SET Username = @User, Password = @Pass, PositionID =  @PId)", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
+
+            DataProvider.Instance.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
+        public bool removeAccount(string username)
+        {
+            SqlCommand com = new SqlCommand("DELETE from ACCOUNT where Username = @User", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+
+            DataProvider.Instance.openConnection();
+            if (com.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
+        public DataTable getAccount(SqlCommand com)
+        {
+            com.Connection = DataProvider.Instance.getConnection;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        public DataTable getAllAccount()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Username, Password, ACCOUNT.PositionID, Description as Position FROM ACCOUNT, POSITION where ACCOUNT.PositionID = POSITION.PositionID");
+            return getAccount(cmd);
+        }
+
     }
 }

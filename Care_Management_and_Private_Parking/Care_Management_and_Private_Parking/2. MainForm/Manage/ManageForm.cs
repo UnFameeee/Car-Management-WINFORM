@@ -13,6 +13,7 @@ namespace Care_Management_and_Private_Parking
     public partial class ManageForm : Form
     {
         EmployeeListForm frmEmpList = new EmployeeListForm() { TopLevel = false, TopMost = true };
+        ManageAccountForm frmAccount = new ManageAccountForm() { TopLevel = false, TopMost = true };
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
         public ManageForm()
@@ -24,6 +25,7 @@ namespace Care_Management_and_Private_Parking
         void loadForm()
         {
             pnData.Controls.Add(frmEmpList);
+            pnData.Controls.Add(frmAccount);
             tick();
         }
 
@@ -31,12 +33,13 @@ namespace Care_Management_and_Private_Parking
         {
             //Chỉnh Checked
             btnStaffList.Checked = false;
-            btnCustomerList.Checked = false;
+            btnAccountList.Checked = false;
             //Chỉnh Cursor
             btnStaffList.Cursor = cur1;
-            btnCustomerList.Cursor = cur1;
+            btnAccountList.Cursor = cur1;
             //Tắt tất cả các form
             frmEmpList.Hide();
+            frmAccount.Hide();
         }  
 
         private void btnStaffList_Click(object sender, EventArgs e)
@@ -50,8 +53,9 @@ namespace Care_Management_and_Private_Parking
         private void btnCustomerList_Click(object sender, EventArgs e)
         {
             tick();
-            btnCustomerList.Checked = true;
-            btnCustomerList.Cursor = cur2;
+            btnAccountList.Checked = true;
+            btnAccountList.Cursor = cur2;
+            frmAccount.Show();
         }
     }
 }

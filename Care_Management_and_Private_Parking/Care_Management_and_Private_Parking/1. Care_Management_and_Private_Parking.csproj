@@ -115,6 +115,18 @@
     <Compile Include="2. MainForm\Parking\RentalLot.Designer.cs">
       <DependentUpon>RentalLot.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.Designer.cs">
+      <DependentUpon>ManageAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contract.Designer.cs">
+      <DependentUpon>Contract.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test_Trash\Tests.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Parking\RentalLot.resx">
       <DependentUpon>RentalLot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.resx">
+      <DependentUpon>ManageAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contract.resx">
+      <DependentUpon>Contract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>

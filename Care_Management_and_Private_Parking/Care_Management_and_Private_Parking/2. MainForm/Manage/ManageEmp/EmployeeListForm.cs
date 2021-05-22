@@ -26,18 +26,19 @@ namespace Care_Management_and_Private_Parking
             dgvEmp.RowTemplate.Height = 80;
 
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            picCol = (DataGridViewImageColumn)dgvEmp.Columns[7];
+            picCol = (DataGridViewImageColumn)dgvEmp.Columns[8];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
             //Custom cái độ rộng của các cột của datagridview
             dgvEmp.Columns[0].Width = 50;
             dgvEmp.Columns[1].Width = 150;
-            dgvEmp.Columns[2].Width = 64;
-            dgvEmp.Columns[3].Width = 120;
-            dgvEmp.Columns[4].Width = 150;
-            dgvEmp.Columns[5].Width = 140;
-            dgvEmp.Columns[6].Width = 80;
-            dgvEmp.Columns[7].Width = 100;
+            dgvEmp.Columns[2].Width = 60;
+            dgvEmp.Columns[3].Width = 80;
+            dgvEmp.Columns[4].Width = 95;
+            dgvEmp.Columns[5].Width = 119;
+            dgvEmp.Columns[6].Width = 140;
+            dgvEmp.Columns[7].Width = 60;
+            dgvEmp.Columns[8].Width = 100;
 
             //DataTable tab = EmployeeDAL.Instance.getAllEmp();            
 

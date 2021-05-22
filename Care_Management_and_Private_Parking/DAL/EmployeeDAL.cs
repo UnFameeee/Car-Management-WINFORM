@@ -25,13 +25,14 @@ namespace DAL
             private set { EmployeeDAL.instance = value; }
         }
 
-        public bool insertEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string Email, string JobID, MemoryStream pic)
+        public bool insertEmployee(string EmpID, string FullName, string Gender, DateTime Birthday, string PhoneNumber, string IdentityCardNumber, string Email, string JobID, MemoryStream pic)
         {
-            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, PhoneNumber, IdentityNumber, Email, JobID, Appearance)" +
-                "values (@EmpID, @FullName, @Gender, @Phone, @Identity, @mail, @JobID, @Appear)", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, Email, JobID, Appearance)" +
+                "values (@EmpID, @FullName, @Gender, @Bday, @Phone, @Identity, @mail, @JobID, @Appear)", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
             command.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = FullName;
             command.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = Gender;
+            command.Parameters.Add("@Bday", SqlDbType.NVarChar).Value = Birthday;
             command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = PhoneNumber;
             command.Parameters.Add("@Identity", SqlDbType.NVarChar).Value = IdentityCardNumber;
             command.Parameters.Add("@mail", SqlDbType.NVarChar).Value = Email;
@@ -68,13 +69,14 @@ namespace DAL
             }
         }
 
-        public bool updateEmployee(string EmpID, string FullName, string Gender, string PhoneNumber, string IdentityCardNumber, string Email, string JobID, MemoryStream pic)
+        public bool updateEmployee(string EmpID, string FullName, string Gender, DateTime Birthday, string PhoneNumber, string IdentityCardNumber, string Email, string JobID, MemoryStream pic)
         {
-            SqlCommand command = new SqlCommand("Update EMPLOYEE set FullName = @FullName, Gender = @Gender, PhoneNumber = @Phone, IdentityNumber = @Identity, " +
+            SqlCommand command = new SqlCommand("Update EMPLOYEE set FullName = @FullName, Gender = @Gender, Birthday = @Bday, PhoneNumber = @Phone, IdentityNumber = @Identity, " +
                 "Email = @mail, JobID = @JobID, Appearance = @Appear where EmpID = @EmpID", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
             command.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = FullName;
             command.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = Gender;
+            command.Parameters.Add("@Bday", SqlDbType.NVarChar).Value = Birthday;
             command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = PhoneNumber;
             command.Parameters.Add("@Identity", SqlDbType.NVarChar).Value = IdentityCardNumber;
             command.Parameters.Add("@mail", SqlDbType.NVarChar).Value = Email;
@@ -119,14 +121,14 @@ namespace DAL
 
         public DataTable getAllEmp()
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
                 "Email, JobID, Appearance from EMPLOYEE");
             return getEmployee(command);
         }
 
         public DataTable getEmpByID(string id)
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
                "Email, JobID, Appearance from EMPLOYEE where convert(varbinary, EmpID) = convert(varbinary, @EmpID)");
             command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = id;
             return getEmployee(command);
@@ -134,14 +136,14 @@ namespace DAL
 
         public DataTable searchByName(string name)
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
                 "Email, JobID, Appearance from EMPLOYEE where FullName Like '%" + name + "%'");
             return getEmployee(command);
         }
 
         public DataTable searchByID(string id)
         {
-            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, PhoneNumber, IdentityNumber, " +
+            SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
                 "Email, JobID, Appearance from EMPLOYEE  where EmpID = '" + id + "'");
             return getEmployee(command);
         }
