@@ -41,12 +41,12 @@ namespace Care_Management_and_Private_Parking
             //Chỉnh Checked
             btnHome.Checked = false;
             btnUser.Checked = false;
-            btnCalendar.Checked = false;
+            btnTimeKeeping.Checked = false;
             btnManageJob.Checked = false;
             //Chỉnh Cursor
             btnHome.Cursor = cur1;
             btnUser.Cursor = cur1;
-            btnCalendar.Cursor = cur1;
+            btnTimeKeeping.Cursor = cur1;
             btnManageJob.Cursor = cur1;
             //Tắt tất cả các form
             frmCalendar.Hide();
@@ -69,11 +69,12 @@ namespace Care_Management_and_Private_Parking
             frmCalendar.Show();
         }
 
-        private void btnCalendar_Click(object sender, EventArgs e)
+        private void btnTimeKeeping_Click(object sender, EventArgs e)
         {
             tick();
-            btnCalendar.Checked = true;
-            btnCalendar.Cursor = cur2;
+            btnTimeKeeping.Checked = true;
+            btnTimeKeeping.Cursor = cur2;
+
         }
 
         private void btnManageJob_Click(object sender, EventArgs e)

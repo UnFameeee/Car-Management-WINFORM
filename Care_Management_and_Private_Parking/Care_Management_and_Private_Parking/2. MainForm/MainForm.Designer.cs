@@ -37,7 +37,7 @@ namespace Care_Management_and_Private_Parking
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnManageJob = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnCalendar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTimeKeeping = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -139,36 +139,35 @@ namespace Care_Management_and_Private_Parking
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnCalendar);
+            this.panel4.Controls.Add(this.btnTimeKeeping);
             this.panel4.Location = new System.Drawing.Point(12, 401);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(157, 60);
             this.panel4.TabIndex = 4;
             // 
-            // btnCalendar
+            // btnTimeKeeping
             // 
-            this.btnCalendar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalendar.BorderRadius = 22;
-            this.btnCalendar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnCalendar.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnCalendar.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.CheckedState.Image")));
-            this.btnCalendar.CheckedState.Parent = this.btnCalendar;
-            this.btnCalendar.CustomImages.Parent = this.btnCalendar;
-            this.btnCalendar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnCalendar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalendar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnCalendar.HoverState.Parent = this.btnCalendar;
-            this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
-            this.btnCalendar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCalendar.Location = new System.Drawing.Point(4, 10);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.ShadowDecoration.Parent = this.btnCalendar;
-            this.btnCalendar.Size = new System.Drawing.Size(148, 43);
-            this.btnCalendar.TabIndex = 1;
-            this.btnCalendar.Text = "Time Keeping";
-            this.btnCalendar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCalendar.UseTransparentBackground = true;
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
+            this.btnTimeKeeping.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimeKeeping.BorderRadius = 22;
+            this.btnTimeKeeping.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnTimeKeeping.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnTimeKeeping.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.CheckedState.Image")));
+            this.btnTimeKeeping.CheckedState.Parent = this.btnTimeKeeping;
+            this.btnTimeKeeping.CustomImages.Parent = this.btnTimeKeeping;
+            this.btnTimeKeeping.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnTimeKeeping.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimeKeeping.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnTimeKeeping.HoverState.Parent = this.btnTimeKeeping;
+            this.btnTimeKeeping.Image = ((System.Drawing.Image)(resources.GetObject("btnTimeKeeping.Image")));
+            this.btnTimeKeeping.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTimeKeeping.Location = new System.Drawing.Point(4, 10);
+            this.btnTimeKeeping.Name = "btnTimeKeeping";
+            this.btnTimeKeeping.ShadowDecoration.Parent = this.btnTimeKeeping;
+            this.btnTimeKeeping.Size = new System.Drawing.Size(148, 43);
+            this.btnTimeKeeping.TabIndex = 1;
+            this.btnTimeKeeping.Text = "Time Keeping";
+            this.btnTimeKeeping.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTimeKeeping.UseTransparentBackground = true;
             // 
             // panel3
             // 
@@ -294,7 +293,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnManageJob;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button btnCalendar;
+        private Guna.UI2.WinForms.Guna2Button btnTimeKeeping;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2Button btnExit;
