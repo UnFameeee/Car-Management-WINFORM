@@ -71,7 +71,6 @@ namespace Care_Management_and_Private_Parking
             btnUser.Cursor = cur2;
             frmCalendar.Show();
         }
-
         private void btnTimeKeeping_Click(object sender, EventArgs e)
         {
             tick();
@@ -87,5 +86,7 @@ namespace Care_Management_and_Private_Parking
             btnManageJob.Cursor = cur2;
             frmManage.Show();
         }
+
+        
     }
 }

@@ -21,6 +21,12 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        private void TimeKeeping_Load(object sender, EventArgs e)
+        {
+            loadForm();
+        }
+
         void loadForm()
         {
             this.pnlMain.Controls.Add(frmCheckWorkForm);
@@ -62,6 +68,5 @@ namespace Care_Management_and_Private_Parking
         {
 
         }
-        
     }
 }

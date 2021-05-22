@@ -100,7 +100,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand("UPDATE VEHICLE SET VehType = @Type, LicensePlate = @License, Picture = @Pic, CusID = @CusID WHERE VehID = @VehID", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
             cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
-            cmd.Parameters.Add("@License", SqlDbType.Date).Value = LicensePlate;
+            cmd.Parameters.Add("@License", SqlDbType.NVarChar).Value = LicensePlate;
             cmd.Parameters.Add("@Pic", SqlDbType.Image).Value = VehPic.ToArray();
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             DataProvider.Instance.openConnection();
@@ -160,10 +160,10 @@ namespace DAL
             }
         }
 
-        public bool updateCustomer(string CusID, string Name, string Bdate, string Phone, string Address, string IdentityCardNumber, MemoryStream CusPic)
+        public bool updateCustomer(string CusID, string Name, DateTime Bdate, string Phone, string Address, string IdentityCardNumber, MemoryStream CusPic)
         {
             SqlCommand cmd = new SqlCommand("UPDATE CUSTOMER SET FullName = @Name, Bdate = @Bdate, PhoneNumber = @Phone, Address = @Addr" +
-                ", IdentityNumber = @Identity, Appearance = @Appear WHERE CusID = @CusID)", DataProvider.Instance.getConnection);
+                ", IdentityNumber = @Identity, Appearance = @Appear WHERE CusID = @CusID", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = Name;
             cmd.Parameters.Add("@Bdate", SqlDbType.Date).Value = Bdate;
@@ -202,12 +202,33 @@ namespace DAL
         }
         #endregion
 
-        #region Thêm xe và khách đã nhập thành công vào bãi gửi xe
+        #region Thêm, xóa, sửa xe và khách đã nhập thành công vào bãi gửi xe
         public void addCarAndCusToParklot(int IDParkCard, string CusID, string VehID, DateTime dayin, DateTime dayout, string invoice)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO PARKING (IDParkcard, CusID, VehID, DateRegister, DateLeave, InvoiceID) VALUES " +
                 "(@IDParkcard, @CusID, @VehID, @Dayin, @Dayout, @Invoice)", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@IDParkcard", SqlDbType.Int).Value = IDParkCard;
+            cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
+            cmd.Parameters.Add("@Dayout", SqlDbType.DateTime).Value = dayout;
+            cmd.Parameters.Add("@Invoice", SqlDbType.NVarChar).Value = invoice;
+            DataProvider.Instance.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return;
+            }
+        }
+
+        public void editCarAndCusToParklot(string CusID, string VehID, DateTime dayin, DateTime dayout, string invoice)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE PARKING SET DateRegister = @Dayin, DateLeave = @Dayout, InvoiceID = @Invoice WHERE CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
