@@ -23,6 +23,7 @@ create table ACCOUNT(
 )
 -- Tài khoản admin
 insert into ACCOUNT values ('admin', 'admin', '1')	--TK quản lý
+insert into ACCOUNT values ('emp', 'emp', '2')	--TK nhân viên
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------
 -- Công Việc
@@ -61,14 +62,7 @@ create table EMPLOYEE(
 	AccUsername nvarchar(100) references ACCOUNT(Username)		
 )
 INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', 'QL', null, 'admin') 
-GO
-
-
--- Quản lý
-create table MANAGER(
-	ManagerID nvarchar(100) primary key,
-	ShiftID int references WORKSHIFT(ShiftID)						--quản lý ca nào, có bao nhiêu nhân viên trong ca đấy bị này quản lý
-)
+INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', 'NV', null, 'emp') 
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Thành Tiền
@@ -123,5 +117,18 @@ create table CONTRACT(
 	EmpID nvarchar(100) references EMPLOYEE(EmpID),
 	Purpose nvarchar(100),											--Mục đích (thuê, ....)
 	Description text
+)
+GO
+INSERT INTO CONTRACT VALUES ()
+GO
+
+-- Thuê, Cho thuê 
+create table PURPOSE(
+	EmpID nvarchar(100) references EMPLOYEE(EmpID),	
+	CusID nvarchar(100) references CUSTOMER(CusID),
+	VehID nvarchar(100) references VEHICLE(VehID),
+	ContID nvarchar(100) references CONTRACT(ContID),
+	Purpose nvarchar(100),											--Mục đích (thuê, ....)
+	PRIMARY KEY(EmpID, CusID, VehID, ContID)
 )
 GO

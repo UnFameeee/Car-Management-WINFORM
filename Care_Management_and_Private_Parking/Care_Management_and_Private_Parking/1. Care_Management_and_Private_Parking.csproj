@@ -109,12 +109,6 @@
     <Compile Include="2. MainForm\Parking\AddVehicle.Designer.cs">
       <DependentUpon>AddVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Parking\RentalLot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="2. MainForm\Parking\RentalLot.Designer.cs">
-      <DependentUpon>RentalLot.cs</DependentUpon>
-    </Compile>
     <Compile Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +120,23 @@
     </Compile>
     <Compile Include="Contract.Designer.cs">
       <DependentUpon>Contract.cs</DependentUpon>
+    <Compile Include="2. MainForm\Rental\InfoContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Rental\InfoContact.Designer.cs">
+      <DependentUpon>InfoContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Rental\Rent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Rental\Rent.Designer.cs">
+      <DependentUpon>Rent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Rental\ForRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Rental\ForRent.Designer.cs">
+      <DependentUpon>ForRent.cs</DependentUpon>
     </Compile>
     <Compile Include="Test_Trash\Tests.cs">
       <SubType>Form</SubType>
@@ -176,7 +187,10 @@
     <EmbeddedResource Include="2. MainForm\Parking\AddVehicle.resx">
       <DependentUpon>AddVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Parking\RentalLot.resx">
+    <EmbeddedResource Include="2. MainForm\Rental\Rent.resx">
+      <DependentUpon>Rent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Rental\RentalLot.resx">
       <DependentUpon>RentalLot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.resx">
@@ -184,6 +198,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contract.resx">
       <DependentUpon>Contract.cs</DependentUpon>
+    <EmbeddedResource Include="2. MainForm\Rental\InfoContact.resx">
+      <DependentUpon>InfoContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Rental\ForRent.resx">
+      <DependentUpon>ForRent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">
       <DependentUpon>Tests.cs</DependentUpon>
