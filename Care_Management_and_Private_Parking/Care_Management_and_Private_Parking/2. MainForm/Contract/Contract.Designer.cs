@@ -217,7 +217,7 @@ namespace Care_Management_and_Private_Parking
             this.panelInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelInfo.Location = new System.Drawing.Point(0, 215);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(786, 560);
+            this.panelInfo.Size = new System.Drawing.Size(786, 559);
             this.panelInfo.TabIndex = 3;
             // 
             // label25
@@ -617,7 +617,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 775);
+            this.ClientSize = new System.Drawing.Size(786, 774);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

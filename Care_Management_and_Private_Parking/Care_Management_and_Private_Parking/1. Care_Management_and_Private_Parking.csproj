@@ -182,6 +182,12 @@
     <Compile Include="2. MainForm\MyInfomation\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. MainForm\TimeKeeping\TimeKeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\TimeKeeping\TimeKeeping.Designer.cs">
+      <DependentUpon>TimeKeeping.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="1. Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\MyInfomation\Task.resx">
       <DependentUpon>Task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\TimeKeeping\TimeKeeping.resx">
+      <DependentUpon>TimeKeeping.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
