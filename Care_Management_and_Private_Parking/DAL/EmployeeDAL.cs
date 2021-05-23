@@ -122,14 +122,15 @@ namespace DAL
         public DataTable getAllEmp()
         {
             SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
-                "Email, JobID, Appearance from EMPLOYEE");
+                "Email, Description as 'Job', Appearance from EMPLOYEE, POSITION where JobID = PositionID");
             return getEmployee(command);
         }
 
         public DataTable getEmpByID(string id)
         {
             SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
-               "Email, JobID, Appearance from EMPLOYEE where convert(varbinary, EmpID) = convert(varbinary, @EmpID)");
+                "Email, Description as 'Job', Appearance from (Select * from EMPLOYEE where convert(varbinary, EmpID) = convert(varbinary, @EmpID))" +
+                "as A, POSITION where JobID = PositionID");
             command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = id;
             return getEmployee(command);
         }
@@ -137,14 +138,16 @@ namespace DAL
         public DataTable searchByName(string name)
         {
             SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
-                "Email, JobID, Appearance from EMPLOYEE where FullName Like '%" + name + "%'");
+                "Email, Description as 'Job', Appearance from (Select * from EMPLOYEE where FullName Like '%" + name + "%') " +
+                "as A, POSITION where JobID = PositionID");
             return getEmployee(command);
         }
 
         public DataTable searchByID(string id)
         {
             SqlCommand command = new SqlCommand("Select EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, " +
-                "Email, JobID, Appearance from EMPLOYEE  where EmpID = '" + id + "'");
+                "Email, Description as 'Job', Appearance from (Select * from EMPLOYEE  where EmpID = '" + id + "') " +
+                "as A, POSITION where JobID = PositionID");
             return getEmployee(command);
         }
 

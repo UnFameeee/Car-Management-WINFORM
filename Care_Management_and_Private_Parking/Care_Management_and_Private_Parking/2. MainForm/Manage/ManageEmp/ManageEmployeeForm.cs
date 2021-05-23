@@ -31,16 +31,17 @@ namespace Care_Management_and_Private_Parking
 
         private void ManageEmployeeForm_Load(object sender, EventArgs e)
         {
-            SqlCommand com = new SqlCommand("Select * from JOB");
+            SqlCommand com = new SqlCommand("Select * from POSITION");
             cbbxJobID.DataSource = EmployeeDAL.Instance.getEmployee(com);
             cbbxJobID.DisplayMember = "Description";
-            cbbxJobID.ValueMember = "JobID";
+            cbbxJobID.ValueMember = "PositionID";
             cbbxJobID.SelectedItem = null;
 
 
             if (EmpID != "")
             {
-                DataTable tab = EmployeeDAL.Instance.getEmpByID(EmpID);
+                SqlCommand cmd = new SqlCommand("Select * from EMPLOYEE where EmpID = '" + EmpID + "'");
+                DataTable tab = EmployeeDAL.Instance.getEmployee(cmd);
 
                 tbEmpID.Text = tab.Rows[0][0].ToString();
                 tbFullName.Text = tab.Rows[0][1].ToString();

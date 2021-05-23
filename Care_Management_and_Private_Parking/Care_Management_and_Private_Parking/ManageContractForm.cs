@@ -16,5 +16,10 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        private void ManageContractForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

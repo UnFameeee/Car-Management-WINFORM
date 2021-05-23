@@ -81,7 +81,7 @@ namespace Care_Management_and_Private_Parking
             this.btn.ShadowDecoration.Parent = this.btn;
             this.btn.Size = new System.Drawing.Size(113, 43);
             this.btn.TabIndex = 7;
-            this.btn.Text = "...";
+            this.btn.Text = "Contract List";
             this.btn.UseTransparentBackground = true;
             // 
             // btnAccountList
