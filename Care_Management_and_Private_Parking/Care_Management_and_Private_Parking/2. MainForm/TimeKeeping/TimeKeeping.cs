@@ -14,6 +14,7 @@ namespace Care_Management_and_Private_Parking
     {
         CheckWorkForm frmCheckWorkForm = new CheckWorkForm() { TopLevel = false, TopMost = false };
         ManageShiftForm frmManageShiftForm = new ManageShiftForm() { TopLevel = false, TopMost = false };
+        ManageSalary frmSalary = new ManageSalary() { TopLevel = false, TopMost = false };
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
 
@@ -31,6 +32,7 @@ namespace Care_Management_and_Private_Parking
         {
             this.pnlMain.Controls.Add(frmCheckWorkForm);
             this.pnlMain.Controls.Add(frmManageShiftForm);
+            this.pnlMain.Controls.Add(frmSalary);
             tick();
         }
         private void tick()
@@ -39,13 +41,16 @@ namespace Care_Management_and_Private_Parking
             btnTimeKeeping.Checked = false;
             btnStatistic.Checked = false;
             btnWorkShift.Checked = false;
+            btnSalary.Checked = false;
             //Chỉnh Cursor
             btnTimeKeeping.Cursor = cur1;
             btnStatistic.Cursor = cur1;
             btnWorkShift.Cursor = cur1;
+            btnSalary.Cursor = cur1;
             //Tắt tất cả các form
             frmCheckWorkForm.Hide();
             frmManageShiftForm.Hide();
+            frmSalary.Hide();
         }
 
         private void btnTimeKeeping_Click(object sender, EventArgs e)
@@ -56,6 +61,7 @@ namespace Care_Management_and_Private_Parking
             frmCheckWorkForm.Show();
         }
 
+
         private void btnWorkShift_Click(object sender, EventArgs e)
         {
             tick();
@@ -63,10 +69,19 @@ namespace Care_Management_and_Private_Parking
             btnWorkShift.Cursor = cur2;
             frmManageShiftForm.Show();
         }
-
         private void btnStatistic_Click(object sender, EventArgs e)
         {
+            tick();
+            btnStatistic.Checked = true;
+            btnStatistic.Cursor = cur2;
+        }
 
+        private void btnSalary_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnSalary.Checked = true;
+            btnSalary.Cursor = cur2;
+            frmSalary.Show();
         }
     }
 }

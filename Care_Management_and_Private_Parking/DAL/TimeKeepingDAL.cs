@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+//3layer
+using Global;
 
 namespace DAL
 {
@@ -92,6 +94,50 @@ namespace DAL
                 return false;
 
             }
+        }
+
+        public string checkInTimeWork(string EmpID)
+        {
+            DataTable table = Variable.tableShift;
+            List<string> shift = new List<string>();
+            //Lấy ra các ca làm của nhân viên trong ngày đó
+            for (int i = 0, length = table.Rows.Count; i < length; ++i)
+            {
+                if(table.Rows[i][0].ToString() == EmpID)
+                {
+                    shift.Add(table.Rows[i][1].ToString());
+                }
+            }
+
+            //Kiểm tra theo ca làm
+            SqlCommand cmd = new SqlCommand("SELECT * FROM WORKSHIFT WHERE ShiftID = @ShiftID", DataProvider.Instance.getConnection);
+            DataTable tbShift = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            TimeSpan timelate;                                                      //tgian trễ
+            TimeSpan timenow = (TimeSpan)DateTime.Now.TimeOfDay;                    //tgian bây h
+            TimeSpan timestart;                                                     //tgian bắt đầu ca làm
+            for(int i = 0, length = shift.Count; i < length; ++i)
+            {
+                cmd.Parameters.Add("@ShiftID", SqlDbType.NVarChar).Value = shift[i];
+                adapter.SelectCommand = cmd;
+                adapter.Fill(tbShift);
+                timestart = (TimeSpan)tbShift.Rows[0]["TimeBegin"];
+
+                timelate = timenow - timestart;
+                if (timelate > TimeSpan.Parse("00:00:00"))                          //Nếu mà nó âm => chưa tới ca làm
+                {
+                    if(timelate <= TimeSpan.Parse("01:00:00"))                      //Được quyền check in trễ 1 tiếng
+                    {
+                        return "1";
+                    }
+                    else
+                    {
+                        return "2";
+                    }
+                }
+                cmd.Parameters.Clear();
+            }
+            return "3";
         }
         #endregion
 

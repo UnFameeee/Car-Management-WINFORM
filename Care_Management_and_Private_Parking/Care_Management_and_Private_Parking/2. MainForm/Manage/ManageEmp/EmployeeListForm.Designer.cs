@@ -32,15 +32,16 @@ namespace Care_Management_and_Private_Parking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnHeader = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
             this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnPrint = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDetail = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.btnSearchByID = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchByName = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvEmp = new Guna.UI.WinForms.GunaDataGridView();
             this.pnData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.SuspendLayout();
@@ -65,11 +66,11 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnData.BorderRadius = 22;
             this.pnData.BorderThickness = 1;
+            this.pnData.Controls.Add(this.dgvEmp);
             this.pnData.Controls.Add(this.tbSearch);
             this.pnData.Controls.Add(this.btnPrint);
             this.pnData.Controls.Add(this.btnAdd);
             this.pnData.Controls.Add(this.btnDetail);
-            this.pnData.Controls.Add(this.dgvEmp);
             this.pnData.Controls.Add(this.btnSearchByID);
             this.pnData.Controls.Add(this.btnSearchByName);
             this.pnData.Controls.Add(this.btnHeader);
@@ -160,34 +161,6 @@ namespace Care_Management_and_Private_Parking
             this.btnDetail.Text = "DETAIL";
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
-            // dgvEmp
-            // 
-            this.dgvEmp.AllowUserToAddRows = false;
-            this.dgvEmp.AllowUserToDeleteRows = false;
-            this.dgvEmp.AllowUserToResizeColumns = false;
-            this.dgvEmp.AllowUserToResizeRows = false;
-            this.dgvEmp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEmp.ColumnHeadersHeight = 40;
-            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEmp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.dgvEmp.Location = new System.Drawing.Point(12, 153);
-            this.dgvEmp.Name = "dgvEmp";
-            this.dgvEmp.ReadOnly = true;
-            this.dgvEmp.RowHeadersWidth = 25;
-            this.dgvEmp.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEmp.Size = new System.Drawing.Size(881, 506);
-            this.dgvEmp.TabIndex = 46;
-            // 
             // btnSearchByID
             // 
             this.btnSearchByID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
@@ -224,6 +197,70 @@ namespace Care_Management_and_Private_Parking
             this.btnSearchByName.Text = "By Name";
             this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
             // 
+            // dgvEmp
+            // 
+            this.dgvEmp.AllowUserToAddRows = false;
+            this.dgvEmp.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.dgvEmp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvEmp.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEmp.ColumnHeadersHeight = 25;
+            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmp.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEmp.EnableHeadersVisualStyles = false;
+            this.dgvEmp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgvEmp.Location = new System.Drawing.Point(12, 153);
+            this.dgvEmp.MultiSelect = false;
+            this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.ReadOnly = true;
+            this.dgvEmp.RowHeadersVisible = false;
+            this.dgvEmp.RowTemplate.ReadOnly = true;
+            this.dgvEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvEmp.Size = new System.Drawing.Size(881, 515);
+            this.dgvEmp.TabIndex = 197;
+            this.dgvEmp.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Dark;
+            this.dgvEmp.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.dgvEmp.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvEmp.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvEmp.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvEmp.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvEmp.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgvEmp.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgvEmp.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgvEmp.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEmp.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvEmp.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.dgvEmp.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEmp.ThemeStyle.HeaderStyle.Height = 25;
+            this.dgvEmp.ThemeStyle.ReadOnly = true;
+            this.dgvEmp.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgvEmp.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvEmp.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvEmp.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvEmp.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvEmp.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.dgvEmp.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,10 +285,10 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2Panel pnData;
         private Guna.UI2.WinForms.Guna2Button btnSearchByName;
         private Guna.UI2.WinForms.Guna2Button btnSearchByID;
-        private System.Windows.Forms.DataGridView dgvEmp;
         private Guna.UI2.WinForms.Guna2GradientButton btnDetail;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
         private Guna.UI2.WinForms.Guna2GradientButton btnPrint;
         private Guna.UI2.WinForms.Guna2TextBox tbSearch;
+        private Guna.UI.WinForms.GunaDataGridView dgvEmp;
     }
 }

@@ -192,7 +192,6 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-
         #region Điểm danh vào, ra
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
@@ -200,20 +199,26 @@ namespace Care_Management_and_Private_Parking
             {
                 if (!TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
                 {
-                    //if (DateTime.Now.TimeOfDay <= )
-                    //{
-                    //    
-                    //}
-                    //else
-                    //{
+                    //1 là checkin thành công, 2 là đã trễ giờ đi làm, 3 là chưa tới giờ đi làm
+                    if(TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "1")
+                    {
+                        MessageBox.Show("Checkin successfully!!!");
 
-                    //}
-                    TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
-                    dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
+                        TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
+                        dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
 
-                    takePicture(tbID.Text);
-                    changeLBcheckin("Checkin");
-                    loadInfo(tbID.Text, "Load");
+                        takePicture(tbID.Text);
+                        changeLBcheckin("Checkin");
+                        loadInfo(tbID.Text, "Load");
+                    }
+                    else if(TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "2")
+                    {
+                        MessageBox.Show("Checkin unsuccessfully!!!\r\nYou have been late more than 1h!!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your shift hasn't started yet!!!");
+                    }
                 }
                 else
                     MessageBox.Show("ID is working. Can't check in");
@@ -226,6 +231,8 @@ namespace Care_Management_and_Private_Parking
         {
             if (TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
             {
+                MessageBox.Show("Checkout successfully!!!");
+
                 TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, DateTime.Now);
                 dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
 
