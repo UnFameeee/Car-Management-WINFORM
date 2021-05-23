@@ -56,6 +56,14 @@ INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '987654
 INSERT INTO EMPLOYEE VALUES('NV03', 'Nguyen fam quoc thang', 'Male', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp') 
 GO
 
+CREATE TABLE TIMEKEEPING
+(
+	IDEmployee NVARCHAR(100),															--ID nhân viên
+	CheckIn DATETIME,																	--Thời gian check in
+	CheckOut DATETIME																	--Thời gian check out
+	FOREIGN KEY (IDEmployee) REFERENCES dbo.EMPLOYEE(EmpID)
+	PRIMARY KEY (IDEmployee, CheckIn)
+)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Thành Tiền
 create table INVOICE(

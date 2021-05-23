@@ -32,7 +32,7 @@ namespace Care_Management_and_Private_Parking
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnStatistic = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRentalLot = new Guna.UI2.WinForms.Guna2Button();
+            this.btnWorkShift = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimeKeeping = new Guna.UI2.WinForms.Guna2Button();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu.BorderRadius = 22;
             this.pnMenu.BorderThickness = 1;
             this.pnMenu.Controls.Add(this.btnStatistic);
-            this.pnMenu.Controls.Add(this.btnRentalLot);
+            this.pnMenu.Controls.Add(this.btnWorkShift);
             this.pnMenu.Controls.Add(this.btnTimeKeeping);
             this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnMenu.Location = new System.Drawing.Point(13, 116);
@@ -79,27 +79,29 @@ namespace Care_Management_and_Private_Parking
             this.btnStatistic.TabIndex = 6;
             this.btnStatistic.Text = "Statistic";
             this.btnStatistic.UseTransparentBackground = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
-            // btnRentalLot
+            // btnWorkShift
             // 
-            this.btnRentalLot.BackColor = System.Drawing.Color.Transparent;
-            this.btnRentalLot.BorderRadius = 22;
-            this.btnRentalLot.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnRentalLot.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnRentalLot.CheckedState.Parent = this.btnRentalLot;
-            this.btnRentalLot.CustomImages.Parent = this.btnRentalLot;
-            this.btnRentalLot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnRentalLot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRentalLot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnRentalLot.HoverState.Parent = this.btnRentalLot;
-            this.btnRentalLot.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRentalLot.Location = new System.Drawing.Point(9, 233);
-            this.btnRentalLot.Name = "btnRentalLot";
-            this.btnRentalLot.ShadowDecoration.Parent = this.btnRentalLot;
-            this.btnRentalLot.Size = new System.Drawing.Size(113, 43);
-            this.btnRentalLot.TabIndex = 7;
-            this.btnRentalLot.Text = "Work Shift";
-            this.btnRentalLot.UseTransparentBackground = true;
+            this.btnWorkShift.BackColor = System.Drawing.Color.Transparent;
+            this.btnWorkShift.BorderRadius = 22;
+            this.btnWorkShift.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnWorkShift.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnWorkShift.CheckedState.Parent = this.btnWorkShift;
+            this.btnWorkShift.CustomImages.Parent = this.btnWorkShift;
+            this.btnWorkShift.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnWorkShift.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWorkShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnWorkShift.HoverState.Parent = this.btnWorkShift;
+            this.btnWorkShift.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnWorkShift.Location = new System.Drawing.Point(9, 233);
+            this.btnWorkShift.Name = "btnWorkShift";
+            this.btnWorkShift.ShadowDecoration.Parent = this.btnWorkShift;
+            this.btnWorkShift.Size = new System.Drawing.Size(113, 43);
+            this.btnWorkShift.TabIndex = 7;
+            this.btnWorkShift.Text = "Work Shift";
+            this.btnWorkShift.UseTransparentBackground = true;
+            this.btnWorkShift.Click += new System.EventHandler(this.btnWorkShift_Click);
             // 
             // btnTimeKeeping
             // 
@@ -121,6 +123,7 @@ namespace Care_Management_and_Private_Parking
             this.btnTimeKeeping.TabIndex = 5;
             this.btnTimeKeeping.Text = "Time Keeping";
             this.btnTimeKeeping.UseTransparentBackground = true;
+            this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
             // 
             // TimeKeeping
             // 
@@ -133,6 +136,7 @@ namespace Care_Management_and_Private_Parking
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimeKeeping";
             this.Text = "TimeKeeping";
+            this.Load += new System.EventHandler(this.TimeKeeping_Load);
             this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -143,7 +147,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Panel pnlMain;
         private Guna.UI2.WinForms.Guna2Panel pnMenu;
         private Guna.UI2.WinForms.Guna2Button btnStatistic;
-        private Guna.UI2.WinForms.Guna2Button btnRentalLot;
+        private Guna.UI2.WinForms.Guna2Button btnWorkShift;
         private Guna.UI2.WinForms.Guna2Button btnTimeKeeping;
     }
 }
