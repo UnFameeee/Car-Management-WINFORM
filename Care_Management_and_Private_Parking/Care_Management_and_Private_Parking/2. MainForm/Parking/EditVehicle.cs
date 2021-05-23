@@ -174,7 +174,13 @@ namespace Care_Management_and_Private_Parking
 
             string CusID = tbCustomerID.Text;
             string Invoice = cbboxTimeFormat.SelectedValue.ToString();
-            int value = Convert.ToInt32(numerudValue.Value);            
+            int value = Convert.ToInt32(numerudValue.Value);
+
+            string service = "";
+            if (radiobtnRepair.Checked == true)
+                service = "Repairing";
+            if (radiobtnWash.Checked == true)
+                service = "Washing";
 
             try
             {
@@ -185,7 +191,7 @@ namespace Care_Management_and_Private_Parking
                 {
                     if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
                     {
-                        ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice);
+                        ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
                         MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
                         this.DialogResult = DialogResult.OK;
                     }

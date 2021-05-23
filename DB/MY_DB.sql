@@ -112,6 +112,7 @@ create table PARKING(
 	DateRegister datetime,
 	TimeValue int,
 	InvoiceID nvarchar(100) references INVOICE(InvoiceID),
+	Service nvarchar(100)
 	--PRIMARY KEY(CusID, VehID)
 )
 GO
