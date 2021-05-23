@@ -175,11 +175,11 @@
     <Compile Include="2. MainForm\Parking\GetVehicle.Designer.cs">
       <DependentUpon>GetVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test_Trash\Tests.cs">
+    <Compile Include="2. MainForm\TimeKeeping\ManageSalary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test_Trash\Tests.Designer.cs">
-      <DependentUpon>Tests.cs</DependentUpon>
+    <Compile Include="2. MainForm\TimeKeeping\ManageSalary.Designer.cs">
+      <DependentUpon>ManageSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\Manage\ManageForm.cs">
       <SubType>Form</SubType>
@@ -251,6 +251,9 @@
     <EmbeddedResource Include="2. MainForm\TimeKeeping\CheckWorkForm.resx">
       <DependentUpon>CheckWorkForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\TimeKeeping\ManageSalary.resx">
+      <DependentUpon>ManageSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\TimeKeeping\ManageShiftForm.resx">
       <DependentUpon>ManageShiftForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,9 +262,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Contract\ManageContractForm.resx">
       <DependentUpon>ManageContractForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test_Trash\Tests.resx">
-      <DependentUpon>Tests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Manage\ManageEmp\EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
