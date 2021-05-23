@@ -104,7 +104,7 @@ create table PARKING(
 	CusID nvarchar(100) references CUSTOMER(CusID),
 	VehID nvarchar(100) references VEHICLE(VehID),
 	DateRegister datetime,
-	DateLeave datetime,
+	TimeValue int,
 	InvoiceID nvarchar(100) references INVOICE(InvoiceID),
 	--PRIMARY KEY(CusID, VehID)
 )

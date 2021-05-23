@@ -163,11 +163,17 @@
     <Compile Include="2. MainForm\Parking\EditVehicle.Designer.cs">
       <DependentUpon>EditVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageContractForm.cs">
+    <Compile Include="2. MainForm\Contract\ManageContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageContractForm.Designer.cs">
+    <Compile Include="2. MainForm\Contract\ManageContractForm.Designer.cs">
       <DependentUpon>ManageContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\GetVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Parking\GetVehicle.Designer.cs">
+      <DependentUpon>GetVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Test_Trash\Tests.cs">
       <SubType>Form</SubType>
@@ -218,6 +224,9 @@
     <EmbeddedResource Include="1. Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Parking\GetVehicle.resx">
+      <DependentUpon>GetVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Parking\ParkingLot.resx">
       <DependentUpon>ParkingLot.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,7 +257,7 @@
     <EmbeddedResource Include="2. MainForm\Parking\EditVehicle.resx">
       <DependentUpon>EditVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageContractForm.resx">
+    <EmbeddedResource Include="2. MainForm\Contract\ManageContractForm.resx">
       <DependentUpon>ManageContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Trash\Tests.resx">

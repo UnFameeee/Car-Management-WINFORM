@@ -203,15 +203,15 @@ namespace DAL
         #endregion
 
         #region Thêm, xóa, sửa xe và khách đã nhập thành công vào bãi gửi xe
-        public void addCarAndCusToParklot(int IDParkCard, string CusID, string VehID, DateTime dayin, DateTime dayout, string invoice)
+        public void addCarAndCusToParklot(int IDParkCard, string CusID, string VehID, DateTime dayin, int value, string invoice)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO PARKING (IDParkcard, CusID, VehID, DateRegister, DateLeave, InvoiceID) VALUES " +
-                "(@IDParkcard, @CusID, @VehID, @Dayin, @Dayout, @Invoice)", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO PARKING (IDParkcard, CusID, VehID, DateRegister, TimeValue, InvoiceID) VALUES " +
+                "(@IDParkcard, @CusID, @VehID, @Dayin, @value, @Invoice)", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@IDParkcard", SqlDbType.Int).Value = IDParkCard;
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
-            cmd.Parameters.Add("@Dayout", SqlDbType.DateTime).Value = dayout;
+            cmd.Parameters.Add("@value", SqlDbType.Int).Value = value;
             cmd.Parameters.Add("@Invoice", SqlDbType.NVarChar).Value = invoice;
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -226,13 +226,13 @@ namespace DAL
             }
         }
 
-        public void editCarAndCusToParklot(string CusID, string VehID, DateTime dayin, DateTime dayout, string invoice)
+        public void editCarAndCusToParklot(string CusID, string VehID, DateTime dayin, int value, string invoice)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE PARKING SET DateRegister = @Dayin, DateLeave = @Dayout, InvoiceID = @Invoice WHERE CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("UPDATE PARKING SET DateRegister = @Dayin, TimeValue = @value, InvoiceID = @Invoice WHERE CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
-            cmd.Parameters.Add("@Dayout", SqlDbType.DateTime).Value = dayout;
+            cmd.Parameters.Add("@value", SqlDbType.Int).Value = value;
             cmd.Parameters.Add("@Invoice", SqlDbType.NVarChar).Value = invoice;
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -246,6 +246,24 @@ namespace DAL
                 return;
             }
         }
+
+        public bool deleteCarAndCusfromParklot(string ID)
+        { 
+            SqlCommand cmd = new SqlCommand("DELETE FROM PARKING WHERE IDParkcard = @IDParkcard", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@IDParkcard", SqlDbType.NVarChar).Value = ID;
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
         #endregion
 
         #region Phát thẻ xe

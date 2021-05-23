@@ -110,8 +110,6 @@ namespace Care_Management_and_Private_Parking
             string Phone = tbPhone.Text;
             string Address = tbAddress.Text;
             string Identity = tbIdentity.Text;
-            MemoryStream CusPic = new MemoryStream();
-            CustomerPic.Image.Save(CusPic, CustomerPic.Image.RawFormat);
 
             int bornyear = datetime.Value.Year;
             int thisyear = DateTime.Now.Year;
@@ -123,6 +121,9 @@ namespace Care_Management_and_Private_Parking
             {
                 try
                 {
+                    MemoryStream CusPic = new MemoryStream();
+                    CustomerPic.Image.Save(CusPic, CustomerPic.Image.RawFormat);
+
                     if (verifCus())
                     {
                         if (ParkingLotDAL.Instance.updateCustomer(CusID, FullName, Birth, Phone, Address, Identity, CusPic))
@@ -170,30 +171,21 @@ namespace Care_Management_and_Private_Parking
             //Xe
             string Type = tbType.Text;
             string License = tbLicense.Text;
-            MemoryStream VehPic = new MemoryStream();
-            VehiclePic.Image.Save(VehPic, VehiclePic.Image.RawFormat);
 
             string CusID = tbCustomerID.Text;
-
             string Invoice = cbboxTimeFormat.SelectedValue.ToString();
-            DateTime leave;                                                                 //thời gian tối đa trong bãi giữ xe(do khách chọn)
-
-            if (Invoice == "H")
-                leave = dayvehin.AddHours(Convert.ToDouble(numerudValue.Value));
-            else if (Invoice == "D")
-                leave = dayvehin.AddDays(Convert.ToDouble(numerudValue.Value));
-            else if (Invoice == "W")
-                leave = dayvehin.AddDays(Convert.ToDouble(numerudValue.Value) * 7);
-            else
-                leave = dayvehin.AddMonths(Convert.ToInt32(numerudValue.Value));
+            int value = Convert.ToInt32(numerudValue.Value);            
 
             try
             {
+                MemoryStream VehPic = new MemoryStream();
+                VehiclePic.Image.Save(VehPic, VehiclePic.Image.RawFormat);
+
                 if (verifVeh())
                 {
                     if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
                     {
-                        ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, leave, Invoice);
+                        ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice);
                         MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
                         this.DialogResult = DialogResult.OK;
                     }
