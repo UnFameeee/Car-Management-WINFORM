@@ -5,7 +5,7 @@ go
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 create table POSITION(
-	PositionID nvarchar(100) primary key,									-- 1 là quản lý, 2 là nhân viên, 3 là khách hàng
+	PositionID nvarchar(100) primary key,									-- 1 là quản lý, 2 là nhân viên, 3 là nhân viên văn phòng
 	Description text
 )
 
@@ -22,8 +22,9 @@ create table ACCOUNT(
 	PositionID nvarchar(100) references POSITION(PositionID)					
 )
 -- Tài khoản admin
-insert into ACCOUNT values ('admin', 'admin', '1')	--TK quản lý
-insert into ACCOUNT values ('emp', 'emp', '2')	--TK nhân viên
+insert into ACCOUNT values ('admin', 'admin', '1')			--TK quản lý
+insert into ACCOUNT values ('emp', 'emp', '2')				--TK nhân viên
+insert into ACCOUNT values ('office', 'office', '3')		--TK nhân viên văn phòng
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------
 -- Ca Làm
@@ -51,7 +52,8 @@ create table EMPLOYEE(
 	AccUsername nvarchar(100) references ACCOUNT(Username)		
 )
 INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', '1', null, 'admin') 
-INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', '3', null, 'emp') 
+INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', '3', null, 'office') 
+INSERT INTO EMPLOYEE VALUES('NV03', 'Nguyen fam quoc thang', 'Male', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp') 
 GO
 
 CREATE TABLE TIMEKEEPING

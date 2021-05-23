@@ -32,6 +32,9 @@ namespace Care_Management_and_Private_Parking
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnHeader = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbxPositionID = new System.Windows.Forms.ComboBox();
@@ -41,9 +44,6 @@ namespace Care_Management_and_Private_Parking
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.pnData.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
@@ -67,6 +67,79 @@ namespace Care_Management_and_Private_Parking
             this.pnData.ShadowDecoration.Parent = this.pnData;
             this.pnData.Size = new System.Drawing.Size(913, 712);
             this.pnData.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.BorderRadius = 22;
+            this.btnAdd.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnAdd.BorderThickness = 1;
+            this.btnAdd.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnAdd.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdd.Location = new System.Drawing.Point(651, 601);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(120, 43);
+            this.btnAdd.TabIndex = 66;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseTransparentBackground = true;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnRemove.BorderRadius = 22;
+            this.btnRemove.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnRemove.BorderThickness = 1;
+            this.btnRemove.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnRemove.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnRemove.CheckedState.Parent = this.btnRemove;
+            this.btnRemove.CustomImages.Parent = this.btnRemove;
+            this.btnRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnRemove.HoverState.Parent = this.btnRemove;
+            this.btnRemove.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRemove.Location = new System.Drawing.Point(740, 500);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.ShadowDecoration.Parent = this.btnRemove;
+            this.btnRemove.Size = new System.Drawing.Size(120, 43);
+            this.btnRemove.TabIndex = 65;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseTransparentBackground = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnUpdate.BorderRadius = 22;
+            this.btnUpdate.BorderThickness = 1;
+            this.btnUpdate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnUpdate.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUpdate.Location = new System.Drawing.Point(583, 500);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(120, 43);
+            this.btnUpdate.TabIndex = 64;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseTransparentBackground = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnHeader
             // 
@@ -190,79 +263,6 @@ namespace Care_Management_and_Private_Parking
             this.dgvAccount.Size = new System.Drawing.Size(486, 549);
             this.dgvAccount.TabIndex = 47;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnUpdate.BorderRadius = 22;
-            this.btnUpdate.BorderThickness = 1;
-            this.btnUpdate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnUpdate.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(545, 500);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(120, 43);
-            this.btnUpdate.TabIndex = 64;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseTransparentBackground = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.BackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnRemove.BorderRadius = 22;
-            this.btnRemove.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnRemove.BorderThickness = 1;
-            this.btnRemove.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnRemove.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnRemove.CheckedState.Parent = this.btnRemove;
-            this.btnRemove.CustomImages.Parent = this.btnRemove;
-            this.btnRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnRemove.HoverState.Parent = this.btnRemove;
-            this.btnRemove.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRemove.Location = new System.Drawing.Point(781, 500);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.ShadowDecoration.Parent = this.btnRemove;
-            this.btnRemove.Size = new System.Drawing.Size(120, 43);
-            this.btnRemove.TabIndex = 65;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseTransparentBackground = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.BorderRadius = 22;
-            this.btnAdd.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnAdd.BorderThickness = 1;
-            this.btnAdd.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAdd.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdd.Location = new System.Drawing.Point(655, 451);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(120, 43);
-            this.btnAdd.TabIndex = 66;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseTransparentBackground = true;
             // 
             // ManageAccountForm
             // 

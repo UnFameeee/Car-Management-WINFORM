@@ -66,15 +66,15 @@ namespace Care_Management_and_Private_Parking
             tbEmail.Text = table.Rows[0]["Email"].ToString();
 
             lbName.Text = table.Rows[0]["Fullname"].ToString();
-            if (table.Rows[0]["JobID"].ToString() == "QL")
+            if (table.Rows[0]["JobID"].ToString() == "1")
             {
                 lbPosition.Text = "Position: Manager";
             }
-            else if (table.Rows[0]["JobID"].ToString() == "NV")
+            else if (table.Rows[0]["JobID"].ToString() == "2")
             {
                 lbPosition.Text = "Position: Employee";
             }
-            else if (table.Rows[0]["JobID"].ToString() == "LC")
+            else if (table.Rows[0]["JobID"].ToString() == "3")
             {
                 lbPosition.Text = "Position: Officer";
             }
