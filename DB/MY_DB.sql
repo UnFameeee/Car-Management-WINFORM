@@ -56,11 +56,11 @@ GO
 
 CREATE TABLE TIMEKEEPING
 (
-	IDEmployee NVARCHAR(100),															--ID nhân viên
+	EmpID NVARCHAR(100),																--ID nhân viên
 	CheckIn DATETIME,																	--Thời gian check in
 	CheckOut DATETIME																	--Thời gian check out
-	FOREIGN KEY (IDEmployee) REFERENCES dbo.EMPLOYEE(EmpID)
-	PRIMARY KEY (IDEmployee, CheckIn)
+	FOREIGN KEY (EmpID) REFERENCES dbo.EMPLOYEE(EmpID)
+	PRIMARY KEY (EmpID, CheckIn)
 )
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Thành Tiền

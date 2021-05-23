@@ -164,6 +164,7 @@ namespace Care_Management_and_Private_Parking
             this.btnCheckIn.TabIndex = 5;
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // lbCheckin
             // 
@@ -201,6 +202,7 @@ namespace Care_Management_and_Private_Parking
             this.btnCheckOut.TabIndex = 8;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // guna2Panel1
             // 
@@ -573,6 +575,7 @@ namespace Care_Management_and_Private_Parking
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CheckWorkForm";
             this.Text = "CheckWorkForm";
+            this.Load += new System.EventHandler(this.CheckWorkForm_Load);
             this.panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
