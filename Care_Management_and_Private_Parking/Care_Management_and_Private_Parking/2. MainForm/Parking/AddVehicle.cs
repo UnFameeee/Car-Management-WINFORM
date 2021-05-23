@@ -135,6 +135,13 @@ namespace Care_Management_and_Private_Parking
             string Invoice = cbboxTimeFormat.SelectedValue.ToString();
             int value = Convert.ToInt32(numerudValue.Value);                    //thời gian mà khách muốn gửi
 
+            string service = "";
+            if (radiobtnRepair.Checked == true)
+                service = "Repairing";
+            if (radiobtnWash.Checked == true)
+                service = "Washing";
+
+
             try
             {
                 MemoryStream VehPic = new MemoryStream();
@@ -145,7 +152,7 @@ namespace Care_Management_and_Private_Parking
                     if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
                     {
                         int idcard = ParkingLotDAL.Instance.createIDParkCard();
-                        ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, Invoice);
+                        ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, Invoice, service);
                         MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle");
                         this.DialogResult = DialogResult.OK;
                     }
