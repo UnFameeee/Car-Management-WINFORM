@@ -96,16 +96,14 @@ namespace Global
             DOW = dv.SetTheBaseDOW(Variable.NV, Variable.CL, rotateDay + (month % 2));      //Lấy mảng 2 chiều chia ca
             for(int i = 0; i < NV; ++i)
             {
-                for (int j = 0; j < 3; ++j)
+                for (int j = 0; j < CL; ++j)
                 {
-                    if (DOW[i][j] == 1)
+                    if (DOW[j][i] == 1)
                     {
                         toInsert = res.NewRow();                                            //Thêm dòng mới vào datarow
                         toInsert["EmployeeID"] = convertToEmpID(i+1);
                         toInsert["ShiftID"] = (j+1).ToString();
                         res.Rows.Add(toInsert);                                             //thêm dòng datarow vào datatable
-                        //toInsert.Delete();
-                        break;
                     }
                 }
             }

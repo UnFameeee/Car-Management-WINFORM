@@ -54,7 +54,7 @@ namespace Global
                 }
                 Arr[CL][NV] = 1;
                 CL += 1;
-                if (NV > 2)
+                if(C > 2)
                 {
                     NV += 2;
                 }
