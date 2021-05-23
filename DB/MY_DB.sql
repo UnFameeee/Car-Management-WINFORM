@@ -25,6 +25,9 @@ create table ACCOUNT(
 insert into ACCOUNT values ('admin', 'admin', '1')			--TK quản lý
 insert into ACCOUNT values ('emp', 'emp', '2')				--TK nhân viên
 insert into ACCOUNT values ('office', 'office', '3')		--TK nhân viên văn phòng
+insert into ACCOUNT values ('emp2', 'emp2', '2')				--TK nhân viên
+insert into ACCOUNT values ('emp3', 'emp3', '2')				--TK nhân viên
+insert into ACCOUNT values ('emp4', 'emp4', '2')				--TK nhân viên
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------
 -- Ca Làm
@@ -51,9 +54,12 @@ create table EMPLOYEE(
 	Appearance image,
 	AccUsername nvarchar(100) references ACCOUNT(Username)		
 )
-INSERT INTO EMPLOYEE VALUES('NV01', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', '1', null, 'admin') 
-INSERT INTO EMPLOYEE VALUES('NV02', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', '3', null, 'office') 
-INSERT INTO EMPLOYEE VALUES('NV03', 'Nguyen fam quoc thang', 'Male', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp') 
+INSERT INTO EMPLOYEE VALUES('NV1', 'Fernando Torres', 'Male', '2-2-2000', '0123456789', '079201006666', 'email@gmail.com', '1', null, 'admin') 
+INSERT INTO EMPLOYEE VALUES('NV2', 'Nguyen hai du', 'Male', '2-2-1999', '9876543210', '079201006667', 'email@gmail.com', '3', null, 'office') 
+INSERT INTO EMPLOYEE VALUES('NV3', 'Nguyen pham quoc thang', 'Male', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp') 
+INSERT INTO EMPLOYEE VALUES('NV4', 'Dang nhat tien', 'Female', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp2') 
+INSERT INTO EMPLOYEE VALUES('NV5', 'Thach duong duy', 'Female', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp3') 
+INSERT INTO EMPLOYEE VALUES('NV6', 'Nguyen minh dang', 'Male', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp4') 
 GO
 
 CREATE TABLE TIMEKEEPING

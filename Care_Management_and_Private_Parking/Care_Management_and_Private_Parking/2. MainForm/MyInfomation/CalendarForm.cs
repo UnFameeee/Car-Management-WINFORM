@@ -21,11 +21,7 @@ namespace Care_Management_and_Private_Parking
         //Load form
         public CalendarForm()
         {
-            InitializeComponent();
-            fillTaskFlowPanel();                                                        //Cấu hình cho Task
-            fillProgressBar();                                                          //Cấu hình cho thanh ProgressBar
-            fillChart();                                                                //Cấu hình cho chart
-            loadInfo();
+            InitializeComponent(); 
         }
 
         CalendarDOWForm frm = new CalendarDOWForm() { TopLevel = false, TopMost = false };
@@ -37,6 +33,11 @@ namespace Care_Management_and_Private_Parking
             frm.Location = new Point(pnCalendar.Size.Width / 2 - frm.ClientSize.Width / 2, pnCalendar.Size.Height / 2 - frm.ClientSize.Height / 2 + 10);
             this.pnCalendar.Controls.Add(frm);
             frm.Show();
+
+            fillTaskFlowPanel();                                                        //Cấu hình cho Task
+            fillProgressBar();                                                          //Cấu hình cho thanh ProgressBar
+            fillChart();                                                                //Cấu hình cho chart
+            loadInfo();
         }
         #endregion
 

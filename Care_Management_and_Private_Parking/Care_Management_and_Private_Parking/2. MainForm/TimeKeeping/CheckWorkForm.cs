@@ -175,33 +175,42 @@ namespace Care_Management_and_Private_Parking
             if (operation == "Load")
             {
                 DataTable table = TimeKeepingDAL.Instance.takeInfoForCalendar(EmpID);
-                tbInfo.Text = "ID Nhân viên: " + table.Rows[0][0].ToString()
-                            + "\r\nHọ Tên: " + table.Rows[0][1].ToString()
-                            + "\r\nGiới tính: " + table.Rows[0][2].ToString()
-                            + "\r\nĐiện thoại: " + table.Rows[0][3].ToString()
-                            + "\r\nCMND: " + table.Rows[0][4].ToString();
+                tbInfo.Text = "Employee ID: " + table.Rows[0][0].ToString()
+                            + "\r\nFull Name: " + table.Rows[0][1].ToString()
+                            + "\r\nGender: " + table.Rows[0][2].ToString()
+                            + "\r\nPhone: " + table.Rows[0][3].ToString()
+                            + "\r\nIdentity Number: " + table.Rows[0][4].ToString();
             }
             else if (operation == "Unload")
             {
-                tbInfo.Text = "ID Nhân viên: "
-                            + "\r\nHọ Tên: "
-                            + "\r\nGiới tính: "
-                            + "\r\nĐiện thoại: "
-                            + "\r\nCMND: ";
+                tbInfo.Text = "Employee ID: "
+                            + "\r\nFull Name: "
+                            + "\r\nGender: "
+                            + "\r\nPhone: "
+                            + "\r\nIdentity Number: ";
             }
         }
         #endregion
 
+
+        #region Điểm danh vào, ra
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             if (TimeKeepingDAL.Instance.CheckIDEmployee(tbID.Text))
             {
                 if (!TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
                 {
+                    //if (DateTime.Now.TimeOfDay <= )
+                    //{
+                    //    
+                    //}
+                    //else
+                    //{
+
+                    //}
                     TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
                     dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
 
-                    //Thắng
                     takePicture(tbID.Text);
                     changeLBcheckin("Checkin");
                     loadInfo(tbID.Text, "Load");
@@ -220,7 +229,6 @@ namespace Care_Management_and_Private_Parking
                 TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, DateTime.Now);
                 dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
 
-                //Thắng
                 deletePicture(tbID.Text);
                 changeLBcheckin("Checkout");
                 loadInfo(tbID.Text, "Unload");
@@ -228,5 +236,6 @@ namespace Care_Management_and_Private_Parking
             else
                 MessageBox.Show("Can't find the ID");
         }
+        #endregion
     }
 }

@@ -45,6 +45,10 @@ namespace Care_Management_and_Private_Parking
         public CalendarDOWForm()
         {
             InitializeComponent();
+            
+        }
+        private void CalendarDOWForm_Load(object sender, EventArgs e)
+        {
             LoadMatrixDay();
             //Gắn giá trị cho biến cho form khác sử dụng
             totalDayOfWork = ShiftInMonth[0] + ShiftInMonth[1] + ShiftInMonth[2];
@@ -204,7 +208,6 @@ namespace Care_Management_and_Private_Parking
                         btn.ForeColor = Color.FromArgb(128, 128, 255);
                     //Note lại ca làm vào List ShiftInMonth
                     ShiftInMonth[j] += 1;
-                    //Bonus: tạo thêm 1 bảng khi bấm vào sẽ hiện ra ca làm việc của ngày đó
                 }
             }
         }
