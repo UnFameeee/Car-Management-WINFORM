@@ -98,7 +98,7 @@ namespace DAL
 
         public string checkInTimeWork(string EmpID)
         {
-            DataTable table = Variable.tableShift;
+            DataTable table = CalendarDAL.Instance.tableShift();
             List<string> shift = new List<string>();
             //Lấy ra các ca làm của nhân viên trong ngày đó
             for (int i = 0, length = table.Rows.Count; i < length; ++i)

@@ -195,7 +195,7 @@ namespace Care_Management_and_Private_Parking
         {
             DOW = new List<List<int>>();                                                    //Mảng 2 chiều chia ca ( day of work )
             int EmpID = Convert.ToInt32(takeNumberID(UserID.GlobalUserID)) - 1;             //Mã số nhân viên tương đương với (Index of Columns - 1)
-            DOW = dv.SetTheBaseDOW(Variable.NV, Variable.CL, rotateDay + (month % 2));      //Nếu tháng lẻ // tháng chẵn
+            DOW = dv.SetTheBaseDOW(CalendarDAL.Instance.NV, CalendarDAL.Instance.CL, rotateDay + (month % 2));      //Nếu tháng lẻ // tháng chẵn
             for (int j = 0; j < 3; ++j)
             {
                 if(DOW[j][EmpID] == 1)                                                      //Nếu thoả if => ngày đó đi làm
