@@ -316,20 +316,55 @@ namespace DAL
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return TimeSpan.Parse(table.Rows[0]["CheckIn"].ToString());
+            DateTime datetime = (DateTime)table.Rows[0]["CheckIn"];
+            TimeSpan time = datetime.TimeOfDay;
+            return time;
+        }
+        //Lấy ra position của nhân viên đó
+        public int takeCoefficient(string EmpID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Coefficient FROM(SELECT EmpID, JobID FROM EMPLOYEE WHERE EmpID = '" + EmpID + "') as A, POSITION " +
+                "WHERE JobID = PositionID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return Convert.ToInt32(table.Rows[0]["Coefficient"]);
         }
 
 
-
         //TH1: Chưa có thông tin về EmpID, Month, Year đó trong SALARY
-        public bool insertEmpToSalary(string EmpID, int month, int year, TimeSpan hourwork, float salary)
+        public bool insertEmpToSalary(string EmpID, int month, int year, float hourwork, float salary)
         {
-            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, MonthWork, YearWork, NumberofHourWork, SalaryEmployee)" +
+            SqlCommand command = new SqlCommand("Insert into SALARY (EmpID, MonthWork, YearWork, NumberofHourWork, SalaryEmployee)" +
                 "values (@EmpID, @month, @year, @hourwork, @salary)", DataProvider.Instance.getConnection);
             command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
             command.Parameters.Add("@month", SqlDbType.Int).Value = month;
             command.Parameters.Add("@year", SqlDbType.Int).Value = year;
-            command.Parameters.Add("@hourwork", SqlDbType.Time).Value = hourwork;
+            command.Parameters.Add("@hourwork", SqlDbType.Float).Value = hourwork;
+            command.Parameters.Add("@salary", SqlDbType.Float).Value = salary;
+
+            DataProvider.Instance.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+        //TH2: Đã có trong SALARY
+        public bool editEmpToSalary(string EmpID, int month, int year, float hourwork, float salary)
+        {
+            SqlCommand command = new SqlCommand("UPDATE SALARY SET NumberofHourWork = NumberofHourWork + @hourwork, SalaryEmployee = SalaryEmployee + @salary " +
+                "WHERE EmpID = @EmpID and MonthWork = @month and YearWork = @year", DataProvider.Instance.getConnection);
+            command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            command.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            command.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            command.Parameters.Add("@hourwork", SqlDbType.Float).Value = hourwork;
             command.Parameters.Add("@salary", SqlDbType.Float).Value = salary;
 
             DataProvider.Instance.openConnection();
