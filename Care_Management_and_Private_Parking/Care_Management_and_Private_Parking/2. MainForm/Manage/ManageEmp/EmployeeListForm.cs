@@ -37,7 +37,7 @@ namespace Care_Management_and_Private_Parking
             dgvEmp.Columns[4].Width = 95;
             dgvEmp.Columns[5].Width = 119;
             dgvEmp.Columns[6].Width = 140;
-            dgvEmp.Columns[7].Width = 60;
+            dgvEmp.Columns[7].Width = 80;
             dgvEmp.Columns[8].Width = 100;
 
             //DataTable tab = EmployeeDAL.Instance.getAllEmp();            

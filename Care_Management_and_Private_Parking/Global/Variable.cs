@@ -11,7 +11,8 @@ namespace Global
     public class Variable
     {
         #region dbconnection
-        static SqlConnection con = new SqlConnection(@"Data Source=.\;Initial Catalog=WINFORM;Integrated Security=True");
+        //static SqlConnection con = new SqlConnection(@"Data Source=.\;Initial Catalog=WINFORM;Integrated Security=True"); //thắng đầu buồi
+        static SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-26GDDIM\SQLEXPRESS;Initial Catalog=WINFORM;Integrated Security=True"); //2 dụ
         private SqlConnection getConnection
         {
             get

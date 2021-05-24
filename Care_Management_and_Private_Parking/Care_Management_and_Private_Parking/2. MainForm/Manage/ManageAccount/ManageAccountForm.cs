@@ -86,6 +86,7 @@ namespace Care_Management_and_Private_Parking
         private void btnRemove_Click_1(object sender, EventArgs e)
         {
             string username = tbUsername.Text;
+
             if (verif())
             {
                 if (AccountDAL.Instance.removeAccount(username))
@@ -102,6 +103,65 @@ namespace Care_Management_and_Private_Parking
             {
                 MessageBox.Show("Please Fill All Information", "Delete Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnFindEmpID_Click(object sender, EventArgs e)
+        {
+            string ID = tbEmpID.Text;
+            if (ID == "")
+                MessageBox.Show("Please insert ID");
+            else
+            {
+                SqlCommand com = new SqlCommand("Select EmpID, FullName, AccUserName from EMPLOYEE where convert(varbinary, EmpID) = convert(varbinary, @EmpID)");
+                com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = ID;
+
+                DataTable tab = EmployeeDAL.Instance.getEmployee(com);
+
+                if (tab.Rows.Count == 0)
+                    MessageBox.Show("Can't Find ID: " + ID);
+                else
+                    dgvEmployeeWork.DataSource = tab;
+            }           
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+            string position = cbbxPositionID.SelectedValue.ToString();
+
+            try
+            {
+                if (verif())
+                {
+                    if (AccountDAL.Instance.insertAccount(username, password, position))
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Username has already exist!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnGrantPer_Click(object sender, EventArgs e)
+        {
+            string accusername = dgvAccount.CurrentRow.Cells[0].Value.ToString();
+            SqlCommand com = new SqlCommand("update EMPLOYEE set AccUserName = '" + accusername + "'");
+
+
+        }
+
+        private void btnRemovePer_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

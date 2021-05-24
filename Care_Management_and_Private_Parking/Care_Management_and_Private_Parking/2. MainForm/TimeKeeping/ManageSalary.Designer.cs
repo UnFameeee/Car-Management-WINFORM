@@ -32,12 +32,13 @@ namespace Care_Management_and_Private_Parking
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgv = new Guna.UI.WinForms.GunaDataGridView();
+            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSavePDF = new System.Windows.Forms.Button();
             this.btnSaveFileWORD = new System.Windows.Forms.Button();
-            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.button1 = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -70,7 +71,7 @@ namespace Care_Management_and_Private_Parking
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
@@ -95,6 +96,8 @@ namespace Care_Management_and_Private_Parking
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv.Size = new System.Drawing.Size(877, 479);
             this.dgv.TabIndex = 201;
@@ -120,6 +123,21 @@ namespace Care_Management_and_Private_Parking
             this.dgv.ThemeStyle.RowsStyle.Height = 22;
             this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // guna2GradientButton5
+            // 
+            this.guna2GradientButton5.CheckedState.Parent = this.guna2GradientButton5;
+            this.guna2GradientButton5.CustomImages.Parent = this.guna2GradientButton5;
+            this.guna2GradientButton5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
+            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton5.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.HoverState.Parent = this.guna2GradientButton5;
+            this.guna2GradientButton5.Location = new System.Drawing.Point(18, 15);
+            this.guna2GradientButton5.Name = "guna2GradientButton5";
+            this.guna2GradientButton5.ShadowDecoration.Parent = this.guna2GradientButton5;
+            this.guna2GradientButton5.Size = new System.Drawing.Size(877, 10);
+            this.guna2GradientButton5.TabIndex = 187;
             // 
             // guna2GradientButton1
             // 
@@ -164,21 +182,6 @@ namespace Care_Management_and_Private_Parking
             this.btnSaveFileWORD.TabIndex = 41;
             this.btnSaveFileWORD.Text = "Save file WORD";
             this.btnSaveFileWORD.UseVisualStyleBackColor = false;
-            // 
-            // guna2GradientButton5
-            // 
-            this.guna2GradientButton5.CheckedState.Parent = this.guna2GradientButton5;
-            this.guna2GradientButton5.CustomImages.Parent = this.guna2GradientButton5;
-            this.guna2GradientButton5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(9)))), ((int)(((byte)(121)))));
-            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton5.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.HoverState.Parent = this.guna2GradientButton5;
-            this.guna2GradientButton5.Location = new System.Drawing.Point(18, 15);
-            this.guna2GradientButton5.Name = "guna2GradientButton5";
-            this.guna2GradientButton5.ShadowDecoration.Parent = this.guna2GradientButton5;
-            this.guna2GradientButton5.Size = new System.Drawing.Size(877, 10);
-            this.guna2GradientButton5.TabIndex = 187;
             // 
             // button1
             // 
