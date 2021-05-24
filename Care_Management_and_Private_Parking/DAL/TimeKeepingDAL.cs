@@ -12,7 +12,7 @@ namespace DAL
 {
     public class TimeKeepingDAL
     {
-        //Cấu trúc singleton
+        #region Cấu trúc singleton
         private static TimeKeepingDAL instance;
         public static TimeKeepingDAL Instance
         {
@@ -26,6 +26,7 @@ namespace DAL
             }
             private set { TimeKeepingDAL.instance = value; }
         }
+        #endregion
 
         //TimeKeeping
         public DataTable ShowTimeKeeping()
@@ -284,6 +285,64 @@ namespace DAL
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+        #endregion
+
+        #region Thêm giờ làm vào SALARY
+        //Hàm check ktra xem nhân viên đã tồn tại vào tháng và năm đó trong SALARY chưa
+        public bool checkSalaryExist(string EmpID, int month, int year)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SALARY WHERE EmpID = @EmpID and MonthWork = @month and YearWork = @year", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            cmd.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            cmd.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Lấy ra thời gian bắt đầu làm việc của nhân viên đó
+        public TimeSpan takeTimeStart(string EmpID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TIMEKEEPING WHERE EmpID = @EmpID and CheckOut is null", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return TimeSpan.Parse(table.Rows[0]["CheckIn"].ToString());
+        }
+
+
+
+        //TH1: Chưa có thông tin về EmpID, Month, Year đó trong SALARY
+        public bool insertEmpToSalary(string EmpID, int month, int year, TimeSpan hourwork, float salary)
+        {
+            SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, MonthWork, YearWork, NumberofHourWork, SalaryEmployee)" +
+                "values (@EmpID, @month, @year, @hourwork, @salary)", DataProvider.Instance.getConnection);
+            command.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            command.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            command.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            command.Parameters.Add("@hourwork", SqlDbType.Time).Value = hourwork;
+            command.Parameters.Add("@salary", SqlDbType.Float).Value = salary;
+
+            DataProvider.Instance.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
         }
         #endregion
     }

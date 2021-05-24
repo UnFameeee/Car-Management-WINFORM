@@ -50,6 +50,7 @@
     <Compile Include="EmployeeDAL.cs" />
     <Compile Include="ForRentDAL.cs" />
     <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="ManageSalaryDAL.cs" />
     <Compile Include="MyInfoDAL.cs" />
     <Compile Include="ParkingLotDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -206,7 +206,6 @@ namespace Care_Management_and_Private_Parking
 
                         TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
                         dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
-
                         takePicture(tbID.Text);
                         changeLBcheckin("Checkin");
                         loadInfo(tbID.Text, "Load");
@@ -233,12 +232,36 @@ namespace Care_Management_and_Private_Parking
             {
                 MessageBox.Show("Checkout successfully!!!");
 
-                TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, DateTime.Now);
+                DateTime now = DateTime.Now;
+
+                TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, now);
                 dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
 
                 deletePicture(tbID.Text);
                 changeLBcheckin("Checkout");
                 loadInfo(tbID.Text, "Unload");
+
+                #region Tính lương
+                
+
+                //Phần thời gian làm việc của ca đó
+                TimeSpan hourwork = (TimeSpan)DateTime.Now.TimeOfDay - TimeKeepingDAL.Instance.takeTimeStart(tbID.Text);
+                if (hourwork < TimeSpan.Parse("00:00:00"))  //nếu trừ ra tgian bị âm
+                    hourwork += TimeSpan.Parse("23:59:59");
+                //Phần tính lương (lương của đúng ca làm việc đó)
+
+
+
+                ////Tính lương
+                //if (!TimeKeepingDAL.Instance.checkSalaryExist(tbID.Text, DateTime.Now.Month, DateTime.Now.Year))     //Nếu chưa có trong SALARY
+                //{
+                //    if (TimeKeepingDAL.Instance.insertEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, hourwork, ))
+                //}
+                //else
+                //{
+
+                //}
+                #endregion
             }
             else
                 MessageBox.Show("Can't find the ID");

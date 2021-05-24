@@ -30,6 +30,7 @@ namespace Care_Management_and_Private_Parking
         private void InitializeComponent()
         {
             this.pnGet = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@ namespace Care_Management_and_Private_Parking
             this.tbCusID = new System.Windows.Forms.TextBox();
             this.btnGetVeh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.pnGet.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,30 @@ namespace Care_Management_and_Private_Parking
             this.pnGet.ShadowDecoration.Parent = this.pnGet;
             this.pnGet.Size = new System.Drawing.Size(377, 238);
             this.pnGet.TabIndex = 6;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCancel.BorderRadius = 17;
+            this.btnCancel.BorderThickness = 1;
+            this.btnCancel.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnCancel.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnCancel.CheckedState.Parent = this.btnCancel;
+            this.btnCancel.CustomImages.Parent = this.btnCancel;
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCancel.HoverState.Parent = this.btnCancel;
+            this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCancel.Location = new System.Drawing.Point(60, 186);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
+            this.btnCancel.Size = new System.Drawing.Size(106, 33);
+            this.btnCancel.TabIndex = 75;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseTransparentBackground = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // guna2Panel1
             // 
@@ -99,7 +123,6 @@ namespace Care_Management_and_Private_Parking
             // tbIDcard
             // 
             this.tbIDcard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.tbIDcard.Enabled = false;
             this.tbIDcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDcard.ForeColor = System.Drawing.Color.White;
             this.tbIDcard.Location = new System.Drawing.Point(134, 25);
@@ -111,7 +134,6 @@ namespace Care_Management_and_Private_Parking
             // tbCusID
             // 
             this.tbCusID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.tbCusID.Enabled = false;
             this.tbCusID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCusID.ForeColor = System.Drawing.Color.White;
             this.tbCusID.Location = new System.Drawing.Point(134, 56);
@@ -160,30 +182,6 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.TabIndex = 41;
             this.guna2GradientButton2.Text = "GET VEHICLE";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.btnCancel.BorderRadius = 17;
-            this.btnCancel.BorderThickness = 1;
-            this.btnCancel.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnCancel.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnCancel.CheckedState.Parent = this.btnCancel;
-            this.btnCancel.CustomImages.Parent = this.btnCancel;
-            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCancel.Location = new System.Drawing.Point(60, 186);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
-            this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 75;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseTransparentBackground = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // GetVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +191,7 @@ namespace Care_Management_and_Private_Parking
             this.Controls.Add(this.pnGet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GetVehicle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetVehicle";
             this.pnGet.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);

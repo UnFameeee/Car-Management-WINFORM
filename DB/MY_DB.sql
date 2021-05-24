@@ -76,10 +76,8 @@ CREATE TABLE SALARY
 (
 	EmpID NVARCHAR(100),															--ID nhân viên
 	MonthWork INT,																		--Tháng của lương
-	YearWork INT,																		--Năm của lương
-	Reward REAL DEFAULT 0,																--Thưởng	
-	Fine REAL DEFAULT 0,																--Phạt
-	NumberofHourWork INT DEFAULT 0,													--Số ca làm
+	YearWork INT,																		--Năm của lương																--Thưởng																	--Phạt
+	NumberofHourWork TIME,													--Số ca làm
 	SalaryEmployee REAL DEFAULT 0,														--Lương nhân viên
 	FOREIGN KEY (EmpID) REFERENCES dbo.EMPLOYEE(EmpID),
 	PRIMARY KEY (EmpID, MonthWork, YearWork)
