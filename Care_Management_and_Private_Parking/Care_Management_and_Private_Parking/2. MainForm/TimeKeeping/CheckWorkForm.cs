@@ -230,38 +230,34 @@ namespace Care_Management_and_Private_Parking
         {
             if (TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
             {
-                MessageBox.Show("Checkout successfully!!!");
+                #region Tính lương
+                //Phần thời gian làm việc của ca đó
+                TimeSpan hourwork = (TimeSpan)DateTime.Now.TimeOfDay - TimeKeepingDAL.Instance.takeTimeStart(tbID.Text);
+                if (hourwork < TimeSpan.Parse("00:00:00"))              //nếu trừ ra tgian bị âm
+                    hourwork += TimeSpan.Parse("23:59:59");
+                float worktime = (float)hourwork.TotalHours;            //Đổi ra thành float
+                //Phần tính lương (lương của đúng ca làm việc đó)
+                float salary = (float)(hourwork.TotalHours * TimeKeepingDAL.Instance.takeCoefficient(tbID.Text));
+                //Tính lương
+                if (!TimeKeepingDAL.Instance.checkSalaryExist(tbID.Text, DateTime.Now.Month, DateTime.Now.Year))                        //Nếu chưa có trong SALARY
+                {
+                    TimeKeepingDAL.Instance.insertEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, worktime, salary);      //Insert thẳng vào SALARY
+                }
+                else                                                                                                                    //Nếu đã có trong SALARY
+                {
+                    TimeKeepingDAL.Instance.editEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, worktime, salary);
+                }
+                #endregion
 
                 DateTime now = DateTime.Now;
 
                 TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, now);
                 dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
+                MessageBox.Show("Checkout successfully!!!");
 
                 deletePicture(tbID.Text);
                 changeLBcheckin("Checkout");
                 loadInfo(tbID.Text, "Unload");
-
-                #region Tính lương
-                
-
-                //Phần thời gian làm việc của ca đó
-                TimeSpan hourwork = (TimeSpan)DateTime.Now.TimeOfDay - TimeKeepingDAL.Instance.takeTimeStart(tbID.Text);
-                if (hourwork < TimeSpan.Parse("00:00:00"))  //nếu trừ ra tgian bị âm
-                    hourwork += TimeSpan.Parse("23:59:59");
-                //Phần tính lương (lương của đúng ca làm việc đó)
-
-
-
-                ////Tính lương
-                //if (!TimeKeepingDAL.Instance.checkSalaryExist(tbID.Text, DateTime.Now.Month, DateTime.Now.Year))     //Nếu chưa có trong SALARY
-                //{
-                //    if (TimeKeepingDAL.Instance.insertEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, hourwork, ))
-                //}
-                //else
-                //{
-
-                //}
-                #endregion
             }
             else
                 MessageBox.Show("Can't find the ID");

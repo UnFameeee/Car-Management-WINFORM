@@ -6,12 +6,13 @@ go
 
 create table POSITION(
 	PositionID nvarchar(100) primary key,									-- 1 là quản lý, 2 là nhân viên, 3 là nhân viên văn phòng
-	Description text
+	Description text,
+	Coefficient int
 )
 
-INSERT INTO POSITION VALUES ('1', 'Manager') 
-INSERT INTO POSITION VALUES ('2', 'Employee') 
-INSERT INTO POSITION VALUES ('3', 'Officer') 
+INSERT INTO POSITION VALUES ('1', 'Manager', 25000) 
+INSERT INTO POSITION VALUES ('2', 'Employee', 15000) 
+INSERT INTO POSITION VALUES ('3', 'Officer', 20000) 
 GO
 
 
@@ -74,17 +75,15 @@ CREATE TABLE TIMEKEEPING
 --Tạo bảng lương nhân viên
 CREATE TABLE SALARY
 (
-	EmpID NVARCHAR(100),															--ID nhân viên
+	EmpID NVARCHAR(100),																--ID nhân viên
 	MonthWork INT,																		--Tháng của lương
 	YearWork INT,																		--Năm của lương																--Thưởng																	--Phạt
-	NumberofHourWork TIME,													--Số ca làm
+	NumberofHourWork REAL,																--Số tiếng đã làm
 	SalaryEmployee REAL DEFAULT 0,														--Lương nhân viên
 	FOREIGN KEY (EmpID) REFERENCES dbo.EMPLOYEE(EmpID),
 	PRIMARY KEY (EmpID, MonthWork, YearWork)
 )
 GO
-
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Thành Tiền
 create table INVOICE(
