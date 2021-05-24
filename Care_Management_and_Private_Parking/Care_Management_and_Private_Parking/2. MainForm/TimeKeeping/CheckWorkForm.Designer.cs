@@ -29,9 +29,10 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -42,6 +43,7 @@ namespace Care_Management_and_Private_Parking
             this.lblD = new System.Windows.Forms.Label();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgv = new Guna.UI.WinForms.GunaDataGridView();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.lb12 = new System.Windows.Forms.Label();
@@ -69,11 +71,11 @@ namespace Care_Management_and_Private_Parking
             this.pic2 = new System.Windows.Forms.PictureBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.dgv = new Guna.UI.WinForms.GunaDataGridView();
             this.panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic11)).BeginInit();
@@ -87,7 +89,6 @@ namespace Care_Management_and_Private_Parking
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -218,6 +219,72 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(452, 468);
             this.guna2Panel1.TabIndex = 33;
+            // 
+            // dgv
+            // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AllowUserToResizeColumns = false;
+            this.dgv.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv.ColumnHeadersHeight = 25;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv.EnableHeadersVisualStyles = false;
+            this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgv.Location = new System.Drawing.Point(18, 39);
+            this.dgv.MultiSelect = false;
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv.Size = new System.Drawing.Size(416, 417);
+            this.dgv.TabIndex = 201;
+            this.dgv.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Dark;
+            this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.dgv.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgv.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgv.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.dgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv.ThemeStyle.HeaderStyle.Height = 25;
+            this.dgv.ThemeStyle.ReadOnly = true;
+            this.dgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.dgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgv.ThemeStyle.RowsStyle.Height = 22;
+            this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
             // guna2GradientButton1
             // 
@@ -540,70 +607,6 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.TabIndex = 39;
             this.guna2GradientButton2.Text = "List of Employee are working now";
             // 
-            // dgv
-            // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.AllowUserToResizeColumns = false;
-            this.dgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgv.ColumnHeadersHeight = 25;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgv.EnableHeadersVisualStyles = false;
-            this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgv.Location = new System.Drawing.Point(18, 39);
-            this.dgv.MultiSelect = false;
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.RowHeadersVisible = false;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv.Size = new System.Drawing.Size(416, 417);
-            this.dgv.TabIndex = 201;
-            this.dgv.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Dark;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
-            this.dgv.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.dgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv.ThemeStyle.HeaderStyle.Height = 25;
-            this.dgv.ThemeStyle.ReadOnly = true;
-            this.dgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgv.ThemeStyle.RowsStyle.Height = 22;
-            this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
             // CheckWorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,6 +624,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic11)).EndInit();
@@ -634,7 +638,6 @@ namespace Care_Management_and_Private_Parking
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
