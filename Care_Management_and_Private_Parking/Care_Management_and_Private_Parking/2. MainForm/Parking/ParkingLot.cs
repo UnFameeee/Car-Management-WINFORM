@@ -139,10 +139,6 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        #region Tải màu cho các ô có giá trị
-
-        #endregion
-
         #region Event handler (to cast multi event -> single event)
         private void BTNbicycle_EnabledChanged(object sender, EventArgs e)
         {
@@ -338,6 +334,10 @@ namespace Care_Management_and_Private_Parking
                 //frm.VehID = (type + id);
                 //frm.CusID = customer;
                 frm.ShowDialog();
+                if (frm.DialogResult == DialogResult.OK)
+                {
+                    changAddColor("delete");
+                }
             }
             else
             {

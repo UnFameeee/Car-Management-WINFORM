@@ -86,6 +86,7 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnCalendar.BorderRadius = 22;
             this.pnCalendar.BorderThickness = 1;
+            this.pnCalendar.Controls.Add(this.pnlCus);
             this.pnCalendar.Controls.Add(this.btnEditCus);
             this.pnCalendar.Controls.Add(this.pnlVeh);
             this.pnCalendar.Controls.Add(this.btnEditVeh);
@@ -125,7 +126,6 @@ namespace Care_Management_and_Private_Parking
             // pnlVeh
             // 
             this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnlVeh.Controls.Add(this.pnlCus);
             this.pnlVeh.Controls.Add(this.label16);
             this.pnlVeh.Controls.Add(this.panel3);
             this.pnlVeh.Controls.Add(this.panel1);
@@ -141,9 +141,9 @@ namespace Care_Management_and_Private_Parking
             this.pnlCus.Controls.Add(this.label15);
             this.pnlCus.Controls.Add(this.panel2);
             this.pnlCus.Controls.Add(this.CustomerPic);
-            this.pnlCus.Location = new System.Drawing.Point(0, 0);
+            this.pnlCus.Location = new System.Drawing.Point(20, 44);
             this.pnlCus.Name = "pnlCus";
-            this.pnlCus.Size = new System.Drawing.Size(463, 326);
+            this.pnlCus.Size = new System.Drawing.Size(463, 323);
             this.pnlCus.TabIndex = 72;
             // 
             // label15
@@ -272,7 +272,6 @@ namespace Care_Management_and_Private_Parking
             this.tbCustomerID.Name = "tbCustomerID";
             this.tbCustomerID.Size = new System.Drawing.Size(162, 23);
             this.tbCustomerID.TabIndex = 27;
-            this.tbCustomerID.Text = "\r\n";
             // 
             // tbName
             // 
@@ -530,7 +529,6 @@ namespace Care_Management_and_Private_Parking
             this.tbVehicleID.Name = "tbVehicleID";
             this.tbVehicleID.Size = new System.Drawing.Size(162, 23);
             this.tbVehicleID.TabIndex = 27;
-            this.tbVehicleID.Text = "\r\n";
             // 
             // tbType
             // 

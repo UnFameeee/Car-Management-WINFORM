@@ -98,10 +98,11 @@ namespace Care_Management_and_Private_Parking
         private void btnRemove_Click_1(object sender, EventArgs e)
         {
             string username = tbUsername.Text;
-
+            string password = tbPassword.Text;
+            string position = cbbxPositionID.SelectedValue.ToString();
             if (verif())
             {
-                if (AccountDAL.Instance.removeAccount(username))
+                if (AccountDAL.Instance.removeAccount(username, password, position))
                 {
                     MessageBox.Show("Account " + username + " Has Been Deleted", "Delete Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reloadAcc();

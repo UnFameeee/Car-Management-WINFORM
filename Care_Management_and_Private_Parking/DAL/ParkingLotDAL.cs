@@ -120,7 +120,7 @@ namespace DAL
         //Xóa xe
         public bool deleteVehicle(string ID)
         {
-            SqlCommand cmd = new SqlCommand("DELETE * FROM VEHICLE WHERE VehID = @VehID", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("DELETE FROM VEHICLE WHERE VehID = @VehID", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -252,11 +252,11 @@ namespace DAL
             }
         }
 
-        public bool deleteCarAndCusfromParklot(string ID)
+        public bool deleteCarAndCusfromParklot(int ID)
         { 
             SqlCommand cmd = new SqlCommand("DELETE FROM PARKING WHERE IDParkcard = @IDParkcard", DataProvider.Instance.getConnection);
-            cmd.Parameters.Add("@IDParkcard", SqlDbType.NVarChar).Value = ID;
-
+            cmd.Parameters.Add("@IDParkcard", SqlDbType.Int).Value = ID;
+            DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
                 DataProvider.Instance.closeConnection();
