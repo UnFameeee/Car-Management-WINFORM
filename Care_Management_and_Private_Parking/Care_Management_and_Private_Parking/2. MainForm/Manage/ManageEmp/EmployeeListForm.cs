@@ -60,30 +60,48 @@ namespace Care_Management_and_Private_Parking
         private void btnSearchByName_Click(object sender, EventArgs e)
         {
             if (tbSearch.Text == "")
+            {
                 MessageBox.Show("Please Insert Name");
+                reload();
+            }
             else
             {
                 DataTable tab = EmployeeDAL.Instance.searchByName(tbSearch.Text);
 
                 if (tab.Rows.Count == 0)
+                {
                     MessageBox.Show("Can't Find Name Like: " + tbSearch.Text);
+                    reload();
+                }
                 else
+                {
                     dgvEmp.DataSource = tab;
+                    tbSearch.Text = "";
+                }
             }            
         }
 
         private void btnSearchByID_Click(object sender, EventArgs e)
         {
             if (tbSearch.Text == "")
+            {
                 MessageBox.Show("Please Insert ID");
+                reload();
+            }
             else
             {
                 DataTable tab = EmployeeDAL.Instance.getEmpByID(tbSearch.Text);
 
                 if (tab.Rows.Count == 0)
-                   MessageBox.Show("Can't Find ID: " + tbSearch.Text);
+                {
+                    MessageBox.Show("Can't Find ID: " + tbSearch.Text);
+                    reload();
+                }
                 else
-                    dgvEmp.DataSource = tab;              
+                {
+                    dgvEmp.DataSource = tab;
+                    tbSearch.Text = "";
+                }
             }
         }
 

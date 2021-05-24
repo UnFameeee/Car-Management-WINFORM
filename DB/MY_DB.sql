@@ -138,17 +138,10 @@ GO
 create table CONTRACT(
 	ContID nvarchar(100) primary key,
 	Purpose nvarchar(100),											--Mục đích (thuê, ....)
+	EmpID nvarchar(100) references EMPLOYEE(EmpID),	
+	CusID nvarchar(100) references CUSTOMER(CusID),
+	VehID nvarchar(100) references VEHICLE(VehID),
 	Description text
 )
 GO
 
--- Thuê, Cho thuê 
-create table PURPOSE(
-	EmpID nvarchar(100) references EMPLOYEE(EmpID),	
-	CusID nvarchar(100) references CUSTOMER(CusID),
-	VehID nvarchar(100) references VEHICLE(VehID),
-	ContID nvarchar(100) references CONTRACT(ContID),
-	Purpose nvarchar(100),											--Mục đích (thuê, ....)
-	PRIMARY KEY(EmpID, CusID, VehID, ContID)
-)
-GO
