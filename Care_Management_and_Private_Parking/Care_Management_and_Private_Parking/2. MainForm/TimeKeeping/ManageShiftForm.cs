@@ -28,7 +28,8 @@ namespace Care_Management_and_Private_Parking
         private void fillAllDGV()
         {
             //DGV1
-            dgvTodayShift.DataSource = Global.Variable.tableShift;
+            DataTable table = CalendarDAL.Instance.tableShift();
+            dgvTodayShift.DataSource = table;
             dgvTodayShift.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTodayShift.AllowUserToAddRows = false;
             dgvTodayShift.AllowUserToResizeRows = false;
