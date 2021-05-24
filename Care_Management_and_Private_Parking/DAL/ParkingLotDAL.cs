@@ -64,6 +64,7 @@ namespace DAL
         //câu lệnh theo yêu cầu
         public DataTable getDataWithPurpose(SqlCommand cmd)
         {
+            cmd.Connection = DataProvider.Instance.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);

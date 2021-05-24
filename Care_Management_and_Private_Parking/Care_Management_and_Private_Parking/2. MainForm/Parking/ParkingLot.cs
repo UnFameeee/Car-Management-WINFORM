@@ -332,8 +332,17 @@ namespace Care_Management_and_Private_Parking
 
         private void btnDeleteVehicle_Click(object sender, EventArgs e)
         {
-            
-
+            if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
+            {
+                GetVehicle frm = new GetVehicle();
+                //frm.VehID = (type + id);
+                //frm.CusID = customer;
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+            }
 
         }
 
