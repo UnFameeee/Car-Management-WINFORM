@@ -42,9 +42,9 @@ namespace DAL
         public int MoneyHaveToPay(DateTime date1, DateTime date2, int index, string timeformat, string type, string service) //date2 bắt buộc phải là ngày sau date1
         {
             int x;                                                  //tiền gửi của mỗi loại xe (đơn vị là VNĐ)
-            if (type == "Bicycle")
+            if (type == "bicycle")
                 x = 2;
-            else if (type == "Bike")
+            else if (type == "bike")
                 x = 5;
             else x = 20;
 
@@ -52,18 +52,18 @@ namespace DAL
             int sv = 0;                                             //tiền rửa hoặc sửa (nếu có)
             if (service == "Washing")
             {
-                if (type == "Bicycle")
+                if (type == "bicycle")
                     sv = 20;
-                else if (type == "Bike")
+                else if (type == "bike")
                     sv = 50;
                 else sv = 200;
             }
 
             if (service == "Repairing")
             {
-                if (type == "Bicycle")
+                if (type == "bicycle")
                     sv = 50;
-                else if (type == "Bike")
+                else if (type == "bike")
                     sv = 200;
                 else sv = 800;
             }

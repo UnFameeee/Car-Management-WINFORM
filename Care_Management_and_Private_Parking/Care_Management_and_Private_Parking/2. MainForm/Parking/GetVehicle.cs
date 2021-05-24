@@ -27,41 +27,50 @@ namespace Care_Management_and_Private_Parking
             SqlCommand com = new SqlCommand("Select * from PARKING where IDParkcard = '" + IDcard + "'");
             DataTable tab = ParkingLotDAL.Instance.getDataWithPurpose(com);
 
-            string VehID = tab.Rows[0][2].ToString();
+            string VehID = "";
 
-            SqlCommand cmd = new SqlCommand("Select * from VEHICLE where VehID = '" + VehID + "'");
-            DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
-
-            string VehType = table.Rows[0][1].ToString();
-
-            DateTime register = Convert.ToDateTime(tab.Rows[0][3]);
-            int value = Convert.ToInt32(tab.Rows[0][4]);
-            string invoice = tab.Rows[0][5].ToString();
-            string service = tab.Rows[0][6].ToString();
-
-            
-
-            if (CusID == tab.Rows[0][1].ToString())
+            if (tab.Rows.Count > 0)
             {
-                if (ParkingLotDAL.Instance.deleteCarAndCusfromParklot(IDcard))
+                VehID = tab.Rows[0][2].ToString();
+                SqlCommand cmd = new SqlCommand("Select * from VEHICLE where VehID = '" + VehID + "'");
+                DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
+
+                string VehType = table.Rows[0][1].ToString();
+
+                DateTime register = Convert.ToDateTime(tab.Rows[0][3]);
+                int value = Convert.ToInt32(tab.Rows[0][4]);
+                string invoice = tab.Rows[0][5].ToString();
+                string service = tab.Rows[0][6].ToString();
+
+
+
+                if (CusID == tab.Rows[0][1].ToString())
                 {
-                    if (ParkingLotDAL.Instance.deleteVehicle(VehID))
+                    if (ParkingLotDAL.Instance.deleteCarAndCusfromParklot(IDcard))
                     {
-                        if (ParkingLotDAL.Instance.deleteCustomer(CusID))
+                        if (ParkingLotDAL.Instance.deleteVehicle(VehID))
                         {
-                            int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, invoice, VehType, service);
-                            MessageBox.Show("You have to pay " + money.ToString());
+                            if (ParkingLotDAL.Instance.deleteCustomer(CusID))
+                            {
+                                int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, invoice, VehType, service);
+                                MessageBox.Show("You have to pay " + money.ToString());
+                                this.DialogResult = DialogResult.OK;
+                            }
                         }
-                    }                  
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("IDcard and CusID do not match!!!");
                 }
             }
             else
             {
-                MessageBox.Show("IDcard and CusID do not match!!!");
+                MessageBox.Show("Can't find Vehicle with IDcard!!!");
             }
         }
 

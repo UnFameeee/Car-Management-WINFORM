@@ -157,7 +157,7 @@ namespace DAL
 
         public bool updateAccount(string username, string password, string position)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE ACCOUNT SET Username = @User, Password = @Pass, PositionID =  @PId)", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("UPDATE ACCOUNT SET Password = @Pass, PositionID = @PId WHERE Username = @User", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
@@ -175,13 +175,14 @@ namespace DAL
             }
         }
 
-        public bool removeAccount(string username)
+        public bool removeAccount(string username, string password, string position)
         {
-            SqlCommand com = new SqlCommand("DELETE from ACCOUNT where Username = @User", DataProvider.Instance.getConnection);
-            com.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
-
+            SqlCommand cmd = new SqlCommand("DELETE from ACCOUNT where Username = @User and PositionID = @PId and Password = @Pass", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
             DataProvider.Instance.openConnection();
-            if (com.ExecuteNonQuery() == 1)
+            if (cmd.ExecuteNonQuery() == 1)
             {
                 DataProvider.Instance.closeConnection();
                 return true;

@@ -274,7 +274,6 @@ namespace Care_Management_and_Private_Parking
             this.tbCustomerID.Name = "tbCustomerID";
             this.tbCustomerID.Size = new System.Drawing.Size(162, 23);
             this.tbCustomerID.TabIndex = 27;
-            this.tbCustomerID.Text = "\r\n";
             // 
             // tbName
             // 
@@ -534,7 +533,6 @@ namespace Care_Management_and_Private_Parking
             this.tbVehicleID.Name = "tbVehicleID";
             this.tbVehicleID.Size = new System.Drawing.Size(162, 23);
             this.tbVehicleID.TabIndex = 27;
-            this.tbVehicleID.Text = "\r\n";
             // 
             // tbType
             // 
