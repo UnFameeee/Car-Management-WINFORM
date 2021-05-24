@@ -16,5 +16,18 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
         }
+
+        string info;
+
+        private void tbContractInfo_Click(object sender, EventArgs e)
+        {
+            info = tbContractInfo.Text;
+            tbContractInfo.Text = null;
+        }
+
+        private void tbContractInfo_Leave(object sender, EventArgs e)
+        {
+            tbContractInfo.Text = info;
+        }
     }
 }

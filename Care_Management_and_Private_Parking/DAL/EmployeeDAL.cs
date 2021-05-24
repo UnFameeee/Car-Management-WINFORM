@@ -166,5 +166,15 @@ namespace DAL
         {
             return totalEmp() - maleEmp();
         }
+
+        public bool checkAcc(string accusername)
+        {
+            SqlCommand com = new SqlCommand("Select * from EMPLOYEE where AccUserName = '" + accusername + "'");
+            DataTable tab = getEmployee(com);
+
+            if (tab.Rows.Count > 0)
+                return false;
+            else return true;
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Care_Management_and_Private_Parking
 
         private void btnGetVeh_Click(object sender, EventArgs e)
         {
-            string IDcard = tbIDcard.Text;
+            int IDcard = Convert.ToInt32(tbIDcard.Text);
             string CusID = tbCusID.Text;
 
             SqlCommand com = new SqlCommand("Select * from PARKING where IDParkcard = '" + IDcard + "'");
