@@ -10,11 +10,6 @@ namespace Global
 {
     public class Variable
     {
-        #region dbconection
-        public static SqlConnection con;
-
-        #endregion
-
         #region Calendar Form
         public static int DayOfWeeks = 7;               //Ngày trong tuần
         public static int DayOfColumn = 6;              //6 hàng
@@ -50,8 +45,7 @@ namespace Global
         #endregion
 
         #region TimeKeeping
-        public static int picSlot = 12;
-        
+        public static int picSlot = 12;     
         #endregion
     }
 }
