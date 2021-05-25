@@ -64,21 +64,15 @@ namespace Care_Management_and_Private_Parking
             reloadEmp();
         }
 
-        private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbUsername.Text = dgvAccount.CurrentRow.Cells[0].Value.ToString();
-            tbPassword.Text = dgvAccount.CurrentRow.Cells[1].Value.ToString();
-            cbbxPositionID.SelectedValue = dgvAccount.CurrentRow.Cells[2].Value.ToString();
-        }
-
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             string username = tbUsername.Text;
             string pass = tbPassword.Text;
-            string position = cbbxPositionID.SelectedValue.ToString();
 
             if (verif())
             {
+                string position = cbbxPositionID.SelectedValue.ToString();
+
                 if (AccountDAL.Instance.updateAccount(username, pass, position))
                 {
                     MessageBox.Show("Update Account " + username + " Successfully", "Update Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -99,9 +93,11 @@ namespace Care_Management_and_Private_Parking
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
-            string position = cbbxPositionID.SelectedValue.ToString();
+
             if (verif())
             {
+                string position = cbbxPositionID.SelectedValue.ToString();
+
                 if (AccountDAL.Instance.removeAccount(username, password, position))
                 {
                     MessageBox.Show("Account " + username + " Has Been Deleted", "Delete Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,12 +146,13 @@ namespace Care_Management_and_Private_Parking
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
-            string position = cbbxPositionID.SelectedValue.ToString();
 
             try
             {
                 if (verif())
                 {
+                    string position = cbbxPositionID.SelectedValue.ToString();
+
                     if (AccountDAL.Instance.insertAccount(username, password, position))
                     {
                         DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -199,7 +196,7 @@ namespace Care_Management_and_Private_Parking
             }
             else
             {
-                MessageBox.Show("Account " + accusername + " Has Been Granted");
+                MessageBox.Show("Account " + accusername + " Has Been Granted!!!", "Granted Permission", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -223,6 +220,13 @@ namespace Care_Management_and_Private_Parking
                 DataProvider.Instance.closeConnection();
                 MessageBox.Show("Error");
             }
+        }
+
+        private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbUsername.Text = dgvAccount.CurrentRow.Cells[0].Value.ToString();
+            tbPassword.Text = dgvAccount.CurrentRow.Cells[1].Value.ToString();
+            cbbxPositionID.SelectedValue = dgvAccount.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }

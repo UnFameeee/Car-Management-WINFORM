@@ -132,7 +132,6 @@ namespace Care_Management_and_Private_Parking
             string License = tbLicense.Text;
          
             string CusID = tbCustomerID.Text;
-            string Invoice = cbboxTimeFormat.SelectedValue.ToString();
             int value = Convert.ToInt32(numerudValue.Value);                    //thời gian mà khách muốn gửi
 
             string service = "";
@@ -149,6 +148,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
+                    string Invoice = cbboxTimeFormat.SelectedValue.ToString();
                     if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
                     {
                         int idcard = ParkingLotDAL.Instance.createIDParkCard();

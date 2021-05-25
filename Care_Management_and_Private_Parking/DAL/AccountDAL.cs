@@ -181,6 +181,7 @@ namespace DAL
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
             cmd.Parameters.Add("@PId", SqlDbType.VarChar).Value = position;
+
             DataProvider.Instance.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
