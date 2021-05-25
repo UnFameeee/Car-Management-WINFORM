@@ -135,7 +135,7 @@
   <data name="tbForRentJob.PlaceholderText" xml:space="preserve">
     <value>..............................................................................................................................................................................................................................................</value>
   </data>
-  <data name="tbForRentVeh.PlaceholderText" xml:space="preserve">
+  <data name="tbForRentVehLicense.PlaceholderText" xml:space="preserve">
     <value>..............................................................................................................................................................................................................................................</value>
   </data>
   <data name="tbForRentAddress.PlaceholderText" xml:space="preserve">

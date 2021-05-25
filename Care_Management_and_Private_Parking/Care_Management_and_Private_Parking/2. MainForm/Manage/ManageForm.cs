@@ -15,6 +15,7 @@ namespace Care_Management_and_Private_Parking
         EmployeeListForm frmEmpList = new EmployeeListForm() { TopLevel = false, TopMost = true };
         ManageAccountForm frmAccount = new ManageAccountForm() { TopLevel = false, TopMost = true };
         ContractForm frmContract = new ContractForm() { TopLevel = false, TopMost = true };
+        ManageContractForm frmContractlist = new ManageContractForm() { TopLevel = false, TopMost = true };
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
         public ManageForm()
@@ -28,6 +29,7 @@ namespace Care_Management_and_Private_Parking
             pnData.Controls.Add(frmEmpList);
             pnData.Controls.Add(frmAccount);
             pnData.Controls.Add(frmContract);
+            pnData.Controls.Add(frmContractlist);
             tick();
         }
 
@@ -37,14 +39,17 @@ namespace Care_Management_and_Private_Parking
             btnStaffList.Checked = false;
             btnAccountList.Checked = false;
             btnContract.Checked = false;
+            btnContractList.Checked = false;
             //Chỉnh Cursor
             btnStaffList.Cursor = cur1;
             btnAccountList.Cursor = cur1;
             btnContract.Cursor = cur1;
+            btnContractList.Cursor = cur1;
             //Tắt tất cả các form
             frmEmpList.Hide();
             frmAccount.Hide();
             frmContract.Hide();
+            frmContractlist.Hide();
         }  
 
         private void btnStaffList_Click(object sender, EventArgs e)
@@ -69,6 +74,14 @@ namespace Care_Management_and_Private_Parking
             btnContract.Checked = true;
             btnContract.Cursor = cur2;
             frmContract.Show();
+        }
+
+        private void btnContractList_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnContractList.Checked = true;
+            btnContractList.Cursor = cur2;
+            frmContractlist.Show();
         }
     }
 }

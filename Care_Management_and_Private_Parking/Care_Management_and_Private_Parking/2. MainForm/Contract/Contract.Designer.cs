@@ -32,6 +32,14 @@ namespace Care_Management_and_Private_Parking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contract));
             this.label1 = new System.Windows.Forms.Label();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.ForRentCusPic = new System.Windows.Forms.PictureBox();
+            this.cbVehType = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.RentCusPic = new System.Windows.Forms.PictureBox();
+            this.VehPic = new System.Windows.Forms.PictureBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.tbRentMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRentJob = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,7 +55,7 @@ namespace Care_Management_and_Private_Parking
             this.label25 = new System.Windows.Forms.Label();
             this.tbForRentMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentJob = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbForRentVeh = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbForRentVehLicense = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentIdentity = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentPhone = new Guna.UI2.WinForms.Guna2TextBox();
@@ -77,6 +85,9 @@ namespace Care_Management_and_Private_Parking
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ForRentCusPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RentCusPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VehPic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +95,7 @@ namespace Care_Management_and_Private_Parking
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(352, 60);
+            this.label1.Location = new System.Drawing.Point(349, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 21);
             this.label1.TabIndex = 0;
@@ -94,6 +105,14 @@ namespace Care_Management_and_Private_Parking
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.label30);
+            this.panelTop.Controls.Add(this.ForRentCusPic);
+            this.panelTop.Controls.Add(this.cbVehType);
+            this.panelTop.Controls.Add(this.label28);
+            this.panelTop.Controls.Add(this.label29);
+            this.panelTop.Controls.Add(this.RentCusPic);
+            this.panelTop.Controls.Add(this.VehPic);
+            this.panelTop.Controls.Add(this.label27);
             this.panelTop.Controls.Add(this.tbRentMail);
             this.panelTop.Controls.Add(this.tbRentJob);
             this.panelTop.Controls.Add(this.tbRentAddress);
@@ -109,7 +128,7 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Controls.Add(this.label25);
             this.panelTop.Controls.Add(this.tbForRentMail);
             this.panelTop.Controls.Add(this.tbForRentJob);
-            this.panelTop.Controls.Add(this.tbForRentVeh);
+            this.panelTop.Controls.Add(this.tbForRentVehLicense);
             this.panelTop.Controls.Add(this.tbForRentAddress);
             this.panelTop.Controls.Add(this.tbForRentIdentity);
             this.panelTop.Controls.Add(this.tbForRentPhone);
@@ -145,6 +164,89 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Size = new System.Drawing.Size(786, 714);
             this.panelTop.TabIndex = 1;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 7.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(709, 308);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(76, 26);
+            this.label30.TabIndex = 133;
+            this.label30.Text = "Hình ảnh\r\nbên cho thuê";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ForRentCusPic
+            // 
+            this.ForRentCusPic.Location = new System.Drawing.Point(638, 309);
+            this.ForRentCusPic.Name = "ForRentCusPic";
+            this.ForRentCusPic.Size = new System.Drawing.Size(70, 70);
+            this.ForRentCusPic.TabIndex = 132;
+            this.ForRentCusPic.TabStop = false;
+            // 
+            // cbVehType
+            // 
+            this.cbVehType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbVehType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehType.FormattingEnabled = true;
+            this.cbVehType.Items.AddRange(new object[] {
+            "Xe Đạp",
+            "Xe Máy",
+            "Xe Hơi"});
+            this.cbVehType.Location = new System.Drawing.Point(81, 324);
+            this.cbVehType.Name = "cbVehType";
+            this.cbVehType.Size = new System.Drawing.Size(101, 25);
+            this.cbVehType.TabIndex = 131;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(561, 517);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(106, 15);
+            this.label28.TabIndex = 130;
+            this.label28.Text = "Hình ảnh bên thuê";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(561, 309);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 15);
+            this.label29.TabIndex = 129;
+            this.label29.Text = "Hình ảnh xe";
+            // 
+            // RentCusPic
+            // 
+            this.RentCusPic.Location = new System.Drawing.Point(485, 514);
+            this.RentCusPic.Name = "RentCusPic";
+            this.RentCusPic.Size = new System.Drawing.Size(70, 70);
+            this.RentCusPic.TabIndex = 128;
+            this.RentCusPic.TabStop = false;
+            // 
+            // VehPic
+            // 
+            this.VehPic.Location = new System.Drawing.Point(485, 309);
+            this.VehPic.Name = "VehPic";
+            this.VehPic.Size = new System.Drawing.Size(70, 70);
+            this.VehPic.TabIndex = 127;
+            this.VehPic.TabStop = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(29, 329);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(47, 15);
+            this.label27.TabIndex = 125;
+            this.label27.Text = "Loại xe:";
+            // 
             // tbRentMail
             // 
             this.tbRentMail.AutoRoundedCorners = true;
@@ -164,7 +266,7 @@ namespace Care_Management_and_Private_Parking
             this.tbRentMail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRentMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRentMail.HoverState.Parent = this.tbRentMail;
-            this.tbRentMail.Location = new System.Drawing.Point(535, 450);
+            this.tbRentMail.Location = new System.Drawing.Point(551, 456);
             this.tbRentMail.Name = "tbRentMail";
             this.tbRentMail.PasswordChar = '\0';
             this.tbRentMail.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -193,7 +295,7 @@ namespace Care_Management_and_Private_Parking
             this.tbRentJob.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRentJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRentJob.HoverState.Parent = this.tbRentJob;
-            this.tbRentJob.Location = new System.Drawing.Point(548, 421);
+            this.tbRentJob.Location = new System.Drawing.Point(564, 427);
             this.tbRentJob.Name = "tbRentJob";
             this.tbRentJob.PasswordChar = '\0';
             this.tbRentJob.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -222,7 +324,7 @@ namespace Care_Management_and_Private_Parking
             this.tbRentAddress.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRentAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRentAddress.HoverState.Parent = this.tbRentAddress;
-            this.tbRentAddress.Location = new System.Drawing.Point(79, 508);
+            this.tbRentAddress.Location = new System.Drawing.Point(74, 514);
             this.tbRentAddress.Name = "tbRentAddress";
             this.tbRentAddress.PasswordChar = '\0';
             this.tbRentAddress.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -251,7 +353,7 @@ namespace Care_Management_and_Private_Parking
             this.tbRentIdentity.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRentIdentity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRentIdentity.HoverState.Parent = this.tbRentIdentity;
-            this.tbRentIdentity.Location = new System.Drawing.Point(79, 478);
+            this.tbRentIdentity.Location = new System.Drawing.Point(74, 484);
             this.tbRentIdentity.Name = "tbRentIdentity";
             this.tbRentIdentity.PasswordChar = '\0';
             this.tbRentIdentity.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -280,7 +382,7 @@ namespace Care_Management_and_Private_Parking
             this.tbRentPhone.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRentPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRentPhone.HoverState.Parent = this.tbRentPhone;
-            this.tbRentPhone.Location = new System.Drawing.Point(96, 450);
+            this.tbRentPhone.Location = new System.Drawing.Point(91, 456);
             this.tbRentPhone.Name = "tbRentPhone";
             this.tbRentPhone.PasswordChar = '\0';
             this.tbRentPhone.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -310,7 +412,7 @@ namespace Care_Management_and_Private_Parking
             this.tbRentName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRentName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRentName.HoverState.Parent = this.tbRentName;
-            this.tbRentName.Location = new System.Drawing.Point(120, 420);
+            this.tbRentName.Location = new System.Drawing.Point(115, 426);
             this.tbRentName.Name = "tbRentName";
             this.tbRentName.PasswordChar = '\0';
             this.tbRentName.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -326,7 +428,7 @@ namespace Care_Management_and_Private_Parking
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(497, 480);
+            this.label16.Location = new System.Drawing.Point(513, 487);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 15);
             this.label16.TabIndex = 118;
@@ -337,7 +439,7 @@ namespace Care_Management_and_Private_Parking
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(34, 511);
+            this.label17.Location = new System.Drawing.Point(29, 517);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 15);
             this.label17.TabIndex = 117;
@@ -348,7 +450,7 @@ namespace Care_Management_and_Private_Parking
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(34, 481);
+            this.label18.Location = new System.Drawing.Point(29, 487);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(49, 15);
             this.label18.TabIndex = 116;
@@ -359,7 +461,7 @@ namespace Care_Management_and_Private_Parking
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(497, 453);
+            this.label19.Location = new System.Drawing.Point(513, 459);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(42, 15);
             this.label19.TabIndex = 115;
@@ -370,7 +472,7 @@ namespace Care_Management_and_Private_Parking
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(497, 424);
+            this.label20.Location = new System.Drawing.Point(513, 430);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(54, 15);
             this.label20.TabIndex = 114;
@@ -381,7 +483,7 @@ namespace Care_Management_and_Private_Parking
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(34, 453);
+            this.label21.Location = new System.Drawing.Point(29, 459);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(67, 15);
             this.label21.TabIndex = 113;
@@ -392,7 +494,7 @@ namespace Care_Management_and_Private_Parking
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(34, 423);
+            this.label25.Location = new System.Drawing.Point(29, 429);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(91, 15);
             this.label25.TabIndex = 112;
@@ -417,7 +519,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentMail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentMail.HoverState.Parent = this.tbForRentMail;
-            this.tbForRentMail.Location = new System.Drawing.Point(535, 272);
+            this.tbForRentMail.Location = new System.Drawing.Point(551, 240);
             this.tbForRentMail.Name = "tbForRentMail";
             this.tbForRentMail.PasswordChar = '\0';
             this.tbForRentMail.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -446,7 +548,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentJob.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentJob.HoverState.Parent = this.tbForRentJob;
-            this.tbForRentJob.Location = new System.Drawing.Point(548, 243);
+            this.tbForRentJob.Location = new System.Drawing.Point(564, 211);
             this.tbForRentJob.Name = "tbForRentJob";
             this.tbForRentJob.PasswordChar = '\0';
             this.tbForRentJob.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -456,34 +558,34 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentJob.Size = new System.Drawing.Size(200, 23);
             this.tbForRentJob.TabIndex = 110;
             // 
-            // tbForRentVeh
+            // tbForRentVehLicense
             // 
-            this.tbForRentVeh.AutoRoundedCorners = true;
-            this.tbForRentVeh.BackColor = System.Drawing.Color.White;
-            this.tbForRentVeh.BorderColor = System.Drawing.Color.White;
-            this.tbForRentVeh.BorderRadius = 10;
-            this.tbForRentVeh.BorderThickness = 0;
-            this.tbForRentVeh.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbForRentVeh.DefaultText = "";
-            this.tbForRentVeh.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbForRentVeh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbForRentVeh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbForRentVeh.DisabledState.Parent = this.tbForRentVeh;
-            this.tbForRentVeh.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbForRentVeh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbForRentVeh.FocusedState.Parent = this.tbForRentVeh;
-            this.tbForRentVeh.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbForRentVeh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbForRentVeh.HoverState.Parent = this.tbForRentVeh;
-            this.tbForRentVeh.Location = new System.Drawing.Point(95, 362);
-            this.tbForRentVeh.Name = "tbForRentVeh";
-            this.tbForRentVeh.PasswordChar = '\0';
-            this.tbForRentVeh.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbForRentVeh.PlaceholderText = resources.GetString("tbForRentVeh.PlaceholderText");
-            this.tbForRentVeh.SelectedText = "";
-            this.tbForRentVeh.ShadowDecoration.Parent = this.tbForRentVeh;
-            this.tbForRentVeh.Size = new System.Drawing.Size(374, 23);
-            this.tbForRentVeh.TabIndex = 109;
+            this.tbForRentVehLicense.AutoRoundedCorners = true;
+            this.tbForRentVehLicense.BackColor = System.Drawing.Color.White;
+            this.tbForRentVehLicense.BorderColor = System.Drawing.Color.White;
+            this.tbForRentVehLicense.BorderRadius = 10;
+            this.tbForRentVehLicense.BorderThickness = 0;
+            this.tbForRentVehLicense.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbForRentVehLicense.DefaultText = "";
+            this.tbForRentVehLicense.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbForRentVehLicense.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbForRentVehLicense.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbForRentVehLicense.DisabledState.Parent = this.tbForRentVehLicense;
+            this.tbForRentVehLicense.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbForRentVehLicense.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbForRentVehLicense.FocusedState.Parent = this.tbForRentVehLicense;
+            this.tbForRentVehLicense.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbForRentVehLicense.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbForRentVehLicense.HoverState.Parent = this.tbForRentVehLicense;
+            this.tbForRentVehLicense.Location = new System.Drawing.Point(90, 356);
+            this.tbForRentVehLicense.Name = "tbForRentVehLicense";
+            this.tbForRentVehLicense.PasswordChar = '\0';
+            this.tbForRentVehLicense.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbForRentVehLicense.PlaceholderText = resources.GetString("tbForRentVehLicense.PlaceholderText");
+            this.tbForRentVehLicense.SelectedText = "";
+            this.tbForRentVehLicense.ShadowDecoration.Parent = this.tbForRentVehLicense;
+            this.tbForRentVehLicense.Size = new System.Drawing.Size(374, 23);
+            this.tbForRentVehLicense.TabIndex = 109;
             // 
             // tbForRentAddress
             // 
@@ -504,7 +606,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentAddress.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentAddress.HoverState.Parent = this.tbForRentAddress;
-            this.tbForRentAddress.Location = new System.Drawing.Point(79, 330);
+            this.tbForRentAddress.Location = new System.Drawing.Point(74, 298);
             this.tbForRentAddress.Name = "tbForRentAddress";
             this.tbForRentAddress.PasswordChar = '\0';
             this.tbForRentAddress.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -533,7 +635,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentIdentity.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentIdentity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentIdentity.HoverState.Parent = this.tbForRentIdentity;
-            this.tbForRentIdentity.Location = new System.Drawing.Point(79, 300);
+            this.tbForRentIdentity.Location = new System.Drawing.Point(74, 268);
             this.tbForRentIdentity.Name = "tbForRentIdentity";
             this.tbForRentIdentity.PasswordChar = '\0';
             this.tbForRentIdentity.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -562,7 +664,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentPhone.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentPhone.HoverState.Parent = this.tbForRentPhone;
-            this.tbForRentPhone.Location = new System.Drawing.Point(96, 272);
+            this.tbForRentPhone.Location = new System.Drawing.Point(91, 240);
             this.tbForRentPhone.Name = "tbForRentPhone";
             this.tbForRentPhone.PasswordChar = '\0';
             this.tbForRentPhone.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -592,7 +694,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentName.HoverState.Parent = this.tbForRentName;
-            this.tbForRentName.Location = new System.Drawing.Point(120, 242);
+            this.tbForRentName.Location = new System.Drawing.Point(115, 210);
             this.tbForRentName.Name = "tbForRentName";
             this.tbForRentName.PasswordChar = '\0';
             this.tbForRentName.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -622,7 +724,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2TextBox3.ForeColor = System.Drawing.SystemColors.WindowText;
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(241, 187);
+            this.guna2TextBox3.Location = new System.Drawing.Point(236, 155);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -651,7 +753,7 @@ namespace Care_Management_and_Private_Parking
             this.tbDateTime.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbDateTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDateTime.HoverState.Parent = this.tbDateTime;
-            this.tbDateTime.Location = new System.Drawing.Point(97, 187);
+            this.tbDateTime.Location = new System.Drawing.Point(92, 155);
             this.tbDateTime.Name = "tbDateTime";
             this.tbDateTime.PasswordChar = '\0';
             this.tbDateTime.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -680,7 +782,7 @@ namespace Care_Management_and_Private_Parking
             this.tbDeal.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbDeal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDeal.HoverState.Parent = this.tbDeal;
-            this.tbDeal.Location = new System.Drawing.Point(415, 157);
+            this.tbDeal.Location = new System.Drawing.Point(410, 125);
             this.tbDeal.Name = "tbDeal";
             this.tbDeal.PasswordChar = '\0';
             this.tbDeal.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -710,7 +812,7 @@ namespace Care_Management_and_Private_Parking
             this.tbContractID.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbContractID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbContractID.HoverState.Parent = this.tbContractID;
-            this.tbContractID.Location = new System.Drawing.Point(358, 121);
+            this.tbContractID.Location = new System.Drawing.Point(353, 101);
             this.tbContractID.Name = "tbContractID";
             this.tbContractID.PasswordChar = '\0';
             this.tbContractID.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -725,7 +827,7 @@ namespace Care_Management_and_Private_Parking
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(34, 364);
+            this.label26.Location = new System.Drawing.Point(29, 358);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(66, 15);
             this.label26.TabIndex = 97;
@@ -736,7 +838,7 @@ namespace Care_Management_and_Private_Parking
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(497, 302);
+            this.label24.Location = new System.Drawing.Point(513, 271);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(42, 15);
             this.label24.TabIndex = 95;
@@ -747,7 +849,7 @@ namespace Care_Management_and_Private_Parking
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(34, 389);
+            this.label22.Location = new System.Drawing.Point(29, 395);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(97, 20);
             this.label22.TabIndex = 82;
@@ -757,9 +859,9 @@ namespace Care_Management_and_Private_Parking
             // 
             this.tbContractInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContractInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContractInfo.Location = new System.Drawing.Point(35, 562);
+            this.tbContractInfo.Location = new System.Drawing.Point(33, 605);
             this.tbContractInfo.Name = "tbContractInfo";
-            this.tbContractInfo.Size = new System.Drawing.Size(711, 127);
+            this.tbContractInfo.Size = new System.Drawing.Size(731, 106);
             this.tbContractInfo.TabIndex = 81;
             this.tbContractInfo.Text = resources.GetString("tbContractInfo.Text");
             this.tbContractInfo.Click += new System.EventHandler(this.tbContractInfo_Click);
@@ -770,7 +872,7 @@ namespace Care_Management_and_Private_Parking
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(34, 538);
+            this.label23.Location = new System.Drawing.Point(29, 582);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(153, 20);
             this.label23.TabIndex = 80;
@@ -781,7 +883,7 @@ namespace Care_Management_and_Private_Parking
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(34, 333);
+            this.label15.Location = new System.Drawing.Point(29, 301);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 15);
             this.label15.TabIndex = 78;
@@ -792,7 +894,7 @@ namespace Care_Management_and_Private_Parking
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(34, 303);
+            this.label14.Location = new System.Drawing.Point(29, 271);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(49, 15);
             this.label14.TabIndex = 76;
@@ -803,7 +905,7 @@ namespace Care_Management_and_Private_Parking
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(497, 275);
+            this.label13.Location = new System.Drawing.Point(513, 243);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 15);
             this.label13.TabIndex = 74;
@@ -814,7 +916,7 @@ namespace Care_Management_and_Private_Parking
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(497, 246);
+            this.label12.Location = new System.Drawing.Point(513, 214);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 15);
             this.label12.TabIndex = 72;
@@ -825,7 +927,7 @@ namespace Care_Management_and_Private_Parking
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 275);
+            this.label11.Location = new System.Drawing.Point(29, 243);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 15);
             this.label11.TabIndex = 70;
@@ -836,7 +938,7 @@ namespace Care_Management_and_Private_Parking
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 245);
+            this.label10.Location = new System.Drawing.Point(29, 213);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 15);
             this.label10.TabIndex = 68;
@@ -847,7 +949,7 @@ namespace Care_Management_and_Private_Parking
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 214);
+            this.label9.Location = new System.Drawing.Point(29, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 20);
             this.label9.TabIndex = 67;
@@ -858,7 +960,7 @@ namespace Care_Management_and_Private_Parking
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(331, 190);
+            this.label5.Location = new System.Drawing.Point(326, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 15);
             this.label5.TabIndex = 66;
@@ -869,7 +971,7 @@ namespace Care_Management_and_Private_Parking
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(224, 190);
+            this.label8.Location = new System.Drawing.Point(219, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 15);
             this.label8.TabIndex = 64;
@@ -880,7 +982,7 @@ namespace Care_Management_and_Private_Parking
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 190);
+            this.label7.Location = new System.Drawing.Point(30, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 15);
             this.label7.TabIndex = 62;
@@ -890,7 +992,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(35, 160);
+            this.label6.Location = new System.Drawing.Point(30, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(384, 15);
             this.label6.TabIndex = 60;
@@ -904,7 +1006,7 @@ namespace Care_Management_and_Private_Parking
             this.cbboxPurpose.Items.AddRange(new object[] {
             "THUÊ",
             "CHO THUÊ"});
-            this.cbboxPurpose.Location = new System.Drawing.Point(346, 84);
+            this.cbboxPurpose.Location = new System.Drawing.Point(343, 70);
             this.cbboxPurpose.Name = "cbboxPurpose";
             this.cbboxPurpose.Size = new System.Drawing.Size(101, 25);
             this.cbboxPurpose.TabIndex = 9;
@@ -914,7 +1016,7 @@ namespace Care_Management_and_Private_Parking
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(338, 124);
+            this.label4.Location = new System.Drawing.Point(333, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 15);
             this.label4.TabIndex = 5;
@@ -925,7 +1027,7 @@ namespace Care_Management_and_Private_Parking
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(313, 29);
+            this.label3.Location = new System.Drawing.Point(323, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 15);
             this.label3.TabIndex = 2;
@@ -937,7 +1039,7 @@ namespace Care_Management_and_Private_Parking
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 9);
+            this.label2.Location = new System.Drawing.Point(251, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 20);
             this.label2.TabIndex = 1;
@@ -955,6 +1057,9 @@ namespace Care_Management_and_Private_Parking
             this.Text = "Contract";
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ForRentCusPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RentCusPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VehPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1005,7 +1110,15 @@ namespace Care_Management_and_Private_Parking
         public System.Windows.Forms.Label label25;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentMail;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentJob;
-        public Guna.UI2.WinForms.Guna2TextBox tbForRentVeh;
+        public Guna.UI2.WinForms.Guna2TextBox tbForRentVehLicense;
         public System.Windows.Forms.RichTextBox tbContractInfo;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.Label label28;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.ComboBox cbVehType;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.PictureBox VehPic;
+        public System.Windows.Forms.PictureBox RentCusPic;
+        public System.Windows.Forms.PictureBox ForRentCusPic;
     }
 }

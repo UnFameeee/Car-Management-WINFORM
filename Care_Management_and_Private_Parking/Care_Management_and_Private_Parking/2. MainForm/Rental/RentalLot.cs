@@ -138,9 +138,12 @@ namespace Care_Management_and_Private_Parking
             lbVehicleID.Text = "VehicleID: " + table.Rows[0]["VehID"].ToString();
             lbVehicleType.Text = "Vehicle Type: " + table.Rows[0]["VehType"].ToString();
             lbLicensePlate.Text = "License Plate: \r\n" + table.Rows[0]["LicensePlate"].ToString();
-            byte[] picture = (byte[])table.Rows[0]["Picture"];
-            MemoryStream Picture = new MemoryStream(picture);
-            VehiclePic.Image = Image.FromStream(Picture);
+            if(table.Rows[0]["Picture"] != DBNull.Value)
+            {
+                byte[] picture = (byte[])table.Rows[0]["Picture"];
+                MemoryStream Picture = new MemoryStream(picture);
+                VehiclePic.Image = Image.FromStream(Picture);
+            }           
 
             //Set lại phần Customer
             lbCusID.Text = "CustomerID: " + table.Rows[0]["CusID"].ToString();
@@ -149,9 +152,12 @@ namespace Care_Management_and_Private_Parking
             lbPhone.Text = "Phone: " + table.Rows[0]["PhoneNumber"].ToString();
             lbAddress.Text = "Address: " + table.Rows[0]["Address"].ToString();
             lbIdentityNumber.Text = "Identity Number: " + table.Rows[0]["IdentityNumber"].ToString();
-            byte[] pic2 = (byte[])table.Rows[0]["Appearance"];
-            MemoryStream Picture2 = new MemoryStream(pic2);
-            CustomerPic.Image = Image.FromStream(Picture2);
+            if (table.Rows[0]["Appearance"] != DBNull.Value)
+            {
+                byte[] pic2 = (byte[])table.Rows[0]["Appearance"];
+                MemoryStream Picture2 = new MemoryStream(pic2);
+                CustomerPic.Image = Image.FromStream(Picture2);
+            }
         }
         void fillEmpty()
         {
