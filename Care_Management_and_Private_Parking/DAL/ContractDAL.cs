@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class ContractDAL
+    public class ContractDAL
     {
         private static ContractDAL instance;
         public static ContractDAL Instance
@@ -25,7 +25,7 @@ namespace DAL
             private set { ContractDAL.instance = value; }
         }
 
-
+        #region Thêm xóa sửa hợp đồng
         public bool insertContract(string ContID, string CusID, string EmpID, string Purpose, string Description)
         {
             SqlCommand command = new SqlCommand("Insert into CONTRACT (ContID, CusID, EmpID, Purpose, Description)" +
@@ -89,7 +89,7 @@ namespace DAL
                 return false;
             }
         }
-
+        #endregion
         public bool checkContract(string ContID)
         {
             SqlCommand com = new SqlCommand("Select * from CONTRACT where ContID = @contid", DataProvider.Instance.getConnection);
@@ -103,5 +103,135 @@ namespace DAL
                 return true;
             else return false;
         }
+
+        #region Phần ContractList
+        public DataTable ShowContract()
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        #region combobox
+        public DataTable ShowEmpID()
+        {
+            SqlCommand com = new SqlCommand("SELECT EmpID FROM EMPLOYEE", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable ShowCusID()
+        {
+            SqlCommand com = new SqlCommand("SELECT CusID FROM CONTRACT", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable ShowVehID()
+        {
+            SqlCommand com = new SqlCommand("SELECT VehID FROM CONTRACT", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        #endregion
+
+        #region nút find
+        //1 giá trị
+        public DataTable ShowCusIDContract(string CusID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and CusID = @CusID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable ShowVehIDContract(string VehID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and VehID = @VehID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable ShowEmpIDContract(string EmpID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        //2 giá trị
+        public DataTable ShowCusIDVehIDContract(string CusID,string VehID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable ShowVehIDEmpIDContract(string VehID, string EmpID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and VehID = @VehID and EmpID = @EmpID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable ShowEmpIDCusIDContract(string EmpID, string CusID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID and CusID = @CusID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        //cả 3 giá trị
+        public DataTable ShowAllFindContract(string EmpID, string VehID, string CusID)
+        {
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType " +
+                " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
+                " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID and CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        #endregion
+
+        #endregion
     }
 }
