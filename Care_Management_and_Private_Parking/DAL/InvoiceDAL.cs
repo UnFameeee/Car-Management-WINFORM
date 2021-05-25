@@ -50,22 +50,32 @@ namespace DAL
 
 
             int sv = 0;                                             //tiền rửa hoặc sửa (nếu có)
-            if (service == "Washing")
+            if (service == "Reapairing and Washing")
             {
                 if (type == "bicycle")
-                    sv = 20;
+                    sv = 70;
                 else if (type == "bike")
-                    sv = 50;
-                else sv = 200;
+                    sv = 250;
+                else sv = 1000;
             }
-
-            if (service == "Repairing")
+            else
             {
-                if (type == "bicycle")
-                    sv = 50;
-                else if (type == "bike")
-                    sv = 200;
-                else sv = 800;
+                if (service == "Washing")
+                {
+                    if (type == "bicycle")
+                        sv = 20;
+                    else if (type == "bike")
+                        sv = 50;
+                    else sv = 200;
+                }
+                if (service == "Repairing")
+                {
+                    if (type == "bicycle")
+                        sv = 50;
+                    else if (type == "bike")
+                        sv = 200;
+                    else sv = 800;
+                }
             }
 
             int total = 0;                                          //tổng tiền
