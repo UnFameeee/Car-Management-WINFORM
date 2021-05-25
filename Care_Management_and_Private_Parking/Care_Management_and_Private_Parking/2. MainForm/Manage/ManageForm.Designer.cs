@@ -31,7 +31,7 @@ namespace Care_Management_and_Private_Parking
         {
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnContract = new Guna.UI2.WinForms.Guna2Button();
             this.btnAccountList = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaffList = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
@@ -53,7 +53,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.guna2Panel1.BorderRadius = 22;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.btn);
+            this.guna2Panel1.Controls.Add(this.btnContract);
             this.guna2Panel1.Controls.Add(this.btnAccountList);
             this.guna2Panel1.Controls.Add(this.btnStaffList);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -63,26 +63,27 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel1.Size = new System.Drawing.Size(131, 493);
             this.guna2Panel1.TabIndex = 10;
             // 
-            // btn
+            // btnContract
             // 
-            this.btn.BackColor = System.Drawing.Color.Transparent;
-            this.btn.BorderRadius = 22;
-            this.btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btn.CheckedState.Parent = this.btn;
-            this.btn.CustomImages.Parent = this.btn;
-            this.btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btn.HoverState.Parent = this.btn;
-            this.btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn.Location = new System.Drawing.Point(9, 320);
-            this.btn.Name = "btn";
-            this.btn.ShadowDecoration.Parent = this.btn;
-            this.btn.Size = new System.Drawing.Size(113, 43);
-            this.btn.TabIndex = 7;
-            this.btn.Text = "Contract List";
-            this.btn.UseTransparentBackground = true;
+            this.btnContract.BackColor = System.Drawing.Color.Transparent;
+            this.btnContract.BorderRadius = 22;
+            this.btnContract.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnContract.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnContract.CheckedState.Parent = this.btnContract;
+            this.btnContract.CustomImages.Parent = this.btnContract;
+            this.btnContract.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnContract.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnContract.HoverState.Parent = this.btnContract;
+            this.btnContract.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnContract.Location = new System.Drawing.Point(9, 320);
+            this.btnContract.Name = "btnContract";
+            this.btnContract.ShadowDecoration.Parent = this.btnContract;
+            this.btnContract.Size = new System.Drawing.Size(113, 43);
+            this.btnContract.TabIndex = 7;
+            this.btnContract.Text = "Contract List";
+            this.btnContract.UseTransparentBackground = true;
+            this.btnContract.Click += new System.EventHandler(this.btnContract_Click);
             // 
             // btnAccountList
             // 
@@ -149,7 +150,7 @@ namespace Care_Management_and_Private_Parking
         #endregion
         private Guna.UI2.WinForms.Guna2Panel pnData;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btn;
+        private Guna.UI2.WinForms.Guna2Button btnContract;
         private Guna.UI2.WinForms.Guna2Button btnAccountList;
         private Guna.UI2.WinForms.Guna2Button btnStaffList;
     }

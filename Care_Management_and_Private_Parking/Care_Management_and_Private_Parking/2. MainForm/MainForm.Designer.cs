@@ -120,12 +120,14 @@ namespace Care_Management_and_Private_Parking
             this.btnManageJob.BorderRadius = 22;
             this.btnManageJob.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnManageJob.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnManageJob.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnManageJob.CheckedState.Image")));
             this.btnManageJob.CheckedState.Parent = this.btnManageJob;
             this.btnManageJob.CustomImages.Parent = this.btnManageJob;
             this.btnManageJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.btnManageJob.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnManageJob.HoverState.Parent = this.btnManageJob;
+            this.btnManageJob.Image = ((System.Drawing.Image)(resources.GetObject("btnManageJob.Image")));
             this.btnManageJob.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageJob.Location = new System.Drawing.Point(9, 9);
             this.btnManageJob.Name = "btnManageJob";
@@ -215,6 +217,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.btnHome.BackColor = System.Drawing.Color.Transparent;
             this.btnHome.BorderRadius = 22;
+            this.btnHome.Checked = true;
             this.btnHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnHome.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.CheckedState.Image")));

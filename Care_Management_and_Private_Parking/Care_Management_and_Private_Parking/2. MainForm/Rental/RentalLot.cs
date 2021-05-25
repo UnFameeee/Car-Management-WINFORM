@@ -179,17 +179,7 @@ namespace Care_Management_and_Private_Parking
 
 
         #region Nút nhấn theo chức năng
-        private void btnAddRentVeh_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDetailRentVeh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddVehForRent_Click(object sender, EventArgs e)
         {
 
         }
