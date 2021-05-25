@@ -39,29 +39,13 @@ namespace Care_Management_and_Private_Parking
             dgvEmp.Columns[6].Width = 140;
             dgvEmp.Columns[7].Width = 80;
             dgvEmp.Columns[8].Width = 100;
-
-            //DataTable tab = EmployeeDAL.Instance.getAllEmp();            
-
-            //for (int i = 0; i < tab.Rows.Count; i++)
-            //{
-            //    AnEmployee tmp = new AnEmployee();
-            //    tmp.Dock = DockStyle.Top;
-
-            //    tmp.lbEmpID.Text = tab.Rows[i][0].ToString();
-            //    tmp.lbFullName.Text = tab.Rows[i][1].ToString();
-            //    tmp.lbGender.Text = tab.Rows[i][2].ToString();
-            //    tmp.lbPhone.Text = tab.Rows[i][3].ToString();
-            //    tmp.lbIdentity.Text = tab.Rows[i][4].ToString();
-            //    tmp.lbJobID.Text = tab.Rows[i][5].ToString();
-            //    fpnEmpList.Controls.Add(tmp);
-            //}
         }
 
         private void btnSearchByName_Click(object sender, EventArgs e)
         {
             if (tbSearch.Text == "")
             {
-                MessageBox.Show("Please Insert Name");
+                MessageBox.Show("Please Insert Name!!!", "Search By Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 reload();
             }
             else
@@ -70,7 +54,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (tab.Rows.Count == 0)
                 {
-                    MessageBox.Show("Can't Find Name Like: " + tbSearch.Text);
+                    MessageBox.Show("Can't Find Name Like: " + tbSearch.Text, "Search By Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     reload();
                 }
                 else
@@ -85,7 +69,7 @@ namespace Care_Management_and_Private_Parking
         {
             if (tbSearch.Text == "")
             {
-                MessageBox.Show("Please Insert ID");
+                MessageBox.Show("Please Insert ID!!!", "Search By ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 reload();
             }
             else
@@ -94,7 +78,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (tab.Rows.Count == 0)
                 {
-                    MessageBox.Show("Can't Find ID: " + tbSearch.Text);
+                    MessageBox.Show("Can't Find ID: " + tbSearch.Text, "Search By ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     reload();
                 }
                 else

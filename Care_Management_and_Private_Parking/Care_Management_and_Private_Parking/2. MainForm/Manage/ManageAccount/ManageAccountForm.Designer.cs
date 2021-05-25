@@ -352,7 +352,7 @@ namespace Care_Management_and_Private_Parking
             this.btnGrantPer.Name = "btnGrantPer";
             this.btnGrantPer.Size = new System.Drawing.Size(166, 29);
             this.btnGrantPer.TabIndex = 210;
-            this.btnGrantPer.Text = "Grant Permission";
+            this.btnGrantPer.Text = "Grant Account";
             this.btnGrantPer.UseVisualStyleBackColor = false;
             this.btnGrantPer.Click += new System.EventHandler(this.btnGrantPer_Click);
             // 
@@ -366,7 +366,7 @@ namespace Care_Management_and_Private_Parking
             this.btnRemovePer.Name = "btnRemovePer";
             this.btnRemovePer.Size = new System.Drawing.Size(166, 29);
             this.btnRemovePer.TabIndex = 209;
-            this.btnRemovePer.Text = "Remove Permission";
+            this.btnRemovePer.Text = "Remove Account";
             this.btnRemovePer.UseVisualStyleBackColor = false;
             this.btnRemovePer.Click += new System.EventHandler(this.btnRemovePer_Click);
             // 

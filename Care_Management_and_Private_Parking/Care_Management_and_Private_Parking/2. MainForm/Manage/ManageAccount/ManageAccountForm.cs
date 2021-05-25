@@ -119,7 +119,7 @@ namespace Care_Management_and_Private_Parking
             string ID = tbEmpID.Text;
             if (ID == "")
             {
-                MessageBox.Show("Please insert ID");
+                MessageBox.Show("Please insert ID!!!", "Search EmpID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 reloadAcc();
             }
             else
@@ -131,7 +131,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (tab.Rows.Count == 0)
                 {
-                    MessageBox.Show("Can't Find ID: " + ID);
+                    MessageBox.Show("Can't Find ID: " + ID, "Search EmpID", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     reloadAcc();
                 }
                 else
@@ -155,18 +155,22 @@ namespace Care_Management_and_Private_Parking
 
                     if (AccountDAL.Instance.insertAccount(username, password, position))
                     {
-                        DialogResult dialogResult = MessageBox.Show("Creating Account Successfully!", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult dialogResult = MessageBox.Show("Creating Account Successfully", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reloadAcc();
                     }
                     else
                     {
-                        MessageBox.Show("Error!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Can't Create Account", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Please Fill All Information!!!", "Add Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch
             {
-                MessageBox.Show("Username has already exist!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Username has already exist!!!", "Register account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -185,13 +189,13 @@ namespace Care_Management_and_Private_Parking
                 if (com.ExecuteNonQuery() == 1)
                 {
                     DataProvider.Instance.closeConnection();
-                    MessageBox.Show(id + " Has Granted Account " + accusername);
+                    MessageBox.Show(id + " Has Granted Account " + accusername, "Grant Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reloadEmp();
                 }
                 else
                 {
                     DataProvider.Instance.closeConnection();
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Can't Grant Account", "Grant Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -212,13 +216,13 @@ namespace Care_Management_and_Private_Parking
             if (com.ExecuteNonQuery() == 1)
             {
                 DataProvider.Instance.closeConnection();
-                MessageBox.Show(id + " Has Removed Account " + accusername);
+                MessageBox.Show(id + " Has Removed Account " + accusername, "Remove Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 reloadEmp();
             }
             else
             {
                 DataProvider.Instance.closeConnection();
-                MessageBox.Show("Error");
+                MessageBox.Show("Can't Remove Account", "Remove Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

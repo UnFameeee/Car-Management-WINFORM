@@ -51,14 +51,16 @@ namespace Care_Management_and_Private_Parking
             this.CustomerPic = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.numerudValue = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.cbboxTimeFormat = new Guna.UI.WinForms.GunaComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.radiobtnWash = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.radiobtnRepair = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numerudValue = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.cbboxTimeFormat = new Guna.UI.WinForms.GunaComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,6 +80,8 @@ namespace Care_Management_and_Private_Parking
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
@@ -334,19 +338,94 @@ namespace Care_Management_and_Private_Parking
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.numerudValue);
             this.panel3.Controls.Add(this.cbboxTimeFormat);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.radiobtnWash);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.radiobtnRepair);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Location = new System.Drawing.Point(3, 162);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 161);
             this.panel3.TabIndex = 69;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.radiobtnWash);
+            this.panel5.Location = new System.Drawing.Point(266, 106);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(175, 41);
+            this.panel5.TabIndex = 75;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(55, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 20);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "Washing";
+            // 
+            // radiobtnWash
+            // 
+            this.radiobtnWash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnWash.CheckedState.BorderThickness = 0;
+            this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
+            this.radiobtnWash.Location = new System.Drawing.Point(29, 9);
+            this.radiobtnWash.Name = "radiobtnWash";
+            this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
+            this.radiobtnWash.Size = new System.Drawing.Size(20, 20);
+            this.radiobtnWash.TabIndex = 30;
+            this.radiobtnWash.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radiobtnWash.UncheckedState.BorderThickness = 2;
+            this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.radiobtnRepair);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Location = new System.Drawing.Point(266, 45);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(175, 41);
+            this.panel4.TabIndex = 74;
+            // 
+            // radiobtnRepair
+            // 
+            this.radiobtnRepair.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnRepair.CheckedState.BorderThickness = 0;
+            this.radiobtnRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnRepair.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radiobtnRepair.CheckedState.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Location = new System.Drawing.Point(29, 12);
+            this.radiobtnRepair.Name = "radiobtnRepair";
+            this.radiobtnRepair.ShadowDecoration.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Size = new System.Drawing.Size(20, 20);
+            this.radiobtnRepair.TabIndex = 25;
+            this.radiobtnRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radiobtnRepair.UncheckedState.BorderThickness = 2;
+            this.radiobtnRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radiobtnRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnRepair.UncheckedState.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Click += new System.EventHandler(this.radiobtnRepair_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(55, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 20);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Repairing";
             // 
             // numerudValue
             // 
@@ -388,35 +467,6 @@ namespace Care_Management_and_Private_Parking
             this.cbboxTimeFormat.Size = new System.Drawing.Size(190, 26);
             this.cbboxTimeFormat.TabIndex = 73;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(321, 115);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 20);
-            this.label17.TabIndex = 31;
-            this.label17.Text = "Washing";
-            // 
-            // radiobtnWash
-            // 
-            this.radiobtnWash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnWash.CheckedState.BorderThickness = 0;
-            this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
-            this.radiobtnWash.Location = new System.Drawing.Point(295, 115);
-            this.radiobtnWash.Name = "radiobtnWash";
-            this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
-            this.radiobtnWash.Size = new System.Drawing.Size(20, 20);
-            this.radiobtnWash.TabIndex = 30;
-            this.radiobtnWash.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radiobtnWash.UncheckedState.BorderThickness = 2;
-            this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -428,17 +478,6 @@ namespace Care_Management_and_Private_Parking
             this.label13.TabIndex = 28;
             this.label13.Text = "Value:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(321, 59);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 20);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Repairing";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -449,24 +488,6 @@ namespace Care_Management_and_Private_Parking
             this.label11.Size = new System.Drawing.Size(93, 20);
             this.label11.TabIndex = 26;
             this.label11.Text = "Time Format";
-            // 
-            // radiobtnRepair
-            // 
-            this.radiobtnRepair.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnRepair.CheckedState.BorderThickness = 0;
-            this.radiobtnRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnRepair.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radiobtnRepair.CheckedState.Parent = this.radiobtnRepair;
-            this.radiobtnRepair.Location = new System.Drawing.Point(295, 59);
-            this.radiobtnRepair.Name = "radiobtnRepair";
-            this.radiobtnRepair.ShadowDecoration.Parent = this.radiobtnRepair;
-            this.radiobtnRepair.Size = new System.Drawing.Size(20, 20);
-            this.radiobtnRepair.TabIndex = 25;
-            this.radiobtnRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radiobtnRepair.UncheckedState.BorderThickness = 2;
-            this.radiobtnRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radiobtnRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radiobtnRepair.UncheckedState.Parent = this.radiobtnRepair;
             // 
             // label10
             // 
@@ -660,6 +681,10 @@ namespace Care_Management_and_Private_Parking
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -712,5 +737,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label label17;
         private Guna.UI.WinForms.GunaComboBox cbboxTimeFormat;
         private Guna.UI2.WinForms.Guna2NumericUpDown numerudValue;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
     }
 }

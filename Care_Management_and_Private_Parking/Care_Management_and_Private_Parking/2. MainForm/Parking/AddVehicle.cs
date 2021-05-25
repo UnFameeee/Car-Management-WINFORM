@@ -135,10 +135,17 @@ namespace Care_Management_and_Private_Parking
             int value = Convert.ToInt32(numerudValue.Value);                    //thời gian mà khách muốn gửi
 
             string service = "";
-            if (radiobtnRepair.Checked == true)
-                service = "Repairing";
-            if (radiobtnWash.Checked == true)
-                service = "Washing";
+            if (radiobtnRepair.Checked == true && radiobtnWash.Checked == true)
+            {
+                service = "Repairing and Washing";
+            }
+            else
+            {
+                if (radiobtnRepair.Checked == true)
+                    service = "Repairing";
+                if (radiobtnWash.Checked == true)
+                    service = "Washing";
+            }
 
 
             try
@@ -228,5 +235,11 @@ namespace Care_Management_and_Private_Parking
             }
         }
         #endregion
+
+        int i = 1;
+        private void radiobtnRepair_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

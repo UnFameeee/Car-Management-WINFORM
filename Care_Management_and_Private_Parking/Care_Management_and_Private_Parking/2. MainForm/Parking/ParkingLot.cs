@@ -298,17 +298,24 @@ namespace Care_Management_and_Private_Parking
         #region Thêm, xóa, sửa, Hóa đơn, tìm kiếm theo thẻ xe
         private void btnAddVehicle_Click(object sender, EventArgs e)
         {
-            if(ParkingLotDAL.Instance.checkSlot((type +id), type) == false)
+            if (type != null || id != null)
             {
-                AddVehicle frm = new AddVehicle();
-                frm.id = id;
-                frm.type = type;
-                frm.ShowDialog();
-                if(frm.DialogResult == DialogResult.OK)
+                if (ParkingLotDAL.Instance.checkSlot((type + id), type) == false)
                 {
-                    changAddColor("add");
+                    AddVehicle frm = new AddVehicle();
+                    frm.id = id;
+                    frm.type = type;
+                    frm.ShowDialog();
+                    if (frm.DialogResult == DialogResult.OK)
+                    {
+                        changAddColor("add");
+                    }
+                    fillSlot();
                 }
-                fillSlot();
+                else
+                {
+                    MessageBox.Show("Please choose an empty slot!!!", "Add Vehicle");
+                }
             }
             else
             {
@@ -318,13 +325,20 @@ namespace Care_Management_and_Private_Parking
 
         private void btnEditVehicle_Click(object sender, EventArgs e)
         {
-            if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
+            if (type != null || id != null)
             {
-                EditVehicle frm = new EditVehicle();
-                frm.VehID = (type + id);
-                frm.CusID = customer;
-                frm.ShowDialog();
-                fillSlot();
+                if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
+                {
+                    EditVehicle frm = new EditVehicle();
+                    frm.VehID = (type + id);
+                    frm.CusID = customer;
+                    frm.ShowDialog();
+                    fillSlot();
+                }
+                else
+                {
+                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                }
             }
             else
             {
@@ -334,30 +348,53 @@ namespace Care_Management_and_Private_Parking
 
         private void btnDeleteVehicle_Click(object sender, EventArgs e)
         {
-            if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
+            if (type != null || id != null)
             {
-                GetVehicle frm = new GetVehicle();
-                //frm.VehID = (type + id);
-                //frm.CusID = customer;
-                frm.ShowDialog();
-                if (frm.DialogResult == DialogResult.OK)
+                if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
                 {
-                    changAddColor("delete");
-                    fillEmpty();
-                    tbIDCard.Text = "";
+                    GetVehicle frm = new GetVehicle();
+                    //frm.VehID = (type + id);
+                    //frm.CusID = customer;
+                    frm.ShowDialog();
+                    if (frm.DialogResult == DialogResult.OK)
+                    {
+                        changAddColor("delete");
+                        fillEmpty();
+                        tbIDCard.Text = "";
+                    }
+                    fillSlot();
                 }
-                fillSlot();
+                else
+                {
+                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                }
             }
             else
             {
                 MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
             }
-
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
-
+            if (type != null || id != null)
+            {
+                if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
+                {
+                    Invoice frm = new Invoice();
+                    frm.VehID = (type + id);
+                    frm.CusID = customer;
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+            }
         }
 
         private void btnFind_Click(object sender, EventArgs e)
