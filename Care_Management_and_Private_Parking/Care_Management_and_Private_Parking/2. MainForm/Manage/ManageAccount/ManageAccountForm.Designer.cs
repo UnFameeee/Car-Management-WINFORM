@@ -148,6 +148,7 @@ namespace Care_Management_and_Private_Parking
             this.dgvAccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.dgvAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             // 
             // guna2Panel1
             // 

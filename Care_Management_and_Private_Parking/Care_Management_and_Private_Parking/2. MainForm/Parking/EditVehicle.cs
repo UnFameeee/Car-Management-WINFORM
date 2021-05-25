@@ -161,7 +161,7 @@ namespace Care_Management_and_Private_Parking
 
         bool verifVeh()
         {
-            if (tbLicense.Text.Trim() == "" || VehiclePic.Image == null)
+            if (tbLicense.Text.Trim() == "" || VehiclePic.Image == null || cbboxTimeFormat.SelectedItem == null || numerudValue.Value == 0) 
                 return false;
             else
                 return true;
@@ -173,7 +173,6 @@ namespace Care_Management_and_Private_Parking
             string License = tbLicense.Text;
 
             string CusID = tbCustomerID.Text;
-            string Invoice = cbboxTimeFormat.SelectedValue.ToString();
             int value = Convert.ToInt32(numerudValue.Value);
 
             string service = "";
@@ -189,6 +188,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
+                    string Invoice = cbboxTimeFormat.SelectedValue.ToString();
                     if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
                     {
                         ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
