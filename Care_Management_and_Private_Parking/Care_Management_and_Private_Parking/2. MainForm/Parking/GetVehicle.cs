@@ -42,8 +42,6 @@ namespace Care_Management_and_Private_Parking
                 string invoice = tab.Rows[0][5].ToString();
                 string service = tab.Rows[0][6].ToString();
 
-
-
                 if (CusID == tab.Rows[0][1].ToString())
                 {
                     if (ParkingLotDAL.Instance.deleteCarAndCusfromParklot(IDcard))
@@ -78,5 +76,15 @@ namespace Care_Management_and_Private_Parking
         {
             this.Close();
         }
+
+        #region Extension
+        private void tbIDcard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)/* && !char.IsLetter(e.KeyChar)*/)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

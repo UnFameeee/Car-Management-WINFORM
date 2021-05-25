@@ -271,7 +271,7 @@ namespace DAL
 
         #endregion
 
-        #region Phát thẻ xe
+        #region Phát thẻ xe - Tìm thẻ xe
         List<int> listIDCardPark = new List<int>(1000000) { 0 };
         public void loadListIDCard()
         {
@@ -296,6 +296,30 @@ namespace DAL
             }
             listIDCardPark.Add(n);
             return n;
+        }
+
+        public DataTable takeCusIDandVehID(int IDCard)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT VehID, CusID FROM PARKING WHERE IDParkCard = @IDCard", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@IDCard", SqlDbType.Int).Value = IDCard;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        #endregion
+
+        #region Phần hiển thị thông tin slot
+        public int getAvailibleSlotPurpose(string type)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT VehType FROM (SELECT VehID, VehType FROM VEHICLE) as A, PARKING WHERE A.VehID = PARKING.VehID and VehType = @type");
+            cmd.Connection = DataProvider.Instance.getConnection;
+            cmd.Parameters.Add("@type", SqlDbType.NVarChar).Value = type;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table.Rows.Count;
         }
         #endregion
 
