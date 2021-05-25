@@ -284,6 +284,7 @@ namespace Care_Management_and_Private_Parking
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(162, 23);
             this.tbName.TabIndex = 28;
+            this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
             // 
             // label5
             // 
@@ -305,6 +306,7 @@ namespace Care_Management_and_Private_Parking
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(162, 23);
             this.tbPhone.TabIndex = 30;
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // CustomerPic
             // 
@@ -366,6 +368,7 @@ namespace Care_Management_and_Private_Parking
             this.numerudValue.Size = new System.Drawing.Size(106, 26);
             this.numerudValue.TabIndex = 73;
             this.numerudValue.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.numerudValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numerudValue_KeyPress);
             // 
             // cbboxTimeFormat
             // 

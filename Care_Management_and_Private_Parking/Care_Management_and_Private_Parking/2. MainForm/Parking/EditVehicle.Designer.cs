@@ -30,8 +30,6 @@ namespace Care_Management_and_Private_Parking
         private void InitializeComponent()
         {
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnEditCus = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlVeh = new System.Windows.Forms.Panel();
             this.pnlCus = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,6 +46,8 @@ namespace Care_Management_and_Private_Parking
             this.label5 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.CustomerPic = new System.Windows.Forms.PictureBox();
+            this.btnEditCus = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlVeh = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.numerudValue = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -71,10 +71,10 @@ namespace Care_Management_and_Private_Parking
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnCalendar.SuspendLayout();
-            this.pnlVeh.SuspendLayout();
             this.pnlCus.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
+            this.pnlVeh.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,42 +98,6 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.ShadowDecoration.Parent = this.pnCalendar;
             this.pnCalendar.Size = new System.Drawing.Size(501, 427);
             this.pnCalendar.TabIndex = 6;
-            // 
-            // btnEditCus
-            // 
-            this.btnEditCus.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEditCus.BorderRadius = 17;
-            this.btnEditCus.BorderThickness = 1;
-            this.btnEditCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnEditCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnEditCus.CheckedState.Parent = this.btnEditCus;
-            this.btnEditCus.CustomImages.Parent = this.btnEditCus;
-            this.btnEditCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnEditCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEditCus.HoverState.Parent = this.btnEditCus;
-            this.btnEditCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEditCus.Location = new System.Drawing.Point(191, 380);
-            this.btnEditCus.Name = "btnEditCus";
-            this.btnEditCus.ShadowDecoration.Parent = this.btnEditCus;
-            this.btnEditCus.Size = new System.Drawing.Size(106, 33);
-            this.btnEditCus.TabIndex = 72;
-            this.btnEditCus.Text = "Edit";
-            this.btnEditCus.UseTransparentBackground = true;
-            this.btnEditCus.Click += new System.EventHandler(this.btnEditCus_Click);
-            // 
-            // pnlVeh
-            // 
-            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnlVeh.Controls.Add(this.label16);
-            this.pnlVeh.Controls.Add(this.panel3);
-            this.pnlVeh.Controls.Add(this.panel1);
-            this.pnlVeh.Controls.Add(this.VehiclePic);
-            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
-            this.pnlVeh.Name = "pnlVeh";
-            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
-            this.pnlVeh.TabIndex = 71;
             // 
             // pnlCus
             // 
@@ -282,6 +246,7 @@ namespace Care_Management_and_Private_Parking
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(162, 23);
             this.tbName.TabIndex = 28;
+            this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
             // 
             // label5
             // 
@@ -303,6 +268,7 @@ namespace Care_Management_and_Private_Parking
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(162, 23);
             this.tbPhone.TabIndex = 30;
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // CustomerPic
             // 
@@ -314,6 +280,42 @@ namespace Care_Management_and_Private_Parking
             this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CustomerPic.TabIndex = 70;
             this.CustomerPic.TabStop = false;
+            // 
+            // btnEditCus
+            // 
+            this.btnEditCus.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditCus.BorderRadius = 17;
+            this.btnEditCus.BorderThickness = 1;
+            this.btnEditCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnEditCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnEditCus.CheckedState.Parent = this.btnEditCus;
+            this.btnEditCus.CustomImages.Parent = this.btnEditCus;
+            this.btnEditCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnEditCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditCus.HoverState.Parent = this.btnEditCus;
+            this.btnEditCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnEditCus.Location = new System.Drawing.Point(191, 380);
+            this.btnEditCus.Name = "btnEditCus";
+            this.btnEditCus.ShadowDecoration.Parent = this.btnEditCus;
+            this.btnEditCus.Size = new System.Drawing.Size(106, 33);
+            this.btnEditCus.TabIndex = 72;
+            this.btnEditCus.Text = "Edit";
+            this.btnEditCus.UseTransparentBackground = true;
+            this.btnEditCus.Click += new System.EventHandler(this.btnEditCus_Click);
+            // 
+            // pnlVeh
+            // 
+            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnlVeh.Controls.Add(this.label16);
+            this.pnlVeh.Controls.Add(this.panel3);
+            this.pnlVeh.Controls.Add(this.panel1);
+            this.pnlVeh.Controls.Add(this.VehiclePic);
+            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
+            this.pnlVeh.Name = "pnlVeh";
+            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
+            this.pnlVeh.TabIndex = 71;
             // 
             // label16
             // 
@@ -362,6 +364,7 @@ namespace Care_Management_and_Private_Parking
             this.numerudValue.Size = new System.Drawing.Size(106, 26);
             this.numerudValue.TabIndex = 73;
             this.numerudValue.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.numerudValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numerudValue_KeyPress);
             // 
             // cbboxTimeFormat
             // 
@@ -642,13 +645,13 @@ namespace Care_Management_and_Private_Parking
             this.Text = "EditVehicle";
             this.Load += new System.EventHandler(this.EditVehicle_Load);
             this.pnCalendar.ResumeLayout(false);
-            this.pnlVeh.ResumeLayout(false);
-            this.pnlVeh.PerformLayout();
             this.pnlCus.ResumeLayout(false);
             this.pnlCus.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
+            this.pnlVeh.ResumeLayout(false);
+            this.pnlVeh.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).EndInit();

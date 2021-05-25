@@ -232,5 +232,31 @@ namespace Care_Management_and_Private_Parking
             }
             this.DialogResult = DialogResult.Cancel;
         }
+
+        #region Extension
+        private void tbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)/* && !char.IsLetter(e.KeyChar)*/)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void numerudValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)/* && !char.IsLetter(e.KeyChar)*/)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) /*&& !char.IsDigit(e.KeyChar)*/ && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

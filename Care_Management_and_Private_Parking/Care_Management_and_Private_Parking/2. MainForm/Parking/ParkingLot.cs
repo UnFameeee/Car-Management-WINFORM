@@ -19,6 +19,19 @@ namespace Care_Management_and_Private_Parking
 {
     public partial class ParkingLot : Form
     {
+        public ParkingLot()
+        {
+            InitializeComponent();
+            
+        }
+        private void ParkingLot_Load(object sender, EventArgs e)
+        {
+            loadMatrixBicycle();
+            loadMatrixBike();
+            loadMatrixCar();
+            changeColorLoad();
+            fillSlot();
+        }
         #region Properties
 
         private List<List<Guna2Button>> matrixBicycle;
@@ -45,15 +58,6 @@ namespace Care_Management_and_Private_Parking
         private string type;
         private string customer;
         #endregion
-
-        public ParkingLot()
-        {
-            InitializeComponent();
-            loadMatrixBicycle();
-            loadMatrixBike();
-            loadMatrixCar();
-            changeColorLoad();
-        }
 
         #region Tải ma trận cho 3 hàng xe
         public void loadMatrixBicycle()
@@ -291,7 +295,7 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        #region Thêm, xóa, sửa, Hóa đơn
+        #region Thêm, xóa, sửa, Hóa đơn, tìm kiếm theo thẻ xe
         private void btnAddVehicle_Click(object sender, EventArgs e)
         {
             if(ParkingLotDAL.Instance.checkSlot((type +id), type) == false)
@@ -303,7 +307,8 @@ namespace Care_Management_and_Private_Parking
                 if(frm.DialogResult == DialogResult.OK)
                 {
                     changAddColor("add");
-                }                    
+                }
+                fillSlot();
             }
             else
             {
@@ -319,6 +324,7 @@ namespace Care_Management_and_Private_Parking
                 frm.VehID = (type + id);
                 frm.CusID = customer;
                 frm.ShowDialog();
+                fillSlot();
             }
             else
             {
@@ -337,7 +343,10 @@ namespace Care_Management_and_Private_Parking
                 if (frm.DialogResult == DialogResult.OK)
                 {
                     changAddColor("delete");
+                    fillEmpty();
+                    tbIDCard.Text = "";
                 }
+                fillSlot();
             }
             else
             {
@@ -350,8 +359,41 @@ namespace Care_Management_and_Private_Parking
         {
 
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            DataTable table = ParkingLotDAL.Instance.takeCusIDandVehID(Convert.ToInt32(tbIDCard.Text));
+            if(table.Rows.Count > 0)
+                MessageBox.Show("Your CusID is: " + table.Rows[0]["CusID"].ToString() + "\r\nYour VehID is: " + table.Rows[0]["VehID"].ToString(), "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Can't find IDCard", "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
         #endregion
 
+        #region Phần thông báo slot
+        private void fillSlot()
+        {
+            int totalvehicle = Variable.CarColumns * Variable.CarRows;
+            //Phần bicycle
+            lbAvailibleBicycle.Text = "Availible Slot: " + (totalvehicle - ParkingLotDAL.Instance.getAvailibleSlotPurpose("bicycle")).ToString();
+            lbUsedBicycle.Text = "Used Slot: " + ParkingLotDAL.Instance.getAvailibleSlotPurpose("bicycle").ToString();
+            //Phần Bike
+            lbAvailibleBike.Text = "Availible Slot: " + (totalvehicle - ParkingLotDAL.Instance.getAvailibleSlotPurpose("bike")).ToString();
+            lbUsedBike.Text = "Used Slot: " + ParkingLotDAL.Instance.getAvailibleSlotPurpose("bike").ToString();
+            //Phần Car
+            lbAvailibleCar.Text = "Availible Slot: " + (totalvehicle - ParkingLotDAL.Instance.getAvailibleSlotPurpose("car")).ToString();
+            lbUsedCar.Text = "Used Slot: " + ParkingLotDAL.Instance.getAvailibleSlotPurpose("car").ToString();
+        }
+        #endregion
 
+        #region extension
+        private void tbIDCard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)/* && !char.IsLetter(e.KeyChar)*/)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

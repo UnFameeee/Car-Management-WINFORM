@@ -32,12 +32,12 @@ namespace Care_Management_and_Private_Parking
             this.pnGet = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.tbCusID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbIDcard = new System.Windows.Forms.TextBox();
             this.btnGetVeh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.tbCusID = new System.Windows.Forms.TextBox();
             this.pnGet.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,16 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel1.Size = new System.Drawing.Size(336, 104);
             this.guna2Panel1.TabIndex = 74;
             // 
+            // tbCusID
+            // 
+            this.tbCusID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.tbCusID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCusID.ForeColor = System.Drawing.Color.White;
+            this.tbCusID.Location = new System.Drawing.Point(134, 56);
+            this.tbCusID.Name = "tbCusID";
+            this.tbCusID.Size = new System.Drawing.Size(162, 23);
+            this.tbCusID.TabIndex = 31;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -129,6 +139,7 @@ namespace Care_Management_and_Private_Parking
             this.tbIDcard.Name = "tbIDcard";
             this.tbIDcard.Size = new System.Drawing.Size(162, 23);
             this.tbIDcard.TabIndex = 29;
+            this.tbIDcard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIDcard_KeyPress);
             // 
             // btnGetVeh
             // 
@@ -169,16 +180,6 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.Size = new System.Drawing.Size(152, 27);
             this.guna2GradientButton2.TabIndex = 41;
             this.guna2GradientButton2.Text = "GET VEHICLE";
-            // 
-            // tbCusID
-            // 
-            this.tbCusID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.tbCusID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCusID.ForeColor = System.Drawing.Color.White;
-            this.tbCusID.Location = new System.Drawing.Point(134, 56);
-            this.tbCusID.Name = "tbCusID";
-            this.tbCusID.Size = new System.Drawing.Size(162, 23);
-            this.tbCusID.TabIndex = 31;
             // 
             // GetVehicle
             // 
