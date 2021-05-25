@@ -14,6 +14,7 @@ namespace Care_Management_and_Private_Parking
     {
         EmployeeListForm frmEmpList = new EmployeeListForm() { TopLevel = false, TopMost = true };
         ManageAccountForm frmAccount = new ManageAccountForm() { TopLevel = false, TopMost = true };
+        ContractForm frmContract = new ContractForm() { TopLevel = false, TopMost = true };
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
         public ManageForm()
@@ -26,6 +27,7 @@ namespace Care_Management_and_Private_Parking
         {
             pnData.Controls.Add(frmEmpList);
             pnData.Controls.Add(frmAccount);
+            pnData.Controls.Add(frmContract);
             tick();
         }
 
@@ -34,12 +36,15 @@ namespace Care_Management_and_Private_Parking
             //Chỉnh Checked
             btnStaffList.Checked = false;
             btnAccountList.Checked = false;
+            btnContract.Checked = false;
             //Chỉnh Cursor
             btnStaffList.Cursor = cur1;
             btnAccountList.Cursor = cur1;
+            btnContract.Cursor = cur1;
             //Tắt tất cả các form
             frmEmpList.Hide();
             frmAccount.Hide();
+            frmContract.Hide();
         }  
 
         private void btnStaffList_Click(object sender, EventArgs e)
@@ -56,6 +61,14 @@ namespace Care_Management_and_Private_Parking
             btnAccountList.Checked = true;
             btnAccountList.Cursor = cur2;
             frmAccount.Show();
+        }
+
+        private void btnContract_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnContract.Checked = true;
+            btnContract.Cursor = cur2;
+            frmContract.Show();
         }
     }
 }

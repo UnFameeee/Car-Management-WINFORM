@@ -33,8 +33,6 @@ namespace Care_Management_and_Private_Parking
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetailRentVeh = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetailVehForRent = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddRentVeh = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddVehForRent = new Guna.UI2.WinForms.Guna2Button();
             this.pnForRent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -83,8 +81,6 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.Controls.Add(this.btnRefresh);
             this.pnCalendar.Controls.Add(this.btnDetailRentVeh);
             this.pnCalendar.Controls.Add(this.btnDetailVehForRent);
-            this.pnCalendar.Controls.Add(this.btnAddRentVeh);
-            this.pnCalendar.Controls.Add(this.btnAddVehForRent);
             this.pnCalendar.Controls.Add(this.pnForRent);
             this.pnCalendar.Controls.Add(this.btnLogin);
             this.pnCalendar.Controls.Add(this.guna2Panel5);
@@ -134,10 +130,10 @@ namespace Care_Management_and_Private_Parking
             this.btnDetailRentVeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnDetailRentVeh.HoverState.Parent = this.btnDetailRentVeh;
             this.btnDetailRentVeh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDetailRentVeh.Location = new System.Drawing.Point(831, 185);
+            this.btnDetailRentVeh.Location = new System.Drawing.Point(761, 185);
             this.btnDetailRentVeh.Name = "btnDetailRentVeh";
             this.btnDetailRentVeh.ShadowDecoration.Parent = this.btnDetailRentVeh;
-            this.btnDetailRentVeh.Size = new System.Drawing.Size(65, 30);
+            this.btnDetailRentVeh.Size = new System.Drawing.Size(135, 30);
             this.btnDetailRentVeh.TabIndex = 47;
             this.btnDetailRentVeh.Text = "Detail";
             this.btnDetailRentVeh.UseTransparentBackground = true;
@@ -157,60 +153,14 @@ namespace Care_Management_and_Private_Parking
             this.btnDetailVehForRent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnDetailVehForRent.HoverState.Parent = this.btnDetailVehForRent;
             this.btnDetailVehForRent.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDetailVehForRent.Location = new System.Drawing.Point(831, 376);
+            this.btnDetailVehForRent.Location = new System.Drawing.Point(761, 376);
             this.btnDetailVehForRent.Name = "btnDetailVehForRent";
             this.btnDetailVehForRent.ShadowDecoration.Parent = this.btnDetailVehForRent;
-            this.btnDetailVehForRent.Size = new System.Drawing.Size(65, 30);
+            this.btnDetailVehForRent.Size = new System.Drawing.Size(135, 30);
             this.btnDetailVehForRent.TabIndex = 45;
             this.btnDetailVehForRent.Text = "Detail";
             this.btnDetailVehForRent.UseTransparentBackground = true;
             this.btnDetailVehForRent.Click += new System.EventHandler(this.btnDetailVehForRent_Click);
-            // 
-            // btnAddRentVeh
-            // 
-            this.btnAddRentVeh.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddRentVeh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddRentVeh.BorderThickness = 1;
-            this.btnAddRentVeh.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAddRentVeh.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddRentVeh.CheckedState.Parent = this.btnAddRentVeh;
-            this.btnAddRentVeh.CustomImages.Parent = this.btnAddRentVeh;
-            this.btnAddRentVeh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAddRentVeh.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRentVeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddRentVeh.HoverState.Parent = this.btnAddRentVeh;
-            this.btnAddRentVeh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddRentVeh.Location = new System.Drawing.Point(761, 185);
-            this.btnAddRentVeh.Name = "btnAddRentVeh";
-            this.btnAddRentVeh.ShadowDecoration.Parent = this.btnAddRentVeh;
-            this.btnAddRentVeh.Size = new System.Drawing.Size(64, 30);
-            this.btnAddRentVeh.TabIndex = 42;
-            this.btnAddRentVeh.Text = "Add";
-            this.btnAddRentVeh.UseTransparentBackground = true;
-            this.btnAddRentVeh.Click += new System.EventHandler(this.btnAddRentVeh_Click);
-            // 
-            // btnAddVehForRent
-            // 
-            this.btnAddVehForRent.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddVehForRent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddVehForRent.BorderThickness = 1;
-            this.btnAddVehForRent.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnAddVehForRent.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddVehForRent.CheckedState.Parent = this.btnAddVehForRent;
-            this.btnAddVehForRent.CustomImages.Parent = this.btnAddVehForRent;
-            this.btnAddVehForRent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnAddVehForRent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddVehForRent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnAddVehForRent.HoverState.Parent = this.btnAddVehForRent;
-            this.btnAddVehForRent.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddVehForRent.Location = new System.Drawing.Point(761, 376);
-            this.btnAddVehForRent.Name = "btnAddVehForRent";
-            this.btnAddVehForRent.ShadowDecoration.Parent = this.btnAddVehForRent;
-            this.btnAddVehForRent.Size = new System.Drawing.Size(64, 30);
-            this.btnAddVehForRent.TabIndex = 40;
-            this.btnAddVehForRent.Text = "Add";
-            this.btnAddVehForRent.UseTransparentBackground = true;
-            this.btnAddVehForRent.Click += new System.EventHandler(this.btnAddVehForRent_Click);
             // 
             // pnForRent
             // 
@@ -652,8 +602,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbVehicleID;
         private Guna.UI2.WinForms.Guna2PictureBox VehiclePic;
         private Guna.UI2.WinForms.Guna2Panel pnForRent;
-        private Guna.UI2.WinForms.Guna2Button btnAddVehForRent;
-        private Guna.UI2.WinForms.Guna2Button btnAddRentVeh;
         private Guna.UI2.WinForms.Guna2Button btnDetailRentVeh;
         private Guna.UI2.WinForms.Guna2Button btnDetailVehForRent;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
