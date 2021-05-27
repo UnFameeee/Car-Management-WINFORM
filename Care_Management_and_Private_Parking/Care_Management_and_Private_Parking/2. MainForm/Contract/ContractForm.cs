@@ -30,15 +30,10 @@ namespace Care_Management_and_Private_Parking
             frm.Show();
         }
 
-        //private bool verif()
-        //{
-        //    if (frm.tbRentName.Text == "" || )
-        //}
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string contid = frm.tbContractInfo.Text;
-            string purpose = frm.cbboxPurpose.SelectedIndex.ToString();
+            string contid = frm.tbContractID.Text;
+            string purpose = frm.cbboxPurpose.SelectedItem.ToString();
             //Phần khách
             string name;
             string phone;
@@ -49,6 +44,7 @@ namespace Care_Management_and_Private_Parking
 
             //phần nhân viên
             //Phần này thì chỉ cần truy vấn từ GlobalID
+
 
             //Phần xe
             string vehtype;
@@ -62,54 +58,34 @@ namespace Care_Management_and_Private_Parking
                 identity = frm.tbRentIdentity.Text;
                 address = frm.tbRentAddress.Text;
                 email = frm.tbRentMail.Text;
-                //ảnh cus
-                if(frm.ForRentCusPic.Image != null)
+
+                if (verif())
                 {
                     cuspic = new MemoryStream();
-                    frm.ForRentCusPic.Image.Save(cuspic, frm.ForRentCusPic.Image.RawFormat);
+                    frm.ForRentPic.Image.Save(cuspic, frm.ForRentPic.Image.RawFormat);
                     success = true;
-                }
-                else
-                {
-                    success = false;
-                    MessageBox.Show("Please add the human forrent's picture!!!", "Add contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
-                //thông tin xe
-                if (frm.cbVehType.SelectedValue.ToString() == "Xe Đạp")
-                    vehtype = "bicycle";
-                else if (frm.cbVehType.SelectedValue.ToString() == "Xe Máy")
-                    vehtype = "bike";
-                else
-                    vehtype = "car";
-                license = frm.tbForRentVehLicense.Text;
-
-                //ảnh xe
-                if (frm.VehPic.Image != null)
-                {
+                    //thông tin xe
+                    if (frm.cbVehType.SelectedValue.ToString() == "Xe Đạp")
+                        vehtype = "bicycle";
+                    else if (frm.cbVehType.SelectedValue.ToString() == "Xe Máy")
+                        vehtype = "bike";
+                    else
+                        vehtype = "car";
+                    license = frm.tbForRentVehLicense.Text;
                     vehpic = new MemoryStream();
                     frm.VehPic.Image.Save(vehpic, frm.VehPic.Image.RawFormat);
                     success = true;
+
+
                 }
-                else
-                {
-                    success = false;
-                    MessageBox.Show("Please add the human forrent's picture!!!", "Add contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                
             }
             else                    //Mình là người cho thuê
             {
-                //Chưa làm xong
-                if (frm.RentCusPic.Image != null)
-                {
-                    vehpic = new MemoryStream();
-                    frm.ForRentCusPic.Image.Save(vehpic, frm.ForRentCusPic.Image.RawFormat);
-                    success = true;
-                }
-                else
-                {
-                    MessageBox.Show("Please add the human rent's picture!!!", "Add contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                vehpic = new MemoryStream();
+                frm.ForRentPic.Image.Save(vehpic, frm.ForRentPic.Image.RawFormat);
+                success = true;
             }
 
             if(success)
@@ -131,6 +107,24 @@ namespace Care_Management_and_Private_Parking
         private void btnRefresh_Click(object sender, EventArgs e)
         {
 
+        }
+
+        bool verif()
+        {
+            if (frm.cbboxPurpose.SelectedItem == null || frm.tbContractID.Text == ""
+                || frm.tbForRentName.Text == "" || frm.tbForRentPhone.Text == ""
+                || frm.tbForRentJob.Text == "" || frm.tbForRentAddress.Text == ""
+                || frm.tbForRentIdentity.Text == "" || frm.tbForRentMail.Text == ""
+                || frm.cbVehType.SelectedItem == null || frm.tbForRentVehLicense.Text == ""
+                || frm.VehPic.Image == null || frm.ForRentPic.Image == null
+                || frm.tbRentName.Text == "" || frm.tbRentPhone.Text == ""
+                || frm.tbRentJob.Text == "" || frm.tbRentAddress.Text == ""
+                || frm.tbRentIdentity.Text == "" || frm.tbRentMail.Text == ""
+                || frm.RentPic.Image == null || frm.tbTime.Text == ""
+                || frm.cbboxTimeFormat.SelectedItem == null || frm.tbPrice.Text == ""
+                || frm.cbboxFee.SelectedItem == null) 
+                return false;
+            else return true;
         }
     }
 }

@@ -32,12 +32,23 @@ namespace Care_Management_and_Private_Parking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contract));
             this.label1 = new System.Windows.Forms.Label();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.cbboxTimeFormat = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tbPrice2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbTime = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbboxFee = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.ForRentCusPic = new System.Windows.Forms.PictureBox();
+            this.ForRentPic = new System.Windows.Forms.PictureBox();
             this.cbVehType = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.RentCusPic = new System.Windows.Forms.PictureBox();
+            this.RentPic = new System.Windows.Forms.PictureBox();
             this.VehPic = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.tbRentMail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,13 +72,12 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbDateTime = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbDateStart = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbDeal = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbContractID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.tbContractInfo = new System.Windows.Forms.RichTextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -85,8 +95,8 @@ namespace Care_Management_and_Private_Parking
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ForRentCusPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RentCusPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ForRentPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RentPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VehPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,12 +115,23 @@ namespace Care_Management_and_Private_Parking
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.cbboxTimeFormat);
+            this.panelTop.Controls.Add(this.label36);
+            this.panelTop.Controls.Add(this.label35);
+            this.panelTop.Controls.Add(this.label34);
+            this.panelTop.Controls.Add(this.tbPrice2);
+            this.panelTop.Controls.Add(this.tbPrice);
+            this.panelTop.Controls.Add(this.tbTime);
+            this.panelTop.Controls.Add(this.cbboxFee);
+            this.panelTop.Controls.Add(this.label33);
+            this.panelTop.Controls.Add(this.label32);
+            this.panelTop.Controls.Add(this.label31);
             this.panelTop.Controls.Add(this.label30);
-            this.panelTop.Controls.Add(this.ForRentCusPic);
+            this.panelTop.Controls.Add(this.ForRentPic);
             this.panelTop.Controls.Add(this.cbVehType);
             this.panelTop.Controls.Add(this.label28);
             this.panelTop.Controls.Add(this.label29);
-            this.panelTop.Controls.Add(this.RentCusPic);
+            this.panelTop.Controls.Add(this.RentPic);
             this.panelTop.Controls.Add(this.VehPic);
             this.panelTop.Controls.Add(this.label27);
             this.panelTop.Controls.Add(this.tbRentMail);
@@ -134,13 +155,12 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Controls.Add(this.tbForRentPhone);
             this.panelTop.Controls.Add(this.tbForRentName);
             this.panelTop.Controls.Add(this.guna2TextBox3);
-            this.panelTop.Controls.Add(this.tbDateTime);
+            this.panelTop.Controls.Add(this.tbDateStart);
             this.panelTop.Controls.Add(this.tbDeal);
             this.panelTop.Controls.Add(this.tbContractID);
             this.panelTop.Controls.Add(this.label26);
             this.panelTop.Controls.Add(this.label24);
             this.panelTop.Controls.Add(this.label22);
-            this.panelTop.Controls.Add(this.tbContractInfo);
             this.panelTop.Controls.Add(this.label23);
             this.panelTop.Controls.Add(this.label15);
             this.panelTop.Controls.Add(this.label14);
@@ -164,6 +184,195 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Size = new System.Drawing.Size(786, 714);
             this.panelTop.TabIndex = 1;
             // 
+            // cbboxTimeFormat
+            // 
+            this.cbboxTimeFormat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbboxTimeFormat.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbboxTimeFormat.FormattingEnabled = true;
+            this.cbboxTimeFormat.Items.AddRange(new object[] {
+            "Day",
+            "Month",
+            "Year"});
+            this.cbboxTimeFormat.Location = new System.Drawing.Point(183, 609);
+            this.cbboxTimeFormat.Name = "cbboxTimeFormat";
+            this.cbboxTimeFormat.Size = new System.Drawing.Size(86, 25);
+            this.cbboxTimeFormat.TabIndex = 144;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(383, 675);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(13, 15);
+            this.label36.TabIndex = 143;
+            this.label36.Text = "x";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(518, 673);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(31, 15);
+            this.label35.TabIndex = 142;
+            this.label35.Text = "VNĐ";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(271, 644);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(31, 15);
+            this.label34.TabIndex = 141;
+            this.label34.Text = "VNĐ";
+            // 
+            // tbPrice2
+            // 
+            this.tbPrice2.AutoRoundedCorners = true;
+            this.tbPrice2.BackColor = System.Drawing.Color.White;
+            this.tbPrice2.BorderColor = System.Drawing.Color.White;
+            this.tbPrice2.BorderRadius = 10;
+            this.tbPrice2.BorderThickness = 0;
+            this.tbPrice2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPrice2.DefaultText = "";
+            this.tbPrice2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPrice2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPrice2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPrice2.DisabledState.Parent = this.tbPrice2;
+            this.tbPrice2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPrice2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPrice2.FocusedState.Parent = this.tbPrice2;
+            this.tbPrice2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbPrice2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPrice2.HoverState.Parent = this.tbPrice2;
+            this.tbPrice2.Location = new System.Drawing.Point(234, 675);
+            this.tbPrice2.Name = "tbPrice2";
+            this.tbPrice2.PasswordChar = '\0';
+            this.tbPrice2.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbPrice2.PlaceholderText = "................................................................................." +
+    "...........................";
+            this.tbPrice2.SelectedText = "";
+            this.tbPrice2.ShadowDecoration.Parent = this.tbPrice2;
+            this.tbPrice2.Size = new System.Drawing.Size(136, 23);
+            this.tbPrice2.TabIndex = 140;
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.AutoRoundedCorners = true;
+            this.tbPrice.BackColor = System.Drawing.Color.White;
+            this.tbPrice.BorderColor = System.Drawing.Color.White;
+            this.tbPrice.BorderRadius = 10;
+            this.tbPrice.BorderThickness = 0;
+            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPrice.DefaultText = "";
+            this.tbPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPrice.DisabledState.Parent = this.tbPrice;
+            this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPrice.FocusedState.Parent = this.tbPrice;
+            this.tbPrice.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPrice.HoverState.Parent = this.tbPrice;
+            this.tbPrice.Location = new System.Drawing.Point(147, 642);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.PasswordChar = '\0';
+            this.tbPrice.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbPrice.PlaceholderText = "................................................................................." +
+    "...........................";
+            this.tbPrice.SelectedText = "";
+            this.tbPrice.ShadowDecoration.Parent = this.tbPrice;
+            this.tbPrice.Size = new System.Drawing.Size(122, 23);
+            this.tbPrice.TabIndex = 139;
+            // 
+            // tbTime
+            // 
+            this.tbTime.AutoRoundedCorners = true;
+            this.tbTime.BackColor = System.Drawing.Color.White;
+            this.tbTime.BorderColor = System.Drawing.Color.White;
+            this.tbTime.BorderRadius = 10;
+            this.tbTime.BorderThickness = 0;
+            this.tbTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTime.DefaultText = "";
+            this.tbTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTime.DisabledState.Parent = this.tbTime;
+            this.tbTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTime.FocusedState.Parent = this.tbTime;
+            this.tbTime.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTime.HoverState.Parent = this.tbTime;
+            this.tbTime.Location = new System.Drawing.Point(85, 612);
+            this.tbTime.Name = "tbTime";
+            this.tbTime.PasswordChar = '\0';
+            this.tbTime.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbTime.PlaceholderText = "....................................";
+            this.tbTime.SelectedText = "";
+            this.tbTime.ShadowDecoration.Parent = this.tbTime;
+            this.tbTime.Size = new System.Drawing.Size(92, 23);
+            this.tbTime.TabIndex = 138;
+            // 
+            // cbboxFee
+            // 
+            this.cbboxFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbboxFee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbboxFee.FormattingEnabled = true;
+            this.cbboxFee.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbboxFee.Location = new System.Drawing.Point(402, 668);
+            this.cbboxFee.Name = "cbboxFee";
+            this.cbboxFee.Size = new System.Drawing.Size(104, 25);
+            this.cbboxFee.TabIndex = 137;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(30, 614);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(56, 15);
+            this.label33.TabIndex = 136;
+            this.label33.Text = "Thời hạn:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(29, 675);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(212, 15);
+            this.label32.TabIndex = 135;
+            this.label32.Text = "Đền bù (huỷ hợp đồng trước thời hạn):";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(29, 644);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(121, 15);
+            this.label31.TabIndex = 134;
+            this.label31.Text = "Giá cả thương lượng: ";
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -176,13 +385,14 @@ namespace Care_Management_and_Private_Parking
             this.label30.Text = "Hình ảnh\r\nbên cho thuê";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ForRentCusPic
+            // ForRentPic
             // 
-            this.ForRentCusPic.Location = new System.Drawing.Point(638, 309);
-            this.ForRentCusPic.Name = "ForRentCusPic";
-            this.ForRentCusPic.Size = new System.Drawing.Size(70, 70);
-            this.ForRentCusPic.TabIndex = 132;
-            this.ForRentCusPic.TabStop = false;
+            this.ForRentPic.Location = new System.Drawing.Point(638, 309);
+            this.ForRentPic.Name = "ForRentPic";
+            this.ForRentPic.Size = new System.Drawing.Size(70, 70);
+            this.ForRentPic.TabIndex = 132;
+            this.ForRentPic.TabStop = false;
+            this.ForRentPic.Click += new System.EventHandler(this.ForRentCusPic_Click);
             // 
             // cbVehType
             // 
@@ -220,13 +430,14 @@ namespace Care_Management_and_Private_Parking
             this.label29.TabIndex = 129;
             this.label29.Text = "Hình ảnh xe";
             // 
-            // RentCusPic
+            // RentPic
             // 
-            this.RentCusPic.Location = new System.Drawing.Point(485, 514);
-            this.RentCusPic.Name = "RentCusPic";
-            this.RentCusPic.Size = new System.Drawing.Size(70, 70);
-            this.RentCusPic.TabIndex = 128;
-            this.RentCusPic.TabStop = false;
+            this.RentPic.Location = new System.Drawing.Point(485, 514);
+            this.RentPic.Name = "RentPic";
+            this.RentPic.Size = new System.Drawing.Size(70, 70);
+            this.RentPic.TabIndex = 128;
+            this.RentPic.TabStop = false;
+            this.RentPic.Click += new System.EventHandler(this.RentCusPic_Click);
             // 
             // VehPic
             // 
@@ -235,6 +446,7 @@ namespace Care_Management_and_Private_Parking
             this.VehPic.Size = new System.Drawing.Size(70, 70);
             this.VehPic.TabIndex = 127;
             this.VehPic.TabStop = false;
+            this.VehPic.Click += new System.EventHandler(this.VehPic_Click);
             // 
             // label27
             // 
@@ -713,7 +925,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2TextBox3.BorderRadius = 10;
             this.guna2TextBox3.BorderThickness = 0;
             this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DefaultText = "TPHCM";
             this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -728,40 +940,41 @@ namespace Care_Management_and_Private_Parking
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2TextBox3.PlaceholderText = "TPHCM";
+            this.guna2TextBox3.PlaceholderText = "";
             this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.SelectionStart = 5;
             this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(87, 23);
+            this.guna2TextBox3.Size = new System.Drawing.Size(63, 23);
             this.guna2TextBox3.TabIndex = 104;
             // 
-            // tbDateTime
+            // tbDateStart
             // 
-            this.tbDateTime.AutoRoundedCorners = true;
-            this.tbDateTime.BackColor = System.Drawing.Color.White;
-            this.tbDateTime.BorderColor = System.Drawing.Color.White;
-            this.tbDateTime.BorderRadius = 10;
-            this.tbDateTime.BorderThickness = 0;
-            this.tbDateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbDateTime.DefaultText = "";
-            this.tbDateTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbDateTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbDateTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbDateTime.DisabledState.Parent = this.tbDateTime;
-            this.tbDateTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbDateTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDateTime.FocusedState.Parent = this.tbDateTime;
-            this.tbDateTime.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbDateTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDateTime.HoverState.Parent = this.tbDateTime;
-            this.tbDateTime.Location = new System.Drawing.Point(92, 155);
-            this.tbDateTime.Name = "tbDateTime";
-            this.tbDateTime.PasswordChar = '\0';
-            this.tbDateTime.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbDateTime.PlaceholderText = "date";
-            this.tbDateTime.SelectedText = "";
-            this.tbDateTime.ShadowDecoration.Parent = this.tbDateTime;
-            this.tbDateTime.Size = new System.Drawing.Size(118, 23);
-            this.tbDateTime.TabIndex = 103;
+            this.tbDateStart.AutoRoundedCorners = true;
+            this.tbDateStart.BackColor = System.Drawing.Color.White;
+            this.tbDateStart.BorderColor = System.Drawing.Color.White;
+            this.tbDateStart.BorderRadius = 10;
+            this.tbDateStart.BorderThickness = 0;
+            this.tbDateStart.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbDateStart.DefaultText = "";
+            this.tbDateStart.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbDateStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbDateStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDateStart.DisabledState.Parent = this.tbDateStart;
+            this.tbDateStart.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDateStart.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDateStart.FocusedState.Parent = this.tbDateStart;
+            this.tbDateStart.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbDateStart.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDateStart.HoverState.Parent = this.tbDateStart;
+            this.tbDateStart.Location = new System.Drawing.Point(92, 155);
+            this.tbDateStart.Name = "tbDateStart";
+            this.tbDateStart.PasswordChar = '\0';
+            this.tbDateStart.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbDateStart.PlaceholderText = "date";
+            this.tbDateStart.SelectedText = "";
+            this.tbDateStart.ShadowDecoration.Parent = this.tbDateStart;
+            this.tbDateStart.Size = new System.Drawing.Size(118, 23);
+            this.tbDateStart.TabIndex = 103;
             // 
             // tbDeal
             // 
@@ -854,18 +1067,6 @@ namespace Care_Management_and_Private_Parking
             this.label22.Size = new System.Drawing.Size(97, 20);
             this.label22.TabIndex = 82;
             this.label22.Text = "2. Bên thuê: ";
-            // 
-            // tbContractInfo
-            // 
-            this.tbContractInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbContractInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContractInfo.Location = new System.Drawing.Point(33, 605);
-            this.tbContractInfo.Name = "tbContractInfo";
-            this.tbContractInfo.Size = new System.Drawing.Size(731, 106);
-            this.tbContractInfo.TabIndex = 81;
-            this.tbContractInfo.Text = resources.GetString("tbContractInfo.Text");
-            this.tbContractInfo.Click += new System.EventHandler(this.tbContractInfo_Click);
-            this.tbContractInfo.Leave += new System.EventHandler(this.tbContractInfo_Leave);
             // 
             // label23
             // 
@@ -960,7 +1161,7 @@ namespace Care_Management_and_Private_Parking
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(326, 158);
+            this.label5.Location = new System.Drawing.Point(296, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 15);
             this.label5.TabIndex = 66;
@@ -1057,8 +1258,8 @@ namespace Care_Management_and_Private_Parking
             this.Text = "Contract";
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ForRentCusPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RentCusPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ForRentPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RentPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VehPic)).EndInit();
             this.ResumeLayout(false);
 
@@ -1094,7 +1295,7 @@ namespace Care_Management_and_Private_Parking
         public Guna.UI2.WinForms.Guna2TextBox tbForRentPhone;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentName;
         public Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        public Guna.UI2.WinForms.Guna2TextBox tbDateTime;
+        public Guna.UI2.WinForms.Guna2TextBox tbDateStart;
         public Guna.UI2.WinForms.Guna2TextBox tbRentMail;
         public Guna.UI2.WinForms.Guna2TextBox tbRentJob;
         public Guna.UI2.WinForms.Guna2TextBox tbRentAddress;
@@ -1111,14 +1312,24 @@ namespace Care_Management_and_Private_Parking
         public Guna.UI2.WinForms.Guna2TextBox tbForRentMail;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentJob;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentVehLicense;
-        public System.Windows.Forms.RichTextBox tbContractInfo;
         public System.Windows.Forms.Label label27;
         public System.Windows.Forms.Label label28;
         public System.Windows.Forms.Label label29;
         public System.Windows.Forms.ComboBox cbVehType;
         public System.Windows.Forms.Label label30;
         public System.Windows.Forms.PictureBox VehPic;
-        public System.Windows.Forms.PictureBox RentCusPic;
-        public System.Windows.Forms.PictureBox ForRentCusPic;
+        public System.Windows.Forms.PictureBox RentPic;
+        public System.Windows.Forms.PictureBox ForRentPic;
+        public System.Windows.Forms.Label label31;
+        public System.Windows.Forms.Label label32;
+        public System.Windows.Forms.Label label35;
+        public System.Windows.Forms.Label label34;
+        public Guna.UI2.WinForms.Guna2TextBox tbPrice;
+        public Guna.UI2.WinForms.Guna2TextBox tbTime;
+        public System.Windows.Forms.ComboBox cbboxFee;
+        public System.Windows.Forms.Label label33;
+        public System.Windows.Forms.ComboBox cbboxTimeFormat;
+        public System.Windows.Forms.Label label36;
+        public Guna.UI2.WinForms.Guna2TextBox tbPrice2;
     }
 }

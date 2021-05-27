@@ -17,17 +17,34 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        string info;
-
-        private void tbContractInfo_Click(object sender, EventArgs e)
+        private void RentCusPic_Click(object sender, EventArgs e)
         {
-            info = tbContractInfo.Text;
-            tbContractInfo.Text = null;
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                RentPic.Image = Image.FromFile(opf.FileName);
+            }
         }
 
-        private void tbContractInfo_Leave(object sender, EventArgs e)
+        private void VehPic_Click(object sender, EventArgs e)
         {
-            tbContractInfo.Text = info;
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                VehPic.Image = Image.FromFile(opf.FileName);
+            }
+        }
+
+        private void ForRentCusPic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                ForRentPic.Image = Image.FromFile(opf.FileName);
+            }
         }
     }
 }

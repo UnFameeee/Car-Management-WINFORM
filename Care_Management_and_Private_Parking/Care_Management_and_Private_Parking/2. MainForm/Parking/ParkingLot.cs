@@ -384,7 +384,7 @@ namespace Care_Management_and_Private_Parking
                     Invoice frm = new Invoice();
                     frm.VehID = (type + id);
                     frm.CusID = customer;
-                    frm.Show();
+                    frm.ShowDialog();
                 }
                 else
                 {
