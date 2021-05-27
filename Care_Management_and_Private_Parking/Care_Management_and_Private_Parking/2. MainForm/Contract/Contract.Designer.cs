@@ -29,9 +29,14 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contract));
             this.label1 = new System.Windows.Forms.Label();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.tbForRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.cbboxTimeFormat = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -51,23 +56,20 @@ namespace Care_Management_and_Private_Parking
             this.RentPic = new System.Windows.Forms.PictureBox();
             this.VehPic = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.tbRentMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRentJob = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbRentBdate = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRentIdentity = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRentPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbRentName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.tbForRentMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentJob = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentVehLicense = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbForRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbForRentBdate = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentIdentity = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbForRentName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -81,7 +83,6 @@ namespace Care_Management_and_Private_Parking
             this.label23 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -94,6 +95,7 @@ namespace Care_Management_and_Private_Parking
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ForRentPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentPic)).BeginInit();
@@ -115,6 +117,10 @@ namespace Care_Management_and_Private_Parking
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.tbForRentAddress);
+            this.panelTop.Controls.Add(this.label13);
+            this.panelTop.Controls.Add(this.tbRentAddress);
+            this.panelTop.Controls.Add(this.label37);
             this.panelTop.Controls.Add(this.cbboxTimeFormat);
             this.panelTop.Controls.Add(this.label36);
             this.panelTop.Controls.Add(this.label35);
@@ -134,23 +140,20 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Controls.Add(this.RentPic);
             this.panelTop.Controls.Add(this.VehPic);
             this.panelTop.Controls.Add(this.label27);
-            this.panelTop.Controls.Add(this.tbRentMail);
             this.panelTop.Controls.Add(this.tbRentJob);
-            this.panelTop.Controls.Add(this.tbRentAddress);
+            this.panelTop.Controls.Add(this.tbRentBdate);
             this.panelTop.Controls.Add(this.tbRentIdentity);
             this.panelTop.Controls.Add(this.tbRentPhone);
             this.panelTop.Controls.Add(this.tbRentName);
             this.panelTop.Controls.Add(this.label16);
             this.panelTop.Controls.Add(this.label17);
             this.panelTop.Controls.Add(this.label18);
-            this.panelTop.Controls.Add(this.label19);
             this.panelTop.Controls.Add(this.label20);
             this.panelTop.Controls.Add(this.label21);
             this.panelTop.Controls.Add(this.label25);
-            this.panelTop.Controls.Add(this.tbForRentMail);
             this.panelTop.Controls.Add(this.tbForRentJob);
             this.panelTop.Controls.Add(this.tbForRentVehLicense);
-            this.panelTop.Controls.Add(this.tbForRentAddress);
+            this.panelTop.Controls.Add(this.tbForRentBdate);
             this.panelTop.Controls.Add(this.tbForRentIdentity);
             this.panelTop.Controls.Add(this.tbForRentPhone);
             this.panelTop.Controls.Add(this.tbForRentName);
@@ -164,7 +167,6 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Controls.Add(this.label23);
             this.panelTop.Controls.Add(this.label15);
             this.panelTop.Controls.Add(this.label14);
-            this.panelTop.Controls.Add(this.label13);
             this.panelTop.Controls.Add(this.label12);
             this.panelTop.Controls.Add(this.label11);
             this.panelTop.Controls.Add(this.label10);
@@ -184,15 +186,95 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Size = new System.Drawing.Size(786, 714);
             this.panelTop.TabIndex = 1;
             // 
+            // tbForRentAddress
+            // 
+            this.tbForRentAddress.AutoRoundedCorners = true;
+            this.tbForRentAddress.BackColor = System.Drawing.Color.White;
+            this.tbForRentAddress.BorderColor = System.Drawing.Color.White;
+            this.tbForRentAddress.BorderRadius = 10;
+            this.tbForRentAddress.BorderThickness = 0;
+            this.tbForRentAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbForRentAddress.DefaultText = "";
+            this.tbForRentAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbForRentAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbForRentAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbForRentAddress.DisabledState.Parent = this.tbForRentAddress;
+            this.tbForRentAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbForRentAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbForRentAddress.FocusedState.Parent = this.tbForRentAddress;
+            this.tbForRentAddress.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbForRentAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbForRentAddress.HoverState.Parent = this.tbForRentAddress;
+            this.tbForRentAddress.Location = new System.Drawing.Point(74, 298);
+            this.tbForRentAddress.Name = "tbForRentAddress";
+            this.tbForRentAddress.PasswordChar = '\0';
+            this.tbForRentAddress.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbForRentAddress.PlaceholderText = resources.GetString("tbForRentAddress.PlaceholderText");
+            this.tbForRentAddress.SelectedText = "";
+            this.tbForRentAddress.ShadowDecoration.Parent = this.tbForRentAddress;
+            this.tbForRentAddress.Size = new System.Drawing.Size(390, 23);
+            this.tbForRentAddress.TabIndex = 148;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 301);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 15);
+            this.label13.TabIndex = 147;
+            this.label13.Text = "Địa chỉ:";
+            // 
+            // tbRentAddress
+            // 
+            this.tbRentAddress.AutoRoundedCorners = true;
+            this.tbRentAddress.BackColor = System.Drawing.Color.White;
+            this.tbRentAddress.BorderColor = System.Drawing.Color.White;
+            this.tbRentAddress.BorderRadius = 10;
+            this.tbRentAddress.BorderThickness = 0;
+            this.tbRentAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbRentAddress.DefaultText = "";
+            this.tbRentAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbRentAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbRentAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbRentAddress.DisabledState.Parent = this.tbRentAddress;
+            this.tbRentAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbRentAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbRentAddress.FocusedState.Parent = this.tbRentAddress;
+            this.tbRentAddress.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbRentAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbRentAddress.HoverState.Parent = this.tbRentAddress;
+            this.tbRentAddress.Location = new System.Drawing.Point(74, 514);
+            this.tbRentAddress.Name = "tbRentAddress";
+            this.tbRentAddress.PasswordChar = '\0';
+            this.tbRentAddress.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbRentAddress.PlaceholderText = resources.GetString("tbRentAddress.PlaceholderText");
+            this.tbRentAddress.SelectedText = "";
+            this.tbRentAddress.ShadowDecoration.Parent = this.tbRentAddress;
+            this.tbRentAddress.Size = new System.Drawing.Size(390, 23);
+            this.tbRentAddress.TabIndex = 146;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(29, 517);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(46, 15);
+            this.label37.TabIndex = 145;
+            this.label37.Text = "Địa chỉ:";
+            // 
             // cbboxTimeFormat
             // 
             this.cbboxTimeFormat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbboxTimeFormat.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbboxTimeFormat.FormattingEnabled = true;
             this.cbboxTimeFormat.Items.AddRange(new object[] {
-            "Day",
-            "Month",
-            "Year"});
+            "Ngày",
+            "Tháng",
+            "Năm"});
             this.cbboxTimeFormat.Location = new System.Drawing.Point(183, 609);
             this.cbboxTimeFormat.Name = "cbboxTimeFormat";
             this.cbboxTimeFormat.Size = new System.Drawing.Size(86, 25);
@@ -290,6 +372,7 @@ namespace Care_Management_and_Private_Parking
             this.tbPrice.ShadowDecoration.Parent = this.tbPrice;
             this.tbPrice.Size = new System.Drawing.Size(122, 23);
             this.tbPrice.TabIndex = 139;
+            this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
             // 
             // tbTime
             // 
@@ -390,6 +473,7 @@ namespace Care_Management_and_Private_Parking
             this.ForRentPic.Location = new System.Drawing.Point(638, 309);
             this.ForRentPic.Name = "ForRentPic";
             this.ForRentPic.Size = new System.Drawing.Size(70, 70);
+            this.ForRentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ForRentPic.TabIndex = 132;
             this.ForRentPic.TabStop = false;
             this.ForRentPic.Click += new System.EventHandler(this.ForRentCusPic_Click);
@@ -403,7 +487,7 @@ namespace Care_Management_and_Private_Parking
             "Xe Đạp",
             "Xe Máy",
             "Xe Hơi"});
-            this.cbVehType.Location = new System.Drawing.Point(81, 324);
+            this.cbVehType.Location = new System.Drawing.Point(76, 329);
             this.cbVehType.Name = "cbVehType";
             this.cbVehType.Size = new System.Drawing.Size(101, 25);
             this.cbVehType.TabIndex = 131;
@@ -435,6 +519,7 @@ namespace Care_Management_and_Private_Parking
             this.RentPic.Location = new System.Drawing.Point(485, 514);
             this.RentPic.Name = "RentPic";
             this.RentPic.Size = new System.Drawing.Size(70, 70);
+            this.RentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RentPic.TabIndex = 128;
             this.RentPic.TabStop = false;
             this.RentPic.Click += new System.EventHandler(this.RentCusPic_Click);
@@ -444,6 +529,7 @@ namespace Care_Management_and_Private_Parking
             this.VehPic.Location = new System.Drawing.Point(485, 309);
             this.VehPic.Name = "VehPic";
             this.VehPic.Size = new System.Drawing.Size(70, 70);
+            this.VehPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.VehPic.TabIndex = 127;
             this.VehPic.TabStop = false;
             this.VehPic.Click += new System.EventHandler(this.VehPic_Click);
@@ -453,40 +539,11 @@ namespace Care_Management_and_Private_Parking
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(29, 329);
+            this.label27.Location = new System.Drawing.Point(29, 334);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(47, 15);
             this.label27.TabIndex = 125;
             this.label27.Text = "Loại xe:";
-            // 
-            // tbRentMail
-            // 
-            this.tbRentMail.AutoRoundedCorners = true;
-            this.tbRentMail.BackColor = System.Drawing.Color.White;
-            this.tbRentMail.BorderColor = System.Drawing.Color.White;
-            this.tbRentMail.BorderRadius = 10;
-            this.tbRentMail.BorderThickness = 0;
-            this.tbRentMail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbRentMail.DefaultText = "";
-            this.tbRentMail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbRentMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbRentMail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRentMail.DisabledState.Parent = this.tbRentMail;
-            this.tbRentMail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRentMail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRentMail.FocusedState.Parent = this.tbRentMail;
-            this.tbRentMail.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbRentMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRentMail.HoverState.Parent = this.tbRentMail;
-            this.tbRentMail.Location = new System.Drawing.Point(551, 456);
-            this.tbRentMail.Name = "tbRentMail";
-            this.tbRentMail.PasswordChar = '\0';
-            this.tbRentMail.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbRentMail.PlaceholderText = resources.GetString("tbRentMail.PlaceholderText");
-            this.tbRentMail.SelectedText = "";
-            this.tbRentMail.ShadowDecoration.Parent = this.tbRentMail;
-            this.tbRentMail.Size = new System.Drawing.Size(213, 23);
-            this.tbRentMail.TabIndex = 124;
             // 
             // tbRentJob
             // 
@@ -517,34 +574,35 @@ namespace Care_Management_and_Private_Parking
             this.tbRentJob.Size = new System.Drawing.Size(200, 23);
             this.tbRentJob.TabIndex = 123;
             // 
-            // tbRentAddress
+            // tbRentBdate
             // 
-            this.tbRentAddress.AutoRoundedCorners = true;
-            this.tbRentAddress.BackColor = System.Drawing.Color.White;
-            this.tbRentAddress.BorderColor = System.Drawing.Color.White;
-            this.tbRentAddress.BorderRadius = 10;
-            this.tbRentAddress.BorderThickness = 0;
-            this.tbRentAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbRentAddress.DefaultText = "";
-            this.tbRentAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbRentAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbRentAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRentAddress.DisabledState.Parent = this.tbRentAddress;
-            this.tbRentAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbRentAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRentAddress.FocusedState.Parent = this.tbRentAddress;
-            this.tbRentAddress.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbRentAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRentAddress.HoverState.Parent = this.tbRentAddress;
-            this.tbRentAddress.Location = new System.Drawing.Point(74, 514);
-            this.tbRentAddress.Name = "tbRentAddress";
-            this.tbRentAddress.PasswordChar = '\0';
-            this.tbRentAddress.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbRentAddress.PlaceholderText = resources.GetString("tbRentAddress.PlaceholderText");
-            this.tbRentAddress.SelectedText = "";
-            this.tbRentAddress.ShadowDecoration.Parent = this.tbRentAddress;
-            this.tbRentAddress.Size = new System.Drawing.Size(390, 23);
-            this.tbRentAddress.TabIndex = 122;
+            this.tbRentBdate.AutoRoundedCorners = true;
+            this.tbRentBdate.BackColor = System.Drawing.Color.White;
+            this.tbRentBdate.BorderColor = System.Drawing.Color.White;
+            this.tbRentBdate.BorderRadius = 10;
+            this.tbRentBdate.BorderThickness = 0;
+            this.tbRentBdate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbRentBdate.DefaultText = "";
+            this.tbRentBdate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbRentBdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbRentBdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbRentBdate.DisabledState.Parent = this.tbRentBdate;
+            this.tbRentBdate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbRentBdate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbRentBdate.FocusedState.Parent = this.tbRentBdate;
+            this.tbRentBdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbRentBdate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbRentBdate.HoverState.Parent = this.tbRentBdate;
+            this.tbRentBdate.Location = new System.Drawing.Point(576, 456);
+            this.tbRentBdate.Name = "tbRentBdate";
+            this.tbRentBdate.PasswordChar = '\0';
+            this.tbRentBdate.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbRentBdate.PlaceholderText = resources.GetString("tbRentBdate.PlaceholderText");
+            this.tbRentBdate.SelectedText = "";
+            this.tbRentBdate.ShadowDecoration.Parent = this.tbRentBdate;
+            this.tbRentBdate.Size = new System.Drawing.Size(188, 23);
+            this.tbRentBdate.TabIndex = 122;
+            this.toolTip1.SetToolTip(this.tbRentBdate, "Nhập theo định dạng dd/mm /yy");
             // 
             // tbRentIdentity
             // 
@@ -651,11 +709,11 @@ namespace Care_Management_and_Private_Parking
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(29, 517);
+            this.label17.Location = new System.Drawing.Point(513, 459);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 15);
+            this.label17.Size = new System.Drawing.Size(66, 15);
             this.label17.TabIndex = 117;
-            this.label17.Text = "Địa chỉ: ";
+            this.label17.Text = "Ngày sinh: ";
             // 
             // label18
             // 
@@ -667,17 +725,6 @@ namespace Care_Management_and_Private_Parking
             this.label18.Size = new System.Drawing.Size(49, 15);
             this.label18.TabIndex = 116;
             this.label18.Text = "CMND: ";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(513, 459);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 15);
-            this.label19.TabIndex = 115;
-            this.label19.Text = "Email: ";
             // 
             // label20
             // 
@@ -711,35 +758,6 @@ namespace Care_Management_and_Private_Parking
             this.label25.Size = new System.Drawing.Size(91, 15);
             this.label25.TabIndex = 112;
             this.label25.Text = "Người đại diện: ";
-            // 
-            // tbForRentMail
-            // 
-            this.tbForRentMail.AutoRoundedCorners = true;
-            this.tbForRentMail.BackColor = System.Drawing.Color.White;
-            this.tbForRentMail.BorderColor = System.Drawing.Color.White;
-            this.tbForRentMail.BorderRadius = 10;
-            this.tbForRentMail.BorderThickness = 0;
-            this.tbForRentMail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbForRentMail.DefaultText = "";
-            this.tbForRentMail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbForRentMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbForRentMail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbForRentMail.DisabledState.Parent = this.tbForRentMail;
-            this.tbForRentMail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbForRentMail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbForRentMail.FocusedState.Parent = this.tbForRentMail;
-            this.tbForRentMail.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbForRentMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbForRentMail.HoverState.Parent = this.tbForRentMail;
-            this.tbForRentMail.Location = new System.Drawing.Point(551, 240);
-            this.tbForRentMail.Name = "tbForRentMail";
-            this.tbForRentMail.PasswordChar = '\0';
-            this.tbForRentMail.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbForRentMail.PlaceholderText = resources.GetString("tbForRentMail.PlaceholderText");
-            this.tbForRentMail.SelectedText = "";
-            this.tbForRentMail.ShadowDecoration.Parent = this.tbForRentMail;
-            this.tbForRentMail.Size = new System.Drawing.Size(213, 23);
-            this.tbForRentMail.TabIndex = 111;
             // 
             // tbForRentJob
             // 
@@ -789,7 +807,7 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentVehLicense.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbForRentVehLicense.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbForRentVehLicense.HoverState.Parent = this.tbForRentVehLicense;
-            this.tbForRentVehLicense.Location = new System.Drawing.Point(90, 356);
+            this.tbForRentVehLicense.Location = new System.Drawing.Point(90, 364);
             this.tbForRentVehLicense.Name = "tbForRentVehLicense";
             this.tbForRentVehLicense.PasswordChar = '\0';
             this.tbForRentVehLicense.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -799,34 +817,35 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentVehLicense.Size = new System.Drawing.Size(374, 23);
             this.tbForRentVehLicense.TabIndex = 109;
             // 
-            // tbForRentAddress
+            // tbForRentBdate
             // 
-            this.tbForRentAddress.AutoRoundedCorners = true;
-            this.tbForRentAddress.BackColor = System.Drawing.Color.White;
-            this.tbForRentAddress.BorderColor = System.Drawing.Color.White;
-            this.tbForRentAddress.BorderRadius = 10;
-            this.tbForRentAddress.BorderThickness = 0;
-            this.tbForRentAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbForRentAddress.DefaultText = "";
-            this.tbForRentAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbForRentAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbForRentAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbForRentAddress.DisabledState.Parent = this.tbForRentAddress;
-            this.tbForRentAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbForRentAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbForRentAddress.FocusedState.Parent = this.tbForRentAddress;
-            this.tbForRentAddress.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbForRentAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbForRentAddress.HoverState.Parent = this.tbForRentAddress;
-            this.tbForRentAddress.Location = new System.Drawing.Point(74, 298);
-            this.tbForRentAddress.Name = "tbForRentAddress";
-            this.tbForRentAddress.PasswordChar = '\0';
-            this.tbForRentAddress.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbForRentAddress.PlaceholderText = resources.GetString("tbForRentAddress.PlaceholderText");
-            this.tbForRentAddress.SelectedText = "";
-            this.tbForRentAddress.ShadowDecoration.Parent = this.tbForRentAddress;
-            this.tbForRentAddress.Size = new System.Drawing.Size(390, 23);
-            this.tbForRentAddress.TabIndex = 108;
+            this.tbForRentBdate.AutoRoundedCorners = true;
+            this.tbForRentBdate.BackColor = System.Drawing.Color.White;
+            this.tbForRentBdate.BorderColor = System.Drawing.Color.White;
+            this.tbForRentBdate.BorderRadius = 10;
+            this.tbForRentBdate.BorderThickness = 0;
+            this.tbForRentBdate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbForRentBdate.DefaultText = "";
+            this.tbForRentBdate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbForRentBdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbForRentBdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbForRentBdate.DisabledState.Parent = this.tbForRentBdate;
+            this.tbForRentBdate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbForRentBdate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbForRentBdate.FocusedState.Parent = this.tbForRentBdate;
+            this.tbForRentBdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbForRentBdate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbForRentBdate.HoverState.Parent = this.tbForRentBdate;
+            this.tbForRentBdate.Location = new System.Drawing.Point(574, 241);
+            this.tbForRentBdate.Name = "tbForRentBdate";
+            this.tbForRentBdate.PasswordChar = '\0';
+            this.tbForRentBdate.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbForRentBdate.PlaceholderText = resources.GetString("tbForRentBdate.PlaceholderText");
+            this.tbForRentBdate.SelectedText = "";
+            this.tbForRentBdate.ShadowDecoration.Parent = this.tbForRentBdate;
+            this.tbForRentBdate.Size = new System.Drawing.Size(190, 23);
+            this.tbForRentBdate.TabIndex = 108;
+            this.toolTip1.SetToolTip(this.tbForRentBdate, "Nhập theo định dạng dd/mm /yy");
             // 
             // tbForRentIdentity
             // 
@@ -1040,7 +1059,7 @@ namespace Care_Management_and_Private_Parking
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(29, 358);
+            this.label26.Location = new System.Drawing.Point(29, 366);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(66, 15);
             this.label26.TabIndex = 97;
@@ -1084,11 +1103,11 @@ namespace Care_Management_and_Private_Parking
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(29, 301);
+            this.label15.Location = new System.Drawing.Point(513, 243);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 15);
+            this.label15.Size = new System.Drawing.Size(66, 15);
             this.label15.TabIndex = 78;
-            this.label15.Text = "Địa chỉ: ";
+            this.label15.Text = "Ngày sinh: ";
             // 
             // label14
             // 
@@ -1100,17 +1119,6 @@ namespace Care_Management_and_Private_Parking
             this.label14.Size = new System.Drawing.Size(49, 15);
             this.label14.TabIndex = 76;
             this.label14.Text = "CMND: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(513, 243);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 15);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "Email: ";
             // 
             // label12
             // 
@@ -1211,6 +1219,7 @@ namespace Care_Management_and_Private_Parking
             this.cbboxPurpose.Name = "cbboxPurpose";
             this.cbboxPurpose.Size = new System.Drawing.Size(101, 25);
             this.cbboxPurpose.TabIndex = 9;
+            this.cbboxPurpose.SelectedIndexChanged += new System.EventHandler(this.cbboxPurpose_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -1279,7 +1288,6 @@ namespace Care_Management_and_Private_Parking
         public System.Windows.Forms.Label label23;
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label label10;
@@ -1290,26 +1298,23 @@ namespace Care_Management_and_Private_Parking
         public System.Windows.Forms.Label label6;
         public Guna.UI2.WinForms.Guna2TextBox tbContractID;
         public Guna.UI2.WinForms.Guna2TextBox tbDeal;
-        public Guna.UI2.WinForms.Guna2TextBox tbForRentAddress;
+        public Guna.UI2.WinForms.Guna2TextBox tbForRentBdate;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentIdentity;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentPhone;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentName;
         public Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         public Guna.UI2.WinForms.Guna2TextBox tbDateStart;
-        public Guna.UI2.WinForms.Guna2TextBox tbRentMail;
         public Guna.UI2.WinForms.Guna2TextBox tbRentJob;
-        public Guna.UI2.WinForms.Guna2TextBox tbRentAddress;
+        public Guna.UI2.WinForms.Guna2TextBox tbRentBdate;
         public Guna.UI2.WinForms.Guna2TextBox tbRentIdentity;
         public Guna.UI2.WinForms.Guna2TextBox tbRentPhone;
         public Guna.UI2.WinForms.Guna2TextBox tbRentName;
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label label17;
         public System.Windows.Forms.Label label18;
-        public System.Windows.Forms.Label label19;
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.Label label21;
         public System.Windows.Forms.Label label25;
-        public Guna.UI2.WinForms.Guna2TextBox tbForRentMail;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentJob;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentVehLicense;
         public System.Windows.Forms.Label label27;
@@ -1331,5 +1336,10 @@ namespace Care_Management_and_Private_Parking
         public System.Windows.Forms.ComboBox cbboxTimeFormat;
         public System.Windows.Forms.Label label36;
         public Guna.UI2.WinForms.Guna2TextBox tbPrice2;
+        public Guna.UI2.WinForms.Guna2TextBox tbRentAddress;
+        public System.Windows.Forms.Label label37;
+        public Guna.UI2.WinForms.Guna2TextBox tbForRentAddress;
+        public System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

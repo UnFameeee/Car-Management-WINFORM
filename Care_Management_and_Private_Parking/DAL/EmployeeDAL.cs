@@ -52,6 +52,7 @@ namespace DAL
                 return false;
             }
         }
+
         public bool removeEmployee (string EmpID)
         {
             SqlCommand cmd = new SqlCommand("Delete From EMPLOYEE Where EmpID = @EmpID", DataProvider.Instance.getConnection);
