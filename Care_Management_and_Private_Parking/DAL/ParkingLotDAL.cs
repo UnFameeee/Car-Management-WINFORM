@@ -139,7 +139,7 @@ namespace DAL
         #region Khách
         public bool addCustomer(string CusID, string Name, DateTime Bdate, string Phone, string Address, string IdentityCardNumber, MemoryStream CusPic)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO CUSTOMER (CusID, FullName, Bdate, PhoneNumber, Address,IdentityNumber, Appearance)" +
+            SqlCommand cmd = new SqlCommand("INSERT INTO CUSTOMER (CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance)" +
                 "values (@CusID, @Name, @Bdate, @Phone, @Addr, @Identity, @Appear)", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = Name;
