@@ -138,7 +138,9 @@ create table CONTRACT(
 	EmpID nvarchar(100) references EMPLOYEE(EmpID),	
 	CusID nvarchar(100) references CUSTOMER(CusID),
 	VehID nvarchar(100) references VEHICLE(VehID),
-	Description text
+	DateStart date,
+	DateEnd date,
+	Price int
 )
 GO
 
