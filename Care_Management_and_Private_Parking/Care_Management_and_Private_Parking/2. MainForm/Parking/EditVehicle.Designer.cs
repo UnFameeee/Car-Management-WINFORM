@@ -29,7 +29,10 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditVehicle));
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnEditCus = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlVeh = new System.Windows.Forms.Panel();
             this.pnlCus = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,10 +49,14 @@ namespace Care_Management_and_Private_Parking
             this.label5 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.CustomerPic = new System.Windows.Forms.PictureBox();
-            this.btnEditCus = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlVeh = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.radiobtnWash = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radiobtnRepair = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label12 = new System.Windows.Forms.Label();
             this.numerudValue = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.cbboxTimeFormat = new Guna.UI.WinForms.GunaComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,23 +73,17 @@ namespace Care_Management_and_Private_Parking
             this.btnEditVeh = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.radiobtnWash = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.radiobtnRepair = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.label12 = new System.Windows.Forms.Label();
             this.pnCalendar.SuspendLayout();
+            this.pnlVeh.SuspendLayout();
             this.pnlCus.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
-            this.pnlVeh.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnCalendar
@@ -101,6 +102,43 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.ShadowDecoration.Parent = this.pnCalendar;
             this.pnCalendar.Size = new System.Drawing.Size(501, 427);
             this.pnCalendar.TabIndex = 6;
+            // 
+            // btnEditCus
+            // 
+            this.btnEditCus.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditCus.BorderRadius = 17;
+            this.btnEditCus.BorderThickness = 1;
+            this.btnEditCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnEditCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnEditCus.CheckedState.Parent = this.btnEditCus;
+            this.btnEditCus.CustomImages.Parent = this.btnEditCus;
+            this.btnEditCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnEditCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnEditCus.HoverState.Parent = this.btnEditCus;
+            this.btnEditCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnEditCus.Location = new System.Drawing.Point(191, 380);
+            this.btnEditCus.Name = "btnEditCus";
+            this.btnEditCus.ShadowDecoration.Parent = this.btnEditCus;
+            this.btnEditCus.Size = new System.Drawing.Size(106, 33);
+            this.btnEditCus.TabIndex = 72;
+            this.btnEditCus.Text = "Edit";
+            this.btnEditCus.UseTransparentBackground = true;
+            this.btnEditCus.Click += new System.EventHandler(this.btnEditCus_Click);
+            // 
+            // pnlVeh
+            // 
+            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnlVeh.Controls.Add(this.pnlCus);
+            this.pnlVeh.Controls.Add(this.label16);
+            this.pnlVeh.Controls.Add(this.panel3);
+            this.pnlVeh.Controls.Add(this.panel1);
+            this.pnlVeh.Controls.Add(this.VehiclePic);
+            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
+            this.pnlVeh.Name = "pnlVeh";
+            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
+            this.pnlVeh.TabIndex = 71;
             // 
             // pnlCus
             // 
@@ -284,43 +322,6 @@ namespace Care_Management_and_Private_Parking
             this.CustomerPic.TabIndex = 70;
             this.CustomerPic.TabStop = false;
             // 
-            // btnEditCus
-            // 
-            this.btnEditCus.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditCus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEditCus.BorderRadius = 17;
-            this.btnEditCus.BorderThickness = 1;
-            this.btnEditCus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnEditCus.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnEditCus.CheckedState.Parent = this.btnEditCus;
-            this.btnEditCus.CustomImages.Parent = this.btnEditCus;
-            this.btnEditCus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnEditCus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEditCus.HoverState.Parent = this.btnEditCus;
-            this.btnEditCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEditCus.Location = new System.Drawing.Point(191, 380);
-            this.btnEditCus.Name = "btnEditCus";
-            this.btnEditCus.ShadowDecoration.Parent = this.btnEditCus;
-            this.btnEditCus.Size = new System.Drawing.Size(106, 33);
-            this.btnEditCus.TabIndex = 72;
-            this.btnEditCus.Text = "Edit";
-            this.btnEditCus.UseTransparentBackground = true;
-            this.btnEditCus.Click += new System.EventHandler(this.btnEditCus_Click);
-            // 
-            // pnlVeh
-            // 
-            this.pnlVeh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnlVeh.Controls.Add(this.pnlCus);
-            this.pnlVeh.Controls.Add(this.label16);
-            this.pnlVeh.Controls.Add(this.panel3);
-            this.pnlVeh.Controls.Add(this.panel1);
-            this.pnlVeh.Controls.Add(this.VehiclePic);
-            this.pnlVeh.Location = new System.Drawing.Point(20, 44);
-            this.pnlVeh.Name = "pnlVeh";
-            this.pnlVeh.Size = new System.Drawing.Size(463, 326);
-            this.pnlVeh.TabIndex = 71;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -345,6 +346,82 @@ namespace Care_Management_and_Private_Parking
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 161);
             this.panel3.TabIndex = 69;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.radiobtnWash);
+            this.panel5.Location = new System.Drawing.Point(261, 103);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(175, 41);
+            this.panel5.TabIndex = 77;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(55, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 20);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "Washing";
+            // 
+            // radiobtnWash
+            // 
+            this.radiobtnWash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnWash.CheckedState.BorderThickness = 0;
+            this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
+            this.radiobtnWash.Location = new System.Drawing.Point(29, 9);
+            this.radiobtnWash.Name = "radiobtnWash";
+            this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
+            this.radiobtnWash.Size = new System.Drawing.Size(20, 20);
+            this.radiobtnWash.TabIndex = 30;
+            this.radiobtnWash.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radiobtnWash.UncheckedState.BorderThickness = 2;
+            this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.radiobtnRepair);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Location = new System.Drawing.Point(261, 42);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(175, 41);
+            this.panel4.TabIndex = 76;
+            // 
+            // radiobtnRepair
+            // 
+            this.radiobtnRepair.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnRepair.CheckedState.BorderThickness = 0;
+            this.radiobtnRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radiobtnRepair.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radiobtnRepair.CheckedState.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Location = new System.Drawing.Point(29, 12);
+            this.radiobtnRepair.Name = "radiobtnRepair";
+            this.radiobtnRepair.ShadowDecoration.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Size = new System.Drawing.Size(20, 20);
+            this.radiobtnRepair.TabIndex = 25;
+            this.radiobtnRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radiobtnRepair.UncheckedState.BorderThickness = 2;
+            this.radiobtnRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radiobtnRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnRepair.UncheckedState.Parent = this.radiobtnRepair;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(55, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 20);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Repairing";
             // 
             // numerudValue
             // 
@@ -576,82 +653,6 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.TabIndex = 41;
             this.guna2GradientButton2.Text = "EDIT VEHICLE";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.radiobtnWash);
-            this.panel5.Location = new System.Drawing.Point(261, 103);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(175, 41);
-            this.panel5.TabIndex = 77;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(55, 9);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 20);
-            this.label17.TabIndex = 31;
-            this.label17.Text = "Washing";
-            // 
-            // radiobtnWash
-            // 
-            this.radiobtnWash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnWash.CheckedState.BorderThickness = 0;
-            this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
-            this.radiobtnWash.Location = new System.Drawing.Point(29, 9);
-            this.radiobtnWash.Name = "radiobtnWash";
-            this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
-            this.radiobtnWash.Size = new System.Drawing.Size(20, 20);
-            this.radiobtnWash.TabIndex = 30;
-            this.radiobtnWash.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radiobtnWash.UncheckedState.BorderThickness = 2;
-            this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.radiobtnRepair);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(261, 42);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(175, 41);
-            this.panel4.TabIndex = 76;
-            // 
-            // radiobtnRepair
-            // 
-            this.radiobtnRepair.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnRepair.CheckedState.BorderThickness = 0;
-            this.radiobtnRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.radiobtnRepair.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radiobtnRepair.CheckedState.Parent = this.radiobtnRepair;
-            this.radiobtnRepair.Location = new System.Drawing.Point(29, 12);
-            this.radiobtnRepair.Name = "radiobtnRepair";
-            this.radiobtnRepair.ShadowDecoration.Parent = this.radiobtnRepair;
-            this.radiobtnRepair.Size = new System.Drawing.Size(20, 20);
-            this.radiobtnRepair.TabIndex = 25;
-            this.radiobtnRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radiobtnRepair.UncheckedState.BorderThickness = 2;
-            this.radiobtnRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radiobtnRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radiobtnRepair.UncheckedState.Parent = this.radiobtnRepair;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(55, 12);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 20);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Repairing";
-            // 
             // EditVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,28 +661,29 @@ namespace Care_Management_and_Private_Parking
             this.ClientSize = new System.Drawing.Size(525, 453);
             this.Controls.Add(this.pnCalendar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditVehicle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditVehicle";
             this.Load += new System.EventHandler(this.EditVehicle_Load);
             this.pnCalendar.ResumeLayout(false);
+            this.pnlVeh.ResumeLayout(false);
+            this.pnlVeh.PerformLayout();
             this.pnlCus.ResumeLayout(false);
             this.pnlCus.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
-            this.pnlVeh.ResumeLayout(false);
-            this.pnlVeh.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numerudValue)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
             this.ResumeLayout(false);
 
         }

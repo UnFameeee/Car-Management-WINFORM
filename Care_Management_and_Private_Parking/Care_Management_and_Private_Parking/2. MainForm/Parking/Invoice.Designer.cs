@@ -29,12 +29,13 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.lbService = new System.Windows.Forms.Label();
             this.lbTimeRegister = new System.Windows.Forms.Label();
             this.lbDateRegister = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.pnData.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,33 @@ namespace Care_Management_and_Private_Parking
             this.pnData.ShadowDecoration.Parent = this.pnData;
             this.pnData.Size = new System.Drawing.Size(367, 326);
             this.pnData.TabIndex = 2;
+            // 
+            // btnExit
+            // 
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BaseColor = System.Drawing.Color.Transparent;
+            this.btnExit.BorderColor = System.Drawing.Color.Gray;
+            this.btnExit.BorderSize = 3;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.Image = null;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.Location = new System.Drawing.Point(342, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.TabIndex = 67;
+            this.btnExit.Text = "X";
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lbService
             // 
@@ -108,33 +136,6 @@ namespace Care_Management_and_Private_Parking
             this.btnLogin.TabIndex = 39;
             this.btnLogin.Text = "INVOICE";
             // 
-            // btnExit
-            // 
-            this.btnExit.AnimationHoverSpeed = 0.07F;
-            this.btnExit.AnimationSpeed = 0.03F;
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BaseColor = System.Drawing.Color.Transparent;
-            this.btnExit.BorderColor = System.Drawing.Color.Gray;
-            this.btnExit.BorderSize = 3;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
-            this.btnExit.ForeColor = System.Drawing.Color.Red;
-            this.btnExit.Image = null;
-            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.Location = new System.Drawing.Point(342, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.Gray;
-            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExit.OnHoverImage = null;
-            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
-            this.btnExit.TabIndex = 67;
-            this.btnExit.Text = "X";
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +143,7 @@ namespace Care_Management_and_Private_Parking
             this.ClientSize = new System.Drawing.Size(367, 326);
             this.Controls.Add(this.pnData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Invoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invoice";

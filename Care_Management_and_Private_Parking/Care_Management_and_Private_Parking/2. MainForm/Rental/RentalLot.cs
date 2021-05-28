@@ -22,7 +22,6 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
             loadMatrixRent();
-            loadMatrixForRent();
         }
 
         #region Properties
@@ -72,49 +71,13 @@ namespace Care_Management_and_Private_Parking
                 oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
             }
         }
-        public void loadMatrixForRent()
-        {
-            int slot = 1;
-            MatrixForRent = new List<List<Guna2Button>>();
-            Guna2Button oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
-            for (int i = 0; i < Variable.RentRows; ++i)
-            {
-                MatrixForRent.Add(new List<Guna2Button>());
-                for (int j = 0; j < Variable.RentColumns; ++j)
-                {
-                    Guna2Button btn = new Guna2Button() { Width = Variable.btnCarWidth, Height = Variable.btnCarHeight, FillColor = Color.FromArgb(43, 47, 51) };
-                    btn.Location = new Point(oldbtn.Location.X + oldbtn.Width + Variable.CarMargin, oldbtn.Location.Y);
-
-                    btn.Text = slot.ToString();                                                 //Thêm số vào cho nút
-                    slot++;
-
-                    //Thêm event
-                    btn.Click += BTNForRent_EnabledChanged;
-                    //
-
-                    pnForRent.Controls.Add(btn);
-                    MatrixForRent[i].Add(btn);
-                    oldbtn = btn;
-                }
-                oldbtn = new Guna2Button() { Width = 0, Height = 0, Location = new Point(Variable.CarMargin, oldbtn.Location.Y + Variable.btnCarHeight + Variable.CarMargin), FillColor = Color.FromArgb(43, 47, 51) };
-            }
-        }
         #endregion
 
         #region Event handler (to cast multi event -> single event)
         private void BTNRent_EnabledChanged(object sender, EventArgs e)
         {
             id = ((Guna2Button)sender).Text;
-            type = "rent";
-            lbCus.Text = "CUSTOMER FOR RENT";
-            fillStatuspnl();
-        }
-
-        private void BTNForRent_EnabledChanged(object sender, EventArgs e)
-        {
-            id = ((Guna2Button)sender).Text;
-            type = "forrent";
-            lbCus.Text = "CUSTOMER RENT";
+            type = "veh";
             fillStatuspnl();
         }
         #endregion
@@ -180,17 +143,11 @@ namespace Care_Management_and_Private_Parking
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             loadMatrixRent();
-            loadMatrixForRent();
         }
 
 
         #region Nút nhấn theo chức năng
         private void btnDetailRentVeh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDetailVehForRent_Click(object sender, EventArgs e)
         {
 
         }

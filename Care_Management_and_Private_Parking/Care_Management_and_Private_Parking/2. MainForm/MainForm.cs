@@ -35,11 +35,13 @@ namespace Care_Management_and_Private_Parking
             this.MainPanel.Controls.Add(frmManage);
             this.MainPanel.Controls.Add(frmTimeKeeping);
             tick();
+            panelLayout.Visible = true;
         }
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
         private void tick()
-        {        
+        {
+            panelLayout.Visible = false;
             //Chỉnh Checked
             btnHome.Checked = false;
             btnUser.Checked = false;
@@ -87,6 +89,9 @@ namespace Care_Management_and_Private_Parking
             frmManage.Show();
         }
 
-        
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
