@@ -30,6 +30,7 @@ namespace Care_Management_and_Private_Parking
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployeeForm));
             this.rdbtnFemale = new System.Windows.Forms.RadioButton();
             this.rdbtnMale = new System.Windows.Forms.RadioButton();
             this.lbGender = new System.Windows.Forms.Label();
@@ -49,13 +50,13 @@ namespace Care_Management_and_Private_Parking
             this.cbbxJobID = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbMail = new System.Windows.Forms.TextBox();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmp)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -312,6 +313,35 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Size = new System.Drawing.Size(316, 249);
             this.panel1.TabIndex = 46;
             // 
+            // dateTime
+            // 
+            this.dateTime.CheckedState.Parent = this.dateTime;
+            this.dateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.ForeColor = System.Drawing.Color.White;
+            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTime.HoverState.Parent = this.dateTime;
+            this.dateTime.Location = new System.Drawing.Point(135, 73);
+            this.dateTime.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.ShadowDecoration.Parent = this.dateTime;
+            this.dateTime.Size = new System.Drawing.Size(162, 20);
+            this.dateTime.TabIndex = 182;
+            this.dateTime.Value = new System.DateTime(2021, 4, 30, 11, 28, 43, 523);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Brithday:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -391,35 +421,6 @@ namespace Care_Management_and_Private_Parking
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Brithday:";
-            // 
-            // dateTime
-            // 
-            this.dateTime.CheckedState.Parent = this.dateTime;
-            this.dateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime.ForeColor = System.Drawing.Color.White;
-            this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime.HoverState.Parent = this.dateTime;
-            this.dateTime.Location = new System.Drawing.Point(135, 73);
-            this.dateTime.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.ShadowDecoration.Parent = this.dateTime;
-            this.dateTime.Size = new System.Drawing.Size(162, 20);
-            this.dateTime.TabIndex = 182;
-            this.dateTime.Value = new System.DateTime(2021, 4, 30, 11, 28, 43, 523);
-            // 
             // ManageEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +435,7 @@ namespace Care_Management_and_Private_Parking
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRemove);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageEmployeeForm";

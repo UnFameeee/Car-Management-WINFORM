@@ -40,8 +40,10 @@ namespace Global
         #endregion
 
         #region RentalLot Form
-        public static int RentRows = 3;                  //Hàng xe
+        public static int RentRows = 7;                  //Hàng xe
         public static int RentColumns = 14;              //Cột xe
+        public static int RentalLength = 3;
+        public static string Rental = "Veh";
         #endregion
 
         #region TimeKeeping

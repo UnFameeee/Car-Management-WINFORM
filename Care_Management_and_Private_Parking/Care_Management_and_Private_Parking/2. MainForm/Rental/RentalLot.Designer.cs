@@ -32,16 +32,9 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetailRentVeh = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDetailVehForRent = new Guna.UI2.WinForms.Guna2Button();
-            this.pnForRent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbUsedForRent = new System.Windows.Forms.Label();
-            this.lbAvailibleForRent = new System.Windows.Forms.Label();
-            this.lbCar = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbUsedRent = new System.Windows.Forms.Label();
-            this.lbAvailibleRent = new System.Windows.Forms.Label();
             this.lbBike = new System.Windows.Forms.Label();
             this.pnRent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -63,8 +56,8 @@ namespace Care_Management_and_Private_Parking
             this.tbIDCard = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.lbAvailibleRent = new System.Windows.Forms.Label();
             this.pnCalendar.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -80,10 +73,7 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BorderThickness = 1;
             this.pnCalendar.Controls.Add(this.btnRefresh);
             this.pnCalendar.Controls.Add(this.btnDetailRentVeh);
-            this.pnCalendar.Controls.Add(this.btnDetailVehForRent);
-            this.pnCalendar.Controls.Add(this.pnForRent);
             this.pnCalendar.Controls.Add(this.btnLogin);
-            this.pnCalendar.Controls.Add(this.guna2Panel5);
             this.pnCalendar.Controls.Add(this.guna2Panel4);
             this.pnCalendar.Controls.Add(this.pnRent);
             this.pnCalendar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -130,7 +120,7 @@ namespace Care_Management_and_Private_Parking
             this.btnDetailRentVeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnDetailRentVeh.HoverState.Parent = this.btnDetailRentVeh;
             this.btnDetailRentVeh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDetailRentVeh.Location = new System.Drawing.Point(761, 185);
+            this.btnDetailRentVeh.Location = new System.Drawing.Point(761, 266);
             this.btnDetailRentVeh.Name = "btnDetailRentVeh";
             this.btnDetailRentVeh.ShadowDecoration.Parent = this.btnDetailRentVeh;
             this.btnDetailRentVeh.Size = new System.Drawing.Size(135, 30);
@@ -138,41 +128,6 @@ namespace Care_Management_and_Private_Parking
             this.btnDetailRentVeh.Text = "Detail";
             this.btnDetailRentVeh.UseTransparentBackground = true;
             this.btnDetailRentVeh.Click += new System.EventHandler(this.btnDetailRentVeh_Click);
-            // 
-            // btnDetailVehForRent
-            // 
-            this.btnDetailVehForRent.BackColor = System.Drawing.Color.Transparent;
-            this.btnDetailVehForRent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnDetailVehForRent.BorderThickness = 1;
-            this.btnDetailVehForRent.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnDetailVehForRent.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnDetailVehForRent.CheckedState.Parent = this.btnDetailVehForRent;
-            this.btnDetailVehForRent.CustomImages.Parent = this.btnDetailVehForRent;
-            this.btnDetailVehForRent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnDetailVehForRent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailVehForRent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnDetailVehForRent.HoverState.Parent = this.btnDetailVehForRent;
-            this.btnDetailVehForRent.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDetailVehForRent.Location = new System.Drawing.Point(761, 376);
-            this.btnDetailVehForRent.Name = "btnDetailVehForRent";
-            this.btnDetailVehForRent.ShadowDecoration.Parent = this.btnDetailVehForRent;
-            this.btnDetailVehForRent.Size = new System.Drawing.Size(135, 30);
-            this.btnDetailVehForRent.TabIndex = 45;
-            this.btnDetailVehForRent.Text = "Detail";
-            this.btnDetailVehForRent.UseTransparentBackground = true;
-            this.btnDetailVehForRent.Click += new System.EventHandler(this.btnDetailVehForRent_Click);
-            // 
-            // pnForRent
-            // 
-            this.pnForRent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.pnForRent.BorderRadius = 22;
-            this.pnForRent.BorderThickness = 1;
-            this.pnForRent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.pnForRent.Location = new System.Drawing.Point(15, 248);
-            this.pnForRent.Name = "pnForRent";
-            this.pnForRent.ShadowDecoration.Parent = this.pnForRent;
-            this.pnForRent.Size = new System.Drawing.Size(729, 162);
-            this.pnForRent.TabIndex = 39;
             // 
             // btnLogin
             // 
@@ -190,56 +145,6 @@ namespace Care_Management_and_Private_Parking
             this.btnLogin.TabIndex = 38;
             this.btnLogin.Text = "RENTAL LOT";
             // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.guna2Panel5.BorderRadius = 22;
-            this.guna2Panel5.BorderThickness = 1;
-            this.guna2Panel5.Controls.Add(this.lbUsedForRent);
-            this.guna2Panel5.Controls.Add(this.lbAvailibleForRent);
-            this.guna2Panel5.Controls.Add(this.lbCar);
-            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(761, 257);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(135, 113);
-            this.guna2Panel5.TabIndex = 9;
-            // 
-            // lbUsedForRent
-            // 
-            this.lbUsedForRent.AutoSize = true;
-            this.lbUsedForRent.BackColor = System.Drawing.Color.Transparent;
-            this.lbUsedForRent.ForeColor = System.Drawing.Color.White;
-            this.lbUsedForRent.Location = new System.Drawing.Point(17, 84);
-            this.lbUsedForRent.Name = "lbUsedForRent";
-            this.lbUsedForRent.Size = new System.Drawing.Size(56, 13);
-            this.lbUsedForRent.TabIndex = 2;
-            this.lbUsedForRent.Text = "Used Slot:";
-            // 
-            // lbAvailibleForRent
-            // 
-            this.lbAvailibleForRent.AutoSize = true;
-            this.lbAvailibleForRent.BackColor = System.Drawing.Color.Transparent;
-            this.lbAvailibleForRent.ForeColor = System.Drawing.Color.White;
-            this.lbAvailibleForRent.Location = new System.Drawing.Point(17, 61);
-            this.lbAvailibleForRent.Name = "lbAvailibleForRent";
-            this.lbAvailibleForRent.Size = new System.Drawing.Size(70, 13);
-            this.lbAvailibleForRent.TabIndex = 1;
-            this.lbAvailibleForRent.Text = "Availible Slot:";
-            // 
-            // lbCar
-            // 
-            this.lbCar.AutoSize = true;
-            this.lbCar.BackColor = System.Drawing.Color.Transparent;
-            this.lbCar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.lbCar.Location = new System.Drawing.Point(16, 7);
-            this.lbCar.Name = "lbCar";
-            this.lbCar.Size = new System.Drawing.Size(103, 42);
-            this.lbCar.TabIndex = 0;
-            this.lbCar.Text = "VEHICLE FOR\r\nRENT";
-            this.lbCar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -249,7 +154,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel4.Controls.Add(this.lbAvailibleRent);
             this.guna2Panel4.Controls.Add(this.lbBike);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(761, 63);
+            this.guna2Panel4.Location = new System.Drawing.Point(761, 144);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.Size = new System.Drawing.Size(135, 113);
@@ -266,17 +171,6 @@ namespace Care_Management_and_Private_Parking
             this.lbUsedRent.TabIndex = 2;
             this.lbUsedRent.Text = "Used Slot:";
             // 
-            // lbAvailibleRent
-            // 
-            this.lbAvailibleRent.AutoSize = true;
-            this.lbAvailibleRent.BackColor = System.Drawing.Color.Transparent;
-            this.lbAvailibleRent.ForeColor = System.Drawing.Color.White;
-            this.lbAvailibleRent.Location = new System.Drawing.Point(13, 55);
-            this.lbAvailibleRent.Name = "lbAvailibleRent";
-            this.lbAvailibleRent.Size = new System.Drawing.Size(70, 13);
-            this.lbAvailibleRent.TabIndex = 1;
-            this.lbAvailibleRent.Text = "Availible Slot:";
-            // 
             // lbBike
             // 
             this.lbBike.AutoSize = true;
@@ -285,9 +179,9 @@ namespace Care_Management_and_Private_Parking
             this.lbBike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.lbBike.Location = new System.Drawing.Point(12, 11);
             this.lbBike.Name = "lbBike";
-            this.lbBike.Size = new System.Drawing.Size(111, 21);
+            this.lbBike.Size = new System.Drawing.Size(108, 21);
             this.lbBike.TabIndex = 0;
-            this.lbBike.Text = "RENT VEHICLE";
+            this.lbBike.Text = "VEHICLE SLOT";
             // 
             // pnRent
             // 
@@ -298,7 +192,7 @@ namespace Care_Management_and_Private_Parking
             this.pnRent.Location = new System.Drawing.Point(15, 58);
             this.pnRent.Name = "pnRent";
             this.pnRent.ShadowDecoration.Parent = this.pnRent;
-            this.pnRent.Size = new System.Drawing.Size(729, 162);
+            this.pnRent.Size = new System.Drawing.Size(729, 364);
             this.pnRent.TabIndex = 6;
             // 
             // guna2Panel1
@@ -344,10 +238,10 @@ namespace Care_Management_and_Private_Parking
             this.lbCus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCus.ForeColor = System.Drawing.Color.White;
             this.lbCus.HoverState.Parent = this.lbCus;
-            this.lbCus.Location = new System.Drawing.Point(70, 5);
+            this.lbCus.Location = new System.Drawing.Point(124, 5);
             this.lbCus.Name = "lbCus";
             this.lbCus.ShadowDecoration.Parent = this.lbCus;
-            this.lbCus.Size = new System.Drawing.Size(301, 27);
+            this.lbCus.Size = new System.Drawing.Size(211, 27);
             this.lbCus.TabIndex = 40;
             this.lbCus.Text = "CUSTOMER";
             // 
@@ -544,6 +438,17 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton3.TabIndex = 203;
             this.guna2GradientButton3.Text = "Search Info IDCard";
             // 
+            // lbAvailibleRent
+            // 
+            this.lbAvailibleRent.AutoSize = true;
+            this.lbAvailibleRent.BackColor = System.Drawing.Color.Transparent;
+            this.lbAvailibleRent.ForeColor = System.Drawing.Color.White;
+            this.lbAvailibleRent.Location = new System.Drawing.Point(13, 55);
+            this.lbAvailibleRent.Name = "lbAvailibleRent";
+            this.lbAvailibleRent.Size = new System.Drawing.Size(70, 13);
+            this.lbAvailibleRent.TabIndex = 1;
+            this.lbAvailibleRent.Text = "Availible Slot:";
+            // 
             // RentalLot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,8 +464,6 @@ namespace Care_Management_and_Private_Parking
             this.Name = "RentalLot";
             this.Text = "RentalLot";
             this.pnCalendar.ResumeLayout(false);
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -577,13 +480,8 @@ namespace Care_Management_and_Private_Parking
 
         private Guna.UI2.WinForms.Guna2Panel pnCalendar;
         private Guna.UI2.WinForms.Guna2GradientButton btnLogin;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label lbUsedForRent;
-        private System.Windows.Forms.Label lbAvailibleForRent;
-        private System.Windows.Forms.Label lbCar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label lbUsedRent;
-        private System.Windows.Forms.Label lbAvailibleRent;
         private System.Windows.Forms.Label lbBike;
         private Guna.UI2.WinForms.Guna2Panel pnRent;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -601,13 +499,12 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbVehicleType;
         private System.Windows.Forms.Label lbVehicleID;
         private Guna.UI2.WinForms.Guna2PictureBox VehiclePic;
-        private Guna.UI2.WinForms.Guna2Panel pnForRent;
         private Guna.UI2.WinForms.Guna2Button btnDetailRentVeh;
-        private Guna.UI2.WinForms.Guna2Button btnDetailVehForRent;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.TextBox tbIDCard;
         private System.Windows.Forms.Button btnFind;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
+        private System.Windows.Forms.Label lbAvailibleRent;
     }
 }

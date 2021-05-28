@@ -30,6 +30,7 @@ namespace Care_Management_and_Private_Parking
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicle));
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAddCus = new Guna.UI2.WinForms.Guna2Button();
             this.pnlVeh = new System.Windows.Forms.Panel();
@@ -667,6 +668,7 @@ namespace Care_Management_and_Private_Parking
             this.ClientSize = new System.Drawing.Size(525, 453);
             this.Controls.Add(this.pnCalendar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddVehicle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
