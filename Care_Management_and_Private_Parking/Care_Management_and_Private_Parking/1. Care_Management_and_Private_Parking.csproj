@@ -136,11 +136,11 @@
     <Compile Include="2. MainForm\Rental\InfoContract.Designer.cs">
       <DependentUpon>InfoContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Rental\Rent.cs">
+    <Compile Include="2. MainForm\Contract\VehList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Rental\Rent.Designer.cs">
-      <DependentUpon>Rent.cs</DependentUpon>
+    <Compile Include="2. MainForm\Contract\VehList.Designer.cs">
+      <DependentUpon>VehList.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\Rental\ForRent.cs">
       <SubType>Form</SubType>
@@ -251,8 +251,8 @@
     <EmbeddedResource Include="2. MainForm\Parking\AddVehicle.resx">
       <DependentUpon>AddVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Rental\Rent.resx">
-      <DependentUpon>Rent.cs</DependentUpon>
+    <EmbeddedResource Include="2. MainForm\Contract\VehList.resx">
+      <DependentUpon>VehList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Manage\ManageAccount\ManageAccountForm.resx">
       <DependentUpon>ManageAccountForm.cs</DependentUpon>

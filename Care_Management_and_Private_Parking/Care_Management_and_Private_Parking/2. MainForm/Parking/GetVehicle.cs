@@ -21,7 +21,7 @@ namespace Care_Management_and_Private_Parking
 
         bool verif()
         {
-            if (tbCusID.Text == "" || tbCusID.Text == "")
+            if (tbCusID.Text.Trim() == "" || tbCusID.Text.Trim() == "")
                 return false;
             else return true;
         }
