@@ -77,6 +77,8 @@ namespace Care_Management_and_Private_Parking
 
             if (cbboxPurpose.SelectedItem == "THUÊ")
             {
+                btnVehList.Show();
+
                 tbForRentName.Text = empname;
                 tbForRentPhone.Text = empphone;
                 tbForRentAddress.Text = "TPHCM";
@@ -101,6 +103,8 @@ namespace Care_Management_and_Private_Parking
             }
             else
             {
+                btnVehList.Hide();
+
                 tbRentName.Text = empname;
                 tbRentPhone.Text = empphone;
                 tbRentAddress.Text = "TPHCM";
@@ -123,6 +127,27 @@ namespace Care_Management_and_Private_Parking
                 tbForRentJob.Text = "Khách hàng";
                 ForRentPic.Image = null;
             }
+        }
+
+        private void Contract_Load(object sender, EventArgs e)
+        {
+            tbDateStart.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            btnVehList.Hide();
+        }
+
+        private void btnVehList_Click(object sender, EventArgs e)
+        {
+            string vehtype;
+            if (cbVehType.SelectedItem.ToString() == "Xe Đạp")
+                vehtype = "bicycle";
+            else if (cbVehType.SelectedItem.ToString() == "Xe Máy")
+                vehtype = "bike";
+            else
+                vehtype = "car";
+
+            VehList frm = new VehList();
+            frm.type = vehtype;
+            frm.ShowDialog();
         }
     }
 }

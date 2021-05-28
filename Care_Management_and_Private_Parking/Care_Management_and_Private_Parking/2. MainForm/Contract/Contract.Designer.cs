@@ -33,6 +33,7 @@ namespace Care_Management_and_Private_Parking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contract));
             this.label1 = new System.Windows.Forms.Label();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnVehList = new System.Windows.Forms.Button();
             this.tbForRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tbRentAddress = new Guna.UI2.WinForms.Guna2TextBox();
@@ -117,6 +118,7 @@ namespace Care_Management_and_Private_Parking
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.btnVehList);
             this.panelTop.Controls.Add(this.tbForRentAddress);
             this.panelTop.Controls.Add(this.label13);
             this.panelTop.Controls.Add(this.tbRentAddress);
@@ -185,6 +187,18 @@ namespace Care_Management_and_Private_Parking
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(786, 714);
             this.panelTop.TabIndex = 1;
+            // 
+            // btnVehList
+            // 
+            this.btnVehList.BackColor = System.Drawing.Color.White;
+            this.btnVehList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehList.Location = new System.Drawing.Point(194, 330);
+            this.btnVehList.Name = "btnVehList";
+            this.btnVehList.Size = new System.Drawing.Size(90, 23);
+            this.btnVehList.TabIndex = 149;
+            this.btnVehList.Text = "Danh sách xe";
+            this.btnVehList.UseVisualStyleBackColor = false;
+            this.btnVehList.Click += new System.EventHandler(this.btnVehList_Click);
             // 
             // tbForRentAddress
             // 
@@ -1021,6 +1035,7 @@ namespace Care_Management_and_Private_Parking
             this.tbDeal.PlaceholderText = "................................................................................." +
     "......................................";
             this.tbDeal.SelectedText = "";
+            this.tbDeal.SelectionStart = 7;
             this.tbDeal.ShadowDecoration.Parent = this.tbDeal;
             this.tbDeal.Size = new System.Drawing.Size(333, 23);
             this.tbDeal.TabIndex = 102;
@@ -1265,6 +1280,7 @@ namespace Care_Management_and_Private_Parking
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Contract";
             this.Text = "Contract";
+            this.Load += new System.EventHandler(this.Contract_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ForRentPic)).EndInit();
@@ -1341,5 +1357,6 @@ namespace Care_Management_and_Private_Parking
         public Guna.UI2.WinForms.Guna2TextBox tbForRentAddress;
         public System.Windows.Forms.Label label13;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnVehList;
     }
 }

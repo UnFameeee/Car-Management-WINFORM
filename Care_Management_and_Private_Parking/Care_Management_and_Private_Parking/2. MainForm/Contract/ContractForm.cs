@@ -26,8 +26,7 @@ namespace Care_Management_and_Private_Parking
         private void ContractForm_Load(object sender, EventArgs e)
         {
             pnContract.Controls.Add(frm);
-            frm.Show();
-            frm.tbDateStart.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            frm.Show();           
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -68,7 +67,7 @@ namespace Care_Management_and_Private_Parking
                         contid = frm.tbContractID.Text;                         //id hợp đồng
 
                         //thông tin khách 
-                        cusid = "cus" + takeID("cus");
+                        cusid = Variable.Cus + ContractDAL.Instance.takeID(Variable.Cus);
                         name = frm.tbRentName.Text;
                         phone = frm.tbRentPhone.Text;
                         identity = frm.tbRentIdentity.Text;
@@ -78,12 +77,12 @@ namespace Care_Management_and_Private_Parking
                         frm.RentPic.Image.Save(cuspic, frm.RentPic.Image.RawFormat);
 
                         //thông tin xe cho thuê
-                        vehid = "veh" + takeID("veh");
+                        vehid = Variable.Rental + ContractDAL.Instance.takeID(Variable.Rental);
                         license = frm.tbForRentVehLicense.Text;
 
-                        if (frm.cbVehType.SelectedValue.ToString() == "Xe Đạp")
+                        if (frm.cbVehType.SelectedItem.ToString() == "Xe Đạp")
                             vehtype = "bicycle";
-                        else if (frm.cbVehType.SelectedValue.ToString() == "Xe Máy")
+                        else if (frm.cbVehType.SelectedItem.ToString() == "Xe Máy")
                             vehtype = "bike";
                         else
                             vehtype = "car";
@@ -105,20 +104,13 @@ namespace Care_Management_and_Private_Parking
 
                         if (ParkingLotDAL.Instance.addCustomer(cusid, name, Convert.ToDateTime(bdate), phone, address, identity, cuspic))
                         {
-                            if (ParkingLotDAL.Instance.addVehicle("veh" + takeID("veh"), vehtype, license, vehpic, cusid))
+                            if (ContractDAL.Instance.insertContract(contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price))
                             {
-                                if (ContractDAL.Instance.insertContract(contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price))
-                                {
-                                    MessageBox.Show("BRUHHHH");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Cant't create contract", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                                MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                MessageBox.Show("ERROR!!!", "Vehicle's info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Cant't create contract", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
@@ -175,58 +167,6 @@ namespace Care_Management_and_Private_Parking
                 || frm.cbboxTimeFormat.SelectedItem == null || frm.tbPrice.Text == "") 
                 return false;
             else return true;
-        }
-
-        public string takeID(string operation)
-        {
-            SqlCommand cmd = new SqlCommand();
-            int stringID;
-            if (operation == "cus")
-            {
-                cmd = new SqlCommand("SELECT * FROM CUSTOMER", DataProvider.Instance.getConnection);
-                stringID = 3;
-            }
-            else
-            {
-                cmd = new SqlCommand("SELECT * FROM VEHICLE", DataProvider.Instance.getConnection);
-                stringID = 3;
-            }
-
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            int row = table.Rows.Count;
-            //Nếu không có bất cứ giá trị nào trong database
-            if (row <= 0)
-            {
-                return "1";
-            }
-            //Nếu chỉ có đúng 1 giá trị trong database
-            else if (row == 1)
-            {
-                string id = table.Rows[0][0].ToString();
-                return (Convert.ToInt32(id.Remove(0, stringID)) + 1).ToString();
-            }
-            //Kiểm tra xem table có dữ liệu không
-            else if (row > 0)
-            {
-                //Nếu ID đầu không phải là 1 (tức nghĩa là có thể đã có database là {1, 2, 3} nhưng bị xóa đi 1 và còn lại {2, 3}
-                if (Convert.ToInt32((table.Rows[0][0].ToString()).Remove(0, stringID)) != 1)
-                {
-                    return "1";
-                }
-                else
-                {
-                    //Nếu bị xóa đi 1 ID nào đó giữa chừng (tức nghĩa là có thể đã có database là {1, 2, 3} nhưng bị xóa đi 2 và còn lại {1, 3}
-                    for (int i = 0; i < row - 1; ++i)
-                    {
-                        if (Convert.ToInt32(table.Rows[i][0].ToString().Remove(0, stringID)) + 1 != Convert.ToInt32(table.Rows[i + 1][0].ToString().Remove(0, stringID)))
-                            return (Convert.ToInt32(table.Rows[i][0].ToString().Remove(0, stringID)) + 1).ToString();
-                    }
-                }
-            }
-            return (Convert.ToInt32(table.Rows[row - 1][0].ToString().Remove(0, stringID)) + 1).ToString();
         }
     }
 }

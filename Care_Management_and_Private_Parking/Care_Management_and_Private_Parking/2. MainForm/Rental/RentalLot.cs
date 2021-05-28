@@ -165,5 +165,59 @@ namespace Care_Management_and_Private_Parking
             loadMatrixRent();
         }
         #endregion
+
+        private void btnAddVehicle_Click(object sender, EventArgs e)
+        {
+            if (type != null || id != null)
+            {
+                ForRent frm = new ForRent();
+                frm.type = type;
+                frm.id = id;
+                frm.purpose = "add";
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please choose an empty slot!!!", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnEditVehicle_Click(object sender, EventArgs e)
+        {
+            if (type != null || id != null)
+            {
+                ForRent frm = new ForRent();
+                frm.type = type;
+                frm.id = id;
+                frm.purpose = "edit";
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please choose an empty slot!!!", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void btnRemoveVehicle_Click(object sender, EventArgs e)
+        {
+            if (type != null || id != null)
+            {
+                ForRent frm = new ForRent();
+                frm.type = type;
+                frm.id = id;
+                frm.purpose = "remove";
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please choose an empty slot!!!", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnContract_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
