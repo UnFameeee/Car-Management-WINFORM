@@ -1003,7 +1003,7 @@ namespace Care_Management_and_Private_Parking
             this.tbDeal.BorderRadius = 10;
             this.tbDeal.BorderThickness = 0;
             this.tbDeal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbDeal.DefaultText = "";
+            this.tbDeal.DefaultText = "đôi bên";
             this.tbDeal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbDeal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbDeal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

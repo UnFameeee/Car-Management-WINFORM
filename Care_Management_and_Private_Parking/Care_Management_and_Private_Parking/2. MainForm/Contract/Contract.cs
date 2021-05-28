@@ -69,6 +69,7 @@ namespace Care_Management_and_Private_Parking
 
             string empphone = tab.Rows[0][4].ToString();
             string empidentity = tab.Rows[0][5].ToString();
+
             string empjob;
             if (tab.Rows[0][7].ToString() == "Manager")
                 empjob = "Quản lý";

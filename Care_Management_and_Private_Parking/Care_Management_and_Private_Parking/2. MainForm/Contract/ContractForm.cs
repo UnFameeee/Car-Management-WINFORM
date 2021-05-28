@@ -111,7 +111,19 @@ namespace Care_Management_and_Private_Parking
                                 {
                                     MessageBox.Show("BRUHHHH");
                                 }
+                                else
+                                {
+                                    MessageBox.Show("Cant't create contract", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
+                            else
+                            {
+                                MessageBox.Show("ERROR!!!", "Vehicle's info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERROR!!!", "Customer's info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
