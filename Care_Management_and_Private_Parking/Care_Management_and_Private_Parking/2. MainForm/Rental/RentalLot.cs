@@ -22,6 +22,7 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
             loadMatrixRent();
+            fillSlot();
         }
 
         #region Properties
@@ -140,22 +141,29 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        #region Phần thông báo slot
+        private void fillSlot()
         {
-            loadMatrixRent();
+            int totalvehicle = Variable.RentColumns * Variable.RentRows;
+            //Phần bicycle
+            lbAvailibleRent.Text = "Availible Slot: " + (totalvehicle - ContractDAL.Instance.getAvailibleSlotRental()).ToString();
+            lbUsedRent.Text = "Used Slot: " + ContractDAL.Instance.getAvailibleSlotRental().ToString();
         }
-
+        #endregion
 
         #region Nút nhấn theo chức năng
         private void btnDetailRentVeh_Click(object sender, EventArgs e)
         {
 
         }
-        #endregion
-
         private void btnFind_Click(object sender, EventArgs e)
         {
 
         }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadMatrixRent();
+        }
+        #endregion
     }
 }

@@ -43,7 +43,7 @@ namespace Global
         public static int RentRows = 7;                  //Hàng xe
         public static int RentColumns = 14;              //Cột xe
         public static int RentalLength = 3;
-        public static string Rental = "Veh";
+        public static string Rental = "veh";
         #endregion
 
         #region TimeKeeping

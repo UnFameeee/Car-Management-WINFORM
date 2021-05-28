@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//3layers
+using Global;
 
 namespace DAL
 {
@@ -120,7 +122,6 @@ namespace DAL
             adapter.Fill(table);
             return table;
         }
-
         #region combobox
         public DataTable ShowEmpID()
         {
@@ -236,8 +237,76 @@ namespace DAL
             return table;
         }
         #endregion
-
         #endregion
 
+        #region Phần Rental
+
+        #region Lấy số lượng xe
+        public int getAvailibleSlotRental()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT VehID FROM VEHICLE WHERE VehID LIKE '%" + Variable.Rental + "%'");
+            cmd.Connection = DataProvider.Instance.getConnection;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table.Rows.Count;
+        }
+        #endregion
+
+        #region Hàm lấy ID của cái cũ sau đó + thêm 1 vào ( ví dụ User1 là ID cuối cùng của bảng => trả về "2")
+        public string takeID(string operation)
+        {
+            SqlCommand cmd = new SqlCommand();
+            int stringID;
+            if (operation == "cus")
+            {
+                cmd = new SqlCommand("SELECT * FROM CUSTOMER", DataProvider.Instance.getConnection);
+                stringID = Variable.CusLength;
+            }
+            else
+            {
+                cmd = new SqlCommand("SELECT VehID FROM VEHICLE WHERE VehID LIKE '%" + Variable.Rental + "%'", DataProvider.Instance.getConnection);
+                stringID = Variable.RentalLength;
+            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            int row = table.Rows.Count;
+            //Nếu không có bất cứ giá trị nào trong database
+            if (row <= 0)
+            {
+                return "1";
+            }
+            //Nếu chỉ có đúng 1 giá trị trong database
+            else if (row == 1)
+            {
+                string id = table.Rows[0][0].ToString();
+                return (Convert.ToInt32(id.Remove(0, stringID)) + 1).ToString();
+            }
+            //Kiểm tra xem table có dữ liệu không
+            else if (row > 0)
+            {
+                //Nếu ID đầu không phải là 1 (tức nghĩa là có thể đã có database là {1, 2, 3} nhưng bị xóa đi 1 và còn lại {2, 3}
+                if (Convert.ToInt32((table.Rows[0][0].ToString()).Remove(0, stringID)) != 1)
+                {
+                    return "1";
+                }
+                else
+                {
+                    //Nếu bị xóa đi 1 ID nào đó giữa chừng (tức nghĩa là có thể đã có database là {1, 2, 3} nhưng bị xóa đi 2 và còn lại {1, 3}
+                    for (int i = 0; i < row - 1; ++i)
+                    {
+                        if (Convert.ToInt32(table.Rows[i][0].ToString().Remove(0, stringID)) + 1 != Convert.ToInt32(table.Rows[i + 1][0].ToString().Remove(0, stringID)))
+                            return (Convert.ToInt32(table.Rows[i][0].ToString().Remove(0, stringID)) + 1).ToString();
+                    }
+                }
+            }
+            return (Convert.ToInt32(table.Rows[row - 1][0].ToString().Remove(0, stringID)) + 1).ToString();
+        }
+        #endregion
+
+        #endregion
     }
 }
