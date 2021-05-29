@@ -54,7 +54,7 @@ namespace Care_Management_and_Private_Parking
             DateTime end;            
 
             int price;                                                          //giá trị hợp đồng
-            int factor;                                                         //hệ số phạt khi huỷ hợp đồng
+            int feefactor;                                                         //hệ số phạt khi huỷ hợp đồng
 
             if (frm.cbboxPurpose.SelectedItem != null)
             {
@@ -77,7 +77,6 @@ namespace Care_Management_and_Private_Parking
                         frm.RentPic.Image.Save(cuspic, frm.RentPic.Image.RawFormat);
 
                         //thông tin xe cho thuê
-                        vehid = Variable.Rental + ContractDAL.Instance.takeID(Variable.Rental);
                         license = frm.tbForRentVehLicense.Text;
 
                         if (frm.cbVehType.SelectedItem.ToString() == "Xe Đạp")
@@ -90,6 +89,10 @@ namespace Care_Management_and_Private_Parking
                         vehpic = new MemoryStream();
                         frm.VehPic.Image.Save(vehpic, frm.VehPic.Image.RawFormat);
 
+                        SqlCommand com = new SqlCommand("select VehID from VEHICLE where VehType = '" + vehtype + "' and CusID is null and LicensePlate = '" + license + "'");
+                        DataTable tab = ParkingLotDAL.Instance.getDataWithPurpose(com);
+                        vehid = tab.Rows[0][0].ToString();
+
                         //phần nội dung
                         timevalue = Convert.ToInt32(frm.tbTime.Text);
                         if (frm.cbboxTimeFormat.SelectedItem == "Ngày")
@@ -100,11 +103,11 @@ namespace Care_Management_and_Private_Parking
                             end = DateTime.Now.AddYears(timevalue);
 
                         price = Convert.ToInt32(frm.tbPrice.Text);
-                        factor = Convert.ToInt32(frm.cbboxFee.SelectedItem);
+                        feefactor = Convert.ToInt32(frm.cbboxFee.SelectedItem);
 
                         if (ParkingLotDAL.Instance.addCustomer(cusid, name, Convert.ToDateTime(bdate), phone, address, identity, cuspic))
                         {
-                            if (ContractDAL.Instance.insertContract(contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price))
+                            if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price, feefactor)) 
                             {
                                 MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
