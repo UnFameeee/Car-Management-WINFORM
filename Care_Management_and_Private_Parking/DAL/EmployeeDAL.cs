@@ -111,6 +111,20 @@ namespace DAL
             else return false;
         }
 
+        public bool checkIdentity(string identity)
+        {
+            SqlCommand com = new SqlCommand("Select * from EMPLOYEE where IdentityNumber = @identity", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count == 0)
+                return true;
+            else return false;
+        }
+
         public DataTable getEmployee(SqlCommand command)
         {
             command.Connection = DataProvider.Instance.getConnection;

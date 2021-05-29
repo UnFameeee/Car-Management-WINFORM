@@ -76,7 +76,6 @@ namespace Care_Management_and_Private_Parking
             this.tbForRentName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbDateStart = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbDeal = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbContractID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -97,6 +96,7 @@ namespace Care_Management_and_Private_Parking
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tbDeal = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ForRentPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentPic)).BeginInit();
@@ -1009,37 +1009,6 @@ namespace Care_Management_and_Private_Parking
             this.tbDateStart.Size = new System.Drawing.Size(118, 23);
             this.tbDateStart.TabIndex = 103;
             // 
-            // tbDeal
-            // 
-            this.tbDeal.AutoRoundedCorners = true;
-            this.tbDeal.BackColor = System.Drawing.Color.White;
-            this.tbDeal.BorderColor = System.Drawing.Color.White;
-            this.tbDeal.BorderRadius = 10;
-            this.tbDeal.BorderThickness = 0;
-            this.tbDeal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbDeal.DefaultText = "đôi bên";
-            this.tbDeal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbDeal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbDeal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbDeal.DisabledState.Parent = this.tbDeal;
-            this.tbDeal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbDeal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDeal.FocusedState.Parent = this.tbDeal;
-            this.tbDeal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbDeal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDeal.HoverState.Parent = this.tbDeal;
-            this.tbDeal.Location = new System.Drawing.Point(410, 125);
-            this.tbDeal.Name = "tbDeal";
-            this.tbDeal.PasswordChar = '\0';
-            this.tbDeal.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbDeal.PlaceholderText = "................................................................................." +
-    "......................................";
-            this.tbDeal.SelectedText = "";
-            this.tbDeal.SelectionStart = 7;
-            this.tbDeal.ShadowDecoration.Parent = this.tbDeal;
-            this.tbDeal.Size = new System.Drawing.Size(333, 23);
-            this.tbDeal.TabIndex = 102;
-            // 
             // tbContractID
             // 
             this.tbContractID.AutoRoundedCorners = true;
@@ -1271,6 +1240,37 @@ namespace Care_Management_and_Private_Parking
             this.label2.Text = "CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tbDeal
+            // 
+            this.tbDeal.AutoRoundedCorners = true;
+            this.tbDeal.BackColor = System.Drawing.Color.White;
+            this.tbDeal.BorderColor = System.Drawing.Color.White;
+            this.tbDeal.BorderRadius = 10;
+            this.tbDeal.BorderThickness = 0;
+            this.tbDeal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbDeal.DefaultText = "đôi bên";
+            this.tbDeal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbDeal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbDeal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDeal.DisabledState.Parent = this.tbDeal;
+            this.tbDeal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDeal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDeal.FocusedState.Parent = this.tbDeal;
+            this.tbDeal.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbDeal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDeal.HoverState.Parent = this.tbDeal;
+            this.tbDeal.Location = new System.Drawing.Point(410, 125);
+            this.tbDeal.Name = "tbDeal";
+            this.tbDeal.PasswordChar = '\0';
+            this.tbDeal.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbDeal.PlaceholderText = "................................................................................." +
+    "......................................";
+            this.tbDeal.SelectedText = "";
+            this.tbDeal.SelectionStart = 7;
+            this.tbDeal.ShadowDecoration.Parent = this.tbDeal;
+            this.tbDeal.Size = new System.Drawing.Size(333, 23);
+            this.tbDeal.TabIndex = 102;
+            // 
             // Contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1313,7 +1313,6 @@ namespace Care_Management_and_Private_Parking
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label6;
         public Guna.UI2.WinForms.Guna2TextBox tbContractID;
-        public Guna.UI2.WinForms.Guna2TextBox tbDeal;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentBdate;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentIdentity;
         public Guna.UI2.WinForms.Guna2TextBox tbForRentPhone;
@@ -1358,5 +1357,6 @@ namespace Care_Management_and_Private_Parking
         public System.Windows.Forms.Label label13;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnVehList;
+        public Guna.UI2.WinForms.Guna2TextBox tbDeal;
     }
 }
