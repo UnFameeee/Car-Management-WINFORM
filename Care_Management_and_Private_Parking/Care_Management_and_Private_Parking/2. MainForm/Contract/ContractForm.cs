@@ -72,7 +72,7 @@ namespace Care_Management_and_Private_Parking
                         phone = frm.tbRentPhone.Text;
                         identity = frm.tbRentIdentity.Text;
                         bdate = frm.tbRentBdate.Text;
-                        address = frm.tbForRentAddress.Text;
+                        address = frm.tbRentAddress.Text;
                         cuspic = new MemoryStream();            
                         frm.RentPic.Image.Save(cuspic, frm.RentPic.Image.RawFormat);
 
@@ -107,18 +107,25 @@ namespace Care_Management_and_Private_Parking
 
                         if (ParkingLotDAL.Instance.addCustomer(cusid, name, Convert.ToDateTime(bdate), phone, address, identity, cuspic))
                         {
-                            if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price, feefactor)) 
+                            if (ContractDAL.Instance.checkContract("Cont" + contid))
                             {
-                                MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price, feefactor))
+                                {
+                                    MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Cant't create contract", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Cant't create contract", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("This ContractID Already Exist", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("ERROR!!!", "Customer's info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("There's something wrong with Customer info", "Error Customer info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
@@ -128,31 +135,145 @@ namespace Care_Management_and_Private_Parking
                     }
 
                 }
-                else                    //Mình là người cho thuê
+                else                                                            //Mình là người thuê
                 {
-                    vehpic = new MemoryStream();
-                    frm.ForRentPic.Image.Save(vehpic, frm.ForRentPic.Image.RawFormat);
+                    if (verif())
+                    {
+                        contid = frm.tbContractID.Text;                         //id hợp đồng
+
+                        //thông tin khách 
+                        cusid = Variable.Cus + ContractDAL.Instance.takeID(Variable.Cus);
+                        name = frm.tbForRentName.Text;
+                        phone = frm.tbForRentPhone.Text;
+                        identity = frm.tbForRentIdentity.Text;
+                        bdate = frm.tbForRentBdate.Text;
+                        address = frm.tbForRentAddress.Text;
+                        cuspic = new MemoryStream();
+                        frm.ForRentPic.Image.Save(cuspic, frm.ForRentPic.Image.RawFormat);
+
+                        //thông tin xe cho thuê
+                        vehid = Variable.Rental + ContractDAL.Instance.takeID(Variable.Rental);
+                        license = frm.tbForRentVehLicense.Text;
+
+                        if (frm.cbVehType.SelectedItem.ToString() == "Xe Đạp")
+                            vehtype = "bicycle";
+                        else if (frm.cbVehType.SelectedItem.ToString() == "Xe Máy")
+                            vehtype = "bike";
+                        else
+                            vehtype = "car";
+
+                        vehpic = new MemoryStream();
+                        frm.VehPic.Image.Save(vehpic, frm.VehPic.Image.RawFormat);
+
+                        //phần nội dung
+                        timevalue = Convert.ToInt32(frm.tbTime.Text);
+                        if (frm.cbboxTimeFormat.SelectedItem == "Ngày")
+                            end = DateTime.Now.AddDays(timevalue);
+                        else if (frm.cbboxTimeFormat.SelectedItem == "Tháng")
+                            end = DateTime.Now.AddMonths(timevalue);
+                        else
+                            end = DateTime.Now.AddYears(timevalue);
+
+                        price = Convert.ToInt32(frm.tbPrice.Text);
+                        feefactor = Convert.ToInt32(frm.cbboxFee.SelectedItem);
+
+                        if (ParkingLotDAL.Instance.addCustomer(cusid, name, Convert.ToDateTime(bdate), phone, address, identity, cuspic))
+                        {
+                            if (ParkingLotDAL.Instance.addVehicle(vehid, vehtype, license, vehpic, cusid))
+                            {
+                                if (ContractDAL.Instance.checkContract("Cont" + contid))
+                                {
+                                    if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price, feefactor))
+                                    {
+                                        MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Cant't create contract", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("This ContractID Already Exist", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("There's something wrong with Vehicle info!", "Error Vehicle info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("There's something wrong with Customer info!", "Error Customer info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill all empty field!!!", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Please choose type of contract!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please choose type of contract!!!", "ContractType Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            if (frm.tbContractID != null)
+            {
+                if(ContractDAL.Instance.removeContract(frm.tbContractID.Text))
+                {
+                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnRefresh.PerformClick();              //reload
+                }
+                else
+                {
+                    MessageBox.Show("Can't Remove Contract", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Please insert ContractID!!!", "ContractID Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            //thông tin hợp đồng
+            frm.cbboxPurpose.SelectedItem = null;
+            frm.tbContractID.Text = null;
+            frm.tbDateStart.Text = null;
 
+            //bên cho thuê
+            frm.tbForRentName.Text = null;
+            frm.tbForRentPhone.Text = null;
+            frm.tbForRentAddress.Text = null;
+            frm.tbForRentIdentity.Text = null;
+            frm.tbForRentBdate.Text = null;
+            frm.tbForRentJob.Text = null;
+            frm.ForRentPic.Image = null;
+
+            //xe
+            frm.cbVehType.SelectedItem = null;
+            frm.tbForRentVehLicense = null;
+            frm.VehPic.Image = null;
+
+            //thông tin bên thuê
+            frm.tbRentName.Text = null;
+            frm.tbRentPhone.Text = null;
+            frm.tbRentAddress.Text = null;
+            frm.tbRentIdentity.Text = null;
+            frm.tbRentBdate.Text = null;
+            frm.tbRentJob.Text = null;
+            frm.RentPic.Image = null;
+
+            //nội dung
+            frm.tbTime.Text = null;
+            frm.cbboxTimeFormat.SelectedItem = null;
+            frm.tbPrice.Text = null;
+            frm.cbboxFee.SelectedItem = null;
         }
 
         bool verif()
@@ -170,6 +291,85 @@ namespace Care_Management_and_Private_Parking
                 || frm.cbboxTimeFormat.SelectedItem == null || frm.tbPrice.Text == "") 
                 return false;
             else return true;
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            if (frm.tbContractID.Text != null)
+            {
+                DataTable tab = ContractDAL.Instance.getContractInfo(frm.tbContractID.Text);
+                if (tab.Rows.Count > 0)
+                {
+                    string purpose = tab.Rows[0][1].ToString();
+                    DateTime start = Convert.ToDateTime(tab.Rows[0][5]);
+                    int price = Convert.ToInt32(tab.Rows[0][7]);
+                    int feefactor = Convert.ToInt32(tab.Rows[0][8]);
+
+                    //thông tin nhân viên
+                    string empid = tab.Rows[0][2].ToString();
+                    DataTable emp = EmployeeDAL.Instance.getEmpByID(empid);
+
+                    string ename = emp.Rows[0][1].ToString();
+                    string ebdate = emp.Rows[0][3].ToString();
+                    string ephone = emp.Rows[0][4].ToString();
+                    string eaddress = "TPHCM";                                       //múa rìu cưc căng
+                    string eidentity = emp.Rows[0][5].ToString();
+                    string email = emp.Rows[0][6].ToString();
+                    string ejob = emp.Rows[0][7].ToString();
+
+                    if (emp.Rows[0][8] != DBNull.Value)
+                    {
+                        byte[] pic;
+                        pic = (byte[])emp.Rows[0][8];
+                        MemoryStream picture = new MemoryStream(pic);
+                        //ptbEmp.Image = Image.FromStream(picture);
+                    }
+
+                    //thông tin khách
+                    string cusid = tab.Rows[0][3].ToString();
+                    SqlCommand com = new SqlCommand("select * from CUSTOMER where CusID = '" + cusid + "'");
+                    DataTable cus = ParkingLotDAL.Instance.getDataWithPurpose(com);
+
+                    string cname = cus.Rows[0][1].ToString();
+                    string cbdate = cus.Rows[0][2].ToString();
+                    string cphone = cus.Rows[0][3].ToString();
+                    string caddress = cus.Rows[0][4].ToString();
+                    string cidentity = cus.Rows[0][5].ToString();
+
+                    if (cus.Rows[0][6] != DBNull.Value)
+                    {
+                        byte[] pic;
+                        pic = (byte[])cus.Rows[0][6];
+                        MemoryStream picture = new MemoryStream(pic);
+                        //ptbEmp.Image = Image.FromStream(picture);
+                    }
+
+                    //thông tin xe
+                    string vehid = tab.Rows[0][4].ToString();
+                    SqlCommand cmd = new SqlCommand("select * from VEHICLE where VehID = '" + vehid + "'");
+                    DataTable veh = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
+
+                    string type = veh.Rows[0][1].ToString();
+                    string license = veh.Rows[0][2].ToString();
+
+                    if (veh.Rows[0][3] != DBNull.Value)
+                    {
+                        byte[] pic;
+                        pic = (byte[])veh.Rows[0][3];
+                        MemoryStream picture = new MemoryStream(pic);
+                        //ptbEmp.Image = Image.FromStream(picture);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Can't Find ContractID " + frm.tbContractID.Text, "ContractID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please insert ContractID!!!", "ContractID Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -84,15 +84,22 @@ namespace Care_Management_and_Private_Parking
 
                     if (verifCus())
                     {
-                        if (ParkingLotDAL.Instance.addCustomer(CusID, FullName, Birth, Phone, Address, Identity, CusPic))
+                        if (ParkingLotDAL.Instance.checkIdentity(Identity))
                         {
-                            MessageBox.Show("Add new Customer successfully!", "Add Customer");
-                            Execute += 1;
-                            showUpForm();
+                            if (ParkingLotDAL.Instance.addCustomer(CusID, FullName, Birth, Phone, Address, Identity, CusPic))
+                            {
+                                MessageBox.Show("Add new Customer successfully!", "Add Customer");
+                                Execute += 1;
+                                showUpForm();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Add new Customer fail!!!", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Add new Customer fail!!!", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Identity " + Identity + " Already Exist!!!", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else

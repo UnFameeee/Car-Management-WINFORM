@@ -27,7 +27,7 @@ namespace DAL
             private set { ContractDAL.instance = value; }
         }
 
-        #region Thêm xóa sửa hợp đồng
+        #region Thêm xóa hợp đồng (bút sa gà chết ko được sửa hợp đồng)
         public bool insertContract(string ContID, string CusID, string EmpID, string Purpose, string VehID, DateTime DateStart, DateTime DateEnd, int Price, int FeeFactor)
         {
             SqlCommand command = new SqlCommand("Insert into CONTRACT (ContID, Purpose, EmpID, CusID, VehID, DateStart, DateEnd, Price, FeeFactor)" +
@@ -70,34 +70,7 @@ namespace DAL
                 DataProvider.Instance.closeConnection();
                 return false;
             }
-        }
-
-        public bool updateContract(string ContID, string CusID, string EmpID, string Purpose, string VehID, DateTime DateStart, DateTime DateEnd, int Price)
-        {
-            SqlCommand command = new SqlCommand("Update CONTRACT set CusID = @cusid, EmpID = @empid, Purpose = @pp, VehID = @vehid " +
-                "DateStart = @dstart, DateEnd = @dend, Price = @price where ContID = @contid", DataProvider.Instance.getConnection);
-            command.Parameters.Add("@contid", SqlDbType.NVarChar).Value = ContID;
-            command.Parameters.Add("@cusid", SqlDbType.NVarChar).Value = CusID;
-            command.Parameters.Add("@empid", SqlDbType.NVarChar).Value = EmpID;
-            command.Parameters.Add("@pp", SqlDbType.NVarChar).Value = Purpose;
-            command.Parameters.Add("@vehid", SqlDbType.NVarChar).Value = VehID;
-            command.Parameters.Add("@dstart", SqlDbType.DateTime).Value = DateStart;
-            command.Parameters.Add("@dend", SqlDbType.DateTime).Value = DateEnd;
-            command.Parameters.Add("@price", SqlDbType.Int).Value = Price;
-
-            DataProvider.Instance.openConnection();
-            if (command.ExecuteNonQuery() == 1)
-            {
-                DataProvider.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DataProvider.Instance.closeConnection();
-                return false;
-            }
-        }
-        #endregion
+        }        
         public bool checkContract(string ContID)
         {
             SqlCommand com = new SqlCommand("Select * from CONTRACT where ContID = @contid", DataProvider.Instance.getConnection);
@@ -111,6 +84,7 @@ namespace DAL
                 return true;
             else return false;
         }
+        #endregion
 
         #region Phần ContractList
         public DataTable ShowContract()
@@ -240,7 +214,15 @@ namespace DAL
         #endregion
         #endregion
 
-        #region Phần Rental
+        #region Phần lấy Data
+        public DataTable getContractInfo(string contid)
+        {
+            SqlCommand com = new SqlCommand("SELECT * from CONTRACT where ContID = '" + contid + "'", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
 
         #region Lấy số lượng xe
         public int getAvailibleSlotRental()

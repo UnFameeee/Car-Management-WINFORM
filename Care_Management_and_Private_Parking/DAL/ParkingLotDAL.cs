@@ -28,8 +28,43 @@ namespace DAL
             private set { ParkingLotDAL.instance = value; }
         }
 
-        //Kiểm tra xem ở đó xe có được gửi chưa
 
+        #region Kiểm tra
+        //Kiểm tra identity (độc nhất)
+        public bool checkIdentity(string identity)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM CUSTOMER WHERE IdentityNumber = @identity", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //Kiểm tra biển số xe ko đc trùng
+        public bool checkLicense(string license)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM VEHICLE WHERE LicensePlate = @license", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@license", SqlDbType.NVarChar).Value = license;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //Kiểm tra chỗ trống
         public bool checkSlot(string ID, string Type)
@@ -70,6 +105,8 @@ namespace DAL
             adapter.Fill(table);
             return table;
         }
+
+        #endregion
 
         #region Xe
         //Thêm xe

@@ -92,16 +92,22 @@ namespace Care_Management_and_Private_Parking
             {
                 MemoryStream pic = new MemoryStream();
                 ptbEmp.Image.Save(pic, ptbEmp.Image.RawFormat);
-
-                if (EmployeeDAL.Instance.updateEmployee(EmpID, FName, Gender, Bday, Phone, Identity, Email, JobID, pic)) 
+                if (EmployeeDAL.Instance.checkIdentity(Identity))
                 {
-                    MessageBox.Show(EmpID + " Has Been Updated", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reload();
-                    this.DialogResult = DialogResult.OK;
+                    if (EmployeeDAL.Instance.updateEmployee(EmpID, FName, Gender, Bday, Phone, Identity, Email, JobID, pic))
+                    {
+                        MessageBox.Show(EmpID + " Has Been Updated", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        reload();
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Can't Update " + EmpID, "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Can't Update " + EmpID, "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Identity " + Identity + " Already Exist!!!", "Update Employee", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -196,20 +202,27 @@ namespace Care_Management_and_Private_Parking
 
                 if (EmployeeDAL.Instance.checkEmp(EmpID))
                 {
-                    if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Bday, Phone, Identity, Email, JobID, pic)) 
+                    if (EmployeeDAL.Instance.checkIdentity(Identity))
                     {
-                        MessageBox.Show("New Employee Inserted", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        reload();
-                        //this.DialogResult = DialogResult.OK;
+                        if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Bday, Phone, Identity, Email, JobID, pic))
+                        {
+                            MessageBox.Show("New Employee Inserted", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            reload();
+                            //this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Can't Insert This Employee", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Can't Insert This Employee", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Identity " + Identity + " Already Exist!!!", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("This " + EmpID + " Already Exists!!!", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("This " + EmpID + " Already Exist!!!", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
