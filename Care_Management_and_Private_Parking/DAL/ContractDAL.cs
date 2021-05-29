@@ -28,10 +28,10 @@ namespace DAL
         }
 
         #region Thêm xóa sửa hợp đồng
-        public bool insertContract(string ContID, string CusID, string EmpID, string Purpose, string VehID, DateTime DateStart, DateTime DateEnd, int Price)
+        public bool insertContract(string ContID, string CusID, string EmpID, string Purpose, string VehID, DateTime DateStart, DateTime DateEnd, int Price, int FeeFactor)
         {
-            SqlCommand command = new SqlCommand("Insert into CONTRACT (ContID, CusID, EmpID, Purpose, VehID, DateStart, DateEnd, Price)" +
-                "values (@contid, @cusid, @empid, @pp, @vehid, @dstart, @dend, @price)", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Insert into CONTRACT (ContID, Purpose, EmpID, CusID, VehID, DateStart, DateEnd, Price, FeeFactor)" +
+                "values (@contid, @pp, @empid, @cusid, @vehid, @dstart, @dend, @price, @ff)", DataProvider.Instance.getConnection);
             command.Parameters.Add("@contid", SqlDbType.NVarChar).Value = ContID;
             command.Parameters.Add("@cusid", SqlDbType.NVarChar).Value = CusID;
             command.Parameters.Add("@empid", SqlDbType.NVarChar).Value = EmpID;
@@ -40,6 +40,7 @@ namespace DAL
             command.Parameters.Add("@dstart", SqlDbType.Date).Value = DateStart;
             command.Parameters.Add("@dend", SqlDbType.Date).Value = DateEnd;
             command.Parameters.Add("@price", SqlDbType.Int).Value = Price;
+            command.Parameters.Add("@ff", SqlDbType.Int).Value = FeeFactor;
 
             DataProvider.Instance.openConnection();
             if (command.ExecuteNonQuery() == 1)

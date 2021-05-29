@@ -53,6 +53,7 @@ namespace Care_Management_and_Private_Parking
                     if (ParkingLotDAL.Instance.addRentalVehicle(VehID, Type, License, VehPic))
                     {
                         MessageBox.Show("Add Rental Vehicle Successfully", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
@@ -154,6 +155,7 @@ namespace Care_Management_and_Private_Parking
                     if (ParkingLotDAL.Instance.updateRentalVehicle(VehID, Type, License, VehPic))
                     {
                         MessageBox.Show("Edit Rental Vehicle Successfully", "Edit Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
@@ -179,6 +181,7 @@ namespace Care_Management_and_Private_Parking
                 if (ParkingLotDAL.Instance.deleteVehicle(VehID))
                 {
                     MessageBox.Show("Remove Rental Vehicle Successfully", "Remove Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {

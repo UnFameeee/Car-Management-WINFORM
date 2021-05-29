@@ -23,12 +23,18 @@ namespace Care_Management_and_Private_Parking
 
         private void VehList_Load(object sender, EventArgs e)
         {
-            SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + type + "' and CusID = null");
+            dgvData.RowTemplate.Height = 100;
+            SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + type + "' and CusID is null");
             dgvData.DataSource = ParkingLotDAL.Instance.getDataWithPurpose(com);
+
+            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+            picCol = (DataGridViewImageColumn)dgvData.Columns[3];
+            picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
 
-        private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            type = dgvData.CurrentRow.Cells[1].Value.ToString();
             this.DialogResult = DialogResult.OK;
         }
     }

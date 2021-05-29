@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -137,17 +138,39 @@ namespace Care_Management_and_Private_Parking
 
         private void btnVehList_Click(object sender, EventArgs e)
         {
-            string vehtype;
-            if (cbVehType.SelectedItem.ToString() == "Xe Đạp")
-                vehtype = "bicycle";
-            else if (cbVehType.SelectedItem.ToString() == "Xe Máy")
-                vehtype = "bike";
+            if (cbVehType.SelectedItem == null)
+            {
+                MessageBox.Show("Please choose Type of Vehicle!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
-                vehtype = "car";
+            {
+                string vehtype;
+                if (cbVehType.SelectedItem.ToString() == "Xe Đạp")
+                    vehtype = "bicycle";
+                else if (cbVehType.SelectedItem.ToString() == "Xe Máy")
+                    vehtype = "bike";
+                else
+                    vehtype = "car";
 
-            VehList frm = new VehList();
-            frm.type = vehtype;
-            frm.ShowDialog();
+                VehList frm = new VehList();
+                frm.type = vehtype;
+                frm.ShowDialog();
+
+                SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + frm.type + "' and CusID is null");
+                DataTable tab = ParkingLotDAL.Instance.getDataWithPurpose(com);
+
+                tbForRentVehLicense.Text = tab.Rows[0][2].ToString();
+
+                if (tab.Rows[0][3] != DBNull.Value)
+                {
+                    byte[] pic;
+                    pic = (byte[])tab.Rows[0][3];
+                    MemoryStream picture = new MemoryStream(pic);
+                    VehPic.Image = Image.FromStream(picture);
+                }
+
+                btnVehList.Hide();
+            }
         }
     }
 }
