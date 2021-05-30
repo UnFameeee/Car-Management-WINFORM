@@ -32,6 +32,8 @@ namespace Care_Management_and_Private_Parking
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.pnInterface = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStatistic = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
@@ -51,7 +53,10 @@ namespace Care_Management_and_Private_Parking
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnInterface.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -66,6 +71,8 @@ namespace Care_Management_and_Private_Parking
             // pnInterface
             // 
             this.pnInterface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnInterface.Controls.Add(this.btnLogout);
+            this.pnInterface.Controls.Add(this.panel1);
             this.pnInterface.Controls.Add(this.btnMinimize);
             this.pnInterface.Controls.Add(this.guna2PictureBox2);
             this.pnInterface.Controls.Add(this.btnExit);
@@ -79,26 +86,60 @@ namespace Care_Management_and_Private_Parking
             this.pnInterface.Size = new System.Drawing.Size(178, 736);
             this.pnInterface.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnStatistic);
+            this.panel1.Location = new System.Drawing.Point(7, 537);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(162, 60);
+            this.panel1.TabIndex = 6;
+            // 
+            // btnStatistic
+            // 
+            this.btnStatistic.BackColor = System.Drawing.Color.Transparent;
+            this.btnStatistic.BorderRadius = 22;
+            this.btnStatistic.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnStatistic.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnStatistic.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistic.CheckedState.Image")));
+            this.btnStatistic.CheckedState.Parent = this.btnStatistic;
+            this.btnStatistic.CustomImages.Parent = this.btnStatistic;
+            this.btnStatistic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnStatistic.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnStatistic.HoverState.Parent = this.btnStatistic;
+            this.btnStatistic.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistic.Image")));
+            this.btnStatistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStatistic.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnStatistic.Location = new System.Drawing.Point(9, 9);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.ShadowDecoration.Parent = this.btnStatistic;
+            this.btnStatistic.Size = new System.Drawing.Size(143, 43);
+            this.btnStatistic.TabIndex = 1;
+            this.btnStatistic.Text = "Statistic";
+            this.btnStatistic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStatistic.UseTransparentBackground = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
+            // 
             // btnMinimize
             // 
             this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.BorderRadius = 22;
+            this.btnMinimize.BorderRadius = 16;
             this.btnMinimize.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnMinimize.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(72)))));
             this.btnMinimize.CheckedState.Parent = this.btnMinimize;
             this.btnMinimize.CustomImages.Parent = this.btnMinimize;
             this.btnMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnMinimize.HoverState.Parent = this.btnMinimize;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMinimize.Location = new System.Drawing.Point(22, 686);
+            this.btnMinimize.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnMinimize.Location = new System.Drawing.Point(128, 699);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.ShadowDecoration.Parent = this.btnMinimize;
-            this.btnMinimize.Size = new System.Drawing.Size(132, 43);
+            this.btnMinimize.Size = new System.Drawing.Size(47, 34);
             this.btnMinimize.TabIndex = 5;
-            this.btnMinimize.Text = "Minimize";
+            this.toolTip1.SetToolTip(this.btnMinimize, "Minimize");
             this.btnMinimize.UseTransparentBackground = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -116,32 +157,31 @@ namespace Care_Management_and_Private_Parking
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BorderRadius = 22;
+            this.btnExit.BorderRadius = 16;
             this.btnExit.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnExit.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(72)))));
             this.btnExit.CheckedState.Parent = this.btnExit;
             this.btnExit.CustomImages.Parent = this.btnExit;
             this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.btnExit.HoverState.Parent = this.btnExit;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnExit.Location = new System.Drawing.Point(32, 150);
+            this.btnExit.Location = new System.Drawing.Point(3, 699);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(107, 43);
+            this.btnExit.Size = new System.Drawing.Size(47, 34);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Exit";
+            this.toolTip1.SetToolTip(this.btnExit, "Exit");
             this.btnExit.UseTransparentBackground = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnManageJob);
-            this.panel5.Location = new System.Drawing.Point(12, 476);
+            this.panel5.Location = new System.Drawing.Point(7, 460);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(157, 60);
+            this.panel5.Size = new System.Drawing.Size(162, 60);
             this.panel5.TabIndex = 3;
             // 
             // btnManageJob
@@ -162,7 +202,7 @@ namespace Care_Management_and_Private_Parking
             this.btnManageJob.Location = new System.Drawing.Point(9, 9);
             this.btnManageJob.Name = "btnManageJob";
             this.btnManageJob.ShadowDecoration.Parent = this.btnManageJob;
-            this.btnManageJob.Size = new System.Drawing.Size(137, 43);
+            this.btnManageJob.Size = new System.Drawing.Size(143, 43);
             this.btnManageJob.TabIndex = 1;
             this.btnManageJob.Text = "ManageJob";
             this.btnManageJob.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -172,9 +212,9 @@ namespace Care_Management_and_Private_Parking
             // panel4
             // 
             this.panel4.Controls.Add(this.btnTimeKeeping);
-            this.panel4.Location = new System.Drawing.Point(12, 401);
+            this.panel4.Location = new System.Drawing.Point(7, 385);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(157, 60);
+            this.panel4.Size = new System.Drawing.Size(162, 60);
             this.panel4.TabIndex = 4;
             // 
             // btnTimeKeeping
@@ -205,9 +245,9 @@ namespace Care_Management_and_Private_Parking
             // panel3
             // 
             this.panel3.Controls.Add(this.btnUser);
-            this.panel3.Location = new System.Drawing.Point(12, 325);
+            this.panel3.Location = new System.Drawing.Point(7, 309);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(157, 60);
+            this.panel3.Size = new System.Drawing.Size(162, 60);
             this.panel3.TabIndex = 3;
             // 
             // btnUser
@@ -228,7 +268,7 @@ namespace Care_Management_and_Private_Parking
             this.btnUser.Location = new System.Drawing.Point(9, 9);
             this.btnUser.Name = "btnUser";
             this.btnUser.ShadowDecoration.Parent = this.btnUser;
-            this.btnUser.Size = new System.Drawing.Size(137, 43);
+            this.btnUser.Size = new System.Drawing.Size(143, 43);
             this.btnUser.TabIndex = 1;
             this.btnUser.Text = "User";
             this.btnUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -238,9 +278,9 @@ namespace Care_Management_and_Private_Parking
             // panel2
             // 
             this.panel2.Controls.Add(this.btnHome);
-            this.panel2.Location = new System.Drawing.Point(12, 250);
+            this.panel2.Location = new System.Drawing.Point(7, 234);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(157, 60);
+            this.panel2.Size = new System.Drawing.Size(162, 60);
             this.panel2.TabIndex = 2;
             // 
             // btnHome
@@ -262,7 +302,7 @@ namespace Care_Management_and_Private_Parking
             this.btnHome.Location = new System.Drawing.Point(9, 10);
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.Parent = this.btnHome;
-            this.btnHome.Size = new System.Drawing.Size(137, 43);
+            this.btnHome.Size = new System.Drawing.Size(143, 43);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -341,6 +381,28 @@ namespace Care_Management_and_Private_Parking
             // 
             this.guna2DragControl2.TargetControl = this.pnInterface;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BorderRadius = 16;
+            this.btnLogout.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnLogout.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(72)))));
+            this.btnLogout.CheckedState.Parent = this.btnLogout;
+            this.btnLogout.CustomImages.Parent = this.btnLogout;
+            this.btnLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnLogout.HoverState.Parent = this.btnLogout;
+            this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.Location = new System.Drawing.Point(48, 150);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
+            this.btnLogout.Size = new System.Drawing.Size(80, 32);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseTransparentBackground = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Mainform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -355,6 +417,7 @@ namespace Care_Management_and_Private_Parking
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageCarPark";
             this.pnInterface.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -391,5 +454,9 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnMinimize;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btnStatistic;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

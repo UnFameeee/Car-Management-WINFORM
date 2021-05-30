@@ -146,4 +146,14 @@ create table CONTRACT(
 )
 GO
 
+--Tạo bảng doanh thu
+CREATE TABLE PROFIT
+(
+	Today datetime,
+	MoneyFromParking int,
+	MoneyFromContract int,
+	MoneyTotal int
+)
+GO
+
  

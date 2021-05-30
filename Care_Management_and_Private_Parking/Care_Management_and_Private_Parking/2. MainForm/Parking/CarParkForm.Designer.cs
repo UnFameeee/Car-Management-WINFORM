@@ -31,9 +31,9 @@ namespace Care_Management_and_Private_Parking
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnParkingLot = new Guna.UI2.WinForms.Guna2Button();
-            this.btnStatistic = new Guna.UI2.WinForms.Guna2Button();
             this.btnRentalLot = new Guna.UI2.WinForms.Guna2Button();
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnList = new Guna.UI2.WinForms.Guna2Button();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,28 +67,6 @@ namespace Care_Management_and_Private_Parking
             this.btnParkingLot.UseTransparentBackground = true;
             this.btnParkingLot.Click += new System.EventHandler(this.btnParkingLot_Click);
             // 
-            // btnStatistic
-            // 
-            this.btnStatistic.BackColor = System.Drawing.Color.Transparent;
-            this.btnStatistic.BorderRadius = 22;
-            this.btnStatistic.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnStatistic.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnStatistic.CheckedState.Parent = this.btnStatistic;
-            this.btnStatistic.CustomImages.Parent = this.btnStatistic;
-            this.btnStatistic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnStatistic.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnStatistic.HoverState.Parent = this.btnStatistic;
-            this.btnStatistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnStatistic.Location = new System.Drawing.Point(9, 322);
-            this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.ShadowDecoration.Parent = this.btnStatistic;
-            this.btnStatistic.Size = new System.Drawing.Size(113, 43);
-            this.btnStatistic.TabIndex = 6;
-            this.btnStatistic.Text = "Statistic";
-            this.btnStatistic.UseTransparentBackground = true;
-            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
-            // 
             // btnRentalLot
             // 
             this.btnRentalLot.BackColor = System.Drawing.Color.Transparent;
@@ -115,7 +93,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnMenu.BorderRadius = 22;
             this.pnMenu.BorderThickness = 1;
-            this.pnMenu.Controls.Add(this.btnStatistic);
+            this.pnMenu.Controls.Add(this.btnList);
             this.pnMenu.Controls.Add(this.btnRentalLot);
             this.pnMenu.Controls.Add(this.btnParkingLot);
             this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -124,6 +102,28 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu.ShadowDecoration.Parent = this.pnMenu;
             this.pnMenu.Size = new System.Drawing.Size(131, 493);
             this.pnMenu.TabIndex = 9;
+            // 
+            // btnList
+            // 
+            this.btnList.BackColor = System.Drawing.Color.Transparent;
+            this.btnList.BorderRadius = 22;
+            this.btnList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnList.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnList.CheckedState.Parent = this.btnList;
+            this.btnList.CustomImages.Parent = this.btnList;
+            this.btnList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnList.HoverState.Parent = this.btnList;
+            this.btnList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnList.Location = new System.Drawing.Point(9, 322);
+            this.btnList.Name = "btnList";
+            this.btnList.ShadowDecoration.Parent = this.btnList;
+            this.btnList.Size = new System.Drawing.Size(113, 43);
+            this.btnList.TabIndex = 6;
+            this.btnList.Text = "List";
+            this.btnList.UseTransparentBackground = true;
+            this.btnList.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // CarParkForm
             // 
@@ -147,8 +147,8 @@ namespace Care_Management_and_Private_Parking
         #endregion
         private System.Windows.Forms.Panel pnlMain;
         private Guna.UI2.WinForms.Guna2Button btnParkingLot;
-        private Guna.UI2.WinForms.Guna2Button btnStatistic;
         private Guna.UI2.WinForms.Guna2Button btnRentalLot;
         private Guna.UI2.WinForms.Guna2Panel pnMenu;
+        private Guna.UI2.WinForms.Guna2Button btnList;
     }
 }
