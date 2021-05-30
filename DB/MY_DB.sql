@@ -139,7 +139,8 @@ create table CONTRACT(
 	CusID nvarchar(100) references CUSTOMER(CusID),
 	VehID nvarchar(100) references VEHICLE(VehID),
 	DateStart date,
-	DateEnd date,
+	TimeValue int,													--thời gian mà khách chọn
+	TimeFormat nvarchar(100),										--ngày, tháng năm
 	Price int,
 	FeeFactor int
 )
