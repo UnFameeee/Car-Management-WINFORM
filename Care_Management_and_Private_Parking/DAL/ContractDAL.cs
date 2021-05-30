@@ -142,7 +142,7 @@ namespace DAL
         {
             SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
-                " WHERE A.VehID = CONTRACT.VehID and VehID = @VehID", DataProvider.Instance.getConnection);
+                " WHERE A.VehID = CONTRACT.VehID and A.VehID = @VehID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             SqlDataAdapter adapter = new SqlDataAdapter(com);
             DataTable table = new DataTable();
@@ -166,7 +166,7 @@ namespace DAL
         {
             SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
-                " WHERE A.VehID = CONTRACT.VehID and CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
+                " WHERE A.VehID = CONTRACT.VehID and CusID = @CusID and A.VehID = @VehID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             SqlDataAdapter adapter = new SqlDataAdapter(com);
@@ -178,7 +178,7 @@ namespace DAL
         {
             SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
-                " WHERE A.VehID = CONTRACT.VehID and VehID = @VehID and EmpID = @EmpID", DataProvider.Instance.getConnection);
+                " WHERE A.VehID = CONTRACT.VehID and A.VehID = @VehID and EmpID = @EmpID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
             SqlDataAdapter adapter = new SqlDataAdapter(com);
@@ -203,7 +203,7 @@ namespace DAL
         {
             SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
-                " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID and CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
+                " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID and CusID = @CusID and A.VehID = @VehID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
             com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;

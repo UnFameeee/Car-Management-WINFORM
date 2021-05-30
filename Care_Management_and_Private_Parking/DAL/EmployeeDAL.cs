@@ -111,18 +111,33 @@ namespace DAL
             else return false;
         }
 
-        public bool checkIdentity(string identity)
-        {
-            SqlCommand com = new SqlCommand("Select * from EMPLOYEE where IdentityNumber = @identity", DataProvider.Instance.getConnection);
-            com.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(com);
+        public bool checkIdentity(string EmpID, string identity, string operation)
+        { 
+            SqlCommand com = new SqlCommand();
+            SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            adapter.Fill(table);
 
-            if (table.Rows.Count == 0)
-                return true;
-            else return false;
+            if (operation == "add")
+            {
+                com = new SqlCommand("Select * from EMPLOYEE where IdentityNumber = @identity", DataProvider.Instance.getConnection);
+                com.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
+                adapter.SelectCommand = com;
+                adapter.Fill(table);
+                if (table.Rows.Count == 0)
+                    return true;
+                else return false;
+            }
+            else
+            {
+                com = new SqlCommand("Select * from EMPLOYEE where IdentityNumber = @identity and EmpID != @EmpID", DataProvider.Instance.getConnection);
+                com.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
+                com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+                adapter.SelectCommand = com;
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return false;
+                else return true;
+            }
         }
 
         public DataTable getEmployee(SqlCommand command)

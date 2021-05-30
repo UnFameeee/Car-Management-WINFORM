@@ -60,7 +60,7 @@ namespace Care_Management_and_Private_Parking
             {
                 purpose = frm.cbboxPurpose.SelectedItem.ToString();
 
-                if (purpose == "THUÊ")                                          //khách là người thuê
+                if (purpose == "CHO THUÊ")                                          //khách là người thuê
                 {                                  
                     if (verif())
                     {
@@ -225,7 +225,7 @@ namespace Care_Management_and_Private_Parking
         {
             if (frm.tbContractID != null)
             {
-                if(ContractDAL.Instance.removeContract(frm.tbContractID.Text))
+                if(ContractDAL.Instance.removeContract("cont" + frm.tbContractID.Text))
                 {
                     MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnRefresh.PerformClick();              //reload
@@ -244,7 +244,7 @@ namespace Care_Management_and_Private_Parking
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             //thông tin hợp đồng
-            frm.cbboxPurpose.SelectedItem = null;
+            frm.cbboxPurpose.SelectedIndex = -1;
             frm.tbContractID.Text = null;
             frm.tbDateStart.Text = null;
 
@@ -258,8 +258,8 @@ namespace Care_Management_and_Private_Parking
             frm.ForRentPic.Image = null;
 
             //xe
-            frm.cbVehType.SelectedItem = null;
-            frm.tbForRentVehLicense = null;
+            frm.cbVehType.SelectedIndex = -1;
+            frm.tbForRentVehLicense.Text = null;
             frm.VehPic.Image = null;
 
             //thông tin bên thuê
@@ -273,9 +273,9 @@ namespace Care_Management_and_Private_Parking
 
             //nội dung
             frm.tbTime.Text = null;
-            frm.cbboxTimeFormat.SelectedItem = null;
+            frm.cbboxTimeFormat.SelectedIndex = -1;
             frm.tbPrice.Text = null;
-            frm.cbboxFee.SelectedItem = null;
+            frm.cbboxFee.SelectedIndex = -1;
         }
 
         bool verif()
@@ -370,7 +370,7 @@ namespace Care_Management_and_Private_Parking
                         frm.VehPic.Image = Image.FromStream(picture);
                     }
 
-                    if (purpose == "THUÊ")
+                    if (purpose == "CHO THUÊ")
                     {
                         frm.cbboxPurpose.SelectedItem = purpose;
 
