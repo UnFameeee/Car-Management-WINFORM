@@ -152,20 +152,6 @@ namespace Care_Management_and_Private_Parking
         #endregion
 
         #region Nút nhấn theo chức năng
-        private void btnDetailRentVeh_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            loadMatrixRent();
-        }
-        #endregion
-
         private void btnAddVehicle_Click(object sender, EventArgs e)
         {
             if (type != null || id != null)
@@ -196,10 +182,9 @@ namespace Care_Management_and_Private_Parking
             {
                 MessageBox.Show("Please choose an empty slot!!!", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
-        private void btnRemoveVehicle_Click(object sender, EventArgs e)
+        private void bthDeleteVehicle_Click(object sender, EventArgs e)
         {
             if (type != null || id != null)
             {
@@ -215,9 +200,22 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        private void btnContract_Click(object sender, EventArgs e)
+        private void btnDetailRentVeh_Click(object sender, EventArgs e)
         {
 
+
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadMatrixRent();
+        }
+        #endregion
     }
 }
