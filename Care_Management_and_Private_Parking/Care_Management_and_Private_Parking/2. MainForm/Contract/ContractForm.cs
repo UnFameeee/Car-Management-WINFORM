@@ -113,6 +113,7 @@ namespace Care_Management_and_Private_Parking
                                 if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, timevalue, timeformat, price, feefactor))
                                 {
                                     MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    btnRefresh.PerformClick();
                                 }
                                 else
                                 {
@@ -223,16 +224,64 @@ namespace Care_Management_and_Private_Parking
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (frm.tbContractID != null)
+            string contid = frm.tbContractID.Text;
+
+            DataTable tab;
+            string vehid;
+            string cusid;
+            string purpose;
+
+            if (contid != "")
             {
-                if(ContractDAL.Instance.removeContract("cont" + frm.tbContractID.Text))
+                tab = ContractDAL.Instance.getContractInfo(contid);                
+                cusid = tab.Rows[0][1].ToString();
+                purpose = tab.Rows[0][3].ToString();
+                vehid = tab.Rows[0][4].ToString();
+
+                if (ContractDAL.Instance.checkContract(contid))
                 {
-                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnRefresh.PerformClick();              //reload
+                    if (ContractDAL.Instance.removeContract("cont" + contid))
+                    {
+                        if (purpose == "THUÊ")              //mình là người thuê
+                        {
+                            if (ContractDAL.Instance.deleteVehicle(vehid))
+                            {
+                                if (ContractDAL.Instance.deleteCustomer(cusid))
+                                {
+                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    btnRefresh.PerformClick();              //reload
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Can't remove Vehicle!", "Remove Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else                                            //mình là người cho thuê
+                        {
+                            if (ContractDAL.Instance.deleteCustomer(cusid))
+                            {
+                                MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                btnRefresh.PerformClick();              //reload
+                            }
+                            else
+                            {
+                                 MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }  
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Can't Remove Contract", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Can't Remove Contract", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please insert ContractID!!!", "ContractID Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else 

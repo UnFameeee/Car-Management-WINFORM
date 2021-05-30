@@ -21,18 +21,17 @@ namespace Care_Management_and_Private_Parking
 
         void reloadAcc()
         {
-            cbbxPositionID.DataSource = AccountDAL.Instance.takeRole();
-            cbbxPositionID.DisplayMember = "Description";
-            cbbxPositionID.ValueMember = "PositionID";
-            cbbxPositionID.SelectedItem = null;
+            cbbxPosition.DataSource = AccountDAL.Instance.takeRole();
+            cbbxPosition.DisplayMember = "Description";
+            cbbxPosition.ValueMember = "PositionID";
+            cbbxPosition.SelectedItem = null;
 
             dgvAccount.DataSource = AccountDAL.Instance.getAllAccount();
             dgvAccount.RowTemplate.Height = 30;
 
             dgvAccount.Columns[0].Width = 135;
             dgvAccount.Columns[1].Width = 135;
-            dgvAccount.Columns[2].Width = 89;
-            dgvAccount.Columns[3].Width = 100;
+            dgvAccount.Columns[2].Width = 135;
 
             tbUsername.Text = null;
             tbPassword.Text = null;
@@ -40,7 +39,7 @@ namespace Care_Management_and_Private_Parking
 
         void reloadEmp()
         {
-            SqlCommand com = new SqlCommand("Select EmpID, FullName, AccUserName from EMPLOYEE");
+            SqlCommand com = new SqlCommand("Select EmpID as ID, FullName, AccUserName from EMPLOYEE");
             dgvEmployeeWork.DataSource = EmployeeDAL.Instance.getEmployee(com);
             dgvEmployeeWork.RowTemplate.Height = 30;
 
@@ -53,7 +52,7 @@ namespace Care_Management_and_Private_Parking
         {
             if (tbUsername.Text.Trim() == ""
                     || tbPassword.Text.Trim() == ""
-                        || cbbxPositionID.SelectedItem == null)
+                        || cbbxPosition.SelectedItem == null)
                 return false;
             else return true;
         }
@@ -71,7 +70,7 @@ namespace Care_Management_and_Private_Parking
 
             if (verif())
             {
-                string position = cbbxPositionID.SelectedValue.ToString();
+                string position = cbbxPosition.SelectedValue.ToString();
 
                 if (AccountDAL.Instance.updateAccount(username, pass, position))
                 {
@@ -96,7 +95,7 @@ namespace Care_Management_and_Private_Parking
 
             if (verif())
             {
-                string position = cbbxPositionID.SelectedValue.ToString();
+                string position = cbbxPosition.SelectedValue.ToString();
 
                 if (AccountDAL.Instance.removeAccount(username, password, position))
                 {
@@ -151,7 +150,7 @@ namespace Care_Management_and_Private_Parking
             {
                 if (verif())
                 {
-                    string position = cbbxPositionID.SelectedValue.ToString();
+                    string position = cbbxPosition.SelectedValue.ToString();
 
                     if (AccountDAL.Instance.insertAccount(username, password, position))
                     {
@@ -230,7 +229,11 @@ namespace Care_Management_and_Private_Parking
         {
             tbUsername.Text = dgvAccount.CurrentRow.Cells[0].Value.ToString();
             tbPassword.Text = dgvAccount.CurrentRow.Cells[1].Value.ToString();
-            cbbxPositionID.SelectedValue = dgvAccount.CurrentRow.Cells[2].Value.ToString();
+
+            SqlCommand com = new SqlCommand("select * from ACCOUNT where Username = '" + tbUsername.Text + "' and Password = '" + tbPassword.Text + "'");
+            DataTable tab = AccountDAL.Instance.getAccount(com);
+
+            cbbxPosition.SelectedValue = tab.Rows[0][2].ToString();
         }
     }
 }

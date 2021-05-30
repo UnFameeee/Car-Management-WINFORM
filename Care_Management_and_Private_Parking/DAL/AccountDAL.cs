@@ -206,7 +206,7 @@ namespace DAL
 
         public DataTable getAllAccount()
         {
-            SqlCommand cmd = new SqlCommand("SELECT Username, Password, ACCOUNT.PositionID, Description as Position FROM ACCOUNT, POSITION where ACCOUNT.PositionID = POSITION.PositionID");
+            SqlCommand cmd = new SqlCommand("SELECT Username, Password, Description as Position FROM ACCOUNT, POSITION where ACCOUNT.PositionID = POSITION.PositionID");
             return getAccount(cmd);
         }
 

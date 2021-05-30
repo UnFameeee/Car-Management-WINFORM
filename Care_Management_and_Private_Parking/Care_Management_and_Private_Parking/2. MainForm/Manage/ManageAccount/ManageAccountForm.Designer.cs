@@ -41,7 +41,7 @@ namespace Care_Management_and_Private_Parking
             this.dgvAccount = new Guna.UI.WinForms.GunaDataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbxPositionID = new System.Windows.Forms.ComboBox();
+            this.cbbxPosition = new System.Windows.Forms.ComboBox();
             this.lbID = new System.Windows.Forms.Label();
             this.lbFullName = new System.Windows.Forms.Label();
             this.lbJobID = new System.Windows.Forms.Label();
@@ -169,7 +169,7 @@ namespace Care_Management_and_Private_Parking
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.panel1.Controls.Add(this.cbbxPositionID);
+            this.panel1.Controls.Add(this.cbbxPosition);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.lbFullName);
             this.panel1.Controls.Add(this.lbJobID);
@@ -180,16 +180,16 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Size = new System.Drawing.Size(316, 119);
             this.panel1.TabIndex = 48;
             // 
-            // cbbxPositionID
+            // cbbxPosition
             // 
-            this.cbbxPositionID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.cbbxPositionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbxPositionID.ForeColor = System.Drawing.Color.White;
-            this.cbbxPositionID.FormattingEnabled = true;
-            this.cbbxPositionID.Location = new System.Drawing.Point(132, 78);
-            this.cbbxPositionID.Name = "cbbxPositionID";
-            this.cbbxPositionID.Size = new System.Drawing.Size(162, 24);
-            this.cbbxPositionID.TabIndex = 45;
+            this.cbbxPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.cbbxPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbxPosition.ForeColor = System.Drawing.Color.White;
+            this.cbbxPosition.FormattingEnabled = true;
+            this.cbbxPosition.Location = new System.Drawing.Point(132, 78);
+            this.cbbxPosition.Name = "cbbxPosition";
+            this.cbbxPosition.Size = new System.Drawing.Size(162, 24);
+            this.cbbxPosition.TabIndex = 45;
             // 
             // lbID
             // 
@@ -220,9 +220,9 @@ namespace Care_Management_and_Private_Parking
             this.lbJobID.ForeColor = System.Drawing.Color.White;
             this.lbJobID.Location = new System.Drawing.Point(13, 82);
             this.lbJobID.Name = "lbJobID";
-            this.lbJobID.Size = new System.Drawing.Size(79, 20);
+            this.lbJobID.Size = new System.Drawing.Size(64, 20);
             this.lbJobID.TabIndex = 26;
-            this.lbJobID.Text = "PositionID:";
+            this.lbJobID.Text = "Position:";
             // 
             // tbUsername
             // 
@@ -537,7 +537,7 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI.WinForms.GunaDataGridView dgvAccount;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbxPositionID;
+        private System.Windows.Forms.ComboBox cbbxPosition;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbFullName;
         private System.Windows.Forms.Label lbJobID;

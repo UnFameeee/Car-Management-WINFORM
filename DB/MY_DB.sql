@@ -95,6 +95,7 @@ INSERT INTO INVOICE VALUES('H', 'Hour')								-- theo giờ
 INSERT INTO INVOICE VALUES('D', 'Day')								-- theo ngày
 INSERT INTO INVOICE VALUES('W', 'Week')								-- theo tuần
 INSERT INTO INVOICE VALUES('M', 'Month')							-- theo tháng
+INSERT INTO INVOICE VALUES('null', null)
 GO
 
 -- Khách Hàng
@@ -146,4 +147,12 @@ create table CONTRACT(
 )
 GO
 
- 
+--Tạo bảng doanh thu
+CREATE TABLE PROFIT
+(
+	Today datetime,
+	MoneyFromParking int,
+	MoneyFromContract int,
+	MoneyTotal int
+)
+GO
