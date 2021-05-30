@@ -25,6 +25,7 @@ namespace DAL
             private set { EmployeeDAL.instance = value; }
         }
 
+        #region thêm sửa xoá nhân viên
         public bool insertEmployee(string EmpID, string FullName, string Gender, DateTime Birthday, string PhoneNumber, string IdentityCardNumber, string Email, string JobID, MemoryStream pic)
         {
             SqlCommand command = new SqlCommand("Insert into EMPLOYEE (EmpID, FullName, Gender, Birthday, PhoneNumber, IdentityNumber, Email, JobID, Appearance)" +
@@ -97,6 +98,9 @@ namespace DAL
             }
         }
 
+        #endregion
+
+        #region Các hàm kiểm tra
         public bool checkEmp(string EmpID)
         {
             SqlCommand com = new SqlCommand("Select * from EMPLOYEE where EmpID = @EmpID", DataProvider.Instance.getConnection);
@@ -140,6 +144,18 @@ namespace DAL
             }
         }
 
+        public bool checkAcc(string accusername)
+        {
+            SqlCommand com = new SqlCommand("Select * from EMPLOYEE where AccUserName = '" + accusername + "'");
+            DataTable tab = getEmployee(com);
+
+            if (tab.Rows.Count > 0)
+                return false;
+            else return true;
+        }
+        #endregion
+
+        #region Các hàm lấy thông tin
         public DataTable getEmployee(SqlCommand command)
         {
             command.Connection = DataProvider.Instance.getConnection;
@@ -188,15 +204,6 @@ namespace DAL
         {
             return totalEmp() - maleEmp();
         }
-
-        public bool checkAcc(string accusername)
-        {
-            SqlCommand com = new SqlCommand("Select * from EMPLOYEE where AccUserName = '" + accusername + "'");
-            DataTable tab = getEmployee(com);
-
-            if (tab.Rows.Count > 0)
-                return false;
-            else return true;
-        }
+        #endregion
     }
 }

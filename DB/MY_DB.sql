@@ -95,6 +95,7 @@ INSERT INTO INVOICE VALUES('H', 'Hour')								-- theo giờ
 INSERT INTO INVOICE VALUES('D', 'Day')								-- theo ngày
 INSERT INTO INVOICE VALUES('W', 'Week')								-- theo tuần
 INSERT INTO INVOICE VALUES('M', 'Month')							-- theo tháng
+INSERT INTO INVOICE VALUES('null', null)
 GO
 
 -- Khách Hàng
@@ -156,4 +157,3 @@ CREATE TABLE PROFIT
 )
 GO
 
- 

@@ -28,6 +28,7 @@ namespace DAL
             private set { RentalLotDAL.instance = value; }
         }
 
+        #region Các hàm lấy thông tin
         //câu lệnh theo yêu cầu
         public DataTable getDataWithPurpose(SqlCommand cmd)
         {
@@ -37,6 +38,31 @@ namespace DAL
             adapter.Fill(table);
             return table;
         }
+
+
+        //lấy thông tin xe
+        public DataTable getVehicleInfo(string id)
+        {
+            SqlCommand cmd1 = new SqlCommand("SELECT * FROM VEHICLE WHERE VehID = @VehID", DataProvider.Instance.getConnection);
+            cmd1.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = id;
+            SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
+            DataTable table1 = new DataTable();
+            adapter1.Fill(table1);
+            if (table1.Rows[0]["CusID"] == DBNull.Value)
+            {
+                return table1;
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
+                "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + id + "'", DataProvider.Instance.getConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+        }
+        #endregion
 
         #region Kiểm tra
         //Kiểm tra chỗ trống
@@ -55,29 +81,6 @@ namespace DAL
             {
                 return false;
             }
-        }
-
-        //lấy thông tin xe
-        public DataTable getVehicleInfo(string id)
-        {
-            SqlCommand cmd1 = new SqlCommand("SELECT * FROM VEHICLE WHERE VehID = @VehID", DataProvider.Instance.getConnection);
-            cmd1.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = id;
-            SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
-            DataTable table1 = new DataTable();
-            adapter1.Fill(table1);
-            if(table1.Rows[0]["CusID"] == DBNull.Value)
-            {
-                return table1;
-            }
-            else
-            {
-                SqlCommand cmd = new SqlCommand("SELECT VehID, VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance " +
-                "FROM VEHICLE, CUSTOMER WHERE VEHICLE.CusID = CUSTOMER.CusID and VEHICLE.VehID = '" + id + "'", DataProvider.Instance.getConnection);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                return table;
-            }           
         }
         #endregion
 

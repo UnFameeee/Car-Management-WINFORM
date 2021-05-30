@@ -21,7 +21,7 @@ namespace Care_Management_and_Private_Parking
 
         bool verif()
         {
-            if (tbCusID.Text.Trim() == "" || tbCusID.Text.Trim() == "")
+            if (tbCusID.Text.Trim() == "" || tbIDcard.Text.Trim() == "")
                 return false;
             else return true;
         }
@@ -60,7 +60,7 @@ namespace Care_Management_and_Private_Parking
                                 if (ParkingLotDAL.Instance.deleteCustomer(CusID))
                                 {
                                     int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, invoice, VehType, service);
-                                    MessageBox.Show("You have to pay " + money.ToString());
+                                    MessageBox.Show("You have to pay " + money.ToString() + "VNĐ");
                                     this.DialogResult = DialogResult.OK;
                                 }
                             }
