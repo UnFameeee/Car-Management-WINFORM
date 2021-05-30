@@ -105,7 +105,6 @@ namespace DAL
             adapter.Fill(table);
             return table;
         }
-
         #endregion
 
         #region Xe
@@ -171,49 +170,6 @@ namespace DAL
                 return false;
             }
         }
-
-        public bool addRentalVehicle(string ID, string Type, string LicensePlate, MemoryStream VehPic)
-        {
-            SqlCommand cmd = new SqlCommand("INSERT INTO VEHICLE (VehID, VehType, LicensePlate, Picture, CusID)" +
-                "values (@VehID, @Type, @License, @Pic, null)", DataProvider.Instance.getConnection);
-            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
-            cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
-            cmd.Parameters.Add("@License", SqlDbType.NVarChar).Value = LicensePlate;
-            cmd.Parameters.Add("@Pic", SqlDbType.Image).Value = VehPic.ToArray();
-
-            DataProvider.Instance.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                DataProvider.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DataProvider.Instance.closeConnection();
-                return false;
-            }
-        }
-
-        public bool updateRentalVehicle(string ID, string Type, string LicensePlate, MemoryStream VehPic)
-        {
-            SqlCommand cmd = new SqlCommand("UPDATE VEHICLE SET VehType = @Type, LicensePlate = @License, Picture = @Pic, CusID = null WHERE VehID = @VehID", DataProvider.Instance.getConnection);
-            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
-            cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
-            cmd.Parameters.Add("@License", SqlDbType.NVarChar).Value = LicensePlate;
-            cmd.Parameters.Add("@Pic", SqlDbType.Image).Value = VehPic.ToArray();
-            DataProvider.Instance.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                DataProvider.Instance.closeConnection();
-                return true;
-            }
-            else
-            {
-                DataProvider.Instance.closeConnection();
-                return false;
-            }
-        }
-
         #endregion
 
         #region Khách

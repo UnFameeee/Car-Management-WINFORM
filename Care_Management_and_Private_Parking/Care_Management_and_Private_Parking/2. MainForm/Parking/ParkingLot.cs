@@ -179,7 +179,6 @@ namespace Care_Management_and_Private_Parking
                 fillEmpty();
             }
         }
-
         void fillInfo(DataTable table)
         {
             //Set lại phần Vehicle
@@ -203,8 +202,6 @@ namespace Care_Management_and_Private_Parking
 
             customer = table.Rows[0]["CusID"].ToString();
         }
-
-
         void fillEmpty()
         {
             //Set lại phần Vehicle
@@ -314,12 +311,12 @@ namespace Care_Management_and_Private_Parking
                 }
                 else
                 {
-                    MessageBox.Show("Please choose an empty slot!!!", "Add Vehicle");
+                    MessageBox.Show("Please choose an empty slot!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Please choose an empty slot!!!", "Add Vehicle");
+                MessageBox.Show("Please choose an empty slot!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -337,12 +334,12 @@ namespace Care_Management_and_Private_Parking
                 }
                 else
                 {
-                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -366,12 +363,12 @@ namespace Care_Management_and_Private_Parking
                 }
                 else
                 {
-                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                    MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle");
+                MessageBox.Show("Please choose a not empty slot!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
