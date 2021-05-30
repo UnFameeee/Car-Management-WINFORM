@@ -553,6 +553,7 @@ namespace Care_Management_and_Private_Parking
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RentalLot";
             this.Text = "RentalLot";
+            this.Load += new System.EventHandler(this.RentalLot_Load);
             this.pnCalendar.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();

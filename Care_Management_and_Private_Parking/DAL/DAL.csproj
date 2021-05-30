@@ -53,6 +53,7 @@
     <Compile Include="MyInfoDAL.cs" />
     <Compile Include="ParkingLotDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentalLotDAL.cs" />
     <Compile Include="TimeKeepingDAL.cs" />
   </ItemGroup>
   <ItemGroup>

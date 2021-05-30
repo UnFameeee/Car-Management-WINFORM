@@ -378,6 +378,7 @@ namespace Care_Management_and_Private_Parking
             this.radiobtnWash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radiobtnWash.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radiobtnWash.CheckedState.Parent = this.radiobtnWash;
+            this.radiobtnWash.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.radiobtnWash.Location = new System.Drawing.Point(29, 9);
             this.radiobtnWash.Name = "radiobtnWash";
             this.radiobtnWash.ShadowDecoration.Parent = this.radiobtnWash;
