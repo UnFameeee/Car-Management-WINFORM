@@ -246,7 +246,29 @@ namespace Care_Management_and_Private_Parking
         int i = 1;
         private void radiobtnRepair_Click(object sender, EventArgs e)
         {
-            
+            i++;
+            if (i % 2 == 0)
+            {
+                radiobtnRepair.Checked = true;
+            }
+            else
+            {
+                radiobtnRepair.Checked = false;
+            }
+        }
+
+        int j = 1;
+        private void radiobtnWash_Click(object sender, EventArgs e)
+        {
+            j++;
+            if (j % 2 == 0)
+            {
+                radiobtnRepair.Checked = true;
+            }
+            else
+            {
+                radiobtnRepair.Checked = false;
+            }
         }
     }
 }

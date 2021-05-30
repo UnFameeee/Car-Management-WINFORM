@@ -28,17 +28,18 @@ namespace DAL
         }
 
         #region Thêm xóa hợp đồng (bút sa gà chết ko được sửa hợp đồng)
-        public bool insertContract(string ContID, string CusID, string EmpID, string Purpose, string VehID, DateTime DateStart, DateTime DateEnd, int Price, int FeeFactor)
+        public bool insertContract(string ContID, string CusID, string EmpID, string Purpose, string VehID, DateTime DateStart, int Value, string Timeformat, int Price, int FeeFactor)
         {
-            SqlCommand command = new SqlCommand("Insert into CONTRACT (ContID, Purpose, EmpID, CusID, VehID, DateStart, DateEnd, Price, FeeFactor)" +
-                "values (@contid, @pp, @empid, @cusid, @vehid, @dstart, @dend, @price, @ff)", DataProvider.Instance.getConnection);
+            SqlCommand command = new SqlCommand("Insert into CONTRACT (ContID, Purpose, EmpID, CusID, VehID, DateStart, TimeValue, TimeFormat, Price, FeeFactor)" +
+                "values (@contid, @pp, @empid, @cusid, @vehid, @dstart, @value, @timeformat, @price, @ff)", DataProvider.Instance.getConnection);
             command.Parameters.Add("@contid", SqlDbType.NVarChar).Value = ContID;
             command.Parameters.Add("@cusid", SqlDbType.NVarChar).Value = CusID;
             command.Parameters.Add("@empid", SqlDbType.NVarChar).Value = EmpID;
             command.Parameters.Add("@pp", SqlDbType.NVarChar).Value = Purpose;
             command.Parameters.Add("@vehid", SqlDbType.NVarChar).Value = VehID;
             command.Parameters.Add("@dstart", SqlDbType.Date).Value = DateStart;
-            command.Parameters.Add("@dend", SqlDbType.Date).Value = DateEnd;
+            command.Parameters.Add("@value", SqlDbType.Int).Value = Value;
+            command.Parameters.Add("@timeformat", SqlDbType.NVarChar).Value = Timeformat;
             command.Parameters.Add("@price", SqlDbType.Int).Value = Price;
             command.Parameters.Add("@ff", SqlDbType.Int).Value = FeeFactor;
 
@@ -89,7 +90,7 @@ namespace DAL
         #region Phần ContractList
         public DataTable ShowContract()
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID", DataProvider.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(com);
@@ -128,7 +129,7 @@ namespace DAL
         //1 giá trị
         public DataTable ShowCusIDContract(string CusID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and CusID = @CusID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
@@ -139,7 +140,7 @@ namespace DAL
         }
         public DataTable ShowVehIDContract(string VehID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and VehID = @VehID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
@@ -150,7 +151,7 @@ namespace DAL
         }
         public DataTable ShowEmpIDContract(string EmpID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
@@ -163,7 +164,7 @@ namespace DAL
         //2 giá trị
         public DataTable ShowCusIDVehIDContract(string CusID,string VehID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
@@ -175,7 +176,7 @@ namespace DAL
         }
         public DataTable ShowVehIDEmpIDContract(string VehID, string EmpID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and VehID = @VehID and EmpID = @EmpID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
@@ -187,7 +188,7 @@ namespace DAL
         }
         public DataTable ShowEmpIDCusIDContract(string EmpID, string CusID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID and CusID = @CusID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
@@ -200,7 +201,7 @@ namespace DAL
         //cả 3 giá trị
         public DataTable ShowAllFindContract(string EmpID, string VehID, string CusID)
         {
-            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart, DateEnd, Price " +
+            SqlCommand com = new SqlCommand("SELECT ContID as ContractID, EmpID as EmployeeID, Purpose, CusID as CustomerID, A.VehID as VehicleID, VehType as VehicleType, DateStart,  Price " +
                 " FROM(SELECT VehID, VehType FROM VEHICLE) as A, CONTRACT" +
                 " WHERE A.VehID = CONTRACT.VehID and EmpID = @EmpID and CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
             com.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;

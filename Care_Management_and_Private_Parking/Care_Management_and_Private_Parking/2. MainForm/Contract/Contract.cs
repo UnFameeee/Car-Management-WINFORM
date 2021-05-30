@@ -76,7 +76,7 @@ namespace Care_Management_and_Private_Parking
                 empjob = "Quản lý";
             else empjob = "Nhân viên văn phòng";
 
-            if (cbboxPurpose.SelectedItem == "THUÊ")
+            if (cbboxPurpose.SelectedItem.ToString() == "THUÊ")
             {
                 btnVehList.Show();
 

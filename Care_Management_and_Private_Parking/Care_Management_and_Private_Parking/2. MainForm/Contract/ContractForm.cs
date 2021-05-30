@@ -51,7 +51,7 @@ namespace Care_Management_and_Private_Parking
 
             //Phần nội dung
             int timevalue;                                                      //thời gian hết hạn
-            DateTime end;            
+            string timeformat;            
 
             int price;                                                          //giá trị hợp đồng
             int feefactor;                                                         //hệ số phạt khi huỷ hợp đồng
@@ -95,12 +95,13 @@ namespace Care_Management_and_Private_Parking
 
                         //phần nội dung
                         timevalue = Convert.ToInt32(frm.tbTime.Text);
-                        if (frm.cbboxTimeFormat.SelectedItem == "Ngày")
-                            end = DateTime.Now.AddDays(timevalue);
-                        else if (frm.cbboxTimeFormat.SelectedItem == "Tháng")
-                            end = DateTime.Now.AddMonths(timevalue);
-                        else
-                            end = DateTime.Now.AddYears(timevalue);
+
+                        if (frm.cbboxTimeFormat.SelectedItem.ToString() == "Ngày")
+                            timeformat = "Day";
+                        else if (frm.cbboxTimeFormat.SelectedItem.ToString() == "Tháng")
+                            timeformat = "Month";
+                        else 
+                            timeformat = "Year";
 
                         price = Convert.ToInt32(frm.tbPrice.Text);
                         feefactor = Convert.ToInt32(frm.cbboxFee.SelectedItem);
@@ -109,7 +110,7 @@ namespace Care_Management_and_Private_Parking
                         {
                             if (ContractDAL.Instance.checkContract("Cont" + contid))
                             {
-                                if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price, feefactor))
+                                if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, timevalue, timeformat, price, feefactor))
                                 {
                                     MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
@@ -167,12 +168,13 @@ namespace Care_Management_and_Private_Parking
 
                         //phần nội dung
                         timevalue = Convert.ToInt32(frm.tbTime.Text);
-                        if (frm.cbboxTimeFormat.SelectedItem == "Ngày")
-                            end = DateTime.Now.AddDays(timevalue);
-                        else if (frm.cbboxTimeFormat.SelectedItem == "Tháng")
-                            end = DateTime.Now.AddMonths(timevalue);
+
+                        if (frm.cbboxTimeFormat.SelectedItem.ToString() == "Ngày")
+                            timeformat = "Day";
+                        else if (frm.cbboxTimeFormat.SelectedItem.ToString() == "Tháng")
+                            timeformat = "Month";
                         else
-                            end = DateTime.Now.AddYears(timevalue);
+                            timeformat = "Year";
 
                         price = Convert.ToInt32(frm.tbPrice.Text);
                         feefactor = Convert.ToInt32(frm.cbboxFee.SelectedItem);
@@ -181,9 +183,9 @@ namespace Care_Management_and_Private_Parking
                         {
                             if (ParkingLotDAL.Instance.addVehicle(vehid, vehtype, license, vehpic, cusid))
                             {
-                                if (ContractDAL.Instance.checkContract("Cont" + contid))
+                                if (ContractDAL.Instance.checkContract("cont" + contid))
                                 {
-                                    if (ContractDAL.Instance.insertContract("Cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, end, price, feefactor))
+                                    if (ContractDAL.Instance.insertContract("cont" + contid, cusid, UserID.GlobalUserID, purpose, vehid, DateTime.Now, timevalue, timeformat, price, feefactor))
                                     {
                                         MessageBox.Show("Add Contract Successfully", "Add Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
@@ -297,33 +299,40 @@ namespace Care_Management_and_Private_Parking
         {
             if (frm.tbContractID.Text != null)
             {
-                DataTable tab = ContractDAL.Instance.getContractInfo(frm.tbContractID.Text);
+                DataTable tab = ContractDAL.Instance.getContractInfo("cont" + frm.tbContractID.Text);
                 if (tab.Rows.Count > 0)
                 {
+                    //thông tin hợp đồng
                     string purpose = tab.Rows[0][1].ToString();
                     DateTime start = Convert.ToDateTime(tab.Rows[0][5]);
-                    int price = Convert.ToInt32(tab.Rows[0][7]);
-                    int feefactor = Convert.ToInt32(tab.Rows[0][8]);
+                    int value = Convert.ToInt32(tab.Rows[0][6]);
+                    string timeformat;
+                    if (tab.Rows[0][7].ToString() == "Day")
+                        timeformat = "Ngày";
+                    else if (tab.Rows[0][7].ToString() == "Month")
+                        timeformat = "Tháng";
+                    else timeformat = "Năm";
+
+                    int price = Convert.ToInt32(tab.Rows[0][8]);
+                    int feefactor = Convert.ToInt32(tab.Rows[0][9]);
+
+                    frm.tbDateStart.Text = start.ToString("dd/MM/yyyy");
+                    frm.tbTime.Text = value.ToString();
+                    frm.cbboxTimeFormat.SelectedItem = timeformat;
+                    frm.tbPrice.Text = price.ToString();
+                    frm.cbboxFee.SelectedItem = feefactor.ToString();
 
                     //thông tin nhân viên
                     string empid = tab.Rows[0][2].ToString();
                     DataTable emp = EmployeeDAL.Instance.getEmpByID(empid);
 
                     string ename = emp.Rows[0][1].ToString();
-                    string ebdate = emp.Rows[0][3].ToString();
+                    string ebdate = formatTime(emp.Rows[0][3].ToString());
                     string ephone = emp.Rows[0][4].ToString();
-                    string eaddress = "TPHCM";                                       //múa rìu cưc căng
+                    string eaddress = "TPHCM";
                     string eidentity = emp.Rows[0][5].ToString();
                     string email = emp.Rows[0][6].ToString();
-                    string ejob = emp.Rows[0][7].ToString();
-
-                    if (emp.Rows[0][8] != DBNull.Value)
-                    {
-                        byte[] pic;
-                        pic = (byte[])emp.Rows[0][8];
-                        MemoryStream picture = new MemoryStream(pic);
-                        //ptbEmp.Image = Image.FromStream(picture);
-                    }
+                    string ejob = emp.Rows[0][7].ToString();                    
 
                     //thông tin khách
                     string cusid = tab.Rows[0][3].ToString();
@@ -331,45 +340,143 @@ namespace Care_Management_and_Private_Parking
                     DataTable cus = ParkingLotDAL.Instance.getDataWithPurpose(com);
 
                     string cname = cus.Rows[0][1].ToString();
-                    string cbdate = cus.Rows[0][2].ToString();
+                    string cbdate = formatTime(cus.Rows[0][2].ToString());
                     string cphone = cus.Rows[0][3].ToString();
                     string caddress = cus.Rows[0][4].ToString();
                     string cidentity = cus.Rows[0][5].ToString();
-
-                    if (cus.Rows[0][6] != DBNull.Value)
-                    {
-                        byte[] pic;
-                        pic = (byte[])cus.Rows[0][6];
-                        MemoryStream picture = new MemoryStream(pic);
-                        //ptbEmp.Image = Image.FromStream(picture);
-                    }
-
+                    
                     //thông tin xe
                     string vehid = tab.Rows[0][4].ToString();
                     SqlCommand cmd = new SqlCommand("select * from VEHICLE where VehID = '" + vehid + "'");
                     DataTable veh = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
 
-                    string type = veh.Rows[0][1].ToString();
+                    string type;
                     string license = veh.Rows[0][2].ToString();
+
+                    if (veh.Rows[0][1].ToString() == "bicycle")
+                        type = "Xe đạp";
+                    else if (veh.Rows[0][1].ToString() == "bike")
+                        type = "Xe máy";
+                    else type = "Xe đạp";
+
+                    frm.cbVehType.SelectedItem = type;
+                    frm.tbForRentVehLicense.Text = license;
 
                     if (veh.Rows[0][3] != DBNull.Value)
                     {
                         byte[] pic;
                         pic = (byte[])veh.Rows[0][3];
                         MemoryStream picture = new MemoryStream(pic);
-                        //ptbEmp.Image = Image.FromStream(picture);
+                        frm.VehPic.Image = Image.FromStream(picture);
                     }
 
+                    if (purpose == "THUÊ")
+                    {
+                        frm.cbboxPurpose.SelectedItem = purpose;
+
+                        //bên cho thuê
+                        frm.tbForRentName.Text = ename;
+                        frm.tbForRentJob.Text = ejob;
+                        frm.tbForRentPhone.Text = ephone;
+                        frm.tbForRentAddress.Text = eaddress;
+                        frm.tbForRentBdate.Text = ebdate;
+                        frm.tbForRentIdentity.Text = eidentity;
+
+                        if (emp.Rows[0][8] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])emp.Rows[0][8];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.ForRentPic.Image = Image.FromStream(picture);
+                        }
+
+                        //bên thuê
+                        frm.tbRentName.Text = cname;
+                        frm.tbRentJob.Text = "Khách hàng";
+                        frm.tbRentPhone.Text = cphone;
+                        frm.tbRentBdate.Text = cbdate;
+                        frm.tbRentAddress.Text = caddress;
+                        frm.tbRentIdentity.Text = cidentity;
+
+                        if (cus.Rows[0][6] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])cus.Rows[0][6];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.RentPic.Image = Image.FromStream(picture);
+                        }
+                    }
+                    else
+                    {
+                        frm.cbboxPurpose.SelectedItem = purpose;
+
+                        //bên thuê
+                        frm.tbRentName.Text = ename;
+                        frm.tbRentJob.Text = ejob;
+                        frm.tbRentPhone.Text = ephone;
+                        frm.tbRentAddress.Text = eaddress;
+                        frm.tbRentBdate.Text = ebdate;
+                        frm.tbRentIdentity.Text = eidentity;
+
+                        if (emp.Rows[0][8] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])emp.Rows[0][8];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.RentPic.Image = Image.FromStream(picture);
+                        }
+
+                        //bên thuê
+                        frm.tbForRentName.Text = cname;
+                        frm.tbForRentJob.Text = "Khách hàng";
+                        frm.tbForRentPhone.Text = cphone;
+                        frm.tbForRentBdate.Text = cbdate;
+                        frm.tbForRentAddress.Text = caddress;
+                        frm.tbForRentIdentity.Text = cidentity;
+
+                        if (cus.Rows[0][6] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])cus.Rows[0][6];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.ForRentPic.Image = Image.FromStream(picture);
+                        }
+
+                        //thông tin xe
+                        frm.cbVehType.SelectedItem = type;
+                        frm.tbForRentVehLicense.Text = license;
+
+                        if (veh.Rows[0][3] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])veh.Rows[0][3];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.VehPic.Image = Image.FromStream(picture);
+                        }                        
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Can't Find ContractID " + frm.tbContractID.Text, "ContractID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Can't Find ContractID cont" + frm.tbContractID.Text, "ContractID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                frm.btnVehList.Hide();
             }
             else
             {
                 MessageBox.Show("Please insert ContractID!!!", "ContractID Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private string formatTime(string time)
+        {
+            string dateNonTime = "";
+            for (int i = 0; ; ++i)
+            {
+                if (time[i] == ' ')
+                    break;
+                dateNonTime += time[i];
+            }
+            return dateNonTime;
         }
     }
 }

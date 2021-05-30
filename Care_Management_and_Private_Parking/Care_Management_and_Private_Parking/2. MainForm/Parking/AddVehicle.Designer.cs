@@ -388,6 +388,7 @@ namespace Care_Management_and_Private_Parking
             this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
+            this.radiobtnWash.Click += new System.EventHandler(this.radiobtnWash_Click);
             // 
             // panel4
             // 
