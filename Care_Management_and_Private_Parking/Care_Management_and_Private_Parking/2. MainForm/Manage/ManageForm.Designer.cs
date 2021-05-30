@@ -31,10 +31,10 @@ namespace Care_Management_and_Private_Parking
         {
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnContractList = new Guna.UI2.WinForms.Guna2Button();
             this.btnContract = new Guna.UI2.WinForms.Guna2Button();
             this.btnAccountList = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaffList = new Guna.UI2.WinForms.Guna2Button();
-            this.btnContractList = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@ namespace Care_Management_and_Private_Parking
             this.pnData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnData.BorderRadius = 22;
             this.pnData.BorderThickness = 1;
-            this.pnData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.pnData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnData.Location = new System.Drawing.Point(157, 12);
             this.pnData.Name = "pnData";
             this.pnData.ShadowDecoration.Parent = this.pnData;
@@ -64,6 +64,28 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(131, 493);
             this.guna2Panel1.TabIndex = 10;
+            // 
+            // btnContractList
+            // 
+            this.btnContractList.BackColor = System.Drawing.Color.Transparent;
+            this.btnContractList.BorderRadius = 22;
+            this.btnContractList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnContractList.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnContractList.CheckedState.Parent = this.btnContractList;
+            this.btnContractList.CustomImages.Parent = this.btnContractList;
+            this.btnContractList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnContractList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContractList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnContractList.HoverState.Parent = this.btnContractList;
+            this.btnContractList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnContractList.Location = new System.Drawing.Point(9, 360);
+            this.btnContractList.Name = "btnContractList";
+            this.btnContractList.ShadowDecoration.Parent = this.btnContractList;
+            this.btnContractList.Size = new System.Drawing.Size(113, 43);
+            this.btnContractList.TabIndex = 8;
+            this.btnContractList.Text = "Contract List";
+            this.btnContractList.UseTransparentBackground = true;
+            this.btnContractList.Click += new System.EventHandler(this.btnContractList_Click);
             // 
             // btnContract
             // 
@@ -130,28 +152,6 @@ namespace Care_Management_and_Private_Parking
             this.btnStaffList.Text = "Staff List";
             this.btnStaffList.UseTransparentBackground = true;
             this.btnStaffList.Click += new System.EventHandler(this.btnStaffList_Click);
-            // 
-            // btnContractList
-            // 
-            this.btnContractList.BackColor = System.Drawing.Color.Transparent;
-            this.btnContractList.BorderRadius = 22;
-            this.btnContractList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnContractList.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnContractList.CheckedState.Parent = this.btnContractList;
-            this.btnContractList.CustomImages.Parent = this.btnContractList;
-            this.btnContractList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnContractList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContractList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnContractList.HoverState.Parent = this.btnContractList;
-            this.btnContractList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnContractList.Location = new System.Drawing.Point(9, 360);
-            this.btnContractList.Name = "btnContractList";
-            this.btnContractList.ShadowDecoration.Parent = this.btnContractList;
-            this.btnContractList.Size = new System.Drawing.Size(113, 43);
-            this.btnContractList.TabIndex = 8;
-            this.btnContractList.Text = "Contract List";
-            this.btnContractList.UseTransparentBackground = true;
-            this.btnContractList.Click += new System.EventHandler(this.btnContractList_Click);
             // 
             // ManageForm
             // 
