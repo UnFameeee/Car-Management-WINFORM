@@ -50,6 +50,7 @@ namespace Care_Management_and_Private_Parking
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveFileExcel = new System.Windows.Forms.Button();
             this.dgv2 = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
@@ -60,6 +61,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.guna2Panel1.BorderRadius = 22;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.btnRefresh);
             this.guna2Panel1.Controls.Add(this.dgv);
             this.guna2Panel1.Controls.Add(this.guna2GradientButton5);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
@@ -110,7 +112,7 @@ namespace Care_Management_and_Private_Parking
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv.Size = new System.Drawing.Size(877, 479);
+            this.dgv.Size = new System.Drawing.Size(877, 460);
             this.dgv.TabIndex = 201;
             this.dgv.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Dark;
             this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
@@ -849,6 +851,21 @@ namespace Care_Management_and_Private_Parking
             this.dgv2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgv2.Visible = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnRefresh.Location = new System.Drawing.Point(823, 496);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(71, 23);
+            this.btnRefresh.TabIndex = 203;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ManageSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -892,5 +909,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSaveFileExcel;
         private Guna.UI.WinForms.GunaDataGridView dgv2;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

@@ -57,14 +57,26 @@ namespace Care_Management_and_Private_Parking
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if (cbMonth.SelectedItem == null && cbYear.SelectedItem == null)
-                dgv.DataSource = ManageSalaryDAL.Instance.ShowSalary();
-            else if (cbMonth.SelectedItem == null)
-                dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByYear(Convert.ToInt32(cbYear.SelectedItem));
-            else if (cbYear.SelectedItem == null)
-                dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByMonth(Convert.ToInt32(cbMonth.SelectedItem));
+            if (cbMonth.SelectedIndex != -1 && cbYear.SelectedIndex != -1)
+            {
+                if (cbMonth.SelectedIndex != -1)
+                    dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByYear(Convert.ToInt32(cbYear.SelectedItem));
+                else if (cbYear.SelectedIndex != -1)
+                    dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByMonth(Convert.ToInt32(cbMonth.SelectedItem));
+                else
+                    dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByMonthYear(Convert.ToInt32(cbMonth.SelectedItem), Convert.ToInt32(cbYear.SelectedItem));
+            }
             else
-                dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByMonthYear(Convert.ToInt32(cbMonth.SelectedItem), Convert.ToInt32(cbYear.SelectedItem));
+            {
+                MessageBox.Show("Please choose the value!!!", "Search", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgv.DataSource = ManageSalaryDAL.Instance.ShowSalary();
+            cbMonth.SelectedIndex = -1;
+            cbYear.SelectedIndex = -1;
         }
 
         #region in file WORD

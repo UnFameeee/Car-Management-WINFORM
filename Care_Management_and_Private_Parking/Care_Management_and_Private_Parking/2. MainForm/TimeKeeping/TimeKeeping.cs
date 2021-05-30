@@ -39,12 +39,10 @@ namespace Care_Management_and_Private_Parking
         {
             //Chỉnh Checked
             btnTimeKeeping.Checked = false;
-            btnStatistic.Checked = false;
             btnWorkShift.Checked = false;
             btnSalary.Checked = false;
             //Chỉnh Cursor
             btnTimeKeeping.Cursor = cur1;
-            btnStatistic.Cursor = cur1;
             btnWorkShift.Cursor = cur1;
             btnSalary.Cursor = cur1;
             //Tắt tất cả các form
@@ -61,19 +59,12 @@ namespace Care_Management_and_Private_Parking
             frmCheckWorkForm.Show();
         }
 
-
         private void btnWorkShift_Click(object sender, EventArgs e)
         {
             tick();
             btnWorkShift.Checked = true;
             btnWorkShift.Cursor = cur2;
             frmManageShiftForm.Show();
-        }
-        private void btnStatistic_Click(object sender, EventArgs e)
-        {
-            tick();
-            btnStatistic.Checked = true;
-            btnStatistic.Cursor = cur2;
         }
 
         private void btnSalary_Click(object sender, EventArgs e)

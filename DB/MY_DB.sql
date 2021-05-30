@@ -156,3 +156,4 @@ CREATE TABLE PROFIT
 	MoneyTotal int
 )
 GO
+

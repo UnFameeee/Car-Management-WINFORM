@@ -233,6 +233,24 @@
     <Compile Include="2. MainForm\TimeKeeping\TimeKeeping.Designer.cs">
       <DependentUpon>TimeKeeping.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. MainForm\Statistic\SalaryEmployeeSatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Statistic\SalaryEmployeeSatistic.Designer.cs">
+      <DependentUpon>SalaryEmployeeSatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Statistic\Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Statistic\Statistic.Designer.cs">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2. MainForm\Statistic\Revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2. MainForm\Statistic\Revenue.Designer.cs">
+      <DependentUpon>Revenue.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="1. Login\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +340,15 @@
     <EmbeddedResource Include="2. MainForm\TimeKeeping\TimeKeeping.resx">
       <DependentUpon>TimeKeeping.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Statistic\SalaryEmployeeSatistic.resx">
+      <DependentUpon>SalaryEmployeeSatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Statistic\Statistic.resx">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2. MainForm\Statistic\Revenue.resx">
+      <DependentUpon>Revenue.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -383,5 +410,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,7 @@ namespace Care_Management_and_Private_Parking
         CarParkForm frmCarpark = new CarParkForm() { TopLevel = false, TopMost = false };
         ManageForm frmManage = new ManageForm() { TopLevel = false, TopMost = false };
         TimeKeeping frmTimeKeeping = new TimeKeeping() { TopLevel = false, TopMost = false };
+        Statistic frmStatistic = new Statistic() { TopLevel = false, TopMost = false };
 
         public Mainform()
         {
@@ -34,6 +35,7 @@ namespace Care_Management_and_Private_Parking
             this.MainPanel.Controls.Add(frmCarpark);
             this.MainPanel.Controls.Add(frmManage);
             this.MainPanel.Controls.Add(frmTimeKeeping);
+            this.MainPanel.Controls.Add(frmStatistic);
             tick();
             panelLayout.Visible = true;
         }
@@ -47,16 +49,19 @@ namespace Care_Management_and_Private_Parking
             btnUser.Checked = false;
             btnTimeKeeping.Checked = false;
             btnManageJob.Checked = false;
+            btnStatistic.Checked = false;
             //Chỉnh Cursor
             btnHome.Cursor = cur1;
             btnUser.Cursor = cur1;
             btnTimeKeeping.Cursor = cur1;
             btnManageJob.Cursor = cur1;
+            btnStatistic.Cursor = cur1;
             //Tắt tất cả các form
             frmCalendar.Hide();
             frmCarpark.Hide();
             frmManage.Hide();
             frmTimeKeeping.Hide();
+            frmStatistic.Hide();
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -89,9 +94,22 @@ namespace Care_Management_and_Private_Parking
             frmManage.Show();
         }
 
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            tick();
+            btnStatistic.Checked = true;
+            btnStatistic.Cursor = cur2;
+            frmStatistic.Show();
+        }
+
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

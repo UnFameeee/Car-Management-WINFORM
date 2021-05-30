@@ -46,7 +46,11 @@ namespace Care_Management_and_Private_Parking
                     {
                         MessageBox.Show(ex.ToString());
                     }
-                    this.DialogResult = DialogResult.OK;
+
+                    this.Hide();
+                    Mainform mainform = new Mainform();
+                    mainform.ShowDialog();
+                    this.Show();
                 }
                 else
                 {
