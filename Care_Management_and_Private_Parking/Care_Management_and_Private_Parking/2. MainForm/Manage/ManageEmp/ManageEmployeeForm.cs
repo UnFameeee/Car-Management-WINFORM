@@ -92,7 +92,7 @@ namespace Care_Management_and_Private_Parking
             {
                 MemoryStream pic = new MemoryStream();
                 ptbEmp.Image.Save(pic, ptbEmp.Image.RawFormat);
-                if (EmployeeDAL.Instance.checkIdentity(Identity))
+                if (EmployeeDAL.Instance.checkIdentity(EmpID, Identity, "edit"))
                 {
                     if (EmployeeDAL.Instance.updateEmployee(EmpID, FName, Gender, Bday, Phone, Identity, Email, JobID, pic))
                     {
@@ -202,7 +202,7 @@ namespace Care_Management_and_Private_Parking
 
                 if (EmployeeDAL.Instance.checkEmp(EmpID))
                 {
-                    if (EmployeeDAL.Instance.checkIdentity(Identity))
+                    if (EmployeeDAL.Instance.checkIdentity("", Identity, "add"))
                     {
                         if (EmployeeDAL.Instance.insertEmployee(EmpID, FName, Gender, Bday, Phone, Identity, Email, JobID, pic))
                         {

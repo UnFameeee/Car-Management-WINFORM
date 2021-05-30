@@ -126,7 +126,7 @@ namespace Care_Management_and_Private_Parking
 
                     if (verifCus())
                     {
-                        if (ParkingLotDAL.Instance.checkIdentity(Identity))
+                        if (ParkingLotDAL.Instance.checkIdentity(CusID, Identity, "edit"))
                         {
                             if (ParkingLotDAL.Instance.updateCustomer(CusID, FullName, Birth, Phone, Address, Identity, CusPic))
                             {

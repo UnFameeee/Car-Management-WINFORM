@@ -484,6 +484,8 @@ namespace Care_Management_and_Private_Parking
             // 
             // ForRentPic
             // 
+            this.ForRentPic.BackColor = System.Drawing.Color.White;
+            this.ForRentPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ForRentPic.Location = new System.Drawing.Point(638, 309);
             this.ForRentPic.Name = "ForRentPic";
             this.ForRentPic.Size = new System.Drawing.Size(70, 70);
@@ -530,6 +532,8 @@ namespace Care_Management_and_Private_Parking
             // 
             // RentPic
             // 
+            this.RentPic.BackColor = System.Drawing.Color.White;
+            this.RentPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RentPic.Location = new System.Drawing.Point(485, 514);
             this.RentPic.Name = "RentPic";
             this.RentPic.Size = new System.Drawing.Size(70, 70);
@@ -540,6 +544,8 @@ namespace Care_Management_and_Private_Parking
             // 
             // VehPic
             // 
+            this.VehPic.BackColor = System.Drawing.Color.White;
+            this.VehPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.VehPic.Location = new System.Drawing.Point(485, 309);
             this.VehPic.Name = "VehPic";
             this.VehPic.Size = new System.Drawing.Size(70, 70);

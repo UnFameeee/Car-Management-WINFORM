@@ -84,7 +84,7 @@ namespace Care_Management_and_Private_Parking
 
                     if (verifCus())
                     {
-                        if (ParkingLotDAL.Instance.checkIdentity(Identity))
+                        if (ParkingLotDAL.Instance.checkIdentity("", Identity, "add"))
                         {
                             if (ParkingLotDAL.Instance.addCustomer(CusID, FullName, Birth, Phone, Address, Identity, CusPic))
                             {
@@ -153,8 +153,6 @@ namespace Care_Management_and_Private_Parking
                 if (radiobtnWash.Checked == true)
                     service = "Washing";
             }
-
-
             try
             {
                 MemoryStream VehPic = new MemoryStream();
@@ -163,6 +161,7 @@ namespace Care_Management_and_Private_Parking
                 if (verifVeh())
                 {
                     string Invoice = cbboxTimeFormat.SelectedValue.ToString();
+                    
                     if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
                     {
                         int idcard = ParkingLotDAL.Instance.createIDParkCard();
@@ -243,7 +242,7 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        int i = 1;
+        static int i = 1;
         private void radiobtnRepair_Click(object sender, EventArgs e)
         {
             i++;
@@ -257,17 +256,17 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        int j = 1;
+        static int j = 1;
         private void radiobtnWash_Click(object sender, EventArgs e)
         {
             j++;
             if (j % 2 == 0)
             {
-                radiobtnRepair.Checked = true;
+                radiobtnWash.Checked = true;
             }
             else
             {
-                radiobtnRepair.Checked = false;
+                radiobtnWash.Checked = false;
             }
         }
     }

@@ -31,38 +31,63 @@ namespace DAL
 
         #region Kiểm tra
         //Kiểm tra identity (độc nhất)
-        public bool checkIdentity(string identity)
+        public bool checkIdentity(string CusID, string identity, string operation)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM CUSTOMER WHERE IdentityNumber = @identity", DataProvider.Instance.getConnection);
-            cmd.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            SqlCommand com = new SqlCommand();
+            SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table.Rows.Count > 0)
+
+            if (operation == "add")
             {
-                return true;
+                com = new SqlCommand("Select * from CUSTOMER where IdentityNumber = @identity", DataProvider.Instance.getConnection);
+                com.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
+                adapter.SelectCommand = com;
+                adapter.Fill(table);
+                if (table.Rows.Count == 0)
+                    return true;
+                else return false;
             }
             else
             {
-                return false;
+                com = new SqlCommand("Select * from CUSTOMER where IdentityNumber = @identity and CusID != @CusID", DataProvider.Instance.getConnection);
+                com.Parameters.Add("@identity", SqlDbType.NVarChar).Value = identity;
+                com.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+                adapter.SelectCommand = com;
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return false;
+                else return true;
             }
         }
 
         //Kiểm tra biển số xe ko đc trùng
-        public bool checkLicense(string license)
+        public bool checkLicense(string VehID, string license, string operation)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM VEHICLE WHERE LicensePlate = @license", DataProvider.Instance.getConnection);
-            cmd.Parameters.Add("@license", SqlDbType.NVarChar).Value = license;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+           
+            SqlCommand com = new SqlCommand();
+            SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            adapter.Fill(table);
-            if (table.Rows.Count > 0)
+
+            if (operation == "add")
             {
-                return true;
+                SqlCommand cmd = new SqlCommand("SELECT * FROM VEHICLE WHERE LicensePlate = @license", DataProvider.Instance.getConnection);
+                cmd.Parameters.Add("@license", SqlDbType.NVarChar).Value = license;
+                adapter.SelectCommand = com;
+                adapter.Fill(table);
+                if (table.Rows.Count == 0)
+                    return true;
+                else return false;
             }
             else
             {
-                return false;
+                SqlCommand cmd = new SqlCommand("SELECT * FROM VEHICLE WHERE LicensePlate = @license and VehID != @VehID ", DataProvider.Instance.getConnection);
+                cmd.Parameters.Add("@license", SqlDbType.NVarChar).Value = license;
+                com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+                adapter.SelectCommand = com;
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                    return false;
+                else return true;
             }
         }
 
