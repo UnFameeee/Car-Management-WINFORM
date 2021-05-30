@@ -88,7 +88,7 @@ namespace Care_Management_and_Private_Parking
                         {
                             if (ParkingLotDAL.Instance.addCustomer(CusID, FullName, Birth, Phone, Address, Identity, CusPic))
                             {
-                                MessageBox.Show("Add new Customer successfully!", "Add Customer");
+                                MessageBox.Show("Add new Customer successfully!", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Execute += 1;
                                 showUpForm();
                             }
@@ -123,7 +123,13 @@ namespace Care_Management_and_Private_Parking
             btnAddCus.Enabled = false;
             btnAddCus.Visible = false;
         }
-
+        public bool check()
+        {
+            if (numerudValue.Text == "0" && cbboxTimeFormat.SelectedItem == null
+                && radiobtnRepair.Checked == false && radiobtnWash.Checked == false)
+                return false;
+            else return true;
+        }
         bool verifVeh()
         {
             if (tbLicense.Text.Trim() == "" || VehiclePic.Image == null)
@@ -139,8 +145,9 @@ namespace Care_Management_and_Private_Parking
             string License = tbLicense.Text;
          
             string CusID = tbCustomerID.Text;
-            int value = Convert.ToInt32(numerudValue.Value);                    //thời gian mà khách muốn gửi
-
+            int value = Convert.ToInt32(numerudValue.Value);                                      //thời gian mà khách muốn gửi
+            string Invoice = "null";
+ 
             string service = "";
             if (radiobtnRepair.Checked == true && radiobtnWash.Checked == true)
             {
@@ -153,6 +160,7 @@ namespace Care_Management_and_Private_Parking
                 if (radiobtnWash.Checked == true)
                     service = "Washing";
             }
+            
             try
             {
                 MemoryStream VehPic = new MemoryStream();
@@ -160,23 +168,31 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
-                    string Invoice = cbboxTimeFormat.SelectedValue.ToString();
-                    
-                    if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
+                    if (check())
                     {
-                        int idcard = ParkingLotDAL.Instance.createIDParkCard();
-                        ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, Invoice, service);
-                        MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle");
-                        this.DialogResult = DialogResult.OK;
+                        if (cbboxTimeFormat.SelectedItem != null)
+                            Invoice = cbboxTimeFormat.SelectedValue.ToString();
+
+                        if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
+                        {
+                            int idcard = ParkingLotDAL.Instance.createIDParkCard();
+                            ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, Invoice, service);
+                            MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Add new vehicle fail!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Add new vehicle fail!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please choose at least one service!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please fill all the information!!", "Add Vehicle");
+                    MessageBox.Show("Please fill all vehicle information!!", "Add Vehicle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -240,7 +256,6 @@ namespace Care_Management_and_Private_Parking
                 e.Handled = true;
             }
         }
-        #endregion
 
         static int i = 1;
         private void radiobtnRepair_Click(object sender, EventArgs e)
@@ -269,5 +284,13 @@ namespace Care_Management_and_Private_Parking
                 radiobtnWash.Checked = false;
             }
         }
+
+        private void numerudValue_Validated(object sender, EventArgs e)
+        {
+            if (numerudValue.Text == "")
+                numerudValue.Text = "0";
+        }
+        #endregion
+
     }
 }

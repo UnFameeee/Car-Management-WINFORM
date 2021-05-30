@@ -55,6 +55,8 @@ namespace DAL
                 return false;
             }
         }
+
+        #region Xoá hợp đồngg + xe + khách
         public bool removeContract(string ContID)
         {
             SqlCommand cmd = new SqlCommand("Delete From CONTRACT Where ContID = @contid", DataProvider.Instance.getConnection);
@@ -71,7 +73,45 @@ namespace DAL
                 DataProvider.Instance.closeConnection();
                 return false;
             }
-        }        
+        }
+
+        //Xóa xe
+        public bool deleteVehicle(string ID)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM VEHICLE WHERE VehID = @VehID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = ID;
+            DataProvider.Instance.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
+        //xoá khách
+        public bool deleteCustomer(string CusID)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM CUSTOMER WHERE CusID = @CusID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            DataProvider.Instance.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+        #endregion
+
         public bool checkContract(string ContID)
         {
             SqlCommand com = new SqlCommand("Select * from CONTRACT where ContID = @contid", DataProvider.Instance.getConnection);

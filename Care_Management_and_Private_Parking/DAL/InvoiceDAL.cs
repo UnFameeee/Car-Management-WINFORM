@@ -35,7 +35,7 @@ namespace DAL
 
         public DataTable getAllInvoice()
         {
-            SqlCommand com = new SqlCommand("select * from INVOICE");
+            SqlCommand com = new SqlCommand("select * from INVOICE where InvoiceID != 'null'");
             return getInvoice(com);
         }
 
@@ -50,7 +50,7 @@ namespace DAL
 
 
             int sv = 0;                                             //tiền rửa hoặc sửa (nếu có)
-            if (service == "Reapairing and Washing")
+            if (service == "Repairing and Washing")
             {
                 if (type == "bicycle")
                     sv = 70;
@@ -95,74 +95,91 @@ namespace DAL
             int week = day / 7;                                     //đổi ngày thành tuần
             int month = day / 30;                                   //đổi tuần thánh tháng
 
-            if (timeformat == "H")                                  //theo  giờ
+            if (index == 0 || timeformat == "null")                 //ko gửi xe chỉ có service                 
             {
-                if (hour == index)                                  //giờ gửi bằng với giờ đã đặt
-                    total = x * index;
-
-                else if (hour > index)                              //giờ gửi lố với giờ đã đặt
+                if (service == "Reapairing and Washing")
                 {
-                    if (hour > 24)                                  //giờ gửi lố 24h (1ngày)                    
-                        total = x * (hour / 3 + hour);
-                    else                                            //VD: đặt 3h nhưng lại trễ 2h (5h mới lấy)
-                        total = x * (1 + hour);
+                    if (hour > 2)                                   
+                        total = x * hour;
+                    else total = 0;
                 }
-
-                else                                                //giờ gửi sớm hơn giờ đã đặt
-                    total = x * (int)hour;
-            }
-
-            else if (timeformat == "D")                             //theo ngày
-            {
-                if (day == index)
-                    total = x * 8 * index;
-
-                else if (day > index)
-                {
-                    if (day > 7)
-                        total = x * 8 * (day / 2 + day);
-                    else
-                        total = x * 8 * (1 + day);
-                }
-
                 else
-                    total = x * 8 * day;
-            }
-
-            else if (timeformat == "W")                             //theo tuần
-            {
-                if (week == index)
-                    total = x * 24 * index;
-
-                else if (week > index)
                 {
-                    if (week > 4)
-                        total = x * 24 * (week / 2 * week);
-                    else
-                        total = x * 24 * (1 + week);
+                    if (hour > 1)
+                        total = x * hour;
+                    else total = 0;
+                }
+            }
+            else
+            {
+                if (timeformat == "H")                                  //theo  giờ
+                {
+                    if (hour == index)                                  //giờ gửi bằng với giờ đã đặt
+                        total = x * index;
+
+                    else if (hour > index)                              //giờ gửi lố với giờ đã đặt
+                    {
+                        if (hour > 24)                                  //giờ gửi lố 24h (1ngày)                    
+                            total = x * (hour / 3 + hour);
+                        else                                            //VD: đặt 3h nhưng lại trễ 2h (5h mới lấy)
+                            total = x * (1 + hour);
+                    }
+
+                    else                                                //giờ gửi sớm hơn giờ đã đặt
+                        total = x * (int)hour;
                 }
 
-                else
-                    total = x * 24 * week;
-            }
-
-            else                                                    //theo tháng
-            {
-                if (month == index)
-                    total = x * 48 * index;
-
-                else if (month > index)
+                else if (timeformat == "D")                             //theo ngày
                 {
-                    if (month > 12)
-                        total = x * 48 * (month / 6 + month);
+                    if (day == index)
+                        total = x * 8 * index;
+
+                    else if (day > index)
+                    {
+                        if (day > 7)
+                            total = x * 8 * (day / 2 + day);
+                        else
+                            total = x * 8 * (1 + day);
+                    }
+
                     else
-                        total = x * 48 * (1 + month);
+                        total = x * 8 * day;
                 }
 
-                else
-                    total = x * 48 * month;
-            }
+                else if (timeformat == "W")                             //theo tuần
+                {
+                    if (week == index)
+                        total = x * 24 * index;
 
+                    else if (week > index)
+                    {
+                        if (week > 4)
+                            total = x * 24 * (week / 2 * week);
+                        else
+                            total = x * 24 * (1 + week);
+                    }
+
+                    else
+                        total = x * 24 * week;
+                }
+
+                else                                                    //theo tháng
+                {
+                    if (month == index)
+                        total = x * 48 * index;
+
+                    else if (month > index)
+                    {
+                        if (month > 12)
+                            total = x * 48 * (month / 6 + month);
+                        else
+                            total = x * 48 * (1 + month);
+                    }
+
+                    else
+                        total = x * 48 * month;
+                }
+            }
             return (total + sv) * 1000;                             //để ra tiền VNĐ
         }
     }
