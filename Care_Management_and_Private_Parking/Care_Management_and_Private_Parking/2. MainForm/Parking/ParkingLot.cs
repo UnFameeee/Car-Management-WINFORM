@@ -406,11 +406,18 @@ namespace Care_Management_and_Private_Parking
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            DataTable table = ParkingLotDAL.Instance.takeCusIDandVehID(Convert.ToInt32(tbIDCard.Text));
-            if(table.Rows.Count > 0)
-                MessageBox.Show("Your CusID is: " + table.Rows[0]["CusID"].ToString() + "\r\nYour VehID is: " + table.Rows[0]["VehID"].ToString(), "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (tbIDCard.Text == "")
+            {
+                MessageBox.Show("Please insert IDCard!!!", "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
-                MessageBox.Show("Can't find IDCard", "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {
+                DataTable table = ParkingLotDAL.Instance.takeCusIDandVehID(Convert.ToInt32(tbIDCard.Text));
+                if (table.Rows.Count > 0)
+                    MessageBox.Show("Your CusID is: " + table.Rows[0]["CusID"].ToString() + "\r\nYour VehID is: " + table.Rows[0]["VehID"].ToString(), "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Can't find IDCard", "Info IDCard", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         #endregion
 

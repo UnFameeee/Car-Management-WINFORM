@@ -43,6 +43,7 @@ namespace Care_Management_and_Private_Parking
             this.btnDetail = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSearchByID = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchByName = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.pnData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnData.BorderRadius = 22;
             this.pnData.BorderThickness = 1;
+            this.pnData.Controls.Add(this.btnReload);
             this.pnData.Controls.Add(this.dgvEmp);
             this.pnData.Controls.Add(this.tbSearch);
             this.pnData.Controls.Add(this.btnPrint);
@@ -266,6 +268,24 @@ namespace Care_Management_and_Private_Parking
             this.btnSearchByName.Text = "By Name";
             this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
             // 
+            // btnReload
+            // 
+            this.btnReload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnReload.BorderThickness = 1;
+            this.btnReload.CheckedState.Parent = this.btnReload;
+            this.btnReload.CustomImages.Parent = this.btnReload;
+            this.btnReload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnReload.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.HoverState.Parent = this.btnReload;
+            this.btnReload.Location = new System.Drawing.Point(653, 124);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.ShadowDecoration.Parent = this.btnReload;
+            this.btnReload.Size = new System.Drawing.Size(77, 23);
+            this.btnReload.TabIndex = 204;
+            this.btnReload.Text = "Reload";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // EmployeeListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +315,6 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2GradientButton btnPrint;
         private Guna.UI2.WinForms.Guna2TextBox tbSearch;
         private Guna.UI.WinForms.GunaDataGridView dgvEmp;
+        private Guna.UI2.WinForms.Guna2Button btnReload;
     }
 }

@@ -301,7 +301,7 @@ namespace DAL
 
         public bool updateContractProfit(int day, int month, int year, int money)
         {
-            SqlCommand com = new SqlCommand("update PARKINGPROFIT set MoneyC = @money " +
+            SqlCommand com = new SqlCommand("update CONTRACTPROFIT set MoneyC = MoneyC + @money " +
                 "where DayCPF = @day and MonthCPF = @month and YearCPF = @year", DataProvider.Instance.getConnection);
             com.Parameters.Add("@day", SqlDbType.Int).Value = day;
             com.Parameters.Add("@month", SqlDbType.Int).Value = month;

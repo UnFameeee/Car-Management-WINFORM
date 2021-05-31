@@ -335,5 +335,25 @@ namespace Care_Management_and_Private_Parking
                 numerudValue.Text = "0";
         }
         #endregion
+
+        private void CustomerPic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                CustomerPic.Image = Image.FromFile(opf.FileName);
+            }
+        }
+
+        private void VehiclePic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                VehiclePic.Image = Image.FromFile(opf.FileName);
+            }
+        }
     }
 }

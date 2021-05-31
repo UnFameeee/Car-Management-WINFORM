@@ -96,14 +96,21 @@ namespace Care_Management_and_Private_Parking
                     VehPic = new MemoryStream();
                     VehiclePic.Image.Save(VehPic, VehiclePic.Image.RawFormat);
 
-                    if (RentalLotDAL.Instance.addRentalVehicle(VehID, Type, License, VehPic))
+                    if (ParkingLotDAL.Instance.checkLicense(VehID, License, "add")) 
                     {
-                        MessageBox.Show("Add Rental Vehicle Successfully", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
+                        if (RentalLotDAL.Instance.addRentalVehicle(VehID, Type, License, VehPic))
+                        {
+                            MessageBox.Show("Add Rental Vehicle Successfully", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Can't Add Rental Vehicle", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Can't Add Rental Vehicle", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("LicensePlate " + License + " Already Exist", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -139,14 +146,21 @@ namespace Care_Management_and_Private_Parking
                     VehPic = new MemoryStream();
                     VehiclePic.Image.Save(VehPic, VehiclePic.Image.RawFormat);
 
-                    if (RentalLotDAL.Instance.updateRentalVehicle(VehID, Type, License, VehPic))
+                    if (ParkingLotDAL.Instance.checkLicense(VehID, License, "edit"))
                     {
-                        MessageBox.Show("Edit Rental Vehicle Successfully", "Edit Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
+                        if (RentalLotDAL.Instance.updateRentalVehicle(VehID, Type, License, VehPic))
+                        {
+                            MessageBox.Show("Edit Rental Vehicle Successfully", "Edit Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Can't Edit Rental Vehicle", "Edit Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Can't Edit Rental Vehicle", "Edit Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("LicensePlate " + License + " Already Exist", "Add Rental Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
