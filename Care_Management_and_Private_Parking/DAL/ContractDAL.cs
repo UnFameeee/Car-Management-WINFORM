@@ -141,7 +141,7 @@ namespace DAL
         #region combobox
         public DataTable ShowEmpID()
         {
-            SqlCommand com = new SqlCommand("SELECT EmpID FROM EMPLOYEE", DataProvider.Instance.getConnection);
+            SqlCommand com = new SqlCommand("SELECT EmpID FROM EMPLOYEE where JobID != '2'", DataProvider.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(com);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -284,12 +284,12 @@ namespace DAL
             int stringID;
             if (operation == "cus")
             {
-                cmd = new SqlCommand("SELECT * FROM CUSTOMER", DataProvider.Instance.getConnection);
+                cmd = new SqlCommand("SELECT CusID FROM CUSTOMER ORDER BY RIGHT(REPLICATE('0', 1000) + LTRIM(RTRIM(CAST(CusID AS VARCHAR(MAX)))), 1000)", DataProvider.Instance.getConnection);
                 stringID = Variable.CusLength;
             }
             else
             {
-                cmd = new SqlCommand("SELECT VehID FROM VEHICLE WHERE VehID LIKE '%" + Variable.Rental + "%'", DataProvider.Instance.getConnection);
+                cmd = new SqlCommand("SELECT VehID FROM VEHICLE where VehID Like '%veh%' ORDER BY RIGHT(REPLICATE('0', 1000) + LTRIM(RTRIM(CAST(VehID AS VARCHAR(MAX)))), 1000)", DataProvider.Instance.getConnection);
                 stringID = Variable.RentalLength;
             }
 
