@@ -202,10 +202,6 @@ namespace Care_Management_and_Private_Parking
                 {
                     if (j == 0)
                         btn.ForeColor = Color.FromArgb(255, 128, 0);
-                    else if(j == 1)
-                        btn.ForeColor = Color.Yellow;
-                    else
-                        btn.ForeColor = Color.FromArgb(128, 128, 255);
                     //Note lại ca làm vào List ShiftInMonth
                     ShiftInMonth[j] += 1;
                 }

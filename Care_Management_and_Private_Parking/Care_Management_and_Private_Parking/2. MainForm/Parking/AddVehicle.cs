@@ -52,7 +52,7 @@ namespace Care_Management_and_Private_Parking
         #region thêm khách
         bool verifCus()
         {
-            if (tbName.Text.Trim() == "" || tbPhone.Text.Trim() == "" 
+            if (tbName.Text.Trim() == "" || tbPhone.Text.Trim() == ""
                 || tbAddress.Text.Trim() == "" || tbIdentity.Text.Trim() == "" || CustomerPic.Image == null)
                 return false;
             else
@@ -143,12 +143,13 @@ namespace Care_Management_and_Private_Parking
             string VehID = tbType.Text.ToString() + id;
             string Type = tbType.Text;
             string License = tbLicense.Text;
-         
             string CusID = tbCustomerID.Text;
             int value = Convert.ToInt32(numerudValue.Value);                                      //thời gian mà khách muốn gửi
+            string Invoice = "null";
             string timeformat = "null";
- 
             string service = "";
+
+
             if (radiobtnRepair.Checked == true && radiobtnWash.Checked == true)
             {
                 service = "Repairing and Washing";
@@ -160,7 +161,7 @@ namespace Care_Management_and_Private_Parking
                 if (radiobtnWash.Checked == true)
                     service = "Washing";
             }
-            
+
             try
             {
                 MemoryStream VehPic = new MemoryStream();
@@ -168,35 +169,41 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
-                    if (check())
+                    if (ParkingLotDAL.Instance.checkLicense(VehID, License, "add"))
                     {
-                        if (cbboxTimeFormat.SelectedItem != null)
-                            timeformat = cbboxTimeFormat.SelectedValue.ToString();
+                        if (check())
+                        {
+                            if (cbboxTimeFormat.SelectedItem != null)
+                                Invoice = cbboxTimeFormat.SelectedValue.ToString();
                         else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
                         {
                             value = 0;
                         }
-
-                        if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
-                        {
-                            int idcard = ParkingLotDAL.Instance.createIDParkCard();
-                            ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, timeformat, service);
-                            MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.DialogResult = DialogResult.OK;
+                            if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
+                            {
+                                int idcard = ParkingLotDAL.Instance.createIDParkCard();
+                                ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, Invoice, service);
+                                MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.DialogResult = DialogResult.OK;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Add new vehicle fail!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Add new vehicle fail!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Please choose at least one service!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please choose at least one service!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please fill all vehicle information!!", "Add Vehicle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Please fill all vehicle information!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

@@ -63,6 +63,10 @@ INSERT INTO EMPLOYEE VALUES('NV5', 'Thach duong duy', 'Female', '2-2-1998', '887
 INSERT INTO EMPLOYEE VALUES('NV6', 'Nguyen minh dang', 'Male', '2-2-1998', '8876543210', '089201006667', 'email@gmail.com', '2', null, 'emp4') 
 GO
 
+CREATE TABLE DEPARTMENT(
+	
+)
+
 CREATE TABLE TIMEKEEPING
 (
 	EmpID NVARCHAR(100),																--ID nhân viên

@@ -61,6 +61,8 @@ namespace DAL
         }
         public DataTable tableShift()
         {
+            NV = getTotalEmp();
+            CL = getTotalShift();
             DivideShift dv = new DivideShift();
             List<List<int>> DOW;                                                                                          //Tạo mảng 2 chiều
             DataTable res = new DataTable();
@@ -84,7 +86,5 @@ namespace DAL
             return res;
         }
         #endregion
-
-
     }
 }

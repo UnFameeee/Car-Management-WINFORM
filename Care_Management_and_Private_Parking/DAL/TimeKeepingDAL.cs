@@ -131,14 +131,11 @@ namespace DAL
                     {
                         return "1";
                     }
-                    else
-                    {
-                        return "2";
-                    }
                 }
                 cmd.Parameters.Clear();
+                tbShift.Clear();
             }
-            return "3";
+            return "2";
         }
         #endregion
 

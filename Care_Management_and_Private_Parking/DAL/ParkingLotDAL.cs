@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+
 //3 layers
 using DAL;
 using Global;
@@ -27,7 +29,6 @@ namespace DAL
             }
             private set { ParkingLotDAL.instance = value; }
         }
-
 
         #region Kiểm tra
         //Kiểm tra identity (độc nhất)
@@ -63,8 +64,6 @@ namespace DAL
         //Kiểm tra biển số xe ko đc trùng
         public bool checkLicense(string VehID, string license, string operation)
         {
-           
-            SqlCommand com = new SqlCommand();
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
 
@@ -72,7 +71,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand("SELECT * FROM VEHICLE WHERE LicensePlate = @license", DataProvider.Instance.getConnection);
                 cmd.Parameters.Add("@license", SqlDbType.NVarChar).Value = license;
-                adapter.SelectCommand = com;
+                adapter.SelectCommand = cmd;
                 adapter.Fill(table);
                 if (table.Rows.Count == 0)
                     return true;
@@ -82,8 +81,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand("SELECT * FROM VEHICLE WHERE LicensePlate = @license and VehID != @VehID ", DataProvider.Instance.getConnection);
                 cmd.Parameters.Add("@license", SqlDbType.NVarChar).Value = license;
-                com.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
-                adapter.SelectCommand = com;
+                cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+                adapter.SelectCommand = cmd;
                 adapter.Fill(table);
                 if (table.Rows.Count > 0)
                     return false;
@@ -330,6 +329,115 @@ namespace DAL
             }
         }
 
+        #endregion
+
+        #region Mất thẻ xe - Cần xác nhận đúng là xe đó và người đó => trả tiền luôn
+        public bool verifyVehicleAndCustomer(string Type, string LicensePlate, string Name, DateTime Bdate, string Phone, string Address, string IdentityCardNumber)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT VehType, LicensePlate, Picture, VEHICLE.CusID, FullName, Bdate, PhoneNumber, Address, IdentityNumber, Appearance FROM VEHICLE, CUSTOMER " +
+                "WHERE VEHICLE.CusID = CUSTOMER.CusID " +
+                "and VehType = @Type and LicensePlate = @License and FullName = @Name and Bdate = @Bdate and PhoneNumber = @Phone and " +
+                "Address = @Addr and IdentityNumber = @Identity", DataProvider.Instance.getConnection);
+
+            //Xe
+            cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
+            cmd.Parameters.Add("@License", SqlDbType.NVarChar).Value = LicensePlate;
+
+            //Khách
+            cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = Name;
+            cmd.Parameters.Add("@Bdate", SqlDbType.Date).Value = Bdate;
+            cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
+            cmd.Parameters.Add("@Addr", SqlDbType.NVarChar).Value = Address;
+            cmd.Parameters.Add("@Identity", SqlDbType.NVarChar).Value = IdentityCardNumber;
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            if(table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //lấy mã cus
+        public string takeIDCus(string Name, DateTime Bdate, string Phone, string Address, string IdentityCardNumber)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT CusID FROM CUSTOMER WHERE FullName = @Name and Bdate = @Bdate and PhoneNumber = @Phone and " +
+                "Address = @Addr and IdentityNumber = @Identity", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = Name;
+            cmd.Parameters.Add("@Bdate", SqlDbType.Date).Value = Bdate;//.Date.ToShortDateString();
+            cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
+            cmd.Parameters.Add("@Addr", SqlDbType.NVarChar).Value = Address;
+            cmd.Parameters.Add("@Identity", SqlDbType.NVarChar).Value = IdentityCardNumber;
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return table.Rows[0][0].ToString();
+            else
+                return "";
+        }
+
+        //xóa khỏi bãi xe parking
+        public bool deleteFromParklot(string CusID, string VehID)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM PARKING WHERE VehID = @VehID and CusID = @CusID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            DataProvider.Instance.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
+        //lấy idveh
+        public string takeIDVeh(string Type, string LicensePlate)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT VehID FROM VEHICLE WHERE VehType = @Type and LicensePlate = @License", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Type;
+            cmd.Parameters.Add("@License", SqlDbType.NVarChar).Value = LicensePlate;
+            DataProvider.Instance.openConnection();
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return table.Rows[0][0].ToString();
+            else
+                return "";
+        }
+
+        //lấy ra hình từ IDveh
+        public DataTable takePicVeh(string VehID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Picture FROM VEHICLE WHERE VehID = @VehID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            return table;
+        }
+
+        //lấy hình ra từ cusID
+        public DataTable takePicCus(string CusID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Appearance FROM CUSTOMER WHERE CusID = @CusID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            return table;
+        }
         #endregion
 
         #region Phát thẻ xe - Tìm thẻ xe

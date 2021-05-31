@@ -211,29 +211,35 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
-                    if (check())
+                    if(ParkingLotDAL.Instance.checkLicense(VehID, License, "edit"))
                     {
-                        if (cbboxTimeFormat.SelectedItem != null)
-                            timeformat = cbboxTimeFormat.SelectedValue.ToString();
-                        else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
+                        if (check())
                         {
-                            value = 0;
-                        }
-
-                        if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
-                        {
-                            ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, timeformat, service);
-                            MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.DialogResult = DialogResult.OK;
+                          if (cbboxTimeFormat.SelectedItem != null)
+                              timeformat = cbboxTimeFormat.SelectedValue.ToString();
+                          else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
+                          {
+                              value = 0;
+                          }
+                          string Invoice = cbboxTimeFormat.SelectedValue.ToString();
+                          if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
+                          {
+                              ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
+                              MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
+                              this.DialogResult = DialogResult.OK;
+                          }
+                          else
+                          {
+                              MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          }
                         }
                         else
                         {
-                            MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          MessageBox.Show("Please choose at least one service!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                    }
                     else
                     {
-                        MessageBox.Show("Please choose at least one service!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                      MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
