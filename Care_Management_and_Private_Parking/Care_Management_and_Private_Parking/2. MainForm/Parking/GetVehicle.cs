@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +49,7 @@ namespace Care_Management_and_Private_Parking
 
                     DateTime register = Convert.ToDateTime(tab.Rows[0][3]);
                     int value = Convert.ToInt32(tab.Rows[0][4]);
-                    string invoice = tab.Rows[0][5].ToString();
+                    string timeformat = tab.Rows[0][5].ToString();
                     string service = tab.Rows[0][6].ToString();
 
                     if (CusID == tab.Rows[0][1].ToString())
@@ -59,8 +60,9 @@ namespace Care_Management_and_Private_Parking
                             {
                                 if (ParkingLotDAL.Instance.deleteCustomer(CusID))
                                 {
-                                    int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, invoice, VehType, service);
-                                    MessageBox.Show("You have to pay " + money.ToString() + "VNĐ");
+                                    int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, timeformat, VehType, service);
+                                    
+                                    MessageBox.Show("You have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", money) + "VNĐ");
                                     this.DialogResult = DialogResult.OK;
                                 }
                             }
@@ -84,7 +86,7 @@ namespace Care_Management_and_Private_Parking
             {
                 MessageBox.Show("Please fill all information", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
+        }        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

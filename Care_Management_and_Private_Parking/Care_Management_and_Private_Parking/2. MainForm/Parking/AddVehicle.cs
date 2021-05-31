@@ -36,9 +36,9 @@ namespace Care_Management_and_Private_Parking
 
         void formatTime()
         {
-            cbboxTimeFormat.DataSource = InvoiceDAL.Instance.getAllInvoice();
+            cbboxTimeFormat.DataSource = InvoiceDAL.Instance.getAllTimeFormat();
             cbboxTimeFormat.DisplayMember = "Description";
-            cbboxTimeFormat.ValueMember = "InvoiceID";
+            cbboxTimeFormat.ValueMember = "ID";
             cbboxTimeFormat.SelectedItem = null;
         }
 
@@ -123,9 +123,9 @@ namespace Care_Management_and_Private_Parking
             btnAddCus.Enabled = false;
             btnAddCus.Visible = false;
         }
-        public bool check()
+        public bool check()                         //kiểm tra xem có chọn service nào ko
         {
-            if (numerudValue.Text == "0" && cbboxTimeFormat.SelectedItem == null
+            if ((numerudValue.Text == "0" || cbboxTimeFormat.SelectedItem == null)
                 && radiobtnRepair.Checked == false && radiobtnWash.Checked == false)
                 return false;
             else return true;
@@ -146,7 +146,7 @@ namespace Care_Management_and_Private_Parking
          
             string CusID = tbCustomerID.Text;
             int value = Convert.ToInt32(numerudValue.Value);                                      //thời gian mà khách muốn gửi
-            string Invoice = "null";
+            string timeformat = "null";
  
             string service = "";
             if (radiobtnRepair.Checked == true && radiobtnWash.Checked == true)
@@ -171,12 +171,16 @@ namespace Care_Management_and_Private_Parking
                     if (check())
                     {
                         if (cbboxTimeFormat.SelectedItem != null)
-                            Invoice = cbboxTimeFormat.SelectedValue.ToString();
+                            timeformat = cbboxTimeFormat.SelectedValue.ToString();
+                        else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
+                        {
+                            value = 0;
+                        }
 
                         if (ParkingLotDAL.Instance.addVehicle(VehID, Type, License, VehPic, CusID))
                         {
                             int idcard = ParkingLotDAL.Instance.createIDParkCard();
-                            ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, Invoice, service);
+                            ParkingLotDAL.Instance.addCarAndCusToParklot(idcard, Variable.Cus + (Convert.ToInt32(ParkingLotDAL.Instance.takeID(Variable.Cus)) - 1).ToString(), (type + id), DateTime.Now, value, timeformat, service);
                             MessageBox.Show("Add new vehicle successfully! \r\nYour ID card is " + idcard, "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
                         }

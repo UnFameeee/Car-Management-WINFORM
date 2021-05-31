@@ -85,17 +85,17 @@ CREATE TABLE SALARY
 )
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Thành Tiền
-create table INVOICE(
-	InvoiceID nvarchar(100) primary key,
+-- Format thời gian (gửi xe)
+create table TIMEFORMAT(
+	ID nvarchar(100) primary key,
 	Description text
 )
 
-INSERT INTO INVOICE VALUES('H', 'Hour')								-- theo giờ
-INSERT INTO INVOICE VALUES('D', 'Day')								-- theo ngày
-INSERT INTO INVOICE VALUES('W', 'Week')								-- theo tuần
-INSERT INTO INVOICE VALUES('M', 'Month')							-- theo tháng
-INSERT INTO INVOICE VALUES('null', null)
+INSERT INTO TIMEFORMAT VALUES('H', 'Hour')								-- theo giờ
+INSERT INTO TIMEFORMAT VALUES('D', 'Day')								-- theo ngày
+INSERT INTO TIMEFORMAT VALUES('W', 'Week')								-- theo tuần
+INSERT INTO TIMEFORMAT VALUES('M', 'Month')							-- theo tháng
+INSERT INTO TIMEFORMAT VALUES('null', null)
 GO
 
 -- Khách Hàng
@@ -126,11 +126,19 @@ create table PARKING(
 	VehID nvarchar(100) references VEHICLE(VehID),
 	DateRegister datetime,
 	TimeValue int,
-	InvoiceID nvarchar(100) references INVOICE(InvoiceID),
+	TimeFormatID nvarchar(100) references TIMEFORMAT(ID),
 	Service nvarchar(100)
 	--PRIMARY KEY(CusID, VehID)
 )
 GO
+
+--Tiền (lợi nhuận) gửi xe
+create table PARKINGPROFIT(
+	DayPPF int,
+	MonthPPF int,
+	YearPPF int,
+	MoneyP int
+)
 
 -- Hợp Đồng
 create table CONTRACT(
@@ -147,12 +155,10 @@ create table CONTRACT(
 )
 GO
 
---Tạo bảng doanh thu
-CREATE TABLE PROFIT
-(
-	Today datetime,
-	MoneyFromParking int,
-	MoneyFromContract int,
-	MoneyTotal int
+--Tiền (lợi nhuận) hợp đồng
+create table CONTRACTPROFIT(
+	DayCPF int,
+	MonthCPF int,
+	YearCPF int,
+	MoneyC int
 )
-GO
