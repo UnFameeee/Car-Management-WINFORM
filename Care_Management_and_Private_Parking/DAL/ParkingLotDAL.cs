@@ -499,12 +499,12 @@ namespace DAL
             int stringID;
             if (operation == "cus")
             {
-                cmd = new SqlCommand("SELECT * FROM CUSTOMER", DataProvider.Instance.getConnection);
+                cmd = new SqlCommand("SELECT CusID FROM CUSTOMER ORDER BY RIGHT(REPLICATE('0', 1000) + LTRIM(RTRIM(CAST(CusID AS VARCHAR(MAX)))), 1000)", DataProvider.Instance.getConnection);
                 stringID = Variable.CusLength;
             }
             else
             {
-                cmd = new SqlCommand("SELECT * FROM VEHICLE", DataProvider.Instance.getConnection);
+                cmd = new SqlCommand("SELECT VehID FROM VEHICLE ORDER BY RIGHT(REPLICATE('0', 1000) + LTRIM(RTRIM(CAST(VehID AS VARCHAR(MAX)))), 1000)", DataProvider.Instance.getConnection);
                 if(operation == Variable.Bicycle)
                 {
                     stringID = Variable.BicycleLength;
