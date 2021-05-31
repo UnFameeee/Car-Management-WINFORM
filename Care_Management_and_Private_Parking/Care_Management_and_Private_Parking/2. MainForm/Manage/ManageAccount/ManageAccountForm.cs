@@ -119,7 +119,7 @@ namespace Care_Management_and_Private_Parking
             if (ID == "")
             {
                 MessageBox.Show("Please insert ID!!!", "Search EmpID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                reloadAcc();
+                reloadEmp();
             }
             else
             {
@@ -131,7 +131,7 @@ namespace Care_Management_and_Private_Parking
                 if (tab.Rows.Count == 0)
                 {
                     MessageBox.Show("Can't Find ID: " + ID, "Search EmpID", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    reloadAcc();
+                    reloadEmp();
                 }
                 else
                 {

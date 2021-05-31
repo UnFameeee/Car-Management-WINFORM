@@ -51,12 +51,13 @@ namespace Care_Management_and_Private_Parking
         }
 
         private void tbPrice_TextChanged(object sender, EventArgs e)
-        {
+        {       
             tbPrice2.Text = tbPrice.Text;
         }
 
         private void cbboxPurpose_SelectedIndexChanged(object sender, EventArgs e)
         {
+            tbDateStart.Text = DateTime.Now.ToString("dd/MM/yyyy");
             if(cbboxPurpose.SelectedIndex != -1)
             {
                 DataTable tab = EmployeeDAL.Instance.getEmpByID(UserID.GlobalUserID);
@@ -77,6 +78,10 @@ namespace Care_Management_and_Private_Parking
                 if (tab.Rows[0][7].ToString() == "Manager")
                     empjob = "Quản lý";
                 else empjob = "Nhân viên văn phòng";
+
+                cbVehType.SelectedItem = null;
+                tbForRentVehLicense.Text = "";
+                VehPic.Image = null;
 
                 if (cbboxPurpose.SelectedItem.ToString() == "CHO THUÊ")
                 {
@@ -104,13 +109,20 @@ namespace Care_Management_and_Private_Parking
                     tbForRentJob.ReadOnly = true;
                     ForRentPic.Enabled = false;
 
+                    tbRentName.ReadOnly = false;
+                    tbRentPhone.ReadOnly = false;
+                    tbRentAddress.ReadOnly = false;
+                    tbRentIdentity.ReadOnly = false;
+                    tbRentBdate.ReadOnly = false;
+                    tbRentJob.ReadOnly = false;
+                    RentPic.Enabled = true;
+
                     tbRentName.Text = null;
                     tbRentPhone.Text = null;
                     tbRentAddress.Text = null;
                     tbRentIdentity.Text = null;
                     tbRentBdate.Text = null;
                     tbRentJob.Text = "Khách hàng";
-                    VehPic.Image = null;
                     RentPic.Image = null;
                 }
                 else
@@ -138,14 +150,21 @@ namespace Care_Management_and_Private_Parking
                     tbRentBdate.ReadOnly = true;
                     tbRentJob.ReadOnly = true;
                     RentPic.Enabled = false;
-                    
+
+                    tbForRentName.ReadOnly = false;
+                    tbForRentPhone.ReadOnly = false;
+                    tbForRentAddress.ReadOnly = false;
+                    tbForRentIdentity.ReadOnly = false;
+                    tbForRentBdate.ReadOnly = false;
+                    tbForRentJob.ReadOnly = false;
+                    ForRentPic.Enabled = true;
+
                     tbForRentName.Text = null;
                     tbForRentPhone.Text = null;
                     tbForRentAddress.Text = null;
                     tbForRentIdentity.Text = null;
                     tbForRentBdate.Text = null;
                     tbForRentJob.Text = "Khách hàng";
-                    VehPic.Image = null;
                     ForRentPic.Image = null;
                 }
             }
@@ -166,31 +185,40 @@ namespace Care_Management_and_Private_Parking
             else
             {
                 string vehtype;
-                if (cbVehType.SelectedItem.ToString() == "Xe Đạp")
+                if (cbVehType.SelectedItem.ToString() == "Xe đạp")
                     vehtype = "bicycle";
-                else if (cbVehType.SelectedItem.ToString() == "Xe Máy")
+                else if (cbVehType.SelectedItem.ToString() == "Xe máy")
                     vehtype = "bike";
                 else
                     vehtype = "car";
 
-                VehList frm = new VehList();
-                frm.type = vehtype;
-                frm.ShowDialog();
+                SqlCommand cmd = new SqlCommand("select * from VEHICLE where VehType = '" + vehtype + "' and VehID LIKE '%veh%'");
+                DataTable table = ParkingLotDAL.Instance.getDataWithPurpose(cmd);
 
-                SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + frm.type + "' and CusID is null");
-                DataTable tab = ParkingLotDAL.Instance.getDataWithPurpose(com);
-
-                tbForRentVehLicense.Text = tab.Rows[0][2].ToString();
-
-                if (tab.Rows[0][3] != DBNull.Value)
+                if (table.Rows.Count == 0)
                 {
-                    byte[] pic;
-                    pic = (byte[])tab.Rows[0][3];
-                    MemoryStream picture = new MemoryStream(pic);
-                    VehPic.Image = Image.FromStream(picture);
+                    MessageBox.Show("There are no vehicle for rent!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    VehList frm = new VehList();
+                    frm.type = vehtype;
+                    frm.ShowDialog();
 
-                btnVehList.Hide();
+                    SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + frm.type + "' and VehID LIKE '%veh%'");
+                    DataTable tab = ParkingLotDAL.Instance.getDataWithPurpose(com);
+
+                    tbForRentVehLicense.Text = tab.Rows[0][2].ToString();
+
+                    if (tab.Rows[0][3] != DBNull.Value)
+                    {
+                        byte[] pic;
+                        pic = (byte[])tab.Rows[0][3];
+                        MemoryStream picture = new MemoryStream(pic);
+                        VehPic.Image = Image.FromStream(picture);
+                    }
+                    btnVehList.Hide();
+                }               
             }
         }
     }

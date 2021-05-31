@@ -107,5 +107,10 @@ namespace Care_Management_and_Private_Parking
             dgvEmp.DataSource = EmployeeDAL.Instance.getAllEmp();
             tbSearch.Text = null;
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            reload();
+        }
     }
 }

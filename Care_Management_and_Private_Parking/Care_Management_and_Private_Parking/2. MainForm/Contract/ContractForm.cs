@@ -79,9 +79,9 @@ namespace Care_Management_and_Private_Parking
                         //thông tin xe cho thuê
                         license = frm.tbForRentVehLicense.Text;
 
-                        if (frm.cbVehType.SelectedItem.ToString() == "Xe Đạp")
+                        if (frm.cbVehType.SelectedItem.ToString() == "Xe đạp")
                             vehtype = "bicycle";
-                        else if (frm.cbVehType.SelectedItem.ToString() == "Xe Máy")
+                        else if (frm.cbVehType.SelectedItem.ToString() == "Xe máy")
                             vehtype = "bike";
                         else
                             vehtype = "car";
@@ -89,7 +89,7 @@ namespace Care_Management_and_Private_Parking
                         vehpic = new MemoryStream();
                         frm.VehPic.Image.Save(vehpic, frm.VehPic.Image.RawFormat);
 
-                        SqlCommand com = new SqlCommand("select VehID from VEHICLE where VehType = '" + vehtype + "' and CusID is null and LicensePlate = '" + license + "'");
+                        SqlCommand com = new SqlCommand("select VehID from VEHICLE where VehType = '" + vehtype.ToString() + "' and VehID LIKE '%veh%' and LicensePlate = '" + license.ToString() + "'");
                         DataTable tab = ParkingLotDAL.Instance.getDataWithPurpose(com);
                         vehid = tab.Rows[0][0].ToString();
 
@@ -172,9 +172,9 @@ namespace Care_Management_and_Private_Parking
                         vehid = Variable.Rental + ContractDAL.Instance.takeID(Variable.Rental);
                         license = frm.tbForRentVehLicense.Text;
 
-                        if (frm.cbVehType.SelectedItem.ToString() == "Xe Đạp")
+                        if (frm.cbVehType.SelectedItem.ToString() == "Xe đạp")
                             vehtype = "bicycle";
-                        else if (frm.cbVehType.SelectedItem.ToString() == "Xe Máy")
+                        else if (frm.cbVehType.SelectedItem.ToString() == "Xe máy")
                             vehtype = "bike";
                         else
                             vehtype = "car";
@@ -267,65 +267,66 @@ namespace Care_Management_and_Private_Parking
 
             if (contid != "")
             {
-                tab = ContractDAL.Instance.getContractInfo(contid);                
-                cusid = tab.Rows[0][1].ToString();
-                purpose = tab.Rows[0][3].ToString();
+                tab = ContractDAL.Instance.getContractInfo("cont" + contid);
+                cusid = tab.Rows[0][3].ToString();
+                purpose = tab.Rows[0][1].ToString();
                 vehid = tab.Rows[0][4].ToString();
                 price = Convert.ToInt32(tab.Rows[0][8].ToString());
                 factor = Convert.ToInt32(tab.Rows[0][9].ToString());
 
                 if (ContractDAL.Instance.checkContract(contid))
                 {
-                    if (ContractDAL.Instance.removeContract("cont" + contid))
+                    if (purpose == "THUÊ")                                              //mình là người thuê
                     {
-                        if (purpose == "THUÊ")                                              //mình là người thuê
+                        if (!checkLate(contid, today))                          //huỷ đúng thời hạn
                         {
-                            if (ContractDAL.Instance.deleteVehicle(vehid))
+                            if (ContractDAL.Instance.removeContract("cont" + contid))
                             {
-                                if (ContractDAL.Instance.deleteCustomer(cusid))
+                                if (ContractDAL.Instance.deleteVehicle(vehid))
                                 {
-                                    if (!checkLate(contid, today))                          //huỷ đúng thời hạn
+                                    if (ContractDAL.Instance.deleteCustomer(cusid))
                                     {
                                         MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        btnRefresh.PerformClick();                          //reload
+                                        btnRefresh.PerformClick();
                                     }
-                                    else                                                    //vi phạm hợp đồng
+                                    else
                                     {
-                                        MessageBox.Show("Breach of contract!!!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        BreachOfContract frm = new BreachOfContract();
-                                        frm.ShowDialog();
-                                        string side = frm.side;
+                                        MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Can't remove Vehicle!", "Remove Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Can't remove Contract!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else                                                    //vi phạm hợp đồng
+                        {
+                            MessageBox.Show("Breach of Contract!!!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            BreachOfContract frm = new BreachOfContract();
+                            frm.ShowDialog();
+                            string side = frm.side;
 
-                                        int money;
+                            int money;
 
-                                        if (side == "Lessor")                               //bên cho thuê (khách) vi phạm hợp đồng
+                            if (side == "Lessor")                               //bên cho thuê (khách) vi phạm hợp đồng
+                            {
+                                money = price * factor;
+                                if (ContractDAL.Instance.removeContract("cont" + contid))
+                                {
+                                    if (ContractDAL.Instance.deleteVehicle(vehid))
+                                    {
+                                        if (ContractDAL.Instance.deleteCustomer(cusid))
                                         {
-                                            money = price * factor;
-                                            if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
-                                            {
-                                                if(InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
-                                                {
-                                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    btnRefresh.PerformClick();                          //reload
-                                                }
-                                            }
-                                            else
-                                            {
-                                                if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
-                                                {
-                                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    btnRefresh.PerformClick();                          //reload
-                                                }
-                                            }
-                                        }
-                                        else                                                //bên thuê (mình) vi phạm
-                                        {
-                                            money = -price * factor;
                                             if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
                                             {
                                                 if (InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
                                                 {
-                                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    MessageBox.Show("Lessor have to pay fee " + money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     btnRefresh.PerformClick();                          //reload
                                                 }
                                             }
@@ -333,12 +334,80 @@ namespace Care_Management_and_Private_Parking
                                             {
                                                 if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
                                                 {
-                                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    MessageBox.Show("Lessor have to pay fee " + money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     btnRefresh.PerformClick();                          //reload
                                                 }
                                             }
                                         }
+                                        else
+                                        {
+                                            MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
                                     }
+                                    else
+                                    {
+                                        MessageBox.Show("Can't remove Vehicle!", "Remove Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Can't remove Contract!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else                                                //bên thuê (mình) vi phạm
+                            {
+                                money = -price * factor;
+                                if (ContractDAL.Instance.removeContract("cont" + contid))
+                                {
+                                    if (ContractDAL.Instance.deleteVehicle(vehid))
+                                    {
+                                        if (ContractDAL.Instance.deleteCustomer(cusid))
+                                        {
+                                            if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
+                                            {
+                                                if (InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
+                                                {
+                                                    MessageBox.Show("Renter have to pay fee " + -money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    btnRefresh.PerformClick();                          //reload
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
+                                                {
+                                                    MessageBox.Show("Renter have to pay fee " + -money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    btnRefresh.PerformClick();                          //reload
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Can't remove Vehicle!", "Remove Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Can't remove Contract!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }                                              
+                    }
+
+                    else                                                                //mình là người cho thuê
+                    {
+                        if (!checkLate(contid, today))                       //đúng thời hạn
+                        {
+                            if (ContractDAL.Instance.removeContract("cont" + contid))
+                            {
+                                if (ContractDAL.Instance.deleteCustomer(cusid))
+                                {
+                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    btnRefresh.PerformClick();                              //reload
                                 }
                                 else
                                 {
@@ -347,83 +416,92 @@ namespace Care_Management_and_Private_Parking
                             }
                             else
                             {
-                                MessageBox.Show("Can't remove Vehicle!", "Remove Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Can't remove Contract!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        else                                                                //mình là người cho thuê
+                        else                                                            //vi phạm thời hạn
                         {
-                            if (ContractDAL.Instance.deleteCustomer(cusid))
+                            MessageBox.Show("Breach of contract!!!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            BreachOfContract frm = new BreachOfContract();
+                            frm.ShowDialog();
+                            string side = frm.side;
+
+                            int money;
+
+                            if (side == "Renter")                                       //bên thuê (khách) vi phạm hợp đồng
                             {
-                                if (!checkLate(contid, DateTime.Now))                       //đúng thời hạn
+                                money = price * factor;
+                                if (ContractDAL.Instance.removeContract("cont" + contid))
                                 {
-                                    MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    btnRefresh.PerformClick();                              //reload
+                                    if (ContractDAL.Instance.deleteCustomer(cusid))
+                                    {
+                                        if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
+                                        {
+                                            if (InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
+                                            {
+                                                MessageBox.Show("Renter have to pay fee " + money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                btnRefresh.PerformClick();                          //reload
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
+                                            {
+                                                MessageBox.Show("Renter have to pay fee " + money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                btnRefresh.PerformClick();                          //reload
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
-                                else                                                        //vi phạm thời hạn
+                                else
                                 {
-                                    MessageBox.Show("Breach of contract!!!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    BreachOfContract frm = new BreachOfContract();
-                                    frm.ShowDialog();
-                                    string side = frm.side;
-
-                                    int money;
-
-                                    if (side == "Renter")                               //bên thuê (khách) vi phạm hợp đồng
-                                    {
-                                        money = price * factor;
-                                        if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
-                                        {
-                                            if (InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
-                                            {
-                                                MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                btnRefresh.PerformClick();                          //reload
-                                            }
-                                        }
-                                        else
-                                        {
-                                            if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
-                                            {
-                                                MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                btnRefresh.PerformClick();                          //reload
-                                            }
-                                        }
-                                    }
-                                    else                                                //bên thuê (mình) vi phạm
-                                    {
-                                        money = -price * factor;
-                                        if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
-                                        {
-                                            if (InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
-                                            {
-                                                MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                btnRefresh.PerformClick();                          //reload
-                                            }
-                                        }
-                                        else
-                                        {
-                                            if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
-                                            {
-                                                MessageBox.Show("Remove Contract Successfully", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                btnRefresh.PerformClick();                          //reload
-                                            }
-                                        }
-                                    }
+                                    MessageBox.Show("Can't remove Contract!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                            else
+                            else                                                //bên thuê (mình) vi phạm
                             {
-                                 MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }  
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Can't Remove Contract", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                money = -price * factor;
+                                if (ContractDAL.Instance.removeContract("cont" + contid))
+                                {
+                                    if (ContractDAL.Instance.deleteCustomer(cusid))
+                                    {
+                                        if (InvoiceDAL.Instance.checkContractDate(today.Day, today.Month, today.Year))
+                                        {
+                                            if (InvoiceDAL.Instance.updateContractProfit(today.Day, today.Month, today.Year, money))
+                                            {
+                                                MessageBox.Show("Lessor have to pay fee " + -money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                btnRefresh.PerformClick();                          //reload
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (InvoiceDAL.Instance.insertContractProfit(today.Day, today.Month, today.Year, money))
+                                            {
+                                                MessageBox.Show("Lessor have to pay fee " + -money, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                btnRefresh.PerformClick();                          //reload
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Can't remove Customer!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Can't remove Contract!", "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }                        
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please insert ContractID!!!", "ContractID Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Can't Find ContractID cont" + contid, "Remove Contract", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else 
@@ -548,18 +626,7 @@ namespace Care_Management_and_Private_Parking
                         type = "Xe đạp";
                     else if (veh.Rows[0][1].ToString() == "bike")
                         type = "Xe máy";
-                    else type = "Xe đạp";
-
-                    frm.cbVehType.SelectedItem = type;
-                    frm.tbForRentVehLicense.Text = license;
-
-                    if (veh.Rows[0][3] != DBNull.Value)
-                    {
-                        byte[] pic;
-                        pic = (byte[])veh.Rows[0][3];
-                        MemoryStream picture = new MemoryStream(pic);
-                        frm.VehPic.Image = Image.FromStream(picture);
-                    }
+                    else type = "Xe hơi";
 
                     if (purpose == "CHO THUÊ")
                     {
@@ -581,6 +648,18 @@ namespace Care_Management_and_Private_Parking
                             frm.ForRentPic.Image = Image.FromStream(picture);
                         }
 
+                        //thông tin xe
+                        frm.cbVehType.SelectedItem = type;
+                        frm.tbForRentVehLicense.Text = license;
+
+                        if (veh.Rows[0][3] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])veh.Rows[0][3];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.VehPic.Image = Image.FromStream(picture);
+                        }
+
                         //bên thuê
                         frm.tbRentName.Text = cname;
                         frm.tbRentJob.Text = "Khách hàng";
@@ -596,6 +675,8 @@ namespace Care_Management_and_Private_Parking
                             MemoryStream picture = new MemoryStream(pic);
                             frm.RentPic.Image = Image.FromStream(picture);
                         }
+
+
                     }
                     else
                     {
@@ -617,7 +698,19 @@ namespace Care_Management_and_Private_Parking
                             frm.RentPic.Image = Image.FromStream(picture);
                         }
 
-                        //bên thuê
+                        //thông tin xe
+                        frm.cbVehType.SelectedItem = type;
+                        frm.tbForRentVehLicense.Text = license;
+
+                        if (veh.Rows[0][3] != DBNull.Value)
+                        {
+                            byte[] pic;
+                            pic = (byte[])veh.Rows[0][3];
+                            MemoryStream picture = new MemoryStream(pic);
+                            frm.VehPic.Image = Image.FromStream(picture);
+                        }
+
+                        //bên cho thuê
                         frm.tbForRentName.Text = cname;
                         frm.tbForRentJob.Text = "Khách hàng";
                         frm.tbForRentPhone.Text = cphone;
@@ -672,11 +765,11 @@ namespace Care_Management_and_Private_Parking
 
         bool checkLate(string contid, DateTime left)
         {
-            DataTable tab = ContractDAL.Instance.getContractInfo(contid);
+            DataTable tab = ContractDAL.Instance.getContractInfo("cont" + contid);
 
             DateTime register = Convert.ToDateTime(tab.Rows[0][5]);
             int value = Convert.ToInt32(tab.Rows[0][6]);
-            string timeformat = tab.Rows[0][6].ToString();
+            string timeformat = tab.Rows[0][7].ToString();
 
             DateTime leave;                                                         //thời gian dự kiến kết thúc hợp đồng
 

@@ -220,10 +220,10 @@
     <Compile Include="2. MainForm\Contract\BreachOfContract.Designer.cs">
       <DependentUpon>BreachOfContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerAndVehicleList.cs">
+    <Compile Include="2. MainForm\Parking\CustomerAndVehicleList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerAndVehicleList.Designer.cs">
+    <Compile Include="2. MainForm\Parking\CustomerAndVehicleList.Designer.cs">
       <DependentUpon>CustomerAndVehicleList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -356,7 +356,7 @@
     <EmbeddedResource Include="2. MainForm\TimeKeeping\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerAndVehicleList.resx">
+    <EmbeddedResource Include="2. MainForm\Parking\CustomerAndVehicleList.resx">
       <DependentUpon>CustomerAndVehicleList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

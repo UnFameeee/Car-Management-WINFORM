@@ -321,6 +321,7 @@ namespace Care_Management_and_Private_Parking
             this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CustomerPic.TabIndex = 70;
             this.CustomerPic.TabStop = false;
+            this.CustomerPic.Click += new System.EventHandler(this.CustomerPic_Click);
             // 
             // label16
             // 
@@ -588,6 +589,7 @@ namespace Care_Management_and_Private_Parking
             this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.VehiclePic.TabIndex = 68;
             this.VehiclePic.TabStop = false;
+            this.VehiclePic.Click += new System.EventHandler(this.VehiclePic_Click);
             // 
             // btnEditVeh
             // 

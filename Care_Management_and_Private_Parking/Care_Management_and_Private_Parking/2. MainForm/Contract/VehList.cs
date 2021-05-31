@@ -24,7 +24,7 @@ namespace Care_Management_and_Private_Parking
         private void VehList_Load(object sender, EventArgs e)
         {
             dgvData.RowTemplate.Height = 100;
-            SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + type + "' and CusID is null");
+            SqlCommand com = new SqlCommand("select VehID, VehType, LicensePlate, Picture from VEHICLE where VehType = '" + type + "' and VehID LIKE '%veh%'");
             dgvData.DataSource = ParkingLotDAL.Instance.getDataWithPurpose(com);
 
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();

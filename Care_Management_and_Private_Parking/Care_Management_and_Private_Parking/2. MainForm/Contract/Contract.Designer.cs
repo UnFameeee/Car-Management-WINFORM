@@ -310,7 +310,7 @@ namespace Care_Management_and_Private_Parking
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(559, 671);
+            this.label35.Location = new System.Drawing.Point(561, 675);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(31, 15);
             this.label35.TabIndex = 142;
@@ -432,7 +432,7 @@ namespace Care_Management_and_Private_Parking
             "8",
             "9",
             "10"});
-            this.cbboxFee.Location = new System.Drawing.Point(443, 666);
+            this.cbboxFee.Location = new System.Drawing.Point(443, 668);
             this.cbboxFee.Name = "cbboxFee";
             this.cbboxFee.Size = new System.Drawing.Size(104, 25);
             this.cbboxFee.TabIndex = 137;
