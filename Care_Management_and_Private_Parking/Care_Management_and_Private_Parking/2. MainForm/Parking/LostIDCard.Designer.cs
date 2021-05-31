@@ -34,9 +34,12 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnVerify = new System.Windows.Forms.Button();
             this.pnlCus = new System.Windows.Forms.Panel();
+            this.VehiclePic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.CustomerPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbVehType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbLicense = new System.Windows.Forms.TextBox();
@@ -53,16 +56,13 @@ namespace Care_Management_and_Private_Parking
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.cbVehType = new System.Windows.Forms.ComboBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.CustomerPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.VehiclePic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnCalendar.SuspendLayout();
             this.pnlCus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).BeginInit();
             this.SuspendLayout();
             // 
             // pnCalendar
@@ -109,6 +109,30 @@ namespace Care_Management_and_Private_Parking
             this.pnlCus.Size = new System.Drawing.Size(463, 411);
             this.pnlCus.TabIndex = 72;
             // 
+            // VehiclePic
+            // 
+            this.VehiclePic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.VehiclePic.Location = new System.Drawing.Point(304, 258);
+            this.VehiclePic.Name = "VehiclePic";
+            this.VehiclePic.ShadowDecoration.Parent = this.VehiclePic;
+            this.VehiclePic.Size = new System.Drawing.Size(150, 150);
+            this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.VehiclePic.TabIndex = 73;
+            this.VehiclePic.TabStop = false;
+            this.VehiclePic.DoubleClick += new System.EventHandler(this.VehiclePic_DoubleClick_1);
+            // 
+            // CustomerPic
+            // 
+            this.CustomerPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.CustomerPic.Location = new System.Drawing.Point(304, 43);
+            this.CustomerPic.Name = "CustomerPic";
+            this.CustomerPic.ShadowDecoration.Parent = this.CustomerPic;
+            this.CustomerPic.Size = new System.Drawing.Size(150, 150);
+            this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CustomerPic.TabIndex = 72;
+            this.CustomerPic.TabStop = false;
+            this.CustomerPic.DoubleClick += new System.EventHandler(this.CustomerPic_DoubleClick_1);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -142,6 +166,21 @@ namespace Care_Management_and_Private_Parking
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(288, 79);
             this.panel1.TabIndex = 67;
+            // 
+            // cbVehType
+            // 
+            this.cbVehType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.cbVehType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehType.ForeColor = System.Drawing.Color.White;
+            this.cbVehType.FormattingEnabled = true;
+            this.cbVehType.Items.AddRange(new object[] {
+            "bicycle",
+            "bike",
+            "car"});
+            this.cbVehType.Location = new System.Drawing.Point(112, 11);
+            this.cbVehType.Name = "cbVehType";
+            this.cbVehType.Size = new System.Drawing.Size(162, 24);
+            this.cbVehType.TabIndex = 36;
             // 
             // label3
             // 
@@ -341,46 +380,9 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton2.TabIndex = 41;
             this.guna2GradientButton2.Text = "VERIFY VEHICLE";
             // 
-            // cbVehType
-            // 
-            this.cbVehType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.cbVehType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbVehType.ForeColor = System.Drawing.Color.White;
-            this.cbVehType.FormattingEnabled = true;
-            this.cbVehType.Items.AddRange(new object[] {
-            "bicycle",
-            "bike",
-            "car"});
-            this.cbVehType.Location = new System.Drawing.Point(112, 11);
-            this.cbVehType.Name = "cbVehType";
-            this.cbVehType.Size = new System.Drawing.Size(162, 24);
-            this.cbVehType.TabIndex = 36;
-            // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.TargetControl = this;
-            // 
-            // CustomerPic
-            // 
-            this.CustomerPic.Location = new System.Drawing.Point(304, 43);
-            this.CustomerPic.Name = "CustomerPic";
-            this.CustomerPic.ShadowDecoration.Parent = this.CustomerPic;
-            this.CustomerPic.Size = new System.Drawing.Size(150, 150);
-            this.CustomerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CustomerPic.TabIndex = 72;
-            this.CustomerPic.TabStop = false;
-            this.CustomerPic.DoubleClick += new System.EventHandler(this.CustomerPic_DoubleClick_1);
-            // 
-            // VehiclePic
-            // 
-            this.VehiclePic.Location = new System.Drawing.Point(304, 258);
-            this.VehiclePic.Name = "VehiclePic";
-            this.VehiclePic.ShadowDecoration.Parent = this.VehiclePic;
-            this.VehiclePic.Size = new System.Drawing.Size(150, 150);
-            this.VehiclePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.VehiclePic.TabIndex = 73;
-            this.VehiclePic.TabStop = false;
-            this.VehiclePic.DoubleClick += new System.EventHandler(this.VehiclePic_DoubleClick_1);
             // 
             // LostIDCard
             // 
@@ -397,12 +399,12 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.ResumeLayout(false);
             this.pnlCus.ResumeLayout(false);
             this.pnlCus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VehiclePic)).EndInit();
             this.ResumeLayout(false);
 
         }
