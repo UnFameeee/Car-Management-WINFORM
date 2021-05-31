@@ -382,13 +382,13 @@ namespace Care_Management_and_Private_Parking
             }
         }
 
-        private void btnInvoice_Click(object sender, EventArgs e)
+        private void btnService_Click(object sender, EventArgs e)
         {
             if (type != null || id != null)
             {
                 if (ParkingLotDAL.Instance.checkSlot((type + id), type) == true)
                 {
-                    Invoice frm = new Invoice();
+                    Service frm = new Service();
                     frm.VehID = (type + id);
                     frm.CusID = customer;
                     frm.ShowDialog();
@@ -439,7 +439,7 @@ namespace Care_Management_and_Private_Parking
             }
         }
         #endregion
-
+        
         private void btnLostIDCard_Click(object sender, EventArgs e)
         {
             LostIDCard frm = new LostIDCard();

@@ -166,15 +166,4 @@ create table CONTRACTPROFIT(
 	YearCPF int,
 	MoneyC int
 )
-
---Tạo bảng doanh thu
-CREATE TABLE PROFIT
-(
-	DayPF int,
-	MonthPF int,
-	YearPF int,
-	MoneyFromParking int,
-	MoneyFromContract int,
-	MoneyTotal int
-)
 GO

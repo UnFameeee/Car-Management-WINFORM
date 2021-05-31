@@ -1,7 +1,7 @@
 ﻿
 namespace Care_Management_and_Private_Parking
 {
-    partial class Invoice
+    partial class Service
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Care_Management_and_Private_Parking
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Service));
             this.pnData = new Guna.UI2.WinForms.Guna2Panel();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.lbService = new System.Windows.Forms.Label();
@@ -134,9 +134,9 @@ namespace Care_Management_and_Private_Parking
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(156, 38);
             this.btnLogin.TabIndex = 39;
-            this.btnLogin.Text = "INVOICE";
+            this.btnLogin.Text = "SERVICE";
             // 
-            // Invoice
+            // Service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,9 +144,9 @@ namespace Care_Management_and_Private_Parking
             this.Controls.Add(this.pnData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Invoice";
+            this.Name = "Service";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Invoice";
+            this.Text = "Service";
             this.Load += new System.EventHandler(this.Invoice_Load);
             this.pnData.ResumeLayout(false);
             this.pnData.PerformLayout();

@@ -384,6 +384,7 @@ namespace Care_Management_and_Private_Parking
             this.radiobtnWash.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radiobtnWash.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.radiobtnWash.UncheckedState.Parent = this.radiobtnWash;
+            this.radiobtnWash.Click += new System.EventHandler(this.radiobtnWash_Click);
             // 
             // panel4
             // 
@@ -411,6 +412,7 @@ namespace Care_Management_and_Private_Parking
             this.radiobtnRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radiobtnRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.radiobtnRepair.UncheckedState.Parent = this.radiobtnRepair;
+            this.radiobtnRepair.Click += new System.EventHandler(this.radiobtnRepair_Click);
             // 
             // label12
             // 
@@ -444,6 +446,7 @@ namespace Care_Management_and_Private_Parking
             this.numerudValue.TabIndex = 73;
             this.numerudValue.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.numerudValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numerudValue_KeyPress);
+            this.numerudValue.Validated += new System.EventHandler(this.numerudValue_Validated);
             // 
             // cbboxTimeFormat
             // 

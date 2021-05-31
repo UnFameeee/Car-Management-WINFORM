@@ -86,9 +86,9 @@ namespace Care_Management_and_Private_Parking
 
         void formatTime()
         {
-            cbboxTimeFormat.DataSource = InvoiceDAL.Instance.getAllInvoice();
+            cbboxTimeFormat.DataSource = InvoiceDAL.Instance.getAllTimeFormat();
             cbboxTimeFormat.DisplayMember = "Description";
-            cbboxTimeFormat.ValueMember = "InvoiceID";
+            cbboxTimeFormat.ValueMember = "ID";
             cbboxTimeFormat.SelectedItem = null;
         }
         #endregion
@@ -166,6 +166,14 @@ namespace Care_Management_and_Private_Parking
             btnEditCus.Visible = false;
         }
 
+        public bool check()                         //kiểm tra xem có chọn service nào ko
+        {
+            if ((numerudValue.Text == "0" || cbboxTimeFormat.SelectedItem == null)
+                && radiobtnRepair.Checked == false && radiobtnWash.Checked == false)
+                return false;
+            else return true;
+        }
+
         bool verifVeh()
         {
             if (tbLicense.Text.Trim() == "" || VehiclePic.Image == null || cbboxTimeFormat.SelectedItem == null || numerudValue.Value == 0) 
@@ -181,6 +189,7 @@ namespace Care_Management_and_Private_Parking
 
             string CusID = tbCustomerID.Text;
             int value = Convert.ToInt32(numerudValue.Value);
+            string timeformat = "null";
 
             string service = "";
             if (radiobtnRepair.Checked == true && radiobtnWash.Checked == true)
@@ -204,26 +213,38 @@ namespace Care_Management_and_Private_Parking
                 {
                     if(ParkingLotDAL.Instance.checkLicense(VehID, License, "edit"))
                     {
-                        string Invoice = cbboxTimeFormat.SelectedValue.ToString();
-                        if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
+                        if (check())
                         {
-                            ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
-                            MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
-                            this.DialogResult = DialogResult.OK;
+                          if (cbboxTimeFormat.SelectedItem != null)
+                              timeformat = cbboxTimeFormat.SelectedValue.ToString();
+                          else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
+                          {
+                              value = 0;
+                          }
+                          string Invoice = cbboxTimeFormat.SelectedValue.ToString();
+                          if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
+                          {
+                              ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
+                              MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
+                              this.DialogResult = DialogResult.OK;
+                          }
+                          else
+                          {
+                              MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          }
                         }
                         else
                         {
-                            MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          MessageBox.Show("Please choose at least one service!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                    }
                     else
                     {
-                        MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                      MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please fill all the information!!", "Edit Vehicle");
+                    MessageBox.Show("Please fill all the information!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -277,6 +298,40 @@ namespace Care_Management_and_Private_Parking
             {
                 e.Handled = true;
             }
+        }        
+
+        static int i = 1;
+        private void radiobtnRepair_Click(object sender, EventArgs e)
+        {
+            i++;
+            if (i % 2 == 0)
+            {
+                radiobtnRepair.Checked = true;
+            }
+            else
+            {
+                radiobtnRepair.Checked = false;
+            }
+        }
+
+        static int j = 1;
+        private void radiobtnWash_Click(object sender, EventArgs e)
+        {
+            j++;
+            if (j % 2 == 0)
+            {
+                radiobtnWash.Checked = true;
+            }
+            else
+            {
+                radiobtnWash.Checked = false;
+            }
+        }
+
+        private void numerudValue_Validated(object sender, EventArgs e)
+        {
+            if (numerudValue.Text == "")
+                numerudValue.Text = "0";
         }
         #endregion
     }

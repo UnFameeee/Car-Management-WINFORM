@@ -196,11 +196,11 @@
     <Compile Include="2. MainForm\Contract\ContractForm.Designer.cs">
       <DependentUpon>ContractForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="2. MainForm\Parking\Invoice.cs">
+    <Compile Include="2. MainForm\Parking\Service.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2. MainForm\Parking\Invoice.Designer.cs">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <Compile Include="2. MainForm\Parking\Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
     </Compile>
     <Compile Include="2. MainForm\Parking\LostIDCard.cs">
       <SubType>Form</SubType>
@@ -332,8 +332,8 @@
     <EmbeddedResource Include="2. MainForm\Manage\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2. MainForm\Parking\Invoice.resx">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="2. MainForm\Parking\Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2. MainForm\Parking\LostIDCard.resx">
       <DependentUpon>LostIDCard.cs</DependentUpon>

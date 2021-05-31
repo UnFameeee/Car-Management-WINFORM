@@ -264,16 +264,16 @@ namespace DAL
         #endregion
 
         #region Thêm, xóa, sửa xe và khách đã nhập thành công vào bãi gửi xe
-        public void addCarAndCusToParklot(int IDParkCard, string CusID, string VehID, DateTime dayin, int value, string invoice, string service)
+        public void addCarAndCusToParklot(int IDParkCard, string CusID, string VehID, DateTime dayin, int value, string timeformat, string service)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO PARKING (IDParkcard, CusID, VehID, DateRegister, TimeValue, InvoiceID, Service) VALUES " +
-                "(@IDParkcard, @CusID, @VehID, @Dayin, @value, @Invoice, @Service)", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO PARKING (IDParkcard, CusID, VehID, DateRegister, TimeValue, TimeFormatID, Service) VALUES " +
+                "(@IDParkcard, @CusID, @VehID, @Dayin, @value, @timeformat, @Service)", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@IDParkcard", SqlDbType.Int).Value = IDParkCard;
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
             cmd.Parameters.Add("@value", SqlDbType.Int).Value = value;
-            cmd.Parameters.Add("@Invoice", SqlDbType.NVarChar).Value = invoice;
+            cmd.Parameters.Add("@timeformat", SqlDbType.NVarChar).Value = timeformat;
             cmd.Parameters.Add("@Service", SqlDbType.NVarChar).Value = service;
 
             DataProvider.Instance.openConnection();
@@ -289,14 +289,14 @@ namespace DAL
             }
         }
 
-        public void editCarAndCusToParklot(string CusID, string VehID, DateTime dayin, int value, string invoice, string service)
+        public void editCarAndCusToParklot(string CusID, string VehID, DateTime dayin, int value, string timeformat, string service)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE PARKING SET DateRegister = @Dayin, TimeValue = @value, InvoiceID = @Invoice, Service = @Service WHERE CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("UPDATE PARKING SET DateRegister = @Dayin, TimeValue = @value, TimeFormatID = @timeformat, Service = @Service WHERE CusID = @CusID and VehID = @VehID", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@CusID", SqlDbType.NVarChar).Value = CusID;
             cmd.Parameters.Add("@VehID", SqlDbType.NVarChar).Value = VehID;
             cmd.Parameters.Add("@Dayin", SqlDbType.DateTime).Value = dayin;
             cmd.Parameters.Add("@value", SqlDbType.Int).Value = value;
-            cmd.Parameters.Add("@Invoice", SqlDbType.NVarChar).Value = invoice;
+            cmd.Parameters.Add("@timeformat", SqlDbType.NVarChar).Value = timeformat;
             cmd.Parameters.Add("@Service", SqlDbType.NVarChar).Value = service;
 
             DataProvider.Instance.openConnection();
