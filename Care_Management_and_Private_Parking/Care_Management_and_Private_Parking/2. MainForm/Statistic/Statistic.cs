@@ -35,24 +35,14 @@ namespace Care_Management_and_Private_Parking
         private void tick()
         {
             //Chỉnh Checked
-            btnCustomerStatistic.Checked = false;
             btnSalaryEmp.Checked = false;
             btnRevenue.Checked = false;
             //Chỉnh Cursor
-            btnCustomerStatistic.Cursor = cur1;
             btnSalaryEmp.Cursor = cur1;
             btnRevenue.Cursor = cur1;
             //Tắt tất cả các form
             frmSalaryEmpStatistic.Hide();
             frmRevenue.Hide();
-        }
-
-        private void btnCustomerStatistic_Click(object sender, EventArgs e)
-        {
-            tick();
-            btnCustomerStatistic.Checked = true;
-            btnCustomerStatistic.Cursor = cur2;
-
         }
 
         private void btnSalaryEmp_Click(object sender, EventArgs e)

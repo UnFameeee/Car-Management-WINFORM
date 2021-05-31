@@ -33,7 +33,6 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRevenue = new Guna.UI2.WinForms.Guna2Button();
             this.btnSalaryEmp = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCustomerStatistic = new Guna.UI2.WinForms.Guna2Button();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +50,6 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu.BorderThickness = 1;
             this.pnMenu.Controls.Add(this.btnRevenue);
             this.pnMenu.Controls.Add(this.btnSalaryEmp);
-            this.pnMenu.Controls.Add(this.btnCustomerStatistic);
             this.pnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnMenu.Location = new System.Drawing.Point(13, 116);
             this.pnMenu.Name = "pnMenu";
@@ -72,7 +70,7 @@ namespace Care_Management_and_Private_Parking
             this.btnRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnRevenue.HoverState.Parent = this.btnRevenue;
             this.btnRevenue.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRevenue.Location = new System.Drawing.Point(9, 322);
+            this.btnRevenue.Location = new System.Drawing.Point(7, 302);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.ShadowDecoration.Parent = this.btnRevenue;
             this.btnRevenue.Size = new System.Drawing.Size(113, 43);
@@ -94,7 +92,7 @@ namespace Care_Management_and_Private_Parking
             this.btnSalaryEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnSalaryEmp.HoverState.Parent = this.btnSalaryEmp;
             this.btnSalaryEmp.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSalaryEmp.Location = new System.Drawing.Point(9, 233);
+            this.btnSalaryEmp.Location = new System.Drawing.Point(7, 158);
             this.btnSalaryEmp.Name = "btnSalaryEmp";
             this.btnSalaryEmp.ShadowDecoration.Parent = this.btnSalaryEmp;
             this.btnSalaryEmp.Size = new System.Drawing.Size(113, 43);
@@ -102,28 +100,6 @@ namespace Care_Management_and_Private_Parking
             this.btnSalaryEmp.Text = "Salary Employee";
             this.btnSalaryEmp.UseTransparentBackground = true;
             this.btnSalaryEmp.Click += new System.EventHandler(this.btnSalaryEmp_Click);
-            // 
-            // btnCustomerStatistic
-            // 
-            this.btnCustomerStatistic.BackColor = System.Drawing.Color.Transparent;
-            this.btnCustomerStatistic.BorderRadius = 22;
-            this.btnCustomerStatistic.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnCustomerStatistic.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnCustomerStatistic.CheckedState.Parent = this.btnCustomerStatistic;
-            this.btnCustomerStatistic.CustomImages.Parent = this.btnCustomerStatistic;
-            this.btnCustomerStatistic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnCustomerStatistic.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerStatistic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnCustomerStatistic.HoverState.Parent = this.btnCustomerStatistic;
-            this.btnCustomerStatistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomerStatistic.Location = new System.Drawing.Point(9, 143);
-            this.btnCustomerStatistic.Name = "btnCustomerStatistic";
-            this.btnCustomerStatistic.ShadowDecoration.Parent = this.btnCustomerStatistic;
-            this.btnCustomerStatistic.Size = new System.Drawing.Size(113, 43);
-            this.btnCustomerStatistic.TabIndex = 5;
-            this.btnCustomerStatistic.Text = "Customer Statistic";
-            this.btnCustomerStatistic.UseTransparentBackground = true;
-            this.btnCustomerStatistic.Click += new System.EventHandler(this.btnCustomerStatistic_Click);
             // 
             // Statistic
             // 
@@ -148,6 +124,5 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2Panel pnMenu;
         private Guna.UI2.WinForms.Guna2Button btnRevenue;
         private Guna.UI2.WinForms.Guna2Button btnSalaryEmp;
-        private Guna.UI2.WinForms.Guna2Button btnCustomerStatistic;
     }
 }

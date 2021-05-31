@@ -55,6 +55,28 @@ namespace DAL
         }
         #endregion
 
+        #region Income
+        public DataTable loadTableIncome1(int year)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT MonthCPF, YearCPF, SUM(MoneyC) as Salary FROM CONTRACTPROFIT " +
+                " WHERE YearCPF = @Year GROUP BY MonthCPF, YearCPF ", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@Year", SqlDbType.Int).Value = year;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable loadTableIncome2(int year)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT MonthPPF, YearPPF, SUM(MoneyP) as Salary FROM PARKINGPROFIT " +
+                " WHERE YearPPF = @Year GROUP BY MonthPPF, YearPPF", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@Year", SqlDbType.Int).Value = year;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        #endregion
 
     }
 }

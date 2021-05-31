@@ -82,7 +82,7 @@ namespace DAL
         //Ktra tài khoản đó xem có tồn tại hay là không
         public bool checkAccount(string username, string EmpID, string position)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.AccountID = EMPLOYEE.AccountID and" +
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ACCOUNT, EMPLOYEE WHERE ACCOUNT.Username = EMPLOYEE.AccUsername and" +
                 " Username = @User AND EmpID = @EmpID AND PositionID = @PId", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             cmd.Parameters.Add("@EmpID", SqlDbType.VarChar).Value = EmpID;

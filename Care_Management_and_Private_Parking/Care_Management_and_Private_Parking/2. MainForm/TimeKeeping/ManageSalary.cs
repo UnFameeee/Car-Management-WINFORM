@@ -46,22 +46,21 @@ namespace Care_Management_and_Private_Parking
 
         private void loaddgvMAIN()
         {
-            tableMAIN = ManageSalaryDAL.Instance.ShowSalary();
+            tableMAIN = ManageSalaryDAL.Instance.ShowSalaryOfEmp(DateTime.Now.Year);
             tableMAIN.Columns["EmpID"].ColumnName = "Mã Nhân Viên";
-            tableMAIN.Columns["MonthWork"].ColumnName = "Tháng";
             tableMAIN.Columns["YearWork"].ColumnName = "Năm";
-            tableMAIN.Columns["NumberofHourWork"].ColumnName = "Số giờ làm";
-            tableMAIN.Columns["SalaryEmployee"].ColumnName = "Lương";
+            tableMAIN.Columns["WorkHour"].ColumnName = "Số giờ làm";
+            tableMAIN.Columns["Salary"].ColumnName = "Lương";
             dgv2.DataSource = tableMAIN;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if (cbMonth.SelectedIndex != -1 && cbYear.SelectedIndex != -1)
+            if (cbMonth.SelectedItem != null || cbYear.SelectedItem != null)
             {
-                if (cbMonth.SelectedIndex != -1)
+                if (cbMonth.SelectedItem == null)
                     dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByYear(Convert.ToInt32(cbYear.SelectedItem));
-                else if (cbYear.SelectedIndex != -1)
+                else if (cbYear.SelectedItem == null)
                     dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByMonth(Convert.ToInt32(cbMonth.SelectedItem));
                 else
                     dgv.DataSource = ManageSalaryDAL.Instance.SearchSalaryByMonthYear(Convert.ToInt32(cbMonth.SelectedItem), Convert.ToInt32(cbYear.SelectedItem));
@@ -226,7 +225,7 @@ namespace Care_Management_and_Private_Parking
                 {
                     for (r = 0; r <= RowCount - 1; r++)
                     {
-                        if(c == 3 || c == 4)
+                        if(c == 2 || c == 3)
                         {
                             DGV.Rows[r].Cells[c].Value = Convert.ToInt32(DGV.Rows[r].Cells[c].Value);
                             DataArray[r, c] = DGV.Rows[r].Cells[c].Value;
@@ -327,11 +326,14 @@ namespace Care_Management_and_Private_Parking
         #region in file PDF
         private void btnSavePDF_Click(object sender, EventArgs e)
         {
-            if (dgv.Rows.Count > 0)
+            dgv2.DataSource = ManageSalaryDAL.Instance.ShowSalaryOfEmp(DateTime.Now.Year);
+
+            if (dgv2.Rows.Count > 0)
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "Output.pdf";
+                sfd.FileName = "SalaryEmployee.pdf";
+
                 bool fileError = false;
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -351,23 +353,21 @@ namespace Care_Management_and_Private_Parking
                     {
                         try
                         {
-                            PdfPTable pdfTable = new PdfPTable(dgv.Columns.Count);
+                            PdfPTable pdfTable = new PdfPTable(dgv2.Columns.Count);
                             pdfTable.DefaultCell.Padding = 3;
                             pdfTable.WidthPercentage = 100;
                             pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                            foreach (DataGridViewColumn column in dgv.Columns)
+                            foreach (DataGridViewColumn column in dgv2.Columns)
                             {
                                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
                                 pdfTable.AddCell(cell);
                             }
-                            foreach (DataGridViewRow row in dgv.Rows)
+                            foreach (DataGridViewRow row in dgv2.Rows)
                             {
                                 string EmpID = row.Cells[0].Value.ToString();
                                 pdfTable.AddCell(EmpID);
-                                string MonthWork = row.Cells[1].Value.ToString();
-                                pdfTable.AddCell(MonthWork);
-                                string YearWork = row.Cells[2].Value.ToString();
+                                string YearWork = row.Cells[1].Value.ToString();
                                 pdfTable.AddCell(YearWork);
                                 //string dateNonTime = "";
                                 //for (int i = 0; ; ++i)
@@ -376,10 +376,11 @@ namespace Care_Management_and_Private_Parking
                                 //        break;
                                 //    dateNonTime += Bdate[i];
                                 //}
-                                string NumberofHourWork = row.Cells[3].Value.ToString();
-                                pdfTable.AddCell(NumberofHourWork);
-                                string SalaryEmployee = row.Cells[4].Value.ToString();
+                                string SalaryEmployee = Convert.ToInt32(row.Cells[2].Value).ToString();
                                 pdfTable.AddCell(SalaryEmployee);
+                                string NumberofHourWork = Convert.ToInt32(row.Cells[3].Value).ToString();
+                                pdfTable.AddCell(NumberofHourWork);
+                                
                                 //byte[] imageByte = (byte[])row.Cells[7].Value;
                                 //iTextSharp.text.Image Image = iTextSharp.text.Image.GetInstance(imageByte);
                                 //pdfTable.AddCell(Image);
@@ -470,7 +471,7 @@ namespace Care_Management_and_Private_Parking
                     for (int j = 0; j < DGV.Rows.Count; j++)
                     {
                         // creating rows :
-                        if (i == 3 || i == 4)
+                        if (i == 2 || i == 3)
                         {
                             DGV.Rows[j].Cells[i].Value = Convert.ToInt32(DGV.Rows[j].Cells[i].Value);
                             oSheet.Cells[j + 2, i + 2] = DGV.Rows[j].Cells[i].Value;
@@ -492,7 +493,7 @@ namespace Care_Management_and_Private_Parking
                 rng1.Interior.Color = System.Drawing.Color.Green;
 
                 //row2
-                Range rng2 = oSheet.get_Range("B4", Range_Letter + Range_Row);
+                Range rng2 = oSheet.get_Range("B2", Range_Letter + Range_Row);
                 rng2.WrapText = false;
                 rng2.Font.Size = 12;
                 rng2.Cells.Borders.LineStyle = XlLineStyle.xlContinuous;

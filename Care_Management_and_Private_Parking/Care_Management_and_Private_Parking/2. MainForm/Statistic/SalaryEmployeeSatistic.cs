@@ -109,7 +109,7 @@ namespace Care_Management_and_Private_Parking
         {
             int male = StatisticDAL.Instance.takeMale();
             int female = StatisticDAL.Instance.takeFemale();
-
+            pieChart.Series["Series1"].IsValueShownAsLabel = true;
             pieChart.Series["Series1"].Points.AddXY("Male", male);
             pieChart.Series["Series1"].Points.AddXY("Female", female);
         }

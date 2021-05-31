@@ -236,8 +236,9 @@ namespace Care_Management_and_Private_Parking
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             series3.IsValueShownAsLabel = true;
+            series3.LabelForeColor = System.Drawing.Color.White;
             series3.Legend = "Legend1";
-            series3.LegendText = "Salary";
+            series3.LegendText = "Income";
             series3.MarkerBorderWidth = 0;
             series3.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             series3.MarkerSize = 0;
@@ -248,13 +249,14 @@ namespace Care_Management_and_Private_Parking
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(87)))), ((int)(((byte)(169)))));
             series4.IsValueShownAsLabel = true;
+            series4.LabelForeColor = System.Drawing.Color.White;
             series4.Legend = "Legend1";
             series4.Name = "Outcome";
             this.chartWorkHour.Series.Add(series3);
             this.chartWorkHour.Series.Add(series4);
             this.chartWorkHour.Size = new System.Drawing.Size(866, 200);
             this.chartWorkHour.TabIndex = 2;
-            this.chartWorkHour.Text = "chart1";
+            this.chartWorkHour.Text = "chart2";
             title2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             title2.Name = "Title1";
@@ -273,6 +275,7 @@ namespace Care_Management_and_Private_Parking
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Revenue";
             this.Text = "Revenue";
+            this.Load += new System.EventHandler(this.Revenue_Load);
             this.guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.guna2Panel2.ResumeLayout(false);

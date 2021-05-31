@@ -35,10 +35,21 @@ namespace DAL
             return table;
         }
 
+        public DataTable ShowSalaryOfEmp(int Year)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT EmpID, YearWork, SUM(SalaryEmployee) as Salary, SUM(NumberofHourWork) as WorkHour FROM SALARY " +
+                "WHERE YearWork = @Year  GROUP BY EmpID, YearWork ", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@Year", SqlDbType.Int).Value = Year;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
         #region thanh search
         public DataTable SearchSalaryByYear(int year)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM SALARY WHERE YearMonth = @year", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SALARY WHERE YearWork = @year", DataProvider.Instance.getConnection);
             cmd.Parameters.Add("@year", SqlDbType.Int).Value = year;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -54,9 +65,11 @@ namespace DAL
             adapter.Fill(table);
             return table;
         }
-        public DataTable SearchSalaryByMonthYear(int year, int month)
+        public DataTable SearchSalaryByMonthYear(int month, int year)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM SALARY WHERE MonthWork = @month and YearMonth = @year", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SALARY WHERE MonthWork = @month and YearWork = @year", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            cmd.Parameters.Add("@year", SqlDbType.Int).Value = year;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);

@@ -67,7 +67,7 @@ namespace Care_Management_and_Private_Parking
 
         private void loadFormWithJobID()
         {
-            if(Global.UserID.GlobalJobID != "1")
+            if(Global.UserID.GlobalJobID == "2")
             {
                 //nút manage job
                 btnManageJob.Enabled = false;
@@ -81,6 +81,19 @@ namespace Care_Management_and_Private_Parking
                 pnlUser.Location = new Point(7, 309+66);
                 pnlTimeKeeping.Location = new Point(7, 385+66);
                 pnlManage.Location = new Point(7, 460 + 76);
+            }
+            else if(Global.UserID.GlobalJobID == "3")
+            {
+                //nút statistic
+                btnStatistic.Enabled = false;
+                btnStatistic.Visible = false;
+
+                //Căn lại các nút
+                pnlHome.Location = new Point(7, 234 + 66);
+                pnlUser.Location = new Point(7, 309 + 66);
+                pnlTimeKeeping.Location = new Point(7, 385 + 66);
+                pnlManage.Location = new Point(7, 460 + 66);
+                pnlStatistic.Location = new Point(0, 0);
             }
         }
 
