@@ -22,6 +22,26 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
             loadForm();
+            loadFormWithJobID();
+        }
+
+        private void loadFormWithJobID()
+        {
+            if (Global.UserID.GlobalJobID != "1")
+            {
+                //nút manage job
+                btnStaffList.Enabled = false;
+                btnStaffList.Visible = false;
+                //nút statistic
+                btnAccountList.Enabled = false;
+                btnAccountList.Visible = false;
+
+                //Căn lại các nút
+                btnStaffList.Location = new Point(0, 0);
+                btnAccountList.Location = new Point(0, 0);
+                btnContract.Location = new Point(9, 188);
+                btnContractList.Location = new Point(9, 276);
+            }
         }
 
         void loadForm()

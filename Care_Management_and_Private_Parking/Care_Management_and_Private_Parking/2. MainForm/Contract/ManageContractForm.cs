@@ -171,21 +171,21 @@ namespace Care_Management_and_Private_Parking
             
 
             else if (cbCusID.SelectedItem == null && cbVehID.SelectedItem == null)
-                dgv.DataSource = ContractDAL.Instance.ShowEmpIDContract((cbEmpID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowEmpIDContract((cbEmpID.SelectedValue).ToString());
             else if (cbCusID.SelectedItem == null && cbEmpID.SelectedItem == null)
-                dgv.DataSource = ContractDAL.Instance.ShowVehIDContract((cbVehID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowVehIDContract((cbVehID.SelectedValue).ToString());
             else if (cbVehID.SelectedItem == null && cbEmpID.SelectedItem == null)
-                dgv.DataSource = ContractDAL.Instance.ShowCusIDContract((cbCusID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowCusIDContract((cbCusID.SelectedValue).ToString());
 
             else if (cbCusID.SelectedItem == null)
-                dgv.DataSource = ContractDAL.Instance.ShowVehIDEmpIDContract((cbVehID.SelectedItem).ToString(), (cbEmpID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowVehIDEmpIDContract((cbVehID.SelectedValue).ToString(), (cbEmpID.SelectedValue).ToString());
             else if (cbEmpID.SelectedItem == null)
-                dgv.DataSource = ContractDAL.Instance.ShowCusIDVehIDContract((cbCusID.SelectedItem).ToString(), (cbVehID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowCusIDVehIDContract((cbCusID.SelectedValue).ToString(), (cbVehID.SelectedValue).ToString());
             else if (cbVehID.SelectedItem == null)
-                dgv.DataSource = ContractDAL.Instance.ShowEmpIDCusIDContract((cbEmpID.SelectedItem).ToString(), (cbCusID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowEmpIDCusIDContract((cbEmpID.SelectedValue).ToString(), (cbCusID.SelectedValue).ToString());
 
             else
-                dgv.DataSource = ContractDAL.Instance.ShowAllFindContract((cbEmpID.SelectedItem).ToString(), (cbVehID.SelectedItem).ToString(), (cbCusID.SelectedItem).ToString());
+                dgv.DataSource = ContractDAL.Instance.ShowAllFindContract((cbEmpID.SelectedValue).ToString(), (cbVehID.SelectedValue).ToString(), (cbCusID.SelectedValue).ToString());
         }
 
         #endregion

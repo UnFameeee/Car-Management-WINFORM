@@ -33,7 +33,7 @@ namespace Care_Management_and_Private_Parking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.pnInterface = new System.Windows.Forms.Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlStatistic = new System.Windows.Forms.Panel();
             this.btnStatistic = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -56,7 +56,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnInterface.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.pnlManage.SuspendLayout();
             this.pnlTimeKeeping.SuspendLayout();
@@ -72,7 +72,7 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnInterface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pnInterface.Controls.Add(this.btnLogout);
-            this.pnInterface.Controls.Add(this.panel1);
+            this.pnInterface.Controls.Add(this.pnlStatistic);
             this.pnInterface.Controls.Add(this.btnMinimize);
             this.pnInterface.Controls.Add(this.guna2PictureBox2);
             this.pnInterface.Controls.Add(this.btnExit);
@@ -108,13 +108,13 @@ namespace Care_Management_and_Private_Parking
             this.btnLogout.UseTransparentBackground = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panel1
+            // pnlStatistic
             // 
-            this.panel1.Controls.Add(this.btnStatistic);
-            this.panel1.Location = new System.Drawing.Point(7, 537);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 60);
-            this.panel1.TabIndex = 6;
+            this.pnlStatistic.Controls.Add(this.btnStatistic);
+            this.pnlStatistic.Location = new System.Drawing.Point(7, 537);
+            this.pnlStatistic.Name = "pnlStatistic";
+            this.pnlStatistic.Size = new System.Drawing.Size(162, 60);
+            this.pnlStatistic.TabIndex = 6;
             // 
             // btnStatistic
             // 
@@ -417,7 +417,7 @@ namespace Care_Management_and_Private_Parking
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageCarPark";
             this.pnInterface.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.pnlStatistic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.pnlManage.ResumeLayout(false);
             this.pnlTimeKeeping.ResumeLayout(false);
@@ -454,7 +454,7 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnMinimize;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlStatistic;
         private Guna.UI2.WinForms.Guna2Button btnStatistic;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.ToolTip toolTip1;
