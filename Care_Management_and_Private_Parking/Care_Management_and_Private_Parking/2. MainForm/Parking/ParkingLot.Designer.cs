@@ -31,7 +31,7 @@ namespace Care_Management_and_Private_Parking
         {
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnEditVehicle = new Guna.UI2.WinForms.Guna2Button();
-            this.btnInvoice = new Guna.UI2.WinForms.Guna2Button();
+            this.btnService = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -86,7 +86,7 @@ namespace Care_Management_and_Private_Parking
             this.guna2Panel3.BorderRadius = 22;
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.btnEditVehicle);
-            this.guna2Panel3.Controls.Add(this.btnInvoice);
+            this.guna2Panel3.Controls.Add(this.btnService);
             this.guna2Panel3.Controls.Add(this.btnDeleteVehicle);
             this.guna2Panel3.Controls.Add(this.btnAddVehicle);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
@@ -120,29 +120,29 @@ namespace Care_Management_and_Private_Parking
             this.btnEditVehicle.UseTransparentBackground = true;
             this.btnEditVehicle.Click += new System.EventHandler(this.btnEditVehicle_Click);
             // 
-            // btnInvoice
+            // btnService
             // 
-            this.btnInvoice.BackColor = System.Drawing.Color.Transparent;
-            this.btnInvoice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
-            this.btnInvoice.BorderRadius = 22;
-            this.btnInvoice.BorderThickness = 1;
-            this.btnInvoice.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnInvoice.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnInvoice.CheckedState.Parent = this.btnInvoice;
-            this.btnInvoice.CustomImages.Parent = this.btnInvoice;
-            this.btnInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.btnInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
-            this.btnInvoice.HoverState.Parent = this.btnInvoice;
-            this.btnInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnInvoice.Location = new System.Drawing.Point(7, 173);
-            this.btnInvoice.Name = "btnInvoice";
-            this.btnInvoice.ShadowDecoration.Parent = this.btnInvoice;
-            this.btnInvoice.Size = new System.Drawing.Size(137, 43);
-            this.btnInvoice.TabIndex = 6;
-            this.btnInvoice.Text = "Invoice";
-            this.btnInvoice.UseTransparentBackground = true;
-            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
+            this.btnService.BackColor = System.Drawing.Color.Transparent;
+            this.btnService.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.btnService.BorderRadius = 22;
+            this.btnService.BorderThickness = 1;
+            this.btnService.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnService.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnService.CheckedState.Parent = this.btnService;
+            this.btnService.CustomImages.Parent = this.btnService;
+            this.btnService.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(34)))), ((int)(((byte)(255)))));
+            this.btnService.HoverState.Parent = this.btnService;
+            this.btnService.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnService.Location = new System.Drawing.Point(7, 173);
+            this.btnService.Name = "btnService";
+            this.btnService.ShadowDecoration.Parent = this.btnService;
+            this.btnService.Size = new System.Drawing.Size(137, 43);
+            this.btnService.TabIndex = 6;
+            this.btnService.Text = "Service";
+            this.btnService.UseTransparentBackground = true;
+            this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
             // btnDeleteVehicle
             // 
@@ -712,7 +712,7 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Label lbVehicleID;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2Button btnInvoice;
+        private Guna.UI2.WinForms.Guna2Button btnService;
         private System.Windows.Forms.TextBox tbIDCard;
         private System.Windows.Forms.Button btnFind;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;

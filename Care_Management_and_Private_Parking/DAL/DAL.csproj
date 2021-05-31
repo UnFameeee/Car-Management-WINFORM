@@ -52,6 +52,7 @@
     <Compile Include="ManageSalaryDAL.cs" />
     <Compile Include="MyInfoDAL.cs" />
     <Compile Include="ParkingLotDAL.cs" />
+    <Compile Include="ProfitDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalLotDAL.cs" />
     <Compile Include="StatisticDAL.cs" />

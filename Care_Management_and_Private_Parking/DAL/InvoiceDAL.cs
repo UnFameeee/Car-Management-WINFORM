@@ -24,7 +24,8 @@ namespace DAL
             private set { InvoiceDAL.instance = value; }
         }
 
-        public DataTable getInvoice(SqlCommand command)
+        #region Lấy thông tin
+        public DataTable getData(SqlCommand command)
         {
             command.Connection = DataProvider.Instance.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -33,12 +34,16 @@ namespace DAL
             return table;
         }
 
-        public DataTable getAllInvoice()
+        public DataTable getAllTimeFormat()
         {
-            SqlCommand com = new SqlCommand("select * from INVOICE where InvoiceID != 'null'");
-            return getInvoice(com);
+            SqlCommand com = new SqlCommand("select * from TIMEFORMAT where ID != 'null'");
+            return getData(com);
         }
+        #endregion
 
+        #region Tiền thu nhập từ gửi xe, sửa xe, rửa xe
+        
+        //Tính tiền gửi xe
         public int MoneyHaveToPay(DateTime date1, DateTime date2, int index, string timeformat, string type, string service) //date2 bắt buộc phải là ngày sau date1
         {
             int x;                                                  //tiền gửi của mỗi loại xe (đơn vị là VNĐ)
@@ -48,33 +53,41 @@ namespace DAL
                 x = 5;
             else x = 20;
 
-
             int sv = 0;                                             //tiền rửa hoặc sửa (nếu có)
-            if (service == "Repairing and Washing")
+            if (service != "")
             {
-                if (type == "bicycle")
-                    sv = 70;
-                else if (type == "bike")
-                    sv = 250;
-                else sv = 1000;
-            }
-            else
-            {
-                if (service == "Washing")
+                if (service == "Repairing and Washing")
                 {
                     if (type == "bicycle")
-                        sv = 20;
+                        sv = 70;
                     else if (type == "bike")
-                        sv = 50;
-                    else sv = 200;
+                        sv = 250;
+                    else sv = 1000;
+
+                    if (timeformat == "H")
+                        index += 2;
                 }
-                if (service == "Repairing")
+                else
                 {
-                    if (type == "bicycle")
-                        sv = 50;
-                    else if (type == "bike")
-                        sv = 200;
-                    else sv = 800;
+                    if (service == "Washing")
+                    {
+                        if (type == "bicycle")
+                            sv = 20;
+                        else if (type == "bike")
+                            sv = 50;
+                        else sv = 200;
+                    }
+                    else
+                    {
+                        if (type == "bicycle")
+                            sv = 50;
+                        else if (type == "bike")
+                            sv = 200;
+                        else sv = 800;
+                    }
+
+                    if (timeformat == "H")
+                        index += 1;
                 }
             }
 
@@ -95,20 +108,11 @@ namespace DAL
             int week = day / 7;                                     //đổi ngày thành tuần
             int month = day / 30;                                   //đổi tuần thánh tháng
 
-            if (index == 0 || timeformat == "null")                 //ko gửi xe chỉ có service                 
+            if (index == 0 || timeformat == "null")                 //ko gửi xe chỉ có service (dược lấy trong ngày)               
             {
-                if (service == "Reapairing and Washing")
-                {
-                    if (hour > 2)                                   
-                        total = x * hour;
-                    else total = 0;
-                }
-                else
-                {
-                    if (hour > 1)
-                        total = x * hour;
-                    else total = 0;
-                }
+                if (day > 0)                                        //lấy lố ngày 
+                    total = x * (day + 1);
+                else total = 0;                                     //lấy trong ngày
             }
             else
             {
@@ -182,5 +186,141 @@ namespace DAL
             }
             return (total + sv) * 1000;                             //để ra tiền VNĐ
         }
+
+        //Kiểm tra xem ngày tháng năm trong db đã có hay chưa (có rồi thì update chưa thì insert)
+        public bool checkParkingDate(int day, int month, int year)
+        {
+            SqlCommand com = new SqlCommand("Select * from PARKINGPROFIT where DayPPF = @day and MonthPPF = @month and YearPPF = @year", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@day", SqlDbType.Int).Value = day;
+            com.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            com.Parameters.Add("@year", SqlDbType.Int).Value = year;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool insertParkingProfit(int day, int month, int year, int money)
+        {
+            SqlCommand com = new SqlCommand("insert into PARKINGPROFIT (DayPPF, MonthPPF, YearPPF, MoneyP) " +
+                "values (@day, @month, @year, @money)", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@day", SqlDbType.Int).Value = day;
+            com.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            com.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            com.Parameters.Add("@money", SqlDbType.Int).Value = money;
+
+            DataProvider.Instance.openConnection();
+            if (com.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
+        public bool updateParkingProfit(int day, int month, int year, int money)
+        {
+            SqlCommand com = new SqlCommand("update PARKINGPROFIT set MoneyP = @money " +
+                "where DayPPF = @day and MonthPPF = @month and YearPPF = @year", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@day", SqlDbType.Int).Value = day;
+            com.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            com.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            com.Parameters.Add("@money", SqlDbType.Int).Value = money;
+
+            DataProvider.Instance.openConnection();
+            if (com.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Tiền từ hợp đồng
+        //Kiểm tra xem ngày tháng năm trong db đã có hay chưa (có rồi thì update chưa thì insert)
+        public bool checkContractDate(int day, int month, int year)
+        {
+            SqlCommand com = new SqlCommand("Select * from CONTRACTPROFIT where DayCPF = @day and MonthCPF = @month and YearCPF = @year", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@day", SqlDbType.Int).Value = day;
+            com.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            com.Parameters.Add("@year", SqlDbType.Int).Value = year;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool insertContractProfit(int day, int month, int year, int money)
+        {
+            SqlCommand com = new SqlCommand("insert into CONTRACTPROFIT (DayCPF, MonthCPF, YearCPF, MoneyC) " +
+                "values (@day, @month, @year, @money)", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@day", SqlDbType.Int).Value = day;
+            com.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            com.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            com.Parameters.Add("@money", SqlDbType.Int).Value = money;
+
+            DataProvider.Instance.openConnection();
+            if (com.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+
+        public bool updateContractProfit(int day, int month, int year, int money)
+        {
+            SqlCommand com = new SqlCommand("update PARKINGPROFIT set MoneyC = @money " +
+                "where DayCPF = @day and MonthCPF = @month and YearCPF = @year", DataProvider.Instance.getConnection);
+            com.Parameters.Add("@day", SqlDbType.Int).Value = day;
+            com.Parameters.Add("@month", SqlDbType.Int).Value = month;
+            com.Parameters.Add("@year", SqlDbType.Int).Value = year;
+            com.Parameters.Add("@money", SqlDbType.Int).Value = money;
+
+            DataProvider.Instance.openConnection();
+            if (com.ExecuteNonQuery() == 1)
+            {
+                DataProvider.Instance.closeConnection();
+                return true;
+            }
+            else
+            {
+                DataProvider.Instance.closeConnection();
+                return false;
+            }
+        }
+        #endregion  
+
     }
 }
