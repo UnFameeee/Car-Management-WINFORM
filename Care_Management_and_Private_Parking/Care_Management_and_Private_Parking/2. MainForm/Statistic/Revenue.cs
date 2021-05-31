@@ -188,5 +188,13 @@ namespace Care_Management_and_Private_Parking
             chartWorkHour.ChartAreas[0].AxisX.MajorGrid.Interval = 1;
         }
         #endregion
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            loadChartOutcome1();
+            loadChartOutcome2();
+            loadChartIncome1();
+            loadChartIncome2();
+        }
     }
 }
