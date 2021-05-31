@@ -35,6 +35,26 @@ namespace DAL
             adapter.Fill(table);
             return table;
         }
+
+        public int takeMale()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE Gender = 'Male' ", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table.Rows.Count;
+        }
+
+        public int takeFemale()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE Gender = 'Female' ", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table.Rows.Count;
+        }
         #endregion
+
+
     }
 }

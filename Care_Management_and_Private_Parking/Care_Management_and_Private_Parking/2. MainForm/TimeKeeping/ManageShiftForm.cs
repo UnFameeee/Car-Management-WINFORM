@@ -28,7 +28,7 @@ namespace Care_Management_and_Private_Parking
         private void fillAllDGV()
         {
             //DGV1
-            DataTable table = CalendarDAL.Instance.tableShift();
+            DataTable table = CalendarDAL.Instance.tableShift("NV");
             dgvTodayShift.DataSource = table;
             dgvTodayShift.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTodayShift.AllowUserToAddRows = false;
@@ -207,5 +207,17 @@ namespace Care_Management_and_Private_Parking
         }
 
         #endregion
+
+        private void btnManager_Click(object sender, EventArgs e)
+        {
+            DataTable table = CalendarDAL.Instance.tableShift("QL");
+            dgvTodayShift.DataSource = table;
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            DataTable table = CalendarDAL.Instance.tableShift("NV");
+            dgvTodayShift.DataSource = table;
+        }
     }
 }

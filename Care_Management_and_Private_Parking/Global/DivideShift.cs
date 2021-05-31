@@ -52,14 +52,11 @@ namespace Global
                     stopNV = true;
                     NV = 0;
                 }
+                if (stopNV == true && stopCL == true)
+                    break;
                 Arr[CL][NV] = 1;
                 CL += 1;
-                if(C > 2)
-                {
-                    NV += 2;
-                }
-                else
-                    NV += 1;
+                NV += 1;
             }
             //Xoay ca
             for (int RT = 1; RT <= DayOfRotation; ++RT)

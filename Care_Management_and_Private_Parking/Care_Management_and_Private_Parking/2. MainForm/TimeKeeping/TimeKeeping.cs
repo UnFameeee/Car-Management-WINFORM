@@ -26,6 +26,24 @@ namespace Care_Management_and_Private_Parking
         private void TimeKeeping_Load(object sender, EventArgs e)
         {
             loadForm();
+            loadFormWithJobID();
+        }
+
+        private void loadFormWithJobID()
+        {
+            if (Global.UserID.GlobalJobID != "1")
+            {
+                //nút manage job
+                btnWorkShift.Enabled = false;
+                btnWorkShift.Visible = false;
+                //nút statistic
+                btnSalary.Enabled = false;
+                btnSalary.Visible = false;
+
+                //Căn lại các nút
+                btnTimeKeeping.Location = new Point(9, 493/2 - 43/2);
+                btnWorkShift.Location = new Point(9, 224 + 66);
+            }
         }
 
         void loadForm()

@@ -18,7 +18,7 @@ namespace Care_Management_and_Private_Parking
         }
 
         SalaryEmployeeSatistic frmSalaryEmpStatistic = new SalaryEmployeeSatistic() { TopLevel = false, TopMost = false };
-
+        Revenue frmRevenue = new Revenue() { TopLevel = false, TopMost = false };
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
 
@@ -29,7 +29,7 @@ namespace Care_Management_and_Private_Parking
         void loadForm()
         {
             this.pnlMain.Controls.Add(frmSalaryEmpStatistic);
-            //this.pnlMain.Controls.Add();
+            this.pnlMain.Controls.Add(frmRevenue);
             tick();
         }
         private void tick()
@@ -44,6 +44,7 @@ namespace Care_Management_and_Private_Parking
             btnRevenue.Cursor = cur1;
             //Tắt tất cả các form
             frmSalaryEmpStatistic.Hide();
+            frmRevenue.Hide();
         }
 
         private void btnCustomerStatistic_Click(object sender, EventArgs e)
@@ -67,7 +68,7 @@ namespace Care_Management_and_Private_Parking
             tick();
             btnRevenue.Checked = true;
             btnRevenue.Cursor = cur2;
-
+            frmRevenue.Show();
         }
     }
 }

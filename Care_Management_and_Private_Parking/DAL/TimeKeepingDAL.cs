@@ -99,7 +99,21 @@ namespace DAL
 
         public string checkInTimeWork(string EmpID)
         {
-            DataTable table = CalendarDAL.Instance.tableShift();
+            string operation = "";
+            if(UserID.GlobalJobID == "1")
+            {
+                if(CalendarDAL.Instance.checkTableTotalEmp(EmpID))
+                {
+                    operation = "NV";
+                }
+                else
+                    operation = "QL";
+            }
+            else
+            {
+                operation = "NV";
+            }
+            DataTable table = CalendarDAL.Instance.tableShift(operation);
             List<string> shift = new List<string>();
             //Lấy ra các ca làm của nhân viên trong ngày đó
             for (int i = 0, length = table.Rows.Count; i < length; ++i)

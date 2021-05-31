@@ -15,5 +15,10 @@ namespace Global
         {
             GlobalUserID = userID;
         }
+        public static string GlobalJobID { get; private set; }
+        public static void SetGlobalJobID(string JobID)
+        {
+            GlobalJobID = JobID;
+        }
     }
 }

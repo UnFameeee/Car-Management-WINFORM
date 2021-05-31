@@ -41,6 +41,10 @@ namespace Care_Management_and_Private_Parking
                     try
                     {
                         UserID.SetGlobalUserID(AccountDAL.Instance.takeEmpID(tbUser.Text, tbPwd.Text, cbPosition.SelectedValue.ToString()));
+                        SqlCommand cmd = new SqlCommand("SELECT JobID FROM EMPLOYEE WHERE EmpID = @EmpID", DataProvider.Instance.getConnection);
+                        cmd.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = UserID.GlobalUserID;
+                        DataTable table = AccountDAL.Instance.getAccount(cmd);
+                        UserID.SetGlobalJobID(table.Rows[0][0].ToString());
                     }
                     catch (Exception ex)
                     {

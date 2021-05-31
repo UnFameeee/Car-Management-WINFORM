@@ -85,6 +85,10 @@ namespace Care_Management_and_Private_Parking
                 MemoryStream Picture = new MemoryStream(picture);
                 pic.Image = Image.FromStream(Picture);
             }
+            lbID.Text = "ID: " + Global.UserID.GlobalUserID;
+
+            tbDayOfWork.Text = CalendarDAL.Instance.getWorkHours(UserID.GlobalUserID).ToString();
+            tbSalary.Text = CalendarDAL.Instance.getSalary(UserID.GlobalUserID).ToString() + " VNĐ";
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
