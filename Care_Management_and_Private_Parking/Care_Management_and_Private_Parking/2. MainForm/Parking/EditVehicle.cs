@@ -211,35 +211,36 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
-                    if(ParkingLotDAL.Instance.checkLicense(VehID, License, "edit"))
+                    if (ParkingLotDAL.Instance.checkLicense(VehID, License, "edit"))
                     {
                         if (check())
                         {
-                          if (cbboxTimeFormat.SelectedItem != null)
-                              timeformat = cbboxTimeFormat.SelectedValue.ToString();
-                          else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
-                          {
-                              value = 0;
-                          }
-                          string Invoice = cbboxTimeFormat.SelectedValue.ToString();
-                          if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
-                          {
-                              ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
-                              MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
-                              this.DialogResult = DialogResult.OK;
-                          }
-                          else
-                          {
-                              MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                          }
+                            if (cbboxTimeFormat.SelectedItem != null)
+                                timeformat = cbboxTimeFormat.SelectedValue.ToString();
+                            else                                                            //khách không chọn timeformat -> mặc định là ko gửi xe
+                            {
+                                value = 0;
+                            }
+                            string Invoice = cbboxTimeFormat.SelectedValue.ToString();
+                            if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
+                            {
+                                ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
+                                MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
+                                this.DialogResult = DialogResult.OK;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                          MessageBox.Show("Please choose at least one service!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Please choose at least one service!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
+                    }
                     else
                     {
-                      MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
