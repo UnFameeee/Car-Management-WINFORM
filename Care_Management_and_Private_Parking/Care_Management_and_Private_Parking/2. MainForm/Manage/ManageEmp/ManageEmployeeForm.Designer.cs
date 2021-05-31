@@ -137,7 +137,6 @@ namespace Care_Management_and_Private_Parking
             this.tbEmpID.Name = "tbEmpID";
             this.tbEmpID.Size = new System.Drawing.Size(162, 23);
             this.tbEmpID.TabIndex = 27;
-            this.tbEmpID.Text = "\r\n";
             // 
             // lbJobID
             // 

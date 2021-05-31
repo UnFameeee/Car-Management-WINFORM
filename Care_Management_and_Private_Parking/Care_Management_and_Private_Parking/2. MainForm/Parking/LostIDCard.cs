@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
 using DAL;
+using System.Globalization;
 
 namespace Care_Management_and_Private_Parking
 {
@@ -135,8 +136,23 @@ namespace Care_Management_and_Private_Parking
                                                 if (ParkingLotDAL.Instance.deleteCustomer(cusid))
                                                 {
                                                     int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, invoice, vehtype, service);
-                                                    MessageBox.Show("Verify successfully!!!\r\nYou have to pay " + (money + 100000).ToString() + "VNĐ", "Verify lost IDCard", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    this.DialogResult = DialogResult.OK;
+
+                                                    if (InvoiceDAL.Instance.checkParkingDate(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year))
+                                                    {
+                                                        if (InvoiceDAL.Instance.updateParkingProfit(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year, money + 100000))
+                                                        {
+                                                            MessageBox.Show("Verify successfully!!!\r\nYou have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#.##0}", money + 100000) + "VNĐ", "Verify lost IDCard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            this.DialogResult = DialogResult.OK;
+                                                        }
+                                                    }
+                                                    else                           
+                                                    {
+                                                        if (InvoiceDAL.Instance.insertParkingProfit(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year, money + 100000)) 
+                                                        {
+                                                            MessageBox.Show("Verify successfully!!!\r\nYou have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#.##0}", money + 100000) + "VNĐ", "Verify lost IDCard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            this.DialogResult = DialogResult.OK;
+                                                        }
+                                                    }
                                                 }
                                     }
                                     else
