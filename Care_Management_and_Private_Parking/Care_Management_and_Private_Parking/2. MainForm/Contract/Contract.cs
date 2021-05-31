@@ -96,12 +96,12 @@ namespace Care_Management_and_Private_Parking
                         ForRentPic.Image = Image.FromStream(picture);
                     }
 
-                    tbForRentName.Enabled = false;
-                    tbForRentPhone.Enabled = false;
-                    tbForRentAddress.Enabled = false;
-                    tbForRentIdentity.Enabled = false;
-                    tbForRentBdate.Enabled = false;
-                    tbForRentJob.Enabled = false;
+                    tbForRentName.ReadOnly = true;
+                    tbForRentPhone.ReadOnly = true;
+                    tbForRentAddress.ReadOnly = true;
+                    tbForRentIdentity.ReadOnly = true;
+                    tbForRentBdate.ReadOnly = true;
+                    tbForRentJob.ReadOnly = true;
                     ForRentPic.Enabled = false;
 
                     tbRentName.Text = null;
@@ -131,12 +131,12 @@ namespace Care_Management_and_Private_Parking
                         RentPic.Image = Image.FromStream(picture);
                     }
 
-                    tbRentName.Enabled = false;
-                    tbRentPhone.Enabled = false;
-                    tbRentAddress.Enabled = false;
-                    tbRentIdentity.Enabled = false;
-                    tbRentBdate.Enabled = false;
-                    tbRentJob.Enabled = false;
+                    tbRentName.ReadOnly = true;
+                    tbRentPhone.ReadOnly = true;
+                    tbRentAddress.ReadOnly = true;
+                    tbRentIdentity.ReadOnly = true;
+                    tbRentBdate.ReadOnly = true;
+                    tbRentJob.ReadOnly = true;
                     RentPic.Enabled = false;
                     
                     tbForRentName.Text = null;
