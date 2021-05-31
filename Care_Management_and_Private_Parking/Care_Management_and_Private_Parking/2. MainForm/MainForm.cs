@@ -23,6 +23,7 @@ namespace Care_Management_and_Private_Parking
         {
             InitializeComponent();
             loadForm();
+            loadFormWithJobID();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -63,6 +64,26 @@ namespace Care_Management_and_Private_Parking
             frmTimeKeeping.Hide();
             frmStatistic.Hide();
         }
+
+        private void loadFormWithJobID()
+        {
+            if(Global.UserID.GlobalJobID != "1")
+            {
+                //nút manage job
+                btnManageJob.Enabled = false;
+                btnManageJob.Visible = false;
+                //nút statistic
+                btnStatistic.Enabled = false;
+                btnStatistic.Visible = false;
+
+                //Căn lại các nút
+                pnlHome.Location = new Point(7, 234+66);
+                pnlUser.Location = new Point(7, 309+66);
+                pnlTimeKeeping.Location = new Point(7, 385+66);
+                pnlManage.Location = new Point(7, 460 + 76);
+            }
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             tick();
@@ -78,6 +99,7 @@ namespace Care_Management_and_Private_Parking
             btnUser.Cursor = cur2;
             frmCalendar.Show();
         }
+
         private void btnTimeKeeping_Click(object sender, EventArgs e)
         {
             tick();

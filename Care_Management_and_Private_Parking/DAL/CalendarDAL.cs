@@ -29,19 +29,73 @@ namespace DAL
         #endregion
 
         #region Properties
-        public int NV = getTotalEmp();                                      //x nhân viên
+        public int NV;                                                      //x nhân viên
         public int CL = getTotalShift();                                    //y ca làm
         #endregion
 
         #region Hàm để lấy ra số lượng ca làm và nhân viên
-        public static int getTotalEmp()
+        //Nhân viên - Nhân viên văn phòng
+        public int getTotalEmp()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE", DataProvider.Instance.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE JobID != 1", DataProvider.Instance.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table.Rows.Count;
         }
+        public DataTable getTableTotalEmp()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE JobID != 1", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public bool checkTableTotalEmp(string EmpID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE JobID != 1 and EmpID = @EmpID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("EmpID", SqlDbType.NVarChar).Value = EmpID;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        //Quản lý
+        public int getTotalManager()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE JobID = 1", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table.Rows.Count;
+        }
+        public DataTable getTableTotalManager()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE JobID = 1", DataProvider.Instance.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        public bool checkTableTotalManager(string EmpID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EMPLOYEE WHERE JobID = 1 and EmpID = @EmpID", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("EmpID", SqlDbType.NVarChar).Value = EmpID;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+
+        //Ca làm
         public static int getTotalShift()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM WORKSHIFT", DataProvider.Instance.getConnection);
@@ -53,16 +107,27 @@ namespace DAL
         #endregion
 
         #region Hàm để lấy ra table ca làm trong ngày (Private)
-
-        public string convertToEmpID(int EmpID)                                                   //EmpID được quy định là 2 chữ cái đầu + mã số NV ở sau
+        public DataTable tableShift(string operation)
         {
-            string res = "NV" + EmpID.ToString();
-            return res;
-        }
-        public DataTable tableShift()
-        {
-            NV = getTotalEmp();
+            if(operation == "NV")
+            {
+                NV = getTotalEmp();
+            }
+            else
+            {
+                NV = getTotalManager();
+            }
             CL = getTotalShift();
+            DataTable table;
+            if (operation == "NV")
+            {
+                table = getTableTotalEmp();
+            }
+            else
+            {
+                table = getTableTotalManager();
+            }
+
             DivideShift dv = new DivideShift();
             List<List<int>> DOW;                                                                                          //Tạo mảng 2 chiều
             DataTable res = new DataTable();
@@ -77,13 +142,46 @@ namespace DAL
                     if (DOW[j][i] == 1)
                     {
                         toInsert = res.NewRow();                                                                          //Thêm dòng mới vào datarow
-                        toInsert["EmployeeID"] = convertToEmpID(i + 1);
+                        toInsert["EmployeeID"] = table.Rows[i][0].ToString();
                         toInsert["ShiftID"] = (j + 1).ToString();
                         res.Rows.Add(toInsert);                                                                           //thêm dòng datarow vào datatable
                     }
                 }
             }
             return res;
+        }
+        #endregion
+
+        #region Hàm tính tiền lương của nhân viên đó
+        public int getSalary(string EmpID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT MonthWork, YearWork, SUM(SalaryEmployee) as Salary FROM SALARY " +
+                "WHERE YearWork = @Year and MonthWork = @Month and EmpID = @EmpID GROUP BY MonthWork, YearWork", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            cmd.Parameters.Add("@Year", SqlDbType.NVarChar).Value = DateTime.Now.Year;
+            cmd.Parameters.Add("@Month", SqlDbType.NVarChar).Value = DateTime.Now.Month;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return Convert.ToInt32(table.Rows[0]["Salary"]);
+            else
+                return 0;
+        }
+        public int getWorkHours(string EmpID)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT MonthWork, YearWork, SUM(NumberofHourWork) as WorkHour FROM SALARY  " +
+                "WHERE YearWork = @Year and MonthWork = @Month and EmpID = @EmpID  GROUP BY MonthWork, YearWork ", DataProvider.Instance.getConnection);
+            cmd.Parameters.Add("@EmpID", SqlDbType.NVarChar).Value = EmpID;
+            cmd.Parameters.Add("@Year", SqlDbType.NVarChar).Value = DateTime.Now.Year;
+            cmd.Parameters.Add("@Month", SqlDbType.NVarChar).Value = DateTime.Now.Month;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return Convert.ToInt32(table.Rows[0]["WorkHour"]);
+            else
+                return 0;
         }
         #endregion
     }

@@ -23,9 +23,9 @@ create table ACCOUNT(
 	PositionID nvarchar(100) references POSITION(PositionID)					
 )
 -- Tài khoản admin
-insert into ACCOUNT values ('admin', 'admin', '1')			--TK quản lý
-insert into ACCOUNT values ('emp', 'emp', '2')				--TK nhân viên
-insert into ACCOUNT values ('office', 'office', '3')		--TK nhân viên văn phòng
+insert into ACCOUNT values ('admin', 'admin', '1')				--TK quản lý
+insert into ACCOUNT values ('emp', 'emp', '2')					--TK nhân viên
+insert into ACCOUNT values ('office', 'office', '3')			--TK nhân viên văn phòng
 insert into ACCOUNT values ('emp2', 'emp2', '2')				--TK nhân viên
 insert into ACCOUNT values ('emp3', 'emp3', '2')				--TK nhân viên
 insert into ACCOUNT values ('emp4', 'emp4', '2')				--TK nhân viên

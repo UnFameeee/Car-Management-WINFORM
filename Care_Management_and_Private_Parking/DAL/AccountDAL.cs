@@ -209,6 +209,5 @@ namespace DAL
             SqlCommand cmd = new SqlCommand("SELECT Username, Password, Description as Position FROM ACCOUNT, POSITION where ACCOUNT.PositionID = POSITION.PositionID");
             return getAccount(cmd);
         }
-
     }
 }

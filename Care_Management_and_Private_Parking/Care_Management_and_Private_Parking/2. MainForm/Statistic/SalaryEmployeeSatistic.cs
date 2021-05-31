@@ -35,6 +35,10 @@ namespace Care_Management_and_Private_Parking
         {
             loadChartEmpSalary();
             loadChartWorkHours();
+            loadPieChart();
+            cbYear.SelectedItem = "2021";
+            int year = Convert.ToInt32(cbYear.SelectedItem);
+            load(year);
         }
 
         #region EmpSalary
@@ -100,6 +104,15 @@ namespace Care_Management_and_Private_Parking
             chartWorkHour.ChartAreas[0].AxisX.MajorGrid.Interval = 1;
         }
         #endregion
+
+        private void loadPieChart()
+        {
+            int male = StatisticDAL.Instance.takeMale();
+            int female = StatisticDAL.Instance.takeFemale();
+
+            pieChart.Series["Series1"].Points.AddXY("Male", male);
+            pieChart.Series["Series1"].Points.AddXY("Female", female);
+        }
 
         private void load(int year)
         {

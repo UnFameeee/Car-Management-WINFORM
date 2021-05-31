@@ -193,15 +193,29 @@ namespace Care_Management_and_Private_Parking
 
         void fillDay(ref Guna2Button btn, int rotateDay, int month)
         {
+            int NV;
             DOW = new List<List<int>>();                                                    //Mảng 2 chiều chia ca ( day of work )
             int EmpID = Convert.ToInt32(takeNumberID(UserID.GlobalUserID)) - 1;             //Mã số nhân viên tương đương với (Index of Columns - 1)
-            DOW = dv.SetTheBaseDOW(CalendarDAL.Instance.NV, CalendarDAL.Instance.CL, rotateDay + (month % 2));      //Nếu tháng lẻ // tháng chẵn
+            if(UserID.GlobalJobID == "1")
+            {
+                NV = CalendarDAL.Instance.getTotalManager();
+            }
+            else
+            {
+                NV = CalendarDAL.Instance.getTotalEmp();
+            }
+            DOW = dv.SetTheBaseDOW(NV, CalendarDAL.Instance.CL, rotateDay + (month % 2));      //Nếu tháng lẻ // tháng chẵn
             for (int j = 0; j < 3; ++j)
             {
                 if(DOW[j][EmpID] == 1)                                                      //Nếu thoả if => ngày đó đi làm
                 {
                     if (j == 0)
                         btn.ForeColor = Color.FromArgb(255, 128, 0);
+                    else if (j == 1)
+                        btn.ForeColor = Color.Yellow;
+                    else
+                        btn.ForeColor = Color.FromArgb(128, 128, 255);
+
                     //Note lại ca làm vào List ShiftInMonth
                     ShiftInMonth[j] += 1;
                 }

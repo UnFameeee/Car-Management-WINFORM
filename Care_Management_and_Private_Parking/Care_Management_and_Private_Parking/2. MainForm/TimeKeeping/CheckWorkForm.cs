@@ -52,18 +52,20 @@ namespace Care_Management_and_Private_Parking
         {
             DataTable table = TimeKeepingDAL.Instance.takeEmpWorking();
             DataTable tableInfo = new DataTable();
-            Employee us = new Employee();
+            
 
             for (int i = 0, length = table.Rows.Count; i < length; ++i)
             {
                 tableInfo = TimeKeepingDAL.Instance.takePic(table.Rows[i][0].ToString());
-                if(tableInfo.Rows[0][0] != DBNull.Value)
+                Employee us = new Employee();
+                if (tableInfo.Rows[0][0] != DBNull.Value)
                 {
                     byte[] pic = (byte[])tableInfo.Rows[0][0];
                     MemoryStream Picture = new MemoryStream(pic);
                     us.pic.Image = Image.FromStream(Picture);
                 }
                 us.lb.Text = tableInfo.Rows[0][1].ToString();
+                us.ID = table.Rows[i][0].ToString();
                 fpnlMain.Controls.Add(us);
             }
         }
@@ -95,90 +97,104 @@ namespace Care_Management_and_Private_Parking
         #region Điểm danh vào, ra
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            if (TimeKeepingDAL.Instance.CheckIDEmployee(tbID.Text))
+            if(UserID.GlobalJobID != "1" && tbID.Text != UserID.GlobalUserID)
             {
-                if (!TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
-                {
-                    //1 là checkin thành công, 2 là đã trễ giờ đi làm, 3 là chưa tới giờ đi làm
-                    if(TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "1")
-                    {
-                        MessageBox.Show("Checkin successfully!!!");
-
-                        TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
-                        dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
-
-                        //Phần hình ảnh
-                        DataTable table = TimeKeepingDAL.Instance.takePic(tbID.Text);
-                        Employee us = new Employee();
-
-                        us.lb.Text = table.Rows[0][1].ToString();
-                        us.ID = tbID.Text;
-                        if (table.Rows[0]["Appearance"] != DBNull.Value)
-                        {
-                            byte[] picture = (byte[])table.Rows[0][0];
-                            MemoryStream Picture = new MemoryStream(picture);
-                            us.pic.Image = Image.FromStream(Picture);
-                        }
-                        fpnlMain.Controls.Add(us);
-
-                        changeLBcheckin("Checkin");
-                        loadInfo(tbID.Text, "Load");
-                    }
-                    else if(TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "2")
-                    {
-                        MessageBox.Show("Your shift hasn't started yet!!!");
-                    }
-                }
-                else
-                    MessageBox.Show("ID is working. Can't check in");
+                MessageBox.Show("ID checkin must be your ID!!!", "Checkin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-                MessageBox.Show("Can't find the ID");
+            {
+                if (TimeKeepingDAL.Instance.CheckIDEmployee(tbID.Text))
+                {
+                    if (!TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
+                    {
+                        //1 là checkin thành công, 2 là đã trễ giờ đi làm, 3 là chưa tới giờ đi làm
+                        if (TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "1")
+                        {
+                            MessageBox.Show("Checkin successfully!!!", "Checkin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
+                            dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
+
+                            //Phần hình ảnh
+                            DataTable table = TimeKeepingDAL.Instance.takePic(tbID.Text);
+                            Employee us = new Employee();
+
+                            us.lb.Text = table.Rows[0][1].ToString();
+                            us.ID = tbID.Text;
+                            if (table.Rows[0]["Appearance"] != DBNull.Value)
+                            {
+                                byte[] picture = (byte[])table.Rows[0][0];
+                                MemoryStream Picture = new MemoryStream(picture);
+                                us.pic.Image = Image.FromStream(Picture);
+                            }
+                            fpnlMain.Controls.Add(us);
+
+                            changeLBcheckin("Checkin");
+                            loadInfo(tbID.Text, "Load");
+                        }
+                        else if (TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "2")
+                        {
+                            MessageBox.Show("Your shift hasn't started yet!!!", "Checkin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                        MessageBox.Show("ID is working. Can't check in", "Checkin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show("Can't find the ID", "Checkin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }            
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if (TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
+            if (UserID.GlobalJobID != "1" && tbID.Text != UserID.GlobalUserID)
             {
-                #region Tính lương
-                //Phần thời gian làm việc của ca đó
-                TimeSpan hourwork = (TimeSpan)DateTime.Now.TimeOfDay - TimeKeepingDAL.Instance.takeTimeStart(tbID.Text);
-                if (hourwork < TimeSpan.Parse("00:00:00"))              //nếu trừ ra tgian bị âm
-                    hourwork += TimeSpan.Parse("23:59:59");
-                float worktime = (float)hourwork.TotalHours;            //Đổi ra thành float
-                //Phần tính lương (lương của đúng ca làm việc đó)
-                float salary = (float)(hourwork.TotalHours * TimeKeepingDAL.Instance.takeCoefficient(tbID.Text));
-                //Tính lương
-                if (!TimeKeepingDAL.Instance.checkSalaryExist(tbID.Text, DateTime.Now.Month, DateTime.Now.Year))                        //Nếu chưa có trong SALARY
-                {
-                    TimeKeepingDAL.Instance.insertEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, worktime, salary);      //Insert thẳng vào SALARY
-                }
-                else                                                                                                                    //Nếu đã có trong SALARY
-                {
-                    TimeKeepingDAL.Instance.editEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, worktime, salary);
-                }
-                #endregion
-
-                DateTime now = DateTime.Now;
-
-                TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, now);
-                dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
-                MessageBox.Show("Checkout successfully!!!");
-
-
-                foreach(Employee c in fpnlMain.Controls)
-                { 
-                    if(c.ID == (tbID.Text))
-                    {
-                        fpnlMain.Controls.Remove(c);
-                    }
-                }
-
-                changeLBcheckin("Checkout");
-                loadInfo(tbID.Text, "Unload");
+                MessageBox.Show("ID checkout must be your ID!!!", "Checkin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-                MessageBox.Show("Can't find the ID");
+            {
+                if (TimeKeepingDAL.Instance.CheckIDWork(tbID.Text))
+                {
+                    #region Tính lương
+                    //Phần thời gian làm việc của ca đó
+                    TimeSpan hourwork = (TimeSpan)DateTime.Now.TimeOfDay - TimeKeepingDAL.Instance.takeTimeStart(tbID.Text);
+                    if (hourwork < TimeSpan.Parse("00:00:00"))              //nếu trừ ra tgian bị âm
+                        hourwork += TimeSpan.Parse("23:59:59");
+                    float worktime = (float)hourwork.TotalHours;            //Đổi ra thành float
+                                                                            //Phần tính lương (lương của đúng ca làm việc đó)
+                    float salary = (float)(hourwork.TotalHours * TimeKeepingDAL.Instance.takeCoefficient(tbID.Text));
+                    //Tính lương
+                    if (!TimeKeepingDAL.Instance.checkSalaryExist(tbID.Text, DateTime.Now.Month, DateTime.Now.Year))                        //Nếu chưa có trong SALARY
+                    {
+                        TimeKeepingDAL.Instance.insertEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, worktime, salary);      //Insert thẳng vào SALARY
+                    }
+                    else                                                                                                                    //Nếu đã có trong SALARY
+                    {
+                        TimeKeepingDAL.Instance.editEmpToSalary(tbID.Text, DateTime.Now.Month, DateTime.Now.Year, worktime, salary);
+                    }
+                    #endregion
+
+                    DateTime now = DateTime.Now;
+
+                    TimeKeepingDAL.Instance.AddCheckOut(tbID.Text, now);
+                    dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
+                    MessageBox.Show("Checkout successfully!!!", "Checkout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    foreach (Employee c in fpnlMain.Controls)
+                    {
+                        if (c.ID == (tbID.Text))
+                        {
+                            fpnlMain.Controls.Remove(c);
+                        }
+                    }
+
+                    changeLBcheckin("Checkout");
+                    loadInfo(tbID.Text, "Unload");
+                }
+                else
+                    MessageBox.Show("Can't find the ID", "Checkout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
         #endregion
     }
