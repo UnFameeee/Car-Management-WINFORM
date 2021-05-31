@@ -21,40 +21,8 @@ namespace Care_Management_and_Private_Parking
             InitializeComponent();
         }
 
-        #region Properties
-        private List<PictureBox> matrixPic;
-        public List<PictureBox> MatrixPic
-        {
-            get { return matrixPic; }
-            set { matrixPic = value; }
-        }
-
-        private List<Label> matrixName;
-        public List<Label> MatrixName
-        {
-            get { return matrixName; }
-            set { matrixName = value; }
-        }
-        public int count = 0; //Số nhân viên đang trong ca
-        List<string> MatrixEmpID = new List<string>();
-        #endregion
-
         private void CheckWorkForm_Load(object sender, EventArgs e)
         {
-            MatrixPic = new List<PictureBox>();      //Hình 
-            MatrixName = new List<Label>();          //Tên
-
-            MatrixPic.Add(pic1); MatrixPic.Add(pic2); MatrixPic.Add(pic3); MatrixPic.Add(pic4); MatrixPic.Add(pic5); MatrixPic.Add(pic6);
-            MatrixPic.Add(pic7); MatrixPic.Add(pic8); MatrixPic.Add(pic9); MatrixPic.Add(pic10); MatrixPic.Add(pic11); MatrixPic.Add(pic11);
-
-            MatrixName.Add(lb1); MatrixName.Add(lb2); MatrixName.Add(lb3); MatrixName.Add(lb4); MatrixName.Add(lb5); MatrixName.Add(lb6);
-            MatrixName.Add(lb7); MatrixName.Add(lb8); MatrixName.Add(lb9); MatrixName.Add(lb10); MatrixName.Add(lb11); MatrixName.Add(lb12);
-
-
-            for (int i = 0; i < Variable.picSlot; ++i)
-                MatrixName[i].Visible = false;
-            for (int j = 0; j < Variable.picSlot; ++j)
-                MatrixEmpID.Add("");
             loadPicEmpWorking();
 
             dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
@@ -79,92 +47,24 @@ namespace Care_Management_and_Private_Parking
         }
         #endregion
 
-        #region Phần hình ảnh đang làm trong ca
-        void takePicture(string EmpID)
-        {
-            if (count >= 0 && count <= Variable.picSlot)
-            {
-                DataTable table = TimeKeepingDAL.Instance.takePic(EmpID);
-                //Phần hình
-                if(table.Rows[0]["Appearance"] != DBNull.Value)
-                {
-                    byte[] pic = (byte[])table.Rows[0][0];
-                    MemoryStream Picture = new MemoryStream(pic);
-                    MatrixPic[count].Image = Image.FromStream(Picture);
-                }
-                //Phần tên
-                MatrixName[count].Text = table.Rows[0][1].ToString();
-                MatrixName[count].Visible = true;
-                //Phần mã nhân viên
-                MatrixEmpID[count] = EmpID;
-                count++;
-            }
-        }
-
-        void deletePicture(string EmpID)
-        {
-            for (int i = 0; i < 7; ++i)
-            {
-                if (EmpID == MatrixEmpID[i])
-                {
-                    MatrixPic[i].Image = null;
-                    MatrixName[i].Text = "";
-                    MatrixName[i].Visible = false;
-                    MatrixEmpID[i] = "";
-                    count--;
-                    break;
-                }
-            }
-            if (count != 0)
-            {
-                rearrange();
-            }
-        }
-
-        void rearrange()
-        {
-            for (int i = 0; i < count; ++i)
-            {
-                if (MatrixEmpID[i] == "")
-                {
-                    //Chức năng giống hàm swap
-                    MatrixPic[i].Image = MatrixPic[i + 1].Image;
-                    MatrixName[i].Text = MatrixName[i + 1].Text;
-                    MatrixEmpID[i] = MatrixEmpID[i + 1];
-
-                    MatrixPic[i + 1].Image = null;
-                    MatrixName[i + 1].Text = "";
-                    MatrixEmpID[i + 1] = "";
-
-
-                    MatrixName[i].Visible = true;
-                    MatrixName[i + 1].Visible = false;
-                }
-            }
-        }
-
+        #region Phần hình ảnh nhân viên đang làm trong ca
         void loadPicEmpWorking()
         {
             DataTable table = TimeKeepingDAL.Instance.takeEmpWorking();
             DataTable tableInfo = new DataTable();
+            Employee us = new Employee();
+
             for (int i = 0, length = table.Rows.Count; i < length; ++i)
             {
-                if (count >= 0 && count <= Variable.picSlot)
+                tableInfo = TimeKeepingDAL.Instance.takePic(table.Rows[i][0].ToString());
+                if(tableInfo.Rows[0][0] != DBNull.Value)
                 {
-                    tableInfo = TimeKeepingDAL.Instance.takePic(table.Rows[i][0].ToString());
-                    if(tableInfo.Rows[0][0] != DBNull.Value)
-                    {
-                        byte[] pic = (byte[])tableInfo.Rows[0][0];
-                        MemoryStream Picture = new MemoryStream(pic);
-                        MatrixPic[count].Image = Image.FromStream(Picture);
-                    }
-                    //Phần tên
-                    MatrixName[count].Text = tableInfo.Rows[0][1].ToString();
-                    MatrixName[count].Visible = true;
-                    //Phần mã nhân viên
-                    MatrixEmpID[count] = table.Rows[i][0].ToString();
-                    count++;
+                    byte[] pic = (byte[])tableInfo.Rows[0][0];
+                    MemoryStream Picture = new MemoryStream(pic);
+                    us.pic.Image = Image.FromStream(Picture);
                 }
+                us.lb.Text = tableInfo.Rows[0][1].ToString();
+                fpnlMain.Controls.Add(us);
             }
         }
         #endregion
@@ -206,15 +106,25 @@ namespace Care_Management_and_Private_Parking
 
                         TimeKeepingDAL.Instance.AddCheckIn(tbID.Text, DateTime.Now);
                         dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
-                        takePicture(tbID.Text);
+
+                        //Phần hình ảnh
+                        DataTable table = TimeKeepingDAL.Instance.takePic(tbID.Text);
+                        Employee us = new Employee();
+
+                        us.lb.Text = table.Rows[0][1].ToString();
+                        us.ID = tbID.Text;
+                        if (table.Rows[0]["Appearance"] != DBNull.Value)
+                        {
+                            byte[] picture = (byte[])table.Rows[0][0];
+                            MemoryStream Picture = new MemoryStream(picture);
+                            us.pic.Image = Image.FromStream(Picture);
+                        }
+                        fpnlMain.Controls.Add(us);
+
                         changeLBcheckin("Checkin");
                         loadInfo(tbID.Text, "Load");
                     }
                     else if(TimeKeepingDAL.Instance.checkInTimeWork(tbID.Text) == "2")
-                    {
-                        MessageBox.Show("Checkin unsuccessfully!!!\r\nYou have been late more than 1h!!!");
-                    }
-                    else
                     {
                         MessageBox.Show("Your shift hasn't started yet!!!");
                     }
@@ -255,7 +165,15 @@ namespace Care_Management_and_Private_Parking
                 dgv.DataSource = TimeKeepingDAL.Instance.ShowTimeKeeping();
                 MessageBox.Show("Checkout successfully!!!");
 
-                deletePicture(tbID.Text);
+
+                foreach(Employee c in fpnlMain.Controls)
+                { 
+                    if(c.ID == (tbID.Text))
+                    {
+                        fpnlMain.Controls.Remove(c);
+                    }
+                }
+
                 changeLBcheckin("Checkout");
                 loadInfo(tbID.Text, "Unload");
             }

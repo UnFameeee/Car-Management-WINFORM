@@ -69,6 +69,7 @@ namespace Care_Management_and_Private_Parking
             this.tbIDCard = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnLostIDCard = new System.Windows.Forms.Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -604,7 +605,7 @@ namespace Care_Management_and_Private_Parking
             this.tbIDCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.tbIDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDCard.ForeColor = System.Drawing.Color.White;
-            this.tbIDCard.Location = new System.Drawing.Point(685, 447);
+            this.tbIDCard.Location = new System.Drawing.Point(690, 445);
             this.tbIDCard.Name = "tbIDCard";
             this.tbIDCard.Size = new System.Drawing.Size(145, 23);
             this.tbIDCard.TabIndex = 202;
@@ -616,7 +617,7 @@ namespace Care_Management_and_Private_Parking
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnFind.Location = new System.Drawing.Point(836, 447);
+            this.btnFind.Location = new System.Drawing.Point(841, 445);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(69, 22);
             this.btnFind.TabIndex = 201;
@@ -634,12 +635,26 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
             this.guna2GradientButton3.HoverState.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.Location = new System.Drawing.Point(544, 445);
+            this.guna2GradientButton3.Location = new System.Drawing.Point(549, 443);
             this.guna2GradientButton3.Name = "guna2GradientButton3";
             this.guna2GradientButton3.ShadowDecoration.Parent = this.guna2GradientButton3;
             this.guna2GradientButton3.Size = new System.Drawing.Size(143, 28);
             this.guna2GradientButton3.TabIndex = 200;
             this.guna2GradientButton3.Text = "Search Info IDCard";
+            // 
+            // btnLostIDCard
+            // 
+            this.btnLostIDCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnLostIDCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLostIDCard.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLostIDCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnLostIDCard.Location = new System.Drawing.Point(0, 435);
+            this.btnLostIDCard.Name = "btnLostIDCard";
+            this.btnLostIDCard.Size = new System.Drawing.Size(120, 35);
+            this.btnLostIDCard.TabIndex = 204;
+            this.btnLostIDCard.Text = "Lost ID Card";
+            this.btnLostIDCard.UseVisualStyleBackColor = false;
+            this.btnLostIDCard.Click += new System.EventHandler(this.btnLostIDCard_Click);
             // 
             // ParkingLot
             // 
@@ -647,6 +662,7 @@ namespace Care_Management_and_Private_Parking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(913, 712);
+            this.Controls.Add(this.btnLostIDCard);
             this.Controls.Add(this.tbIDCard);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.guna2Panel3);
@@ -716,5 +732,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.TextBox tbIDCard;
         private System.Windows.Forms.Button btnFind;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
+        private System.Windows.Forms.Button btnLostIDCard;
     }
 }

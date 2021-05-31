@@ -202,16 +202,23 @@ namespace Care_Management_and_Private_Parking
 
                 if (verifVeh())
                 {
-                    string Invoice = cbboxTimeFormat.SelectedValue.ToString();
-                    if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
+                    if(ParkingLotDAL.Instance.checkLicense(VehID, License, "edit"))
                     {
-                        ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
-                        MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
-                        this.DialogResult = DialogResult.OK;
+                        string Invoice = cbboxTimeFormat.SelectedValue.ToString();
+                        if (ParkingLotDAL.Instance.updateVehicle(VehID, Type, License, VehPic, CusID))
+                        {
+                            ParkingLotDAL.Instance.editCarAndCusToParklot(CusID, VehID, dayvehin, value, Invoice, service);
+                            MessageBox.Show("Edit vehicle successfully!", "Edit Vehicle");
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Edit vehicle fail!!!", "Edit Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("This License Plate has already existed!!!", "Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else

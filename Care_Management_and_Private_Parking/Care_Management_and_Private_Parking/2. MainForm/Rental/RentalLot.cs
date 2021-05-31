@@ -112,7 +112,17 @@ namespace Care_Management_and_Private_Parking
                 //Set lại phần Customer
                 lbCusID.Text = "CustomerID: " + table.Rows[0]["CusID"].ToString();
                 lbName.Text = "Name: " + table.Rows[0]["FullName"].ToString();
-                lbBirthday.Text = "Birthday: " + table.Rows[0]["Bdate"].ToString();
+                #region Ngày sinh
+                string Bdate = table.Rows[0]["Bdate"].ToString();
+                string dateNonTime = "";
+                for (int i = 0; ; ++i)
+                {
+                    if (Bdate[i] == ' ')
+                        break;
+                    dateNonTime += Bdate[i];
+                }
+                #endregion
+                lbBirthday.Text = "Birthday: " + dateNonTime;// table.Rows[0]["Bdate"].ToString();
                 lbPhone.Text = "Phone: " + table.Rows[0]["PhoneNumber"].ToString();
                 lbAddress.Text = "Address: " + table.Rows[0]["Address"].ToString();
                 lbIdentityNumber.Text = "Identity Number: " + table.Rows[0]["IdentityNumber"].ToString();

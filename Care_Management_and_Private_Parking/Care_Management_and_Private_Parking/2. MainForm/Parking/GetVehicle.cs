@@ -60,7 +60,7 @@ namespace Care_Management_and_Private_Parking
                                 if (ParkingLotDAL.Instance.deleteCustomer(CusID))
                                 {
                                     int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, invoice, VehType, service);
-                                    MessageBox.Show("You have to pay " + money.ToString() + "VNĐ");
+                                    MessageBox.Show("You have to pay " + money.ToString() + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.DialogResult = DialogResult.OK;
                                 }
                             }
