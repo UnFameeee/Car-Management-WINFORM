@@ -31,10 +31,9 @@ namespace Care_Management_and_Private_Parking
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnStatistic = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSalary = new Guna.UI2.WinForms.Guna2Button();
             this.btnWorkShift = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimeKeeping = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSalary = new Guna.UI2.WinForms.Guna2Button();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +49,6 @@ namespace Care_Management_and_Private_Parking
             // 
             this.pnMenu.BorderRadius = 22;
             this.pnMenu.BorderThickness = 1;
-            this.pnMenu.Controls.Add(this.btnStatistic);
             this.pnMenu.Controls.Add(this.btnSalary);
             this.pnMenu.Controls.Add(this.btnWorkShift);
             this.pnMenu.Controls.Add(this.btnTimeKeeping);
@@ -61,27 +59,27 @@ namespace Care_Management_and_Private_Parking
             this.pnMenu.Size = new System.Drawing.Size(131, 493);
             this.pnMenu.TabIndex = 11;
             // 
-            // btnStatistic
+            // btnSalary
             // 
-            this.btnStatistic.BackColor = System.Drawing.Color.Transparent;
-            this.btnStatistic.BorderRadius = 22;
-            this.btnStatistic.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnStatistic.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnStatistic.CheckedState.Parent = this.btnStatistic;
-            this.btnStatistic.CustomImages.Parent = this.btnStatistic;
-            this.btnStatistic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnStatistic.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnStatistic.HoverState.Parent = this.btnStatistic;
-            this.btnStatistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnStatistic.Location = new System.Drawing.Point(9, 382);
-            this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.ShadowDecoration.Parent = this.btnStatistic;
-            this.btnStatistic.Size = new System.Drawing.Size(113, 43);
-            this.btnStatistic.TabIndex = 6;
-            this.btnStatistic.Text = "Statistic";
-            this.btnStatistic.UseTransparentBackground = true;
-            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
+            this.btnSalary.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalary.BorderRadius = 22;
+            this.btnSalary.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnSalary.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnSalary.CheckedState.Parent = this.btnSalary;
+            this.btnSalary.CustomImages.Parent = this.btnSalary;
+            this.btnSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnSalary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
+            this.btnSalary.HoverState.Parent = this.btnSalary;
+            this.btnSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSalary.Location = new System.Drawing.Point(9, 323);
+            this.btnSalary.Name = "btnSalary";
+            this.btnSalary.ShadowDecoration.Parent = this.btnSalary;
+            this.btnSalary.Size = new System.Drawing.Size(113, 43);
+            this.btnSalary.TabIndex = 8;
+            this.btnSalary.Text = "Manage Salary";
+            this.btnSalary.UseTransparentBackground = true;
+            this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
             // 
             // btnWorkShift
             // 
@@ -96,7 +94,7 @@ namespace Care_Management_and_Private_Parking
             this.btnWorkShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnWorkShift.HoverState.Parent = this.btnWorkShift;
             this.btnWorkShift.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnWorkShift.Location = new System.Drawing.Point(9, 188);
+            this.btnWorkShift.Location = new System.Drawing.Point(9, 224);
             this.btnWorkShift.Name = "btnWorkShift";
             this.btnWorkShift.ShadowDecoration.Parent = this.btnWorkShift;
             this.btnWorkShift.Size = new System.Drawing.Size(113, 43);
@@ -118,7 +116,7 @@ namespace Care_Management_and_Private_Parking
             this.btnTimeKeeping.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
             this.btnTimeKeeping.HoverState.Parent = this.btnTimeKeeping;
             this.btnTimeKeeping.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTimeKeeping.Location = new System.Drawing.Point(9, 98);
+            this.btnTimeKeeping.Location = new System.Drawing.Point(9, 134);
             this.btnTimeKeeping.Name = "btnTimeKeeping";
             this.btnTimeKeeping.ShadowDecoration.Parent = this.btnTimeKeeping;
             this.btnTimeKeeping.Size = new System.Drawing.Size(113, 43);
@@ -126,28 +124,6 @@ namespace Care_Management_and_Private_Parking
             this.btnTimeKeeping.Text = "Time Keeping";
             this.btnTimeKeeping.UseTransparentBackground = true;
             this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
-            // 
-            // btnSalary
-            // 
-            this.btnSalary.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalary.BorderRadius = 22;
-            this.btnSalary.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnSalary.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnSalary.CheckedState.Parent = this.btnSalary;
-            this.btnSalary.CustomImages.Parent = this.btnSalary;
-            this.btnSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnSalary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(113)))), ((int)(((byte)(116)))));
-            this.btnSalary.HoverState.Parent = this.btnSalary;
-            this.btnSalary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSalary.Location = new System.Drawing.Point(9, 287);
-            this.btnSalary.Name = "btnSalary";
-            this.btnSalary.ShadowDecoration.Parent = this.btnSalary;
-            this.btnSalary.Size = new System.Drawing.Size(113, 43);
-            this.btnSalary.TabIndex = 8;
-            this.btnSalary.Text = "Manage Salary";
-            this.btnSalary.UseTransparentBackground = true;
-            this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
             // 
             // TimeKeeping
             // 
@@ -170,7 +146,6 @@ namespace Care_Management_and_Private_Parking
 
         private System.Windows.Forms.Panel pnlMain;
         private Guna.UI2.WinForms.Guna2Panel pnMenu;
-        private Guna.UI2.WinForms.Guna2Button btnStatistic;
         private Guna.UI2.WinForms.Guna2Button btnWorkShift;
         private Guna.UI2.WinForms.Guna2Button btnTimeKeeping;
         private Guna.UI2.WinForms.Guna2Button btnSalary;

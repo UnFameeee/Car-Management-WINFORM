@@ -55,6 +55,7 @@
     <Compile Include="ProfitDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalLotDAL.cs" />
+    <Compile Include="StatisticDAL.cs" />
     <Compile Include="TimeKeepingDAL.cs" />
   </ItemGroup>
   <ItemGroup>

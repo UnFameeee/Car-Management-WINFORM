@@ -17,6 +17,7 @@ namespace Care_Management_and_Private_Parking
     {
         ParkingLot frmParkingLot = new ParkingLot() { TopLevel = false, TopMost = false };
         RentalLot frmRentalLot = new RentalLot() { TopLevel = false, TopMost = false };
+
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
         public CarParkForm()
@@ -35,11 +36,11 @@ namespace Care_Management_and_Private_Parking
         {
             //Chỉnh Checked
             btnParkingLot.Checked = false;
-            btnStatistic.Checked = false;
+            btnList.Checked = false;
             btnRentalLot.Checked = false;
             //Chỉnh Cursor
             btnParkingLot.Cursor = cur1;
-            btnStatistic.Cursor = cur1;
+            btnList.Cursor = cur1;
             btnRentalLot.Cursor = cur1;
             //Tắt tất cả các form
             frmParkingLot.Hide();
@@ -64,8 +65,9 @@ namespace Care_Management_and_Private_Parking
         private void btnStatistic_Click(object sender, EventArgs e)
         {
             tick();
-            btnStatistic.Checked = true;
-            btnStatistic.Cursor = cur2;
+            btnList.Checked = true;
+            btnList.Cursor = cur2;
+
         }
 
         

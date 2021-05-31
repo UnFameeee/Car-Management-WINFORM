@@ -162,3 +162,4 @@ create table CONTRACTPROFIT(
 	YearCPF int,
 	MoneyC int
 )
+GO
