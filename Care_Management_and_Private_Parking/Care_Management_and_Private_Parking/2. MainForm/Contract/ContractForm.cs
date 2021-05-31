@@ -11,6 +11,9 @@ using System.IO;
 using Global;
 using DAL;
 using System.Data.SqlClient;
+//Word
+using Word = Microsoft.Office.Interop.Word;
+
 
 namespace Care_Management_and_Private_Parking
 {
@@ -784,6 +787,224 @@ namespace Care_Management_and_Private_Parking
             if (check == 0)                                                         //ngày ra cùng vói ngày dự kiến -> đúng thời hạn
                 return false;
             else return true;                                                       //trễ hoặc trước thời hạn
+        }
+
+        #region in file word
+        private void btnExportToWord_Click(object sender, EventArgs e)
+        {
+            if(verif())
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Word Documents (*.docx)|*.docx";
+                sfd.FileName = "SalaryEmployee.docx";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (Export_Data_To_Word(sfd.FileName))
+                    {
+                        MessageBox.Show("Successful!!!", "Save to file word", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unsuccessful!!!", "Save to file word", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the information!!!", "Export to word", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #region Di chuyển con trỏ xuống cuối cùng
+        private void moveCursor(ref Word.Document oDoc)
+        {
+            object StartPos = 0;
+            object Endpos = 1;
+            Microsoft.Office.Interop.Word.Range rng = oDoc.Range(ref StartPos, ref Endpos);
+            object NewEndPos = rng.StoryLength - 1;
+            rng = oDoc.Range(ref NewEndPos, ref NewEndPos);
+            rng.Select();
+        }
+        #endregion
+        public bool Export_Data_To_Word(string filename)
+        {
+            #region Variable
+            Word.Document oDoc = new Word.Document();
+            oDoc.Application.Visible = true;
+            object missing = System.Reflection.Missing.Value;
+            object oCollapseEnd = Word.WdCollapseDirection.wdCollapseEnd;
+            #endregion
+
+            #region Auto Pagenumber
+            oDoc.ActiveWindow.View.Type = Word.WdViewType.wdPrintView;
+            object nullobject = System.Reflection.Missing.Value;
+            oDoc.ActiveWindow.ActivePane.View.SeekView = Word.WdSeekView.wdSeekPrimaryFooter;
+            oDoc.ActiveWindow.Selection.Paragraphs.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
+            oDoc.ActiveWindow.Selection.Font.Name = "Arial";
+            oDoc.ActiveWindow.Selection.Font.Bold = 1;
+            oDoc.ActiveWindow.Selection.Font.Size = 14;
+            oDoc.ActiveWindow.Selection.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            Object CurrentPage = Word.WdFieldType.wdFieldPage;
+            oDoc.ActiveWindow.Selection.Fields.Add(oDoc.ActiveWindow.Selection.Range, ref CurrentPage, ref nullobject, ref nullobject);
+            #endregion
+
+            #region Set cấu hình font chữ của toàn word
+            oDoc.Content.Font.Size = 12;
+            oDoc.Content.Font.Bold = 0;
+            oDoc.Content.Font.Name = "Times new roman";
+            oDoc.Content.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            oDoc.Content.InsertParagraphAfter();
+            #endregion
+
+            #region Cài đặt chữ phần trên
+            moveCursor(ref oDoc);
+            Microsoft.Office.Interop.Word.Paragraph paraHead = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeadingHead = "Heading 1";
+            paraHead.Range.set_Style(ref styleHeadingHead);
+            paraHead.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            paraHead.Range.Font.Bold = 1;
+            paraHead.Range.Font.Size = 14;
+            paraHead.Range.Font.Name = "Times new roman";
+            paraHead.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            paraHead.Range.Text = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\r\nĐỘC LẬP-TỰ DO-HẠNH PHÚC\r\nHợp Đồng\r\n" + frm.cbboxPurpose.SelectedItem.ToString() + "\r\nSố: " + frm.tbContractID.Text;
+            paraHead.Range.InsertParagraphAfter();
+            moveCursor(ref oDoc);
+
+            Microsoft.Office.Interop.Word.Paragraph para1 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading1 = "Heading 1";
+            para1.Range.set_Style(ref styleHeading1);
+            para1.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para1.Range.Font.Size = 10;
+            para1.Range.Font.Name = "Times new roman";
+            para1.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para1.Range.Text = "Theo văn bản (quyết định, phê duyệt, đề nghị) hoặc sự thỏa thuận của đôi bên\r\nHôm nay, " + frm.tbDateStart.Text + " tại TPHCM, Chúng tôi gồm các bên dưới đây: \r\n";
+            para1.Range.InsertParagraphAfter();
+            moveCursor(ref oDoc);
+
+            //Cho thuê
+            Microsoft.Office.Interop.Word.Paragraph para2 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading2 = "Heading 1";
+            para2.Range.set_Style(ref styleHeading2);
+            para2.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para2.Range.Font.Bold = 1;
+            para2.Range.Font.Size = 13;
+            para2.Range.Font.Name = "Times new roman";
+            para2.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para2.Range.Text = "1. Bên cho thuê" + "\r\n";
+            para2.Range.InsertParagraphAfter();
+
+            moveCursor(ref oDoc);
+
+            Microsoft.Office.Interop.Word.Paragraph para3 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading3 = "Heading 1";
+            para3.Range.set_Style(ref styleHeading3);
+            para3.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para3.Range.Font.Size = 10;
+            para3.Range.Font.Name = "Times new roman";
+            para3.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para3.Range.Text = "Người đại diện: " + frm.tbForRentName.Text + "                                                  Chức vụ: " + frm.tbForRentJob.Text + "\r\n"
+                             + "Điện thoại: " + frm.tbForRentPhone.Text + "                                                         Ngày sinh: " + frm.tbForRentBdate.Text + "\r\n"
+                             + "CMND: " + frm.tbForRentIdentity.Text + "                                                                Ký tên:                     \r\n"
+                             + "Địa chỉ: " + frm.tbForRentAddress.Text + "\r\n"
+                             + "Loại xe: " + frm.cbVehType.Text + "\r\n"
+                             + "Biển số xe" + frm.tbForRentVehLicense.Text + "\r\n" + "\r\n";
+            para3.Range.InsertParagraphAfter();
+            moveCursor(ref oDoc);
+
+            //Thuê
+            Microsoft.Office.Interop.Word.Paragraph para4 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading4 = "Heading 1";
+            para4.Range.set_Style(ref styleHeading4);
+            para4.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para4.Range.Font.Bold = 1;
+            para4.Range.Font.Size = 13;
+            para4.Range.Font.Name = "Times new roman";
+            para4.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para4.Range.Text = "2. Bên thuê" + "\r\n";
+            para4.Range.InsertParagraphAfter();
+
+            moveCursor(ref oDoc);
+
+            Microsoft.Office.Interop.Word.Paragraph para5 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading5 = "Heading 1";
+            para5.Range.set_Style(ref styleHeading5);
+            para5.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para5.Range.Font.Size = 10;
+            para5.Range.Font.Name = "Times new roman";
+            para5.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para5.Range.Text = "Người đại diện: " + frm.tbRentName.Text + "                                                  Chức vụ: " + frm.tbRentJob.Text + "\r\n"
+                             + "Điện thoại: " + frm.tbRentPhone.Text + "                                                        Ngày sinh: " + frm.tbRentBdate.Text + "\r\n"
+                             + "CMND: " + frm.tbRentIdentity.Text + "                                                           Ký tên:                     \r\n"
+                             + "Địa chỉ: " + frm.tbRentAddress.Text + "\r\n";
+            para5.Range.InsertParagraphAfter();
+            moveCursor(ref oDoc);
+
+            //Nội dung
+            Microsoft.Office.Interop.Word.Paragraph para6 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading6 = "Heading 1";
+            para6.Range.set_Style(ref styleHeading6);
+            para6.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para6.Range.Font.Bold = 1;
+            para6.Range.Font.Size = 13;
+            para6.Range.Font.Name = "Times new roman";
+            para6.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para6.Range.Text = "Nội dụng hợp đồng:" + "\r\n";
+            para6.Range.InsertParagraphAfter();
+
+            moveCursor(ref oDoc);
+
+            Microsoft.Office.Interop.Word.Paragraph para7 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading7 = "Heading 1";
+            para7.Range.set_Style(ref styleHeading7);
+            para7.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para7.Range.Font.Size = 10;
+            para7.Range.Font.Name = "Times new roman";
+            para7.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para7.Range.Text = "Thời hạn: " + frm.tbTime.Text + "\r\n"                                           
+                             + "Giá cả thương lượng: " + frm.tbPrice.Text + " VNĐ\r\n"
+                             + "Đền bù (Hủy hợp đồng trước và sau thời hạn): " + frm.tbRentIdentity.Text + "x" + frm.cbboxFee.SelectedItem.ToString() + " VNĐ\r\n" + "\r\n" + "\r\n";
+            para7.Range.InsertParagraphAfter();
+            moveCursor(ref oDoc);
+
+
+
+            #endregion
+
+            //Page orinatation
+            oDoc.PageSetup.Orientation = Word.WdOrientation.wdOrientLandscape;
+            dynamic oRange = oDoc.Content.Application.Selection.Range;
+
+            #region Phần nội dung phía dưới Table (Đã add bên trên)
+            moveCursor(ref oDoc);
+            Microsoft.Office.Interop.Word.Paragraph para10 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading10 = "Heading 2";
+            para10.Range.set_Style(ref styleHeading2);
+            para10.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para10.Range.Font.Name = "Times new roman";
+            para10.Range.Font.Size = 12;
+            para10.Range.Text = "\nNgày....Tháng....Năm....";
+            para10.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para10.Range.InsertParagraphAfter();
+
+            moveCursor(ref oDoc);
+            Microsoft.Office.Interop.Word.Paragraph para11 = oDoc.Content.Paragraphs.Add(ref missing);
+            object styleHeading11 = "Heading 3";
+            para11.Range.set_Style(ref styleHeading11);
+            para11.Range.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlack;
+            para11.Range.Font.Name = "Times new roman";
+            para11.Range.Font.Size = 12;
+            para11.Range.Text = "\n\n        Người lập                       Quản lý trực tiếp               Giám đốc bộ phận                Giám đốc nhân sự                Giám đốc điều hành";
+            para11.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            para11.Range.InsertParagraphAfter();
+            #endregion
+
+            moveCursor(ref oDoc);
+
+            //Save the file
+            oDoc.SaveAs(filename);
+            return true;
+            #endregion
+        
         }
     }
 }

@@ -35,8 +35,6 @@ namespace Care_Management_and_Private_Parking
         }
 
         #endregion
-
-
         #region outcome chart1
         private void loadChartOutcome1()
         {
@@ -191,6 +189,9 @@ namespace Care_Management_and_Private_Parking
 
         private void btnReload_Click(object sender, EventArgs e)
         {
+            table1 = StatisticDAL.Instance.loadTableSalary(2021);
+            table2 = StatisticDAL.Instance.loadTableIncome1(2021);
+            table3 = StatisticDAL.Instance.loadTableIncome2(2021);
             loadChartOutcome1();
             loadChartOutcome2();
             loadChartIncome1();
