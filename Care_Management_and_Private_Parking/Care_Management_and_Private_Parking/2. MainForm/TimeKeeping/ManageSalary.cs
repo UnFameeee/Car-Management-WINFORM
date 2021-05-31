@@ -361,6 +361,8 @@ namespace Care_Management_and_Private_Parking
                             foreach (DataGridViewColumn column in dgv2.Columns)
                             {
                                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                cell.BorderColor = new BaseColor(144, 238, 144);
+                                cell.BackgroundColor = new iTextSharp.text.BaseColor(144, 238, 144);
                                 pdfTable.AddCell(cell);
                             }
                             foreach (DataGridViewRow row in dgv2.Rows)
