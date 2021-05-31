@@ -17,6 +17,7 @@ namespace Care_Management_and_Private_Parking
     {
         ParkingLot frmParkingLot = new ParkingLot() { TopLevel = false, TopMost = false };
         RentalLot frmRentalLot = new RentalLot() { TopLevel = false, TopMost = false };
+        CustomerAndVehicleList frmList = new CustomerAndVehicleList() { TopLevel = false, TopMost = false };
 
         Cursor cur1 = Cursors.Hand;
         Cursor cur2 = Cursors.Default;
@@ -30,6 +31,7 @@ namespace Care_Management_and_Private_Parking
         {
             this.pnlMain.Controls.Add(frmParkingLot);
             this.pnlMain.Controls.Add(frmRentalLot);
+            this.pnlMain.Controls.Add(frmList);
             tick();
         }
         private void tick()
@@ -45,6 +47,7 @@ namespace Care_Management_and_Private_Parking
             //Tắt tất cả các form
             frmParkingLot.Hide();
             frmRentalLot.Hide();
+            frmList.Hide();
         }
 
         private void btnParkingLot_Click(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace Care_Management_and_Private_Parking
             tick();
             btnList.Checked = true;
             btnList.Cursor = cur2;
-
+            frmList.Show();
         }
 
         

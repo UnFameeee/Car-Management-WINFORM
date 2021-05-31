@@ -299,7 +299,7 @@ namespace Care_Management_and_Private_Parking
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.Color.Transparent;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(383, 675);
+            this.label36.Location = new System.Drawing.Point(424, 673);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(13, 15);
             this.label36.TabIndex = 143;
@@ -310,7 +310,7 @@ namespace Care_Management_and_Private_Parking
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(518, 673);
+            this.label35.Location = new System.Drawing.Point(559, 671);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(31, 15);
             this.label35.TabIndex = 142;
@@ -346,7 +346,7 @@ namespace Care_Management_and_Private_Parking
             this.tbPrice2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbPrice2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice2.HoverState.Parent = this.tbPrice2;
-            this.tbPrice2.Location = new System.Drawing.Point(234, 675);
+            this.tbPrice2.Location = new System.Drawing.Point(275, 673);
             this.tbPrice2.Name = "tbPrice2";
             this.tbPrice2.PasswordChar = '\0';
             this.tbPrice2.PlaceholderForeColor = System.Drawing.SystemColors.WindowText;
@@ -432,7 +432,7 @@ namespace Care_Management_and_Private_Parking
             "8",
             "9",
             "10"});
-            this.cbboxFee.Location = new System.Drawing.Point(402, 668);
+            this.cbboxFee.Location = new System.Drawing.Point(443, 666);
             this.cbboxFee.Name = "cbboxFee";
             this.cbboxFee.Size = new System.Drawing.Size(104, 25);
             this.cbboxFee.TabIndex = 137;
@@ -455,9 +455,9 @@ namespace Care_Management_and_Private_Parking
             this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(29, 675);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(212, 15);
+            this.label32.Size = new System.Drawing.Size(248, 15);
             this.label32.TabIndex = 135;
-            this.label32.Text = "Đền bù (huỷ hợp đồng trước thời hạn):";
+            this.label32.Text = "Đền bù (huỷ hợp đồng trước và sau thời hạn):";
             // 
             // label31
             // 

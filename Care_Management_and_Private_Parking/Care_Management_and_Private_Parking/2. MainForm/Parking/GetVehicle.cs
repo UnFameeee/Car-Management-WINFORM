@@ -48,9 +48,11 @@ namespace Care_Management_and_Private_Parking
                     string VehType = table.Rows[0][1].ToString();
 
                     DateTime register = Convert.ToDateTime(tab.Rows[0][3]);
+                    DateTime leave = DateTime.Now;
                     int value = Convert.ToInt32(tab.Rows[0][4]);
                     string timeformat = tab.Rows[0][5].ToString();
                     string service = tab.Rows[0][6].ToString();
+
 
                     if (CusID == tab.Rows[0][1].ToString())
                     {
@@ -60,9 +62,23 @@ namespace Care_Management_and_Private_Parking
                             {
                                 if (ParkingLotDAL.Instance.deleteCustomer(CusID))
                                 {
-                                    int money = InvoiceDAL.Instance.MoneyHaveToPay(register, DateTime.Now, value, timeformat, VehType, service);
-                                    MessageBox.Show("You have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", money) + "VNĐ", "Get Vehicle",  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.DialogResult = DialogResult.OK;
+                                    int money = InvoiceDAL.Instance.MoneyHaveToPay(register, leave, value, timeformat, VehType, service);
+                                    if (InvoiceDAL.Instance.checkParkingDate(leave.Day, leave.Month, leave.Year))       //đã tồn tại (nghĩa là đã thu tiền 1 ai đó trước)
+                                    {
+                                        if (InvoiceDAL.Instance.updateParkingProfit(leave.Day, leave.Month, leave.Year, money))
+                                        {
+                                            MessageBox.Show("You have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", money) + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            this.DialogResult = DialogResult.OK;
+                                        }
+                                    }
+                                    else                            //không có gì (nghĩa là chưa thu tiền ai trong ngày)
+                                    {
+                                        if (InvoiceDAL.Instance.insertParkingProfit(leave.Day, leave.Month, leave.Year, money))
+                                        {
+                                            MessageBox.Show("You have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", money) + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            this.DialogResult = DialogResult.OK;
+                                        }
+                                    }
                                 }
                             }
                         }
