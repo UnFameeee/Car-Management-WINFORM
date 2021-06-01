@@ -93,7 +93,7 @@ namespace Care_Management_and_Private_Parking
                 pnlUser.Location = new Point(7, 309 + 66);
                 pnlTimeKeeping.Location = new Point(7, 385 + 66);
                 pnlManage.Location = new Point(7, 460 + 66);
-                pnlStatistic.Location = new Point(0, 0);
+                pnlStatistic.Location = new Point(7, 460 + 66 + 66);
             }
         }
 

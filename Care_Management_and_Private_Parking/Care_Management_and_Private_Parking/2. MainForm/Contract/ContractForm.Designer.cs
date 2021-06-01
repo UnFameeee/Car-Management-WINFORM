@@ -36,7 +36,6 @@ namespace Care_Management_and_Private_Parking
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnExportToWord = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,28 +138,12 @@ namespace Care_Management_and_Private_Parking
             this.guna2GradientButton1.TabIndex = 40;
             this.guna2GradientButton1.Text = "CONTRACT";
             // 
-            // btnExportToWord
-            // 
-            this.btnExportToWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnExportToWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportToWord.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportToWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
-            this.btnExportToWord.Location = new System.Drawing.Point(822, 657);
-            this.btnExportToWord.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExportToWord.Name = "btnExportToWord";
-            this.btnExportToWord.Size = new System.Drawing.Size(87, 44);
-            this.btnExportToWord.TabIndex = 10;
-            this.btnExportToWord.Text = "Export to Word";
-            this.btnExportToWord.UseVisualStyleBackColor = false;
-            this.btnExportToWord.Click += new System.EventHandler(this.btnExportToWord_Click);
-            // 
             // ContractForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(913, 712);
-            this.Controls.Add(this.btnExportToWord);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.pnContract);
             this.Controls.Add(this.guna2Panel1);
@@ -182,6 +165,5 @@ namespace Care_Management_and_Private_Parking
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnShow;
-        private System.Windows.Forms.Button btnExportToWord;
     }
 }

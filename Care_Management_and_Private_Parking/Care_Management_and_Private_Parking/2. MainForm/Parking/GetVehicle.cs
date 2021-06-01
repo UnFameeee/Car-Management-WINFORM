@@ -67,7 +67,7 @@ namespace Care_Management_and_Private_Parking
                                     {
                                         if (InvoiceDAL.Instance.updateParkingProfit(leave.Day, leave.Month, leave.Year, money))
                                         {
-                                            MessageBox.Show("You have to pay " + string.Format(new CultureInfo("vi-VN"), "C", money) + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("You have to pay " + money + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             this.DialogResult = DialogResult.OK;
                                         }
                                     }
@@ -75,7 +75,7 @@ namespace Care_Management_and_Private_Parking
                                     {
                                         if (InvoiceDAL.Instance.insertParkingProfit(leave.Day, leave.Month, leave.Year, money))
                                         {
-                                            MessageBox.Show("You have to pay " + string.Format(new CultureInfo("vi-VN"), "{0:#.##0}", money) + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("You have to pay " + money + "VNĐ", "Get Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             this.DialogResult = DialogResult.OK;
                                         }
                                     }

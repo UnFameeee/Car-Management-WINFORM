@@ -455,5 +455,15 @@ namespace Care_Management_and_Private_Parking
             changeColorLoad();
             fillSlot();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadMatrixBicycle();
+            loadMatrixBike();
+            loadMatrixCar();
+            changeColorLoad();
+            fillSlot();
+            fillEmpty();
+        }
     }
 }

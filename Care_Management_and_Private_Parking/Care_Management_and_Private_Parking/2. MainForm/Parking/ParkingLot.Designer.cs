@@ -70,6 +70,7 @@ namespace Care_Management_and_Private_Parking
             this.btnFind = new System.Windows.Forms.Button();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnLostIDCard = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -387,6 +388,7 @@ namespace Care_Management_and_Private_Parking
             this.pnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.pnCalendar.BorderRadius = 22;
             this.pnCalendar.BorderThickness = 1;
+            this.pnCalendar.Controls.Add(this.btnRefresh);
             this.pnCalendar.Controls.Add(this.btnLogin);
             this.pnCalendar.Controls.Add(this.guna2Panel5);
             this.pnCalendar.Controls.Add(this.guna2Panel4);
@@ -656,6 +658,20 @@ namespace Care_Management_and_Private_Parking
             this.btnLostIDCard.UseVisualStyleBackColor = false;
             this.btnLostIDCard.Click += new System.EventHandler(this.btnLostIDCard_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(65)))), ((int)(((byte)(60)))));
+            this.btnRefresh.Location = new System.Drawing.Point(827, 19);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(69, 22);
+            this.btnRefresh.TabIndex = 202;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ParkingLot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,5 +749,6 @@ namespace Care_Management_and_Private_Parking
         private System.Windows.Forms.Button btnFind;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
         private System.Windows.Forms.Button btnLostIDCard;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
