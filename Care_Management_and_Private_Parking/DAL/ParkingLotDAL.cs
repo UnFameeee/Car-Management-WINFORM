@@ -504,7 +504,7 @@ namespace DAL
             }
             else
             {
-                cmd = new SqlCommand("SELECT VehID FROM VEHICLE ORDER BY RIGHT(REPLICATE('0', 1000) + LTRIM(RTRIM(CAST(VehID AS VARCHAR(MAX)))), 1000)", DataProvider.Instance.getConnection);
+                cmd = new SqlCommand("SELECT * FROM VEHICLE", DataProvider.Instance.getConnection);
                 if(operation == Variable.Bicycle)
                 {
                     stringID = Variable.BicycleLength;
